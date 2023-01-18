@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?ccsproject version="1.0"?>
+<projectOptions>
+	<ccsVersion value="11.0.0"/>
+	<deviceVariant value="MSP432E401Y"/>
+	<deviceFamily value="MSP432"/>
+	<deviceEndianness value="little"/>
+	<codegenToolVersion value="20.2.5.LTS"/>
+	<isElfFormat value="true"/>
+	<createSlaveProjects value=""/>
+	<ignoreDefaultDeviceSettings value="true"/>
+	<ignoreDefaultCCSSettings value="true"/>
+	<templateProperties value="id=freertos_builds_MSP_EXP432E401Y_release_ccs.projectspec.freertos_builds_MSP_EXP432E401Y_release_ccs,products=com.ti.SIMPLELINK_MSP432E4_SDK,buildProfile=release"/>
+	<origin value="C:\ti\simplelink_msp432e4_sdk_4_20_00_12\kernel\freertos\builds\MSP_EXP432E401Y\release\ccs\freertos_builds_MSP_EXP432E401Y_release_ccs.projectspec"/>
+	<filesToOpen value=""/>
+	<isTargetManual value="false"/>
+</projectOptions>
