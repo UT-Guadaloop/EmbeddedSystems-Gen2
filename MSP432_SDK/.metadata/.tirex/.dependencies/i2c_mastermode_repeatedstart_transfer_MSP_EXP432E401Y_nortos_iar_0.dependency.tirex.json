@@ -1,0 +1,12 @@
+[
+    {
+        "files": [
+            "+startup_msp432e401y_ewarm.c -> startup_msp432e401y_ewarm.c",
+            "+../i2c_mastermode_repeatedstart_transfer.c -> i2c_mastermode_repeatedstart_transfer.c",
+            "+../system_msp432e401y.c -> system_msp432e401y.c",
+            "+../README.md -> README.md",
+            "+../README.html -> README.html",
+            "+msp432e401y.icf -> msp432e401y.icf"
+        ]
+    }
+]

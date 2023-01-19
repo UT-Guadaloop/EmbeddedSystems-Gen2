@@ -1,0 +1,124 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="struct_a_e_s_c_t_r___operation" kind="struct" language="C++" prot="public">
+    <compoundname>AESCTR_Operation</compoundname>
+    <includes refid="_a_e_s_c_t_r_8h" local="no">AESCTR.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_a_e_s_c_t_r___operation_1a5c492c25815d6adbcba8669ce42add11" prot="public" static="no" mutable="no">
+        <type>const <ref refid="struct_crypto_key" kindref="compound">CryptoKey</ref> *</type>
+        <definition>const CryptoKey* AESCTR_Operation::key</definition>
+        <argsstring></argsstring>
+        <name>key</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A previously initialized <ref refid="struct_crypto_key" kindref="compound">CryptoKey</ref>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/AESCTR.h" line="411" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/AESCTR.h" bodystart="411" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_a_e_s_c_t_r___operation_1ae4324f40196050240b3e9c94aa38818d" prot="public" static="no" mutable="no">
+        <type>uint8_t *</type>
+        <definition>uint8_t* AESCTR_Operation::input</definition>
+        <argsstring></argsstring>
+        <name>input</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><itemizedlist>
+<listitem><para>Encryption: The plaintext buffer to be encrypted in the CTR operation.</para></listitem><listitem><para>Decryption: The ciphertext to be decrypted. </para></listitem></itemizedlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/AESCTR.h" line="412" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/AESCTR.h" bodystart="412" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_a_e_s_c_t_r___operation_1a0e44b6efb02aa1b0d3e9d1277f04732a" prot="public" static="no" mutable="no">
+        <type>uint8_t *</type>
+        <definition>uint8_t* AESCTR_Operation::output</definition>
+        <argsstring></argsstring>
+        <name>output</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><itemizedlist>
+<listitem><para>Encryption: The output ciphertext buffer that the encrypted plaintext is copied to.</para></listitem><listitem><para>Decryption: The plaintext derived from the decrypted ciphertext is copied here. </para></listitem></itemizedlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/AESCTR.h" line="417" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/AESCTR.h" bodystart="417" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_a_e_s_c_t_r___operation_1a6873831e48820c92a6e0369e069f8dd9" prot="public" static="no" mutable="no">
+        <type>const uint8_t *</type>
+        <definition>const uint8_t* AESCTR_Operation::initialCounter</definition>
+        <argsstring></argsstring>
+        <name>initialCounter</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A buffer containing an initial counter. Under the same key, each counter value may only be used to encrypt or decrypt a single input block. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/AESCTR.h" line="423" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/AESCTR.h" bodystart="423" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_a_e_s_c_t_r___operation_1afa87f113876a0a90cf2645d3a3048157" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t AESCTR_Operation::inputLength</definition>
+        <argsstring></argsstring>
+        <name>inputLength</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Length of the input and output in bytes. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/AESCTR.h" line="428" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/AESCTR.h" bodystart="428" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Struct containing the parameters required for encrypting/decrypting a message. </para>    </briefdescription>
+    <detaileddescription>
+<para>The driver may access it at any point during the operation. It must remain in scope for the entire duration of the operation. </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="69">
+        <label>CryptoKey</label>
+        <link refid="struct_crypto_key"/>
+        <childnode refid="70" relation="usage">
+          <edgelabel>plaintext</edgelabel>
+        </childnode>
+        <childnode refid="71" relation="usage">
+          <edgelabel>keyStore</edgelabel>
+        </childnode>
+        <childnode refid="72" relation="usage">
+          <edgelabel>keyBlob</edgelabel>
+        </childnode>
+      </node>
+      <node id="70">
+        <label>CryptoKey_Plaintext</label>
+        <link refid="struct_crypto_key___plaintext"/>
+      </node>
+      <node id="72">
+        <label>CryptoKey_KeyBlob</label>
+        <link refid="struct_crypto_key___key_blob"/>
+      </node>
+      <node id="68">
+        <label>AESCTR_Operation</label>
+        <link refid="struct_a_e_s_c_t_r___operation"/>
+        <childnode refid="69" relation="usage">
+          <edgelabel>key</edgelabel>
+        </childnode>
+      </node>
+      <node id="71">
+        <label>CryptoKey_KeyStore</label>
+        <link refid="struct_crypto_key___key_store"/>
+      </node>
+    </collaborationgraph>
+    <location file="exports/tidrivers_msp432e4/source/ti/drivers/AESCTR.h" line="410" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/AESCTR.h" bodystart="410" bodyend="429"/>
+    <listofallmembers>
+      <member refid="struct_a_e_s_c_t_r___operation_1a6873831e48820c92a6e0369e069f8dd9" prot="public" virt="non-virtual"><scope>AESCTR_Operation</scope><name>initialCounter</name></member>
+      <member refid="struct_a_e_s_c_t_r___operation_1ae4324f40196050240b3e9c94aa38818d" prot="public" virt="non-virtual"><scope>AESCTR_Operation</scope><name>input</name></member>
+      <member refid="struct_a_e_s_c_t_r___operation_1afa87f113876a0a90cf2645d3a3048157" prot="public" virt="non-virtual"><scope>AESCTR_Operation</scope><name>inputLength</name></member>
+      <member refid="struct_a_e_s_c_t_r___operation_1a5c492c25815d6adbcba8669ce42add11" prot="public" virt="non-virtual"><scope>AESCTR_Operation</scope><name>key</name></member>
+      <member refid="struct_a_e_s_c_t_r___operation_1a0e44b6efb02aa1b0d3e9d1277f04732a" prot="public" virt="non-virtual"><scope>AESCTR_Operation</scope><name>output</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

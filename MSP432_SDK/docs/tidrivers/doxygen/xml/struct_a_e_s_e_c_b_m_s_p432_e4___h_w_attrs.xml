@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="struct_a_e_s_e_c_b_m_s_p432_e4___h_w_attrs" kind="struct" language="C++" prot="public">
+    <compoundname>AESECBMSP432E4_HWAttrs</compoundname>
+    <includes refid="_a_e_s_e_c_b_m_s_p432_e4_8h" local="no">AESECBMSP432E4.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_a_e_s_e_c_b_m_s_p432_e4___h_w_attrs_1ac669a60d5a5ab2e0ad492805607e9eab" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t AESECBMSP432E4_HWAttrs::dummy</definition>
+        <argsstring></argsstring>
+        <name>dummy</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/aesecb/AESECBMSP432E4.h" line="80" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/aesecb/AESECBMSP432E4.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Hardware-specific configuration attributes. </para>    </briefdescription>
+    <detaileddescription>
+<para>AESECBMSP432E4 hardware attributes are used in the board file by the <ref refid="struct_a_e_s_e_c_b___config" kindref="compound">AESECB_Config</ref> struct. </para>    </detaileddescription>
+    <location file="exports/tidrivers_msp432e4/source/ti/drivers/aesecb/AESECBMSP432E4.h" line="79" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/aesecb/AESECBMSP432E4.h" bodystart="79" bodyend="81"/>
+    <listofallmembers>
+      <member refid="struct_a_e_s_e_c_b_m_s_p432_e4___h_w_attrs_1ac669a60d5a5ab2e0ad492805607e9eab" prot="public" virt="non-virtual"><scope>AESECBMSP432E4_HWAttrs</scope><name>dummy</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

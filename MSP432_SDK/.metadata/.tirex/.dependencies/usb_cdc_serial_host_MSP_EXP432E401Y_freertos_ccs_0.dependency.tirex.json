@@ -1,0 +1,15 @@
+[
+    {
+        "files": [
+            "+../../README.md -> README.md",
+            "+../../README.html -> README.html",
+            "+../../Board.html -> Board.html",
+            "+../../overview.rov.json -> overview.rov.json",
+            "+../../usbcdcserialhost.c -> usbcdcserialhost.c",
+            "+../../usbcdcserialhost.h -> usbcdcserialhost.h",
+            "+../../usb_cdc_serial_host.syscfg -> usb_cdc_serial_host.syscfg",
+            "+../main_freertos.c -> main_freertos.c",
+            "+MSP_EXP432E401Y_FREERTOS.cmd -> MSP_EXP432E401Y_FREERTOS.cmd"
+        ]
+    }
+]

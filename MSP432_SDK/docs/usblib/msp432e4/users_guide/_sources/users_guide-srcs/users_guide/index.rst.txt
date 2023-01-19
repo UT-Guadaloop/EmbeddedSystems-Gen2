@@ -1,0 +1,13 @@
+MSP432E4 USB Library
+=======================
+
+The Texas Instruments® USB Library is a set of data types and functions for creating USB device,
+host or On-The-Go (OTG) applications.
+
+.. toctree::
+   :maxdepth: 1
+
+   introduction
+   device_functions
+   host_functions
+   otg_functions

@@ -1,0 +1,582 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="_a_d_c_m_s_p432_e4_8h" kind="file" language="C++">
+    <compoundname>ADCMSP432E4.h</compoundname>
+    <includes local="no">stdint.h</includes>
+    <includes local="no">stdbool.h</includes>
+    <includes refid="_a_d_c_8h" local="no">ti/drivers/ADC.h</includes>
+    <includes local="no">ti/devices/msp432e4/inc/msp432.h</includes>
+    <includes local="no">ti/devices/msp432e4/driverlib/adc.h</includes>
+    <incdepgraph>
+      <node id="20">
+        <label>stdbool.h</label>
+      </node>
+      <node id="19">
+        <label>stdint.h</label>
+      </node>
+      <node id="21">
+        <label>ti/drivers/ADC.h</label>
+        <link refid="_a_d_c_8h"/>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>ADCMSP432E4.h</label>
+        <link refid="_a_d_c_m_s_p432_e4_8h"/>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>ti/devices/msp432e4/inc/msp432.h</label>
+      </node>
+      <node id="23">
+        <label>ti/devices/msp432e4/driverlib/adc.h</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="struct_a_d_c_m_s_p432_e4___h_w_attrs_v1" prot="public">ADCMSP432E4_HWAttrsV1</innerclass>
+    <innerclass refid="struct_a_d_c_m_s_p432_e4___object" prot="public">ADCMSP432E4_Object</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_a_d_c_m_s_p432_e4_8h_1a37e0155608ca88c86b6d89c50be64f9b" prot="public" static="no">
+        <name>ADCMSP432E4_PB_4_A10</name>
+        <initializer>((10 &lt;&lt; 16) | 0x5910) /* ch 10, port B, pin 4 */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/adc/ADCMSP432E4.h" line="76" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/adc/ADCMSP432E4.h" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_d_c_m_s_p432_e4_8h_1a379fac5c2d0a3d0b30c27c90f96cfb2d" prot="public" static="no">
+        <name>ADCMSP432E4_PB_5_A11</name>
+        <initializer>((11 &lt;&lt; 16) | 0x5920) /* ch 11, port B, pin 5 */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/adc/ADCMSP432E4.h" line="77" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/adc/ADCMSP432E4.h" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_d_c_m_s_p432_e4_8h_1a0c2f657cfc9b18cd1e85ba32df4662b0" prot="public" static="no">
+        <name>ADCMSP432E4_PD_0_A15</name>
+        <initializer>((15 &lt;&lt; 16) | 0x5B01) /* ch 15, port D, pin 0 */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/adc/ADCMSP432E4.h" line="80" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/adc/ADCMSP432E4.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_d_c_m_s_p432_e4_8h_1a652a0d9fd32443f550b4a072cd9eee93" prot="public" static="no">
+        <name>ADCMSP432E4_PD_1_A14</name>
+        <initializer>((14 &lt;&lt; 16) | 0x5B02) /* ch 14, port D, pin 1 */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/adc/ADCMSP432E4.h" line="81" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/adc/ADCMSP432E4.h" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_d_c_m_s_p432_e4_8h_1a5f0f3f73f152c7c79da5716bd56022ad" prot="public" static="no">
+        <name>ADCMSP432E4_PD_2_A13</name>
+        <initializer>((13 &lt;&lt; 16) | 0x5B04) /* ch 13, port D, pin 2 */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/adc/ADCMSP432E4.h" line="82" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/adc/ADCMSP432E4.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_d_c_m_s_p432_e4_8h_1a0dbd13863aef870516d864639a99e0db" prot="public" static="no">
+        <name>ADCMSP432E4_PD_3_A12</name>
+        <initializer>((12 &lt;&lt; 16) | 0x5B08) /* ch 12, port D, pin 3 */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/adc/ADCMSP432E4.h" line="83" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/adc/ADCMSP432E4.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_d_c_m_s_p432_e4_8h_1a9b19245b532384178e173fe6e60e2577" prot="public" static="no">
+        <name>ADCMSP432E4_PD_4_A7</name>
+        <initializer>((7 &lt;&lt; 16) | 0x5B10)  /* ch 7, port D, pin 4 */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/adc/ADCMSP432E4.h" line="84" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/adc/ADCMSP432E4.h" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_d_c_m_s_p432_e4_8h_1a72dab75e60363361ebb11a01d6f199c5" prot="public" static="no">
+        <name>ADCMSP432E4_PD_5_A6</name>
+        <initializer>((6 &lt;&lt; 16) | 0x5B20)  /* ch 6, port D, pin 5 */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/adc/ADCMSP432E4.h" line="85" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/adc/ADCMSP432E4.h" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_d_c_m_s_p432_e4_8h_1a9b9872b9cb760ddf0a12fc3505a32658" prot="public" static="no">
+        <name>ADCMSP432E4_PD_6_A5</name>
+        <initializer>((5 &lt;&lt; 16) | 0x5B40)  /* ch 5, port D, pin 6 */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/adc/ADCMSP432E4.h" line="86" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/adc/ADCMSP432E4.h" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_d_c_m_s_p432_e4_8h_1a06b04ca55727e2f2630cc76082c3afe4" prot="public" static="no">
+        <name>ADCMSP432E4_PD_7_A4</name>
+        <initializer>((4 &lt;&lt; 16) | 0x5B80)  /* ch 4, port D, pin 7 */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/adc/ADCMSP432E4.h" line="87" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/adc/ADCMSP432E4.h" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_d_c_m_s_p432_e4_8h_1aef77e2bb830cae0abf92980304156ec3" prot="public" static="no">
+        <name>ADCMSP432E4_PE_0_A3</name>
+        <initializer>((3 &lt;&lt; 16) | 0x5C01) /* ch 3, port E, pin 0 */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/adc/ADCMSP432E4.h" line="90" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/adc/ADCMSP432E4.h" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_d_c_m_s_p432_e4_8h_1aad888616e7d6fe48460236ff9044b3ec" prot="public" static="no">
+        <name>ADCMSP432E4_PE_1_A2</name>
+        <initializer>((2 &lt;&lt; 16) | 0x5C02) /* ch 2, port E, pin 1 */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/adc/ADCMSP432E4.h" line="91" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/adc/ADCMSP432E4.h" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_d_c_m_s_p432_e4_8h_1a4329db24d11af032f9b739eee9bfa69c" prot="public" static="no">
+        <name>ADCMSP432E4_PE_2_A1</name>
+        <initializer>((1 &lt;&lt; 16) | 0x5C04) /* ch 1, port E, pin 2 */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/adc/ADCMSP432E4.h" line="92" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/adc/ADCMSP432E4.h" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_d_c_m_s_p432_e4_8h_1a0cca393074d8cdb5558bf6b0dc965851" prot="public" static="no">
+        <name>ADCMSP432E4_PE_3_A0</name>
+        <initializer>((0 &lt;&lt; 16) | 0x5C08) /* ch 0, port E, pin 3 */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/adc/ADCMSP432E4.h" line="93" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/adc/ADCMSP432E4.h" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_d_c_m_s_p432_e4_8h_1ab9db6baae5594ec68a411d26eabad810" prot="public" static="no">
+        <name>ADCMSP432E4_PE_4_A9</name>
+        <initializer>((9 &lt;&lt; 16) | 0x5C10) /* ch 9, port E, pin 4 */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/adc/ADCMSP432E4.h" line="94" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/adc/ADCMSP432E4.h" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_d_c_m_s_p432_e4_8h_1a8e08bafa8269db5f28f99768d1d0df3f" prot="public" static="no">
+        <name>ADCMSP432E4_PE_5_A8</name>
+        <initializer>((8 &lt;&lt; 16) | 0x5C20) /* ch 8, port E, pin 5 */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/adc/ADCMSP432E4.h" line="95" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/adc/ADCMSP432E4.h" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_d_c_m_s_p432_e4_8h_1ad7b01070480539bb1ed6614361a1b235" prot="public" static="no">
+        <name>ADCMSP432E4_PE_6_A20</name>
+        <initializer>((20 &lt;&lt; 16) | 0x5C40) /* ch 20, port E, pin 6 */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/adc/ADCMSP432E4.h" line="96" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/adc/ADCMSP432E4.h" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_d_c_m_s_p432_e4_8h_1a0ded1a2318e1427144a9c8f59d52dab4" prot="public" static="no">
+        <name>ADCMSP432E4_PE_7_A21</name>
+        <initializer>((21 &lt;&lt; 16) | 0x5C80) /* ch 21, port E, pin 7 */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/adc/ADCMSP432E4.h" line="97" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/adc/ADCMSP432E4.h" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_d_c_m_s_p432_e4_8h_1a71ed8e7bf0dbc7547395b1cde1f1f47e" prot="public" static="no">
+        <name>ADCMSP432E4_PK_0_A16</name>
+        <initializer>((16 &lt;&lt; 16) | 0x6101) /* ch 16, port K, pin 0 */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/adc/ADCMSP432E4.h" line="100" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/adc/ADCMSP432E4.h" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_d_c_m_s_p432_e4_8h_1acea8fa2ebc70063440b29a27bc0a3f1f" prot="public" static="no">
+        <name>ADCMSP432E4_PK_1_A17</name>
+        <initializer>((17 &lt;&lt; 16) | 0x6102) /* ch 17, port K, pin 1 */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/adc/ADCMSP432E4.h" line="101" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/adc/ADCMSP432E4.h" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_d_c_m_s_p432_e4_8h_1aa65646f975b43caa82ca2dadfd2b601d" prot="public" static="no">
+        <name>ADCMSP432E4_PK_2_A18</name>
+        <initializer>((18 &lt;&lt; 16) | 0x6104) /* ch 18, port K, pin 2 */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/adc/ADCMSP432E4.h" line="102" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/adc/ADCMSP432E4.h" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_d_c_m_s_p432_e4_8h_1ae13103c345c95a592c11db4a08102ad4" prot="public" static="no">
+        <name>ADCMSP432E4_PK_3_A19</name>
+        <initializer>((19 &lt;&lt; 16) | 0x6108) /* ch 19, port K, pin 3 */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/adc/ADCMSP432E4.h" line="103" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/adc/ADCMSP432E4.h" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_d_c_m_s_p432_e4_8h_1ae8ea0e386eefc38d2722145be0d2c35e" prot="public" static="no">
+        <name>ADCMSP432E4_PP_6_A23</name>
+        <initializer>((23 &lt;&lt; 16) | 0x6540) /* ch 23, port P, pin 6 */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/adc/ADCMSP432E4.h" line="106" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/adc/ADCMSP432E4.h" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_d_c_m_s_p432_e4_8h_1a7444844e874744b68431ff676e2b6c65" prot="public" static="no">
+        <name>ADCMSP432E4_PP_7_A22</name>
+        <initializer>((22 &lt;&lt; 16) | 0x6580) /* ch 22, port P, pin 7 */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/adc/ADCMSP432E4.h" line="107" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/adc/ADCMSP432E4.h" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="_a_d_c_m_s_p432_e4_8h_1ac1bbc279b15d866f4d533dfdf899da3c" prot="public" static="no">
+        <name>ADCMSP432E4_ReferenceSource</name>
+        <enumvalue id="_a_d_c_m_s_p432_e4_8h_1ac1bbc279b15d866f4d533dfdf899da3ca13be0ba2dd036145a8d63e39ba264d9b" prot="public">
+          <name>ADCMSP432E4_VREF_INTERNAL</name>
+          <initializer>= ADC_REF_INT</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_a_d_c_m_s_p432_e4_8h_1ac1bbc279b15d866f4d533dfdf899da3cab222f02efdffd708cf642582b4c28e03" prot="public">
+          <name>ADCMSP432E4_VREF_EXTERNAL_3V</name>
+          <initializer>= ADC_REF_EXT_3V</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>ADCMSP432E4 reference source These fields are used by ADCMSP432E4_HWAttrs to specify the reference voltage for each channel. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/adc/ADCMSP432E4.h" line="115" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/adc/ADCMSP432E4.h" bodystart="115" bodyend="118"/>
+      </memberdef>
+      <memberdef kind="enum" id="_a_d_c_m_s_p432_e4_8h_1a0497c3b2574a65c4aa17d6406649db57" prot="public" static="no">
+        <name>ADCMSP432E4_Sequencer</name>
+        <enumvalue id="_a_d_c_m_s_p432_e4_8h_1a0497c3b2574a65c4aa17d6406649db57a3992d0d9a0beedfb8c6c7d24984e8116" prot="public">
+          <name>ADCMSP432E4_SEQ0</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_a_d_c_m_s_p432_e4_8h_1a0497c3b2574a65c4aa17d6406649db57a2120f8698cbdaa9337fbcb718cf7fc14" prot="public">
+          <name>ADCMSP432E4_SEQ1</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_a_d_c_m_s_p432_e4_8h_1a0497c3b2574a65c4aa17d6406649db57ad9f7bae4b908c449105683e9e0f515f5" prot="public">
+          <name>ADCMSP432E4_SEQ2</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_a_d_c_m_s_p432_e4_8h_1a0497c3b2574a65c4aa17d6406649db57ab8b4470d53b854a292f4b5ebb9058e0e" prot="public">
+          <name>ADCMSP432E4_SEQ3</name>
+          <initializer>= 3</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>ADCMSP432E4 Sequencer These fields are used by ADCMSP432E4_HWAttrs to specify the sample sequencer for each channel. </para>        </briefdescription>
+        <detaileddescription>
+<para>Each ADC module contains four programmable sequencers allowing the sampling of multiple analog input sources without controller intervention. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/adc/ADCMSP432E4.h" line="129" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/adc/ADCMSP432E4.h" bodystart="129" bodyend="134"/>
+      </memberdef>
+      <memberdef kind="enum" id="_a_d_c_m_s_p432_e4_8h_1a28d7fd045502f7ac21fe5741e2d9a01a" prot="public" static="no">
+        <name>ADCMSP432E4_Module</name>
+        <enumvalue id="_a_d_c_m_s_p432_e4_8h_1a28d7fd045502f7ac21fe5741e2d9a01aaab61e01e118a303bd54e62531a6e3d35" prot="public">
+          <name>ADCMSP432E4_MOD0</name>
+          <initializer>= ADC0_BASE</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_a_d_c_m_s_p432_e4_8h_1a28d7fd045502f7ac21fe5741e2d9a01aa87201b7cce360315e786953781b113d0" prot="public">
+          <name>ADCMSP432E4_MOD1</name>
+          <initializer>= ADC1_BASE</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>ADCMSP432E4 Module These fields are used by ADCMSP432E4_HWAttrs to specify the ADC module for each channel. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/adc/ADCMSP432E4.h" line="142" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/adc/ADCMSP432E4.h" bodystart="142" bodyend="145"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_a_d_c_m_s_p432_e4_8h_1a2222af12f4233dff8de674e33e52f927" prot="public" static="no" mutable="no">
+        <type>const <ref refid="struct_a_d_c___fxn_table" kindref="compound">ADC_FxnTable</ref></type>
+        <definition>const ADC_FxnTable ADCMSP432E4_fxnTable</definition>
+        <argsstring></argsstring>
+        <name>ADCMSP432E4_fxnTable</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/adc/ADCMSP432E4.h" line="149" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>ADC driver implementation for the ADC peripheral on MSP432E4. </para>    </briefdescription>
+    <detaileddescription>
+<para><hruler/>
+</para><para>This ADC driver implementation is designed to operate on a ADC peripheral for MSP432E4.</para><para>Refer to <ref refid="_a_d_c_8h" kindref="compound">ADC.h</ref> for a complete description of APIs &amp; example of use. </para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2018-2019<sp/>Texas<sp/>Instruments<sp/>Incorporated</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Redistribution<sp/>and<sp/>use<sp/>in<sp/>source<sp/>and<sp/>binary<sp/>forms,<sp/>with<sp/>or<sp/>without</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>modification,<sp/>are<sp/>permitted<sp/>provided<sp/>that<sp/>the<sp/>following<sp/>conditions</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>are<sp/>met:</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>of<sp/>source<sp/>code<sp/>must<sp/>retain<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer.</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>in<sp/>binary<sp/>form<sp/>must<sp/>reproduce<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer<sp/>in<sp/>the</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>documentation<sp/>and/or<sp/>other<sp/>materials<sp/>provided<sp/>with<sp/>the<sp/>distribution.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Neither<sp/>the<sp/>name<sp/>of<sp/>Texas<sp/>Instruments<sp/>Incorporated<sp/>nor<sp/>the<sp/>names<sp/>of</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>its<sp/>contributors<sp/>may<sp/>be<sp/>used<sp/>to<sp/>endorse<sp/>or<sp/>promote<sp/>products<sp/>derived</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>from<sp/>this<sp/>software<sp/>without<sp/>specific<sp/>prior<sp/>written<sp/>permission.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>THIS<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>BY<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>AND<sp/>CONTRIBUTORS<sp/>&quot;AS<sp/>IS&quot;</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>AND<sp/>ANY<sp/>EXPRESS<sp/>OR<sp/>IMPLIED<sp/>WARRANTIES,<sp/>INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>THE<sp/>IMPLIED<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY<sp/>AND<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>PURPOSE<sp/>ARE<sp/>DISCLAIMED.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE<sp/>COPYRIGHT<sp/>OWNER<sp/>OR</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>CONTRIBUTORS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>DIRECT,<sp/>INDIRECT,<sp/>INCIDENTAL,<sp/>SPECIAL,</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>EXEMPLARY,<sp/>OR<sp/>CONSEQUENTIAL<sp/>DAMAGES<sp/>(INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>PROCUREMENT<sp/>OF<sp/>SUBSTITUTE<sp/>GOODS<sp/>OR<sp/>SERVICES;<sp/>LOSS<sp/>OF<sp/>USE,<sp/>DATA,<sp/>OR<sp/>PROFITS;</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>OR<sp/>BUSINESS<sp/>INTERRUPTION)<sp/>HOWEVER<sp/>CAUSED<sp/>AND<sp/>ON<sp/>ANY<sp/>THEORY<sp/>OF<sp/>LIABILITY,</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/>STRICT<sp/>LIABILITY,<sp/>OR<sp/>TORT<sp/>(INCLUDING<sp/>NEGLIGENCE<sp/>OR</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*<sp/>OTHERWISE)<sp/>ARISING<sp/>IN<sp/>ANY<sp/>WAY<sp/>OUT<sp/>OF<sp/>THE<sp/>USE<sp/>OF<sp/>THIS<sp/>SOFTWARE,</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*<sp/>EVEN<sp/>IF<sp/>ADVISED<sp/>OF<sp/>THE<sp/>POSSIBILITY<sp/>OF<sp/>SUCH<sp/>DAMAGE.</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="comment">/*!****************************************************************************</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>*<sp/><sp/>@file<sp/><sp/><sp/><sp/><sp/><sp/><sp/>ADCMSP432E4.h</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>*<sp/><sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/>ADC<sp/>driver<sp/>implementation<sp/>for<sp/>the<sp/>ADC<sp/>peripheral<sp/>on<sp/>MSP432E4</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/>*<sp/><sp/>This<sp/>ADC<sp/>driver<sp/>implementation<sp/>is<sp/>designed<sp/>to<sp/>operate<sp/>on<sp/>a<sp/>ADC<sp/>peripheral</highlight></codeline>
+<codeline lineno="37"><highlight class="comment"><sp/>*<sp/><sp/>for<sp/>MSP432E4.</highlight></codeline>
+<codeline lineno="38"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="39"><highlight class="comment"><sp/>*<sp/><sp/>Refer<sp/>to<sp/>@ref<sp/>ADC.h<sp/>for<sp/>a<sp/>complete<sp/>description<sp/>of<sp/>APIs<sp/>&amp;<sp/>example<sp/>of<sp/>use.</highlight></codeline>
+<codeline lineno="40"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="41"><highlight class="comment"><sp/>******************************************************************************</highlight></codeline>
+<codeline lineno="42"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>ti_drivers_adc_ADCMSP432E4__include</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ti_drivers_adc_ADCMSP432E4__include</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdbool.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_a_d_c_8h" kindref="compound">ti/drivers/ADC.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ti/devices/msp432e4/inc/msp432.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ti/devices/msp432e4/driverlib/adc.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="58"><highlight class="comment"><sp/>*<sp/><sp/>ADC<sp/>port/pin<sp/>defines<sp/>for<sp/>pin<sp/>configuration.<sp/><sp/>Ports<sp/>B,<sp/>D,<sp/>E,<sp/>and<sp/>K<sp/>are</highlight></codeline>
+<codeline lineno="59"><highlight class="comment"><sp/>*<sp/><sp/>configurable<sp/>through<sp/>the<sp/>port<sp/>mapping<sp/>controller.<sp/><sp/>None<sp/>of<sp/>the<sp/>port</highlight></codeline>
+<codeline lineno="60"><highlight class="comment"><sp/>*<sp/><sp/>mappings<sp/>support<sp/>ADC.</highlight></codeline>
+<codeline lineno="61"><highlight class="comment"><sp/>*<sp/><sp/>Channel<sp/>specifies<sp/>the<sp/>ADC<sp/>channel<sp/>and<sp/>ranges<sp/>from<sp/>0<sp/>to<sp/>20.</highlight></codeline>
+<codeline lineno="62"><highlight class="comment"><sp/>*<sp/><sp/>pin<sp/>range:<sp/>0<sp/>-<sp/>7,<sp/>port<sp/>range:<sp/>0<sp/>-<sp/>15</highlight></codeline>
+<codeline lineno="63"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="64"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="65"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>32<sp/>-<sp/>21<sp/><sp/>20<sp/>-<sp/>16<sp/><sp/>15<sp/>-<sp/>8<sp/><sp/>7<sp/>-<sp/>0</highlight></codeline>
+<codeline lineno="66"><highlight class="comment"><sp/>*<sp/><sp/>---------------------------------</highlight></codeline>
+<codeline lineno="67"><highlight class="comment"><sp/>*<sp/><sp/>|<sp/>X<sp/>X<sp/>X<sp/>X<sp/>|<sp/>CHANNEL<sp/>|<sp/>PORT<sp/>|<sp/>PIN<sp/>|</highlight></codeline>
+<codeline lineno="68"><highlight class="comment"><sp/>*<sp/><sp/>---------------------------------</highlight></codeline>
+<codeline lineno="69"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="70"><highlight class="comment"><sp/>*<sp/><sp/>channel<sp/>=<sp/>(((config)<sp/>&gt;&gt;<sp/>16)<sp/>&amp;<sp/>0x1F)</highlight></codeline>
+<codeline lineno="71"><highlight class="comment"><sp/>*<sp/><sp/>port<sp/>=<sp/>(((config<sp/>&lt;&lt;<sp/>4)<sp/>&amp;<sp/>0x000FF000)<sp/>|<sp/>0x40000000)</highlight></codeline>
+<codeline lineno="72"><highlight class="comment"><sp/>*<sp/><sp/>pin<sp/>=<sp/>((config)<sp/>&amp;<sp/>0xFF)</highlight></codeline>
+<codeline lineno="73"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="74"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Port<sp/>B<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76" refid="_a_d_c_m_s_p432_e4_8h_1a37e0155608ca88c86b6d89c50be64f9b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADCMSP432E4_PB_4_A10<sp/>((10<sp/>&lt;&lt;<sp/>16)<sp/>|<sp/>0x5910)<sp/></highlight><highlight class="comment">/*<sp/>ch<sp/>10,<sp/>port<sp/>B,<sp/>pin<sp/>4<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77" refid="_a_d_c_m_s_p432_e4_8h_1a379fac5c2d0a3d0b30c27c90f96cfb2d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADCMSP432E4_PB_5_A11<sp/>((11<sp/>&lt;&lt;<sp/>16)<sp/>|<sp/>0x5920)<sp/></highlight><highlight class="comment">/*<sp/>ch<sp/>11,<sp/>port<sp/>B,<sp/>pin<sp/>5<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Port<sp/>D<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80" refid="_a_d_c_m_s_p432_e4_8h_1a0c2f657cfc9b18cd1e85ba32df4662b0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADCMSP432E4_PD_0_A15<sp/>((15<sp/>&lt;&lt;<sp/>16)<sp/>|<sp/>0x5B01)<sp/></highlight><highlight class="comment">/*<sp/>ch<sp/>15,<sp/>port<sp/>D,<sp/>pin<sp/>0<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81" refid="_a_d_c_m_s_p432_e4_8h_1a652a0d9fd32443f550b4a072cd9eee93" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADCMSP432E4_PD_1_A14<sp/>((14<sp/>&lt;&lt;<sp/>16)<sp/>|<sp/>0x5B02)<sp/></highlight><highlight class="comment">/*<sp/>ch<sp/>14,<sp/>port<sp/>D,<sp/>pin<sp/>1<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82" refid="_a_d_c_m_s_p432_e4_8h_1a5f0f3f73f152c7c79da5716bd56022ad" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADCMSP432E4_PD_2_A13<sp/>((13<sp/>&lt;&lt;<sp/>16)<sp/>|<sp/>0x5B04)<sp/></highlight><highlight class="comment">/*<sp/>ch<sp/>13,<sp/>port<sp/>D,<sp/>pin<sp/>2<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83" refid="_a_d_c_m_s_p432_e4_8h_1a0dbd13863aef870516d864639a99e0db" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADCMSP432E4_PD_3_A12<sp/>((12<sp/>&lt;&lt;<sp/>16)<sp/>|<sp/>0x5B08)<sp/></highlight><highlight class="comment">/*<sp/>ch<sp/>12,<sp/>port<sp/>D,<sp/>pin<sp/>3<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84" refid="_a_d_c_m_s_p432_e4_8h_1a9b19245b532384178e173fe6e60e2577" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADCMSP432E4_PD_4_A7<sp/><sp/>((7<sp/>&lt;&lt;<sp/>16)<sp/>|<sp/>0x5B10)<sp/><sp/></highlight><highlight class="comment">/*<sp/>ch<sp/>7,<sp/>port<sp/>D,<sp/>pin<sp/>4<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85" refid="_a_d_c_m_s_p432_e4_8h_1a72dab75e60363361ebb11a01d6f199c5" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADCMSP432E4_PD_5_A6<sp/><sp/>((6<sp/>&lt;&lt;<sp/>16)<sp/>|<sp/>0x5B20)<sp/><sp/></highlight><highlight class="comment">/*<sp/>ch<sp/>6,<sp/>port<sp/>D,<sp/>pin<sp/>5<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86" refid="_a_d_c_m_s_p432_e4_8h_1a9b9872b9cb760ddf0a12fc3505a32658" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADCMSP432E4_PD_6_A5<sp/><sp/>((5<sp/>&lt;&lt;<sp/>16)<sp/>|<sp/>0x5B40)<sp/><sp/></highlight><highlight class="comment">/*<sp/>ch<sp/>5,<sp/>port<sp/>D,<sp/>pin<sp/>6<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87" refid="_a_d_c_m_s_p432_e4_8h_1a06b04ca55727e2f2630cc76082c3afe4" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADCMSP432E4_PD_7_A4<sp/><sp/>((4<sp/>&lt;&lt;<sp/>16)<sp/>|<sp/>0x5B80)<sp/><sp/></highlight><highlight class="comment">/*<sp/>ch<sp/>4,<sp/>port<sp/>D,<sp/>pin<sp/>7<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Port<sp/>E<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90" refid="_a_d_c_m_s_p432_e4_8h_1aef77e2bb830cae0abf92980304156ec3" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADCMSP432E4_PE_0_A3<sp/><sp/>((3<sp/>&lt;&lt;<sp/>16)<sp/>|<sp/>0x5C01)<sp/></highlight><highlight class="comment">/*<sp/>ch<sp/>3,<sp/>port<sp/>E,<sp/>pin<sp/>0<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91" refid="_a_d_c_m_s_p432_e4_8h_1aad888616e7d6fe48460236ff9044b3ec" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADCMSP432E4_PE_1_A2<sp/><sp/>((2<sp/>&lt;&lt;<sp/>16)<sp/>|<sp/>0x5C02)<sp/></highlight><highlight class="comment">/*<sp/>ch<sp/>2,<sp/>port<sp/>E,<sp/>pin<sp/>1<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92" refid="_a_d_c_m_s_p432_e4_8h_1a4329db24d11af032f9b739eee9bfa69c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADCMSP432E4_PE_2_A1<sp/><sp/>((1<sp/>&lt;&lt;<sp/>16)<sp/>|<sp/>0x5C04)<sp/></highlight><highlight class="comment">/*<sp/>ch<sp/>1,<sp/>port<sp/>E,<sp/>pin<sp/>2<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93" refid="_a_d_c_m_s_p432_e4_8h_1a0cca393074d8cdb5558bf6b0dc965851" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADCMSP432E4_PE_3_A0<sp/><sp/>((0<sp/>&lt;&lt;<sp/>16)<sp/>|<sp/>0x5C08)<sp/></highlight><highlight class="comment">/*<sp/>ch<sp/>0,<sp/>port<sp/>E,<sp/>pin<sp/>3<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94" refid="_a_d_c_m_s_p432_e4_8h_1ab9db6baae5594ec68a411d26eabad810" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADCMSP432E4_PE_4_A9<sp/><sp/>((9<sp/>&lt;&lt;<sp/>16)<sp/>|<sp/>0x5C10)<sp/></highlight><highlight class="comment">/*<sp/>ch<sp/>9,<sp/>port<sp/>E,<sp/>pin<sp/>4<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95" refid="_a_d_c_m_s_p432_e4_8h_1a8e08bafa8269db5f28f99768d1d0df3f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADCMSP432E4_PE_5_A8<sp/><sp/>((8<sp/>&lt;&lt;<sp/>16)<sp/>|<sp/>0x5C20)<sp/></highlight><highlight class="comment">/*<sp/>ch<sp/>8,<sp/>port<sp/>E,<sp/>pin<sp/>5<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96" refid="_a_d_c_m_s_p432_e4_8h_1ad7b01070480539bb1ed6614361a1b235" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADCMSP432E4_PE_6_A20<sp/><sp/>((20<sp/>&lt;&lt;<sp/>16)<sp/>|<sp/>0x5C40)<sp/></highlight><highlight class="comment">/*<sp/>ch<sp/>20,<sp/>port<sp/>E,<sp/>pin<sp/>6<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97" refid="_a_d_c_m_s_p432_e4_8h_1a0ded1a2318e1427144a9c8f59d52dab4" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADCMSP432E4_PE_7_A21<sp/><sp/>((21<sp/>&lt;&lt;<sp/>16)<sp/>|<sp/>0x5C80)<sp/></highlight><highlight class="comment">/*<sp/>ch<sp/>21,<sp/>port<sp/>E,<sp/>pin<sp/>7<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Port<sp/>K<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100" refid="_a_d_c_m_s_p432_e4_8h_1a71ed8e7bf0dbc7547395b1cde1f1f47e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADCMSP432E4_PK_0_A16<sp/>((16<sp/>&lt;&lt;<sp/>16)<sp/>|<sp/>0x6101)<sp/></highlight><highlight class="comment">/*<sp/>ch<sp/>16,<sp/>port<sp/>K,<sp/>pin<sp/>0<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101" refid="_a_d_c_m_s_p432_e4_8h_1acea8fa2ebc70063440b29a27bc0a3f1f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADCMSP432E4_PK_1_A17<sp/>((17<sp/>&lt;&lt;<sp/>16)<sp/>|<sp/>0x6102)<sp/></highlight><highlight class="comment">/*<sp/>ch<sp/>17,<sp/>port<sp/>K,<sp/>pin<sp/>1<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102" refid="_a_d_c_m_s_p432_e4_8h_1aa65646f975b43caa82ca2dadfd2b601d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADCMSP432E4_PK_2_A18<sp/>((18<sp/>&lt;&lt;<sp/>16)<sp/>|<sp/>0x6104)<sp/></highlight><highlight class="comment">/*<sp/>ch<sp/>18,<sp/>port<sp/>K,<sp/>pin<sp/>2<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103" refid="_a_d_c_m_s_p432_e4_8h_1ae13103c345c95a592c11db4a08102ad4" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADCMSP432E4_PK_3_A19<sp/>((19<sp/>&lt;&lt;<sp/>16)<sp/>|<sp/>0x6108)<sp/></highlight><highlight class="comment">/*<sp/>ch<sp/>19,<sp/>port<sp/>K,<sp/>pin<sp/>3<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Port<sp/>P<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106" refid="_a_d_c_m_s_p432_e4_8h_1ae8ea0e386eefc38d2722145be0d2c35e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADCMSP432E4_PP_6_A23<sp/><sp/>((23<sp/>&lt;&lt;<sp/>16)<sp/>|<sp/>0x6540)<sp/></highlight><highlight class="comment">/*<sp/>ch<sp/>23,<sp/>port<sp/>P,<sp/>pin<sp/>6<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107" refid="_a_d_c_m_s_p432_e4_8h_1a7444844e874744b68431ff676e2b6c65" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADCMSP432E4_PP_7_A22<sp/><sp/>((22<sp/>&lt;&lt;<sp/>16)<sp/>|<sp/>0x6580)<sp/></highlight><highlight class="comment">/*<sp/>ch<sp/>22,<sp/>port<sp/>P,<sp/>pin<sp/>7<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115" refid="_a_d_c_m_s_p432_e4_8h_1ac1bbc279b15d866f4d533dfdf899da3c" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="116" refid="_a_d_c_m_s_p432_e4_8h_1ac1bbc279b15d866f4d533dfdf899da3ca13be0ba2dd036145a8d63e39ba264d9b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_a_d_c_m_s_p432_e4_8h_1ac1bbc279b15d866f4d533dfdf899da3ca13be0ba2dd036145a8d63e39ba264d9b" kindref="member">ADCMSP432E4_VREF_INTERNAL</ref><sp/>=<sp/>ADC_REF_INT,</highlight></codeline>
+<codeline lineno="117" refid="_a_d_c_m_s_p432_e4_8h_1ac1bbc279b15d866f4d533dfdf899da3cab222f02efdffd708cf642582b4c28e03" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_a_d_c_m_s_p432_e4_8h_1ac1bbc279b15d866f4d533dfdf899da3cab222f02efdffd708cf642582b4c28e03" kindref="member">ADCMSP432E4_VREF_EXTERNAL_3V</ref><sp/>=<sp/>ADC_REF_EXT_3V</highlight></codeline>
+<codeline lineno="118"><highlight class="normal">}<sp/><ref refid="_a_d_c_m_s_p432_e4_8h_1ac1bbc279b15d866f4d533dfdf899da3c" kindref="member">ADCMSP432E4_ReferenceSource</ref>;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129" refid="_a_d_c_m_s_p432_e4_8h_1a0497c3b2574a65c4aa17d6406649db57" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="130" refid="_a_d_c_m_s_p432_e4_8h_1a0497c3b2574a65c4aa17d6406649db57a3992d0d9a0beedfb8c6c7d24984e8116" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_a_d_c_m_s_p432_e4_8h_1a0497c3b2574a65c4aa17d6406649db57a3992d0d9a0beedfb8c6c7d24984e8116" kindref="member">ADCMSP432E4_SEQ0</ref><sp/>=<sp/>0,</highlight></codeline>
+<codeline lineno="131" refid="_a_d_c_m_s_p432_e4_8h_1a0497c3b2574a65c4aa17d6406649db57a2120f8698cbdaa9337fbcb718cf7fc14" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_a_d_c_m_s_p432_e4_8h_1a0497c3b2574a65c4aa17d6406649db57a2120f8698cbdaa9337fbcb718cf7fc14" kindref="member">ADCMSP432E4_SEQ1</ref><sp/>=<sp/>1,</highlight></codeline>
+<codeline lineno="132" refid="_a_d_c_m_s_p432_e4_8h_1a0497c3b2574a65c4aa17d6406649db57ad9f7bae4b908c449105683e9e0f515f5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_a_d_c_m_s_p432_e4_8h_1a0497c3b2574a65c4aa17d6406649db57ad9f7bae4b908c449105683e9e0f515f5" kindref="member">ADCMSP432E4_SEQ2</ref><sp/>=<sp/>2,</highlight></codeline>
+<codeline lineno="133" refid="_a_d_c_m_s_p432_e4_8h_1a0497c3b2574a65c4aa17d6406649db57ab8b4470d53b854a292f4b5ebb9058e0e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_a_d_c_m_s_p432_e4_8h_1a0497c3b2574a65c4aa17d6406649db57ab8b4470d53b854a292f4b5ebb9058e0e" kindref="member">ADCMSP432E4_SEQ3</ref><sp/>=<sp/>3</highlight></codeline>
+<codeline lineno="134"><highlight class="normal">}<sp/><ref refid="_a_d_c_m_s_p432_e4_8h_1a0497c3b2574a65c4aa17d6406649db57" kindref="member">ADCMSP432E4_Sequencer</ref>;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142" refid="_a_d_c_m_s_p432_e4_8h_1a28d7fd045502f7ac21fe5741e2d9a01a" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="143" refid="_a_d_c_m_s_p432_e4_8h_1a28d7fd045502f7ac21fe5741e2d9a01aaab61e01e118a303bd54e62531a6e3d35" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_a_d_c_m_s_p432_e4_8h_1a28d7fd045502f7ac21fe5741e2d9a01aaab61e01e118a303bd54e62531a6e3d35" kindref="member">ADCMSP432E4_MOD0</ref><sp/>=<sp/>ADC0_BASE,</highlight></codeline>
+<codeline lineno="144" refid="_a_d_c_m_s_p432_e4_8h_1a28d7fd045502f7ac21fe5741e2d9a01aa87201b7cce360315e786953781b113d0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_a_d_c_m_s_p432_e4_8h_1a28d7fd045502f7ac21fe5741e2d9a01aa87201b7cce360315e786953781b113d0" kindref="member">ADCMSP432E4_MOD1</ref><sp/>=<sp/>ADC1_BASE</highlight></codeline>
+<codeline lineno="145"><highlight class="normal">}<sp/><ref refid="_a_d_c_m_s_p432_e4_8h_1a28d7fd045502f7ac21fe5741e2d9a01a" kindref="member">ADCMSP432E4_Module</ref>;</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>ADC<sp/>function<sp/>table<sp/>pointer<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_a_d_c___fxn_table" kindref="compound">ADC_FxnTable</ref><sp/><ref refid="_a_d_c_m_s_p432_e4_8h_1a2222af12f4233dff8de674e33e52f927" kindref="member">ADCMSP432E4_fxnTable</ref>;</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight></codeline>
+<codeline lineno="170" refid="struct_a_d_c_m_s_p432_e4___h_w_attrs_v1" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="171" refid="struct_a_d_c_m_s_p432_e4___h_w_attrs_v1_1a19e07a100d4dd646e290838edd9ff3a3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint_fast16_t<sp/><sp/><ref refid="struct_a_d_c_m_s_p432_e4___h_w_attrs_v1_1a19e07a100d4dd646e290838edd9ff3a3" kindref="member">adcPin</ref>;<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="172" refid="struct_a_d_c_m_s_p432_e4___h_w_attrs_v1_1aa3f7e94aeaa6f4e600dc49335e5a14c8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint_fast16_t<sp/><sp/><ref refid="struct_a_d_c_m_s_p432_e4___h_w_attrs_v1_1aa3f7e94aeaa6f4e600dc49335e5a14c8" kindref="member">refVoltage</ref>;<sp/></highlight></codeline>
+<codeline lineno="173" refid="struct_a_d_c_m_s_p432_e4___h_w_attrs_v1_1a6cdd9cf1e20a244ddc39289cf631184e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>ADCMSP432E4_Module<sp/><ref refid="struct_a_d_c_m_s_p432_e4___h_w_attrs_v1_1a6cdd9cf1e20a244ddc39289cf631184e" kindref="member">adcModule</ref>;</highlight></codeline>
+<codeline lineno="174" refid="struct_a_d_c_m_s_p432_e4___h_w_attrs_v1_1ac94645e633b96ebc987b8bb824643257" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_a_d_c_m_s_p432_e4_8h_1a0497c3b2574a65c4aa17d6406649db57" kindref="member">ADCMSP432E4_Sequencer</ref><sp/><ref refid="struct_a_d_c_m_s_p432_e4___h_w_attrs_v1_1ac94645e633b96ebc987b8bb824643257" kindref="member">adcSeq</ref>;</highlight></codeline>
+<codeline lineno="175"><highlight class="normal">}<sp/><ref refid="struct_a_d_c_m_s_p432_e4___h_w_attrs_v1" kindref="compound">ADCMSP432E4_HWAttrsV1</ref>;</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight></codeline>
+<codeline lineno="182" refid="struct_a_d_c_m_s_p432_e4___object" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="183" refid="struct_a_d_c_m_s_p432_e4___object_1af2590da1fa7d07ce45acf8057fb6cec0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct_a_d_c_m_s_p432_e4___object_1af2590da1fa7d07ce45acf8057fb6cec0" kindref="member">isOpen</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>To<sp/>determine<sp/>if<sp/>the<sp/>ADC<sp/>is<sp/>open<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="184" refid="struct_a_d_c_m_s_p432_e4___object_1a8d72f845b153c8990d8f890ecbb97fc2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct_a_d_c_m_s_p432_e4___object_1a8d72f845b153c8990d8f890ecbb97fc2" kindref="member">isProtected</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Flag<sp/>to<sp/>indicate<sp/>if<sp/>thread<sp/>safety<sp/>is<sp/>ensured</highlight></codeline>
+<codeline lineno="185"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>by<sp/>the<sp/>driver<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="normal">}<sp/><ref refid="struct_a_d_c_m_s_p432_e4___object" kindref="compound">ADCMSP432E4_Object</ref>;</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="189"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"></highlight></codeline>
+<codeline lineno="192"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>ti_drivers_adc_ADCMSP432E4__include<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="exports/tidrivers_msp432e4/source/ti/drivers/adc/ADCMSP432E4.h"/>
+  </compounddef>
+</doxygen>

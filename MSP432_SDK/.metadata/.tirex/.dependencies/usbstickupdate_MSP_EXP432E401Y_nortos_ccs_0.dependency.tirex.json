@@ -1,0 +1,12 @@
+[
+    {
+        "files": [
+            "+../simple_fs.c -> simple_fs.c",
+            "+../simple_fs.h -> simple_fs.h",
+            "+../usb_stick_update.c -> usb_stick_update.c",
+            "+../system_msp432e401y.c -> system_msp432e401y.c",
+            "+startup_msp432e401y_ccs.c -> ccs/startup_msp432e401y_ccs.c",
+            "+usbs_stick_update.cmd -> usbs_stick_update.cmd"
+        ]
+    }
+]

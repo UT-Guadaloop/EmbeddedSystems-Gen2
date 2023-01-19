@@ -1,0 +1,41 @@
+[
+    {
+        "files": [
+            "+../bl_config.h -> bl_config.h",
+            "+../system_msp432e401y.c -> system_msp432e401y.c",
+            "+../README.md -> README.md",
+            "+../README.html -> README.html",
+            "+../../../../../../source/ti/devices/msp432e4/boot_loader/bl_autobaud.c -> bl_autobaud.c",
+            "+../../../../../../source/ti/devices/msp432e4/boot_loader/bl_can.c -> bl_can.c",
+            "+../../../../../../source/ti/devices/msp432e4/boot_loader/bl_check.c -> bl_check.c",
+            "+../../../../../../source/ti/devices/msp432e4/boot_loader/bl_crc32.c -> bl_crc32.c",
+            "+../../../../../../source/ti/devices/msp432e4/boot_loader/bl_decrypt.c -> bl_decrypt.c",
+            "+../../../../../../source/ti/devices/msp432e4/boot_loader/bl_emac.c -> bl_emac.c",
+            "+../../../../../../source/ti/devices/msp432e4/boot_loader/bl_flash.c -> bl_flash.c",
+            "+../../../../../../source/ti/devices/msp432e4/boot_loader/bl_i2c.c -> bl_i2c.c",
+            "+../../../../../../source/ti/devices/msp432e4/boot_loader/bl_main.c -> bl_main.c",
+            "+../../../../../../source/ti/devices/msp432e4/boot_loader/bl_packet.c -> bl_packet.c",
+            "+../../../../../../source/ti/devices/msp432e4/boot_loader/bl_ssi.c -> bl_ssi.c",
+            "+../../../../../../source/ti/devices/msp432e4/boot_loader/bl_uart.c -> bl_uart.c",
+            "+../../../../../../source/ti/devices/msp432e4/boot_loader/bl_usb.c -> bl_usb.c",
+            "+../../../../../../source/ti/devices/msp432e4/boot_loader/bl_usbfuncs.c -> bl_usbfuncs.c",
+            "+../../../../../../source/ti/devices/msp432e4/boot_loader/bl_can.h -> bl_can.h",
+            "+../../../../../../source/ti/devices/msp432e4/boot_loader/bl_can_timing.h -> bl_can_timing.h",
+            "+../../../../../../source/ti/devices/msp432e4/boot_loader/bl_check.h -> bl_check.h",
+            "+../../../../../../source/ti/devices/msp432e4/boot_loader/bl_commands.h -> bl_commands.h",
+            "+../../../../../../source/ti/devices/msp432e4/boot_loader/bl_crc32.h -> bl_crc32.h",
+            "+../../../../../../source/ti/devices/msp432e4/boot_loader/bl_crystal.h -> bl_crystal.h",
+            "+../../../../../../source/ti/devices/msp432e4/boot_loader/bl_decrypt.h -> bl_decrypt.h",
+            "+../../../../../../source/ti/devices/msp432e4/boot_loader/bl_flash.h -> bl_flash.h",
+            "+../../../../../../source/ti/devices/msp432e4/boot_loader/bl_hooks.h -> bl_hooks.h",
+            "+../../../../../../source/ti/devices/msp432e4/boot_loader/bl_i2c.h -> bl_i2c.h",
+            "+../../../../../../source/ti/devices/msp432e4/boot_loader/bl_packet.h -> bl_packet.h",
+            "+../../../../../../source/ti/devices/msp432e4/boot_loader/bl_ssi.h -> bl_ssi.h",
+            "+../../../../../../source/ti/devices/msp432e4/boot_loader/bl_uart.h -> bl_uart.h",
+            "+../../../../../../source/ti/devices/msp432e4/boot_loader/bl_usbfuncs.h -> bl_usbfuncs.h",
+            "+../../../../../../source/ti/devices/msp432e4/boot_loader/usbdfu.h -> usbdfu.h",
+            "+bl_startup_ccs.s -> ccs/bl_startup_ccs.s",
+            "+bl_link_ccs.cmd -> bl_link_ccs.cmd"
+        ]
+    }
+]

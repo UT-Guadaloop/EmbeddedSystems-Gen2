@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="struct_comparator___params" kind="struct" language="C++" prot="public">
+    <compoundname>Comparator_Params</compoundname>
+    <includes refid="_comparator_8h" local="no">Comparator.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_comparator___params_1a3489bd7ec8306583b38fe521dedbf676" prot="public" static="no" mutable="no">
+        <type><ref refid="_comparator_8h_1aa0647f68f02d466e5e9981bbdbb8a829" kindref="member">Comparator_CallBackFxn</ref></type>
+        <definition>Comparator_CallBackFxn Comparator_Params::callbackFxn</definition>
+        <argsstring></argsstring>
+        <name>callbackFxn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Callback function called when events happen in the Comparator driver </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/Comparator.h" line="388" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/Comparator.h" bodystart="388" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_comparator___params_1ae8e6e23c4893c9a6206a022cac693c78" prot="public" static="no" mutable="no">
+        <type><ref refid="_comparator_8h_1aadc4ddac80c21fe27943657fa3011a01" kindref="member">Comparator_OutputPolarity</ref></type>
+        <definition>Comparator_OutputPolarity Comparator_Params::outputPolarity</definition>
+        <argsstring></argsstring>
+        <name>outputPolarity</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Output polarity of the Comparator module (inverted/normal) </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/Comparator.h" line="391" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/Comparator.h" bodystart="391" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_comparator___params_1a022c0e0c71f9aff12cca9ff0ba086dc5" prot="public" static="no" mutable="no">
+        <type><ref refid="_comparator_8h_1a740a7a783a039a243667b2b858e5f238" kindref="member">Comparator_InterruptLevel</ref></type>
+        <definition>Comparator_InterruptLevel Comparator_Params::interruptLevel</definition>
+        <argsstring></argsstring>
+        <name>interruptLevel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Interrupt level of the Comparator module (edge or level triggers) </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/Comparator.h" line="394" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/Comparator.h" bodystart="394" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Comparator Parameters. </para>    </briefdescription>
+    <detaileddescription>
+<para>Comparator parameters are used by the <ref refid="_comparator_8h_1a92b76b217b64f0d709dda89aba717c05" kindref="member">Comparator_open()</ref> call. Default values for these parameters are set using <ref refid="_comparator_8h_1a564d4e90c709868465292753b88508f0" kindref="member">Comparator_Params_init()</ref>. </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="158">
+        <label>Comparator_Config_</label>
+        <link refid="struct_comparator___config__"/>
+        <childnode refid="159" relation="usage">
+          <edgelabel>fxnTablePtr</edgelabel>
+        </childnode>
+      </node>
+      <node id="157">
+        <label>Comparator_Params</label>
+        <link refid="struct_comparator___params"/>
+        <childnode refid="158" relation="usage">
+          <edgelabel>callbackFxn</edgelabel>
+        </childnode>
+      </node>
+      <node id="159">
+        <label>Comparator_FxnTable</label>
+        <link refid="struct_comparator___fxn_table"/>
+        <childnode refid="158" relation="usage">
+          <edgelabel>closeFxn</edgelabel>
+          <edgelabel>stopFxn</edgelabel>
+          <edgelabel>getLevelFxn</edgelabel>
+          <edgelabel>initFxn</edgelabel>
+          <edgelabel>startFxn</edgelabel>
+          <edgelabel>openFxn</edgelabel>
+          <edgelabel>setParamsFxn</edgelabel>
+          <edgelabel>getParamsFxn</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="exports/tidrivers_msp432e4/source/ti/drivers/Comparator.h" line="386" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/Comparator.h" bodystart="385" bodyend="396"/>
+    <listofallmembers>
+      <member refid="struct_comparator___params_1a3489bd7ec8306583b38fe521dedbf676" prot="public" virt="non-virtual"><scope>Comparator_Params</scope><name>callbackFxn</name></member>
+      <member refid="struct_comparator___params_1a022c0e0c71f9aff12cca9ff0ba086dc5" prot="public" virt="non-virtual"><scope>Comparator_Params</scope><name>interruptLevel</name></member>
+      <member refid="struct_comparator___params_1ae8e6e23c4893c9a6206a022cac693c78" prot="public" virt="non-virtual"><scope>Comparator_Params</scope><name>outputPolarity</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

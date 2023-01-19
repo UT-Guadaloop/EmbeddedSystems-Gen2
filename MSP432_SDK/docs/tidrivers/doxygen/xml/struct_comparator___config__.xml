@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="struct_comparator___config__" kind="struct" language="C++" prot="public">
+    <compoundname>Comparator_Config_</compoundname>
+    <includes refid="_comparator_8h" local="no">Comparator.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_comparator___config___1aa263a10b841d7c02ca7e834fd6883466" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_comparator___fxn_table" kindref="compound">Comparator_FxnTable</ref> const  *</type>
+        <definition>Comparator_FxnTable const* Comparator_Config_::fxnTablePtr</definition>
+        <argsstring></argsstring>
+        <name>fxnTablePtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pointer to a <ref refid="index_1driver_function_table" kindref="member">function pointer table</ref> with driver-specific implementations of Comparator APIs </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/Comparator.h" line="491" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/Comparator.h" bodystart="491" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_comparator___config___1a2846ace59a02b821543c67625292953e" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* Comparator_Config_::object</definition>
+        <argsstring></argsstring>
+        <name>object</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pointer to a driver specific <ref refid="index_1driver_objects" kindref="member">data object</ref>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/Comparator.h" line="494" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/Comparator.h" bodystart="494" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_comparator___config___1a346dfc8ec7a6a7c9c96fad0570b84aa4" prot="public" static="no" mutable="no">
+        <type>void const  *</type>
+        <definition>void const* Comparator_Config_::hwAttrs</definition>
+        <argsstring></argsstring>
+        <name>hwAttrs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pointer to a driver specific <ref refid="index_1driver_hardware_attributes" kindref="member">hardware attributes structure</ref>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/Comparator.h" line="498" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/Comparator.h" bodystart="498" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Comparator driver&apos;s custom <ref refid="index_1driver_configuration" kindref="member">configuration</ref> structure. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="_comparator_8h_1a46d83babc082f59a5e729b34c50f9e55" kindref="member">Comparator_init()</ref> </para></simplesect>
+</para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="151">
+        <label>Comparator_Config_</label>
+        <link refid="struct_comparator___config__"/>
+        <childnode refid="152" relation="usage">
+          <edgelabel>fxnTablePtr</edgelabel>
+        </childnode>
+      </node>
+      <node id="152">
+        <label>Comparator_FxnTable</label>
+        <link refid="struct_comparator___fxn_table"/>
+        <childnode refid="151" relation="usage">
+          <edgelabel>closeFxn</edgelabel>
+          <edgelabel>stopFxn</edgelabel>
+          <edgelabel>getLevelFxn</edgelabel>
+          <edgelabel>initFxn</edgelabel>
+          <edgelabel>startFxn</edgelabel>
+          <edgelabel>openFxn</edgelabel>
+          <edgelabel>setParamsFxn</edgelabel>
+          <edgelabel>getParamsFxn</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="exports/tidrivers_msp432e4/source/ti/drivers/Comparator.h" line="488" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/Comparator.h" bodystart="487" bodyend="499"/>
+    <listofallmembers>
+      <member refid="struct_comparator___config___1aa263a10b841d7c02ca7e834fd6883466" prot="public" virt="non-virtual"><scope>Comparator_Config_</scope><name>fxnTablePtr</name></member>
+      <member refid="struct_comparator___config___1a346dfc8ec7a6a7c9c96fad0570b84aa4" prot="public" virt="non-virtual"><scope>Comparator_Config_</scope><name>hwAttrs</name></member>
+      <member refid="struct_comparator___config___1a2846ace59a02b821543c67625292953e" prot="public" virt="non-virtual"><scope>Comparator_Config_</scope><name>object</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

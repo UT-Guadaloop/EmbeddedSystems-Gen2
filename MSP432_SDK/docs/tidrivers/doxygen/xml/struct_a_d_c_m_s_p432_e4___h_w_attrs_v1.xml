@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="struct_a_d_c_m_s_p432_e4___h_w_attrs_v1" kind="struct" language="C++" prot="public">
+    <compoundname>ADCMSP432E4_HWAttrsV1</compoundname>
+    <includes refid="_a_d_c_m_s_p432_e4_8h" local="no">ADCMSP432E4.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_a_d_c_m_s_p432_e4___h_w_attrs_v1_1a19e07a100d4dd646e290838edd9ff3a3" prot="public" static="no" mutable="no">
+        <type>uint_fast16_t</type>
+        <definition>uint_fast16_t ADCMSP432E4_HWAttrsV1::adcPin</definition>
+        <argsstring></argsstring>
+        <name>adcPin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>ADC pin, port channel </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/adc/ADCMSP432E4.h" line="171" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/adc/ADCMSP432E4.h" bodystart="171" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_a_d_c_m_s_p432_e4___h_w_attrs_v1_1aa3f7e94aeaa6f4e600dc49335e5a14c8" prot="public" static="no" mutable="no">
+        <type>uint_fast16_t</type>
+        <definition>uint_fast16_t ADCMSP432E4_HWAttrsV1::refVoltage</definition>
+        <argsstring></argsstring>
+        <name>refVoltage</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Reference voltage for ADC channel </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/adc/ADCMSP432E4.h" line="172" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/adc/ADCMSP432E4.h" bodystart="172" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_a_d_c_m_s_p432_e4___h_w_attrs_v1_1a6cdd9cf1e20a244ddc39289cf631184e" prot="public" static="no" mutable="no">
+        <type><ref refid="_a_d_c_m_s_p432_e4_8h_1a28d7fd045502f7ac21fe5741e2d9a01a" kindref="member">ADCMSP432E4_Module</ref></type>
+        <definition>ADCMSP432E4_Module ADCMSP432E4_HWAttrsV1::adcModule</definition>
+        <argsstring></argsstring>
+        <name>adcModule</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/adc/ADCMSP432E4.h" line="173" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/adc/ADCMSP432E4.h" bodystart="173" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_a_d_c_m_s_p432_e4___h_w_attrs_v1_1ac94645e633b96ebc987b8bb824643257" prot="public" static="no" mutable="no">
+        <type><ref refid="_a_d_c_m_s_p432_e4_8h_1a0497c3b2574a65c4aa17d6406649db57" kindref="member">ADCMSP432E4_Sequencer</ref></type>
+        <definition>ADCMSP432E4_Sequencer ADCMSP432E4_HWAttrsV1::adcSeq</definition>
+        <argsstring></argsstring>
+        <name>adcSeq</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/adc/ADCMSP432E4.h" line="174" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/adc/ADCMSP432E4.h" bodystart="174" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>ADCMSP432E4 Hardware attributes These fields are used by driverlib APIs and therefore must be populated by driverlib macro definitions. For SimpleLink these definitions are found in: </para>    </briefdescription>
+    <detaileddescription>
+<para><itemizedlist>
+<listitem><para><ref refid="_a_d_c_8h" kindref="compound">adc.h</ref></para></listitem><listitem><para><ref refid="_g_p_i_o_8h" kindref="compound">gpio.h</ref></para></listitem></itemizedlist>
+</para><para>A sample structure is shown below: <programlisting><codeline><highlight class="normal">const<sp/>ADCMSP432E4_HWAttrsV1<sp/>adcMSP432E4HWAttrs[1]<sp/>=<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.adcPin<sp/>=<sp/>ADCMSP432E4_PE_0_A3,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.refVoltage<sp/>=<sp/>ADCMSP432E4_VREF_INTERNAL,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.adcModule<sp/>=<sp/>ADCMSP432E4_MOD0,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.adcSeq<sp/>=<sp/>ADCMSP432E4_SEQ0</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal">};</highlight></codeline>
+</programlisting> </para>    </detaileddescription>
+    <location file="exports/tidrivers_msp432e4/source/ti/drivers/adc/ADCMSP432E4.h" line="170" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/adc/ADCMSP432E4.h" bodystart="170" bodyend="175"/>
+    <listofallmembers>
+      <member refid="struct_a_d_c_m_s_p432_e4___h_w_attrs_v1_1a6cdd9cf1e20a244ddc39289cf631184e" prot="public" virt="non-virtual"><scope>ADCMSP432E4_HWAttrsV1</scope><name>adcModule</name></member>
+      <member refid="struct_a_d_c_m_s_p432_e4___h_w_attrs_v1_1a19e07a100d4dd646e290838edd9ff3a3" prot="public" virt="non-virtual"><scope>ADCMSP432E4_HWAttrsV1</scope><name>adcPin</name></member>
+      <member refid="struct_a_d_c_m_s_p432_e4___h_w_attrs_v1_1ac94645e633b96ebc987b8bb824643257" prot="public" virt="non-virtual"><scope>ADCMSP432E4_HWAttrsV1</scope><name>adcSeq</name></member>
+      <member refid="struct_a_d_c_m_s_p432_e4___h_w_attrs_v1_1aa3f7e94aeaa6f4e600dc49335e5a14c8" prot="public" virt="non-virtual"><scope>ADCMSP432E4_HWAttrsV1</scope><name>refVoltage</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

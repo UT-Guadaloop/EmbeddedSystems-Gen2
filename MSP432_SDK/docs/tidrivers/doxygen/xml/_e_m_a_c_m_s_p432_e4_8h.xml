@@ -1,0 +1,287 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="_e_m_a_c_m_s_p432_e4_8h" kind="file" language="C++">
+    <compoundname>EMACMSP432E4.h</compoundname>
+    <includes local="no">ti/ndk/inc/stkmain.h</includes>
+    <includes refid="_g_p_i_o_m_s_p432_e4_8h" local="no">ti/drivers/gpio/GPIOMSP432E4.h</includes>
+    <incdepgraph>
+      <node id="261">
+        <label>ti/drivers/gpio/GPIOMSP432E4.h</label>
+        <link refid="_g_p_i_o_m_s_p432_e4_8h"/>
+        <childnode refid="262" relation="include">
+        </childnode>
+        <childnode refid="263" relation="include">
+        </childnode>
+        <childnode refid="264" relation="include">
+        </childnode>
+        <childnode refid="265" relation="include">
+        </childnode>
+      </node>
+      <node id="262">
+        <label>stdint.h</label>
+      </node>
+      <node id="260">
+        <label>ti/ndk/inc/stkmain.h</label>
+      </node>
+      <node id="264">
+        <label>ti/devices/msp432e4/driverlib/gpio.h</label>
+      </node>
+      <node id="265">
+        <label>ti/drivers/GPIO.h</label>
+        <link refid="_g_p_i_o_8h"/>
+        <childnode refid="262" relation="include">
+        </childnode>
+      </node>
+      <node id="259">
+        <label>EMACMSP432E4.h</label>
+        <link refid="_e_m_a_c_m_s_p432_e4_8h"/>
+        <childnode refid="260" relation="include">
+        </childnode>
+        <childnode refid="261" relation="include">
+        </childnode>
+      </node>
+      <node id="263">
+        <label>ti/devices/msp432e4/inc/msp432.h</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="struct_e_m_a_c_m_s_p432_e4___h_w_attrs" prot="public">EMACMSP432E4_HWAttrs</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_e_m_a_c_m_s_p432_e4_8h_1a873bc5c85a97addef8f1233ebeb9a619" prot="public" static="no">
+        <name>EMACMSP432E4_PF0_EN0LED0</name>
+        <initializer><ref refid="_g_p_i_o_m_s_p432_e4_8h_1ae77f77ea12a04525c78d194dbf04edcf" kindref="member">GPIOMSP432E4_pinConfigMask</ref>(<ref refid="_g_p_i_o_m_s_p432_e4_8h_1aace72b9277a3dc611fecf03736b2ee22" kindref="member">GPIOMSP432E4_PORTF</ref>, 0, GPIO_PF0_EN0LED0)</initializer>
+        <briefdescription>
+<para>PF0 is used for EN0LED0. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/emac/EMACMSP432E4.h" line="65" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/emac/EMACMSP432E4.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_e_m_a_c_m_s_p432_e4_8h_1a1a0f0965c4886003f7d76bf9f0beeaf3" prot="public" static="no">
+        <name>EMACMSP432E4_PK4_EN0LED0</name>
+        <initializer><ref refid="_g_p_i_o_m_s_p432_e4_8h_1ae77f77ea12a04525c78d194dbf04edcf" kindref="member">GPIOMSP432E4_pinConfigMask</ref>(<ref refid="_g_p_i_o_m_s_p432_e4_8h_1a78d9a398d7bd191183cdae9712061571" kindref="member">GPIOMSP432E4_PORTK</ref>, 4, GPIO_PK4_EN0LED0)</initializer>
+        <briefdescription>
+<para>PK4 is used for EN0LED0. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/emac/EMACMSP432E4.h" line="70" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/emac/EMACMSP432E4.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_e_m_a_c_m_s_p432_e4_8h_1a0163da7e79614b74175c3369f91b2d33" prot="public" static="no">
+        <name>EMACMSP432E4_PF4_EN0LED1</name>
+        <initializer><ref refid="_g_p_i_o_m_s_p432_e4_8h_1ae77f77ea12a04525c78d194dbf04edcf" kindref="member">GPIOMSP432E4_pinConfigMask</ref>(<ref refid="_g_p_i_o_m_s_p432_e4_8h_1aace72b9277a3dc611fecf03736b2ee22" kindref="member">GPIOMSP432E4_PORTF</ref>, 4, GPIO_PF4_EN0LED1)</initializer>
+        <briefdescription>
+<para>PF4 is used for EN0LED1. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/emac/EMACMSP432E4.h" line="75" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/emac/EMACMSP432E4.h" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_e_m_a_c_m_s_p432_e4_8h_1a009c1bb2e3cd33f2d2434d949bdbc678" prot="public" static="no">
+        <name>EMACMSP432E4_PK6_EN0LED1</name>
+        <initializer><ref refid="_g_p_i_o_m_s_p432_e4_8h_1ae77f77ea12a04525c78d194dbf04edcf" kindref="member">GPIOMSP432E4_pinConfigMask</ref>(<ref refid="_g_p_i_o_m_s_p432_e4_8h_1a78d9a398d7bd191183cdae9712061571" kindref="member">GPIOMSP432E4_PORTK</ref>, 6, GPIO_PK6_EN0LED1)</initializer>
+        <briefdescription>
+<para>PK6 is used for EN0LED1. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/emac/EMACMSP432E4.h" line="80" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/emac/EMACMSP432E4.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_e_m_a_c_m_s_p432_e4_8h_1a9e595630e8c15fd38f351cffe89ec053" prot="public" static="no">
+        <name>EMACMSP432E4_PF1_EN0LED2</name>
+        <initializer><ref refid="_g_p_i_o_m_s_p432_e4_8h_1ae77f77ea12a04525c78d194dbf04edcf" kindref="member">GPIOMSP432E4_pinConfigMask</ref>(<ref refid="_g_p_i_o_m_s_p432_e4_8h_1aace72b9277a3dc611fecf03736b2ee22" kindref="member">GPIOMSP432E4_PORTF</ref>, 1, GPIO_PF1_EN0LED2)</initializer>
+        <briefdescription>
+<para>PF1 is used for EN0LED2. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/emac/EMACMSP432E4.h" line="85" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/emac/EMACMSP432E4.h" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_e_m_a_c_m_s_p432_e4_8h_1a0e6e29f5f6ff2e8ea633720d23a49e01" prot="public" static="no">
+        <name>EMACMSP432E4_PK5_EN0LED2</name>
+        <initializer><ref refid="_g_p_i_o_m_s_p432_e4_8h_1ae77f77ea12a04525c78d194dbf04edcf" kindref="member">GPIOMSP432E4_pinConfigMask</ref>(<ref refid="_g_p_i_o_m_s_p432_e4_8h_1a78d9a398d7bd191183cdae9712061571" kindref="member">GPIOMSP432E4_PORTK</ref>, 5, GPIO_PK5_EN0LED2)</initializer>
+        <briefdescription>
+<para>PK5 is used for EN0LED2. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/emac/EMACMSP432E4.h" line="90" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/emac/EMACMSP432E4.h" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_e_m_a_c_m_s_p432_e4_8h_1a17c0f9bfaee5a6247f2be65f3bd0e354" prot="public" static="no">
+        <name>EMACMSP432E4_ETHERNET_NAME</name>
+        <initializer>&quot;eth0&quot;</initializer>
+        <briefdescription>
+<para>The name used to register the Ethernet interface with NIMU. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/emac/EMACMSP432E4.h" line="95" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/emac/EMACMSP432E4.h" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_e_m_a_c_m_s_p432_e4_8h_1a385155a41e6bd35f7ae1a010c4bf7376" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool EMACMSP432E4_isLinkUp</definition>
+        <argsstring>()</argsstring>
+        <name>EMACMSP432E4_isLinkUp</name>
+        <briefdescription>
+<para>This function returns the link state of the EMACMSP432E4 driver. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>true</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if the link is up. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>false</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if the link is down. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/emac/EMACMSP432E4.h" line="153" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_m_a_c_m_s_p432_e4_8h_1a139da04c926c130c00204b036cc7658b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int EMACMSP432E4_NIMUInit</definition>
+        <argsstring>(STKEVENT_Handle hEvent)</argsstring>
+        <name>EMACMSP432E4_NIMUInit</name>
+        <param>
+          <type>STKEVENT_Handle</type>
+          <declname>hEvent</declname>
+        </param>
+        <briefdescription>
+<para>This function is included in the NIMUDeviceTable that is used by the NDK to initialize and register the driver. This function should not be called by the user. The NIMUDeviceTable is typically provided in the TI Driver&apos;s configuration file. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">hEvent</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>STKEVENT_Handle semaphore </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/emac/EMACMSP432E4.h" line="163" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Ethernet Media Access Control (EMAC) MSP432E4 Driver. </para>    </briefdescription>
+    <detaileddescription>
+<para><hruler/>
+ </para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2017-2019,<sp/>Texas<sp/>Instruments<sp/>Incorporated</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Redistribution<sp/>and<sp/>use<sp/>in<sp/>source<sp/>and<sp/>binary<sp/>forms,<sp/>with<sp/>or<sp/>without</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>modification,<sp/>are<sp/>permitted<sp/>provided<sp/>that<sp/>the<sp/>following<sp/>conditions</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>are<sp/>met:</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>of<sp/>source<sp/>code<sp/>must<sp/>retain<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer.</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>in<sp/>binary<sp/>form<sp/>must<sp/>reproduce<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer<sp/>in<sp/>the</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>documentation<sp/>and/or<sp/>other<sp/>materials<sp/>provided<sp/>with<sp/>the<sp/>distribution.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Neither<sp/>the<sp/>name<sp/>of<sp/>Texas<sp/>Instruments<sp/>Incorporated<sp/>nor<sp/>the<sp/>names<sp/>of</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>its<sp/>contributors<sp/>may<sp/>be<sp/>used<sp/>to<sp/>endorse<sp/>or<sp/>promote<sp/>products<sp/>derived</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>from<sp/>this<sp/>software<sp/>without<sp/>specific<sp/>prior<sp/>written<sp/>permission.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>THIS<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>BY<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>AND<sp/>CONTRIBUTORS<sp/>&quot;AS<sp/>IS&quot;</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>AND<sp/>ANY<sp/>EXPRESS<sp/>OR<sp/>IMPLIED<sp/>WARRANTIES,<sp/>INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>THE<sp/>IMPLIED<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY<sp/>AND<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>PURPOSE<sp/>ARE<sp/>DISCLAIMED.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE<sp/>COPYRIGHT<sp/>OWNER<sp/>OR</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>CONTRIBUTORS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>DIRECT,<sp/>INDIRECT,<sp/>INCIDENTAL,<sp/>SPECIAL,</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>EXEMPLARY,<sp/>OR<sp/>CONSEQUENTIAL<sp/>DAMAGES<sp/>(INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>PROCUREMENT<sp/>OF<sp/>SUBSTITUTE<sp/>GOODS<sp/>OR<sp/>SERVICES;<sp/>LOSS<sp/>OF<sp/>USE,<sp/>DATA,<sp/>OR<sp/>PROFITS;</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>OR<sp/>BUSINESS<sp/>INTERRUPTION)<sp/>HOWEVER<sp/>CAUSED<sp/>AND<sp/>ON<sp/>ANY<sp/>THEORY<sp/>OF<sp/>LIABILITY,</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/>STRICT<sp/>LIABILITY,<sp/>OR<sp/>TORT<sp/>(INCLUDING<sp/>NEGLIGENCE<sp/>OR</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*<sp/>OTHERWISE)<sp/>ARISING<sp/>IN<sp/>ANY<sp/>WAY<sp/>OUT<sp/>OF<sp/>THE<sp/>USE<sp/>OF<sp/>THIS<sp/>SOFTWARE,</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*<sp/>EVEN<sp/>IF<sp/>ADVISED<sp/>OF<sp/>THE<sp/>POSSIBILITY<sp/>OF<sp/>SUCH<sp/>DAMAGE.</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="comment">/*!****************************************************************************</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>*<sp/><sp/>@file<sp/><sp/><sp/><sp/><sp/><sp/><sp/>EMACMSP432E4.h</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>*<sp/><sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/>Ethernet<sp/>Media<sp/>Access<sp/>Control<sp/>(EMAC)<sp/>MSP432E4<sp/>Driver</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/>******************************************************************************</highlight></codeline>
+<codeline lineno="37"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>ti_drivers_emac_EMACMSP432E4__include</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ti_drivers_emac_EMACMSP432E4__include</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>@cond<sp/>*/</highlight></codeline>
+<codeline lineno="46"><highlight class="preprocessor">#ifndef<sp/>__MSP432E411Y__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__MSP432E411Y__<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ti/devices/msp432e4/inc/msp432.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ti/devices/msp432e4/driverlib/pin_map.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>@endcond<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ti/ndk/inc/stkmain.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_g_p_i_o_m_s_p432_e4_8h" kindref="compound">ti/drivers/gpio/GPIOMSP432E4.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65" refid="_e_m_a_c_m_s_p432_e4_8h_1a873bc5c85a97addef8f1233ebeb9a619" refkind="member"><highlight class="preprocessor">#define<sp/>EMACMSP432E4_PF0_EN0LED0<sp/>GPIOMSP432E4_pinConfigMask(GPIOMSP432E4_PORTF,<sp/>0,<sp/>GPIO_PF0_EN0LED0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70" refid="_e_m_a_c_m_s_p432_e4_8h_1a1a0f0965c4886003f7d76bf9f0beeaf3" refkind="member"><highlight class="preprocessor">#define<sp/>EMACMSP432E4_PK4_EN0LED0<sp/>GPIOMSP432E4_pinConfigMask(GPIOMSP432E4_PORTK,<sp/>4,<sp/>GPIO_PK4_EN0LED0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75" refid="_e_m_a_c_m_s_p432_e4_8h_1a0163da7e79614b74175c3369f91b2d33" refkind="member"><highlight class="preprocessor">#define<sp/>EMACMSP432E4_PF4_EN0LED1<sp/>GPIOMSP432E4_pinConfigMask(GPIOMSP432E4_PORTF,<sp/>4,<sp/>GPIO_PF4_EN0LED1)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80" refid="_e_m_a_c_m_s_p432_e4_8h_1a009c1bb2e3cd33f2d2434d949bdbc678" refkind="member"><highlight class="preprocessor">#define<sp/>EMACMSP432E4_PK6_EN0LED1<sp/>GPIOMSP432E4_pinConfigMask(GPIOMSP432E4_PORTK,<sp/>6,<sp/>GPIO_PK6_EN0LED1)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85" refid="_e_m_a_c_m_s_p432_e4_8h_1a9e595630e8c15fd38f351cffe89ec053" refkind="member"><highlight class="preprocessor">#define<sp/>EMACMSP432E4_PF1_EN0LED2<sp/>GPIOMSP432E4_pinConfigMask(GPIOMSP432E4_PORTF,<sp/>1,<sp/>GPIO_PF1_EN0LED2)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90" refid="_e_m_a_c_m_s_p432_e4_8h_1a0e6e29f5f6ff2e8ea633720d23a49e01" refkind="member"><highlight class="preprocessor">#define<sp/>EMACMSP432E4_PK5_EN0LED2<sp/>GPIOMSP432E4_pinConfigMask(GPIOMSP432E4_PORTK,<sp/>5,<sp/>GPIO_PK5_EN0LED2)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95" refid="_e_m_a_c_m_s_p432_e4_8h_1a17c0f9bfaee5a6247f2be65f3bd0e354" refkind="member"><highlight class="preprocessor">#define<sp/>EMACMSP432E4_ETHERNET_NAME<sp/>&quot;eth0&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101" refid="struct_e_m_a_c_m_s_p432_e4___h_w_attrs" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="103" refid="struct_e_m_a_c_m_s_p432_e4___h_w_attrs_1ad56f21571b1ef35c761166d00693ccd1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_e_m_a_c_m_s_p432_e4___h_w_attrs_1ad56f21571b1ef35c761166d00693ccd1" kindref="member">baseAddr</ref>;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108" refid="struct_e_m_a_c_m_s_p432_e4___h_w_attrs_1abe1c1da2f199ca315f55e002f5f66362" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_e_m_a_c_m_s_p432_e4___h_w_attrs_1abe1c1da2f199ca315f55e002f5f66362" kindref="member">intNum</ref>;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117" refid="struct_e_m_a_c_m_s_p432_e4___h_w_attrs_1a83b5fb7302f4adcae785018923b3269e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_e_m_a_c_m_s_p432_e4___h_w_attrs_1a83b5fb7302f4adcae785018923b3269e" kindref="member">intPriority</ref>;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123" refid="struct_e_m_a_c_m_s_p432_e4___h_w_attrs_1af066245d30283ce9d98b724f5bb1eb16" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_e_m_a_c_m_s_p432_e4___h_w_attrs_1af066245d30283ce9d98b724f5bb1eb16" kindref="member">led0Pin</ref>;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129" refid="struct_e_m_a_c_m_s_p432_e4___h_w_attrs_1a13e77dbb4f20135680dab6df0e79d64a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_e_m_a_c_m_s_p432_e4___h_w_attrs_1a13e77dbb4f20135680dab6df0e79d64a" kindref="member">led1Pin</ref>;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143" refid="struct_e_m_a_c_m_s_p432_e4___h_w_attrs_1a23a9e31c1b32dc9a44dae908727ba7cf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>*<ref refid="struct_e_m_a_c_m_s_p432_e4___h_w_attrs_1a23a9e31c1b32dc9a44dae908727ba7cf" kindref="member">macAddress</ref>;</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal">}<sp/><ref refid="struct_e_m_a_c_m_s_p432_e4___h_w_attrs" kindref="compound">EMACMSP432E4_HWAttrs</ref>;</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="_e_m_a_c_m_s_p432_e4_8h_1a385155a41e6bd35f7ae1a010c4bf7376" kindref="member">EMACMSP432E4_isLinkUp</ref>();</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="_e_m_a_c_m_s_p432_e4_8h_1a139da04c926c130c00204b036cc7658b" kindref="member">EMACMSP432E4_NIMUInit</ref>(STKEVENT_Handle<sp/>hEvent);</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>ti_drivers_emac_EMACMSP432E4__include<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="exports/tidrivers_msp432e4/source/ti/drivers/emac/EMACMSP432E4.h"/>
+  </compounddef>
+</doxygen>

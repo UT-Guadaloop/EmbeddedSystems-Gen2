@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<workspace>
+    <project>
+        <path>$WS_DIR$/gpiointerrupt_MSP432E411Y_BGAEVM_tirtos_iar.ewp</path>
+    </project>
+    <project>
+        <path>$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/kernel/tirtos/builds/MSP432E411Y_BGAEVM/release/iar/tirtos_builds_MSP432E411Y_BGAEVM_release.ewp</path>
+    </project>
+    <batchBuild/>
+</workspace>

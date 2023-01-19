@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IAR Project Connection File -->
+
+<iarProjectConnection version="1.2" name="Hibernate" oneShot="true"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="IarProjectConnection_1.2.xsd">
+
+    <device>
+        <name>MSP432E401Y</name>
+    </device>
+
+    <asmIncludePath>
+        <path>$PROJ_DIR$</path>
+        <path>$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source</path>
+        <path>$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/CMSIS/Include</path>
+    </asmIncludePath>
+
+    <asmDefines>
+        <define>DeviceFamily_MSP432E4</define>
+        <define>__MSP432E401Y__</define>
+    </asmDefines>
+
+    <includePath>
+        <path>$PROJ_DIR$</path>
+        <path>$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source</path>
+        <path>$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/CMSIS/Include</path>
+        <path>$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/ti/net/bsd</path>
+    </includePath>
+
+    <defines>
+        <define>UART_BUFFERED</define>
+        <define>DeviceFamily_MSP432E4</define>
+        <define>__MSP432E401Y__</define>
+    </defines>
+
+    <extraOptions>
+        <args>
+            <arg>--debug</arg>
+            <arg>--silent</arg>
+            <arg>-e</arg>
+            <arg>--aeabi</arg>
+            <arg>--thumb</arg>
+            <arg>--diag_suppress=Pa050</arg>
+        </args>
+    </extraOptions>
+
+    <linkerFile>
+        <override>true</override>
+        <path>$PROJ_DIR$/msp432e401y.icf</path>
+    </linkerFile>
+
+    <linkerExtraOptions>
+        <args>
+            <arg>$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/ti/display/lib/display.arm4f</arg>
+            <arg>$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/ti/grlib/lib/iar/m4f/grlib.a</arg>
+            <arg>$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/spiffs/lib/iar/m4f/spiffs.a</arg>
+            <arg>$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/ti/drivers/lib/drivers_msp432e4.arm4f</arg>
+            <arg>$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/fatfs/lib/iar/m4f/fatfs.a</arg>
+            <arg>$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/ti/devices/msp432e4/driverlib/lib/iar/m4f/msp432e4_driverlib.a</arg>
+            <arg>--silent</arg>
+            <arg>--cpu=Cortex-M4F</arg>
+        </args>
+    </linkerExtraOptions>
+
+    <customBuildTools>
+    </customBuildTools>
+
+    <heaps>
+        <heap> <!-- If omitted, id="0" -->
+            <size>0</size>
+        </heap>
+        <heap id="1">
+            <size>0</size>
+        </heap>
+    </heaps>
+    <stacks>
+        <stack> <!-- If omitted, id="0" -->
+            <size>512</size>
+        </stack>
+    </stacks>
+
+
+    <files>
+        <path copyTo="$PROJ_DIR$/hibernate.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/examples/nortos/MSP_EXP432E401Y/driverlib/hibernate/hibernate.c</path>
+        <path copyTo="$PROJ_DIR$/hibernate_commands.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/examples/nortos/MSP_EXP432E401Y/driverlib/hibernate/hibernate_commands.c</path>
+        <path copyTo="$PROJ_DIR$/hibernate_commands.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/examples/nortos/MSP_EXP432E401Y/driverlib/hibernate/hibernate_commands.h</path>
+        <path copyTo="$PROJ_DIR$/uartstdio.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/examples/nortos/MSP_EXP432E401Y/driverlib/hibernate/uartstdio.h</path>
+        <path copyTo="$PROJ_DIR$/uartstdio.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/examples/nortos/MSP_EXP432E401Y/driverlib/hibernate/uartstdio.c</path>
+        <path copyTo="$PROJ_DIR$/ustdlib.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/examples/nortos/MSP_EXP432E401Y/driverlib/hibernate/ustdlib.h</path>
+        <path copyTo="$PROJ_DIR$/ustdlib.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/examples/nortos/MSP_EXP432E401Y/driverlib/hibernate/ustdlib.c</path>
+        <path copyTo="$PROJ_DIR$/cmdline.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/examples/nortos/MSP_EXP432E401Y/driverlib/hibernate/cmdline.h</path>
+        <path copyTo="$PROJ_DIR$/cmdline.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/examples/nortos/MSP_EXP432E401Y/driverlib/hibernate/cmdline.c</path>
+        <path copyTo="$PROJ_DIR$/buttons.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/examples/nortos/MSP_EXP432E401Y/driverlib/hibernate/buttons.h</path>
+        <path copyTo="$PROJ_DIR$/buttons.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/examples/nortos/MSP_EXP432E401Y/driverlib/hibernate/buttons.c</path>
+        <path copyTo="$PROJ_DIR$/pinout.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/examples/nortos/MSP_EXP432E401Y/driverlib/hibernate/pinout.h</path>
+        <path copyTo="$PROJ_DIR$/pinout.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/examples/nortos/MSP_EXP432E401Y/driverlib/hibernate/pinout.c</path>
+        <path copyTo="$PROJ_DIR$/system_msp432e401y.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/examples/nortos/MSP_EXP432E401Y/driverlib/hibernate/system_msp432e401y.c</path>
+        <path copyTo="$PROJ_DIR$/README.md">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/examples/nortos/MSP_EXP432E401Y/driverlib/hibernate/README.md</path>
+        <path copyTo="$PROJ_DIR$/README.html">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/examples/nortos/MSP_EXP432E401Y/driverlib/hibernate/README.html</path>
+        <path copyTo="$PROJ_DIR$/msp432e401y.icf">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/examples/nortos/MSP_EXP432E401Y/driverlib/hibernate/iar/msp432e401y.icf</path>
+        <group name="iar" build="true">
+            <path copyTo="$PROJ_DIR$/iar/startup_msp432e401y_ewarm.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/examples/nortos/MSP_EXP432E401Y/driverlib/hibernate/iar/startup_msp432e401y_ewarm.c</path>
+        </group>
+    </files>
+</iarProjectConnection>

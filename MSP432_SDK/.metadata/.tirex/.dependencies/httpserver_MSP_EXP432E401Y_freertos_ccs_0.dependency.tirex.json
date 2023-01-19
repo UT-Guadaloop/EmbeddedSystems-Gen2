@@ -1,0 +1,31 @@
+[
+    {
+        "files": [
+            "+../../httpSrvBasic.c -> httpSrvBasic.c",
+            "+../../startsntp.c -> startsntp.c",
+            "+../../README.md -> README.md",
+            "+../../README.html -> README.html",
+            "+../../urlmemzip.c -> urlmemzip.c",
+            "+../../urlmemzip.h -> urlmemzip.h",
+            "+../../memzip.c -> memzip.c",
+            "+../../memzip.h -> memzip.h",
+            "+../../memzip_files.c -> memzip_files.c",
+            "+../../urlsimple.c -> urlsimple.c",
+            "+../../urlsimple.h -> urlsimple.h",
+            "+../../urlsimpleput.c -> urlsimpleput.c",
+            "+../../urlsimpleput.h -> urlsimpleput.h",
+            "+../../httpSrvBasicHooks.c -> httpSrvBasicHooks.c",
+            "+../../make-memzip.py -> make-memzip.py",
+            "+../../targetfs/index.html -> targetfs/index.html",
+            "+../../targetfs/ti_ep_logo.jpg -> targetfs/ti_ep_logo.jpg",
+            "+../../targetfs/subdir/ti.jpg -> targetfs/subdir/ti.jpg",
+            "+../../certs/serverCaCert.pem -> certs/serverCaCert.pem",
+            "+../../certs/serverKey.pem -> certs/serverKey.pem",
+            "+../../certs/serverCert.pem -> certs/serverCert.pem",
+            "+../main_freertos.c -> main_freertos.c",
+            "+../httpserver.syscfg -> httpserver.syscfg",
+            "+../../../../../../../source/ti/boards/MSP_EXP432E401Y/Board.html -> Board.html",
+            "+MSP_EXP432E401Y_FREERTOS.cmd -> MSP_EXP432E401Y_FREERTOS.cmd"
+        ]
+    }
+]

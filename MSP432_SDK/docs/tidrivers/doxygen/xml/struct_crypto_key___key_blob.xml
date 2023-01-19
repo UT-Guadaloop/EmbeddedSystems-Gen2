@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="struct_crypto_key___key_blob" kind="struct" language="C++" prot="public">
+    <compoundname>CryptoKey_KeyBlob</compoundname>
+    <includes refid="_crypto_key_8h" local="no">CryptoKey.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_crypto_key___key_blob_1a4c58828a6c1774c92d545683b54a2a4e" prot="public" static="no" mutable="no">
+        <type>uint8_t *</type>
+        <definition>uint8_t* CryptoKey_KeyBlob::keyBlob</definition>
+        <argsstring></argsstring>
+        <name>keyBlob</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/cryptoutils/cryptokey/CryptoKey.h" line="197" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/cryptoutils/cryptokey/CryptoKey.h" bodystart="197" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_crypto_key___key_blob_1aa4415e9d2bddafda94f222045088572f" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t CryptoKey_KeyBlob::keyBlobLength</definition>
+        <argsstring></argsstring>
+        <name>keyBlobLength</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/cryptoutils/cryptokey/CryptoKey.h" line="198" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/cryptoutils/cryptokey/CryptoKey.h" bodystart="198" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Keyblob <ref refid="struct_crypto_key" kindref="compound">CryptoKey</ref> datastructure. </para>    </briefdescription>
+    <detaileddescription>
+<para>This structure contains all the information necessary to access keying material stored in an encrypted structure in flash or RAM. </para>    </detaileddescription>
+    <location file="exports/tidrivers_msp432e4/source/ti/drivers/cryptoutils/cryptokey/CryptoKey.h" line="196" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/cryptoutils/cryptokey/CryptoKey.h" bodystart="196" bodyend="199"/>
+    <listofallmembers>
+      <member refid="struct_crypto_key___key_blob_1a4c58828a6c1774c92d545683b54a2a4e" prot="public" virt="non-virtual"><scope>CryptoKey_KeyBlob</scope><name>keyBlob</name></member>
+      <member refid="struct_crypto_key___key_blob_1aa4415e9d2bddafda94f222045088572f" prot="public" virt="non-virtual"><scope>CryptoKey_KeyBlob</scope><name>keyBlobLength</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,12 @@
+[
+    {
+        "files": [
+            "+../../README.md -> README.md",
+            "+../../README.html -> README.html",
+            "+../../gpiointerrupt.c -> gpiointerrupt.c",
+            "+../../gpiointerrupt.syscfg -> gpiointerrupt.syscfg",
+            "+../main_tirtos.c -> main_tirtos.c",
+            "+MSP432E411Y_BGAEVM_TIRTOS.icf -> MSP432E411Y_BGAEVM_TIRTOS.icf"
+        ]
+    }
+]

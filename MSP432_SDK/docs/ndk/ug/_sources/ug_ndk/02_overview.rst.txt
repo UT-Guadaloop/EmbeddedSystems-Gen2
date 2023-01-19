@@ -1,0 +1,392 @@
+1 Overview
+----------
+
+This chapter introduces the Network Developer's Kit (NDK) by providing a brief overview of the purpose and construction of the NDK, along with hardware and software environment specifics in the context of NDK deployment. This Network Developer's Kit (NDK) Software User's Guide serves as an introduction to both the NDK and to developing network applications.
+
+1.1 Introduction
+~~~~~~~~~~~~~~~~
+
+The Network Developer's Kit (NDK) is a platform for development and demonstration of network enabled applications on TI embedded processors. The code included in this NDK release is generic C code which runs on a variety of TI devices.
+
+The NDK is typically paired with the Network Services (NS) Component. NS provides a stack independent implementation of BSD sockets, as well as higher level services (e.g. HTTP, SNTP). For more information, see the NS documentation.
+
+Although not strictly precise (e.g. applications will call NDK APIs directly as well), the following diagram shows how NS and the NDK typically relate to each other in a complete system.
+
+.. figure:: images/overview_diagram2.png
+   :alt: Components of an NDK-Enabled Application
+
+   *Components of an NDK-Enabled Application*
+
+In the figure above, the user application can make calls using the standard BSD sockets APIs, or it can directly call into the SlNetSock layer to communicate with a network connection. The SlNetSock layer is a stack-independent layer between the user application and the service-specific stacks.
+
+Within an SDK, the Network Services SlNetSock module utilizes the NDK as the network stack for wired Ethernet communications. The "SlNetIfNDK" is the implementation of the SlNetSock interface for the NDK (and can be found in the NDK's ``/ti/ndk/slnetif`` directory).
+
+The NDK stack's settings may be configured at run time by making calls to the NDK's ``Cfg*()`` functions.
+
+The NDK is designed to provide a platform-independent, device-independent, and RTOS-independent API interface for use by the application. Many of the API modules described in this document and in the `NDK API Reference Guide <../../NDK_API_Reference.html>`__ are rarely used by applications. Instead they are available to those who are writing device drivers and network stacks.
+
+A user application typically uses the following APIs provided by the NDK:
+
+-  **Cfg functions** add settings to the configuration database that determine which network services will be available to the application. For details, see the `NDK API Reference Guide <../../NDK_API_Reference.html>`__.
+-  **NC\_ functions** cause the network services system to be initialized, started, and stopped. For details, see the `NDK API Reference Guide <../../NDK_API_Reference.html>`__.
+-  **TaskCreate() or native OS functions** to handle application threading. The NDK's ``TaskCreate()`` API can be used to create a thread for any RTOS supported for the target environment. For most environments, this includes the TI-RTOS Kernel, and in some cases FreeRTOS is supoprted. Alternatively, the native thread creation APIs can be used for the supported RTOS being used. For details, see `"Creating a Task" <03_network-application-development.html#creating-a-task>`__.
+-  **NDK socket APIs** to perform socket actions such as accept, send, and receive. For a pure NDK application, these are the BSD-like ``NDK_*()`` functions. But typical applications should use the standard BSD APIs provided by NS. For details on the BSD-like NDK APIs, see the `NDK API Reference Guide <../../NDK_API_Reference.html>`__.
+
+1.2 Rebuilding NDK Libraries
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The NDK installation includes all source files and full support for rebuilding its libraries.
+
+    **NOTE:** Rebuilding the NDK libraries will (obviously) overwrite the officially distributed libraries. So you may want to ensure you make a backup of the official libraries before rebuilding.
+
+Rebuilding the NDK libraries requires 2 general steps:
+
+1. define the locations of your installed toolchains
+2. issue an appropriate `GNU Make <https://www.gnu.org/software/make/>`__ ``make`` command
+
+    **NOTE:** If you do not have ``make`` installed on your system, it is bundled with XDCtools as ``<XDC_INSTALL_DIR>/gmake``.
+
+These two steps differ, depending on the SDK distributing the NDK.
+
+1.2.1 SimpleLink SDKs
+^^^^^^^^^^^^^^^^^^^^^
+
+SimpleLink SDKs contain an ``imports.mak`` at the root of the SDK for defining toolchain locations. Variables in this file are also used when building your RTOS kernels and SDK examples (when using makefiles), so it's possible these variables have already been set.
+
+After setting those variables, the NDK libraries can be rebuilt by entering the ``<SDK_INSTALL_DIR>/sources/ti/ndk`` directory and executing ``make``. Typing ``make debug`` will rebuild the libraries in a debug profile, which is helpful when debugging.
+
+1.2.2 Standalone NDK Products
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Standalone NDK distributions contain an ``ndk.mak`` at the root of the NDK distribution for defining toolchain locations. Once those are set, the NDK libraries can be rebuilt by entering the root directory of the NDK and executing ``make -f ndk.mak``. Typing ``make -f ndk.mak debug`` will rebuild the libraries in a debug profile, which is helpful when debugging.
+
+1.2.3 Compiler Options
+^^^^^^^^^^^^^^^^^^^^^^
+
+The following macros cause variations in the behavior of the rebuilt NDK libraries, by including or excluding the features described by the macro. Some are utilized by default in various build scripts (i.e. ``<NDK_INSTALL_DIR>/src/ti/ndk/stack/package.bld``). See `NDK Stack Library Design <#ndk-stack-library-design>`__ for further details.
+
+-  ``_INCLUDE_IPv6_CODE`` -- If defined, IPv6 support is enabled.
+-  ``_INCLUDE_JUMBOFRAME_SUPPORT`` -- If defined, packet sizes larger than 1500 bytes are supported.
+-  ``_INCLUDE_NAT_CODE`` -- If defined, Network Address Translation (NAT) support is provided by the stack.
+-  ``_INCLUDE_PPP_CODE`` -- If defined, the Point-to-Point Protocol (PPP) module is included.
+-  ``_INCLUDE_PPPOE_CODE`` -- If defined, enable the PPP over Ethernet (PPPoE) client.
+-  ``_STRONG_CHECKING`` -- If defined, error checking is performed on all handles.
+
+``_INCLUDE_JUMBOFRAME_SUPPORT`` can be defined by passing ``ENABLE_JUMBO=1`` on the command line when building the NDK. Similarly, ``_STRONG_CHECKING`` can be defined by passing ``ENABLE_STRONG_CHECKING=1``.
+
+.. code:: bash
+
+    # i.e. At the root of your NDK installation, execute
+    $ make ENABLE_JUMBO=1
+
+1.3 NDK Stack Library Design
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The NDK was designed to provide a full TCP/IP functional environment, with or without routing, in a small memory footprint.
+
+1.3.1 Design Philosophy
+^^^^^^^^^^^^^^^^^^^^^^^
+
+The NDK is isolated from both the native OS and the low-level hardware by abstracted programming interfaces. The native OS is abstracted by an operating system adaptation layer (OS), and custom hardware is supported via a hardware adaptation layer (HAL) library. These libraries are used to interface the stack to the RTOS and to the system peripherals.
+
+The features of the NDK include the following:
+
+-  **Virtual LAN (VLAN) support.** VLAN support enables the stack to receive, process, and transmit VLAN tagged packets.
+-  **Raw Ethernet socket support.** Raw Ethernet sockets (different from Raw IPv4/IPv6 sockets) enable any application using the NDK stack to send/receive Ethernet packets with custom Layer 2 (L2) protocol type, i.e., protocol type in the Ethernet header of the packet other than any of the well-known standard protocol types like IP (0x800), IPv6 (0x806), VLAN (0x8100), PPPoE Control (0x8863) or PPPoE Data (0x8864).
+-  **IPv6 stack support.** The stack is available for both IPv6 and IPv4.
+-  **Jumbo frames support.** Jumbo frames have packet sizes larger than 1500 bytes. Jumbo frame support can be built into an application by linking with libraries compiled for Jumbo frame support. The libraries and application would have to be recompiled with the following pre-processor definition added: ``_INCLUDE_JUMBOFRAME_SUPPORT``.
+
+For more details on VLAN, IPv6, Raw Ethernet sockets and Jumbo frames support, see the `NDK API Reference Guide <../../NDK_API_Reference.html>`__.
+
+1.3.2 Control Flow
+^^^^^^^^^^^^^^^^^^
+
+The following figure shows a conceptual diagram of how the stack package is organized in terms of function call control flow. The five main libraries that make up the NDK are shown. These are STACK, NETTOOL, OS, HAL, and NETCTRL. These libraries are summarized in sections that follow. NIMU related changes are also discussed in the affected libraries (STACK, NETCTRL, and NETTOOL).
+
+.. figure:: images/ctrl_fl_pru523.png
+   :alt: Stack Control Flow
+
+   *Stack Control Flow*
+
+1.3.3 Library Directory Structure
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+    **NOTE:** The location of NDK files referenced in this document will vary depending on the type of installation you performed to obtain the NDK component. If you installed a SimpleLink SDK, the files are likely to be located in your ``<SDK_INSTALL_DIR>/sources/ti/ndk`` directory. If you installed some other type of SDK, the files are likely to be located in your ``<NDK_INSTALL_DIR>/packages/ti/ndk`` directory. For simplicity, this document refers to the directories beginning at the ``/ti/ndk`` level, which is common to all installations.
+
+Pre-built linkable libraries and source code are provided for each of the libraries that make up the NDK in the ``/ti/ndk`` directory tree. The pre-built libraries are in a lib subdirectory of the directory for each library. See `"NDK Directory Structure" <#ndk-directory-structure>`__ for more about the directory tree.
+
+-  Both IPv4 and IPv6 libraries are provided. Filenames that do not include "ipv4" are compiled for IPv6. However, in the ``/ti/ndk/stack/lib`` directory, filenames that do not include "6" are compiled for IPv4.
+-  The NETCTRL library comes in "min", regular, and "full" versions. For example, netctrl\_min, netctrl, and netctrl\_full. See `"NETCTRL Libraries" <#netctrl-libraries>`__ for details.
+-  The OS library comes in TI-RTOS Kernel ("os" and "os\_sem") and FreeRTOS ("os\_freertos" and "os\_sem\_freertos") versions.
+-  Libraries with Jumbo Frame support (for packet sizes larger than 1500 bytes) are not included in the NDK installation. If you want NDK libraries with Jumbo Frame support enabled, you will need to #define the ``_INCLUDE_JUMBOFRAME_SUPPORT`` pre-processor definition and rebuild the libraries as described in the `Rebuilding NDK Libraries <#rebuilding-ndk-libraries>`__ section.
+
+The file extensions for pre-built libraries provided with the NDK include the following:
+
++-------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Extension   | Description                                                                                                                                          |
++=============+======================================================================================================================================================+
+| .aa8fg      | For Cortex-A8 targets (ELF format, little endian, GNU compiler)                                                                                      |
++-------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| .aa9fg      | For Cortex-A9 targets (ELF format, little endian, GNU compiler)                                                                                      |
++-------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| .aa15fg     | For Cortex-A15 targets (ELF format, little endian, GNU compiler)                                                                                     |
++-------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| .ae9        | For ARM9 targets (ELF format, little endian, TI compiler)                                                                                            |
++-------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| .ae66       | For C66x targets (ELF format, little endian, TI compiler)                                                                                            |
++-------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| .ae674      | For C674x targets (ELF format, little endian, TI compiler)                                                                                           |
++-------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| .aea8f      | For Cortex-A8 targets (ELF format, little endian, TI compiler, does not use hardware-based floating point support, for legacy application support)   |
++-------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| .aea8fnv    | For Cortex-A8 targets (ELF format, little endian, TI compiler, uses hardware-based vector floating point support, recommended over .aea8f)           |
++-------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| .aem3       | For Cortex-M3 targets (ELF format, little endian, TI compiler)                                                                                       |
++-------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| .am3g       | For Cortex-M3 targets (ELF format, little endian, GNU compiler)                                                                                      |
++-------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| .arm3       | For Cortex-M3 targets (ELF format, little endian, IAR compiler)                                                                                      |
++-------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| .aem4       | For Cortex-M4 targets (ELF format, little endian, TI compiler)                                                                                       |
++-------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| .am4g       | For Cortex-M4 targets (ELF format, little endian, GNU compiler)                                                                                      |
++-------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| .arm4       | For Cortex-M4 targets (ELF format, little endian, IAR compiler)                                                                                      |
++-------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| .aem4f      | For Cortex-M4F floating point targets (ELF format, little endian, TI compiler)                                                                       |
++-------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| .am4fg      | For Cortex-M4F floating point targets (ELF format, little endian, GNU compiler)                                                                      |
++-------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| .arm4f      | For Cortex-M4F floating point targets (ELF format, little endian, IAR compiler)                                                                      |
++-------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+The libraries provided with the NDK are platform independent. That is, versions of these libraries are provided for all platforms. Any hardware-dependent libraries that exist only for certain platforms are distributed in the appropriate NDK Support Package (NSP), which you download separately from the NDK.
+
+The NDK installation includes all source files and full support for rebuilding its libraries. Please see the `Rebuilding NDK Libraries <#rebuilding-ndk-libraries>`__ section for more details.
+
+1.3.4 The STACK Library
+^^^^^^^^^^^^^^^^^^^^^^^
+
+The STACK library is the main TCP/IP networking stack. It contains everything from the sockets layer at the top to the Ethernet and Point-to-Point Protocol (PPP) layers at the bottom. The library is compiled to make use of the RTOS, and does not need to be ported when moved from one platform to another. Several builds of the library are included in the NDK.
+
+The STACK libraries are provided in the ``/ti/ndk/stack/lib`` directory. The following versions of the library either include or exclude features like PPP, PPP over Ethernet (PPPoE), and Network Address Translation (NAT).
+
++-----------+-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+| Library   | Variants                                      | Description                                                                                                                                    |
++===========+===============================================+================================================================================================================================================+
+| STK       | stk, stk6                                     | Stack with NIMU, VLAN, and Raw Ethernet Socket support. Variants support IPv4 or IPv6. No support for PPP, PPPoE, NAT and LL architectures.    |
++-----------+-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+|           | stk\_nat, stk6\_nat                           | Stack with NAT, NIMU, VLAN, and Raw Ethernet Socket support. Variants support IPv4 or IPv6. No support for PPP, PPPoE, and LL architectures.   |
++-----------+-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+|           | stk\_nat\_ppp, stk6\_nat\_ppp                 | Stack with NAT, PPP, NIMU, VLAN, and Raw Ethernet Socket support. Variants support IPv4 or IPv6. No support for PPPoE and LL architectures.    |
++-----------+-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+|           | stk\_nat\_ppp\_pppoe, stk6\_nat\_ppp\_pppoe   | Stack with NAT, PPP, PPPoE, NIMU, VLAN, and Raw Ethernet Socket support. Variants support IPv4 or IPv6. No support for LL architectures.       |
++-----------+-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+|           | stk\_ppp, stk6\_ppp                           | Stack with PPP, NIMU, VLAN, and Raw Ethernet Socket support. Variants support IPv4 or IPv6. No support for NAT, PPPoE and LL architectures.    |
++-----------+-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+|           | stk\_ppp\_pppoe, stk6\_ppp\_pppoe             | Stack with PPP, PPPoE, NIMU, VLAN, and Raw Ethernet Socket support. Variants support IPv4 or IPv6. No support for NAT and LL architectures.    |
++-----------+-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+
+1.3.5 NETTOOL Libraries
+^^^^^^^^^^^^^^^^^^^^^^^
+
+The Network Tools (NETTOOL) function library contains all the sockets-based network services supplied with the NDK, plus a few additional tools designed to aid in the development of network applications. The most frequently used component in the NETTOOL library is the tag-based configuration system. The configuration system controls nearly every facet of the stack and its services. Configurations can be stored in non-volatile RAM for auto-loading at BOOT time.
+
+The NETTOOL libraries are provided in the ``/ti/ndk/nettools/lib`` directory.
+
+The tools provided in the NETTOOL library use the NIMU IOCTL calls directly to retrieve device-related information.
+
+See `"NETTOOL Services and Support Functions" <#nettool-services-and-support-functions>`__ for more information.
+
+1.3.6 OS Libraries
+^^^^^^^^^^^^^^^^^^
+
+These libraries form a thin adaptation layer that maps some abstracted OS function calls to POSIX and native OS API calls. This includes Task thread management, memory allocation, packet buffer management, printing, logging, critical sectioning, and jumbo packet buffer management.
+
+The OS libraries are provided in the ``/ti/ndk/os/lib`` directory. The "os" library is the OS Adaptation Layer library with priority exclusion. The "os\_sem" library uses semaphore exclusion, instead. See `"Operating System Abstraction" <#operating-system-abstraction>`__ for more information.
+
+1.3.7 HAL Libraries
+^^^^^^^^^^^^^^^^^^^
+
+The HAL libraries contain files that interface the hardware peripherals to the NDK. These include timers, LED indicators, Ethernet devices, and serial ports. The drivers contained in the ``/ti/ndk/hal`` directory are as follows:
+
++----------------------------------------+-----------------------------------------+
+| Library                                | Description                             |
++========================================+=========================================+
+| eth\_stub/lib/hal\_eth\_stub           | Ethernet Stub Driver                    |
++----------------------------------------+-----------------------------------------+
+| ser\_stub/lib/hal\_ser\_stub           | Serial Stub Driver                      |
++----------------------------------------+-----------------------------------------+
+| timer\_bios/lib/hal\_timer             | Timer Driver Using POSIX Timer object   |
++----------------------------------------+-----------------------------------------+
+| userled\_stub/lib/hal\_userled\_stub   | User LED Stub Driver                    |
++----------------------------------------+-----------------------------------------+
+
+See `"Hardware Adaptation Layer API" <#hardware-adaptation-layer-api>`__ for information about the HAL APIs. The HAL is also discussed in the `NDK API Reference Guide <../../NDK_API_Reference.html>`__ and the *NDK Support Package Ethernet Driver Design Guide* (`SPRUFP2 <http://www.ti.com/lit/pdf/SPRUFP2>`__).
+
+1.3.8 NETCTRL Libraries
+^^^^^^^^^^^^^^^^^^^^^^^
+
+The NETCTRL or Network Control library can be considered the center of the stack. It controls the interaction between the TCP/IP and the outside world. Of all the stack modules, it is the most important to the operation of the NDK. Its responsibilities include:
+
+-  Initialize the NDK and low-level device drivers
+-  Boot and maintain system configuration via configuration service provider callback functions
+-  Interface to the low-level device drivers and scheduling driver events to call into the NDK
+-  Unload the system configuration and driver cleanup on exit
+-  Initialize the NIMU core during stack bring-up, which in turn initializes and starts all the device drivers registered with the NIMU core. Initialize the VLAN module in the NDK core stack.
+-  De-initialize the NIMU core during stack shutdown, which in turn cycles through all the registered device drivers and shuts them down.
+-  Poll all the registered devices periodically so as to allow them to perform any routine maintenance activity, such as link management. Also, checks for any events, like packet reception, from any of the registered devices.
+-  Initialize the IPv6 Stack if built in during stack bring up.
+
+The NETCTRL library is designed to support "potential" stack features that the user may desire within their application (e.g. DHCP server). However, the drawback of this is that the code for such features will be included in the executable even if the application never uses the features. This results in a larger footprint than is usually necessary.
+
+To minimize this problem, the following different versions of the NETCTRL library are available in the ``/ti/ndk/netctrl/lib`` directory:
+
+-  **netctrl\_min.** This minimal library enables only the DHCP client. It should be used when a minimal footprint is desired.
+-  **netctrl.** This "standard" version of the NETCTRL library enables the following features and has a medium footprint:
+
+   -  Telnet server
+   -  DHCP client
+
+-  **netctrl\_full.** This "full" library enables all supported NETCTRL features, which include:
+
+   -  Telnet server
+   -  NAT server
+   -  DHCP client
+   -  DHCP server
+   -  DNS server
+
+All versions of NETCTRL support NIMU, VLAN, and Raw Ethernet Socket. Each of these NETCTRL library versions is built for both pure IPv4 as well as IPv6.
+
+If you configure the NDK using SysConfig, the appropriate NETCTRL library is automatically added to the generated linker.cmd file, based on the modules you enable.
+
+You can rebuild the NETCTRL library to include only features you want to use. To do this, edit the package.bld file in the ``/ti/ndk/netctrl`` directory, and redefine any of the following options. For information about rebuilding the NDK libraries, see the `Rebuilding NDK Libraries <#rebuilding-ndk-libraries>`__ section.
+
+-  ``NETSRV_ENABLE_TELNET``
+-  ``NETSRV_ENABLE_NAT``
+-  ``NETSRV_ENABLE_DHCPCLIENT``
+-  ``NETSRV_ENABLE_DHCPSERVER``
+-  ``NETSRV_ENABLE_DNSSERVER``
+
+1.4 NDK Programming APIs
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+As previously stated, the stack has been designed for optimal isolation, and so that it may seamlessly plug in to varying run-time environments. Therefore, you may have the opportunity to use to several different programming interfaces. They are listed here in decreasing order of relevance. All of the following are described in detail in the `NDK API Reference Guide <../../NDK_API_Reference.html>`__.
+
+1.4.1 Operating System Abstraction
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The OS abstraction provides services enabling porting to other operating systems. In most cases, these are internal to the NDK stack, and application developers will not use these APIs. However there are times when application developers may need to use the Task module. See the `NDK API Reference Guide <../../NDK_API_Reference.html>`__ for those details.
+
+1.4.2 Sockets and Stream IO API
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The sockets API primarily consists of BSD-like socket services API, but contains a few other useful calls. These functions are reentrant and thread safe. They appear as an extension of the standard IO supplied with the operating system, and should not conflict with any native file support functions.
+
+1.4.3 NETTOOL Services and Support Functions
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The NETTOOL library includes both network services and basic network support functions. The API to the support functions is similar to that of Berkeley Unix where it makes sense, with some additional functions provided for custom features.
+
+The NETTOOL services include most network protocol servers required to operate the stack as a network server or router. The API to the services is standardized and uniform across all supported services, plus services may also be invoked by using the configuration system, bypassing the NETTOOL APIs entirely.
+
+1.4.4 Internal Stack API
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+You will almost never use the internal stack API (can be thought of as kernel level API). However, it is required for some types of stack maintenance, and it is called by some of the sample source code.
+
+1.4.5 Hardware Adaptation Layer API
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+You will most likely never call the HAL API directly, but it is required when moving the stack to an alternate hardware platform. The HAL is described in more detail in the `NDK API Reference Guide <../../NDK_API_Reference.html>`__ and the *Network Developer's Kit (NDK) Support Package Ethernet Driver* (`SPRUFP2 <http://www.ti.com/lit/pdf/SPRUFP2>`__).
+
+1.5 NDK Directory Structure
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The NDK files are located in ``/ti/ndk`` and are organized into the following subdirectories. (Any other directories are for internal use only.) For each library, both source files and pre-build libraries are provided.
+
++-------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Directory   | Description                                                                                                                                                                                       |
++=============+===================================================================================================================================================================================================+
+| config      | Used internally. Contains packages for all the modules configured by XGCONF and used by application code.                                                                                         |
++-------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| hal         | Contains NDK driver libraries and source code. See `"HAL Libraries" <#hal-libraries>`__.                                                                                                          |
++-------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| inc         | NDK include file directory. See `"NDK Include File Directory" <#ndk-include-file-directory>`__.                                                                                                   |
++-------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| netctrl     | Contains libraries and source code for network startup and shutdown, including special versions for various subsets of network functionality. See `"NETCTRL Libraries" <#netctrl-libraries>`__.   |
++-------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| nettools    | Contains libraries and source code for network tools, such as DHCP, and DNS. See `"NETTOOL Libraries" <#nettool-libraries>`__.                                                                    |
++-------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| os          | Contains libraries and source code for the OS Adaptation Layer. See `"OS Libraries" <#os-libraries>`__.                                                                                           |
++-------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| stack       | Contains libraries and source code for the network stack. See `"STACK Libraries" <#the-stack-library>`__.                                                                                         |
++-------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| tools       | Contains libraries and source code for several network tools. See `"Tool Programs" <#tool-programs>`__.                                                                                           |
++-------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+1.5.1 NDK Include File Directory
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The ``/ti/ndk/inc`` directory contains headers for applications that use the NDK APIs (not to be confused with BSD/POSIX APIs that are provided by the Network Services Component). Users of the NDK APIs must add this directory to their include path. The major include files are as follows:
+
++---------------+------------------------------------------------------------------------------------------------------------------------+
+| Filename      | Description                                                                                                            |
++===============+========================================================================================================================+
+| netmain.h     | Master include file for applications (stacksys.h, \_nettool.h, \_netctrl.h)                                            |
++---------------+------------------------------------------------------------------------------------------------------------------------+
+| stacksys.h    | Main include file (minus the end-application oriented include files) (usertype.h, serrno.h, socket.h, osif.h, hal.h)   |
++---------------+------------------------------------------------------------------------------------------------------------------------+
+| \_netctrl.h   | Includes references for the NETCTRL scheduler library                                                                  |
++---------------+------------------------------------------------------------------------------------------------------------------------+
+| \_nettool.h   | Includes references for all the services in the NETTOOL library                                                        |
++---------------+------------------------------------------------------------------------------------------------------------------------+
+| \_oskern.h    | Includes kernel level OS functions declarations                                                                        |
++---------------+------------------------------------------------------------------------------------------------------------------------+
+| \_stack.h     | Includes all low level STACK interface functions                                                                       |
++---------------+------------------------------------------------------------------------------------------------------------------------+
+| serrno.h      | Standard error values                                                                                                  |
++---------------+------------------------------------------------------------------------------------------------------------------------+
+| socket.h      | Prototypes for all file descriptor based functions                                                                     |
++---------------+------------------------------------------------------------------------------------------------------------------------+
+| stkmain.h     | Include file used by low-level modules (not for use by applications)                                                   |
++---------------+------------------------------------------------------------------------------------------------------------------------+
+| usertype.h    | Standard types used by the stack                                                                                       |
++---------------+------------------------------------------------------------------------------------------------------------------------+
+
+Additional include files are provided in the subdirectories for the HAL, NETCTRL, NETTOOLS, OS, STACK, and TOOLS libraries.
+
+1.5.2 Tool Programs
+^^^^^^^^^^^^^^^^^^^
+
+The NDK provides several tools for various purposes. These are located in the ``/ti/ndk/tools`` directory.
+
+    **NOTE**: Tools under the /servers subdirectory are deprecated and planned for removal!
+
++----------------+--------------------------+----------------------------------------------------------+
+| Subdirectory   | Variants                 | Description                                              |
++================+==========================+==========================================================+
+| /console       | console, console\_ipv4   | Command-line based console program.                      |
++----------------+--------------------------+----------------------------------------------------------+
+| /hdlc          | hdlc                     | High-Level Data Link Control (HDLC) client and server.   |
++----------------+--------------------------+----------------------------------------------------------+
+| /servers       | servers, servers\_ipv4   | Servers used for testing NDK.                            |
++----------------+--------------------------+----------------------------------------------------------+
+
+1.5.3 Example Programs
+^^^^^^^^^^^^^^^^^^^^^^
+
+Examples for use with the NDK are provided with your SDK, and will differ depending on the SDK target.
+
+1.6 Configuring NDK Modules
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The NDK has many configurable options, and over time has supported several different configuration technologies. All configuration can be done using C APIs, and that is supported in all SDKs. Some SDKs (SimpleLink) have recently added support for SysConfig, where commonly configured options can be managed in a GUI. And some SDKs enable NDK configuration using XDC-based tooling (though this approach is now deprecated and no longer recommended).
+
+Choose one method to configure the NDK for your application.
+
+-  **C Code**: C code can use ``CfgNew()`` to create a configuration database and other ``Cfg*()`` APIs to add various settings to that configuration database. For details, see `Configuring the NDK with C Code <03_network-application-development.html#configuring-the-ndk-with-c-code>`__. You will also have to explicitly create and manage the NDK stack thread.
+-  **SysConfig**: This method is currently only provided on SimpleLink SDKs. It provides a graphical interface for configuring NDK content, along with other SimpleLink software. NDK initialization code is generated, including the NDK stack thread.
+-  **XDC/XGCONF** This method is now deprecated and no longer recommended for configuring the NDK. If you are using this method, you are encouraged to migrate to another option. Please refer to the NDK examples in your SDK for your recommended, device-tailored config approach.
+
+    **NOTE:** You should not mix configuration methods.

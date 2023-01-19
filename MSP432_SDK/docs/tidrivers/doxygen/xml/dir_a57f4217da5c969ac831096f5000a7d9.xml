@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="dir_a57f4217da5c969ac831096f5000a7d9" kind="dir">
+    <compoundname>can</compoundname>
+    <innerfile refid="_c_a_n_m_s_p432_e4_8h">CANMSP432E4.h</innerfile>
+    <innerfile refid="source_2ti_2drivers_2can_2types_8h">source/ti/drivers/can/types.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="exports/tidrivers_msp432e4/source/ti/drivers/can/"/>
+  </compounddef>
+</doxygen>

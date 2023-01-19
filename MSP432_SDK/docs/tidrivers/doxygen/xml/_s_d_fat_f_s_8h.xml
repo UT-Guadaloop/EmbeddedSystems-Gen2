@@ -1,0 +1,285 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="_s_d_fat_f_s_8h" kind="file" language="C++">
+    <compoundname>SDFatFS.h</compoundname>
+    <includes local="no">stdint.h</includes>
+    <includes refid="_s_d_8h" local="no">ti/drivers/SD.h</includes>
+    <includes local="no">third_party/fatfs/ff.h</includes>
+    <includes local="no">third_party/fatfs/diskio.h</includes>
+    <incdepgraph>
+      <node id="397">
+        <label>stdint.h</label>
+      </node>
+      <node id="400">
+        <label>third_party/fatfs/diskio.h</label>
+      </node>
+      <node id="398">
+        <label>ti/drivers/SD.h</label>
+        <link refid="_s_d_8h"/>
+        <childnode refid="397" relation="include">
+        </childnode>
+      </node>
+      <node id="399">
+        <label>third_party/fatfs/ff.h</label>
+      </node>
+      <node id="396">
+        <label>SDFatFS.h</label>
+        <link refid="_s_d_fat_f_s_8h"/>
+        <childnode refid="397" relation="include">
+        </childnode>
+        <childnode refid="398" relation="include">
+        </childnode>
+        <childnode refid="399" relation="include">
+        </childnode>
+        <childnode refid="400" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innerclass refid="struct_s_d_fat_f_s___object" prot="public">SDFatFS_Object</innerclass>
+    <innerclass refid="struct_s_d_fat_f_s___config" prot="public">SDFatFS_Config</innerclass>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="_s_d_fat_f_s_8h_1adaa1b3c3802d2a76f5fac08e993c48fd" prot="public" static="no">
+        <type><ref refid="struct_s_d_fat_f_s___config" kindref="compound">SDFatFS_Config</ref> *</type>
+        <definition>typedef SDFatFS_Config* SDFatFS_Handle</definition>
+        <argsstring></argsstring>
+        <name>SDFatFS_Handle</name>
+        <briefdescription>
+<para>A handle that is returned from a <ref refid="_s_d_fat_f_s_8h_1af4f49c19ea2e426dc7fd4b0c534b9db8" kindref="member">SDFatFS_open()</ref> call. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/SDFatFS.h" line="128" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/SDFatFS.h" bodystart="128" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_s_d_fat_f_s_8h_1af4f49c19ea2e426dc7fd4b0c534b9db8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_s_d_fat_f_s_8h_1adaa1b3c3802d2a76f5fac08e993c48fd" kindref="member">SDFatFS_Handle</ref></type>
+        <definition>SDFatFS_Handle SDFatFS_open</definition>
+        <argsstring>(uint_least8_t idx, uint_least8_t drive)</argsstring>
+        <name>SDFatFS_open</name>
+        <param>
+          <type>uint_least8_t</type>
+          <declname>idx</declname>
+        </param>
+        <param>
+          <type>uint_least8_t</type>
+          <declname>drive</declname>
+        </param>
+        <briefdescription>
+<para>Function to open a SDFatFS instance on the specified drive. </para>        </briefdescription>
+        <detaileddescription>
+<para>Function to mount the FatFs filesystem and register the SDFatFS disk I/O functions with the FatFS module.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>idx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Logical peripheral number indexed into the HWAttrs table. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>drive</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Drive Number </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/SDFatFS.h" line="140" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_fat_f_s_8h_1abe6d8057c1529b6e09489b1653ef48eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SDFatFS_close</definition>
+        <argsstring>(SDFatFS_Handle handle)</argsstring>
+        <name>SDFatFS_close</name>
+        <param>
+          <type><ref refid="_s_d_fat_f_s_8h_1adaa1b3c3802d2a76f5fac08e993c48fd" kindref="member">SDFatFS_Handle</ref></type>
+          <declname>handle</declname>
+        </param>
+        <briefdescription>
+<para>Function to close a SDFatFS instance specified by the SDFatFS handle. </para>        </briefdescription>
+        <detaileddescription>
+<para>This function unmounts the file system mounted by <ref refid="_s_d_fat_f_s_8h_1af4f49c19ea2e426dc7fd4b0c534b9db8" kindref="member">SDFatFS_open()</ref> and unregisters the SDFatFS driver from the FatFs module.</para><para><simplesect kind="pre"><para><ref refid="_s_d_fat_f_s_8h_1af4f49c19ea2e426dc7fd4b0c534b9db8" kindref="member">SDFatFS_open()</ref> had to be called first.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A <ref refid="_s_d_fat_f_s_8h_1adaa1b3c3802d2a76f5fac08e993c48fd" kindref="member">SDFatFS_Handle</ref> returned from <ref refid="_s_d_fat_f_s_8h_1af4f49c19ea2e426dc7fd4b0c534b9db8" kindref="member">SDFatFS_open()</ref></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="_s_d_fat_f_s_8h_1af4f49c19ea2e426dc7fd4b0c534b9db8" kindref="member">SDFatFS_open()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/SDFatFS.h" line="155" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_fat_f_s_8h_1ae3e438eb1f25f9b9f08d557bd480532c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SDFatFS_init</definition>
+        <argsstring>(void)</argsstring>
+        <name>SDFatFS_init</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Function to initialize a SDFatFS instance </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/SDFatFS.h" line="160" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>File Allocation Table File System (FATFS) Driver. </para>    </briefdescription>
+    <detaileddescription>
+<para><hruler/>
+</para><para>The SDFatFS header file should be included in an application as follows: <programlisting><codeline><highlight class="normal">#include<sp/>&lt;ti/drivers/SDFatFS.h&gt;</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&lt;ti/drivers/SD.h&gt;</highlight></codeline>
+</programlisting></para><para><anchor id="_s_d_fat_f_s_8h_1ti_drivers_SDFatFS_Overview"/><heading level="1">Overview</heading>
+</para><para>The SDFatFS driver is designed to hook into FatFs by implementing a set of functions that FatFs needs to call to perform basic block data transfers. This driver makes use of the SD driver for lower level disk IO operations.</para><para>The only functions that should be called by the application are the standard driver framework functions (_open, _close, etc...).</para><para>The application may use the FatFs APIs or the standard C runtime file I/O calls (fopen, fclose, etc...) given that SDFatFS_open has has been successfully called. After the SDFatFS_close API is called, ensure the application does NOT make any file I/O calls.</para><para><heading level="2">Opening the driver</heading>
+</para><para><programlisting><codeline><highlight class="normal">SDFatFS_Handle<sp/>handle;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">handle<sp/>=<sp/>SDFatFS_open(CONFIG_SDFatFS0,<sp/>driveNum,<sp/>NULL);</highlight></codeline>
+<codeline><highlight class="normal">if<sp/>(handle<sp/>==<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//Error<sp/>opening<sp/>SDFatFS<sp/>driver</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>while<sp/>(1);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting></para><para><heading level="1">Instrumentation</heading>
+</para><para>The SDFatFS driver interface produces log statements if instrumentation is enabled.</para><para><table rows="3" cols="2"><row>
+<entry thead="yes"><para>Diagnostics Mask </para></entry><entry thead="yes"><para>Log details  </para></entry></row>
+<row>
+<entry thead="no"><para>Diags_USER1 </para></entry><entry thead="no"><para>basic operations performed </para></entry></row>
+<row>
+<entry thead="no"><para>Diags_USER2 </para></entry><entry thead="no"><para>detailed operations performed </para></entry></row>
+</table>
+============================================================================ </para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2016-2019,<sp/>Texas<sp/>Instruments<sp/>Incorporated</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Redistribution<sp/>and<sp/>use<sp/>in<sp/>source<sp/>and<sp/>binary<sp/>forms,<sp/>with<sp/>or<sp/>without</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>modification,<sp/>are<sp/>permitted<sp/>provided<sp/>that<sp/>the<sp/>following<sp/>conditions</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>are<sp/>met:</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>of<sp/>source<sp/>code<sp/>must<sp/>retain<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer.</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>in<sp/>binary<sp/>form<sp/>must<sp/>reproduce<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer<sp/>in<sp/>the</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>documentation<sp/>and/or<sp/>other<sp/>materials<sp/>provided<sp/>with<sp/>the<sp/>distribution.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Neither<sp/>the<sp/>name<sp/>of<sp/>Texas<sp/>Instruments<sp/>Incorporated<sp/>nor<sp/>the<sp/>names<sp/>of</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>its<sp/>contributors<sp/>may<sp/>be<sp/>used<sp/>to<sp/>endorse<sp/>or<sp/>promote<sp/>products<sp/>derived</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>from<sp/>this<sp/>software<sp/>without<sp/>specific<sp/>prior<sp/>written<sp/>permission.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>THIS<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>BY<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>AND<sp/>CONTRIBUTORS<sp/>&quot;AS<sp/>IS&quot;</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>AND<sp/>ANY<sp/>EXPRESS<sp/>OR<sp/>IMPLIED<sp/>WARRANTIES,<sp/>INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>THE<sp/>IMPLIED<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY<sp/>AND<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>PURPOSE<sp/>ARE<sp/>DISCLAIMED.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE<sp/>COPYRIGHT<sp/>OWNER<sp/>OR</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>CONTRIBUTORS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>DIRECT,<sp/>INDIRECT,<sp/>INCIDENTAL,<sp/>SPECIAL,</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>EXEMPLARY,<sp/>OR<sp/>CONSEQUENTIAL<sp/>DAMAGES<sp/>(INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>PROCUREMENT<sp/>OF<sp/>SUBSTITUTE<sp/>GOODS<sp/>OR<sp/>SERVICES;<sp/>LOSS<sp/>OF<sp/>USE,<sp/>DATA,<sp/>OR<sp/>PROFITS;</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>OR<sp/>BUSINESS<sp/>INTERRUPTION)<sp/>HOWEVER<sp/>CAUSED<sp/>AND<sp/>ON<sp/>ANY<sp/>THEORY<sp/>OF<sp/>LIABILITY,</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/>STRICT<sp/>LIABILITY,<sp/>OR<sp/>TORT<sp/>(INCLUDING<sp/>NEGLIGENCE<sp/>OR</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*<sp/>OTHERWISE)<sp/>ARISING<sp/>IN<sp/>ANY<sp/>WAY<sp/>OUT<sp/>OF<sp/>THE<sp/>USE<sp/>OF<sp/>THIS<sp/>SOFTWARE,</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*<sp/>EVEN<sp/>IF<sp/>ADVISED<sp/>OF<sp/>THE<sp/>POSSIBILITY<sp/>OF<sp/>SUCH<sp/>DAMAGE.</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="comment">/*!****************************************************************************</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>*<sp/><sp/>@file<sp/><sp/><sp/><sp/><sp/><sp/><sp/>SDFatFS.h</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/>*<sp/><sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/>File<sp/>Allocation<sp/>Table<sp/>File<sp/>System<sp/>(FATFS)<sp/>Driver</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="37"><highlight class="comment"><sp/>*<sp/><sp/>The<sp/>SDFatFS<sp/>header<sp/>file<sp/>should<sp/>be<sp/>included<sp/>in<sp/>an<sp/>application<sp/>as<sp/>follows:</highlight></codeline>
+<codeline lineno="38"><highlight class="comment"><sp/>*<sp/><sp/>@code</highlight></codeline>
+<codeline lineno="39"><highlight class="comment"><sp/>*<sp/><sp/>#include<sp/>&lt;ti/drivers/SDFatFS.h&gt;</highlight></codeline>
+<codeline lineno="40"><highlight class="comment"><sp/>*<sp/><sp/>#include<sp/>&lt;ti/drivers/SD.h&gt;</highlight></codeline>
+<codeline lineno="41"><highlight class="comment"><sp/>*<sp/><sp/>@endcode</highlight></codeline>
+<codeline lineno="42"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="43"><highlight class="comment"><sp/>*<sp/><sp/>@anchor<sp/>ti_drivers_SDFatFS_Overview</highlight></codeline>
+<codeline lineno="44"><highlight class="comment"><sp/>*<sp/><sp/>#<sp/>Overview<sp/>#</highlight></codeline>
+<codeline lineno="45"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="46"><highlight class="comment"><sp/>*<sp/><sp/>The<sp/>SDFatFS<sp/>driver<sp/>is<sp/>designed<sp/>to<sp/>hook<sp/>into<sp/>FatFs<sp/>by<sp/>implementing<sp/>a</highlight></codeline>
+<codeline lineno="47"><highlight class="comment"><sp/>*<sp/><sp/>set<sp/>of<sp/>functions<sp/>that<sp/>FatFs<sp/>needs<sp/>to<sp/>call<sp/>to<sp/>perform<sp/>basic<sp/>block<sp/>data</highlight></codeline>
+<codeline lineno="48"><highlight class="comment"><sp/>*<sp/><sp/>transfers.<sp/>This<sp/>driver<sp/>makes<sp/>use<sp/>of<sp/>the<sp/>SD<sp/>driver<sp/>for<sp/>lower<sp/>level<sp/>disk<sp/>IO</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/>*<sp/><sp/>operations.</highlight></codeline>
+<codeline lineno="50"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="51"><highlight class="comment"><sp/>*<sp/><sp/>The<sp/>only<sp/>functions<sp/>that<sp/>should<sp/>be<sp/>called<sp/>by<sp/>the<sp/>application<sp/>are<sp/>the</highlight></codeline>
+<codeline lineno="52"><highlight class="comment"><sp/>*<sp/><sp/>standard<sp/>driver<sp/>framework<sp/>functions<sp/>(_open,<sp/>_close,<sp/>etc...).</highlight></codeline>
+<codeline lineno="53"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="54"><highlight class="comment"><sp/>*<sp/><sp/>The<sp/>application<sp/>may<sp/>use<sp/>the<sp/>FatFs<sp/>APIs<sp/>or<sp/>the<sp/>standard<sp/>C</highlight></codeline>
+<codeline lineno="55"><highlight class="comment"><sp/>*<sp/><sp/>runtime<sp/>file<sp/>I/O<sp/>calls<sp/>(fopen,<sp/>fclose,<sp/>etc...)<sp/>given<sp/>that<sp/>SDFatFS_open<sp/>has</highlight></codeline>
+<codeline lineno="56"><highlight class="comment"><sp/>*<sp/><sp/>has<sp/>been<sp/>successfully<sp/>called.<sp/>After<sp/>the<sp/>SDFatFS_close<sp/>API<sp/>is<sp/>called,</highlight></codeline>
+<codeline lineno="57"><highlight class="comment"><sp/>*<sp/><sp/>ensure<sp/>the<sp/>application<sp/>does<sp/>NOT<sp/>make<sp/>any<sp/>file<sp/>I/O<sp/>calls.</highlight></codeline>
+<codeline lineno="58"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="59"><highlight class="comment"><sp/>*<sp/><sp/>##<sp/>Opening<sp/>the<sp/>driver<sp/>#</highlight></codeline>
+<codeline lineno="60"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="61"><highlight class="comment"><sp/>*<sp/><sp/>@code</highlight></codeline>
+<codeline lineno="62"><highlight class="comment"><sp/>*<sp/><sp/>SDFatFS_Handle<sp/>handle;</highlight></codeline>
+<codeline lineno="63"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="64"><highlight class="comment"><sp/>*<sp/><sp/>handle<sp/>=<sp/>SDFatFS_open(CONFIG_SDFatFS0,<sp/>driveNum,<sp/>NULL);</highlight></codeline>
+<codeline lineno="65"><highlight class="comment"><sp/>*<sp/><sp/>if<sp/>(handle<sp/>==<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline lineno="66"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>//Error<sp/>opening<sp/>SDFatFS<sp/>driver</highlight></codeline>
+<codeline lineno="67"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>while<sp/>(1);</highlight></codeline>
+<codeline lineno="68"><highlight class="comment"><sp/>*<sp/><sp/>}</highlight></codeline>
+<codeline lineno="69"><highlight class="comment"><sp/>*<sp/><sp/>@endcode</highlight></codeline>
+<codeline lineno="70"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="71"><highlight class="comment"><sp/>*<sp/><sp/>#<sp/>Instrumentation<sp/>#</highlight></codeline>
+<codeline lineno="72"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="73"><highlight class="comment"><sp/>*<sp/><sp/>The<sp/>SDFatFS<sp/>driver<sp/>interface<sp/>produces<sp/>log<sp/>statements<sp/>if</highlight></codeline>
+<codeline lineno="74"><highlight class="comment"><sp/>*<sp/><sp/>instrumentation<sp/>is<sp/>enabled.</highlight></codeline>
+<codeline lineno="75"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="76"><highlight class="comment"><sp/>*<sp/><sp/>Diagnostics<sp/>Mask<sp/>|<sp/>Log<sp/>details<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline lineno="77"><highlight class="comment"><sp/>*<sp/><sp/>----------------<sp/>|<sp/>-----------<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline lineno="78"><highlight class="comment"><sp/>*<sp/><sp/>Diags_USER1<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>basic<sp/>operations<sp/>performed<sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline lineno="79"><highlight class="comment"><sp/>*<sp/><sp/>Diags_USER2<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>detailed<sp/>operations<sp/>performed<sp/>|</highlight></codeline>
+<codeline lineno="80"><highlight class="comment"><sp/>*<sp/><sp/>============================================================================</highlight></codeline>
+<codeline lineno="81"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>ti_drivers_SDFatFS__include</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ti_drivers_SDFatFS__include</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_s_d_8h" kindref="compound">ti/drivers/SD.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;third_party/fatfs/ff.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;third_party/fatfs/diskio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101" refid="struct_s_d_fat_f_s___object" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="102" refid="struct_s_d_fat_f_s___object_1a46ee26f8730a9807a2424aedc19ac818" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint_fast32_t<sp/><ref refid="struct_s_d_fat_f_s___object_1a46ee26f8730a9807a2424aedc19ac818" kindref="member">driveNum</ref>;</highlight></codeline>
+<codeline lineno="103" refid="struct_s_d_fat_f_s___object_1ae3d41c3f4c8adf7b8291b2aa701296f0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>DSTATUS<sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_s_d_fat_f_s___object_1ae3d41c3f4c8adf7b8291b2aa701296f0" kindref="member">diskState</ref>;</highlight></codeline>
+<codeline lineno="104" refid="struct_s_d_fat_f_s___object_1af165bb538abef87ab17d4dd39d7a9d59" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>FATFS<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_s_d_fat_f_s___object_1af165bb538abef87ab17d4dd39d7a9d59" kindref="member">filesystem</ref>;<sp/></highlight><highlight class="comment">/*<sp/>FATFS<sp/>data<sp/>object<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105" refid="struct_s_d_fat_f_s___object_1a890dbef54e1891408b6962d7c90acc8f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_s_d___config__" kindref="compound">SD_Handle</ref><sp/><sp/><sp/><sp/><sp/><ref refid="struct_s_d_fat_f_s___object_1a890dbef54e1891408b6962d7c90acc8f" kindref="member">sdHandle</ref>;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal">}<sp/><ref refid="struct_s_d_fat_f_s___object" kindref="compound">SDFatFS_Object</ref>;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119" refid="struct_s_d_fat_f_s___config" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="121" refid="struct_s_d_fat_f_s___config_1ae15d4fd6236acda2094bd3c3cfa96fde" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_s_d_fat_f_s___object" kindref="compound">SDFatFS_Object</ref><sp/>*<ref refid="struct_s_d_fat_f_s___config_1ae15d4fd6236acda2094bd3c3cfa96fde" kindref="member">object</ref>;</highlight></codeline>
+<codeline lineno="122"><highlight class="normal">}<sp/><ref refid="struct_s_d_fat_f_s___config" kindref="compound">SDFatFS_Config</ref>;</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128" refid="_s_d_fat_f_s_8h_1adaa1b3c3802d2a76f5fac08e993c48fd" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="struct_s_d_fat_f_s___config" kindref="compound">SDFatFS_Config</ref><sp/>*<ref refid="_s_d_fat_f_s_8h_1adaa1b3c3802d2a76f5fac08e993c48fd" kindref="member">SDFatFS_Handle</ref>;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>SDFatFS_Handle<sp/><ref refid="_s_d_fat_f_s_8h_1af4f49c19ea2e426dc7fd4b0c534b9db8" kindref="member">SDFatFS_open</ref>(uint_least8_t<sp/>idx,<sp/>uint_least8_t<sp/>drive);</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_s_d_fat_f_s_8h_1abe6d8057c1529b6e09489b1653ef48eb" kindref="member">SDFatFS_close</ref>(SDFatFS_Handle<sp/>handle);</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_s_d_fat_f_s_8h_1ae3e438eb1f25f9b9f08d557bd480532c" kindref="member">SDFatFS_init</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>ti_drivers_SDFatFS__include<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="exports/tidrivers_msp432e4/source/ti/drivers/SDFatFS.h"/>
+  </compounddef>
+</doxygen>

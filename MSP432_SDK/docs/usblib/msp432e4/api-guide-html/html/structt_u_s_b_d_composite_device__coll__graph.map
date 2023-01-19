@@ -1,0 +1,8 @@
+<map id="tUSBDCompositeDevice" name="tUSBDCompositeDevice">
+<area shape="rect" id="node2" href="$structt_composite_entry.html" title="tCompositeEntry" alt="" coords="109,288,239,315"/>
+<area shape="rect" id="node3" href="$structt_device_info.html" title="tDeviceInfo" alt="" coords="127,199,224,225"/>
+<area shape="rect" id="node7" href="$structt_composite_instance.html" title="tCompositeInstance" alt="" coords="267,288,419,315"/>
+<area shape="rect" id="node4" href="$structt_custom_handlers.html" title="tCustomHandlers" alt="" coords="5,95,140,121"/>
+<area shape="rect" id="node5" href="$structt_config_header.html" title="tConfigHeader" alt="" coords="291,95,406,121"/>
+<area shape="rect" id="node6" href="$structt_config_section.html" title="tConfigSection" alt="" coords="377,5,493,32"/>
+</map>

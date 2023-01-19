@@ -1,0 +1,119 @@
+// These arguments were used when this file was generated. They will be automatically applied on subsequent loads 
+// via the GUI or CLI invocations. Run CLI with '--help' for additional information on how to override these arguments.
+// @versions {"data":"2019080608","timestamp":"2019080608","tool":"1.2.922","templates":"2019080608"}
+// @cliArgs --board /ti/boards/MSP_EXP432E401Y
+
+var Display = scripting.addModule("/ti/display/Display");
+var Display1 = Display.addInstance();
+var Settings = scripting.addModule("/ti/usblib/Settings");
+var Settings1 = Settings.addInstance();
+var Button = scripting.addModule("/ti/drivers/apps/Button");
+var Button1 = Button.addInstance();
+var LED = scripting.addModule("/ti/drivers/apps/LED");
+var LED1 = LED.addInstance();
+var LED2 = LED.addInstance();
+// Name - The C/C++ identifier used in applications as the index parameter passed to Display runtime APIs
+Display1.$name = "CONFIG_Display_0";
+// Use Hardware - Select the hardware to use, or 'None' to use available header pins
+Display1.$hardware = system.deviceData.board.components.XDS110UART;
+var Board = scripting.addModule("/ti/drivers/Board");
+var DriverLib = scripting.addModule("/ti/devices/DriverLib");
+// Name - The C/C++ identifier used in applications as the index parameter passed to UART runtime APIs
+Display1.uart.$name = "CONFIG_UART_0";
+var Power = scripting.addModule("/ti/drivers/Power");
+// Name
+Display1.uart.uart.$name = "MyUART1";
+// Name
+Settings1.$name = "CONFIG_USB_0";
+// Use Hardware - Select the hardware to use, or 'None' to use available header pins
+Settings1.$hardware = system.deviceData.board.components.MICROUSB;
+// Name
+Settings1.stringDescriptor.$name = "usb_string0";
+// Configuration Description - Configuration description string.
+Settings1.stringDescriptor.configurationDescription = "";
+// Interface Description - Interface description string.
+Settings1.stringDescriptor.interfaceDescription = "";
+// Product Name - Product name string that appears upon enumeration.
+Settings1.stringDescriptor.productName = "Composite HID Mouse and CDC Serial Example";
+// Name
+Settings1.configuration.$name = "usb_configuration0";
+// Max Power (mA) - Max Power Consumption of Device in mA.
+Settings1.configuration.maxPower = "250";
+// Power Attribute - How the device will draw power.
+Settings1.configuration.powerAttribute = "USB_CONF_ATTR_BUS_PWR";
+// Device Class
+Settings1.configuration.deviceClass = "Composite";
+// # of HID classes
+Settings1.configuration.composite.numHid = 1;
+// # of CDC classes
+Settings1.configuration.composite.numCdc = 1;
+// Name
+Settings1.configuration.composite.$name = "compositeDevice";
+// USB Callback Handler - Name of the callback function related to composite USB events.
+Settings1.configuration.composite.usbHandler = "cbCompositeHandler";
+// HID Type
+Settings1.configuration.composite.hid0.hidType = "Mouse";
+// Name
+Settings1.configuration.composite.hid0.$name = "mouseDevice";
+// HID Event Handler Function - Name of the callback function called related to non-generic HID events.
+Settings1.configuration.composite.hid0.usbHandler = "cbMouseHandler";
+// HID Event Handler Data - Name of the first parameter passed to the HID callback alongside every event.
+Settings1.configuration.composite.hid0.usbHandlerData = "mouseDevice";
+// Name
+Settings1.configuration.composite.cdc0.$name = "serialDevice";
+// Transmit Event Handler Function - Callback function for events related to data transmit channel.
+Settings1.configuration.composite.cdc0.txBufferHandler = "cbTxHandler";
+// Receive Event Handler Function - Callback function for events related to data receive channel.
+Settings1.configuration.composite.cdc0.rxBufferHandler = "cbRxHandler";
+// Control Event Handler Function - Callback function for events related to asynchronous control operations.
+Settings1.configuration.composite.cdc0.controlHandler = "cbSerialHandler";
+// Name
+Settings1.usb.$name = "MyUSB1";
+// Name - The C/C++ identifier used in applications as the index parameter passed to Button runtime APIs
+Button1.$name = "CONFIG_BUTTON_0";
+// Use Hardware - Select the hardware to use, or 'None' to use available header pins
+Button1.$hardware = system.deviceData.board.components.USR_SW1;
+// Name - The C/C++ identifier used in applications as the index parameter passed to GPIO runtime APIs
+Button1.gpioPin.$name = "CONFIG_GPIO_0";
+// Pull - Specifies the internal pull-up or pull-down resistor configuration of this GPIO pin.
+Button1.gpioPin.pull = "Pull Up";
+// Interrupt Trigger - Specifies when or if interrupts are triggered
+Button1.gpioPin.interruptTrigger = "Falling Edge";
+// Name - The C/C++ identifier used in applications as the index parameter passed to LED runtime APIs
+LED1.$name = "CONFIG_LED_0";
+// Use Hardware - Select the hardware to use, or 'None' to use available header pins
+LED1.$hardware = system.deviceData.board.components.D1;
+// Mode - Select the GPIO mode
+LED1.gpioPin.mode = "Output";
+// Callback Function - The name of the callback function called when this GPIO pin triggers an interrupt, or 'NULL' if it's specified at runtime
+LED1.gpioPin.callbackFunction = "";
+// Name - The C/C++ identifier used in applications as the index parameter passed to LED runtime APIs
+LED2.$name = "CONFIG_LED_1";
+// Use Hardware - Select the hardware to use, or 'None' to use available header pins
+LED2.$hardware = system.deviceData.board.components.D2;
+// Mode - Select the GPIO mode
+LED2.gpioPin.mode = "Output";
+// Callback Function - The name of the callback function called when this GPIO pin triggers an interrupt, or 'NULL' if it's specified at runtime
+LED2.gpioPin.callbackFunction = "";
+// Suggest solution
+Display1.uart.uart.$suggestSolution = "UART0";
+// Suggest solution
+Display1.uart.uart.txPin.$suggestSolution = "34";
+// Suggest solution
+Display1.uart.uart.rxPin.$suggestSolution = "33";
+// Suggest solution
+Settings1.usb.$suggestSolution = "USB0";
+// Suggest solution
+Settings1.usb.dmPin.$suggestSolution = "93";
+// Suggest solution
+Settings1.usb.dpPin.$suggestSolution = "94";
+// Suggest solution
+Settings1.usb.idPin.$suggestSolution = "95";
+// Suggest solution
+Settings1.usb.vbusPin.$suggestSolution = "96";
+// Suggest solution
+Button1.gpioPin.gpioPin.$suggestSolution = "116";
+// Suggest solution
+LED1.gpioPin.gpioPin.$suggestSolution = "108";
+// Suggest solution
+LED2.gpioPin.gpioPin.$suggestSolution = "107";

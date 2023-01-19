@@ -1,0 +1,20 @@
+[
+    {
+        "files": [
+            "+../../README.md -> README.md",
+            "+../../README.html -> README.html",
+            "+../../Board.html -> Board.html",
+            "+../../overview.rov.json -> overview.rov.json",
+            "+../../board_funcs.c -> board_funcs.c",
+            "+../../board_funcs.h -> board_funcs.h",
+            "+../../cloud_task.c -> cloud_task.c",
+            "+../../cloud_task.h -> cloud_task.h",
+            "+../../command_task.c -> command_task.c",
+            "+../../command_task.h -> command_task.h",
+            "+../../outofboxhooks.c -> outofboxhooks.c",
+            "+../outofbox_msp432e401y.syscfg -> outofbox_msp432e401y.syscfg",
+            "+../main_tirtos.c -> main_tirtos.c",
+            "+MSP_EXP432E401Y_TIRTOS.cmd -> MSP_EXP432E401Y_TIRTOS.cmd"
+        ]
+    }
+]

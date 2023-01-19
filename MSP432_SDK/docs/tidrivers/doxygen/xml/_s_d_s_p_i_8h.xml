@@ -1,0 +1,178 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="_s_d_s_p_i_8h" kind="file" language="C++">
+    <compoundname>SDSPI.h</compoundname>
+    <includes local="no">stdint.h</includes>
+    <includes local="no">ti/drivers/dpl/SemaphoreP.h</includes>
+    <includes refid="_s_d_8h" local="no">ti/drivers/SD.h</includes>
+    <includes refid="_s_p_i_8h" local="no">ti/drivers/SPI.h</includes>
+    <incdepgraph>
+      <node id="407">
+        <label>stdbool.h</label>
+      </node>
+      <node id="403">
+        <label>stdint.h</label>
+      </node>
+      <node id="406">
+        <label>ti/drivers/SPI.h</label>
+        <link refid="_s_p_i_8h"/>
+        <childnode refid="407" relation="include">
+        </childnode>
+        <childnode refid="408" relation="include">
+        </childnode>
+        <childnode refid="403" relation="include">
+        </childnode>
+      </node>
+      <node id="404">
+        <label>ti/drivers/dpl/SemaphoreP.h</label>
+      </node>
+      <node id="408">
+        <label>stddef.h</label>
+      </node>
+      <node id="402">
+        <label>SDSPI.h</label>
+        <link refid="_s_d_s_p_i_8h"/>
+        <childnode refid="403" relation="include">
+        </childnode>
+        <childnode refid="404" relation="include">
+        </childnode>
+        <childnode refid="405" relation="include">
+        </childnode>
+        <childnode refid="406" relation="include">
+        </childnode>
+      </node>
+      <node id="405">
+        <label>ti/drivers/SD.h</label>
+        <link refid="_s_d_8h"/>
+        <childnode refid="403" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innerclass refid="struct_s_d_s_p_i___h_w_attrs" prot="public">SDSPI_HWAttrs</innerclass>
+    <innerclass refid="struct_s_d_s_p_i___object" prot="public">SDSPI_Object</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_s_d_s_p_i_8h_1a7535c02140f9b8b9762e67f46f5387ab" prot="public" static="no" mutable="no">
+        <type>const <ref refid="struct_s_d___fxn_table" kindref="compound">SD_FxnTable</ref></type>
+        <definition>const SD_FxnTable SDSPI_fxnTable</definition>
+        <argsstring></argsstring>
+        <name>SDSPI_fxnTable</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/sd/SDSPI.h" line="79" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>SD driver implementation built on the TI SPI driver. </para>    </briefdescription>
+    <detaileddescription>
+<para><hruler/>
+</para><para>The SDSPI header file should be included in an application as follows: <programlisting><codeline><highlight class="normal">#include<sp/>&lt;ti/drivers/SD.h&gt;</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&lt;ti/drivers/sd/SDSPI.h&gt;</highlight></codeline>
+</programlisting></para><para>Refer to <ref refid="_s_d_8h" kindref="compound">SD.h</ref> for a complete description of APIs &amp; example of use.</para><para>This SD driver implementation can be used to communicate with SD cards via a SPI peripheral. This driver leverages the TI SPI driver to transfer data to/from the host processor to the SD card. The SD card chip select is also handled by this driver via the TI GPIO driver. Both the SPI driver instance &amp; the GPIO pin (used as chip select) must be specified in the SDSPI hardware attributes.</para><para>Note: This driver requires that the &apos;defaultTxBufValue&apos; field in the SPI driver hardware attributes be set to &apos;0xFF&apos;.</para><para><heading level="2">Data location &amp; alignment</heading>
+</para><para>This driver relies on the TI SPI driver to configure the SPI peripheral &amp; perform data transfers. This means that data to be transferred must comply with rules &amp; restrictions set SPI driver (memory alignment &amp; DMA accessibility requirements). Refer to <ref refid="_s_p_i_8h" kindref="compound">SPI.h</ref> &amp; the device specific SPI implementation header files for details.</para><para><hruler/>
+ </para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2017-2019,<sp/>Texas<sp/>Instruments<sp/>Incorporated</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Redistribution<sp/>and<sp/>use<sp/>in<sp/>source<sp/>and<sp/>binary<sp/>forms,<sp/>with<sp/>or<sp/>without</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>modification,<sp/>are<sp/>permitted<sp/>provided<sp/>that<sp/>the<sp/>following<sp/>conditions</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>are<sp/>met:</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>of<sp/>source<sp/>code<sp/>must<sp/>retain<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer.</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>in<sp/>binary<sp/>form<sp/>must<sp/>reproduce<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer<sp/>in<sp/>the</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>documentation<sp/>and/or<sp/>other<sp/>materials<sp/>provided<sp/>with<sp/>the<sp/>distribution.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Neither<sp/>the<sp/>name<sp/>of<sp/>Texas<sp/>Instruments<sp/>Incorporated<sp/>nor<sp/>the<sp/>names<sp/>of</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>its<sp/>contributors<sp/>may<sp/>be<sp/>used<sp/>to<sp/>endorse<sp/>or<sp/>promote<sp/>products<sp/>derived</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>from<sp/>this<sp/>software<sp/>without<sp/>specific<sp/>prior<sp/>written<sp/>permission.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>THIS<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>BY<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>AND<sp/>CONTRIBUTORS<sp/>&quot;AS<sp/>IS&quot;</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>AND<sp/>ANY<sp/>EXPRESS<sp/>OR<sp/>IMPLIED<sp/>WARRANTIES,<sp/>INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>THE<sp/>IMPLIED<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY<sp/>AND<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>PURPOSE<sp/>ARE<sp/>DISCLAIMED.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE<sp/>COPYRIGHT<sp/>OWNER<sp/>OR</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>CONTRIBUTORS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>DIRECT,<sp/>INDIRECT,<sp/>INCIDENTAL,<sp/>SPECIAL,</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>EXEMPLARY,<sp/>OR<sp/>CONSEQUENTIAL<sp/>DAMAGES<sp/>(INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>PROCUREMENT<sp/>OF<sp/>SUBSTITUTE<sp/>GOODS<sp/>OR<sp/>SERVICES;<sp/>LOSS<sp/>OF<sp/>USE,<sp/>DATA,<sp/>OR<sp/>PROFITS;</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>OR<sp/>BUSINESS<sp/>INTERRUPTION)<sp/>HOWEVER<sp/>CAUSED<sp/>AND<sp/>ON<sp/>ANY<sp/>THEORY<sp/>OF<sp/>LIABILITY,</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/>STRICT<sp/>LIABILITY,<sp/>OR<sp/>TORT<sp/>(INCLUDING<sp/>NEGLIGENCE<sp/>OR</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*<sp/>OTHERWISE)<sp/>ARISING<sp/>IN<sp/>ANY<sp/>WAY<sp/>OUT<sp/>OF<sp/>THE<sp/>USE<sp/>OF<sp/>THIS<sp/>SOFTWARE,</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*<sp/>EVEN<sp/>IF<sp/>ADVISED<sp/>OF<sp/>THE<sp/>POSSIBILITY<sp/>OF<sp/>SUCH<sp/>DAMAGE.</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="comment">/*!***************************************************************************</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>*<sp/><sp/>@file<sp/><sp/><sp/><sp/><sp/><sp/><sp/>SDSPI.h</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/>*<sp/><sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/>SD<sp/>driver<sp/>implementation<sp/>built<sp/>on<sp/>the<sp/>TI<sp/>SPI<sp/>driver.</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="37"><highlight class="comment"><sp/>*<sp/><sp/>The<sp/>SDSPI<sp/>header<sp/>file<sp/>should<sp/>be<sp/>included<sp/>in<sp/>an<sp/>application<sp/>as<sp/>follows:</highlight></codeline>
+<codeline lineno="38"><highlight class="comment"><sp/>*<sp/><sp/>@code</highlight></codeline>
+<codeline lineno="39"><highlight class="comment"><sp/>*<sp/><sp/>#include<sp/>&lt;ti/drivers/SD.h&gt;</highlight></codeline>
+<codeline lineno="40"><highlight class="comment"><sp/>*<sp/><sp/>#include<sp/>&lt;ti/drivers/sd/SDSPI.h&gt;</highlight></codeline>
+<codeline lineno="41"><highlight class="comment"><sp/>*<sp/><sp/>@endcode</highlight></codeline>
+<codeline lineno="42"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="43"><highlight class="comment"><sp/>*<sp/><sp/>Refer<sp/>to<sp/>@ref<sp/>SD.h<sp/>for<sp/>a<sp/>complete<sp/>description<sp/>of<sp/>APIs<sp/>&amp;<sp/>example<sp/>of<sp/>use.</highlight></codeline>
+<codeline lineno="44"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="45"><highlight class="comment"><sp/>*<sp/><sp/>This<sp/>SD<sp/>driver<sp/>implementation<sp/>can<sp/>be<sp/>used<sp/>to<sp/>communicate<sp/>with<sp/>SD<sp/>cards</highlight></codeline>
+<codeline lineno="46"><highlight class="comment"><sp/>*<sp/><sp/>via<sp/>a<sp/>SPI<sp/>peripheral.<sp/><sp/>This<sp/>driver<sp/>leverages<sp/>the<sp/>TI<sp/>SPI<sp/>driver<sp/>to<sp/>transfer</highlight></codeline>
+<codeline lineno="47"><highlight class="comment"><sp/>*<sp/><sp/>data<sp/>to/from<sp/>the<sp/>host<sp/>processor<sp/>to<sp/>the<sp/>SD<sp/>card.<sp/><sp/>The<sp/>SD<sp/>card<sp/>chip<sp/>select</highlight></codeline>
+<codeline lineno="48"><highlight class="comment"><sp/>*<sp/><sp/>is<sp/>also<sp/>handled<sp/>by<sp/>this<sp/>driver<sp/>via<sp/>the<sp/>TI<sp/>GPIO<sp/>driver.<sp/><sp/>Both<sp/>the<sp/>SPI</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/>*<sp/><sp/>driver<sp/>instance<sp/>&amp;<sp/>the<sp/>GPIO<sp/>pin<sp/>(used<sp/>as<sp/>chip<sp/>select)<sp/>must<sp/>be<sp/>specified</highlight></codeline>
+<codeline lineno="50"><highlight class="comment"><sp/>*<sp/><sp/>in<sp/>the<sp/>SDSPI<sp/>hardware<sp/>attributes.</highlight></codeline>
+<codeline lineno="51"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="52"><highlight class="comment"><sp/>*<sp/><sp/>Note:<sp/>This<sp/>driver<sp/>requires<sp/>that<sp/>the<sp/>&apos;defaultTxBufValue&apos;<sp/>field<sp/>in<sp/>the<sp/>SPI</highlight></codeline>
+<codeline lineno="53"><highlight class="comment"><sp/>*<sp/><sp/>driver<sp/>hardware<sp/>attributes<sp/>be<sp/>set<sp/>to<sp/>&apos;0xFF&apos;.</highlight></codeline>
+<codeline lineno="54"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="55"><highlight class="comment"><sp/>*<sp/><sp/>##<sp/>Data<sp/>location<sp/>&amp;<sp/>alignment<sp/>#</highlight></codeline>
+<codeline lineno="56"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="57"><highlight class="comment"><sp/>*<sp/><sp/>This<sp/>driver<sp/>relies<sp/>on<sp/>the<sp/>TI<sp/>SPI<sp/>driver<sp/>to<sp/>configure<sp/>the<sp/>SPI<sp/>peripheral<sp/>&amp;</highlight></codeline>
+<codeline lineno="58"><highlight class="comment"><sp/>*<sp/><sp/>perform<sp/>data<sp/>transfers.<sp/><sp/>This<sp/>means<sp/>that<sp/>data<sp/>to<sp/>be<sp/>transferred<sp/>must<sp/>comply</highlight></codeline>
+<codeline lineno="59"><highlight class="comment"><sp/>*<sp/><sp/>with<sp/>rules<sp/>&amp;<sp/>restrictions<sp/>set<sp/>SPI<sp/>driver<sp/>(memory<sp/>alignment<sp/>&amp;<sp/>DMA</highlight></codeline>
+<codeline lineno="60"><highlight class="comment"><sp/>*<sp/><sp/>accessibility<sp/>requirements).<sp/><sp/>Refer<sp/>to<sp/>@ref<sp/>SPI.h<sp/>&amp;<sp/>the<sp/>device<sp/>specific</highlight></codeline>
+<codeline lineno="61"><highlight class="comment"><sp/>*<sp/><sp/>SPI<sp/>implementation<sp/>header<sp/>files<sp/>for<sp/>details.</highlight></codeline>
+<codeline lineno="62"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="63"><highlight class="comment"><sp/>*<sp/><sp/>&lt;hr&gt;</highlight></codeline>
+<codeline lineno="64"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>ti_drivers_sd_SDSPI__include</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ti_drivers_sd_SDSPI__include</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ti/drivers/dpl/SemaphoreP.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_s_d_8h" kindref="compound">ti/drivers/SD.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_s_p_i_8h" kindref="compound">ti/drivers/SPI.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>SDSPI<sp/>function<sp/>table<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_s_d___fxn_table" kindref="compound">SD_FxnTable</ref><sp/><ref refid="_s_d_s_p_i_8h_1a7535c02140f9b8b9762e67f46f5387ab" kindref="member">SDSPI_fxnTable</ref>;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104" refid="struct_s_d_s_p_i___h_w_attrs" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="105" refid="struct_s_d_s_p_i___h_w_attrs_1af5bd2c5c0c7569c7a98e5629a853ec61" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint_least8_t<sp/><ref refid="struct_s_d_s_p_i___h_w_attrs_1af5bd2c5c0c7569c7a98e5629a853ec61" kindref="member">spiIndex</ref>;</highlight></codeline>
+<codeline lineno="106" refid="struct_s_d_s_p_i___h_w_attrs_1a5fcc4985f5db6b4b6f1e91114f5f091d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint16_t<sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_s_d_s_p_i___h_w_attrs_1a5fcc4985f5db6b4b6f1e91114f5f091d" kindref="member">spiCsGpioIndex</ref>;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal">}<sp/><ref refid="struct_s_d_s_p_i___h_w_attrs" kindref="compound">SDSPI_HWAttrs</ref>;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114" refid="struct_s_d_s_p_i___object" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="115" refid="struct_s_d_s_p_i___object_1a48550e6fa0a3d3d2a867e6a5cc7022fa" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>SemaphoreP_Handle<sp/><ref refid="struct_s_d_s_p_i___object_1a48550e6fa0a3d3d2a867e6a5cc7022fa" kindref="member">lockSem</ref>;</highlight></codeline>
+<codeline lineno="116" refid="struct_s_d_s_p_i___object_1a407717e1dd35d8088bd80c4af1f0d645" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_s_p_i___config__" kindref="compound">SPI_Handle</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_s_d_s_p_i___object_1a407717e1dd35d8088bd80c4af1f0d645" kindref="member">spiHandle</ref>;</highlight></codeline>
+<codeline lineno="117" refid="struct_s_d_s_p_i___object_1a6c86fe777f2681482cda251b852fafe6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_d_8h_1a90b1bf9153b1d83c5aaa80cad97bbec2" kindref="member">SD_CardType</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_s_d_s_p_i___object_1a6c86fe777f2681482cda251b852fafe6" kindref="member">cardType</ref>;</highlight></codeline>
+<codeline lineno="118" refid="struct_s_d_s_p_i___object_1a8cb5de785c5712208854b6ee7a055a8e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_s_d_s_p_i___object_1a8cb5de785c5712208854b6ee7a055a8e" kindref="member">isOpen</ref>;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal">}<sp/><ref refid="struct_s_d_s_p_i___object" kindref="compound">SDSPI_Object</ref>;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>ti_drivers_sd_SDSPI__include<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="exports/tidrivers_msp432e4/source/ti/drivers/sd/SDSPI.h"/>
+  </compounddef>
+</doxygen>

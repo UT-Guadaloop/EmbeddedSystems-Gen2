@@ -1,0 +1,18 @@
+[
+    {
+        "files": [
+            "+../../mqtt_client_app.c -> mqtt_client_app.c",
+            "+../../README.md -> README.md",
+            "+../../README.html -> README.html",
+            "+../../mqttClientHooks.c -> mqttClientHooks.c",
+            "+../../client_cbs.c -> client_cbs.c",
+            "+../../client_cbs.h -> client_cbs.h",
+            "+../../startsntp.c -> startsntp.c",
+            "+../../overview.rov.json -> overview.rov.json",
+            "+../main_tirtos.c -> main_tirtos.c",
+            "+../mqttclient.syscfg -> mqttclient.syscfg",
+            "+../../../../../../../source/ti/boards/MSP_EXP432E401Y/Board.html -> Board.html",
+            "+MSP_EXP432E401Y_TIRTOS.lds -> MSP_EXP432E401Y_TIRTOS.lds"
+        ]
+    }
+]

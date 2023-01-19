@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="struct_g_p_i_o_m_s_p432_e4___config" kind="struct" language="C++" prot="public">
+    <compoundname>GPIOMSP432E4_Config</compoundname>
+    <includes refid="_g_p_i_o_m_s_p432_e4_8h" local="no">GPIOMSP432E4.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_g_p_i_o_m_s_p432_e4___config_1a9f2a77cce57e01c515d461c24c40cb89" prot="public" static="no" mutable="no">
+        <type><ref refid="_g_p_i_o_8h_1a7f5d979226db633309b3fdc0f4a8aef6" kindref="member">GPIO_PinConfig</ref> *</type>
+        <definition>GPIO_PinConfig* GPIOMSP432E4_Config::pinConfigs</definition>
+        <argsstring></argsstring>
+        <name>pinConfigs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pointer to the board&apos;s PinConfig array </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/gpio/GPIOMSP432E4.h" line="129" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/gpio/GPIOMSP432E4.h" bodystart="129" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_g_p_i_o_m_s_p432_e4___config_1ac72af569801af06df2d09a4b7691f019" prot="public" static="no" mutable="no">
+        <type><ref refid="_g_p_i_o_8h_1a46b0c9afbe998c88539abc92082a1173" kindref="member">GPIO_CallbackFxn</ref> *</type>
+        <definition>GPIO_CallbackFxn* GPIOMSP432E4_Config::callbacks</definition>
+        <argsstring></argsstring>
+        <name>callbacks</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pointer to the board&apos;s callback array </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/gpio/GPIOMSP432E4.h" line="132" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/gpio/GPIOMSP432E4.h" bodystart="132" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_g_p_i_o_m_s_p432_e4___config_1aa6ece0b6a31c655297af115080f880d9" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t GPIOMSP432E4_Config::numberOfPinConfigs</definition>
+        <argsstring></argsstring>
+        <name>numberOfPinConfigs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Number of pin configs defined </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/gpio/GPIOMSP432E4.h" line="135" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/gpio/GPIOMSP432E4.h" bodystart="135" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_g_p_i_o_m_s_p432_e4___config_1a553e40ee0258473ad092d2211a020270" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t GPIOMSP432E4_Config::numberOfCallbacks</definition>
+        <argsstring></argsstring>
+        <name>numberOfCallbacks</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Number of callbacks defined </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/gpio/GPIOMSP432E4.h" line="138" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/gpio/GPIOMSP432E4.h" bodystart="138" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_g_p_i_o_m_s_p432_e4___config_1a50f0977e838c898088e69e4cb81aac56" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t GPIOMSP432E4_Config::intPriority</definition>
+        <argsstring></argsstring>
+        <name>intPriority</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Interrupt priority used for call back interrupts.</para><para>intPriority is the interrupt priority, as defined by the underlying OS. It is passed unmodified to the underlying OS&apos;s interrupt handler creation code, so you need to refer to the OS documentation for usage. For example, for SYS/BIOS applications, refer to the ti.sysbios.family.arm.m3.Hwi documentation for SYS/BIOS usage of interrupt priorities. If the driver uses the ti.dpl interface instead of making OS calls directly, then the HwiP port handles the interrupt priority in an OS specific way. In the case of the SYS/BIOS port, intPriority is passed unmodified to Hwi_create().</para><para>Setting ~0 will configure the lowest possible priority </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/gpio/GPIOMSP432E4.h" line="154" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/gpio/GPIOMSP432E4.h" bodystart="154" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>GPIO device specific driver configuration structure. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="exports/tidrivers_msp432e4/source/ti/drivers/gpio/GPIOMSP432E4.h" line="127" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/gpio/GPIOMSP432E4.h" bodystart="127" bodyend="155"/>
+    <listofallmembers>
+      <member refid="struct_g_p_i_o_m_s_p432_e4___config_1ac72af569801af06df2d09a4b7691f019" prot="public" virt="non-virtual"><scope>GPIOMSP432E4_Config</scope><name>callbacks</name></member>
+      <member refid="struct_g_p_i_o_m_s_p432_e4___config_1a50f0977e838c898088e69e4cb81aac56" prot="public" virt="non-virtual"><scope>GPIOMSP432E4_Config</scope><name>intPriority</name></member>
+      <member refid="struct_g_p_i_o_m_s_p432_e4___config_1a553e40ee0258473ad092d2211a020270" prot="public" virt="non-virtual"><scope>GPIOMSP432E4_Config</scope><name>numberOfCallbacks</name></member>
+      <member refid="struct_g_p_i_o_m_s_p432_e4___config_1aa6ece0b6a31c655297af115080f880d9" prot="public" virt="non-virtual"><scope>GPIOMSP432E4_Config</scope><name>numberOfPinConfigs</name></member>
+      <member refid="struct_g_p_i_o_m_s_p432_e4___config_1a9f2a77cce57e01c515d461c24c40cb89" prot="public" virt="non-virtual"><scope>GPIOMSP432E4_Config</scope><name>pinConfigs</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

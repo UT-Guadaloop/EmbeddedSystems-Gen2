@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="struct_watchdog_m_s_p432_e4___object" kind="struct" language="C++" prot="public">
+    <compoundname>WatchdogMSP432E4_Object</compoundname>
+    <includes refid="_watchdog_m_s_p432_e4_8h" local="no">WatchdogMSP432E4.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_watchdog_m_s_p432_e4___object_1a457e1b4794caa2332f2ec38fd86874b1" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool WatchdogMSP432E4_Object::isOpen</definition>
+        <argsstring></argsstring>
+        <name>isOpen</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/watchdog/WatchdogMSP432E4.h" line="178" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/watchdog/WatchdogMSP432E4.h" bodystart="178" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Watchdog Object for MSP432E4. </para>    </briefdescription>
+    <detaileddescription>
+<para>The application must not access any member variables of this structure! </para>    </detaileddescription>
+    <location file="exports/tidrivers_msp432e4/source/ti/drivers/watchdog/WatchdogMSP432E4.h" line="177" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/watchdog/WatchdogMSP432E4.h" bodystart="177" bodyend="179"/>
+    <listofallmembers>
+      <member refid="struct_watchdog_m_s_p432_e4___object_1a457e1b4794caa2332f2ec38fd86874b1" prot="public" virt="non-virtual"><scope>WatchdogMSP432E4_Object</scope><name>isOpen</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

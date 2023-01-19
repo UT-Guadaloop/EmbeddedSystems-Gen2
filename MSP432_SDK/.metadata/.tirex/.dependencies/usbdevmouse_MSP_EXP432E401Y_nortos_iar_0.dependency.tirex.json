@@ -1,0 +1,18 @@
+[
+    {
+        "files": [
+            "+startup_msp432e401y_ewarm.c -> startup_msp432e401y_ewarm.c",
+            "+../usb_dev_mouse.c -> usb_dev_mouse.c",
+            "+../usb_mouse_structs.c -> usb_mouse_structs.c",
+            "+../usb_mouse_structs.h -> usb_mouse_structs.h",
+            "+../pinout.c -> pinout.c",
+            "+../pinout.h -> pinout.h",
+            "+../uartstdio.c -> uartstdio.c",
+            "+../uartstdio.h -> uartstdio.h",
+            "+../system_msp432e401y.c -> system_msp432e401y.c",
+            "+../README.md -> README.md",
+            "+../README.html -> README.html",
+            "+msp432e401y.icf -> msp432e401y.icf"
+        ]
+    }
+]

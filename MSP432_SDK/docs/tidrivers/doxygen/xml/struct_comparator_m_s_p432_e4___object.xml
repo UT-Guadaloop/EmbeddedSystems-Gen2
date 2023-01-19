@@ -1,0 +1,130 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="struct_comparator_m_s_p432_e4___object" kind="struct" language="C++" prot="public">
+    <compoundname>ComparatorMSP432E4_Object</compoundname>
+    <includes refid="_comparator_m_s_p432_e4_8h" local="no">ComparatorMSP432E4.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_comparator_m_s_p432_e4___object_1ada266fd8dd1da90c9bb48d3a131df81c" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool ComparatorMSP432E4_Object::isOpen</definition>
+        <argsstring></argsstring>
+        <name>isOpen</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/comparator/ComparatorMSP432E4.h" line="199" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/comparator/ComparatorMSP432E4.h" bodystart="199" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_comparator_m_s_p432_e4___object_1aab044a2d08b97e2a839fdfd7b905bb70" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool ComparatorMSP432E4_Object::isRunning</definition>
+        <argsstring></argsstring>
+        <name>isRunning</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/comparator/ComparatorMSP432E4.h" line="200" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/comparator/ComparatorMSP432E4.h" bodystart="200" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_comparator_m_s_p432_e4___object_1ad9751c442917ee6f25d0593f9a1e6d37" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t ComparatorMSP432E4_Object::controlReg</definition>
+        <argsstring></argsstring>
+        <name>controlReg</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/comparator/ComparatorMSP432E4.h" line="201" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/comparator/ComparatorMSP432E4.h" bodystart="201" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_comparator_m_s_p432_e4___object_1a282dbfeb732392b96839706b3af480df" prot="public" static="no" mutable="no">
+        <type>HwiP_Handle</type>
+        <definition>HwiP_Handle ComparatorMSP432E4_Object::hwi</definition>
+        <argsstring></argsstring>
+        <name>hwi</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/comparator/ComparatorMSP432E4.h" line="203" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/comparator/ComparatorMSP432E4.h" bodystart="203" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_comparator_m_s_p432_e4___object_1a00e52c9e6d81c924f4898dffdffce21c" prot="public" static="no" mutable="no">
+        <type><ref refid="_comparator_8h_1aa0647f68f02d466e5e9981bbdbb8a829" kindref="member">Comparator_CallBackFxn</ref></type>
+        <definition>Comparator_CallBackFxn ComparatorMSP432E4_Object::callbackFxn</definition>
+        <argsstring></argsstring>
+        <name>callbackFxn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/comparator/ComparatorMSP432E4.h" line="204" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/comparator/ComparatorMSP432E4.h" bodystart="204" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_comparator_m_s_p432_e4___object_1ad2cfdc9bf425c11ee647206f89f56e30" prot="public" static="no" mutable="no">
+        <type><ref refid="_comparator_8h_1a740a7a783a039a243667b2b858e5f238" kindref="member">Comparator_InterruptLevel</ref></type>
+        <definition>Comparator_InterruptLevel ComparatorMSP432E4_Object::interruptLevel</definition>
+        <argsstring></argsstring>
+        <name>interruptLevel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/comparator/ComparatorMSP432E4.h" line="205" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/comparator/ComparatorMSP432E4.h" bodystart="205" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>ComparatorMSP432E4 Object. </para>    </briefdescription>
+    <detaileddescription>
+<para>The application must not access any member variables of this structure! </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="164">
+        <label>Comparator_Config_</label>
+        <link refid="struct_comparator___config__"/>
+        <childnode refid="165" relation="usage">
+          <edgelabel>fxnTablePtr</edgelabel>
+        </childnode>
+      </node>
+      <node id="163">
+        <label>ComparatorMSP432E4_Object</label>
+        <link refid="struct_comparator_m_s_p432_e4___object"/>
+        <childnode refid="164" relation="usage">
+          <edgelabel>callbackFxn</edgelabel>
+        </childnode>
+      </node>
+      <node id="165">
+        <label>Comparator_FxnTable</label>
+        <link refid="struct_comparator___fxn_table"/>
+        <childnode refid="164" relation="usage">
+          <edgelabel>closeFxn</edgelabel>
+          <edgelabel>stopFxn</edgelabel>
+          <edgelabel>getLevelFxn</edgelabel>
+          <edgelabel>initFxn</edgelabel>
+          <edgelabel>startFxn</edgelabel>
+          <edgelabel>openFxn</edgelabel>
+          <edgelabel>setParamsFxn</edgelabel>
+          <edgelabel>getParamsFxn</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="exports/tidrivers_msp432e4/source/ti/drivers/comparator/ComparatorMSP432E4.h" line="198" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/comparator/ComparatorMSP432E4.h" bodystart="198" bodyend="206"/>
+    <listofallmembers>
+      <member refid="struct_comparator_m_s_p432_e4___object_1a00e52c9e6d81c924f4898dffdffce21c" prot="public" virt="non-virtual"><scope>ComparatorMSP432E4_Object</scope><name>callbackFxn</name></member>
+      <member refid="struct_comparator_m_s_p432_e4___object_1ad9751c442917ee6f25d0593f9a1e6d37" prot="public" virt="non-virtual"><scope>ComparatorMSP432E4_Object</scope><name>controlReg</name></member>
+      <member refid="struct_comparator_m_s_p432_e4___object_1a282dbfeb732392b96839706b3af480df" prot="public" virt="non-virtual"><scope>ComparatorMSP432E4_Object</scope><name>hwi</name></member>
+      <member refid="struct_comparator_m_s_p432_e4___object_1ad2cfdc9bf425c11ee647206f89f56e30" prot="public" virt="non-virtual"><scope>ComparatorMSP432E4_Object</scope><name>interruptLevel</name></member>
+      <member refid="struct_comparator_m_s_p432_e4___object_1ada266fd8dd1da90c9bb48d3a131df81c" prot="public" virt="non-virtual"><scope>ComparatorMSP432E4_Object</scope><name>isOpen</name></member>
+      <member refid="struct_comparator_m_s_p432_e4___object_1aab044a2d08b97e2a839fdfd7b905bb70" prot="public" virt="non-virtual"><scope>ComparatorMSP432E4_Object</scope><name>isRunning</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

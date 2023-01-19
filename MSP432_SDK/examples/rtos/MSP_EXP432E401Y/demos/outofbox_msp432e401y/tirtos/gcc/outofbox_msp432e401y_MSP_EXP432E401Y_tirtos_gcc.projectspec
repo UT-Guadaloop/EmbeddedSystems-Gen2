@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectSpec>
+    <applicability>
+        <when>
+            <context
+                deviceFamily="MSP432"
+                deviceId="MSP432E401Y"
+            />
+        </when>
+    </applicability>
+
+    <import spec="${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/kernel/tirtos/builds/MSP_EXP432E401Y/release/gcc/tirtos_builds_MSP_EXP432E401Y_release_gcc.projectspec"/>
+
+    <project
+        title="outOfBox_msp432e401y"
+        name="outofbox_msp432e401y_MSP_EXP432E401Y_tirtos_gcc"
+        configurations="Debug"
+        toolChain="GNU"
+        cgtVersion="GNU_9.0"
+        connection="TIXDS110_Connection.xml"
+        device="MSP432E401Y"
+        ignoreDefaultDeviceSettings="true"
+        ignoreDefaultCCSSettings="true"
+        references="tirtos_builds_MSP_EXP432E401Y_release_gcc"
+        products="sysconfig"
+        compilerBuildOptions="
+            -I${PROJECT_ROOT}
+            -I${PROJECT_ROOT}/${ConfigName}
+            -I${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/source
+            -I${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/source/third_party/CMSIS/Include
+            -I${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/source/ti/net/bsd
+            -DDeviceFamily_MSP432E4
+            -D__MSP432E401Y__
+            -I${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/source/ti/posix/gcc
+            -mcpu=cortex-m4
+            -march=armv7e-m
+            -mthumb
+            -std=c99
+            -std=c++11
+            -mfloat-abi=hard
+            -mfpu=fpv4-sp-d16
+            -ffunction-sections
+            -fdata-sections
+            -g
+            -gstrict-dwarf
+            -Wall
+            -I${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/kernel/tirtos/packages/gnu/targets/arm/libs/install-native/arm-none-eabi/include/newlib-nano
+            -I${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/kernel/tirtos/packages/gnu/targets/arm/libs/install-native/arm-none-eabi/include
+            -I${CG_TOOL_ROOT}/arm-none-eabi/include
+        "
+        linkerBuildOptions="
+            -L${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/source
+            -l:ti/display/lib/display.am4fg
+            -l:ti/grlib/lib/gcc/m4f/grlib.a
+            -l:third_party/spiffs/lib/gcc/m4f/spiffs.a
+            -l:ti/drivers/lib/drivers_msp432e4.am4fg
+            -l:third_party/fatfs/lib/gcc/m4f/fatfs.a
+            -l:ti/net/lib/gcc/m4f/slnetsock_release.a
+            -l:ti/net/sntp/lib/gcc/m4f/sntp_release.a
+            -l:ti/net/mqtt/lib/gcc/m4f/mqtt_release.a
+            -l:ti/net/http/lib/gcc/m4f/httpclient_release.a
+            -l:ti/ndk/slnetif/lib/slnetifndk.am4fg
+            -l:third_party/mbedtls/ti/lib/gcc/m4f/mbedtls.a
+            -l:ti/ndk/hal/timer_bios/lib/hal_timer.am4fg
+            -l:ti/ndk/hal/eth_stub/lib/hal_eth_stub.am4fg
+            -l:ti/ndk/tools/hdlc/lib/hdlc.am4fg
+            -l:ti/ndk/tools/console/lib/console_min_ipv4.am4fg
+            -l:ti/ndk/netctrl/lib/netctrl_min_ipv4.am4fg
+            -l:ti/ndk/nettools/lib/nettool_ipv4.am4fg
+            -l:ti/ndk/hal/ser_stub/lib/hal_ser_stub.am4fg
+            -l:ti/ndk/tools/servers/lib/servers_min_ipv4.am4fg
+            -l:ti/ndk/hal/userled_stub/lib/hal_userled_stub.am4fg
+            -l:ti/ndk/stack/lib/stk.am4fg
+            -l:ti/ndk/os/lib/os.am4fg
+            -nostartfiles
+            -L${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/kernel/tirtos/packages
+            -l:ti/dpl/lib/dpl_msp432e4.am4fg
+            -l${GENERATED_LIBRARIES}
+            -l:ti/devices/msp432e4/driverlib/lib/gcc/m4f/msp432e4_driverlib.a
+            -march=armv7e-m
+            -mthumb
+            -mfloat-abi=hard
+            -mfpu=fpv4-sp-d16
+            -static
+            -Wl,--gc-sections
+            -L${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/kernel/tirtos/packages/gnu/targets/arm/libs/install-native/arm-none-eabi/lib/thumb/v7e-m/hard
+            -lgcc
+            -lc
+            -lm
+            -lnosys
+            --specs=nano.specs
+        "
+        enableSysConfigTool="true"
+        sysConfigBuildOptions="
+            --product ${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/.metadata/product.json
+            --compiler gcc
+        "
+        description="TODO: Write description">
+
+        <property name="buildProfile" value="release"/>
+        <property name="isHybrid" value="true"/>
+        <file path="../../README.md" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../README.html" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../Board.html" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../overview.rov.json" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../board_funcs.c" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../board_funcs.h" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../cloud_task.c" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../cloud_task.h" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../command_task.c" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../command_task.h" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../outofboxhooks.c" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../tirtos/outofbox_msp432e401y.syscfg" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../tirtos/main_tirtos.c" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../../tirtos/gcc/MSP_EXP432E401Y_TIRTOS.lds" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+    </project>
+</projectSpec>

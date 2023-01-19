@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="struct_u_a_r_t_m_s_p432_e4___fxn_set" kind="struct" language="C++" prot="public">
+    <compoundname>UARTMSP432E4_FxnSet</compoundname>
+    <includes refid="_u_a_r_t_m_s_p432_e4_8h" local="no">UARTMSP432E4.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_u_a_r_t_m_s_p432_e4___fxn_set_1a2f369d662f0d4f7744f6811b61d4d8ce" prot="public" static="no" mutable="no">
+        <type>bool(*</type>
+        <definition>bool(* UARTMSP432E4_FxnSet::readIsrFxn) (UART_Handle handle)</definition>
+        <argsstring>)(UART_Handle handle)</argsstring>
+        <name>readIsrFxn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/uart/UARTMSP432E4.h" line="457" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/uart/UARTMSP432E4.h" bodystart="457" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_u_a_r_t_m_s_p432_e4___fxn_set_1a1d873a51ca0edba29f7b874712efb119" prot="public" static="no" mutable="no">
+        <type>int(*</type>
+        <definition>int(* UARTMSP432E4_FxnSet::readTaskFxn) (UART_Handle handle)</definition>
+        <argsstring>)(UART_Handle handle)</argsstring>
+        <name>readTaskFxn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/uart/UARTMSP432E4.h" line="458" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/uart/UARTMSP432E4.h" bodystart="458" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Complement set of read functions to be used by the UART ISR and UARTMSP432E4_read(). Internal use only. </para>    </briefdescription>
+    <detaileddescription>
+<para>These functions are intended solely for the UARTMSP432E4 driver, and should not be used by the application. The <ref refid="struct_u_a_r_t_m_s_p432_e4___fxn_set" kindref="compound">UARTMSP432E4_FxnSet</ref> is a pair of functions that are designed to operate with one another in a task context and in an ISR context. The readTaskFxn is called by UARTMSP432E4_read() to drain a circular buffer, whereas the readIsrFxn is used by the UARTMSP432E4_hwiIntFxn to fill up the circular buffer.</para><para>readTaskFxn: Function called by UART read These variables are set and avilalable for use to the readTaskFxn. object-&gt;readBuf = buffer; //Pointer to a user buffer object-&gt;readSize = size; //Desired no. of bytes to read object-&gt;readCount = size; //Remaining no. of bytes to read</para><para>readIsrFxn: The required ISR counterpart to readTaskFxn </para>    </detaileddescription>
+    <location file="exports/tidrivers_msp432e4/source/ti/drivers/uart/UARTMSP432E4.h" line="456" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/uart/UARTMSP432E4.h" bodystart="456" bodyend="459"/>
+    <listofallmembers>
+      <member refid="struct_u_a_r_t_m_s_p432_e4___fxn_set_1a2f369d662f0d4f7744f6811b61d4d8ce" prot="public" virt="non-virtual"><scope>UARTMSP432E4_FxnSet</scope><name>readIsrFxn</name></member>
+      <member refid="struct_u_a_r_t_m_s_p432_e4___fxn_set_1a1d873a51ca0edba29f7b874712efb119" prot="public" virt="non-virtual"><scope>UARTMSP432E4_FxnSet</scope><name>readTaskFxn</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

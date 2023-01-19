@@ -1,0 +1,16 @@
+[
+    {
+        "files": [
+            "+../../README.md -> README.md",
+            "+../../README.html -> README.html",
+            "+../../Board.html -> Board.html",
+            "+../../overview.rov.json -> overview.rov.json",
+            "+../../USBMH.c -> USBMH.c",
+            "+../../USBMH.h -> USBMH.h",
+            "+../../usbmousehost.c -> usbmousehost.c",
+            "+../../usb_mouse_host.syscfg -> usb_mouse_host.syscfg",
+            "+../main_freertos.c -> main_freertos.c",
+            "+MSP_EXP432E401Y_FREERTOS.lds -> MSP_EXP432E401Y_FREERTOS.lds"
+        ]
+    }
+]

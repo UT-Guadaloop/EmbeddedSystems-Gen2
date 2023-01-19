@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="group___comparator___e_v_e_n_t" kind="group">
+    <compoundname>Comparator_EVENT</compoundname>
+    <title>event codes that can be passed into the event</title>
+      <sectiondef kind="user-defined">
+      <memberdef kind="define" id="group___comparator___e_v_e_n_t_1gac1d081287a8640d0307a987a09431729" prot="public" static="no">
+        <name>Comparator_EVENT_OUTPUT_TRIGGERED</name>
+        <initializer>(1)</initializer>
+        <briefdescription>
+<para>The comparator output triggered in the positive direction. </para>        </briefdescription>
+        <detaileddescription>
+<para>Callback function called with Comparator_EVENT_OUTPUT_TRIGGERED if the comparator triggered in the positive direction. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/Comparator.h" line="272" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/Comparator.h" bodystart="272" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___comparator___e_v_e_n_t_1gaaf043320bc3b3ad577b2c65cbc9110d8" prot="public" static="no">
+        <name>Comparator_EVENT_OUTPUT_INVERTED_TRIGGERED</name>
+        <initializer>(2)</initializer>
+        <briefdescription>
+<para>The comparator output triggered in the inverted direction. </para>        </briefdescription>
+        <detaileddescription>
+<para>Callback function called with Comparator_EVENT_OUTPUT_INVERTED_TRIGGERED if the comparator triggered in the negative direction. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/Comparator.h" line="280" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/Comparator.h" bodystart="280" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___comparator___e_v_e_n_t_1ga8ce8f582a8f76f4a9bd43554696aa719" prot="public" static="no">
+        <name>Comparator_EVENT_ERROR</name>
+        <initializer>(-1)</initializer>
+        <briefdescription>
+<para>An error occurred with the underlying comparator driver. </para>        </briefdescription>
+        <detaileddescription>
+<para>Callback function called with Comparator_EVENT_ERROR if an error happened in the operation of the driver. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/Comparator.h" line="288" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/Comparator.h" bodystart="288" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="group___comparator___e_v_e_n_t_1ga8eee3343a2691d8dbf963301c68f9aac" prot="public" static="no">
+        <name>Comparator_EVENT_RESERVED</name>
+        <initializer>(32)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Common Comparator event code reservation offset. Comparator driver implementations should offset event codes with Comparator_EVENT_RESERVED growing positively.</para><para>Example implementation specific event codes: <programlisting><codeline><highlight class="normal">#define<sp/>ComparatorXYZ_EVENT_EVENT0<sp/><sp/><sp/>Comparator_EVENT_RESERVED<sp/>+<sp/>0</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>ComparatorXYZ_EVENT_EVENT1<sp/><sp/><sp/>Comparator_EVENT_RESERVED<sp/>+<sp/>1</highlight></codeline>
+</programlisting> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/Comparator.h" line="262" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/Comparator.h" bodystart="262" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>parameter of the driver callback. </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

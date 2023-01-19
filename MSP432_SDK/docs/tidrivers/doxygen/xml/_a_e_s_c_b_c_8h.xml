@@ -1,0 +1,1266 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="_a_e_s_c_b_c_8h" kind="file" language="C++">
+    <compoundname>AESCBC.h</compoundname>
+    <includes local="no">stdbool.h</includes>
+    <includes local="no">stddef.h</includes>
+    <includes local="no">stdint.h</includes>
+    <includes refid="_crypto_key_8h" local="no">ti/drivers/cryptoutils/cryptokey/CryptoKey.h</includes>
+    <includedby refid="_a_e_s_c_b_c_m_s_p432_e4_8h" local="no">AESCBCMSP432E4.h</includedby>
+    <incdepgraph>
+      <node id="26">
+        <label>stdbool.h</label>
+      </node>
+      <node id="29">
+        <label>ti/drivers/cryptoutils/cryptokey/CryptoKey.h</label>
+        <link refid="_crypto_key_8h"/>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>stdint.h</label>
+      </node>
+      <node id="25">
+        <label>AESCBC.h</label>
+        <link refid="_a_e_s_c_b_c_8h"/>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+      </node>
+      <node id="27">
+        <label>stddef.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="30">
+        <label>AESCBC.h</label>
+        <link refid="_a_e_s_c_b_c_8h"/>
+        <childnode refid="31" relation="include">
+        </childnode>
+      </node>
+      <node id="31">
+        <label>AESCBCMSP432E4.h</label>
+        <link refid="_a_e_s_c_b_c_m_s_p432_e4_8h"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="struct_a_e_s_c_b_c___config__" prot="public">AESCBC_Config_</innerclass>
+    <innerclass refid="struct_a_e_s_c_b_c___operation" prot="public">AESCBC_Operation</innerclass>
+    <innerclass refid="struct_a_e_s_c_b_c___params" prot="public">AESCBC_Params</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_a_e_s_c_b_c_8h_1a3cd55c1962740cbb6e3217d49ddb8cc6" prot="public" static="no">
+        <name>AESCBC_STATUS_RESERVED</name>
+        <initializer>(-32)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Common AESCBC status code reservation offset. AESCBC driver implementations should offset status codes with <ref refid="_a_e_s_c_b_c_8h_1a3cd55c1962740cbb6e3217d49ddb8cc6" kindref="member">AESCBC_STATUS_RESERVED</ref> growing negatively.</para><para>Example implementation specific status codes: <programlisting><codeline><highlight class="normal">#define<sp/>AESCBCXYZ_STATUS_ERROR0<sp/><sp/><sp/><sp/>AESCBC_STATUS_RESERVED<sp/>-<sp/>0</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>AESCBCXYZ_STATUS_ERROR1<sp/><sp/><sp/><sp/>AESCBC_STATUS_RESERVED<sp/>-<sp/>1</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>AESCBCXYZ_STATUS_ERROR2<sp/><sp/><sp/><sp/>AESCBC_STATUS_RESERVED<sp/>-<sp/>2</highlight></codeline>
+</programlisting> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/AESCBC.h" line="329" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/AESCBC.h" bodystart="329" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_e_s_c_b_c_8h_1a0bcb271aa7f9aee37469d242670b6d9d" prot="public" static="no">
+        <name>AESCBC_STATUS_SUCCESS</name>
+        <initializer>(0)</initializer>
+        <briefdescription>
+<para>Successful status code. </para>        </briefdescription>
+        <detaileddescription>
+<para>Functions return <ref refid="_a_e_s_c_b_c_8h_1a0bcb271aa7f9aee37469d242670b6d9d" kindref="member">AESCBC_STATUS_SUCCESS</ref> if the function was executed successfully. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/AESCBC.h" line="337" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/AESCBC.h" bodystart="337" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_e_s_c_b_c_8h_1a114c760826307af69a93538773a58185" prot="public" static="no">
+        <name>AESCBC_STATUS_ERROR</name>
+        <initializer>(-1)</initializer>
+        <briefdescription>
+<para>Generic error status code. </para>        </briefdescription>
+        <detaileddescription>
+<para>Functions return <ref refid="_a_e_s_c_b_c_8h_1a114c760826307af69a93538773a58185" kindref="member">AESCBC_STATUS_ERROR</ref> if the function was not executed successfully and no more pertinent error code could be returned. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/AESCBC.h" line="345" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/AESCBC.h" bodystart="345" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_e_s_c_b_c_8h_1ad92a5502a5a56aaf28b7d930be275271" prot="public" static="no">
+        <name>AESCBC_STATUS_RESOURCE_UNAVAILABLE</name>
+        <initializer>(-2)</initializer>
+        <briefdescription>
+<para>An error status code returned if the hardware or software resource is currently unavailable. </para>        </briefdescription>
+        <detaileddescription>
+<para>AESCBC driver implementations may have hardware or software limitations on how many clients can simultaneously perform operations. This status code is returned if the mutual exclusion mechanism signals that an operation cannot currently be performed. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/AESCBC.h" line="355" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/AESCBC.h" bodystart="355" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_e_s_c_b_c_8h_1aa3ff5d2f23cdceb6652dbe490c6ec93f" prot="public" static="no">
+        <name>AESCBC_STATUS_CANCELED</name>
+        <initializer>(-3)</initializer>
+        <briefdescription>
+<para>The ongoing operation was canceled. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/AESCBC.h" line="360" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/AESCBC.h" bodystart="360" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="_a_e_s_c_b_c_8h_1a34f3e7f586935c9328167d1e03973af5" prot="public" static="no">
+        <name>AESCBC_ReturnBehavior</name>
+        <enumvalue id="_a_e_s_c_b_c_8h_1a34f3e7f586935c9328167d1e03973af5acedc995468fd1ad451c6aa24f56d456d" prot="public">
+          <name>AESCBC_RETURN_BEHAVIOR_CALLBACK</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>The function call will return immediately while the CBC operation goes on in the background. The registered callback function is called after the operation completes. The context the callback function is called (task, HWI, SWI) is implementation-dependent. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_a_e_s_c_b_c_8h_1a34f3e7f586935c9328167d1e03973af5ad4cf399115e78f5253b12f88605d212e" prot="public">
+          <name>AESCBC_RETURN_BEHAVIOR_BLOCKING</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>The function call will block while the CBC operation goes on in the background. CBC operation results are available after the function returns. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_a_e_s_c_b_c_8h_1a34f3e7f586935c9328167d1e03973af5aeccf5cad47aac1edcef820125f7c361d" prot="public">
+          <name>AESCBC_RETURN_BEHAVIOR_POLLING</name>
+          <initializer>= 4</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>The function call will continuously poll a flag while CBC operation goes on in the background. CBC operation results are available after the function returns. </para>          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>The way in which CBC function calls return after performing an encryption or decryption operation. </para>        </briefdescription>
+        <detaileddescription>
+<para>Not all CBC operations exhibit the specified return behavor. Functions that do not require significant computation and cannot offload that computation to a background thread behave like regular functions. Which functions exhibit the specfied return behavior is not implementation dependent. Specifically, a software-backed implementation run on the same CPU as the application will emulate the return behavior while not actually offloading the computation to the background thread.</para><para>AESCBC functions exhibiting the specified return behavior have restrictions on the context from which they may be called.</para><para><table rows="4" cols="4"><row>
+<entry thead="yes"><para></para></entry><entry thead="yes"><para>Task </para></entry><entry thead="yes"><para>Hwi </para></entry><entry thead="yes"><para>Swi  </para></entry></row>
+<row>
+<entry thead="no"><para>AESCBC_RETURN_BEHAVIOR_CALLBACK </para></entry><entry thead="no"><para>X </para></entry><entry thead="no"><para>X </para></entry><entry thead="no"><para>X </para></entry></row>
+<row>
+<entry thead="no"><para>AESCBC_RETURN_BEHAVIOR_BLOCKING </para></entry><entry thead="no"><para>X </para></entry><entry thead="no"><para></para></entry><entry thead="no"><para></para></entry></row>
+<row>
+<entry thead="no"><para>AESCBC_RETURN_BEHAVIOR_POLLING </para></entry><entry thead="no"><para>X </para></entry><entry thead="no"><para>X </para></entry><entry thead="no"><para>X </para></entry></row>
+</table>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/AESCBC.h" line="407" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/AESCBC.h" bodystart="407" bodyend="422"/>
+      </memberdef>
+      <memberdef kind="enum" id="_a_e_s_c_b_c_8h_1a3d0b3dbc7f859b9d0c6acf102adb4d39" prot="public" static="no">
+        <name>AESCBC_Mode</name>
+        <enumvalue id="_a_e_s_c_b_c_8h_1a3d0b3dbc7f859b9d0c6acf102adb4d39a6937032fe648623f9b9a5f7b4dcce26a" prot="public">
+          <name>AESCBC_MODE_ENCRYPT</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_a_e_s_c_b_c_8h_1a3d0b3dbc7f859b9d0c6acf102adb4d39afacbd481470a984c92878b82c17a825c" prot="public">
+          <name>AESCBC_MODE_DECRYPT</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enum for the direction of the CBC operation. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/AESCBC.h" line="427" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/AESCBC.h" bodystart="427" bodyend="430"/>
+      </memberdef>
+      <memberdef kind="enum" id="_a_e_s_c_b_c_8h_1a498551584800977637726dde45cd9959" prot="public" static="no">
+        <name>AESCBC_OperationType</name>
+        <enumvalue id="_a_e_s_c_b_c_8h_1a498551584800977637726dde45cd9959ae9f86ebbb5b543515e8cf4b63d533924" prot="public">
+          <name>AESCBC_OPERATION_TYPE_ENCRYPT</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_a_e_s_c_b_c_8h_1a498551584800977637726dde45cd9959a9c63c1a604a8ef68797d84bed9cf20a5" prot="public">
+          <name>AESCBC_OPERATION_TYPE_DECRYPT</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enum for the operation types supported by the driver. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/AESCBC.h" line="465" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/AESCBC.h" bodystart="465" bodyend="468"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="_a_e_s_c_b_c_8h_1a2a61b4e7df3aad3a48b52b3a66dacf61" prot="public" static="no">
+        <type>struct <ref refid="struct_a_e_s_c_b_c___config__" kindref="compound">AESCBC_Config_</ref></type>
+        <definition>typedef struct AESCBC_Config_  AESCBC_Config</definition>
+        <argsstring></argsstring>
+        <name>AESCBC_Config</name>
+        <briefdescription>
+<para>AESCBC Global configuration. </para>        </briefdescription>
+        <detaileddescription>
+<para>The <ref refid="_a_e_s_c_b_c_8h_1a2a61b4e7df3aad3a48b52b3a66dacf61" kindref="member">AESCBC_Config</ref> structure contains a set of pointers used to characterize the AESCBC driver implementation.</para><para>This structure needs to be defined before calling <ref refid="_a_e_s_c_b_c_8h_1a72ae710de057086ca1d4e96f1a92a9a1" kindref="member">AESCBC_init()</ref> and it must not be changed thereafter.</para><para><simplesect kind="see"><para><ref refid="_a_e_s_c_b_c_8h_1a72ae710de057086ca1d4e96f1a92a9a1" kindref="member">AESCBC_init()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/AESCBC.h" line="379" column="1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_a_e_s_c_b_c_8h_1a4222a78a8c695fc2c97bbef11d28f04e" prot="public" static="no">
+        <type><ref refid="_a_e_s_c_b_c_8h_1a2a61b4e7df3aad3a48b52b3a66dacf61" kindref="member">AESCBC_Config</ref> *</type>
+        <definition>typedef AESCBC_Config* AESCBC_Handle</definition>
+        <argsstring></argsstring>
+        <name>AESCBC_Handle</name>
+        <briefdescription>
+<para>A handle that is returned from an <ref refid="_a_e_s_c_b_c_8h_1ac4e418c0f71f339935513126d37fbc9f" kindref="member">AESCBC_open()</ref> call. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/AESCBC.h" line="384" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/AESCBC.h" bodystart="384" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_a_e_s_c_b_c_8h_1a02064543ae31ffb15b93a2c090a3531d" prot="public" static="no">
+        <type>void(*</type>
+        <definition>typedef void(* AESCBC_CallbackFxn) (AESCBC_Handle handle, int_fast16_t returnValue, AESCBC_Operation *operation, AESCBC_OperationType operationType)</definition>
+        <argsstring>)(AESCBC_Handle handle, int_fast16_t returnValue, AESCBC_Operation *operation, AESCBC_OperationType operationType)</argsstring>
+        <name>AESCBC_CallbackFxn</name>
+        <briefdescription>
+<para>The definition of a callback function used by the AESCBC driver when used in <ref refid="_a_e_s_c_b_c_8h_1a34f3e7f586935c9328167d1e03973af5acedc995468fd1ad451c6aa24f56d456d" kindref="member">AESCBC_RETURN_BEHAVIOR_CALLBACK</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Handle of the client that started the CBC operation.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>returnValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The result of the CBC operation. May contain an error code. Informs the application of why the callback function was called.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>operation</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to an operation struct.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>operationType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>This parameter determines which operation the callback refers to. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/AESCBC.h" line="485" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/AESCBC.h" bodystart="485" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_a_e_s_c_b_c_8h_1a65d438667291f32d79714a3b24b7e9bb" prot="public" static="no" mutable="no">
+        <type>const <ref refid="struct_a_e_s_c_b_c___params" kindref="compound">AESCBC_Params</ref></type>
+        <definition>const AESCBC_Params AESCBC_defaultParams</definition>
+        <argsstring></argsstring>
+        <name>AESCBC_defaultParams</name>
+        <briefdescription>
+<para>Default <ref refid="struct_a_e_s_c_b_c___params" kindref="compound">AESCBC_Params</ref> structure. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="_a_e_s_c_b_c_8h_1a3c0ff1f31e58390f960f927f12756a98" kindref="member">AESCBC_Params_init()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/AESCBC.h" line="514" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_a_e_s_c_b_c_8h_1a72ae710de057086ca1d4e96f1a92a9a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void AESCBC_init</definition>
+        <argsstring>(void)</argsstring>
+        <name>AESCBC_init</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This function initializes the CBC module. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>The AESCBC_config structure must exist and be persistent before this function can be called. This function must also be called before any other CBC driver APIs. This function call does not modify any peripheral registers. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/AESCBC.h" line="524" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_a_e_s_c_b_c_8h_1a3c0ff1f31e58390f960f927f12756a98" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void AESCBC_Params_init</definition>
+        <argsstring>(AESCBC_Params *params)</argsstring>
+        <name>AESCBC_Params_init</name>
+        <param>
+          <type><ref refid="struct_a_e_s_c_b_c___params" kindref="compound">AESCBC_Params</ref> *</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+<para>Function to initialize the <ref refid="struct_a_e_s_c_b_c___params" kindref="compound">AESCBC_Params</ref> struct to its defaults. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>params</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An pointer to <ref refid="struct_a_e_s_c_b_c___params" kindref="compound">AESCBC_Params</ref> structure for initialization</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+Defaults values are: returnBehavior = AESCBC_RETURN_BEHAVIOR_BLOCKING callbackFxn = NULL timeout = SemaphoreP_WAIT_FOREVER custom = NULL </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/AESCBC.h" line="538" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_a_e_s_c_b_c_8h_1ac4e418c0f71f339935513126d37fbc9f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_a_e_s_c_b_c_8h_1a4222a78a8c695fc2c97bbef11d28f04e" kindref="member">AESCBC_Handle</ref></type>
+        <definition>AESCBC_Handle AESCBC_open</definition>
+        <argsstring>(uint_least8_t index, const AESCBC_Params *params)</argsstring>
+        <name>AESCBC_open</name>
+        <param>
+          <type>uint_least8_t</type>
+          <declname>index</declname>
+        </param>
+        <param>
+          <type>const <ref refid="struct_a_e_s_c_b_c___params" kindref="compound">AESCBC_Params</ref> *</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+<para>This function opens a given CBC peripheral. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>CBC controller has been initialized using <ref refid="_a_e_s_c_b_c_8h_1a72ae710de057086ca1d4e96f1a92a9a1" kindref="member">AESCBC_init()</ref></para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Logical peripheral number for the CBC indexed into the AESCBC_config table</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>params</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to an parameter block, if NULL it will use default values.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>An <ref refid="_a_e_s_c_b_c_8h_1a4222a78a8c695fc2c97bbef11d28f04e" kindref="member">AESCBC_Handle</ref> on success or a NULL on an error or if it has been opened already.</para></simplesect>
+<simplesect kind="see"><para><ref refid="_a_e_s_c_b_c_8h_1a72ae710de057086ca1d4e96f1a92a9a1" kindref="member">AESCBC_init()</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="_a_e_s_c_b_c_8h_1a3189993c935516a40c09110092e6ef19" kindref="member">AESCBC_close()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/AESCBC.h" line="557" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_a_e_s_c_b_c_8h_1a3189993c935516a40c09110092e6ef19" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void AESCBC_close</definition>
+        <argsstring>(AESCBC_Handle handle)</argsstring>
+        <name>AESCBC_close</name>
+        <param>
+          <type><ref refid="_a_e_s_c_b_c_8h_1a4222a78a8c695fc2c97bbef11d28f04e" kindref="member">AESCBC_Handle</ref></type>
+          <declname>handle</declname>
+        </param>
+        <briefdescription>
+<para>Function to close a CBC peripheral specified by the CBC handle. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para><ref refid="_a_e_s_c_b_c_8h_1ac4e418c0f71f339935513126d37fbc9f" kindref="member">AESCBC_open()</ref> has to be called first.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A CBC handle returned from <ref refid="_a_e_s_c_b_c_8h_1ac4e418c0f71f339935513126d37fbc9f" kindref="member">AESCBC_open()</ref></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="_a_e_s_c_b_c_8h_1ac4e418c0f71f339935513126d37fbc9f" kindref="member">AESCBC_open()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/AESCBC.h" line="568" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_a_e_s_c_b_c_8h_1a0864488e0826602937308930ab60e200" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void AESCBC_Operation_init</definition>
+        <argsstring>(AESCBC_Operation *operationStruct)</argsstring>
+        <name>AESCBC_Operation_init</name>
+        <param>
+          <type><ref refid="struct_a_e_s_c_b_c___operation" kindref="compound">AESCBC_Operation</ref> *</type>
+          <declname>operationStruct</declname>
+        </param>
+        <briefdescription>
+<para>Function to initialize an <ref refid="struct_a_e_s_c_b_c___operation" kindref="compound">AESCBC_Operation</ref> struct to its defaults. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>operationStruct</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to an <ref refid="struct_a_e_s_c_b_c___operation" kindref="compound">AESCBC_Operation</ref> structure for initialization</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+Defaults values are all zeros. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/AESCBC.h" line="578" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_a_e_s_c_b_c_8h_1a692f47fc6e0abc064296a813400e7384" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int_fast16_t</type>
+        <definition>int_fast16_t AESCBC_oneStepEncrypt</definition>
+        <argsstring>(AESCBC_Handle handle, AESCBC_Operation *operationStruct)</argsstring>
+        <name>AESCBC_oneStepEncrypt</name>
+        <param>
+          <type><ref refid="_a_e_s_c_b_c_8h_1a4222a78a8c695fc2c97bbef11d28f04e" kindref="member">AESCBC_Handle</ref></type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_a_e_s_c_b_c___operation" kindref="compound">AESCBC_Operation</ref> *</type>
+          <declname>operationStruct</declname>
+        </param>
+        <briefdescription>
+<para>Function to perform an AESCBC encryption operation in one call. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>None of the buffers provided as arguments may be altered by the application during an ongoing operation. Doing so can yield corrupted ciphertext.</para></simplesect>
+<simplesect kind="pre"><para><ref refid="_a_e_s_c_b_c_8h_1ac4e418c0f71f339935513126d37fbc9f" kindref="member">AESCBC_open()</ref> and <ref refid="_a_e_s_c_b_c_8h_1a0864488e0826602937308930ab60e200" kindref="member">AESCBC_Operation_init()</ref> must be called first.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A CBC handle returned from <ref refid="_a_e_s_c_b_c_8h_1ac4e418c0f71f339935513126d37fbc9f" kindref="member">AESCBC_open()</ref></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">operationStruct</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to a struct containing the parameters required to perform the operation.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="_a_e_s_c_b_c_8h_1a0bcb271aa7f9aee37469d242670b6d9d" kindref="member">AESCBC_STATUS_SUCCESS</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The operation succeeded. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername><ref refid="_a_e_s_c_b_c_8h_1a114c760826307af69a93538773a58185" kindref="member">AESCBC_STATUS_ERROR</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The operation failed. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername><ref refid="_a_e_s_c_b_c_8h_1ad92a5502a5a56aaf28b7d930be275271" kindref="member">AESCBC_STATUS_RESOURCE_UNAVAILABLE</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The required hardware resource was not available. Try again later. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername><ref refid="_a_e_s_c_b_c_8h_1aa3ff5d2f23cdceb6652dbe490c6ec93f" kindref="member">AESCBC_STATUS_CANCELED</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The operation was canceled.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="_a_e_s_c_b_c_8h_1af06b14a1067da3ea8c39baa2a9eac695" kindref="member">AESCBC_oneStepDecrypt()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/AESCBC.h" line="599" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_a_e_s_c_b_c_8h_1af06b14a1067da3ea8c39baa2a9eac695" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int_fast16_t</type>
+        <definition>int_fast16_t AESCBC_oneStepDecrypt</definition>
+        <argsstring>(AESCBC_Handle handle, AESCBC_Operation *operationStruct)</argsstring>
+        <name>AESCBC_oneStepDecrypt</name>
+        <param>
+          <type><ref refid="_a_e_s_c_b_c_8h_1a4222a78a8c695fc2c97bbef11d28f04e" kindref="member">AESCBC_Handle</ref></type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_a_e_s_c_b_c___operation" kindref="compound">AESCBC_Operation</ref> *</type>
+          <declname>operationStruct</declname>
+        </param>
+        <briefdescription>
+<para>Function to perform an AESCBC decryption operation in one call. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>None of the buffers provided as arguments may be altered by the application during an ongoing operation. Doing so can yield corrupted plaintext.</para></simplesect>
+<simplesect kind="pre"><para><ref refid="_a_e_s_c_b_c_8h_1ac4e418c0f71f339935513126d37fbc9f" kindref="member">AESCBC_open()</ref> and <ref refid="_a_e_s_c_b_c_8h_1a0864488e0826602937308930ab60e200" kindref="member">AESCBC_Operation_init()</ref> must be called first.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A CBC handle returned from <ref refid="_a_e_s_c_b_c_8h_1ac4e418c0f71f339935513126d37fbc9f" kindref="member">AESCBC_open()</ref></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">operationStruct</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to a struct containing the parameters required to perform the operation.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="_a_e_s_c_b_c_8h_1a0bcb271aa7f9aee37469d242670b6d9d" kindref="member">AESCBC_STATUS_SUCCESS</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The operation succeeded. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername><ref refid="_a_e_s_c_b_c_8h_1a114c760826307af69a93538773a58185" kindref="member">AESCBC_STATUS_ERROR</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The operation failed. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername><ref refid="_a_e_s_c_b_c_8h_1ad92a5502a5a56aaf28b7d930be275271" kindref="member">AESCBC_STATUS_RESOURCE_UNAVAILABLE</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The required hardware resource was not available. Try again later. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername><ref refid="_a_e_s_c_b_c_8h_1aa3ff5d2f23cdceb6652dbe490c6ec93f" kindref="member">AESCBC_STATUS_CANCELED</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The operation was canceled.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="_a_e_s_c_b_c_8h_1a692f47fc6e0abc064296a813400e7384" kindref="member">AESCBC_oneStepEncrypt()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/AESCBC.h" line="620" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_a_e_s_c_b_c_8h_1a807f254a97d04e2b8e2c73d026d3c81a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int_fast16_t</type>
+        <definition>int_fast16_t AESCBC_cancelOperation</definition>
+        <argsstring>(AESCBC_Handle handle)</argsstring>
+        <name>AESCBC_cancelOperation</name>
+        <param>
+          <type><ref refid="_a_e_s_c_b_c_8h_1a4222a78a8c695fc2c97bbef11d28f04e" kindref="member">AESCBC_Handle</ref></type>
+          <declname>handle</declname>
+        </param>
+        <briefdescription>
+<para>Cancels an ongoing AESCBC operation. </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="deprecated_1_deprecated000002"><xreftitle>Deprecated</xreftitle><xrefdescription><para>This function will be deprecated in the 3Q20 SDK release. The asynchronicity of the function can not be handled by all accelerators.</para></xrefdescription></xrefsect></para><para>Asynchronously cancels an AESCBC operation. Only available when using AESCBC_RETURN_BEHAVIOR_CALLBACK or AESCBC_RETURN_BEHAVIOR_BLOCKING. The operation will terminate as though an error occured. The return status code of the operation will be AESCBC_STATUS_CANCELED.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Handle of the operation to cancel</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="_a_e_s_c_b_c_8h_1a0bcb271aa7f9aee37469d242670b6d9d" kindref="member">AESCBC_STATUS_SUCCESS</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The operation was canceled. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername><ref refid="_a_e_s_c_b_c_8h_1a114c760826307af69a93538773a58185" kindref="member">AESCBC_STATUS_ERROR</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The operation was not canceled. There may be no operation to cancel. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/AESCBC.h" line="638" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_a_e_s_c_b_c_8h_1a0cab3841802fa8f8cb8d19993d25e88d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_a_e_s_c_b_c_8h_1a4222a78a8c695fc2c97bbef11d28f04e" kindref="member">AESCBC_Handle</ref></type>
+        <definition>AESCBC_Handle AESCBC_construct</definition>
+        <argsstring>(AESCBC_Config *config, const AESCBC_Params *params)</argsstring>
+        <name>AESCBC_construct</name>
+        <param>
+          <type><ref refid="_a_e_s_c_b_c_8h_1a2a61b4e7df3aad3a48b52b3a66dacf61" kindref="member">AESCBC_Config</ref> *</type>
+          <declname>config</declname>
+        </param>
+        <param>
+          <type>const <ref refid="struct_a_e_s_c_b_c___params" kindref="compound">AESCBC_Params</ref> *</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+<para>Constructs a new AESCBC object. </para>        </briefdescription>
+        <detaileddescription>
+<para>Unlike <ref refid="_a_e_s_c_b_c_8h_1ac4e418c0f71f339935513126d37fbc9f" kindref="member">AESCBC_open()</ref>, <ref refid="_a_e_s_c_b_c_8h_1a0cab3841802fa8f8cb8d19993d25e88d" kindref="member">AESCBC_construct()</ref> does not require the hwAttrs and object to be allocated in a <ref refid="_a_e_s_c_b_c_8h_1a2a61b4e7df3aad3a48b52b3a66dacf61" kindref="member">AESCBC_Config</ref> array that is indexed into. Instead, the <ref refid="_a_e_s_c_b_c_8h_1a2a61b4e7df3aad3a48b52b3a66dacf61" kindref="member">AESCBC_Config</ref>, hwAttrs, and object can be allocated at any location. This allows for relatively simple run-time allocation of temporary driver instances on the stack or the heap. The drawback is that this makes it more difficult to write device-agnostic code. If you use an ifdef with DeviceFamily, you can choose the correct object and hwAttrs to allocate. That compilation unit will be tied to the device it was compiled for at this point. To change devices, recompilation of the application with a different DeviceFamily setting is necessary.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">config</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="_a_e_s_c_b_c_8h_1a2a61b4e7df3aad3a48b52b3a66dacf61" kindref="member">AESCBC_Config</ref> describing the location of the object and hwAttrs.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">params</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="struct_a_e_s_c_b_c___params" kindref="compound">AESCBC_Params</ref> to configure the driver instance.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns a <ref refid="_a_e_s_c_b_c_8h_1a4222a78a8c695fc2c97bbef11d28f04e" kindref="member">AESCBC_Handle</ref> on success or NULL on failure.</para></simplesect>
+<simplesect kind="pre"><para>The object struct <computeroutput>config</computeroutput> points to must be zeroed out prior to calling this function. Otherwise, unexpected behavior may ensue. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/AESCBC.h" line="663" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_a_e_s_c_b_c_8h_1a0ce535564e61cfbf3c8f5b18b5eb9449" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int_fast16_t</type>
+        <definition>int_fast16_t AESCBC_getNextIv</definition>
+        <argsstring>(AESCBC_Handle handle, uint8_t *iv)</argsstring>
+        <name>AESCBC_getNextIv</name>
+        <param>
+          <type><ref refid="_a_e_s_c_b_c_8h_1a4222a78a8c695fc2c97bbef11d28f04e" kindref="member">AESCBC_Handle</ref></type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>iv</declname>
+        </param>
+        <briefdescription>
+<para>Returns the IV for the next block to encrypt or decrypt. </para>        </briefdescription>
+        <detaileddescription>
+<para>When encrypting or decrypting messages in multiple segments, it is necessary to save the intermediate iv to use with the next message segment.</para><para>Only call this function after a successful call to <ref refid="_a_e_s_c_b_c_8h_1a692f47fc6e0abc064296a813400e7384" kindref="member">AESCBC_oneStepEncrypt()</ref> or <ref refid="_a_e_s_c_b_c_8h_1af06b14a1067da3ea8c39baa2a9eac695" kindref="member">AESCBC_oneStepDecrypt()</ref> and before starting another operation with the same handle.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A CBC handle returned from <ref refid="_a_e_s_c_b_c_8h_1ac4e418c0f71f339935513126d37fbc9f" kindref="member">AESCBC_open()</ref></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">iv</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>IV of the next block to encrypt or decrypt</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="_a_e_s_c_b_c_8h_1a0bcb271aa7f9aee37469d242670b6d9d" kindref="member">AESCBC_STATUS_SUCCESS</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The operation succeeded. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername><ref refid="_a_e_s_c_b_c_8h_1a114c760826307af69a93538773a58185" kindref="member">AESCBC_STATUS_ERROR</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The operation failed. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/AESCBC.h" line="682" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>AESCBC driver header. </para>    </briefdescription>
+    <detaileddescription>
+<para><hruler/>
+</para><para><anchor id="_a_e_s_c_b_c_8h_1ti_drivers_AESCBC_Overview"/><heading level="1">Overview</heading>
+</para><para>The Cipher Block Chaining (CBC) mode of operation is a generic block cipher mode of operation. It can be used with any block cipher including AES.</para><para>CBC mode encrypts messages of any practical length that have a length evenly divisibly by the block size. Unlike ECB, it guarantees confidentiality of the entire message when the message is larger than one block.</para><para><heading level="2">Operation</heading>
+</para><para>In CBC encryption, the initialization vector (IV) is XOR&apos;d with a block of plaintext and then encrypted. The output ciphertext block is then XOR&apos;d with the next plaintext block and the result is encryped. This process is repeated until the final block of plaintext has been encrypted.</para><para>To decrypt the message, decrypt the first block of ciphertext and XOR the result with the IV. The result is the first plaintext block. For subsequent ciphertext blocks, decrypt each block and XOR the previous block of the encrypted message into the result.</para><para><heading level="2">Padding</heading>
+</para><para>CBC operates on entire blocks of ciphertext and plaintext at a time. This means that message lengths must be a multiple of the block cipher block size. AES has a block size of 16 bytes no matter the key size. Since messages do not necessarily always have a length that is a multiple of 16 bytes, it may be necessary to pad the message to a 16-byte boundary. Padding requires the sender and receiver to implicitly agree on the padding convention. Improperly designed or implemented padding schemes may leak information to an attacker through a padding oracle attack for example.</para><para><heading level="2">Initialization Vectors</heading>
+</para><para>The IV is generated by the party performing the encryption operation. Within the scope of any encryption key, the IV value must be unique. The IV does not need to be kept secret and is usually transmitted together with the ciphertext to the decryting party. In CBC mode, the IVs must not be predictable. Two recommended ways to generate IVs is to either:</para><para><itemizedlist>
+<listitem><para>Apply the block cipher (AESCBC), using the same key used with CBC, to a nonce. This nonce must be unique for each key-message pair. A counter will usually suffice. If the same symmetric key is used by both parties to encrypt messages, they should agree to use a nonce scheme that avoids generating the same nonce and thus IV twice. Incrementing the counter by two and making one party use even numbers and the other odd numbers is a common method to avoid such collisions.</para></listitem><listitem><para>Use a TRNG (True Random Number Generator) or PRNG (Pseudo-Random Number Generator) to generate a random number for use as IV.</para></listitem></itemizedlist>
+</para><para><heading level="2">Drawbacks</heading>
+</para><para>CBC mode has several drawbacks. Unless interfacing with legacy devices, it is recommended to use an AEAD (Authenticated Encryption with Associated Data) mode such as CCM or GCM. Below is a non-exhaustive list of reasons to use a different block cipher mode of operation.</para><para><itemizedlist>
+<listitem><para>CBC mode does not offer authentication or integrity guarantees. In practice, this means that attackers can intercept the encrypted message and manipulate the ciphertext before sending the message on to the receiver. While this does not break confidentiality and reveal the plaintext, it has enabled several attacks in the past. This is especially problematic given that changing the ciphertext of a block will only corrupt the block itself and the subsequent block of resultant plaintext. This property may be used to manipulate only certain parts of the message.</para></listitem><listitem><para>CBC mode requires message lengths to be evenly divisible by the block size. This necessitates a padding scheme. Improperly implemented padding schemes may lead to vulnerabilities that can be exploited by attackers. It often makes more sense to use a dedicated stream cipher such as CTR (Counter) that does not have this restriction. CCM and GCM both use CTR for encryption.</para></listitem></itemizedlist>
+</para><para><anchor id="_a_e_s_c_b_c_8h_1ti_drivers_AESCBC_Usage"/><heading level="1">Usage</heading>
+</para><para><heading level="2">Before starting a CBC operation</heading>
+</para><para>Before starting a CBC operation, the application must do the following:<itemizedlist>
+<listitem><para>Call <ref refid="_a_e_s_c_b_c_8h_1a72ae710de057086ca1d4e96f1a92a9a1" kindref="member">AESCBC_init()</ref> to initialize the driver</para></listitem><listitem><para>Call <ref refid="_a_e_s_c_b_c_8h_1a3c0ff1f31e58390f960f927f12756a98" kindref="member">AESCBC_Params_init()</ref> to initialize the <ref refid="struct_a_e_s_c_b_c___params" kindref="compound">AESCBC_Params</ref> to default values.</para></listitem><listitem><para>Modify the <ref refid="struct_a_e_s_c_b_c___params" kindref="compound">AESCBC_Params</ref> as desired</para></listitem><listitem><para>Call <ref refid="_a_e_s_c_b_c_8h_1ac4e418c0f71f339935513126d37fbc9f" kindref="member">AESCBC_open()</ref> to open an instance of the driver</para></listitem><listitem><para>Initialize a <ref refid="struct_crypto_key" kindref="compound">CryptoKey</ref>. These opaque data structures are representations of keying material and its storage. Depending on how the keying material is stored (RAM or flash, key store, key blob), the <ref refid="struct_crypto_key" kindref="compound">CryptoKey</ref> must be initialized differently. The AESCBC API can handle all types of <ref refid="struct_crypto_key" kindref="compound">CryptoKey</ref>. However, not all device-specific implementions support all types of <ref refid="struct_crypto_key" kindref="compound">CryptoKey</ref>. Devices without a key store will not support CryptoKeys with keying material stored in a key store for example. All devices support plaintext CryptoKeys.</para></listitem><listitem><para>Initialise the <ref refid="struct_a_e_s_c_b_c___operation" kindref="compound">AESCBC_Operation</ref> using <ref refid="_a_e_s_c_b_c_8h_1a0864488e0826602937308930ab60e200" kindref="member">AESCBC_Operation_init()</ref> and set all length, key, and buffer fields.</para></listitem></itemizedlist>
+</para><para><heading level="2">Starting a CBC operation</heading>
+</para><para>The <ref refid="_a_e_s_c_b_c_8h_1a692f47fc6e0abc064296a813400e7384" kindref="member">AESCBC_oneStepEncrypt</ref> and <ref refid="_a_e_s_c_b_c_8h_1af06b14a1067da3ea8c39baa2a9eac695" kindref="member">AESCBC_oneStepDecrypt</ref> functions perform a CBC operation in a single call. They will always be the most highly optimized routines with the least overhead and the fastest runtime. However, they require all plaintext or ciphertext to be available to the function at the start of the call. All devices support single call operations.</para><para><heading level="2">After the CBC operation completes</heading>
+</para><para>After the CBC operation completes, the application should either start another operation or close the driver by calling <ref refid="_a_e_s_c_b_c_8h_1a3189993c935516a40c09110092e6ef19" kindref="member">AESCBC_close()</ref>.</para><para><anchor id="_a_e_s_c_b_c_8h_1ti_drivers_AESCBC_Synopsis"/><heading level="2">Synopsis</heading>
+</para><para><anchor id="_a_e_s_c_b_c_8h_1ti_drivers_AESCBC_Synopsis_Code"/><programlisting><codeline><highlight class="normal">//<sp/>Import<sp/>AESCBC<sp/>Driver<sp/>definitions</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&lt;ti/drivers/AESCBC.h&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Define<sp/>name<sp/>for<sp/>AESCBC<sp/>channel<sp/>index</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>AESCBC_INSTANCE<sp/>0</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">AESCBC_init();</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">handle<sp/>=<sp/>AESCBC_open(AESCBC_INSTANCE,<sp/>NULL);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Initialize<sp/>symmetric<sp/>key</highlight></codeline>
+<codeline><highlight class="normal">CryptoKeyPlaintext_initKey(&amp;cryptoKey,<sp/>keyingMaterial,<sp/>sizeof(keyingMaterial));</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Set<sp/>up<sp/>AESCBC_Operation</highlight></codeline>
+<codeline><highlight class="normal">AESCBC_Operation_init(&amp;operation);</highlight></codeline>
+<codeline><highlight class="normal">operation.key<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>&amp;cryptoKey;</highlight></codeline>
+<codeline><highlight class="normal">operation.input<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>plaintext;</highlight></codeline>
+<codeline><highlight class="normal">operation.output<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>ciphertext;</highlight></codeline>
+<codeline><highlight class="normal">operation.inputLength<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>sizeof(plaintext);</highlight></codeline>
+<codeline><highlight class="normal">operation.iv<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>iv;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">encryptionResult<sp/>=<sp/>AESCBC_oneStepEncrypt(handle,<sp/>&amp;operation);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">AESCBC_close(handle);</highlight></codeline>
+</programlisting></para><para><anchor id="_a_e_s_c_b_c_8h_1ti_drivers_AESCBC_Examples"/><heading level="2">Examples</heading>
+</para><para>### Single call CBC encryption with plaintext <ref refid="struct_crypto_key" kindref="compound">CryptoKey</ref> in blocking return mode # <programlisting><codeline><highlight class="normal">#include<sp/>&lt;ti/drivers/AESCBC.h&gt;</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&lt;ti/drivers/types/cryptoKey/CryptoKey_Plaintext.h&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">...</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">AESCBC_Handle<sp/>handle;</highlight></codeline>
+<codeline><highlight class="normal">CryptoKey<sp/>cryptoKey;</highlight></codeline>
+<codeline><highlight class="normal">int_fast16_t<sp/>encryptionResult;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>For<sp/>example<sp/>purposes<sp/>only.<sp/>Generate<sp/>IVs<sp/>in<sp/>a<sp/>non-static<sp/>way<sp/>in<sp/>practice.</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>Test<sp/>vector<sp/>0<sp/>from<sp/>NIST<sp/>CAPV<sp/>set<sp/>CBCMMT128</highlight></codeline>
+<codeline><highlight class="normal">uint8_t<sp/>iv[16]<sp/>=<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{0x2f,<sp/>0xe2,<sp/>0xb3,<sp/>0x33,<sp/>0xce,<sp/>0xda,<sp/>0x8f,<sp/>0x98,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xf4,<sp/>0xa9,<sp/>0x9b,<sp/>0x40,<sp/>0xd2,<sp/>0xcd,<sp/>0x34,<sp/>0xa8};</highlight></codeline>
+<codeline><highlight class="normal">uint8_t<sp/>plaintext[16]<sp/>=<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{0x45,<sp/>0xcf,<sp/>0x12,<sp/>0x96,<sp/>0x4f,<sp/>0xc8,<sp/>0x24,<sp/>0xab,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x76,<sp/>0x61,<sp/>0x6a,<sp/>0xe2,<sp/>0xf4,<sp/>0xbf,<sp/>0x08,<sp/>0x22};</highlight></codeline>
+<codeline><highlight class="normal">uint8_t<sp/>ciphertext[sizeof(plaintext)];</highlight></codeline>
+<codeline><highlight class="normal">uint8_t<sp/>keyingMaterial[16]<sp/>=<sp/><sp/><sp/><sp/>{0x1f,<sp/>0x8e,<sp/>0x49,<sp/>0x73,<sp/>0x95,<sp/>0x3f,<sp/>0x3f,<sp/>0xb0,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xbd,<sp/>0x6b,<sp/>0x16,<sp/>0x66,<sp/>0x2e,<sp/>0x9a,<sp/>0x3c,<sp/>0x17};</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>The<sp/>ciphertext<sp/>should<sp/>be<sp/>the<sp/>following<sp/>after<sp/>the<sp/>encryption<sp/>operation:</highlight></codeline>
+<codeline><highlight class="normal">//<sp/><sp/>0x0f,<sp/>0x61,<sp/>0xc4,<sp/>0xd4,<sp/>0x4c,<sp/>0x51,<sp/>0x47,<sp/>0xc0</highlight></codeline>
+<codeline><highlight class="normal">//<sp/><sp/>0x3c,<sp/>0x19,<sp/>0x5a,<sp/>0xd7,<sp/>0xe2,<sp/>0xcc,<sp/>0x12,<sp/>0xb2</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">handle<sp/>=<sp/>AESCBC_open(0,<sp/>NULL);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">if<sp/>(handle<sp/>==<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>handle<sp/>error</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">CryptoKeyPlaintext_initKey(&amp;cryptoKey,<sp/>keyingMaterial,<sp/>sizeof(keyingMaterial));</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">AESCBC_Operation<sp/>operation;</highlight></codeline>
+<codeline><highlight class="normal">AESCBC_Operation_init(&amp;operation);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">operation.key<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>&amp;cryptoKey;</highlight></codeline>
+<codeline><highlight class="normal">operation.input<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>plaintext;</highlight></codeline>
+<codeline><highlight class="normal">operation.output<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>ciphertext;</highlight></codeline>
+<codeline><highlight class="normal">operation.inputLength<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>sizeof(plaintext);</highlight></codeline>
+<codeline><highlight class="normal">operation.iv<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>iv;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">encryptionResult<sp/>=<sp/>AESCBC_oneStepEncrypt(handle,<sp/>&amp;operation);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">if<sp/>(encryptionResult<sp/>!=<sp/>AESCBC_STATUS_SUCCESS)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>handle<sp/>error</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">AESCBC_close(handle);</highlight></codeline>
+</programlisting></para><para><heading level="3">Single call CBC decryption with plaintext <ref refid="struct_crypto_key" kindref="compound">CryptoKey</ref> in callback return mode</heading>
+</para><para><programlisting><codeline><highlight class="normal">#include<sp/>&lt;ti/drivers/AESCBC.h&gt;</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&lt;ti/drivers/cryptoutils/cryptokey/CryptoKeyPlaintext.h&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">...</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Test<sp/>vector<sp/>0<sp/>from<sp/>NIST<sp/>CAPV<sp/>set<sp/>CBCMMT256</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">uint8_t<sp/>iv[16]<sp/>=<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{0xdd,<sp/>0xbb,<sp/>0xb0,<sp/>0x17,<sp/>0x3f,<sp/>0x1e,<sp/>0x2d,<sp/>0xeb,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x23,<sp/>0x94,<sp/>0xa6,<sp/>0x2a,<sp/>0xa2,<sp/>0xa0,<sp/>0x24,<sp/>0x0e};</highlight></codeline>
+<codeline><highlight class="normal">uint8_t<sp/>ciphertext[16]<sp/>=<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{0xd5,<sp/>0x1d,<sp/>0x19,<sp/>0xde,<sp/>0xd5,<sp/>0xca,<sp/>0x4a,<sp/>0xe1,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x4b,<sp/>0x2b,<sp/>0x20,<sp/>0xb0,<sp/>0x27,<sp/>0xff,<sp/>0xb0,<sp/>0x20};</highlight></codeline>
+<codeline><highlight class="normal">uint8_t<sp/>keyingMaterial[]<sp/>=<sp/><sp/><sp/><sp/><sp/><sp/>{0x43,<sp/>0xe9,<sp/>0x53,<sp/>0xb2,<sp/>0xae,<sp/>0xa0,<sp/>0x8a,<sp/>0x3a,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xd5,<sp/>0x2d,<sp/>0x18,<sp/>0x2f,<sp/>0x58,<sp/>0xc7,<sp/>0x2b,<sp/>0x9c,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x60,<sp/>0xfb,<sp/>0xe4,<sp/>0xa9,<sp/>0xca,<sp/>0x46,<sp/>0xa3,<sp/>0xcb,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x89,<sp/>0xe3,<sp/>0x86,<sp/>0x38,<sp/>0x45,<sp/>0xe2,<sp/>0x2c,<sp/>0x9e};</highlight></codeline>
+<codeline><highlight class="normal">uint8_t<sp/>plaintext[sizeof(ciphertext)];</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>The<sp/>plaintext<sp/>should<sp/>be<sp/>the<sp/>following<sp/>after<sp/>the<sp/>decryption<sp/>operation:</highlight></codeline>
+<codeline><highlight class="normal">//<sp/><sp/>0x07,<sp/>0x27,<sp/>0x0d,<sp/>0x0e,<sp/>0x63,<sp/>0xaa,<sp/>0x36,<sp/>0xda</highlight></codeline>
+<codeline><highlight class="normal">//<sp/><sp/>0xed,<sp/>0x8c,<sp/>0x6a,<sp/>0xde,<sp/>0x13,<sp/>0xac,<sp/>0x1a,<sp/>0xf1</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">void<sp/>cbcCallback(AESCBC_Handle<sp/>handle,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>int_fast16_t<sp/>returnValue,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AESCBC_Operation<sp/>*operation,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AESCBC_OperationType<sp/>operationType)<sp/>{</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(returnValue<sp/>!=<sp/>AESCBC_STATUS_SUCCESS)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>handle<sp/>error</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">AESCBC_Operation<sp/>operation;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">void<sp/>cbcStartFunction(void)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>AESCBC_Handle<sp/>handle;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>AESCBC_Params<sp/>params;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>CryptoKey<sp/>cryptoKey;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>int_fast16_t<sp/>decryptionResult;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>AESCBC_Params_init(&amp;params);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>params.returnBehavior<sp/>=<sp/>AESCBC_RETURN_BEHAVIOR_CALLBACK;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>params.callbackFxn<sp/>=<sp/>cbcCallback;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>handle<sp/>=<sp/>AESCBC_open(0,<sp/>&amp;params);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(handle<sp/>==<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>handle<sp/>error</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>CryptoKeyPlaintext_initKey(&amp;cryptoKey,<sp/>keyingMaterial,<sp/>sizeof(keyingMaterial));</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>AESCBC_Operation_init(&amp;operation);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>operation.key<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>&amp;cryptoKey;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>operation.input<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>plaintext;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>operation.output<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>ciphertext;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>operation.inputLength<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>sizeof(plaintext);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>operation.iv<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>iv;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>decryptionResult<sp/>=<sp/>AESCBC_oneStepDecrypt(handle,<sp/>&amp;operation);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(decryptionResult<sp/>!=<sp/>AESCBC_STATUS_SUCCESS)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>handle<sp/>error</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>do<sp/>other<sp/>things<sp/>while<sp/>CBC<sp/>operation<sp/>completes<sp/>in<sp/>the<sp/>background</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting> </para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2018-2020,<sp/>Texas<sp/>Instruments<sp/>Incorporated</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Redistribution<sp/>and<sp/>use<sp/>in<sp/>source<sp/>and<sp/>binary<sp/>forms,<sp/>with<sp/>or<sp/>without</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>modification,<sp/>are<sp/>permitted<sp/>provided<sp/>that<sp/>the<sp/>following<sp/>conditions</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>are<sp/>met:</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>of<sp/>source<sp/>code<sp/>must<sp/>retain<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer.</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>in<sp/>binary<sp/>form<sp/>must<sp/>reproduce<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer<sp/>in<sp/>the</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>documentation<sp/>and/or<sp/>other<sp/>materials<sp/>provided<sp/>with<sp/>the<sp/>distribution.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Neither<sp/>the<sp/>name<sp/>of<sp/>Texas<sp/>Instruments<sp/>Incorporated<sp/>nor<sp/>the<sp/>names<sp/>of</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>its<sp/>contributors<sp/>may<sp/>be<sp/>used<sp/>to<sp/>endorse<sp/>or<sp/>promote<sp/>products<sp/>derived</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>from<sp/>this<sp/>software<sp/>without<sp/>specific<sp/>prior<sp/>written<sp/>permission.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>THIS<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>BY<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>AND<sp/>CONTRIBUTORS<sp/>&quot;AS<sp/>IS&quot;</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>AND<sp/>ANY<sp/>EXPRESS<sp/>OR<sp/>IMPLIED<sp/>WARRANTIES,<sp/>INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>THE<sp/>IMPLIED<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY<sp/>AND<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>PURPOSE<sp/>ARE<sp/>DISCLAIMED.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE<sp/>COPYRIGHT<sp/>OWNER<sp/>OR</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>CONTRIBUTORS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>DIRECT,<sp/>INDIRECT,<sp/>INCIDENTAL,<sp/>SPECIAL,</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>EXEMPLARY,<sp/>OR<sp/>CONSEQUENTIAL<sp/>DAMAGES<sp/>(INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>PROCUREMENT<sp/>OF<sp/>SUBSTITUTE<sp/>GOODS<sp/>OR<sp/>SERVICES;<sp/>LOSS<sp/>OF<sp/>USE,<sp/>DATA,<sp/>OR<sp/>PROFITS;</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>OR<sp/>BUSINESS<sp/>INTERRUPTION)<sp/>HOWEVER<sp/>CAUSED<sp/>AND<sp/>ON<sp/>ANY<sp/>THEORY<sp/>OF<sp/>LIABILITY,</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/>STRICT<sp/>LIABILITY,<sp/>OR<sp/>TORT<sp/>(INCLUDING<sp/>NEGLIGENCE<sp/>OR</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*<sp/>OTHERWISE)<sp/>ARISING<sp/>IN<sp/>ANY<sp/>WAY<sp/>OUT<sp/>OF<sp/>THE<sp/>USE<sp/>OF<sp/>THIS<sp/>SOFTWARE,</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*<sp/>EVEN<sp/>IF<sp/>ADVISED<sp/>OF<sp/>THE<sp/>POSSIBILITY<sp/>OF<sp/>SUCH<sp/>DAMAGE.</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="comment">/*!****************************************************************************</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>*<sp/><sp/>@file<sp/><sp/><sp/><sp/><sp/><sp/><sp/>AESCBC.h</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/>*<sp/><sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/>AESCBC<sp/>driver<sp/>header</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="37"><highlight class="comment"><sp/>*<sp/><sp/>@anchor<sp/>ti_drivers_AESCBC_Overview</highlight></codeline>
+<codeline lineno="38"><highlight class="comment"><sp/>*<sp/><sp/>#<sp/>Overview<sp/>#</highlight></codeline>
+<codeline lineno="39"><highlight class="comment"><sp/>*<sp/><sp/>The<sp/>Cipher<sp/>Block<sp/>Chaining<sp/>(CBC)<sp/>mode<sp/>of<sp/>operation<sp/>is<sp/>a<sp/>generic</highlight></codeline>
+<codeline lineno="40"><highlight class="comment"><sp/>*<sp/><sp/>block<sp/>cipher<sp/>mode<sp/>of<sp/>operation.<sp/>It<sp/>can<sp/>be<sp/>used<sp/>with<sp/>any<sp/>block<sp/>cipher</highlight></codeline>
+<codeline lineno="41"><highlight class="comment"><sp/>*<sp/><sp/>including<sp/>AES.</highlight></codeline>
+<codeline lineno="42"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="43"><highlight class="comment"><sp/>*<sp/><sp/>CBC<sp/>mode<sp/>encrypts<sp/>messages<sp/>of<sp/>any<sp/>practical<sp/>length<sp/>that<sp/>have<sp/>a<sp/>length</highlight></codeline>
+<codeline lineno="44"><highlight class="comment"><sp/>*<sp/><sp/>evenly<sp/>divisibly<sp/>by<sp/>the<sp/>block<sp/>size.<sp/>Unlike<sp/>ECB,<sp/>it<sp/>guarantees</highlight></codeline>
+<codeline lineno="45"><highlight class="comment"><sp/>*<sp/><sp/>confidentiality<sp/>of<sp/>the<sp/>entire<sp/>message<sp/>when<sp/>the<sp/>message<sp/>is<sp/>larger<sp/>than</highlight></codeline>
+<codeline lineno="46"><highlight class="comment"><sp/>*<sp/><sp/>one<sp/>block.</highlight></codeline>
+<codeline lineno="47"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="48"><highlight class="comment"><sp/>*<sp/><sp/>##<sp/>Operation<sp/>#</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/>*<sp/><sp/>In<sp/>CBC<sp/>encryption,<sp/>the<sp/>initialization<sp/>vector<sp/>(IV)<sp/>is<sp/>XOR&apos;d<sp/>with<sp/>a<sp/>block<sp/>of</highlight></codeline>
+<codeline lineno="50"><highlight class="comment"><sp/>*<sp/><sp/>plaintext<sp/>and<sp/>then<sp/>encrypted.<sp/>The<sp/>output<sp/>ciphertext<sp/>block<sp/>is<sp/>then<sp/>XOR&apos;d<sp/>with</highlight></codeline>
+<codeline lineno="51"><highlight class="comment"><sp/>*<sp/><sp/>the<sp/>next<sp/>plaintext<sp/>block<sp/>and<sp/>the<sp/>result<sp/>is<sp/>encryped.<sp/>This<sp/>process<sp/>is<sp/>repeated</highlight></codeline>
+<codeline lineno="52"><highlight class="comment"><sp/>*<sp/><sp/>until<sp/>the<sp/>final<sp/>block<sp/>of<sp/>plaintext<sp/>has<sp/>been<sp/>encrypted.</highlight></codeline>
+<codeline lineno="53"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="54"><highlight class="comment"><sp/>*<sp/><sp/>To<sp/>decrypt<sp/>the<sp/>message,<sp/>decrypt<sp/>the<sp/>first<sp/>block<sp/>of<sp/>ciphertext<sp/>and<sp/>XOR<sp/>the<sp/>result</highlight></codeline>
+<codeline lineno="55"><highlight class="comment"><sp/>*<sp/><sp/>with<sp/>the<sp/>IV.<sp/>The<sp/>result<sp/>is<sp/>the<sp/>first<sp/>plaintext<sp/>block.<sp/>For<sp/>subsequent<sp/>ciphertext</highlight></codeline>
+<codeline lineno="56"><highlight class="comment"><sp/>*<sp/><sp/>blocks,<sp/>decrypt<sp/>each<sp/>block<sp/>and<sp/>XOR<sp/>the<sp/>previous<sp/>block<sp/>of<sp/>the<sp/>encrypted<sp/>message</highlight></codeline>
+<codeline lineno="57"><highlight class="comment"><sp/>*<sp/><sp/>into<sp/>the<sp/>result.</highlight></codeline>
+<codeline lineno="58"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="59"><highlight class="comment"><sp/>*<sp/><sp/>##<sp/>Padding<sp/>#</highlight></codeline>
+<codeline lineno="60"><highlight class="comment"><sp/>*<sp/><sp/>CBC<sp/>operates<sp/>on<sp/>entire<sp/>blocks<sp/>of<sp/>ciphertext<sp/>and<sp/>plaintext<sp/>at<sp/>a<sp/>time.<sp/>This</highlight></codeline>
+<codeline lineno="61"><highlight class="comment"><sp/>*<sp/><sp/>means<sp/>that<sp/>message<sp/>lengths<sp/>must<sp/>be<sp/>a<sp/>multiple<sp/>of<sp/>the<sp/>block<sp/>cipher<sp/>block<sp/>size.</highlight></codeline>
+<codeline lineno="62"><highlight class="comment"><sp/>*<sp/><sp/>AES<sp/>has<sp/>a<sp/>block<sp/>size<sp/>of<sp/>16<sp/>bytes<sp/>no<sp/>matter<sp/>the<sp/>key<sp/>size.<sp/>Since<sp/>messages<sp/>do</highlight></codeline>
+<codeline lineno="63"><highlight class="comment"><sp/>*<sp/><sp/>not<sp/>necessarily<sp/>always<sp/>have<sp/>a<sp/>length<sp/>that<sp/>is<sp/>a<sp/>multiple<sp/>of<sp/>16<sp/>bytes,<sp/>it<sp/>may</highlight></codeline>
+<codeline lineno="64"><highlight class="comment"><sp/>*<sp/><sp/>be<sp/>necessary<sp/>to<sp/>pad<sp/>the<sp/>message<sp/>to<sp/>a<sp/>16-byte<sp/>boundary.<sp/>Padding<sp/>requires</highlight></codeline>
+<codeline lineno="65"><highlight class="comment"><sp/>*<sp/><sp/>the<sp/>sender<sp/>and<sp/>receiver<sp/>to<sp/>implicitly<sp/>agree<sp/>on<sp/>the<sp/>padding<sp/>convention.</highlight></codeline>
+<codeline lineno="66"><highlight class="comment"><sp/>*<sp/><sp/>Improperly<sp/>designed<sp/>or<sp/>implemented<sp/>padding<sp/>schemes<sp/>may<sp/>leak<sp/>information</highlight></codeline>
+<codeline lineno="67"><highlight class="comment"><sp/>*<sp/><sp/>to<sp/>an<sp/>attacker<sp/>through<sp/>a<sp/>padding<sp/>oracle<sp/>attack<sp/>for<sp/>example.</highlight></codeline>
+<codeline lineno="68"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="69"><highlight class="comment"><sp/>*<sp/><sp/>##<sp/>Initialization<sp/>Vectors<sp/>#</highlight></codeline>
+<codeline lineno="70"><highlight class="comment"><sp/>*<sp/><sp/>The<sp/>IV<sp/>is<sp/>generated<sp/>by<sp/>the<sp/>party<sp/>performing<sp/>the<sp/>encryption<sp/>operation.</highlight></codeline>
+<codeline lineno="71"><highlight class="comment"><sp/>*<sp/><sp/>Within<sp/>the<sp/>scope<sp/>of<sp/>any<sp/>encryption<sp/>key,<sp/>the<sp/>IV<sp/>value<sp/>must<sp/>be<sp/>unique.</highlight></codeline>
+<codeline lineno="72"><highlight class="comment"><sp/>*<sp/><sp/>The<sp/>IV<sp/>does<sp/>not<sp/>need<sp/>to<sp/>be<sp/>kept<sp/>secret<sp/>and<sp/>is<sp/>usually<sp/>transmitted<sp/>together</highlight></codeline>
+<codeline lineno="73"><highlight class="comment"><sp/>*<sp/><sp/>with<sp/>the<sp/>ciphertext<sp/>to<sp/>the<sp/>decryting<sp/>party.</highlight></codeline>
+<codeline lineno="74"><highlight class="comment"><sp/>*<sp/><sp/>In<sp/>CBC<sp/>mode,<sp/>the<sp/>IVs<sp/>must<sp/>not<sp/>be<sp/>predictable.<sp/>Two<sp/>recommended<sp/>ways<sp/>to</highlight></codeline>
+<codeline lineno="75"><highlight class="comment"><sp/>*<sp/><sp/>generate<sp/>IVs<sp/>is<sp/>to<sp/>either:</highlight></codeline>
+<codeline lineno="76"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="77"><highlight class="comment"><sp/>*<sp/><sp/>-<sp/>Apply<sp/>the<sp/>block<sp/>cipher<sp/>(AESCBC),<sp/>using<sp/>the<sp/>same<sp/>key<sp/>used<sp/>with<sp/>CBC,</highlight></codeline>
+<codeline lineno="78"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>to<sp/>a<sp/>nonce.<sp/>This<sp/>nonce<sp/>must<sp/>be<sp/>unique<sp/>for<sp/>each<sp/>key-message<sp/>pair.</highlight></codeline>
+<codeline lineno="79"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>A<sp/>counter<sp/>will<sp/>usually<sp/>suffice.<sp/>If<sp/>the<sp/>same<sp/>symmetric<sp/>key<sp/>is<sp/>used</highlight></codeline>
+<codeline lineno="80"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>by<sp/>both<sp/>parties<sp/>to<sp/>encrypt<sp/>messages,<sp/>they<sp/>should<sp/>agree<sp/>to<sp/>use<sp/>a</highlight></codeline>
+<codeline lineno="81"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>nonce<sp/>scheme<sp/>that<sp/>avoids<sp/>generating<sp/>the<sp/>same<sp/>nonce<sp/>and<sp/>thus<sp/>IV<sp/>twice.</highlight></codeline>
+<codeline lineno="82"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>Incrementing<sp/>the<sp/>counter<sp/>by<sp/>two<sp/>and<sp/>making<sp/>one<sp/>party<sp/>use<sp/>even<sp/>numbers</highlight></codeline>
+<codeline lineno="83"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>and<sp/>the<sp/>other<sp/>odd<sp/>numbers<sp/>is<sp/>a<sp/>common<sp/>method<sp/>to<sp/>avoid<sp/>such<sp/>collisions.</highlight></codeline>
+<codeline lineno="84"><highlight class="comment"><sp/>*<sp/><sp/>-<sp/>Use<sp/>a<sp/>TRNG<sp/>(True<sp/>Random<sp/>Number<sp/>Generator)<sp/>or<sp/>PRNG</highlight></codeline>
+<codeline lineno="85"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>(Pseudo-Random<sp/>Number<sp/>Generator)<sp/>to<sp/>generate<sp/>a<sp/>random<sp/>number<sp/>for<sp/>use</highlight></codeline>
+<codeline lineno="86"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>as<sp/>IV.</highlight></codeline>
+<codeline lineno="87"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="88"><highlight class="comment"><sp/>*<sp/><sp/>##<sp/>Drawbacks<sp/>#</highlight></codeline>
+<codeline lineno="89"><highlight class="comment"><sp/>*<sp/><sp/>CBC<sp/>mode<sp/>has<sp/>several<sp/>drawbacks.<sp/>Unless<sp/>interfacing<sp/>with<sp/>legacy<sp/>devices,</highlight></codeline>
+<codeline lineno="90"><highlight class="comment"><sp/>*<sp/><sp/>it<sp/>is<sp/>recommended<sp/>to<sp/>use<sp/>an<sp/>AEAD<sp/>(Authenticated<sp/>Encryption<sp/>with<sp/>Associated<sp/>Data)</highlight></codeline>
+<codeline lineno="91"><highlight class="comment"><sp/>*<sp/><sp/>mode<sp/>such<sp/>as<sp/>CCM<sp/>or<sp/>GCM.<sp/>Below<sp/>is<sp/>a<sp/>non-exhaustive<sp/>list<sp/>of<sp/>reasons<sp/>to<sp/>use</highlight></codeline>
+<codeline lineno="92"><highlight class="comment"><sp/>*<sp/><sp/>a<sp/>different<sp/>block<sp/>cipher<sp/>mode<sp/>of<sp/>operation.</highlight></codeline>
+<codeline lineno="93"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="94"><highlight class="comment"><sp/>*<sp/><sp/>-<sp/>CBC<sp/>mode<sp/>does<sp/>not<sp/>offer<sp/>authentication<sp/>or<sp/>integrity<sp/>guarantees.<sp/>In<sp/>practice,</highlight></codeline>
+<codeline lineno="95"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>this<sp/>means<sp/>that<sp/>attackers<sp/>can<sp/>intercept<sp/>the<sp/>encrypted<sp/>message<sp/>and<sp/>manipulate</highlight></codeline>
+<codeline lineno="96"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>the<sp/>ciphertext<sp/>before<sp/>sending<sp/>the<sp/>message<sp/>on<sp/>to<sp/>the<sp/>receiver.<sp/>While<sp/>this</highlight></codeline>
+<codeline lineno="97"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>does<sp/>not<sp/>break<sp/>confidentiality<sp/>and<sp/>reveal<sp/>the<sp/>plaintext,<sp/>it<sp/>has<sp/>enabled<sp/>several</highlight></codeline>
+<codeline lineno="98"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>attacks<sp/>in<sp/>the<sp/>past.<sp/>This<sp/>is<sp/>especially<sp/>problematic<sp/>given<sp/>that<sp/>changing<sp/>the</highlight></codeline>
+<codeline lineno="99"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>ciphertext<sp/>of<sp/>a<sp/>block<sp/>will<sp/>only<sp/>corrupt<sp/>the<sp/>block<sp/>itself<sp/>and<sp/>the<sp/>subsequent</highlight></codeline>
+<codeline lineno="100"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>block<sp/>of<sp/>resultant<sp/>plaintext.<sp/>This<sp/>property<sp/>may<sp/>be<sp/>used<sp/>to<sp/>manipulate<sp/>only</highlight></codeline>
+<codeline lineno="101"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>certain<sp/>parts<sp/>of<sp/>the<sp/>message.</highlight></codeline>
+<codeline lineno="102"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="103"><highlight class="comment"><sp/>*<sp/><sp/>-<sp/>CBC<sp/>mode<sp/>requires<sp/>message<sp/>lengths<sp/>to<sp/>be<sp/>evenly<sp/>divisible<sp/>by<sp/>the<sp/>block<sp/>size.</highlight></codeline>
+<codeline lineno="104"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>This<sp/>necessitates<sp/>a<sp/>padding<sp/>scheme.<sp/>Improperly<sp/>implemented<sp/>padding<sp/>schemes</highlight></codeline>
+<codeline lineno="105"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>may<sp/>lead<sp/>to<sp/>vulnerabilities<sp/>that<sp/>can<sp/>be<sp/>exploited<sp/>by<sp/>attackers.<sp/>It<sp/>often</highlight></codeline>
+<codeline lineno="106"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>makes<sp/>more<sp/>sense<sp/>to<sp/>use<sp/>a<sp/>dedicated<sp/>stream<sp/>cipher<sp/>such<sp/>as<sp/>CTR<sp/>(Counter)<sp/>that</highlight></codeline>
+<codeline lineno="107"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>does<sp/>not<sp/>have<sp/>this<sp/>restriction.<sp/>CCM<sp/>and<sp/>GCM<sp/>both<sp/>use<sp/>CTR<sp/>for<sp/>encryption.</highlight></codeline>
+<codeline lineno="108"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="109"><highlight class="comment"><sp/>*<sp/><sp/>@anchor<sp/>ti_drivers_AESCBC_Usage</highlight></codeline>
+<codeline lineno="110"><highlight class="comment"><sp/>*<sp/><sp/>#<sp/>Usage<sp/>#</highlight></codeline>
+<codeline lineno="111"><highlight class="comment"><sp/>*<sp/><sp/>##<sp/>Before<sp/>starting<sp/>a<sp/>CBC<sp/>operation<sp/>#</highlight></codeline>
+<codeline lineno="112"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="113"><highlight class="comment"><sp/>*<sp/><sp/>Before<sp/>starting<sp/>a<sp/>CBC<sp/>operation,<sp/>the<sp/>application<sp/>must<sp/>do<sp/>the<sp/>following:</highlight></codeline>
+<codeline lineno="114"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>Call<sp/>#AESCBC_init()<sp/>to<sp/>initialize<sp/>the<sp/>driver</highlight></codeline>
+<codeline lineno="115"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>Call<sp/>#AESCBC_Params_init()<sp/>to<sp/>initialize<sp/>the<sp/>#AESCBC_Params<sp/>to<sp/>default<sp/>values.</highlight></codeline>
+<codeline lineno="116"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>Modify<sp/>the<sp/>#AESCBC_Params<sp/>as<sp/>desired</highlight></codeline>
+<codeline lineno="117"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>Call<sp/>#AESCBC_open()<sp/>to<sp/>open<sp/>an<sp/>instance<sp/>of<sp/>the<sp/>driver</highlight></codeline>
+<codeline lineno="118"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>Initialize<sp/>a<sp/>CryptoKey.<sp/>These<sp/>opaque<sp/>data<sp/>structures<sp/>are<sp/>representations</highlight></codeline>
+<codeline lineno="119"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>of<sp/>keying<sp/>material<sp/>and<sp/>its<sp/>storage.<sp/>Depending<sp/>on<sp/>how<sp/>the<sp/>keying<sp/>material</highlight></codeline>
+<codeline lineno="120"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is<sp/>stored<sp/>(RAM<sp/>or<sp/>flash,<sp/>key<sp/>store,<sp/>key<sp/>blob),<sp/>the<sp/>CryptoKey<sp/>must<sp/>be</highlight></codeline>
+<codeline lineno="121"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>initialized<sp/>differently.<sp/>The<sp/>AESCBC<sp/>API<sp/>can<sp/>handle<sp/>all<sp/>types<sp/>of<sp/>CryptoKey.</highlight></codeline>
+<codeline lineno="122"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>However,<sp/>not<sp/>all<sp/>device-specific<sp/>implementions<sp/>support<sp/>all<sp/>types<sp/>of<sp/>CryptoKey.</highlight></codeline>
+<codeline lineno="123"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Devices<sp/>without<sp/>a<sp/>key<sp/>store<sp/>will<sp/>not<sp/>support<sp/>CryptoKeys<sp/>with<sp/>keying<sp/>material</highlight></codeline>
+<codeline lineno="124"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>stored<sp/>in<sp/>a<sp/>key<sp/>store<sp/>for<sp/>example.</highlight></codeline>
+<codeline lineno="125"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>All<sp/>devices<sp/>support<sp/>plaintext<sp/>CryptoKeys.</highlight></codeline>
+<codeline lineno="126"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>Initialise<sp/>the<sp/>#AESCBC_Operation<sp/>using<sp/>#AESCBC_Operation_init()<sp/>and<sp/>set<sp/>all</highlight></codeline>
+<codeline lineno="127"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>length,<sp/>key,<sp/>and<sp/>buffer<sp/>fields.</highlight></codeline>
+<codeline lineno="128"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="129"><highlight class="comment"><sp/>*<sp/><sp/>##<sp/>Starting<sp/>a<sp/>CBC<sp/>operation<sp/>#</highlight></codeline>
+<codeline lineno="130"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="131"><highlight class="comment"><sp/>*<sp/><sp/>The<sp/>#AESCBC_oneStepEncrypt<sp/>and<sp/>#AESCBC_oneStepDecrypt<sp/>functions<sp/>perform<sp/>a<sp/>CBC<sp/>operation</highlight></codeline>
+<codeline lineno="132"><highlight class="comment"><sp/>*<sp/><sp/>in<sp/>a<sp/>single<sp/>call.<sp/>They<sp/>will<sp/>always<sp/>be<sp/>the<sp/>most<sp/>highly<sp/>optimized<sp/>routines<sp/>with<sp/>the</highlight></codeline>
+<codeline lineno="133"><highlight class="comment"><sp/>*<sp/><sp/>least<sp/>overhead<sp/>and<sp/>the<sp/>fastest<sp/>runtime.<sp/>However,<sp/>they<sp/>require<sp/>all<sp/>plaintext</highlight></codeline>
+<codeline lineno="134"><highlight class="comment"><sp/>*<sp/><sp/>or<sp/>ciphertext<sp/>to<sp/>be<sp/>available<sp/>to<sp/>the<sp/>function<sp/>at<sp/>the<sp/>start<sp/>of<sp/>the<sp/>call.</highlight></codeline>
+<codeline lineno="135"><highlight class="comment"><sp/>*<sp/><sp/>All<sp/>devices<sp/>support<sp/>single<sp/>call<sp/>operations.</highlight></codeline>
+<codeline lineno="136"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="137"><highlight class="comment"><sp/>*<sp/><sp/>##<sp/>After<sp/>the<sp/>CBC<sp/>operation<sp/>completes<sp/>#</highlight></codeline>
+<codeline lineno="138"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="139"><highlight class="comment"><sp/>*<sp/><sp/>After<sp/>the<sp/>CBC<sp/>operation<sp/>completes,<sp/>the<sp/>application<sp/>should<sp/>either<sp/>start</highlight></codeline>
+<codeline lineno="140"><highlight class="comment"><sp/>*<sp/><sp/>another<sp/>operation<sp/>or<sp/>close<sp/>the<sp/>driver<sp/>by<sp/>calling<sp/>#AESCBC_close().</highlight></codeline>
+<codeline lineno="141"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="142"><highlight class="comment"><sp/>*<sp/><sp/>@anchor<sp/>ti_drivers_AESCBC_Synopsis</highlight></codeline>
+<codeline lineno="143"><highlight class="comment"><sp/>*<sp/><sp/>##<sp/>Synopsis</highlight></codeline>
+<codeline lineno="144"><highlight class="comment"><sp/>*<sp/><sp/>@anchor<sp/>ti_drivers_AESCBC_Synopsis_Code</highlight></codeline>
+<codeline lineno="145"><highlight class="comment"><sp/>*<sp/><sp/>@code</highlight></codeline>
+<codeline lineno="146"><highlight class="comment"><sp/>*<sp/><sp/>//<sp/>Import<sp/>AESCBC<sp/>Driver<sp/>definitions</highlight></codeline>
+<codeline lineno="147"><highlight class="comment"><sp/>*<sp/><sp/>#include<sp/>&lt;ti/drivers/AESCBC.h&gt;</highlight></codeline>
+<codeline lineno="148"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="149"><highlight class="comment"><sp/>*<sp/><sp/>//<sp/>Define<sp/>name<sp/>for<sp/>AESCBC<sp/>channel<sp/>index</highlight></codeline>
+<codeline lineno="150"><highlight class="comment"><sp/>*<sp/><sp/>#define<sp/>AESCBC_INSTANCE<sp/>0</highlight></codeline>
+<codeline lineno="151"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="152"><highlight class="comment"><sp/>*<sp/><sp/>AESCBC_init();</highlight></codeline>
+<codeline lineno="153"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="154"><highlight class="comment"><sp/>*<sp/><sp/>handle<sp/>=<sp/>AESCBC_open(AESCBC_INSTANCE,<sp/>NULL);</highlight></codeline>
+<codeline lineno="155"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="156"><highlight class="comment"><sp/>*<sp/><sp/>//<sp/>Initialize<sp/>symmetric<sp/>key</highlight></codeline>
+<codeline lineno="157"><highlight class="comment"><sp/>*<sp/><sp/>CryptoKeyPlaintext_initKey(&amp;cryptoKey,<sp/>keyingMaterial,<sp/>sizeof(keyingMaterial));</highlight></codeline>
+<codeline lineno="158"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="159"><highlight class="comment"><sp/>*<sp/><sp/>//<sp/>Set<sp/>up<sp/>AESCBC_Operation</highlight></codeline>
+<codeline lineno="160"><highlight class="comment"><sp/>*<sp/><sp/>AESCBC_Operation_init(&amp;operation);</highlight></codeline>
+<codeline lineno="161"><highlight class="comment"><sp/>*<sp/><sp/>operation.key<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>&amp;cryptoKey;</highlight></codeline>
+<codeline lineno="162"><highlight class="comment"><sp/>*<sp/><sp/>operation.input<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>plaintext;</highlight></codeline>
+<codeline lineno="163"><highlight class="comment"><sp/>*<sp/><sp/>operation.output<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>ciphertext;</highlight></codeline>
+<codeline lineno="164"><highlight class="comment"><sp/>*<sp/><sp/>operation.inputLength<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>sizeof(plaintext);</highlight></codeline>
+<codeline lineno="165"><highlight class="comment"><sp/>*<sp/><sp/>operation.iv<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>iv;</highlight></codeline>
+<codeline lineno="166"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="167"><highlight class="comment"><sp/>*<sp/><sp/>encryptionResult<sp/>=<sp/>AESCBC_oneStepEncrypt(handle,<sp/>&amp;operation);</highlight></codeline>
+<codeline lineno="168"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="169"><highlight class="comment"><sp/>*<sp/><sp/>AESCBC_close(handle);</highlight></codeline>
+<codeline lineno="170"><highlight class="comment"><sp/>*<sp/><sp/>@endcode</highlight></codeline>
+<codeline lineno="171"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="172"><highlight class="comment"><sp/>*<sp/><sp/>@anchor<sp/>ti_drivers_AESCBC_Examples</highlight></codeline>
+<codeline lineno="173"><highlight class="comment"><sp/>*<sp/><sp/>##<sp/>Examples</highlight></codeline>
+<codeline lineno="174"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="175"><highlight class="comment"><sp/>*<sp/><sp/>###<sp/>Single<sp/>call<sp/>CBC<sp/>encryption<sp/>with<sp/>plaintext<sp/>CryptoKey<sp/>in<sp/>blocking<sp/>return<sp/>mode<sp/>#</highlight></codeline>
+<codeline lineno="176"><highlight class="comment"><sp/>*<sp/><sp/>@code</highlight></codeline>
+<codeline lineno="177"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="178"><highlight class="comment"><sp/>*<sp/><sp/>#include<sp/>&lt;ti/drivers/AESCBC.h&gt;</highlight></codeline>
+<codeline lineno="179"><highlight class="comment"><sp/>*<sp/><sp/>#include<sp/>&lt;ti/drivers/types/cryptoKey/CryptoKey_Plaintext.h&gt;</highlight></codeline>
+<codeline lineno="180"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="181"><highlight class="comment"><sp/>*<sp/><sp/>...</highlight></codeline>
+<codeline lineno="182"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="183"><highlight class="comment"><sp/>*<sp/><sp/>AESCBC_Handle<sp/>handle;</highlight></codeline>
+<codeline lineno="184"><highlight class="comment"><sp/>*<sp/><sp/>CryptoKey<sp/>cryptoKey;</highlight></codeline>
+<codeline lineno="185"><highlight class="comment"><sp/>*<sp/><sp/>int_fast16_t<sp/>encryptionResult;</highlight></codeline>
+<codeline lineno="186"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="187"><highlight class="comment"><sp/>*<sp/><sp/>//<sp/>For<sp/>example<sp/>purposes<sp/>only.<sp/>Generate<sp/>IVs<sp/>in<sp/>a<sp/>non-static<sp/>way<sp/>in<sp/>practice.</highlight></codeline>
+<codeline lineno="188"><highlight class="comment"><sp/>*<sp/><sp/>//<sp/>Test<sp/>vector<sp/>0<sp/>from<sp/>NIST<sp/>CAPV<sp/>set<sp/>CBCMMT128</highlight></codeline>
+<codeline lineno="189"><highlight class="comment"><sp/>*<sp/><sp/>uint8_t<sp/>iv[16]<sp/>=<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{0x2f,<sp/>0xe2,<sp/>0xb3,<sp/>0x33,<sp/>0xce,<sp/>0xda,<sp/>0x8f,<sp/>0x98,</highlight></codeline>
+<codeline lineno="190"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xf4,<sp/>0xa9,<sp/>0x9b,<sp/>0x40,<sp/>0xd2,<sp/>0xcd,<sp/>0x34,<sp/>0xa8};</highlight></codeline>
+<codeline lineno="191"><highlight class="comment"><sp/>*<sp/><sp/>uint8_t<sp/>plaintext[16]<sp/>=<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{0x45,<sp/>0xcf,<sp/>0x12,<sp/>0x96,<sp/>0x4f,<sp/>0xc8,<sp/>0x24,<sp/>0xab,</highlight></codeline>
+<codeline lineno="192"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x76,<sp/>0x61,<sp/>0x6a,<sp/>0xe2,<sp/>0xf4,<sp/>0xbf,<sp/>0x08,<sp/>0x22};</highlight></codeline>
+<codeline lineno="193"><highlight class="comment"><sp/>*<sp/><sp/>uint8_t<sp/>ciphertext[sizeof(plaintext)];</highlight></codeline>
+<codeline lineno="194"><highlight class="comment"><sp/>*<sp/><sp/>uint8_t<sp/>keyingMaterial[16]<sp/>=<sp/><sp/><sp/><sp/>{0x1f,<sp/>0x8e,<sp/>0x49,<sp/>0x73,<sp/>0x95,<sp/>0x3f,<sp/>0x3f,<sp/>0xb0,</highlight></codeline>
+<codeline lineno="195"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xbd,<sp/>0x6b,<sp/>0x16,<sp/>0x66,<sp/>0x2e,<sp/>0x9a,<sp/>0x3c,<sp/>0x17};</highlight></codeline>
+<codeline lineno="196"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="197"><highlight class="comment"><sp/>*<sp/><sp/>//<sp/>The<sp/>ciphertext<sp/>should<sp/>be<sp/>the<sp/>following<sp/>after<sp/>the<sp/>encryption<sp/>operation:</highlight></codeline>
+<codeline lineno="198"><highlight class="comment"><sp/>*<sp/><sp/>//<sp/><sp/>0x0f,<sp/>0x61,<sp/>0xc4,<sp/>0xd4,<sp/>0x4c,<sp/>0x51,<sp/>0x47,<sp/>0xc0</highlight></codeline>
+<codeline lineno="199"><highlight class="comment"><sp/>*<sp/><sp/>//<sp/><sp/>0x3c,<sp/>0x19,<sp/>0x5a,<sp/>0xd7,<sp/>0xe2,<sp/>0xcc,<sp/>0x12,<sp/>0xb2</highlight></codeline>
+<codeline lineno="200"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="201"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="202"><highlight class="comment"><sp/>*<sp/><sp/>handle<sp/>=<sp/>AESCBC_open(0,<sp/>NULL);</highlight></codeline>
+<codeline lineno="203"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="204"><highlight class="comment"><sp/>*<sp/><sp/>if<sp/>(handle<sp/>==<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline lineno="205"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>handle<sp/>error</highlight></codeline>
+<codeline lineno="206"><highlight class="comment"><sp/>*<sp/><sp/>}</highlight></codeline>
+<codeline lineno="207"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="208"><highlight class="comment"><sp/>*<sp/><sp/>CryptoKeyPlaintext_initKey(&amp;cryptoKey,<sp/>keyingMaterial,<sp/>sizeof(keyingMaterial));</highlight></codeline>
+<codeline lineno="209"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="210"><highlight class="comment"><sp/>*<sp/><sp/>AESCBC_Operation<sp/>operation;</highlight></codeline>
+<codeline lineno="211"><highlight class="comment"><sp/>*<sp/><sp/>AESCBC_Operation_init(&amp;operation);</highlight></codeline>
+<codeline lineno="212"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="213"><highlight class="comment"><sp/>*<sp/><sp/>operation.key<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>&amp;cryptoKey;</highlight></codeline>
+<codeline lineno="214"><highlight class="comment"><sp/>*<sp/><sp/>operation.input<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>plaintext;</highlight></codeline>
+<codeline lineno="215"><highlight class="comment"><sp/>*<sp/><sp/>operation.output<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>ciphertext;</highlight></codeline>
+<codeline lineno="216"><highlight class="comment"><sp/>*<sp/><sp/>operation.inputLength<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>sizeof(plaintext);</highlight></codeline>
+<codeline lineno="217"><highlight class="comment"><sp/>*<sp/><sp/>operation.iv<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>iv;</highlight></codeline>
+<codeline lineno="218"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="219"><highlight class="comment"><sp/>*<sp/><sp/>encryptionResult<sp/>=<sp/>AESCBC_oneStepEncrypt(handle,<sp/>&amp;operation);</highlight></codeline>
+<codeline lineno="220"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="221"><highlight class="comment"><sp/>*<sp/><sp/>if<sp/>(encryptionResult<sp/>!=<sp/>AESCBC_STATUS_SUCCESS)<sp/>{</highlight></codeline>
+<codeline lineno="222"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>handle<sp/>error</highlight></codeline>
+<codeline lineno="223"><highlight class="comment"><sp/>*<sp/><sp/>}</highlight></codeline>
+<codeline lineno="224"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="225"><highlight class="comment"><sp/>*<sp/><sp/>AESCBC_close(handle);</highlight></codeline>
+<codeline lineno="226"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="227"><highlight class="comment"><sp/>*<sp/><sp/>@endcode</highlight></codeline>
+<codeline lineno="228"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="229"><highlight class="comment"><sp/>*<sp/><sp/>###<sp/>Single<sp/>call<sp/>CBC<sp/>decryption<sp/>with<sp/>plaintext<sp/>CryptoKey<sp/>in<sp/>callback<sp/>return<sp/>mode<sp/>#</highlight></codeline>
+<codeline lineno="230"><highlight class="comment"><sp/>*<sp/><sp/>@code</highlight></codeline>
+<codeline lineno="231"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="232"><highlight class="comment"><sp/>*<sp/><sp/>#include<sp/>&lt;ti/drivers/AESCBC.h&gt;</highlight></codeline>
+<codeline lineno="233"><highlight class="comment"><sp/>*<sp/><sp/>#include<sp/>&lt;ti/drivers/cryptoutils/cryptokey/CryptoKeyPlaintext.h&gt;</highlight></codeline>
+<codeline lineno="234"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="235"><highlight class="comment"><sp/>*<sp/><sp/>...</highlight></codeline>
+<codeline lineno="236"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="237"><highlight class="comment"><sp/>*<sp/><sp/>//<sp/>Test<sp/>vector<sp/>0<sp/>from<sp/>NIST<sp/>CAPV<sp/>set<sp/>CBCMMT256</highlight></codeline>
+<codeline lineno="238"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="239"><highlight class="comment"><sp/>*<sp/><sp/>uint8_t<sp/>iv[16]<sp/>=<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{0xdd,<sp/>0xbb,<sp/>0xb0,<sp/>0x17,<sp/>0x3f,<sp/>0x1e,<sp/>0x2d,<sp/>0xeb,</highlight></codeline>
+<codeline lineno="240"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x23,<sp/>0x94,<sp/>0xa6,<sp/>0x2a,<sp/>0xa2,<sp/>0xa0,<sp/>0x24,<sp/>0x0e};</highlight></codeline>
+<codeline lineno="241"><highlight class="comment"><sp/>*<sp/><sp/>uint8_t<sp/>ciphertext[16]<sp/>=<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{0xd5,<sp/>0x1d,<sp/>0x19,<sp/>0xde,<sp/>0xd5,<sp/>0xca,<sp/>0x4a,<sp/>0xe1,</highlight></codeline>
+<codeline lineno="242"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x4b,<sp/>0x2b,<sp/>0x20,<sp/>0xb0,<sp/>0x27,<sp/>0xff,<sp/>0xb0,<sp/>0x20};</highlight></codeline>
+<codeline lineno="243"><highlight class="comment"><sp/>*<sp/><sp/>uint8_t<sp/>keyingMaterial[]<sp/>=<sp/><sp/><sp/><sp/><sp/><sp/>{0x43,<sp/>0xe9,<sp/>0x53,<sp/>0xb2,<sp/>0xae,<sp/>0xa0,<sp/>0x8a,<sp/>0x3a,</highlight></codeline>
+<codeline lineno="244"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xd5,<sp/>0x2d,<sp/>0x18,<sp/>0x2f,<sp/>0x58,<sp/>0xc7,<sp/>0x2b,<sp/>0x9c,</highlight></codeline>
+<codeline lineno="245"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x60,<sp/>0xfb,<sp/>0xe4,<sp/>0xa9,<sp/>0xca,<sp/>0x46,<sp/>0xa3,<sp/>0xcb,</highlight></codeline>
+<codeline lineno="246"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x89,<sp/>0xe3,<sp/>0x86,<sp/>0x38,<sp/>0x45,<sp/>0xe2,<sp/>0x2c,<sp/>0x9e};</highlight></codeline>
+<codeline lineno="247"><highlight class="comment"><sp/>*<sp/><sp/>uint8_t<sp/>plaintext[sizeof(ciphertext)];</highlight></codeline>
+<codeline lineno="248"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="249"><highlight class="comment"><sp/>*<sp/><sp/>//<sp/>The<sp/>plaintext<sp/>should<sp/>be<sp/>the<sp/>following<sp/>after<sp/>the<sp/>decryption<sp/>operation:</highlight></codeline>
+<codeline lineno="250"><highlight class="comment"><sp/>*<sp/><sp/>//<sp/><sp/>0x07,<sp/>0x27,<sp/>0x0d,<sp/>0x0e,<sp/>0x63,<sp/>0xaa,<sp/>0x36,<sp/>0xda</highlight></codeline>
+<codeline lineno="251"><highlight class="comment"><sp/>*<sp/><sp/>//<sp/><sp/>0xed,<sp/>0x8c,<sp/>0x6a,<sp/>0xde,<sp/>0x13,<sp/>0xac,<sp/>0x1a,<sp/>0xf1</highlight></codeline>
+<codeline lineno="252"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="253"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="254"><highlight class="comment"><sp/>*<sp/><sp/>void<sp/>cbcCallback(AESCBC_Handle<sp/>handle,</highlight></codeline>
+<codeline lineno="255"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>int_fast16_t<sp/>returnValue,</highlight></codeline>
+<codeline lineno="256"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AESCBC_Operation<sp/>*operation,</highlight></codeline>
+<codeline lineno="257"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AESCBC_OperationType<sp/>operationType)<sp/>{</highlight></codeline>
+<codeline lineno="258"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="259"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(returnValue<sp/>!=<sp/>AESCBC_STATUS_SUCCESS)<sp/>{</highlight></codeline>
+<codeline lineno="260"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>handle<sp/>error</highlight></codeline>
+<codeline lineno="261"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="262"><highlight class="comment"><sp/>*<sp/><sp/>}</highlight></codeline>
+<codeline lineno="263"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="264"><highlight class="comment"><sp/>*<sp/><sp/>AESCBC_Operation<sp/>operation;</highlight></codeline>
+<codeline lineno="265"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="266"><highlight class="comment"><sp/>*<sp/><sp/>void<sp/>cbcStartFunction(void)<sp/>{</highlight></codeline>
+<codeline lineno="267"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>AESCBC_Handle<sp/>handle;</highlight></codeline>
+<codeline lineno="268"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>AESCBC_Params<sp/>params;</highlight></codeline>
+<codeline lineno="269"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>CryptoKey<sp/>cryptoKey;</highlight></codeline>
+<codeline lineno="270"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>int_fast16_t<sp/>decryptionResult;</highlight></codeline>
+<codeline lineno="271"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="272"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>AESCBC_Params_init(&amp;params);</highlight></codeline>
+<codeline lineno="273"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>params.returnBehavior<sp/>=<sp/>AESCBC_RETURN_BEHAVIOR_CALLBACK;</highlight></codeline>
+<codeline lineno="274"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>params.callbackFxn<sp/>=<sp/>cbcCallback;</highlight></codeline>
+<codeline lineno="275"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="276"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>handle<sp/>=<sp/>AESCBC_open(0,<sp/>&amp;params);</highlight></codeline>
+<codeline lineno="277"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="278"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(handle<sp/>==<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline lineno="279"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>handle<sp/>error</highlight></codeline>
+<codeline lineno="280"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="281"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="282"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>CryptoKeyPlaintext_initKey(&amp;cryptoKey,<sp/>keyingMaterial,<sp/>sizeof(keyingMaterial));</highlight></codeline>
+<codeline lineno="283"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="284"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>AESCBC_Operation_init(&amp;operation);</highlight></codeline>
+<codeline lineno="285"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="286"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>operation.key<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>&amp;cryptoKey;</highlight></codeline>
+<codeline lineno="287"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>operation.input<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>plaintext;</highlight></codeline>
+<codeline lineno="288"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>operation.output<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>ciphertext;</highlight></codeline>
+<codeline lineno="289"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>operation.inputLength<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>sizeof(plaintext);</highlight></codeline>
+<codeline lineno="290"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>operation.iv<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>iv;</highlight></codeline>
+<codeline lineno="291"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="292"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>decryptionResult<sp/>=<sp/>AESCBC_oneStepDecrypt(handle,<sp/>&amp;operation);</highlight></codeline>
+<codeline lineno="293"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="294"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(decryptionResult<sp/>!=<sp/>AESCBC_STATUS_SUCCESS)<sp/>{</highlight></codeline>
+<codeline lineno="295"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>handle<sp/>error</highlight></codeline>
+<codeline lineno="296"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="297"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="298"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>do<sp/>other<sp/>things<sp/>while<sp/>CBC<sp/>operation<sp/>completes<sp/>in<sp/>the<sp/>background</highlight></codeline>
+<codeline lineno="299"><highlight class="comment"><sp/>*<sp/><sp/>}</highlight></codeline>
+<codeline lineno="300"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="301"><highlight class="comment"><sp/>*<sp/><sp/>@endcode</highlight></codeline>
+<codeline lineno="302"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="303"><highlight class="normal"></highlight></codeline>
+<codeline lineno="304"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>ti_drivers_AESCBC__include</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="305"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ti_drivers_AESCBC__include</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="306"><highlight class="normal"></highlight></codeline>
+<codeline lineno="307"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdbool.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="308"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stddef.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="309"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="310"><highlight class="normal"></highlight></codeline>
+<codeline lineno="311"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_crypto_key_8h" kindref="compound">ti/drivers/cryptoutils/cryptokey/CryptoKey.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="312"><highlight class="normal"></highlight></codeline>
+<codeline lineno="313"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="314"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="315"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="316"><highlight class="normal"></highlight></codeline>
+<codeline lineno="329" refid="_a_e_s_c_b_c_8h_1a3cd55c1962740cbb6e3217d49ddb8cc6" refkind="member"><highlight class="preprocessor">#define<sp/>AESCBC_STATUS_RESERVED<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(-32)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="330"><highlight class="normal"></highlight></codeline>
+<codeline lineno="337" refid="_a_e_s_c_b_c_8h_1a0bcb271aa7f9aee37469d242670b6d9d" refkind="member"><highlight class="preprocessor">#define<sp/>AESCBC_STATUS_SUCCESS<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="338"><highlight class="normal"></highlight></codeline>
+<codeline lineno="345" refid="_a_e_s_c_b_c_8h_1a114c760826307af69a93538773a58185" refkind="member"><highlight class="preprocessor">#define<sp/>AESCBC_STATUS_ERROR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(-1)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="346"><highlight class="normal"></highlight></codeline>
+<codeline lineno="355" refid="_a_e_s_c_b_c_8h_1ad92a5502a5a56aaf28b7d930be275271" refkind="member"><highlight class="preprocessor">#define<sp/>AESCBC_STATUS_RESOURCE_UNAVAILABLE<sp/>(-2)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="356"><highlight class="normal"></highlight></codeline>
+<codeline lineno="360" refid="_a_e_s_c_b_c_8h_1aa3ff5d2f23cdceb6652dbe490c6ec93f" refkind="member"><highlight class="preprocessor">#define<sp/>AESCBC_STATUS_CANCELED<sp/>(-3)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="361"><highlight class="normal"></highlight></codeline>
+<codeline lineno="373" refid="struct_a_e_s_c_b_c___config__" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_a_e_s_c_b_c___config__" kindref="compound">AESCBC_Config_</ref><sp/>{</highlight></codeline>
+<codeline lineno="375" refid="struct_a_e_s_c_b_c___config___1a88d8473d6045f24bc55201eeb62a4d29" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="struct_a_e_s_c_b_c___config___1a88d8473d6045f24bc55201eeb62a4d29" kindref="member">object</ref>;</highlight></codeline>
+<codeline lineno="376"><highlight class="normal"></highlight></codeline>
+<codeline lineno="378" refid="struct_a_e_s_c_b_c___config___1ab277f1cacfa63d29cb4e0509b6146ac2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>*<ref refid="struct_a_e_s_c_b_c___config___1ab277f1cacfa63d29cb4e0509b6146ac2" kindref="member">hwAttrs</ref>;</highlight></codeline>
+<codeline lineno="379"><highlight class="normal">}<sp/><ref refid="_a_e_s_c_b_c_8h_1a2a61b4e7df3aad3a48b52b3a66dacf61" kindref="member">AESCBC_Config</ref>;</highlight></codeline>
+<codeline lineno="380"><highlight class="normal"></highlight></codeline>
+<codeline lineno="384" refid="_a_e_s_c_b_c_8h_1a4222a78a8c695fc2c97bbef11d28f04e" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="struct_a_e_s_c_b_c___config__" kindref="compound">AESCBC_Config</ref><sp/>*<ref refid="_a_e_s_c_b_c_8h_1a4222a78a8c695fc2c97bbef11d28f04e" kindref="member">AESCBC_Handle</ref>;</highlight></codeline>
+<codeline lineno="385"><highlight class="normal"></highlight></codeline>
+<codeline lineno="407" refid="_a_e_s_c_b_c_8h_1a34f3e7f586935c9328167d1e03973af5" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="408" refid="_a_e_s_c_b_c_8h_1a34f3e7f586935c9328167d1e03973af5acedc995468fd1ad451c6aa24f56d456d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_a_e_s_c_b_c_8h_1a34f3e7f586935c9328167d1e03973af5acedc995468fd1ad451c6aa24f56d456d" kindref="member">AESCBC_RETURN_BEHAVIOR_CALLBACK</ref><sp/>=<sp/>1,<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="414" refid="_a_e_s_c_b_c_8h_1a34f3e7f586935c9328167d1e03973af5ad4cf399115e78f5253b12f88605d212e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_a_e_s_c_b_c_8h_1a34f3e7f586935c9328167d1e03973af5ad4cf399115e78f5253b12f88605d212e" kindref="member">AESCBC_RETURN_BEHAVIOR_BLOCKING</ref><sp/>=<sp/>2,<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="418" refid="_a_e_s_c_b_c_8h_1a34f3e7f586935c9328167d1e03973af5aeccf5cad47aac1edcef820125f7c361d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_a_e_s_c_b_c_8h_1a34f3e7f586935c9328167d1e03973af5aeccf5cad47aac1edcef820125f7c361d" kindref="member">AESCBC_RETURN_BEHAVIOR_POLLING</ref><sp/><sp/>=<sp/>4,<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="422"><highlight class="normal">}<sp/><ref refid="_a_e_s_c_b_c_8h_1a34f3e7f586935c9328167d1e03973af5" kindref="member">AESCBC_ReturnBehavior</ref>;</highlight></codeline>
+<codeline lineno="423"><highlight class="normal"></highlight></codeline>
+<codeline lineno="427" refid="_a_e_s_c_b_c_8h_1a3d0b3dbc7f859b9d0c6acf102adb4d39" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="428" refid="_a_e_s_c_b_c_8h_1a3d0b3dbc7f859b9d0c6acf102adb4d39a6937032fe648623f9b9a5f7b4dcce26a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_a_e_s_c_b_c_8h_1a3d0b3dbc7f859b9d0c6acf102adb4d39a6937032fe648623f9b9a5f7b4dcce26a" kindref="member">AESCBC_MODE_ENCRYPT</ref><sp/>=<sp/>1,</highlight></codeline>
+<codeline lineno="429" refid="_a_e_s_c_b_c_8h_1a3d0b3dbc7f859b9d0c6acf102adb4d39afacbd481470a984c92878b82c17a825c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_a_e_s_c_b_c_8h_1a3d0b3dbc7f859b9d0c6acf102adb4d39afacbd481470a984c92878b82c17a825c" kindref="member">AESCBC_MODE_DECRYPT</ref><sp/>=<sp/>2,</highlight></codeline>
+<codeline lineno="430"><highlight class="normal">}<sp/><ref refid="_a_e_s_c_b_c_8h_1a3d0b3dbc7f859b9d0c6acf102adb4d39" kindref="member">AESCBC_Mode</ref>;</highlight></codeline>
+<codeline lineno="431"><highlight class="normal"></highlight></codeline>
+<codeline lineno="436" refid="struct_a_e_s_c_b_c___operation" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="437" refid="struct_a_e_s_c_b_c___operation_1a0d0a4299e1bff86bd70bb4d50b691a4d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><ref refid="struct_crypto_key" kindref="compound">CryptoKey</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="struct_a_e_s_c_b_c___operation_1a0d0a4299e1bff86bd70bb4d50b691a4d" kindref="member">key</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="438" refid="struct_a_e_s_c_b_c___operation_1a0d002ca32a1ef79ad0e313fffa4d2239" refkind="member"><highlight class="normal"><sp/><sp/><sp/>uint8_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="struct_a_e_s_c_b_c___operation_1a0d002ca32a1ef79ad0e313fffa4d2239" kindref="member">input</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="443" refid="struct_a_e_s_c_b_c___operation_1afb4b5174ff462e15e5e8be5d672edb4e" refkind="member"><highlight class="normal"><sp/><sp/><sp/>uint8_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="struct_a_e_s_c_b_c___operation_1afb4b5174ff462e15e5e8be5d672edb4e" kindref="member">output</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="449" refid="struct_a_e_s_c_b_c___operation_1a651c29ac1166f551962cd94d182c9989" refkind="member"><highlight class="normal"><sp/><sp/><sp/>uint8_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="struct_a_e_s_c_b_c___operation_1a651c29ac1166f551962cd94d182c9989" kindref="member">iv</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="455" refid="struct_a_e_s_c_b_c___operation_1a66a33691b3c55b3f295bb34509ee4231" refkind="member"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_a_e_s_c_b_c___operation_1a66a33691b3c55b3f295bb34509ee4231" kindref="member">inputLength</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="456" refid="struct_a_e_s_c_b_c___operation_1abe47ece92cf0e6f726226063d842168a" refkind="member"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_a_e_s_c_b_c___operation_1abe47ece92cf0e6f726226063d842168a" kindref="member">ivInternallyGenerated</ref>;<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="460"><highlight class="normal">}<sp/><ref refid="struct_a_e_s_c_b_c___operation" kindref="compound">AESCBC_Operation</ref>;</highlight></codeline>
+<codeline lineno="461"><highlight class="normal"></highlight></codeline>
+<codeline lineno="465" refid="_a_e_s_c_b_c_8h_1a498551584800977637726dde45cd9959" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="466" refid="_a_e_s_c_b_c_8h_1a498551584800977637726dde45cd9959ae9f86ebbb5b543515e8cf4b63d533924" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_a_e_s_c_b_c_8h_1a498551584800977637726dde45cd9959ae9f86ebbb5b543515e8cf4b63d533924" kindref="member">AESCBC_OPERATION_TYPE_ENCRYPT</ref><sp/>=<sp/>1,</highlight></codeline>
+<codeline lineno="467" refid="_a_e_s_c_b_c_8h_1a498551584800977637726dde45cd9959a9c63c1a604a8ef68797d84bed9cf20a5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_a_e_s_c_b_c_8h_1a498551584800977637726dde45cd9959a9c63c1a604a8ef68797d84bed9cf20a5" kindref="member">AESCBC_OPERATION_TYPE_DECRYPT</ref><sp/>=<sp/>2,</highlight></codeline>
+<codeline lineno="468"><highlight class="normal">}<sp/><ref refid="_a_e_s_c_b_c_8h_1a498551584800977637726dde45cd9959" kindref="member">AESCBC_OperationType</ref>;</highlight></codeline>
+<codeline lineno="469"><highlight class="normal"></highlight></codeline>
+<codeline lineno="485" refid="_a_e_s_c_b_c_8h_1a02064543ae31ffb15b93a2c090a3531d" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>void<sp/>(*<ref refid="_a_e_s_c_b_c_8h_1a02064543ae31ffb15b93a2c090a3531d" kindref="member">AESCBC_CallbackFxn</ref>)<sp/>(AESCBC_Handle<sp/>handle,</highlight></codeline>
+<codeline lineno="486"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>int_fast16_t<sp/>returnValue,</highlight></codeline>
+<codeline lineno="487"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_a_e_s_c_b_c___operation" kindref="compound">AESCBC_Operation</ref><sp/>*operation,</highlight></codeline>
+<codeline lineno="488"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_a_e_s_c_b_c_8h_1a498551584800977637726dde45cd9959" kindref="member">AESCBC_OperationType</ref><sp/>operationType);</highlight></codeline>
+<codeline lineno="489"><highlight class="normal"></highlight></codeline>
+<codeline lineno="498" refid="struct_a_e_s_c_b_c___params" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="499" refid="struct_a_e_s_c_b_c___params_1aaf9f67c02267e03a5ffbc5ccb4e7580a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_a_e_s_c_b_c_8h_1a34f3e7f586935c9328167d1e03973af5" kindref="member">AESCBC_ReturnBehavior</ref><sp/><sp/><sp/><ref refid="struct_a_e_s_c_b_c___params_1aaf9f67c02267e03a5ffbc5ccb4e7580a" kindref="member">returnBehavior</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="500" refid="struct_a_e_s_c_b_c___params_1a57b3ac8537584ca0bc3ed743792df321" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_a_e_s_c_b_c_8h_1a02064543ae31ffb15b93a2c090a3531d" kindref="member">AESCBC_CallbackFxn</ref><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_a_e_s_c_b_c___params_1a57b3ac8537584ca0bc3ed743792df321" kindref="member">callbackFxn</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="501" refid="struct_a_e_s_c_b_c___params_1a9d78b09aba375e0e6a3416c4166374e3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_a_e_s_c_b_c___params_1a9d78b09aba375e0e6a3416c4166374e3" kindref="member">timeout</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="504" refid="struct_a_e_s_c_b_c___params_1a9a933064fd7fd7484d922654bf79278f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="struct_a_e_s_c_b_c___params_1a9a933064fd7fd7484d922654bf79278f" kindref="member">custom</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="507"><highlight class="normal">}<sp/><ref refid="struct_a_e_s_c_b_c___params" kindref="compound">AESCBC_Params</ref>;</highlight></codeline>
+<codeline lineno="508"><highlight class="normal"></highlight></codeline>
+<codeline lineno="514"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_a_e_s_c_b_c___params" kindref="compound">AESCBC_Params</ref><sp/><ref refid="_a_e_s_c_b_c_8h_1a65d438667291f32d79714a3b24b7e9bb" kindref="member">AESCBC_defaultParams</ref>;</highlight></codeline>
+<codeline lineno="515"><highlight class="normal"></highlight></codeline>
+<codeline lineno="524"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_a_e_s_c_b_c_8h_1a72ae710de057086ca1d4e96f1a92a9a1" kindref="member">AESCBC_init</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="525"><highlight class="normal"></highlight></codeline>
+<codeline lineno="538"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_a_e_s_c_b_c_8h_1a3c0ff1f31e58390f960f927f12756a98" kindref="member">AESCBC_Params_init</ref>(<ref refid="struct_a_e_s_c_b_c___params" kindref="compound">AESCBC_Params</ref><sp/>*params);</highlight></codeline>
+<codeline lineno="539"><highlight class="normal"></highlight></codeline>
+<codeline lineno="557"><highlight class="normal">AESCBC_Handle<sp/><ref refid="_a_e_s_c_b_c_8h_1ac4e418c0f71f339935513126d37fbc9f" kindref="member">AESCBC_open</ref>(uint_least8_t<sp/>index,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_a_e_s_c_b_c___params" kindref="compound">AESCBC_Params</ref><sp/>*params);</highlight></codeline>
+<codeline lineno="558"><highlight class="normal"></highlight></codeline>
+<codeline lineno="568"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_a_e_s_c_b_c_8h_1a3189993c935516a40c09110092e6ef19" kindref="member">AESCBC_close</ref>(AESCBC_Handle<sp/>handle);</highlight></codeline>
+<codeline lineno="569"><highlight class="normal"></highlight></codeline>
+<codeline lineno="578"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_a_e_s_c_b_c_8h_1a0864488e0826602937308930ab60e200" kindref="member">AESCBC_Operation_init</ref>(<ref refid="struct_a_e_s_c_b_c___operation" kindref="compound">AESCBC_Operation</ref><sp/>*operationStruct);</highlight></codeline>
+<codeline lineno="579"><highlight class="normal"></highlight></codeline>
+<codeline lineno="599"><highlight class="normal">int_fast16_t<sp/><ref refid="_a_e_s_c_b_c_8h_1a692f47fc6e0abc064296a813400e7384" kindref="member">AESCBC_oneStepEncrypt</ref>(AESCBC_Handle<sp/>handle,<sp/><ref refid="struct_a_e_s_c_b_c___operation" kindref="compound">AESCBC_Operation</ref><sp/>*operationStruct);</highlight></codeline>
+<codeline lineno="600"><highlight class="normal"></highlight></codeline>
+<codeline lineno="620"><highlight class="normal">int_fast16_t<sp/><ref refid="_a_e_s_c_b_c_8h_1af06b14a1067da3ea8c39baa2a9eac695" kindref="member">AESCBC_oneStepDecrypt</ref>(AESCBC_Handle<sp/>handle,<sp/><ref refid="struct_a_e_s_c_b_c___operation" kindref="compound">AESCBC_Operation</ref><sp/>*operationStruct);</highlight></codeline>
+<codeline lineno="621"><highlight class="normal"></highlight></codeline>
+<codeline lineno="638"><highlight class="normal">int_fast16_t<sp/><ref refid="_a_e_s_c_b_c_8h_1a807f254a97d04e2b8e2c73d026d3c81a" kindref="member">AESCBC_cancelOperation</ref>(AESCBC_Handle<sp/>handle);</highlight></codeline>
+<codeline lineno="639"><highlight class="normal"></highlight></codeline>
+<codeline lineno="663"><highlight class="normal">AESCBC_Handle<sp/><ref refid="_a_e_s_c_b_c_8h_1a0cab3841802fa8f8cb8d19993d25e88d" kindref="member">AESCBC_construct</ref>(<ref refid="struct_a_e_s_c_b_c___config__" kindref="compound">AESCBC_Config</ref><sp/>*config,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_a_e_s_c_b_c___params" kindref="compound">AESCBC_Params</ref><sp/>*params);</highlight></codeline>
+<codeline lineno="664"><highlight class="normal"></highlight></codeline>
+<codeline lineno="682"><highlight class="normal">int_fast16_t<sp/><ref refid="_a_e_s_c_b_c_8h_1a0ce535564e61cfbf3c8f5b18b5eb9449" kindref="member">AESCBC_getNextIv</ref>(AESCBC_Handle<sp/>handle,<sp/>uint8_t<sp/>*iv);</highlight></codeline>
+<codeline lineno="683"><highlight class="normal"></highlight></codeline>
+<codeline lineno="684"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="685"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="686"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="687"><highlight class="normal"></highlight></codeline>
+<codeline lineno="688"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>ti_drivers_AESCBC__include<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="exports/tidrivers_msp432e4/source/ti/drivers/AESCBC.h"/>
+  </compounddef>
+</doxygen>

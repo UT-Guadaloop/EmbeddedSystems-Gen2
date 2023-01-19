@@ -1,0 +1,377 @@
+4 Network Control Functions
+---------------------------
+
+This chapter describes the network control functions.
+
+4.1 Introduction to NETCTRL Source
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+4.1.1 History
+^^^^^^^^^^^^^
+
+The NETCTRL module was originally a recommended initialization and scheduling method to execute the NDK. Although mostly simple, this code became standard. Eventually, it was separated out into the NETCTRL library.
+
+The NETCTRL module is the center of the NDK because it connects the HAL and the OS Adaptation Layer to the NDK. It controls both initialization and how events are scheduled for execution within the stack. Understanding how the NETCTRL module works helps you tune your networking application for ideal performance.
+
+4.1.2 NETCTRL Source Files
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Source code to the NETCTRL library consists of two C files located in the ``/ti/ndk/netctrl`` directory:
+
+-  **netctrl.c** -- Network Control (Initialization and Scheduling) Module
+-  **netsrv.c** -- Configuration service module (system configuration service provider)
+
+There are two include files associated with NETCTRL in the ``/inc/netctrl`` directory:
+
+-  **netctrl.h** -- Interface specification to NETCTRL
+-  **netsrv.h** -- Interface specification to NETSRV
+
+4.1.3 Main Functions
+^^^^^^^^^^^^^^^^^^^^
+
+The ``netctrl.c`` source module contains source code for all the functions with the NC\_ prefix. The function of the NETCTRL module has three basic parts.
+
+The first function of ``netctrl.c`` is to perform the system initialization and shutdown that is necessary before calling any other stack functions. These functions are declared as ``NC_SystemOpen()`` and ``NC_SystemClose()``.
+
+The second function of ``netctrl.c`` is to perform the driver environment initialization and configuration bootstrap necessary to start the stack functionality. This startup function and its shutdown counterpart are declared as ``NC_NetStart()`` and ``NC_NetStop()``.
+
+The final function of ``netctrl.c`` that is hidden from the caller, is implementing the stack's event scheduling, which is the center of the stack's operation.
+
+The ``netsrv.c`` module contains the code that boots all the services on the stack. This code takes what is stored in the stack's configuration and implements the necessary stack functions to keep the configuration current. When an active item in the configuration is changed, there is code in the NETSRV module to execute that change in the NDK.
+
+4.1.4 Additional Functions
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+There are some additional NETCTRL functions that are not documented in the `NDK API Reference Guide <../../NDK_API_Reference.html>`__. These functions are ``NC_BootComplete()`` and ``NC_IPUpdate()``. They are both called from the NETSRV module.
+
+The ``NC_NetStart()`` function initiates the configuration boot process by creating a boot thread with an entry point of ``NS_BootTask()`` (from netsrv.c). The ``NC_BootComplete()`` function is called by the configuration boot thread when the configuration boot is complete. It signals to NETCTRL that it can now call the ``networkOpen()`` application callback that was passed to ``NC_NetStart()`` by the application. On return from ``NC_BootComplete()``, the boot thread is terminated. Therefore, the application programmer may take control of the ``networkOpen()`` callback thread, although this is not recommended.
+
+The IP address update function is called by NETSRV when an address is added to or removed from the system. It is this function that then calls the ``networkIPAddr()`` application callback that was originally passed to ``NC_NetStart()``.
+
+4.1.5 Booting and Scheduling
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+`"NDK Initialization" <03_network-application-development.html#ndk-initialization>`__ discussed using the network control NETCTRL module. This section examines the internal source code of the main NETCTRL module and the operation of the event scheduler.
+
+The stack event scheduler is the routine that calls the stack to process packet and timer events. The scheduler is called from within ``NC_NetStart()`` and does not return until the stack is being shut down, which explains why the ``NC_NetStart()`` function does not return to the application until the system is shut down and the scheduler terminates.
+
+The basic flow of ``NC_NetStart()`` is as follows:
+
+.. code:: c
+
+    NC_NetStart()
+    {
+        Initialize_Devices();
+
+        CreateConfigurationBootThread();
+        NetScheduler();
+        CloseConfiguration();
+        CloseDevices();
+    }
+
+Out of the functional stages for ``NC_NetStart()`` listed above, the two that are of the most concern are the creation of the boot thread, and the implementation of the network event scheduler.
+
+The boot thread is handled by a second C module in the NETCTRL library named netsrv.c. This name is an abbreviation for Network Service Manager. The NETSRV module hooks into the configuration system as a configuration service provider. The configuration system module is just an active database. In contrast, the network service module turns configuration entries into actual NDK objects. The service module can be altered to fit a particular need. This likely involves the creation of custom configuration tags for the configuration system. However, a full understanding of the code in NETSRV requires a basic understanding of nearly all the API functions discussed in the `NDK API Reference Guide <../../NDK_API_Reference.html>`__.
+
+You should be most concerned about the ``NetScheduler()`` function because this scheduler runs the NDK. It looks for events that need to be processed by the NDK, and it performs the work necessary to start processing.
+
+4.2 NETCTRL Scheduler
+~~~~~~~~~~~~~~~~~~~~~
+
+4.2.1 Scheduler Overview
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+The NETCTRL scheduler code is an infinite loop function named ``NetScheduler()`` and appears at the end of the source file netctrl.c. It looks for activity events from the low level device drivers, and acts when events are detected. The loop terminates when a static variable is set through an outside call to ``NC_NetStop()``.
+
+Although the NDK provides a reentrant environment, the core of the stack is not reentrant. Portions of the code must be protected from access by reentrant calls. Instead of using critical sections that block out all other Task execution, the software defines an operating mode called kernel mode. Kernel mode is defined such that only one Task may be in kernel mode at any given time. It does nothing to prevent Tasks from running that do not use the NDK. This provides protection for the stack, without affecting the execution of unrelated code. There are two functions defined to enter and exit kernel mode, ``llEnter()`` and ``llExit()``. They are part of the OS adaptation layer, and are discussed in more detail in `"Choosing the llEnter()/llExit() Exclusion Method" <05_os-adaptation-layer.html#choosing-the-llenter-llexit-exclusion-method>`__. In short, ``llEnter()`` must be called before calling into the stack, and ``llExit()`` must be called when done calling stack functions.
+
+The basic flow of the scheduler loop can be summarized by this pseudo code:
+
+.. code:: c
+
+    static void NetScheduler()
+    {
+        SetSchedulingPriority();
+
+        while( !NetHaltFlag )
+        {
+            WaitOrPollForEvents();
+            ServiceDeviceDrivers();
+
+            // Process current events in Kernel Mode
+            if( StackEvents )
+            {
+                // Enter Kernel Mode
+                llEnter();
+                ServiceStackEvents();
+
+                // Exit Kernel Mode llExit();
+            }
+        }
+    }
+
+The sections that follow address each of the highlighted functions in turn. Note that the code continues to run until the ``NetHaltFlag`` is set. This flag is set when an application calls the ``NC_NetStop()`` function.
+
+4.2.2 Scheduling Options
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+There are three basic ways to run the scheduler. They can be viewed as three operating modes:
+
+1. Scheduler runs at low priority and only when there are network events to process.
+2. Scheduler runs continuously at low priority, polling the device drivers for events.
+3. Scheduler runs a high priority, but only when there are network events to process.
+
+The best way to run the scheduler depends on the application and system architecture.
+
+Mode 1 is the most efficient way to run the NDK. Here, the scheduler loop runs at a low priority. This allows applications that potentially have real-time requirements to have priority over networking where the real-time restrictions are more relaxed. In addition, the scheduling loop only runs when there is network related activity; therefore, an idle loop can also be used.
+
+Mode 2 is used when the device drivers are prevented from using interrupts. This is best for real-time Tasks, but worst for network performance. Since the scheduler thread runs continuously, it also prevents the use of an idle loop. This is the mode that NETCTRL must use when using a device driver that requires polling.
+
+Mode 3 is the most Unix-like environment. Here, the network scheduler Task runs at a higher priority than any other networking Task in the system. The stack runs whenever new network related events are detected, pre-empting other Tasks from potentially using the stack. This is the best method for keeping the networking environment up to date without placing restrictions on how network applications are written.
+
+Setting priority and polling or interrupt driven scheduling is done when the application first calls ``NC_SystemOpen()``. This is discussed further in `"Pre-Initialization" <03_network-application-development.html#pre-initialization>`__ and in the *NDK Programmer's Reference Guide*.
+
+4.2.3 Scheduler Thread Priority
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The first lines of the actual implementation of ``NetScheduler()`` include the following code:
+
+.. code:: c
+
+    // Set the scheduler priority
+    TaskSetPri(TaskSelf(), SchedulerPriority);
+
+This code changes the priority of the Task thread that calls into ``NC_NetStart()``, so that there is a single control point to set the scheduler priority. The priority used is that which was passed to the ``NC_SystemOpen()`` function. This is discussed further in `"Pre-Initialization" <03_network-application-development.html#pre-initialization>`__ and in the *NDK Programmer's Reference Guide*.
+
+The scheduler priority (relative to network application thread priority) affects how network applications can be programmed. For example, when running the scheduler in low priority, a network application cannot poll for data by continuously calling ``NDK_recv()`` in a non-blocking fashion. This is because if the application thread never blocks, the network scheduler thread never runs, and incoming packets are never processed by the NDK.
+
+4.2.4 Tracking Events with STKEVENT
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+As previously mentioned, the NETCTRL module is the interface between the stack and the device drivers in the HAL layer. In older versions of the NDK, device drivers signaled the NETCTRL module through a global Semaphore. In order to improve this process slightly, the simple Semaphore has been encapsulated into an object called a ``STKEVENT``.
+
+From the device driver's point of view, this event object is a handle that is passed to a function called ``STKEVENT_signal()``. In reality, this function is only a MACRO that operates on a structure of type ``STKEVENT``. The NETCTRL module operates directly on this structure. The ``STKEVENT`` structure is defined as follows:
+
+.. code:: c
+
+    // Stack Event Object
+    typedef struct _stkevent {
+        void       *hSemEvent;
+        uint32_t   EventCodes[STKEVENT_NUMEVENTS];
+    } STKEVENT;
+
+    #define STKEVENT_NUMEVENTS    5
+
+    #define STKEVENT_TIMER        0
+    #define STKEVENT_ETHERNET     1
+    #define STKEVENT_SERIAL       2
+    #define STKEVENT_LINKUP       3
+    #define STKEVENT_LINKDOWN     4
+
+There are two parts to the structure, a Semaphore handle and an array of events. Each driver signals an event by setting a flag in the ``EventCode[]`` array for its event type, and then optionally signaling the event semaphore. The semaphore is only signaled when the driver detects an interrupt condition. If the event is detected during driver polling (either periodic polling or constant in the case of a polling only driver), the event is set, but the semaphore is not signaled.
+
+You can provide a hook function to run when a driver signals a ``STKEVENT_LINKUP`` or ``STKEVENT_LINKDOWN`` event, meaning that the link has come up or gone down. Note that such a hook function will only be called if the driver has code to call ``STKEVENT_signal(STKEVENT_LINKUP)`` and ``STKEVENT_signal(STKEVENT_LINKDOWN)``.
+
+The hook function should accept a single int status parameter. If the function receives 0, the link is now down (for example, because a cable was disconnected). If the function receives a 1, the link is now up. To register your hook function, call ``NC_setLinkHook()`` as follows:
+
+.. code:: c
+
+    NC_setLinkHook( void (*LinkHook)(int) );
+
+The NETCTRL module creates a private instance of the ``STKEVENT`` structure that it passes to device drivers as a handle of type ``STKEVENT_Handle``. The private instance that is operated on directly by NETCTRL is declared as:
+
+.. code:: c
+
+    // Static Event Object
+    static STKEVENT stkEvent;
+
+In the full source to ``NetScheduler()`` that follows, the ``STKEVENT`` structure is referred to by its instance ``stkEvent``.
+
+4.2.5 Scheduler Loop Source Code
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The code for the scheduler implementation included in the NDK is shown below. This implementation fleshes out the pseudo code shown in `"Scheduler Overview" <#scheduler-overview>`__, using the methods and objects described in this section. In this code, the number of serial port devices and Ethernet devices is passed in as calling arguments. This device count is obtained from the device drivers when they are asked to enumerate their physical devices.
+
+.. code:: c
+
+    #define FLAG_EVENT_TIMER     1
+    #define FLAG_EVENT_ETHERNET  2
+    #define FLAG_EVENT_SERIAL    4
+    #define FLAG_EVENT_LINKUP    8
+    #define FLAG_EVENT_LINKDOWN  16
+
+    static void NetScheduler( uint32_t const SerialCnt, uint32_t const EtherCnt )
+    {
+        register int fEvents;
+
+        /* Set the scheduler priority */
+        TaskSetPri( TaskSelf(), SchedulerPriority );
+
+        /* Enter scheduling loop */
+        while( !NetHaltFlag )
+        {
+            if( stkEvent.hSemEvent )
+            {
+                SemPend( stkEvent.hSemEvent, SEM_FOREVER );
+            }
+
+            /* Clear our event flags */
+            fEvents = 0;
+
+            /* First we do driver polling. This is done from outside */
+            /* kernel mode since pure "polling" drivers cannot spend */
+            /* 100% of their time in kernel mode. */
+
+            /* Check for a timer event and flag it. EventCodes[STKEVENT_TIMER] */
+            /* is set as a result of llTimerTick() (NDK heartbeat) */
+            if( stkEvent.EventCodes[STKEVENT_TIMER] )
+            {
+                stkEvent.EventCodes[STKEVENT_TIMER] = 0;
+                fEvents |= FLAG_EVENT_TIMER;
+            }
+
+            /* Poll only once every timer event for ISR based drivers, */
+            /* and continuously for polling drivers. Note that "fEvents" */
+            /* can only be set to FLAG_EVENT_TIMER at this point. */
+            if( fEvents || !stkEvent.hSemEvent )
+            {
+                NIMUPacketServiceCheck (fEvents);
+
+                /* Poll Serial Port Devices */
+                if( SerialCnt )
+                    _llSerialServiceCheck( fEvents );
+            }
+
+            /* Note we check for Ethernet and Serial events after */
+            /* polling since the ServiceCheck() functions may */
+            /* have passively set them. */
+
+            /* Was an Ethernet event signaled? */
+            if(stkEvent.EventCodes[STKEVENT_ETHERNET])
+            {
+                /* We call service check on an event to allow the */
+                /* driver to do any processing outside of kernel */
+                /* mode that it requires, but don't call it if we */
+                /* already called it due to a timer event or by polling */
+                if (!(fEvents & FLAG_EVENT_TIMER) && stkEvent.hSemEvent)
+                    NIMUPacketServiceCheck (0);
+
+                /* Clear the event and record it in our flags */
+                stkEvent.EventCodes[STKEVENT_ETHERNET] = 0;
+                fEvents |= FLAG_EVENT_ETHERNET;
+            }
+
+            /* Check for a Serial event and flag it */
+            if(SerialCnt && stkEvent.EventCodes[STKEVENT_SERIAL] )
+            {
+                /* We call service check on an event to allow the */
+                /* driver to do any processing outside of kernel */
+                /* mode that it requires, but don't call it if we */
+                /* already called it due to a timer event or by polling */
+                if( !(fEvents & FLAG_EVENT_TIMER) && stkEvent.hSemEvent )
+                    _llSerialServiceCheck( 0 );
+
+                /* Clear the event and record it in our flags */
+                stkEvent.EventCodes[STKEVENT_SERIAL] = 0;
+                fEvents |= FLAG_EVENT_SERIAL;
+            }
+
+            /* Check if link went up */
+            if(stkEvent.EventCodes[STKEVENT_LINKUP])
+            {
+                /* Clear the event and record it in our flags */
+                stkEvent.EventCodes[STKEVENT_LINKUP] = 0;
+                fEvents |= FLAG_EVENT_LINKUP;
+            }
+
+            /* Check if link went down */
+            if(stkEvent.EventCodes[STKEVENT_LINKDOWN])
+            {
+                /* Clear the event and record it in our flags */
+                stkEvent.EventCodes[STKEVENT_LINKDOWN] = 0;
+                fEvents |= FLAG_EVENT_LINKDOWN;
+            }
+
+            /* Process current events in Kernel Mode */
+            if( fEvents )
+            {
+                /* Enter Kernel Mode */
+                llEnter();
+
+                /* Check for timer event. Timer event flag is set as a result of */
+                /* llTimerTick() (NDK heartbeat) */
+                if( fEvents & FLAG_EVENT_TIMER )
+                    ExecTimer();
+
+                /* Check for packet event */
+                if( fEvents & FLAG_EVENT_ETHERNET )
+                    NIMUPacketService();
+
+                /* Check for serial port event */
+                if( fEvents & FLAG_EVENT_SERIAL )
+                    llSerialService();
+
+                /* Exit Kernel Mode */
+                llExit();
+
+                /* Check for a change in link status.  Do this outside of above */
+                /* llEnter/llExit pair as to avoid illegal reentrant calls to */
+                /* kernel mode by user's callback. */
+
+                /* Check for link up status */
+                if( fEvents & FLAG_EVENT_LINKUP )
+                {
+                    /* Call the link status callback, if user registered one */
+                    if (NetLinkHook) {
+                        /* Pass callback function a link status of "up" */
+                        (*NetLinkHook)(1);
+                    }
+                }
+
+                /* Check for link down status */
+                if( fEvents & FLAG_EVENT_LINKDOWN )
+                {
+                    /* Call the link status callback, if user registered one */
+                    if (NetLinkHook) {
+                        /* Pass callback function a link status of "down" */
+                        (*NetLinkHook)(0);
+                    }
+                }
+            }
+        }
+    }
+
+4.3 Disabling On-Demand Services
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The NETCTRL library is designed to support "potential" stack features that the user may desire within an application (e.g. DHCP server). However, the drawback of this is that the code for such features will be included in the executable even if the application never uses the features. This results in a larger footprint than is usually necessary. To minimize this problem, the following different versions of the NETCTRL library are available:
+
+-  **netctrl\_min.** This minimal library enables only the DHCP client. It should be used when a minimal footprint is desired.
+-  **netctrl.** This "standard" version of the NETCTRL library enables the following features and has a medium footprint:
+
+   -  Telnet server
+   -  DHCP client
+
+-  **netctrl\_full.** This "full" library enables all supported NETCTRL features, which include:
+
+   -  Telnet server
+   -  NAT server
+   -  DHCP client
+   -  DHCP server
+   -  DNS server
+
+Each of these NETCTRL library versions is built for both pure IPv4 as well as IPv6.
+
+If you configure the NDK using the SysConfig tool, the appropriate NETCTRL library will be automatically added to the generated linker.cmd file.
+
+If you need even more control over which features are available in the NETCTRL library used by your application, you can #define the following constants in ``/ti/ndk/inc/netctrl/netsrv.h``, which control the features brought into the NETCTRL library if ``_NDK_EXTERN_CONFIG`` is not defined.
+
+.. code:: c
+
+    #define NETSRV_ENABLE_TELNET 1
+    #define NETSRV_ENABLE_NAT 0
+    #define NETSRV_ENABLE_DHCPCLIENT 1
+    #define NETSRV_ENABLE_DHCPSERVER 1
+    #define NETSRV_ENABLE_DNSSERVER 1
+
+By setting any of the above to 0 and rebuilding the appropriate NETCTRL library, individual services can be purged from the executable.

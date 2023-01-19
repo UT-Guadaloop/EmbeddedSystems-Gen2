@@ -1,0 +1,131 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="_a_e_s_g_c_m_m_s_p432_e4_8h" kind="file" language="C++">
+    <compoundname>AESGCMMSP432E4.h</compoundname>
+    <includes local="no">stdint.h</includes>
+    <includes local="no">stdbool.h</includes>
+    <includes refid="_a_e_s_g_c_m_8h" local="no">ti/drivers/AESGCM.h</includes>
+    <incdepgraph>
+      <node id="108">
+        <label>stdbool.h</label>
+      </node>
+      <node id="111">
+        <label>ti/drivers/cryptoutils/cryptokey/CryptoKey.h</label>
+        <link refid="_crypto_key_8h"/>
+        <childnode refid="107" relation="include">
+        </childnode>
+        <childnode refid="108" relation="include">
+        </childnode>
+      </node>
+      <node id="107">
+        <label>stdint.h</label>
+      </node>
+      <node id="109">
+        <label>ti/drivers/AESGCM.h</label>
+        <link refid="_a_e_s_g_c_m_8h"/>
+        <childnode refid="108" relation="include">
+        </childnode>
+        <childnode refid="110" relation="include">
+        </childnode>
+        <childnode refid="107" relation="include">
+        </childnode>
+        <childnode refid="111" relation="include">
+        </childnode>
+      </node>
+      <node id="110">
+        <label>stddef.h</label>
+      </node>
+      <node id="106">
+        <label>AESGCMMSP432E4.h</label>
+        <link refid="_a_e_s_g_c_m_m_s_p432_e4_8h"/>
+        <childnode refid="107" relation="include">
+        </childnode>
+        <childnode refid="108" relation="include">
+        </childnode>
+        <childnode refid="109" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innerclass refid="struct_a_e_s_g_c_m_m_s_p432_e4___h_w_attrs" prot="public">AESGCMMSP432E4_HWAttrs</innerclass>
+    <briefdescription>
+<para>AESGCM driver implementation for the MSP432E4 family. </para>    </briefdescription>
+    <detaileddescription>
+<para>The generic driver interface can be found in <ref refid="_a_e_s_g_c_m_8h" kindref="compound">AESGCM.h</ref>. This file should only be included in the board file to fill the <ref refid="struct_a_e_s_g_c_m___config" kindref="compound">AESGCM_Config</ref> struct.</para><para><heading level="3">Features</heading>
+</para><para><itemizedlist>
+<listitem><para>Uses the dedicated AES hardware accelerator.</para></listitem><listitem><para>Utilizes the DMA to transfer data from/to the AES accelerator when using <ref refid="_a_e_s_g_c_m_8h_1a194ade55cf88db59f7cf2f836ce37145a94ec72fe16e4cd2511b20f9ff8f99026" kindref="member">AESGCM_RETURN_BEHAVIOR_BLOCKING</ref> and <ref refid="_a_e_s_g_c_m_8h_1a194ade55cf88db59f7cf2f836ce37145a956aafcfb3b1293e1e51bc84bd21dfc0" kindref="member">AESGCM_RETURN_BEHAVIOR_CALLBACK</ref>.</para></listitem><listitem><para>Uses a hardware interrupt to allow asynchronous operation. The interrupt priority can be configured in <ref refid="struct_a_e_s_g_c_m_m_s_p432_e4___h_w_attrs_1ac6a458c6eead4d30d3b1e60e391e0439" kindref="member">AESGCMMSP432E4_HWAttrs::intPriority</ref></para></listitem></itemizedlist>
+</para><para><heading level="3">Limitations</heading>
+</para><para><itemizedlist>
+<listitem><para>When using <ref refid="_a_e_s_g_c_m_8h_1a194ade55cf88db59f7cf2f836ce37145a94ec72fe16e4cd2511b20f9ff8f99026" kindref="member">AESGCM_RETURN_BEHAVIOR_BLOCKING</ref> and <ref refid="_a_e_s_g_c_m_8h_1a194ade55cf88db59f7cf2f836ce37145a956aafcfb3b1293e1e51bc84bd21dfc0" kindref="member">AESGCM_RETURN_BEHAVIOR_CALLBACK</ref>, the pointers <ref refid="struct_a_e_s_g_c_m___operation_1acd270903c1f5d2cfffb2ae2d116b3baa" kindref="member">AESGCM_Operation::input</ref> and <ref refid="struct_a_e_s_g_c_m___operation_1aaeded7526527c1d5ea01df253d399690" kindref="member">AESGCM_Operation::output</ref> must be word-aligned. This is required by the DMA.</para></listitem><listitem><para>Only plaintext <ref refid="struct_crypto_key" kindref="compound">CryptoKey</ref> types keys are supported by this implementation.</para></listitem><listitem><para>Only one operation can be carried out on the accelerator at a time. Mutual exclusion is implemented at the driver level and coordinated between all drivers relying on the accelerator. It is transparent to the application and only noted to ensure sensible access timeouts are set for <ref refid="struct_a_e_s_g_c_m___params_1ad01a2385e44acbdb7b91ec5546921232" kindref="member">AESGCM_Params::timeout</ref>.</para></listitem><listitem><para>The length of initialization vectors is limited to 12 bytes.</para></listitem><listitem><para>This implementation does not support internal generation of initialization vectors.</para></listitem></itemizedlist>
+</para><para><heading level="3">Performance</heading>
+</para><para>Polling mode offers better performance than blocking and callback mode because no DMA and no interrupt handling is involved. It is recommended to use polling mode for messages shorter than 512 bytes. </para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2018-2019,<sp/>Texas<sp/>Instruments<sp/>Incorporated</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Redistribution<sp/>and<sp/>use<sp/>in<sp/>source<sp/>and<sp/>binary<sp/>forms,<sp/>with<sp/>or<sp/>without</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>modification,<sp/>are<sp/>permitted<sp/>provided<sp/>that<sp/>the<sp/>following<sp/>conditions</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>are<sp/>met:</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>of<sp/>source<sp/>code<sp/>must<sp/>retain<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer.</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>in<sp/>binary<sp/>form<sp/>must<sp/>reproduce<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer<sp/>in<sp/>the</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>documentation<sp/>and/or<sp/>other<sp/>materials<sp/>provided<sp/>with<sp/>the<sp/>distribution.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Neither<sp/>the<sp/>name<sp/>of<sp/>Texas<sp/>Instruments<sp/>Incorporated<sp/>nor<sp/>the<sp/>names<sp/>of</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>its<sp/>contributors<sp/>may<sp/>be<sp/>used<sp/>to<sp/>endorse<sp/>or<sp/>promote<sp/>products<sp/>derived</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>from<sp/>this<sp/>software<sp/>without<sp/>specific<sp/>prior<sp/>written<sp/>permission.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>THIS<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>BY<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>AND<sp/>CONTRIBUTORS<sp/>&quot;AS<sp/>IS&quot;</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>AND<sp/>ANY<sp/>EXPRESS<sp/>OR<sp/>IMPLIED<sp/>WARRANTIES,<sp/>INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>THE<sp/>IMPLIED<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY<sp/>AND<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>PURPOSE<sp/>ARE<sp/>DISCLAIMED.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE<sp/>COPYRIGHT<sp/>OWNER<sp/>OR</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>CONTRIBUTORS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>DIRECT,<sp/>INDIRECT,<sp/>INCIDENTAL,<sp/>SPECIAL,</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>EXEMPLARY,<sp/>OR<sp/>CONSEQUENTIAL<sp/>DAMAGES<sp/>(INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>PROCUREMENT<sp/>OF<sp/>SUBSTITUTE<sp/>GOODS<sp/>OR<sp/>SERVICES;<sp/>LOSS<sp/>OF<sp/>USE,<sp/>DATA,<sp/>OR<sp/>PROFITS;</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>OR<sp/>BUSINESS<sp/>INTERRUPTION)<sp/>HOWEVER<sp/>CAUSED<sp/>AND<sp/>ON<sp/>ANY<sp/>THEORY<sp/>OF<sp/>LIABILITY,</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/>STRICT<sp/>LIABILITY,<sp/>OR<sp/>TORT<sp/>(INCLUDING<sp/>NEGLIGENCE<sp/>OR</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*<sp/>OTHERWISE)<sp/>ARISING<sp/>IN<sp/>ANY<sp/>WAY<sp/>OUT<sp/>OF<sp/>THE<sp/>USE<sp/>OF<sp/>THIS<sp/>SOFTWARE,</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*<sp/>EVEN<sp/>IF<sp/>ADVISED<sp/>OF<sp/>THE<sp/>POSSIBILITY<sp/>OF<sp/>SUCH<sp/>DAMAGE.</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*/</highlight></codeline>
+<codeline lineno="81"><highlight class="preprocessor">#ifndef<sp/>ti_drivers_aesgcm_AESGCMMSP432E4__include</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ti_drivers_aesgcm_AESGCMMSP432E4__include</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdbool.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_a_e_s_g_c_m_8h" kindref="compound">ti/drivers/AESGCM.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99" refid="struct_a_e_s_g_c_m_m_s_p432_e4___h_w_attrs" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="100" refid="struct_a_e_s_g_c_m_m_s_p432_e4___h_w_attrs_1ac6a458c6eead4d30d3b1e60e391e0439" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><sp/><sp/><sp/><ref refid="struct_a_e_s_g_c_m_m_s_p432_e4___h_w_attrs_1ac6a458c6eead4d30d3b1e60e391e0439" kindref="member">intPriority</ref>;<sp/></highlight></codeline>
+<codeline lineno="114"><highlight class="normal">}<sp/><ref refid="struct_a_e_s_g_c_m_m_s_p432_e4___h_w_attrs" kindref="compound">AESGCMMSP432E4_HWAttrs</ref>;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="119"><highlight class="comment"><sp/>*<sp/>AESGCMMSP432E4<sp/>context<sp/>object</highlight></codeline>
+<codeline lineno="120"><highlight class="comment"><sp/>*<sp/>The<sp/>application<sp/>must<sp/>not<sp/>access<sp/>any<sp/>member<sp/>variables<sp/>of<sp/>this<sp/>structure.</highlight></codeline>
+<codeline lineno="121"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>isOpen;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/>int_fast16_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>returnStatus;</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_a_e_s_g_c_m_8h_1a6c46f7df33bb1a4e7d664c1ec056eb86" kindref="member">AESGCM_OperationType</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>operationType;</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_a_e_s_g_c_m_8h_1a194ade55cf88db59f7cf2f836ce37145" kindref="member">AESGCM_ReturnBehavior</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>returnBehavior;</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>accessTimeout;</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_a_e_s_g_c_m_8h_1a93425ed5237036ac28f882518d702013" kindref="member">AESGCM_CallbackFxn</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>callbackFxn;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_a_e_s_g_c_m___operation" kindref="compound">AESGCM_Operation</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*operation;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal">}<sp/>AESGCMMSP432E4_Object;</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>ti_drivers_aesGCM_AESGCMMSP432E4__include<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="exports/tidrivers_msp432e4/source/ti/drivers/aesgcm/AESGCMMSP432E4.h"/>
+  </compounddef>
+</doxygen>

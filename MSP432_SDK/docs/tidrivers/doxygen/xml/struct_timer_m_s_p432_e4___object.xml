@@ -1,0 +1,190 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="struct_timer_m_s_p432_e4___object" kind="struct" language="C++" prot="public">
+    <compoundname>TimerMSP432E4_Object</compoundname>
+    <includes refid="_timer_m_s_p432_e4_8h" local="no">TimerMSP432E4.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_timer_m_s_p432_e4___object_1a140e1ede8f416a9cb997f37da839ebf0" prot="public" static="no" mutable="no">
+        <type>HwiP_Handle</type>
+        <definition>HwiP_Handle TimerMSP432E4_Object::hwiHandle</definition>
+        <argsstring></argsstring>
+        <name>hwiHandle</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/timer/TimerMSP432E4.h" line="186" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/timer/TimerMSP432E4.h" bodystart="186" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_timer_m_s_p432_e4___object_1a526266e8dbf00792009a9102c5d3e785" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_power___notify_obj" kindref="compound">Power_NotifyObj</ref></type>
+        <definition>Power_NotifyObj TimerMSP432E4_Object::notifyObj</definition>
+        <argsstring></argsstring>
+        <name>notifyObj</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/timer/TimerMSP432E4.h" line="187" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/timer/TimerMSP432E4.h" bodystart="187" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_timer_m_s_p432_e4___object_1a705e4f016196f3b5020ac89d636781cf" prot="public" static="no" mutable="no">
+        <type>SemaphoreP_Handle</type>
+        <definition>SemaphoreP_Handle TimerMSP432E4_Object::timerSem</definition>
+        <argsstring></argsstring>
+        <name>timerSem</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/timer/TimerMSP432E4.h" line="188" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/timer/TimerMSP432E4.h" bodystart="188" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_timer_m_s_p432_e4___object_1a96b82ca04bfd4eb0dccb010d7e5b66ec" prot="public" static="no" mutable="no">
+        <type><ref refid="_timer_8h_1a2511f870b3eb9d872315fadeeeb09e4b" kindref="member">Timer_CallBackFxn</ref></type>
+        <definition>Timer_CallBackFxn TimerMSP432E4_Object::callBack</definition>
+        <argsstring></argsstring>
+        <name>callBack</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/timer/TimerMSP432E4.h" line="189" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/timer/TimerMSP432E4.h" bodystart="189" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_timer_m_s_p432_e4___object_1a0d027a21de4ced05e2901bc4bde61848" prot="public" static="no" mutable="no">
+        <type><ref refid="_timer_8h_1ab0e86a066b5c68c55183cd680090a9b7" kindref="member">Timer_Mode</ref></type>
+        <definition>Timer_Mode TimerMSP432E4_Object::mode</definition>
+        <argsstring></argsstring>
+        <name>mode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/timer/TimerMSP432E4.h" line="190" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/timer/TimerMSP432E4.h" bodystart="190" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_timer_m_s_p432_e4___object_1a3342d0cc79ac7d032d9f07e985287adf" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t TimerMSP432E4_Object::timer</definition>
+        <argsstring></argsstring>
+        <name>timer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/timer/TimerMSP432E4.h" line="191" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/timer/TimerMSP432E4.h" bodystart="191" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_timer_m_s_p432_e4___object_1aee0501bbd2cda6e6e25c89a15c858234" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t TimerMSP432E4_Object::period</definition>
+        <argsstring></argsstring>
+        <name>period</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/timer/TimerMSP432E4.h" line="192" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/timer/TimerMSP432E4.h" bodystart="192" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_timer_m_s_p432_e4___object_1a89fd03d71cf8beb460337fe8d1e991f6" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t TimerMSP432E4_Object::prescaler</definition>
+        <argsstring></argsstring>
+        <name>prescaler</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/timer/TimerMSP432E4.h" line="193" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/timer/TimerMSP432E4.h" bodystart="193" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_timer_m_s_p432_e4___object_1a160b91e7db36916cfe93703adafa050b" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool TimerMSP432E4_Object::isRunning</definition>
+        <argsstring></argsstring>
+        <name>isRunning</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/timer/TimerMSP432E4.h" line="194" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/timer/TimerMSP432E4.h" bodystart="194" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="struct_timer_m_s_p432_e4___object" kindref="compound">TimerMSP432E4_Object</ref>. </para>    </briefdescription>
+    <detaileddescription>
+<para>The application must not access any member variables of this structure! </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="394">
+        <label>Power_NotifyObj</label>
+        <link refid="struct_power___notify_obj"/>
+        <childnode refid="395" relation="usage">
+          <edgelabel>link</edgelabel>
+        </childnode>
+      </node>
+      <node id="396">
+        <label>Timer_Config_</label>
+        <link refid="struct_timer___config__"/>
+        <childnode refid="397" relation="usage">
+          <edgelabel>fxnTablePtr</edgelabel>
+        </childnode>
+      </node>
+      <node id="393">
+        <label>TimerMSP432E4_Object</label>
+        <link refid="struct_timer_m_s_p432_e4___object"/>
+        <childnode refid="394" relation="usage">
+          <edgelabel>notifyObj</edgelabel>
+        </childnode>
+        <childnode refid="396" relation="usage">
+          <edgelabel>callBack</edgelabel>
+        </childnode>
+      </node>
+      <node id="395">
+        <label>List_Elem_</label>
+        <link refid="struct_list___elem__"/>
+        <childnode refid="395" relation="usage">
+          <edgelabel>prev</edgelabel>
+          <edgelabel>next</edgelabel>
+        </childnode>
+      </node>
+      <node id="397">
+        <label>Timer_FxnTable</label>
+        <link refid="struct_timer___fxn_table"/>
+        <childnode refid="396" relation="usage">
+          <edgelabel>closeFxn</edgelabel>
+          <edgelabel>stopFxn</edgelabel>
+          <edgelabel>setPeriodFxn</edgelabel>
+          <edgelabel>initFxn</edgelabel>
+          <edgelabel>startFxn</edgelabel>
+          <edgelabel>controlFxn</edgelabel>
+          <edgelabel>openFxn</edgelabel>
+          <edgelabel>getCountFxn</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="exports/tidrivers_msp432e4/source/ti/drivers/timer/TimerMSP432E4.h" line="185" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/timer/TimerMSP432E4.h" bodystart="185" bodyend="195"/>
+    <listofallmembers>
+      <member refid="struct_timer_m_s_p432_e4___object_1a96b82ca04bfd4eb0dccb010d7e5b66ec" prot="public" virt="non-virtual"><scope>TimerMSP432E4_Object</scope><name>callBack</name></member>
+      <member refid="struct_timer_m_s_p432_e4___object_1a140e1ede8f416a9cb997f37da839ebf0" prot="public" virt="non-virtual"><scope>TimerMSP432E4_Object</scope><name>hwiHandle</name></member>
+      <member refid="struct_timer_m_s_p432_e4___object_1a160b91e7db36916cfe93703adafa050b" prot="public" virt="non-virtual"><scope>TimerMSP432E4_Object</scope><name>isRunning</name></member>
+      <member refid="struct_timer_m_s_p432_e4___object_1a0d027a21de4ced05e2901bc4bde61848" prot="public" virt="non-virtual"><scope>TimerMSP432E4_Object</scope><name>mode</name></member>
+      <member refid="struct_timer_m_s_p432_e4___object_1a526266e8dbf00792009a9102c5d3e785" prot="public" virt="non-virtual"><scope>TimerMSP432E4_Object</scope><name>notifyObj</name></member>
+      <member refid="struct_timer_m_s_p432_e4___object_1aee0501bbd2cda6e6e25c89a15c858234" prot="public" virt="non-virtual"><scope>TimerMSP432E4_Object</scope><name>period</name></member>
+      <member refid="struct_timer_m_s_p432_e4___object_1a89fd03d71cf8beb460337fe8d1e991f6" prot="public" virt="non-virtual"><scope>TimerMSP432E4_Object</scope><name>prescaler</name></member>
+      <member refid="struct_timer_m_s_p432_e4___object_1a3342d0cc79ac7d032d9f07e985287adf" prot="public" virt="non-virtual"><scope>TimerMSP432E4_Object</scope><name>timer</name></member>
+      <member refid="struct_timer_m_s_p432_e4___object_1a705e4f016196f3b5020ac89d636781cf" prot="public" virt="non-virtual"><scope>TimerMSP432E4_Object</scope><name>timerSem</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

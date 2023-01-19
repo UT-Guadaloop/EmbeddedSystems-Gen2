@@ -1,0 +1,124 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="struct_comparator_m_s_p432_e4___h_w_attrs" kind="struct" language="C++" prot="public">
+    <compoundname>ComparatorMSP432E4_HWAttrs</compoundname>
+    <includes refid="_comparator_m_s_p432_e4_8h" local="no">ComparatorMSP432E4.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_comparator_m_s_p432_e4___h_w_attrs_1a4a7eacf9b08ff74f113d8b64f8a103c5" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t ComparatorMSP432E4_HWAttrs::intNum</definition>
+        <argsstring></argsstring>
+        <name>intNum</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>&lt; Device-specific interrupt number </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/comparator/ComparatorMSP432E4.h" line="181" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/comparator/ComparatorMSP432E4.h" bodystart="181" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_comparator_m_s_p432_e4___h_w_attrs_1ae0c3de9788717136ccf3ad3345e50fb6" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t ComparatorMSP432E4_HWAttrs::intPriority</definition>
+        <argsstring></argsstring>
+        <name>intPriority</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Comparator module ID </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/comparator/ComparatorMSP432E4.h" line="182" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/comparator/ComparatorMSP432E4.h" bodystart="182" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_comparator_m_s_p432_e4___h_w_attrs_1addb387f0a19a249caf5fc27a51620589" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t ComparatorMSP432E4_HWAttrs::compNum</definition>
+        <argsstring></argsstring>
+        <name>compNum</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/comparator/ComparatorMSP432E4.h" line="184" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/comparator/ComparatorMSP432E4.h" bodystart="184" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_comparator_m_s_p432_e4___h_w_attrs_1a331e202d503473dd6af9b71619632829" prot="public" static="no" mutable="no">
+        <type><ref refid="_comparator_m_s_p432_e4_8h_1ac28bffd9ab4e4e8d877e31914caf0a43" kindref="member">ComparatorMSP432E4_PositiveInputChannel</ref></type>
+        <definition>ComparatorMSP432E4_PositiveInputChannel ComparatorMSP432E4_HWAttrs::positiveTerminal</definition>
+        <argsstring></argsstring>
+        <name>positiveTerminal</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/comparator/ComparatorMSP432E4.h" line="185" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/comparator/ComparatorMSP432E4.h" bodystart="185" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_comparator_m_s_p432_e4___h_w_attrs_1a3605ac9a3d758051cdb8da0b64c55514" prot="public" static="no" mutable="no">
+        <type><ref refid="_comparator_m_s_p432_e4_8h_1a9315627db2c9eb34cca3afbe8c18e498" kindref="member">ComparatorMSP432E4_ADCTriggerLevel</ref></type>
+        <definition>ComparatorMSP432E4_ADCTriggerLevel ComparatorMSP432E4_HWAttrs::triggerLevel</definition>
+        <argsstring></argsstring>
+        <name>triggerLevel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/comparator/ComparatorMSP432E4.h" line="186" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/comparator/ComparatorMSP432E4.h" bodystart="186" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_comparator_m_s_p432_e4___h_w_attrs_1a11e171621702fe6068e5a7e7654a369e" prot="public" static="no" mutable="no">
+        <type><ref refid="_comparator_m_s_p432_e4_8h_1a4e67b0e7633c4e1df10f5ff3f0545f45" kindref="member">ComparatorMSP432E4_ReferenceLevel</ref></type>
+        <definition>ComparatorMSP432E4_ReferenceLevel ComparatorMSP432E4_HWAttrs::refLevel</definition>
+        <argsstring></argsstring>
+        <name>refLevel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Output pin. Some comparators only have 1 option. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/comparator/ComparatorMSP432E4.h" line="187" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/comparator/ComparatorMSP432E4.h" bodystart="187" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_comparator_m_s_p432_e4___h_w_attrs_1aa31671b0219f100ec6b4d42fa3ba37de" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t ComparatorMSP432E4_HWAttrs::outputPin</definition>
+        <argsstring></argsstring>
+        <name>outputPin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/comparator/ComparatorMSP432E4.h" line="189" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/comparator/ComparatorMSP432E4.h" bodystart="189" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>ComparatorMSP432E4 Hardware attributes. </para>    </briefdescription>
+    <detaileddescription>
+<para>A sample structure is shown below: <programlisting><codeline><highlight class="normal">const<sp/>ComparatorMSP432E4_HWAttrs<sp/>comparatorHWAttrs[1]<sp/>=<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.compNum<sp/>=<sp/>MSP_EXP432E401Y_COMP0,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.intNum<sp/>=<sp/>INT_COMP0,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.intPriority<sp/>=<sp/>(~0),</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.refLevel<sp/>=<sp/>ComparatorMSP432E4_REF_1_1V,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.triggerLevel<sp/>=<sp/>ComparatorMSP432E4_TRIG_NONE,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>.outputPin<sp/>=<sp/>COMP0_OUTPUT_PIN_PD0</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal">};</highlight></codeline>
+</programlisting> </para>    </detaileddescription>
+    <location file="exports/tidrivers_msp432e4/source/ti/drivers/comparator/ComparatorMSP432E4.h" line="179" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/comparator/ComparatorMSP432E4.h" bodystart="179" bodyend="190"/>
+    <listofallmembers>
+      <member refid="struct_comparator_m_s_p432_e4___h_w_attrs_1addb387f0a19a249caf5fc27a51620589" prot="public" virt="non-virtual"><scope>ComparatorMSP432E4_HWAttrs</scope><name>compNum</name></member>
+      <member refid="struct_comparator_m_s_p432_e4___h_w_attrs_1a4a7eacf9b08ff74f113d8b64f8a103c5" prot="public" virt="non-virtual"><scope>ComparatorMSP432E4_HWAttrs</scope><name>intNum</name></member>
+      <member refid="struct_comparator_m_s_p432_e4___h_w_attrs_1ae0c3de9788717136ccf3ad3345e50fb6" prot="public" virt="non-virtual"><scope>ComparatorMSP432E4_HWAttrs</scope><name>intPriority</name></member>
+      <member refid="struct_comparator_m_s_p432_e4___h_w_attrs_1aa31671b0219f100ec6b4d42fa3ba37de" prot="public" virt="non-virtual"><scope>ComparatorMSP432E4_HWAttrs</scope><name>outputPin</name></member>
+      <member refid="struct_comparator_m_s_p432_e4___h_w_attrs_1a331e202d503473dd6af9b71619632829" prot="public" virt="non-virtual"><scope>ComparatorMSP432E4_HWAttrs</scope><name>positiveTerminal</name></member>
+      <member refid="struct_comparator_m_s_p432_e4___h_w_attrs_1a11e171621702fe6068e5a7e7654a369e" prot="public" virt="non-virtual"><scope>ComparatorMSP432E4_HWAttrs</scope><name>refLevel</name></member>
+      <member refid="struct_comparator_m_s_p432_e4___h_w_attrs_1a3605ac9a3d758051cdb8da0b64c55514" prot="public" virt="non-virtual"><scope>ComparatorMSP432E4_HWAttrs</scope><name>triggerLevel</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

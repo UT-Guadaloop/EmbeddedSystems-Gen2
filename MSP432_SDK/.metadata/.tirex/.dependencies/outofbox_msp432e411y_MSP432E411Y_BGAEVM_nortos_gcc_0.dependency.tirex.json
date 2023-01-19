@@ -1,0 +1,14 @@
+[
+    {
+        "files": [
+            "+../epi_sdram_basic.c -> epi_sdram_basic.c",
+            "+../uartstdio.c -> uartstdio.c",
+            "+../uartstdio.h -> uartstdio.h",
+            "+../system_msp432e411y.c -> system_msp432e411y.c",
+            "+../README.md -> README.md",
+            "+../README.html -> README.html",
+            "+startup_msp432e411y_gcc.c -> gcc/startup_msp432e411y_gcc.c",
+            "+msp432e411y.lds -> msp432e411y.lds"
+        ]
+    }
+]

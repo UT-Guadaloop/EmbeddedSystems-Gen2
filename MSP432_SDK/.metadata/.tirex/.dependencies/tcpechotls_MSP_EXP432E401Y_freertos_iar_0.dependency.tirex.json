@@ -1,0 +1,23 @@
+[
+    {
+        "files": [
+            "+../../certs/serverCaCert.pem -> serverCaCert.pem",
+            "+../../certs/serverKey.pem -> serverKey.pem",
+            "+../../certs/serverCert.pem -> serverCert.pem",
+            "+../../certs/serverCaKey.pem -> serverCaKey.pem",
+            "+../../certs/clientCaCert.pem -> clientCaCert.pem",
+            "+../../certs/clientKey.pem -> clientKey.pem",
+            "+../../certs/clientCert.pem -> clientCert.pem",
+            "+../../certs/clientCaKey.pem -> clientCaKey.pem",
+            "+../../tcpEchoTLS.c -> tcpEchoTLS.c",
+            "+../../startsntp.c -> startsntp.c",
+            "+../../README.md -> README.md",
+            "+../../README.html -> README.html",
+            "+../../tcpEchoHooks.c -> tcpEchoHooks.c",
+            "+../main_freertos.c -> main_freertos.c",
+            "+../tcpechotls.syscfg -> tcpechotls.syscfg",
+            "+../../../../../../../source/ti/boards/MSP_EXP432E401Y/Board.html -> Board.html",
+            "+MSP_EXP432E401Y_FREERTOS.icf -> MSP_EXP432E401Y_FREERTOS.icf"
+        ]
+    }
+]

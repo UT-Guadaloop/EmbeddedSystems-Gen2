@@ -1,0 +1,1273 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="_s_h_a2_8h" kind="file" language="C++">
+    <compoundname>SHA2.h</compoundname>
+    <includes local="no">stdbool.h</includes>
+    <includes local="no">stddef.h</includes>
+    <includes local="no">stdint.h</includes>
+    <includedby refid="_s_h_a2_m_s_p432_e4_8h" local="no">SHA2MSP432E4.h</includedby>
+    <incdepgraph>
+      <node id="411">
+        <label>stdbool.h</label>
+      </node>
+      <node id="413">
+        <label>stdint.h</label>
+      </node>
+      <node id="412">
+        <label>stddef.h</label>
+      </node>
+      <node id="410">
+        <label>SHA2.h</label>
+        <link refid="_s_h_a2_8h"/>
+        <childnode refid="411" relation="include">
+        </childnode>
+        <childnode refid="412" relation="include">
+        </childnode>
+        <childnode refid="413" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="415">
+        <label>SHA2MSP432E4.h</label>
+        <link refid="_s_h_a2_m_s_p432_e4_8h"/>
+      </node>
+      <node id="414">
+        <label>SHA2.h</label>
+        <link refid="_s_h_a2_8h"/>
+        <childnode refid="415" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="struct_s_h_a2___config" prot="public">SHA2_Config</innerclass>
+    <innerclass refid="struct_s_h_a2___params" prot="public">SHA2_Params</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_s_h_a2_8h_1af86590d86ab05868e5d9768a53864c51" prot="public" static="no">
+        <name>SHA2_STATUS_RESERVED</name>
+        <initializer>(-32)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Common SHA2 status code reservation offset. SHA2 driver implementations should offset status codes with SHA2_STATUS_RESERVED growing negatively.</para><para>Example implementation specific status codes: <programlisting><codeline><highlight class="normal">#define<sp/>SHA2XYZ_STATUS_ERROR0<sp/><sp/><sp/><sp/>SHA2_STATUS_RESERVED<sp/>-<sp/>0</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>SHA2XYZ_STATUS_ERROR1<sp/><sp/><sp/><sp/>SHA2_STATUS_RESERVED<sp/>-<sp/>1</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>SHA2XYZ_STATUS_ERROR2<sp/><sp/><sp/><sp/>SHA2_STATUS_RESERVED<sp/>-<sp/>2</highlight></codeline>
+</programlisting> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/SHA2.h" line="228" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/SHA2.h" bodystart="228" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_s_h_a2_8h_1af830601fb3cebbf96c405ca6f1cbbc79" prot="public" static="no">
+        <name>SHA2_STATUS_SUCCESS</name>
+        <initializer>(0)</initializer>
+        <briefdescription>
+<para>Successful status code. </para>        </briefdescription>
+        <detaileddescription>
+<para>Functions return SHA2_STATUS_SUCCESS if the function was executed successfully. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/SHA2.h" line="236" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/SHA2.h" bodystart="236" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_s_h_a2_8h_1af9c9e8e3c5044c83eefdaef9063860a0" prot="public" static="no">
+        <name>SHA2_STATUS_ERROR</name>
+        <initializer>(-1)</initializer>
+        <briefdescription>
+<para>Generic error status code. </para>        </briefdescription>
+        <detaileddescription>
+<para>Functions return SHA2_STATUS_ERROR if the function was not executed successfully and no more specific error is applicable. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/SHA2.h" line="244" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/SHA2.h" bodystart="244" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_s_h_a2_8h_1a79f870938f2275ff40d9a923839baba9" prot="public" static="no">
+        <name>SHA2_STATUS_RESOURCE_UNAVAILABLE</name>
+        <initializer>(-2)</initializer>
+        <briefdescription>
+<para>An error status code returned if the hardware or software resource is currently unavailable. </para>        </briefdescription>
+        <detaileddescription>
+<para>SHA2 driver implementations may have hardware or software limitations on how many clients can simultaneously perform operations. This status code is returned if the mutual exclusion mechanism signals that an operation cannot currently be performed. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/SHA2.h" line="254" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/SHA2.h" bodystart="254" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_s_h_a2_8h_1a233fd6c6912964d0a4918075081c08c2" prot="public" static="no">
+        <name>SHA2_STATUS_CANCELED</name>
+        <initializer>(-3)</initializer>
+        <briefdescription>
+<para>The ongoing operation was canceled. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/SHA2.h" line="259" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/SHA2.h" bodystart="259" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="_s_h_a2_8h_1a224eb3d293bb76a360d13f3fb6cdcd58" prot="public" static="no">
+        <name>SHA2_ReturnBehavior</name>
+        <enumvalue id="_s_h_a2_8h_1a224eb3d293bb76a360d13f3fb6cdcd58a24089a94926440a2b1ef80f2f12a6eea" prot="public">
+          <name>SHA2_RETURN_BEHAVIOR_CALLBACK</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>The function call will return immediately while the SHA2 operation goes on in the background. The registered callback function is called after the operation completes. The context the callback function is called (task, HWI, SWI) is implementation-dependent. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_s_h_a2_8h_1a224eb3d293bb76a360d13f3fb6cdcd58a1886f2611fbf1ec1c64b32b3308ca6e4" prot="public">
+          <name>SHA2_RETURN_BEHAVIOR_BLOCKING</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>The function call will block while the SHA2 operation goes on in the background. SHA2 operation results are available after the function returns. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_s_h_a2_8h_1a224eb3d293bb76a360d13f3fb6cdcd58acb21dfa07af8bd9ea8b69e3821f14bc4" prot="public">
+          <name>SHA2_RETURN_BEHAVIOR_POLLING</name>
+          <initializer>= 4</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>The function call will continuously poll a flag while the SHA2 operation goes on in the background. SHA2 operation results are available after the function returns. </para>          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>The way in which SHA2 function calls return after performing an operation. </para>        </briefdescription>
+        <detaileddescription>
+<para>Not all SHA2 operations exhibit the specified return behavor. Functions that do not require significant computation and cannot offload that computation to a background thread behave like regular functions. Which functions exhibit the specfied return behavior is not implementation dependent. Specifically, a software-backed implementation run on the same CPU as the application will emulate the return behavior while not actually offloading the computation to the background thread.</para><para>SHA2 functions exhibiting the specified return behavior have restrictions on the context from which they may be called.</para><para><table rows="4" cols="4"><row>
+<entry thead="yes"><para></para></entry><entry thead="yes"><para>Task </para></entry><entry thead="yes"><para>Hwi </para></entry><entry thead="yes"><para>Swi  </para></entry></row>
+<row>
+<entry thead="no"><para>SHA2_RETURN_BEHAVIOR_CALLBACK </para></entry><entry thead="no"><para>X </para></entry><entry thead="no"><para>X </para></entry><entry thead="no"><para>X </para></entry></row>
+<row>
+<entry thead="no"><para>SHA2_RETURN_BEHAVIOR_BLOCKING </para></entry><entry thead="no"><para>X </para></entry><entry thead="no"><para></para></entry><entry thead="no"><para></para></entry></row>
+<row>
+<entry thead="no"><para>SHA2_RETURN_BEHAVIOR_POLLING </para></entry><entry thead="no"><para>X </para></entry><entry thead="no"><para>X </para></entry><entry thead="no"><para>X </para></entry></row>
+</table>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/SHA2.h" line="282" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/SHA2.h" bodystart="282" bodyend="297"/>
+      </memberdef>
+      <memberdef kind="enum" id="_s_h_a2_8h_1ac736b297766eec40ca782cbc559d1f29" prot="public" static="no">
+        <name>SHA2_HashType</name>
+        <enumvalue id="_s_h_a2_8h_1ac736b297766eec40ca782cbc559d1f29ac04c761878b57de09ecd0a15f18216c5" prot="public">
+          <name>SHA2_HASH_TYPE_224</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_s_h_a2_8h_1ac736b297766eec40ca782cbc559d1f29afb54f73866a407de412f1612deba102e" prot="public">
+          <name>SHA2_HASH_TYPE_256</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_s_h_a2_8h_1ac736b297766eec40ca782cbc559d1f29aa2a402addbc8c70d1cf8eda44e5ea0eb" prot="public">
+          <name>SHA2_HASH_TYPE_384</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_s_h_a2_8h_1ac736b297766eec40ca782cbc559d1f29a95382db804c412fd6ad3d86aaf743f3d" prot="public">
+          <name>SHA2_HASH_TYPE_512</name>
+          <initializer>= 3</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enum for the hash types supported by the driver. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/SHA2.h" line="302" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/SHA2.h" bodystart="302" bodyend="307"/>
+      </memberdef>
+      <memberdef kind="enum" id="_s_h_a2_8h_1a80743185c031d98f1ed370161c1f253d" prot="public" static="no">
+        <name>SHA2_DigestLengthBytes</name>
+        <enumvalue id="_s_h_a2_8h_1a80743185c031d98f1ed370161c1f253daa5d0d0cca946f78996634d3e0cd1e1f6" prot="public">
+          <name>SHA2_DIGEST_LENGTH_BYTES_224</name>
+          <initializer>= 28</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_s_h_a2_8h_1a80743185c031d98f1ed370161c1f253da485865fb1d5fd1dd0d79ac98c2d6eedf" prot="public">
+          <name>SHA2_DIGEST_LENGTH_BYTES_256</name>
+          <initializer>= 32</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_s_h_a2_8h_1a80743185c031d98f1ed370161c1f253da8d406e8f97117db168ec92ff25be9a80" prot="public">
+          <name>SHA2_DIGEST_LENGTH_BYTES_384</name>
+          <initializer>= 48</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_s_h_a2_8h_1a80743185c031d98f1ed370161c1f253dac9cfb34c079c68dc42e945d15183ab8b" prot="public">
+          <name>SHA2_DIGEST_LENGTH_BYTES_512</name>
+          <initializer>= 64</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enum for the hash digest lengths in bytes supported by the driver. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/SHA2.h" line="312" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/SHA2.h" bodystart="312" bodyend="317"/>
+      </memberdef>
+      <memberdef kind="enum" id="_s_h_a2_8h_1a068b58fab712a0c1ad7091803314c5d0" prot="public" static="no">
+        <name>SHA2_BlockSizeBytes</name>
+        <enumvalue id="_s_h_a2_8h_1a068b58fab712a0c1ad7091803314c5d0a02b165a6d502cb6bfc35a4718a52f25a" prot="public">
+          <name>SHA2_BLOCK_SIZE_BYTES_224</name>
+          <initializer>= 64</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_s_h_a2_8h_1a068b58fab712a0c1ad7091803314c5d0a37bd6cb465e5a0c77c15933525f25103" prot="public">
+          <name>SHA2_BLOCK_SIZE_BYTES_256</name>
+          <initializer>= 64</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_s_h_a2_8h_1a068b58fab712a0c1ad7091803314c5d0ac41032a24580877dd5c1be886d75a897" prot="public">
+          <name>SHA2_BLOCK_SIZE_BYTES_384</name>
+          <initializer>= 128</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_s_h_a2_8h_1a068b58fab712a0c1ad7091803314c5d0a8ba20289cd607ae3b078487c5111833a" prot="public">
+          <name>SHA2_BLOCK_SIZE_BYTES_512</name>
+          <initializer>= 128</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enum for the block sizes of the algorithms. </para>        </briefdescription>
+        <detaileddescription>
+<para>SHA2 iteratively consumes segments of the block size and computes intermediate digests which are fed back into the algorithm together with the next segment to compute the next intermediate or final digest. The block sizes of the algorithms differ from their digest lengths. When performing partial hashes, the segment lengths for all but the last segment must be multiples of the relevant block size. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/SHA2.h" line="332" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/SHA2.h" bodystart="332" bodyend="337"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="_s_h_a2_8h_1a0a6ddcbf393ff5f2677ebe47e1f3d798" prot="public" static="no">
+        <type><ref refid="struct_s_h_a2___config" kindref="compound">SHA2_Config</ref> *</type>
+        <definition>typedef SHA2_Config* SHA2_Handle</definition>
+        <argsstring></argsstring>
+        <name>SHA2_Handle</name>
+        <briefdescription>
+<para>A handle that is returned from an <ref refid="_s_h_a2_8h_1abd8e7d5cf0cad89a9a218d5ce6d41e13" kindref="member">SHA2_open()</ref> call. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/SHA2.h" line="361" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/SHA2.h" bodystart="361" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_s_h_a2_8h_1a4a605367d5d35ab77de06dcb9f54c921" prot="public" static="no">
+        <type>void(*</type>
+        <definition>typedef void(* SHA2_CallbackFxn) (SHA2_Handle handle, int_fast16_t returnStatus)</definition>
+        <argsstring>)(SHA2_Handle handle, int_fast16_t returnStatus)</argsstring>
+        <name>SHA2_CallbackFxn</name>
+        <briefdescription>
+<para>The definition of a callback function used by the SHA2 driver when used in <ref refid="_s_h_a2_8h_1a224eb3d293bb76a360d13f3fb6cdcd58a24089a94926440a2b1ef80f2f12a6eea" kindref="member">SHA2_RETURN_BEHAVIOR_CALLBACK</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Handle of the client that started the SHA2 operation.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>returnStatus</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The result of the SHA2 operation. May contain an error code. Informs the application of why the callback function was called. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/SHA2.h" line="373" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/SHA2.h" bodystart="373" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_s_h_a2_8h_1aa8005577cc49a5805d5e123395b74185" prot="public" static="no" mutable="no">
+        <type>const <ref refid="struct_s_h_a2___config" kindref="compound">SHA2_Config</ref></type>
+        <definition>const SHA2_Config SHA2_config[]</definition>
+        <argsstring>[]</argsstring>
+        <name>SHA2_config</name>
+        <briefdescription>
+<para>Global SHA2 configuration struct. </para>        </briefdescription>
+        <detaileddescription>
+<para>Specifies context objects and hardware attributes for every driver instance.</para><para>This variable is supposed to be defined in the board file. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/SHA2.h" line="402" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_s_h_a2_8h_1a0bbbbf10608e8b702cd04166617903b2" prot="public" static="no" mutable="no">
+        <type>const uint_least8_t</type>
+        <definition>const uint_least8_t SHA2_count</definition>
+        <argsstring></argsstring>
+        <name>SHA2_count</name>
+        <briefdescription>
+<para>Global SHA2 configuration count. </para>        </briefdescription>
+        <detaileddescription>
+<para>Specifies the amount of available SHA2 driver instances.</para><para>This variable is supposed to be defined in the board file. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/SHA2.h" line="411" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_s_h_a2_8h_1a2bc55a3d74a3fecd6f00d498bce96f26" prot="public" static="no" mutable="no">
+        <type>const <ref refid="struct_s_h_a2___params" kindref="compound">SHA2_Params</ref></type>
+        <definition>const SHA2_Params SHA2_defaultParams</definition>
+        <argsstring></argsstring>
+        <name>SHA2_defaultParams</name>
+        <briefdescription>
+<para>Default <ref refid="struct_s_h_a2___params" kindref="compound">SHA2_Params</ref> structure. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="_s_h_a2_8h_1a35012f3a93e7a6f7252c53ae31d28aed" kindref="member">SHA2_Params_init()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/SHA2.h" line="418" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_s_h_a2_8h_1a52bac540341a588612f9e375cc504439" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SHA2_init</definition>
+        <argsstring>(void)</argsstring>
+        <name>SHA2_init</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Initializes the SHA2 driver module. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>The <ref refid="_s_h_a2_8h_1aa8005577cc49a5805d5e123395b74185" kindref="member">SHA2_config</ref> structure must exist and be persistent before this function can be called. This function must also be called before any other SHA2 driver APIs. This function call does not modify any peripheral registers. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/SHA2.h" line="429" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_h_a2_8h_1a35012f3a93e7a6f7252c53ae31d28aed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SHA2_Params_init</definition>
+        <argsstring>(SHA2_Params *params)</argsstring>
+        <name>SHA2_Params_init</name>
+        <param>
+          <type><ref refid="struct_s_h_a2___params" kindref="compound">SHA2_Params</ref> *</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+<para>Initializes <emphasis>params</emphasis> with default values. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>params</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to <ref refid="struct_s_h_a2___params" kindref="compound">SHA2_Params</ref> structure for initialization</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+Defaults values are: returnBehavior = SHA2_RETURN_BEHAVIOR_BLOCKING callbackFxn = NULL timeout = SemaphoreP_WAIT_FOREVER custom = NULL </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/SHA2.h" line="443" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_h_a2_8h_1abd8e7d5cf0cad89a9a218d5ce6d41e13" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_s_h_a2_8h_1a0a6ddcbf393ff5f2677ebe47e1f3d798" kindref="member">SHA2_Handle</ref></type>
+        <definition>SHA2_Handle SHA2_open</definition>
+        <argsstring>(uint_least8_t index, const SHA2_Params *params)</argsstring>
+        <name>SHA2_open</name>
+        <param>
+          <type>uint_least8_t</type>
+          <declname>index</declname>
+        </param>
+        <param>
+          <type>const <ref refid="struct_s_h_a2___params" kindref="compound">SHA2_Params</ref> *</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+<para>Initializes a SHA2 driver instance and returns a handle. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>SHA2 controller has been initialized using <ref refid="_s_h_a2_8h_1a52bac540341a588612f9e375cc504439" kindref="member">SHA2_init()</ref></para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Logical peripheral number for the SHA2 indexed into the <ref refid="_s_h_a2_8h_1aa8005577cc49a5805d5e123395b74185" kindref="member">SHA2_config</ref> table</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>params</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to a parameter block, if NULL it will use default values.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A <ref refid="_s_h_a2_8h_1a0a6ddcbf393ff5f2677ebe47e1f3d798" kindref="member">SHA2_Handle</ref> on success or a NULL on an error or if it has been opened already.</para></simplesect>
+<simplesect kind="see"><para><ref refid="_s_h_a2_8h_1a52bac540341a588612f9e375cc504439" kindref="member">SHA2_init()</ref>, <ref refid="_s_h_a2_8h_1a57cfbb0eecdf3449cbfa4e2dcb471dd4" kindref="member">SHA2_close()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/SHA2.h" line="461" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_h_a2_8h_1a57cfbb0eecdf3449cbfa4e2dcb471dd4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SHA2_close</definition>
+        <argsstring>(SHA2_Handle handle)</argsstring>
+        <name>SHA2_close</name>
+        <param>
+          <type><ref refid="_s_h_a2_8h_1a0a6ddcbf393ff5f2677ebe47e1f3d798" kindref="member">SHA2_Handle</ref></type>
+          <declname>handle</declname>
+        </param>
+        <briefdescription>
+<para>Closes a SHA2 peripheral specified by <emphasis>handle</emphasis>. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para><ref refid="_s_h_a2_8h_1abd8e7d5cf0cad89a9a218d5ce6d41e13" kindref="member">SHA2_open()</ref> has to be called first.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A <ref refid="_s_h_a2_8h_1a0a6ddcbf393ff5f2677ebe47e1f3d798" kindref="member">SHA2_Handle</ref> returned from <ref refid="_s_h_a2_8h_1abd8e7d5cf0cad89a9a218d5ce6d41e13" kindref="member">SHA2_open()</ref></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="_s_h_a2_8h_1abd8e7d5cf0cad89a9a218d5ce6d41e13" kindref="member">SHA2_open()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/SHA2.h" line="472" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_h_a2_8h_1ac5155c684c254a894ea06f4cd5290990" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int_fast16_t</type>
+        <definition>int_fast16_t SHA2_addData</definition>
+        <argsstring>(SHA2_Handle handle, const void *data, size_t length)</argsstring>
+        <name>SHA2_addData</name>
+        <param>
+          <type><ref refid="_s_h_a2_8h_1a0a6ddcbf393ff5f2677ebe47e1f3d798" kindref="member">SHA2_Handle</ref></type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>length</declname>
+        </param>
+        <briefdescription>
+<para>Adds a segment of <emphasis>data</emphasis> with a <emphasis>length</emphasis> in bytes to the cryptographic hash. </para>        </briefdescription>
+        <detaileddescription>
+<para>SHA2_addData() may be called arbitrary times before finishing the operation with <ref refid="_s_h_a2_8h_1ae8e6a9aa91a05977f2db52ba67ee80da" kindref="member">SHA2_finalize()</ref>.</para><para>This function blocks until the final digest hash been computed. It returns immediately when <ref refid="_s_h_a2_8h_1a224eb3d293bb76a360d13f3fb6cdcd58a24089a94926440a2b1ef80f2f12a6eea" kindref="member">SHA2_RETURN_BEHAVIOR_CALLBACK</ref> is set.</para><para><simplesect kind="pre"><para><ref refid="_s_h_a2_8h_1abd8e7d5cf0cad89a9a218d5ce6d41e13" kindref="member">SHA2_open()</ref> has to be called first.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A <ref refid="_s_h_a2_8h_1a0a6ddcbf393ff5f2677ebe47e1f3d798" kindref="member">SHA2_Handle</ref> returned from <ref refid="_s_h_a2_8h_1abd8e7d5cf0cad89a9a218d5ce6d41e13" kindref="member">SHA2_open()</ref></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the location to read from. There might be alignment restrictions on different platforms.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>length</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Length of the message segment to hash, in bytes.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="_s_h_a2_8h_1af830601fb3cebbf96c405ca6f1cbbc79" kindref="member">SHA2_STATUS_SUCCESS</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The hash operation succeeded. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername><ref refid="_s_h_a2_8h_1af9c9e8e3c5044c83eefdaef9063860a0" kindref="member">SHA2_STATUS_ERROR</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The hash operation failed. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername><ref refid="_s_h_a2_8h_1a79f870938f2275ff40d9a923839baba9" kindref="member">SHA2_STATUS_RESOURCE_UNAVAILABLE</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The required hardware resource was not available. Try again later. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername><ref refid="_s_h_a2_8h_1a233fd6c6912964d0a4918075081c08c2" kindref="member">SHA2_STATUS_CANCELED</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The hash operation was canceled.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="_s_h_a2_8h_1abd8e7d5cf0cad89a9a218d5ce6d41e13" kindref="member">SHA2_open()</ref>, <ref refid="_s_h_a2_8h_1ab56e3f36e56ffb06c2c8aaa7528ac321" kindref="member">SHA2_reset()</ref>, <ref refid="_s_h_a2_8h_1ae8e6a9aa91a05977f2db52ba67ee80da" kindref="member">SHA2_finalize()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/SHA2.h" line="500" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_h_a2_8h_1a600ae605f0fe066173c8dc2f536d5b8f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int_fast16_t</type>
+        <definition>int_fast16_t SHA2_hashData</definition>
+        <argsstring>(SHA2_Handle handle, const void *data, size_t size, void *digest)</argsstring>
+        <name>SHA2_hashData</name>
+        <param>
+          <type><ref refid="_s_h_a2_8h_1a0a6ddcbf393ff5f2677ebe47e1f3d798" kindref="member">SHA2_Handle</ref></type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>size</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>digest</declname>
+        </param>
+        <briefdescription>
+<para>Hashes a segment of <emphasis>data</emphasis> with a <emphasis>size</emphasis> in bytes and writes the resulting hash to <emphasis>digest</emphasis>. </para>        </briefdescription>
+        <detaileddescription>
+<para>The digest content is computed in one step. Intermediate data from a previous partial operation started with <ref refid="_s_h_a2_8h_1ac5155c684c254a894ea06f4cd5290990" kindref="member">SHA2_addData()</ref> is discarded.</para><para>This function blocks until the final digest hash been computed. It returns immediately when <ref refid="_s_h_a2_8h_1a224eb3d293bb76a360d13f3fb6cdcd58a24089a94926440a2b1ef80f2f12a6eea" kindref="member">SHA2_RETURN_BEHAVIOR_CALLBACK</ref> is set.</para><para><simplesect kind="pre"><para><ref refid="_s_h_a2_8h_1abd8e7d5cf0cad89a9a218d5ce6d41e13" kindref="member">SHA2_open()</ref> has to be called first.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A <ref refid="_s_h_a2_8h_1a0a6ddcbf393ff5f2677ebe47e1f3d798" kindref="member">SHA2_Handle</ref> returned from <ref refid="_s_h_a2_8h_1abd8e7d5cf0cad89a9a218d5ce6d41e13" kindref="member">SHA2_open()</ref></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the location to read from. There might be alignment restrictions on different platforms.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Length of the message segment to hash, in bytes.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>digest</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the location to write the digest to. There might be alignment restrictions on different platforms.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="_s_h_a2_8h_1af830601fb3cebbf96c405ca6f1cbbc79" kindref="member">SHA2_STATUS_SUCCESS</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The hash operation succeeded. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername><ref refid="_s_h_a2_8h_1af9c9e8e3c5044c83eefdaef9063860a0" kindref="member">SHA2_STATUS_ERROR</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The hash operation failed. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername><ref refid="_s_h_a2_8h_1a79f870938f2275ff40d9a923839baba9" kindref="member">SHA2_STATUS_RESOURCE_UNAVAILABLE</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The required hardware resource was not available. Try again later. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername><ref refid="_s_h_a2_8h_1a233fd6c6912964d0a4918075081c08c2" kindref="member">SHA2_STATUS_CANCELED</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The hash operation was canceled.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="_s_h_a2_8h_1abd8e7d5cf0cad89a9a218d5ce6d41e13" kindref="member">SHA2_open()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/SHA2.h" line="531" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_h_a2_8h_1ae8e6a9aa91a05977f2db52ba67ee80da" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int_fast16_t</type>
+        <definition>int_fast16_t SHA2_finalize</definition>
+        <argsstring>(SHA2_Handle handle, void *digest)</argsstring>
+        <name>SHA2_finalize</name>
+        <param>
+          <type><ref refid="_s_h_a2_8h_1a0a6ddcbf393ff5f2677ebe47e1f3d798" kindref="member">SHA2_Handle</ref></type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>digest</declname>
+        </param>
+        <briefdescription>
+<para>Finishes hash a operation and writes the result to <emphasis>digest</emphasis>. </para>        </briefdescription>
+        <detaileddescription>
+<para>This function finishes a hash operation that has been previously started by <ref refid="_s_h_a2_8h_1ac5155c684c254a894ea06f4cd5290990" kindref="member">SHA2_addData()</ref>.</para><para>This function blocks until the final digest hash been computed. It returns immediately when <ref refid="_s_h_a2_8h_1a224eb3d293bb76a360d13f3fb6cdcd58a24089a94926440a2b1ef80f2f12a6eea" kindref="member">SHA2_RETURN_BEHAVIOR_CALLBACK</ref> is set.</para><para><simplesect kind="pre"><para><ref refid="_s_h_a2_8h_1ac5155c684c254a894ea06f4cd5290990" kindref="member">SHA2_addData()</ref> has to be called first.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A <ref refid="_s_h_a2_8h_1a0a6ddcbf393ff5f2677ebe47e1f3d798" kindref="member">SHA2_Handle</ref> returned from <ref refid="_s_h_a2_8h_1abd8e7d5cf0cad89a9a218d5ce6d41e13" kindref="member">SHA2_open()</ref></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>digest</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the location to write the digest to.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="_s_h_a2_8h_1af830601fb3cebbf96c405ca6f1cbbc79" kindref="member">SHA2_STATUS_SUCCESS</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The hash operation succeeded. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername><ref refid="_s_h_a2_8h_1af9c9e8e3c5044c83eefdaef9063860a0" kindref="member">SHA2_STATUS_ERROR</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The hash operation failed. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername><ref refid="_s_h_a2_8h_1a79f870938f2275ff40d9a923839baba9" kindref="member">SHA2_STATUS_RESOURCE_UNAVAILABLE</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The required hardware resource was not available. Try again later. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername><ref refid="_s_h_a2_8h_1a233fd6c6912964d0a4918075081c08c2" kindref="member">SHA2_STATUS_CANCELED</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The hash operation was canceled.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="_s_h_a2_8h_1abd8e7d5cf0cad89a9a218d5ce6d41e13" kindref="member">SHA2_open()</ref>, <ref refid="_s_h_a2_8h_1ac5155c684c254a894ea06f4cd5290990" kindref="member">SHA2_addData()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/SHA2.h" line="555" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_h_a2_8h_1ab56e3f36e56ffb06c2c8aaa7528ac321" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SHA2_reset</definition>
+        <argsstring>(SHA2_Handle handle)</argsstring>
+        <name>SHA2_reset</name>
+        <param>
+          <type><ref refid="_s_h_a2_8h_1a0a6ddcbf393ff5f2677ebe47e1f3d798" kindref="member">SHA2_Handle</ref></type>
+          <declname>handle</declname>
+        </param>
+        <briefdescription>
+<para>Clears internal buffers and aborts an ongoing SHA2 operation. </para>        </briefdescription>
+        <detaileddescription>
+<para>Clears all internal buffers and the intermediate digest of this driver instance. If an asynchronous operation is ongoing, the behavior is the same as for <ref refid="_s_h_a2_8h_1a8274ea547e11bfe8e9d406f646ad0432" kindref="member">SHA2_cancelOperation()</ref>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A <ref refid="_s_h_a2_8h_1a0a6ddcbf393ff5f2677ebe47e1f3d798" kindref="member">SHA2_Handle</ref> returned from <ref refid="_s_h_a2_8h_1abd8e7d5cf0cad89a9a218d5ce6d41e13" kindref="member">SHA2_open()</ref></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="_s_h_a2_8h_1a8274ea547e11bfe8e9d406f646ad0432" kindref="member">SHA2_cancelOperation()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/SHA2.h" line="568" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_h_a2_8h_1a8274ea547e11bfe8e9d406f646ad0432" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int_fast16_t</type>
+        <definition>int_fast16_t SHA2_cancelOperation</definition>
+        <argsstring>(SHA2_Handle handle)</argsstring>
+        <name>SHA2_cancelOperation</name>
+        <param>
+          <type><ref refid="_s_h_a2_8h_1a0a6ddcbf393ff5f2677ebe47e1f3d798" kindref="member">SHA2_Handle</ref></type>
+          <declname>handle</declname>
+        </param>
+        <briefdescription>
+<para>Aborts an ongoing SHA2 operation and clears internal buffers. </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="deprecated_1_deprecated000007"><xreftitle>Deprecated</xreftitle><xrefdescription><para>This function will be deprecated in the 3Q20 SDK release. The asynchronicity of the function can not be handled by all accelerators.</para></xrefdescription></xrefsect></para><para>Aborts an ongoing hash operation of this driver instance. The operation will terminate as though an error occured and the status code of the operation will be <ref refid="_s_h_a2_8h_1a233fd6c6912964d0a4918075081c08c2" kindref="member">SHA2_STATUS_CANCELED</ref> in this case.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A <ref refid="_s_h_a2_8h_1a0a6ddcbf393ff5f2677ebe47e1f3d798" kindref="member">SHA2_Handle</ref> returned from <ref refid="_s_h_a2_8h_1abd8e7d5cf0cad89a9a218d5ce6d41e13" kindref="member">SHA2_open()</ref></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="_s_h_a2_8h_1af830601fb3cebbf96c405ca6f1cbbc79" kindref="member">SHA2_STATUS_SUCCESS</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The operation was canceled. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername><ref refid="_s_h_a2_8h_1af9c9e8e3c5044c83eefdaef9063860a0" kindref="member">SHA2_STATUS_ERROR</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The operation was not canceled. There may be no operation to cancel. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/SHA2.h" line="585" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_h_a2_8h_1a46075b17a244bac1b9123559da37f6f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int_fast16_t</type>
+        <definition>int_fast16_t SHA2_setHashType</definition>
+        <argsstring>(SHA2_Handle handle, SHA2_HashType type)</argsstring>
+        <name>SHA2_setHashType</name>
+        <param>
+          <type><ref refid="_s_h_a2_8h_1a0a6ddcbf393ff5f2677ebe47e1f3d798" kindref="member">SHA2_Handle</ref></type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type><ref refid="_s_h_a2_8h_1ac736b297766eec40ca782cbc559d1f29" kindref="member">SHA2_HashType</ref></type>
+          <declname>type</declname>
+        </param>
+        <briefdescription>
+<para>Selects a new hash algorithm <emphasis>type</emphasis>. </para>        </briefdescription>
+        <detaileddescription>
+<para>This function changes the hash algorithm type of the hash digest at run-time. The hash type is usually specified during <ref refid="_s_h_a2_8h_1abd8e7d5cf0cad89a9a218d5ce6d41e13" kindref="member">SHA2_open()</ref>.</para><para>Neither is it allowed to call this function during a running hash operation nor during an incomplete multistep hash operation. In this case <ref refid="_s_h_a2_8h_1af9c9e8e3c5044c83eefdaef9063860a0" kindref="member">SHA2_STATUS_ERROR</ref> would be returned.</para><para><simplesect kind="pre"><para><ref refid="_s_h_a2_8h_1abd8e7d5cf0cad89a9a218d5ce6d41e13" kindref="member">SHA2_open()</ref> has to be called first.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A <ref refid="_s_h_a2_8h_1a0a6ddcbf393ff5f2677ebe47e1f3d798" kindref="member">SHA2_Handle</ref> returned from <ref refid="_s_h_a2_8h_1abd8e7d5cf0cad89a9a218d5ce6d41e13" kindref="member">SHA2_open()</ref></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New hash algorithm type</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="_s_h_a2_8h_1af830601fb3cebbf96c405ca6f1cbbc79" kindref="member">SHA2_STATUS_SUCCESS</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Hash type set correctly. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername><ref refid="_s_h_a2_8h_1af9c9e8e3c5044c83eefdaef9063860a0" kindref="member">SHA2_STATUS_ERROR</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Error. Platform may not support this hash type. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/SHA2.h" line="606" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_h_a2_8h_1a954040f0843fafbee57fa7589207ef00" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_s_h_a2_8h_1a0a6ddcbf393ff5f2677ebe47e1f3d798" kindref="member">SHA2_Handle</ref></type>
+        <definition>SHA2_Handle SHA2_construct</definition>
+        <argsstring>(SHA2_Config *config, const SHA2_Params *params)</argsstring>
+        <name>SHA2_construct</name>
+        <param>
+          <type><ref refid="struct_s_h_a2___config" kindref="compound">SHA2_Config</ref> *</type>
+          <declname>config</declname>
+        </param>
+        <param>
+          <type>const <ref refid="struct_s_h_a2___params" kindref="compound">SHA2_Params</ref> *</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+<para>Constructs a new SHA2 object. </para>        </briefdescription>
+        <detaileddescription>
+<para>Unlike <ref refid="_s_h_a2_8h_1abd8e7d5cf0cad89a9a218d5ce6d41e13" kindref="member">SHA2_open()</ref>, <ref refid="_s_h_a2_8h_1a954040f0843fafbee57fa7589207ef00" kindref="member">SHA2_construct()</ref> does not require the hwAttrs and object to be allocated in a <ref refid="struct_s_h_a2___config" kindref="compound">SHA2_Config</ref> array that is indexed into. Instead, the <ref refid="struct_s_h_a2___config" kindref="compound">SHA2_Config</ref>, hwAttrs, and object can be allocated at any location. This allows for relatively simple run-time allocation of temporary driver instances on the stack or the heap. The drawback is that this makes it more difficult to write device-agnostic code. If you use an ifdef with DeviceFamily, you can choose the correct object and hwAttrs to allocate. That compilation unit will be tied to the device it was compiled for at this point. To change devices, recompilation of the application with a different DeviceFamily setting is necessary.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>config</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="struct_s_h_a2___config" kindref="compound">SHA2_Config</ref> describing the location of the object and hwAttrs.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>params</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="struct_s_h_a2___params" kindref="compound">SHA2_Params</ref> to configure the driver instance.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns a <ref refid="_s_h_a2_8h_1a0a6ddcbf393ff5f2677ebe47e1f3d798" kindref="member">SHA2_Handle</ref> on success or NULL on failure.</para></simplesect>
+<simplesect kind="pre"><para>The object struct <computeroutput>config</computeroutput> points to must be zeroed out prior to calling this function. Otherwise, unexpected behavior may ensue. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/SHA2.h" line="631" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>SHA2 driver header. </para>    </briefdescription>
+    <detaileddescription>
+<para><hruler/>
+</para><para><anchor id="_s_h_a2_8h_1ti_drivers_SHA2_Overview"/><heading level="1">Overview</heading>
+</para><para>SHA2 (Secure Hash Algorithm 2) is a cryptographic hashing algorithm that maps an input of arbitrary length to a fixed-length output with negligible probability of collision. A collision would occur when two different inputs map to the same output.</para><para>It is not currently technologicaly feasible to derive an input from the hash digest (output) itself.</para><para>Hashes are often used to ensure the integrity of messages. They are also used to as constituent parts of more complicated cyptographic schemes. HMAC is a message authentication code that is based on hash functions such as SHA2 rather than a block cipher. Hashes may themselves be used as or form a part of key derivation functions used to derive symmetric keys from sources of entropy such as an Elliptic Curve Diffie-Helman key exchange (ECDH).</para><para>SHA2 is not actually a single algorithm, but a suite of similar algorithms that produce hash digests of different lengths. 224, 256, 384, and 512-bit outputs are available.</para><para>&quot;Hash&quot; may refer to either the process of hashing when used as a verb and the output digest when used as a noun.</para><para><anchor id="_s_h_a2_8h_1ti_drivers_SHA2_Usage"/><heading level="1">Usage</heading>
+</para><para>Before starting a SHA2 operation, the application must do the following:<itemizedlist>
+<listitem><para>Call <ref refid="_s_h_a2_8h_1a52bac540341a588612f9e375cc504439" kindref="member">SHA2_init()</ref> to initialize the driver</para></listitem><listitem><para>Call <ref refid="_s_h_a2_8h_1a35012f3a93e7a6f7252c53ae31d28aed" kindref="member">SHA2_Params_init()</ref> to initialize the <ref refid="struct_s_h_a2___params" kindref="compound">SHA2_Params</ref> to default values.</para></listitem><listitem><para>Modify the <ref refid="struct_s_h_a2___params" kindref="compound">SHA2_Params</ref> as desired</para></listitem><listitem><para>Call <ref refid="_s_h_a2_8h_1abd8e7d5cf0cad89a9a218d5ce6d41e13" kindref="member">SHA2_open()</ref> to open an instance of the driver</para></listitem></itemizedlist>
+</para><para>There are two general ways to execute a SHA2 operation:</para><para><itemizedlist>
+<listitem><para>one-step (in one operation)</para></listitem><listitem><para>multi-step (multiple partial operations)</para></listitem></itemizedlist>
+</para><para><anchor id="_s_h_a2_8h_1ti_drivers_SHA2_Synopsis"/><heading level="1">Synopsis</heading>
+</para><para><anchor id="_s_h_a2_8h_1ti_drivers_SHA2_Synopsis_Code"/><programlisting><codeline><highlight class="normal">//<sp/>Import<sp/>SHA2<sp/>Driver<sp/>definitions</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&lt;ti/drivers/SHA2.h&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Define<sp/>name<sp/>for<sp/>SHA2<sp/>channel<sp/>index</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>SHA2_INSTANCE<sp/>0</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">SHA2_init();</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">handle<sp/>=<sp/>SHA2_open(SHA2_INSTANCE,<sp/>NULL);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">result<sp/>=<sp/>SHA2_hashData(handle,<sp/>message,<sp/>strlen(message),<sp/>actualDigest);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">SHA2_close(handle);</highlight></codeline>
+</programlisting></para><para><anchor id="_s_h_a2_8h_1ti_drivers_SHA2_Examples"/><heading level="1">Examples</heading>
+</para><para><heading level="2">One-step hash operation</heading>
+</para><para>The <ref refid="_s_h_a2_8h_1a600ae605f0fe066173c8dc2f536d5b8f" kindref="member">SHA2_hashData()</ref> function can perform a SHA2 operation in a single call. It will always use the most highly optimized routine with the least overhead and the fastest runtime. However, it requires that the entire input message is available to the function in a contiguous location at the start of the call. The single call operation is required when hashing a message with a length smaller than or equal to one hash-block length. All devices support single call operations.</para><para>After a SHA2 operation completes, the application may either start another operation or close the driver by calling <ref refid="_s_h_a2_8h_1a57cfbb0eecdf3449cbfa4e2dcb471dd4" kindref="member">SHA2_close()</ref>.</para><para><programlisting><codeline><highlight class="normal">SHA2_Params<sp/>params;</highlight></codeline>
+<codeline><highlight class="normal">SHA2_Handle<sp/>handle;</highlight></codeline>
+<codeline><highlight class="normal">int_fast16_t<sp/>result;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">char<sp/>message[]<sp/>=<sp/>&quot;A<sp/>Ferengi<sp/>without<sp/>profit<sp/>is<sp/>no<sp/>Ferengi<sp/>at<sp/>all.&quot;;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">uint8_t<sp/>actualDigest[SHA2_DIGEST_LENGTH_BYTES_256];</highlight></codeline>
+<codeline><highlight class="normal">uint8_t<sp/>expectedDigest[]<sp/>=<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>0x93,<sp/>0xD6,<sp/>0x5C,<sp/>0x07,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>0xA6,<sp/>0x26,<sp/>0x88,<sp/>0x9C,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>0x87,<sp/>0xCC,<sp/>0x82,<sp/>0x24,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>0x47,<sp/>0xC6,<sp/>0xE4,<sp/>0x28,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>0xC0,<sp/>0xBD,<sp/>0xC6,<sp/>0xED,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>0xAA,<sp/>0x8C,<sp/>0xD2,<sp/>0x53,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>0x77,<sp/>0xAA,<sp/>0x73,<sp/>0x14,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>0xA3,<sp/>0xE2,<sp/>0xDE,<sp/>0x43</highlight></codeline>
+<codeline><highlight class="normal">};</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">SHA2_init();</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">SHA2_Params_init(&amp;params);</highlight></codeline>
+<codeline><highlight class="normal">params.returnBehavior<sp/>=<sp/>SHA2_RETURN_BEHAVIOR_BLOCKING;</highlight></codeline>
+<codeline><highlight class="normal">handle<sp/>=<sp/>SHA2_open(0,<sp/>&amp;params);</highlight></codeline>
+<codeline><highlight class="normal">assert(handle<sp/>!=<sp/>NULL);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">result<sp/>=<sp/>SHA2_hashData(handle,<sp/>message,<sp/>strlen(message),<sp/>actualDigest);</highlight></codeline>
+<codeline><highlight class="normal">assert(result<sp/>==<sp/>SHA2_STATUS_SUCCESS);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">result<sp/>=<sp/>memcmp(actualDigest,<sp/>expectedDigest,<sp/>SHA2_DIGEST_LENGTH_BYTES_256);</highlight></codeline>
+<codeline><highlight class="normal">assert(result<sp/>==<sp/>0);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">SHA2_close(handle);</highlight></codeline>
+</programlisting></para><para><heading level="2">Partial hash operation</heading>
+</para><para>When trying to operate on data that is too large to fit into available memory, partial processing is more advisable. The segments are processed with <ref refid="_s_h_a2_8h_1ac5155c684c254a894ea06f4cd5290990" kindref="member">SHA2_addData()</ref> whereas the final digest is computed by <ref refid="_s_h_a2_8h_1ae8e6a9aa91a05977f2db52ba67ee80da" kindref="member">SHA2_finalize()</ref>.</para><para><programlisting><codeline><highlight class="normal">SHA2_Handle<sp/>handle;</highlight></codeline>
+<codeline><highlight class="normal">int_fast16_t<sp/>result;</highlight></codeline>
+<codeline><highlight class="normal">SHA2_Params<sp/>params;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">const<sp/>char<sp/>message[]<sp/>=</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&quot;Premature<sp/>optimization<sp/>is<sp/>the<sp/>root<sp/>of<sp/>all<sp/>evil<sp/>(or<sp/>at<sp/>least<sp/>most<sp/>of<sp/>it)<sp/>in<sp/>programming.&quot;;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">uint8_t<sp/>actualDigest[SHA2_DIGEST_LENGTH_BYTES_256];</highlight></codeline>
+<codeline><highlight class="normal">uint8_t<sp/>expectedDigest[]<sp/>=<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>0xF2,<sp/>0x6A,<sp/>0xFF,<sp/>0x01,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>0x11,<sp/>0x6B,<sp/>0xF6,<sp/>0x77,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>0x63,<sp/>0x91,<sp/>0xFE,<sp/>0xD9,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>0x47,<sp/>0x56,<sp/>0x99,<sp/>0xB2,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>0xAD,<sp/>0x7D,<sp/>0x64,<sp/>0x16,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>0xF7,<sp/>0x40,<sp/>0x1A,<sp/>0x5B,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>0xCC,<sp/>0xC7,<sp/>0x08,<sp/>0x3D,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>0xE8,<sp/>0x6B,<sp/>0x35,<sp/>0x6D,</highlight></codeline>
+<codeline><highlight class="normal">};</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">SHA2_init();</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">SHA2_Params_init(&amp;params);</highlight></codeline>
+<codeline><highlight class="normal">params.returnBehavior<sp/>=<sp/>SHA2_RETURN_BEHAVIOR_BLOCKING;</highlight></codeline>
+<codeline><highlight class="normal">handle<sp/>=<sp/>SHA2_open(0,<sp/>&amp;params);</highlight></codeline>
+<codeline><highlight class="normal">assert(handle<sp/>!=<sp/>NULL);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>We<sp/>can<sp/>configure<sp/>the<sp/>driver<sp/>even<sp/>after<sp/>SHA2_open()</highlight></codeline>
+<codeline><highlight class="normal">result<sp/>=<sp/>SHA2_setHashType(handle,<sp/>SHA2_HASH_TYPE_256);</highlight></codeline>
+<codeline><highlight class="normal">assert(result<sp/>==<sp/>SHA2_STATUS_SUCCESS);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Process<sp/>data<sp/>in<sp/>chunks.<sp/>The<sp/>driver<sp/>buffers<sp/>incomplete<sp/>blocks<sp/>internally.</highlight></codeline>
+<codeline><highlight class="normal">result<sp/>=<sp/>SHA2_addData(handle,<sp/>&amp;message[0],<sp/>17);</highlight></codeline>
+<codeline><highlight class="normal">assert(result<sp/>==<sp/>SHA2_STATUS_SUCCESS);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">result<sp/>=<sp/>SHA2_addData(handle,<sp/>&amp;message[17],<sp/>strlen(message)<sp/>-<sp/>17);</highlight></codeline>
+<codeline><highlight class="normal">assert(result<sp/>==<sp/>SHA2_STATUS_SUCCESS);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Compute<sp/>the<sp/>resulting<sp/>digest</highlight></codeline>
+<codeline><highlight class="normal">result<sp/>=<sp/>SHA2_finalize(handle,<sp/>actualDigest);</highlight></codeline>
+<codeline><highlight class="normal">assert(result<sp/>==<sp/>SHA2_STATUS_SUCCESS);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Verify</highlight></codeline>
+<codeline><highlight class="normal">result<sp/>=<sp/>memcmp(actualDigest,<sp/>expectedDigest,<sp/>SHA2_DIGEST_LENGTH_BYTES_256);</highlight></codeline>
+<codeline><highlight class="normal">assert(result<sp/>==<sp/>0);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">SHA2_close(handle);</highlight></codeline>
+</programlisting> </para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2017-2020,<sp/>Texas<sp/>Instruments<sp/>Incorporated</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Redistribution<sp/>and<sp/>use<sp/>in<sp/>source<sp/>and<sp/>binary<sp/>forms,<sp/>with<sp/>or<sp/>without</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>modification,<sp/>are<sp/>permitted<sp/>provided<sp/>that<sp/>the<sp/>following<sp/>conditions</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>are<sp/>met:</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>of<sp/>source<sp/>code<sp/>must<sp/>retain<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer.</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>in<sp/>binary<sp/>form<sp/>must<sp/>reproduce<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer<sp/>in<sp/>the</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>documentation<sp/>and/or<sp/>other<sp/>materials<sp/>provided<sp/>with<sp/>the<sp/>distribution.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Neither<sp/>the<sp/>name<sp/>of<sp/>Texas<sp/>Instruments<sp/>Incorporated<sp/>nor<sp/>the<sp/>names<sp/>of</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>its<sp/>contributors<sp/>may<sp/>be<sp/>used<sp/>to<sp/>endorse<sp/>or<sp/>promote<sp/>products<sp/>derived</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>from<sp/>this<sp/>software<sp/>without<sp/>specific<sp/>prior<sp/>written<sp/>permission.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>THIS<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>BY<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>AND<sp/>CONTRIBUTORS<sp/>&quot;AS<sp/>IS&quot;</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>AND<sp/>ANY<sp/>EXPRESS<sp/>OR<sp/>IMPLIED<sp/>WARRANTIES,<sp/>INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>THE<sp/>IMPLIED<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY<sp/>AND<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>PURPOSE<sp/>ARE<sp/>DISCLAIMED.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE<sp/>COPYRIGHT<sp/>OWNER<sp/>OR</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>CONTRIBUTORS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>DIRECT,<sp/>INDIRECT,<sp/>INCIDENTAL,<sp/>SPECIAL,</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>EXEMPLARY,<sp/>OR<sp/>CONSEQUENTIAL<sp/>DAMAGES<sp/>(INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>PROCUREMENT<sp/>OF<sp/>SUBSTITUTE<sp/>GOODS<sp/>OR<sp/>SERVICES;<sp/>LOSS<sp/>OF<sp/>USE,<sp/>DATA,<sp/>OR<sp/>PROFITS;</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>OR<sp/>BUSINESS<sp/>INTERRUPTION)<sp/>HOWEVER<sp/>CAUSED<sp/>AND<sp/>ON<sp/>ANY<sp/>THEORY<sp/>OF<sp/>LIABILITY,</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/>STRICT<sp/>LIABILITY,<sp/>OR<sp/>TORT<sp/>(INCLUDING<sp/>NEGLIGENCE<sp/>OR</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*<sp/>OTHERWISE)<sp/>ARISING<sp/>IN<sp/>ANY<sp/>WAY<sp/>OUT<sp/>OF<sp/>THE<sp/>USE<sp/>OF<sp/>THIS<sp/>SOFTWARE,</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*<sp/>EVEN<sp/>IF<sp/>ADVISED<sp/>OF<sp/>THE<sp/>POSSIBILITY<sp/>OF<sp/>SUCH<sp/>DAMAGE.</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="comment">/*!****************************************************************************</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>*<sp/><sp/>@file<sp/><sp/><sp/><sp/><sp/><sp/><sp/>SHA2.h</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/>*<sp/><sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/>SHA2<sp/>driver<sp/>header</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="37"><highlight class="comment"><sp/>*<sp/><sp/>@anchor<sp/>ti_drivers_SHA2_Overview</highlight></codeline>
+<codeline lineno="38"><highlight class="comment"><sp/>*<sp/><sp/>#<sp/>Overview<sp/>#</highlight></codeline>
+<codeline lineno="39"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="40"><highlight class="comment"><sp/>*<sp/><sp/>SHA2<sp/>(Secure<sp/>Hash<sp/>Algorithm<sp/>2)<sp/>is<sp/>a<sp/>cryptographic<sp/>hashing<sp/>algorithm<sp/>that</highlight></codeline>
+<codeline lineno="41"><highlight class="comment"><sp/>*<sp/><sp/>maps<sp/>an<sp/>input<sp/>of<sp/>arbitrary<sp/>length<sp/>to<sp/>a<sp/>fixed-length<sp/>output<sp/>with<sp/>negligible</highlight></codeline>
+<codeline lineno="42"><highlight class="comment"><sp/>*<sp/><sp/>probability<sp/>of<sp/>collision.<sp/>A<sp/>collision<sp/>would<sp/>occur<sp/>when<sp/>two<sp/>different<sp/>inputs</highlight></codeline>
+<codeline lineno="43"><highlight class="comment"><sp/>*<sp/><sp/>map<sp/>to<sp/>the<sp/>same<sp/>output.</highlight></codeline>
+<codeline lineno="44"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="45"><highlight class="comment"><sp/>*<sp/><sp/>It<sp/>is<sp/>not<sp/>currently<sp/>technologicaly<sp/>feasible<sp/>to<sp/>derive<sp/>an<sp/>input<sp/>from</highlight></codeline>
+<codeline lineno="46"><highlight class="comment"><sp/>*<sp/><sp/>the<sp/>hash<sp/>digest<sp/>(output)<sp/>itself.</highlight></codeline>
+<codeline lineno="47"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="48"><highlight class="comment"><sp/>*<sp/><sp/>Hashes<sp/>are<sp/>often<sp/>used<sp/>to<sp/>ensure<sp/>the<sp/>integrity<sp/>of<sp/>messages.<sp/>They<sp/>are<sp/>also</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/>*<sp/><sp/>used<sp/>to<sp/>as<sp/>constituent<sp/>parts<sp/>of<sp/>more<sp/>complicated<sp/>cyptographic<sp/>schemes.</highlight></codeline>
+<codeline lineno="50"><highlight class="comment"><sp/>*<sp/><sp/>HMAC<sp/>is<sp/>a<sp/>message<sp/>authentication<sp/>code<sp/>that<sp/>is<sp/>based<sp/>on<sp/>hash<sp/>functions<sp/>such</highlight></codeline>
+<codeline lineno="51"><highlight class="comment"><sp/>*<sp/><sp/>as<sp/>SHA2<sp/>rather<sp/>than<sp/>a<sp/>block<sp/>cipher.</highlight></codeline>
+<codeline lineno="52"><highlight class="comment"><sp/>*<sp/><sp/>Hashes<sp/>may<sp/>themselves<sp/>be<sp/>used<sp/>as<sp/>or<sp/>form<sp/>a<sp/>part<sp/>of<sp/>key<sp/>derivation<sp/>functions</highlight></codeline>
+<codeline lineno="53"><highlight class="comment"><sp/>*<sp/><sp/>used<sp/>to<sp/>derive<sp/>symmetric<sp/>keys<sp/>from<sp/>sources<sp/>of<sp/>entropy<sp/>such<sp/>as<sp/>an<sp/>Elliptic</highlight></codeline>
+<codeline lineno="54"><highlight class="comment"><sp/>*<sp/><sp/>Curve<sp/>Diffie-Helman<sp/>key<sp/>exchange<sp/>(ECDH).</highlight></codeline>
+<codeline lineno="55"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="56"><highlight class="comment"><sp/>*<sp/><sp/>SHA2<sp/>is<sp/>not<sp/>actually<sp/>a<sp/>single<sp/>algorithm,<sp/>but<sp/>a<sp/>suite<sp/>of<sp/>similar<sp/>algorithms</highlight></codeline>
+<codeline lineno="57"><highlight class="comment"><sp/>*<sp/><sp/>that<sp/>produce<sp/>hash<sp/>digests<sp/>of<sp/>different<sp/>lengths.<sp/>224,<sp/>256,<sp/>384,<sp/>and<sp/>512-bit</highlight></codeline>
+<codeline lineno="58"><highlight class="comment"><sp/>*<sp/><sp/>outputs<sp/>are<sp/>available.</highlight></codeline>
+<codeline lineno="59"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="60"><highlight class="comment"><sp/>*<sp/><sp/>&quot;Hash&quot;<sp/>may<sp/>refer<sp/>to<sp/>either<sp/>the<sp/>process<sp/>of<sp/>hashing<sp/>when<sp/>used<sp/>as<sp/>a<sp/>verb<sp/>and</highlight></codeline>
+<codeline lineno="61"><highlight class="comment"><sp/>*<sp/><sp/>the<sp/>output<sp/>digest<sp/>when<sp/>used<sp/>as<sp/>a<sp/>noun.</highlight></codeline>
+<codeline lineno="62"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="63"><highlight class="comment"><sp/>*<sp/><sp/>@anchor<sp/>ti_drivers_SHA2_Usage</highlight></codeline>
+<codeline lineno="64"><highlight class="comment"><sp/>*<sp/><sp/>#<sp/>Usage<sp/>#</highlight></codeline>
+<codeline lineno="65"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="66"><highlight class="comment"><sp/>*<sp/><sp/>Before<sp/>starting<sp/>a<sp/>SHA2<sp/>operation,<sp/>the<sp/>application<sp/>must<sp/>do<sp/>the<sp/>following:</highlight></codeline>
+<codeline lineno="67"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>Call<sp/>#SHA2_init()<sp/>to<sp/>initialize<sp/>the<sp/>driver</highlight></codeline>
+<codeline lineno="68"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>Call<sp/>#SHA2_Params_init()<sp/>to<sp/>initialize<sp/>the<sp/>SHA2_Params<sp/>to<sp/>default<sp/>values.</highlight></codeline>
+<codeline lineno="69"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>Modify<sp/>the<sp/>#SHA2_Params<sp/>as<sp/>desired</highlight></codeline>
+<codeline lineno="70"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>Call<sp/>#SHA2_open()<sp/>to<sp/>open<sp/>an<sp/>instance<sp/>of<sp/>the<sp/>driver</highlight></codeline>
+<codeline lineno="71"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="72"><highlight class="comment"><sp/>*<sp/><sp/>There<sp/>are<sp/>two<sp/>general<sp/>ways<sp/>to<sp/>execute<sp/>a<sp/>SHA2<sp/>operation:</highlight></codeline>
+<codeline lineno="73"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="74"><highlight class="comment"><sp/>*<sp/><sp/>-<sp/>one-step<sp/>(in<sp/>one<sp/>operation)</highlight></codeline>
+<codeline lineno="75"><highlight class="comment"><sp/>*<sp/><sp/>-<sp/>multi-step<sp/>(multiple<sp/>partial<sp/>operations)</highlight></codeline>
+<codeline lineno="76"><highlight class="comment"></highlight></codeline>
+<codeline lineno="77"><highlight class="comment"><sp/>*<sp/><sp/>@anchor<sp/>ti_drivers_SHA2_Synopsis</highlight></codeline>
+<codeline lineno="78"><highlight class="comment"><sp/>*<sp/><sp/>#<sp/>Synopsis</highlight></codeline>
+<codeline lineno="79"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="80"><highlight class="comment"><sp/>*<sp/><sp/>@anchor<sp/>ti_drivers_SHA2_Synopsis_Code</highlight></codeline>
+<codeline lineno="81"><highlight class="comment"><sp/>*<sp/><sp/>@code</highlight></codeline>
+<codeline lineno="82"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="83"><highlight class="comment"><sp/>*<sp/><sp/>//<sp/>Import<sp/>SHA2<sp/>Driver<sp/>definitions</highlight></codeline>
+<codeline lineno="84"><highlight class="comment"><sp/>*<sp/><sp/>#include<sp/>&lt;ti/drivers/SHA2.h&gt;</highlight></codeline>
+<codeline lineno="85"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="86"><highlight class="comment"><sp/>*<sp/><sp/>//<sp/>Define<sp/>name<sp/>for<sp/>SHA2<sp/>channel<sp/>index</highlight></codeline>
+<codeline lineno="87"><highlight class="comment"><sp/>*<sp/><sp/>#define<sp/>SHA2_INSTANCE<sp/>0</highlight></codeline>
+<codeline lineno="88"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="89"><highlight class="comment"><sp/>*<sp/><sp/>SHA2_init();</highlight></codeline>
+<codeline lineno="90"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="91"><highlight class="comment"><sp/>*<sp/><sp/>handle<sp/>=<sp/>SHA2_open(SHA2_INSTANCE,<sp/>NULL);</highlight></codeline>
+<codeline lineno="92"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="93"><highlight class="comment"><sp/>*<sp/><sp/>result<sp/>=<sp/>SHA2_hashData(handle,<sp/>message,<sp/>strlen(message),<sp/>actualDigest);</highlight></codeline>
+<codeline lineno="94"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="95"><highlight class="comment"><sp/>*<sp/><sp/>SHA2_close(handle);</highlight></codeline>
+<codeline lineno="96"><highlight class="comment"><sp/>*<sp/><sp/>@endcode</highlight></codeline>
+<codeline lineno="97"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="98"><highlight class="comment"><sp/>*<sp/><sp/>@anchor<sp/>ti_drivers_SHA2_Examples</highlight></codeline>
+<codeline lineno="99"><highlight class="comment"><sp/>*<sp/><sp/>#<sp/>Examples<sp/>#</highlight></codeline>
+<codeline lineno="100"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="101"><highlight class="comment"><sp/>*<sp/><sp/>##<sp/>One-step<sp/>hash<sp/>operation<sp/>#</highlight></codeline>
+<codeline lineno="102"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="103"><highlight class="comment"><sp/>*<sp/><sp/>The<sp/>#SHA2_hashData()<sp/>function<sp/>can<sp/>perform<sp/>a<sp/>SHA2<sp/>operation<sp/>in<sp/>a<sp/>single<sp/>call.</highlight></codeline>
+<codeline lineno="104"><highlight class="comment"><sp/>*<sp/><sp/>It<sp/>will<sp/>always<sp/>use<sp/>the<sp/>most<sp/>highly<sp/>optimized<sp/>routine<sp/>with<sp/>the<sp/>least<sp/>overhead<sp/>and</highlight></codeline>
+<codeline lineno="105"><highlight class="comment"><sp/>*<sp/><sp/>the<sp/>fastest<sp/>runtime.<sp/>However,<sp/>it<sp/>requires<sp/>that<sp/>the<sp/>entire<sp/>input<sp/>message<sp/>is</highlight></codeline>
+<codeline lineno="106"><highlight class="comment"><sp/>*<sp/><sp/>available<sp/>to<sp/>the<sp/>function<sp/>in<sp/>a<sp/>contiguous<sp/>location<sp/>at<sp/>the<sp/>start<sp/>of<sp/>the<sp/>call.</highlight></codeline>
+<codeline lineno="107"><highlight class="comment"><sp/>*<sp/><sp/>The<sp/>single<sp/>call<sp/>operation<sp/>is<sp/>required<sp/>when<sp/>hashing<sp/>a<sp/>message<sp/>with<sp/>a<sp/>length<sp/>smaller</highlight></codeline>
+<codeline lineno="108"><highlight class="comment"><sp/>*<sp/><sp/>than<sp/>or<sp/>equal<sp/>to<sp/>one<sp/>hash-block<sp/>length.<sp/>All<sp/>devices<sp/>support<sp/>single<sp/>call<sp/>operations.</highlight></codeline>
+<codeline lineno="109"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="110"><highlight class="comment"><sp/>*<sp/><sp/>After<sp/>a<sp/>SHA2<sp/>operation<sp/>completes,<sp/>the<sp/>application<sp/>may<sp/>either<sp/>start</highlight></codeline>
+<codeline lineno="111"><highlight class="comment"><sp/>*<sp/><sp/>another<sp/>operation<sp/>or<sp/>close<sp/>the<sp/>driver<sp/>by<sp/>calling<sp/>#SHA2_close().</highlight></codeline>
+<codeline lineno="112"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="113"><highlight class="comment"><sp/>*<sp/><sp/>@code</highlight></codeline>
+<codeline lineno="114"><highlight class="comment"><sp/>*<sp/><sp/>SHA2_Params<sp/>params;</highlight></codeline>
+<codeline lineno="115"><highlight class="comment"><sp/>*<sp/><sp/>SHA2_Handle<sp/>handle;</highlight></codeline>
+<codeline lineno="116"><highlight class="comment"><sp/>*<sp/><sp/>int_fast16_t<sp/>result;</highlight></codeline>
+<codeline lineno="117"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="118"><highlight class="comment"><sp/>*<sp/><sp/>char<sp/>message[]<sp/>=<sp/>&quot;A<sp/>Ferengi<sp/>without<sp/>profit<sp/>is<sp/>no<sp/>Ferengi<sp/>at<sp/>all.&quot;;</highlight></codeline>
+<codeline lineno="119"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="120"><highlight class="comment"><sp/>*<sp/><sp/>uint8_t<sp/>actualDigest[SHA2_DIGEST_LENGTH_BYTES_256];</highlight></codeline>
+<codeline lineno="121"><highlight class="comment"><sp/>*<sp/><sp/>uint8_t<sp/>expectedDigest[]<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="122"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>0x93,<sp/>0xD6,<sp/>0x5C,<sp/>0x07,</highlight></codeline>
+<codeline lineno="123"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>0xA6,<sp/>0x26,<sp/>0x88,<sp/>0x9C,</highlight></codeline>
+<codeline lineno="124"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>0x87,<sp/>0xCC,<sp/>0x82,<sp/>0x24,</highlight></codeline>
+<codeline lineno="125"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>0x47,<sp/>0xC6,<sp/>0xE4,<sp/>0x28,</highlight></codeline>
+<codeline lineno="126"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>0xC0,<sp/>0xBD,<sp/>0xC6,<sp/>0xED,</highlight></codeline>
+<codeline lineno="127"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>0xAA,<sp/>0x8C,<sp/>0xD2,<sp/>0x53,</highlight></codeline>
+<codeline lineno="128"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>0x77,<sp/>0xAA,<sp/>0x73,<sp/>0x14,</highlight></codeline>
+<codeline lineno="129"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>0xA3,<sp/>0xE2,<sp/>0xDE,<sp/>0x43</highlight></codeline>
+<codeline lineno="130"><highlight class="comment"><sp/>*<sp/><sp/>};</highlight></codeline>
+<codeline lineno="131"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="132"><highlight class="comment"><sp/>*<sp/><sp/>SHA2_init();</highlight></codeline>
+<codeline lineno="133"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="134"><highlight class="comment"><sp/>*<sp/><sp/>SHA2_Params_init(&amp;params);</highlight></codeline>
+<codeline lineno="135"><highlight class="comment"><sp/>*<sp/><sp/>params.returnBehavior<sp/>=<sp/>SHA2_RETURN_BEHAVIOR_BLOCKING;</highlight></codeline>
+<codeline lineno="136"><highlight class="comment"><sp/>*<sp/><sp/>handle<sp/>=<sp/>SHA2_open(0,<sp/>&amp;params);</highlight></codeline>
+<codeline lineno="137"><highlight class="comment"><sp/>*<sp/><sp/>assert(handle<sp/>!=<sp/>NULL);</highlight></codeline>
+<codeline lineno="138"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="139"><highlight class="comment"><sp/>*<sp/><sp/>result<sp/>=<sp/>SHA2_hashData(handle,<sp/>message,<sp/>strlen(message),<sp/>actualDigest);</highlight></codeline>
+<codeline lineno="140"><highlight class="comment"><sp/>*<sp/><sp/>assert(result<sp/>==<sp/>SHA2_STATUS_SUCCESS);</highlight></codeline>
+<codeline lineno="141"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="142"><highlight class="comment"><sp/>*<sp/><sp/>result<sp/>=<sp/>memcmp(actualDigest,<sp/>expectedDigest,<sp/>SHA2_DIGEST_LENGTH_BYTES_256);</highlight></codeline>
+<codeline lineno="143"><highlight class="comment"><sp/>*<sp/><sp/>assert(result<sp/>==<sp/>0);</highlight></codeline>
+<codeline lineno="144"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="145"><highlight class="comment"><sp/>*<sp/><sp/>SHA2_close(handle);</highlight></codeline>
+<codeline lineno="146"><highlight class="comment"><sp/>*<sp/><sp/>@endcode</highlight></codeline>
+<codeline lineno="147"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="148"><highlight class="comment"><sp/>*<sp/><sp/>##<sp/>Partial<sp/>hash<sp/>operation<sp/>#</highlight></codeline>
+<codeline lineno="149"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="150"><highlight class="comment"><sp/>*<sp/><sp/>When<sp/>trying<sp/>to<sp/>operate<sp/>on<sp/>data<sp/>that<sp/>is<sp/>too<sp/>large<sp/>to<sp/>fit<sp/>into<sp/>available<sp/>memory,</highlight></codeline>
+<codeline lineno="151"><highlight class="comment"><sp/>*<sp/><sp/>partial<sp/>processing<sp/>is<sp/>more<sp/>advisable.<sp/>The<sp/>segments<sp/>are<sp/>processed<sp/>with</highlight></codeline>
+<codeline lineno="152"><highlight class="comment"><sp/>*<sp/><sp/>#SHA2_addData()<sp/>whereas<sp/>the<sp/>final<sp/>digest<sp/>is<sp/>computed<sp/>by<sp/>#SHA2_finalize().</highlight></codeline>
+<codeline lineno="153"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="154"><highlight class="comment"><sp/>*<sp/><sp/>@code</highlight></codeline>
+<codeline lineno="155"><highlight class="comment"><sp/>*<sp/><sp/>SHA2_Handle<sp/>handle;</highlight></codeline>
+<codeline lineno="156"><highlight class="comment"><sp/>*<sp/><sp/>int_fast16_t<sp/>result;</highlight></codeline>
+<codeline lineno="157"><highlight class="comment"><sp/>*<sp/><sp/>SHA2_Params<sp/>params;</highlight></codeline>
+<codeline lineno="158"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="159"><highlight class="comment"><sp/>*<sp/><sp/>const<sp/>char<sp/>message[]<sp/>=</highlight></codeline>
+<codeline lineno="160"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>&quot;Premature<sp/>optimization<sp/>is<sp/>the<sp/>root<sp/>of<sp/>all<sp/>evil<sp/>(or<sp/>at<sp/>least<sp/>most<sp/>of<sp/>it)<sp/>in<sp/>programming.&quot;;</highlight></codeline>
+<codeline lineno="161"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="162"><highlight class="comment"><sp/>*<sp/><sp/>uint8_t<sp/>actualDigest[SHA2_DIGEST_LENGTH_BYTES_256];</highlight></codeline>
+<codeline lineno="163"><highlight class="comment"><sp/>*<sp/><sp/>uint8_t<sp/>expectedDigest[]<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="164"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>0xF2,<sp/>0x6A,<sp/>0xFF,<sp/>0x01,</highlight></codeline>
+<codeline lineno="165"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>0x11,<sp/>0x6B,<sp/>0xF6,<sp/>0x77,</highlight></codeline>
+<codeline lineno="166"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>0x63,<sp/>0x91,<sp/>0xFE,<sp/>0xD9,</highlight></codeline>
+<codeline lineno="167"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>0x47,<sp/>0x56,<sp/>0x99,<sp/>0xB2,</highlight></codeline>
+<codeline lineno="168"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>0xAD,<sp/>0x7D,<sp/>0x64,<sp/>0x16,</highlight></codeline>
+<codeline lineno="169"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>0xF7,<sp/>0x40,<sp/>0x1A,<sp/>0x5B,</highlight></codeline>
+<codeline lineno="170"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>0xCC,<sp/>0xC7,<sp/>0x08,<sp/>0x3D,</highlight></codeline>
+<codeline lineno="171"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>0xE8,<sp/>0x6B,<sp/>0x35,<sp/>0x6D,</highlight></codeline>
+<codeline lineno="172"><highlight class="comment"><sp/>*<sp/><sp/>};</highlight></codeline>
+<codeline lineno="173"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="174"><highlight class="comment"><sp/>*<sp/><sp/>SHA2_init();</highlight></codeline>
+<codeline lineno="175"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="176"><highlight class="comment"><sp/>*<sp/><sp/>SHA2_Params_init(&amp;params);</highlight></codeline>
+<codeline lineno="177"><highlight class="comment"><sp/>*<sp/><sp/>params.returnBehavior<sp/>=<sp/>SHA2_RETURN_BEHAVIOR_BLOCKING;</highlight></codeline>
+<codeline lineno="178"><highlight class="comment"><sp/>*<sp/><sp/>handle<sp/>=<sp/>SHA2_open(0,<sp/>&amp;params);</highlight></codeline>
+<codeline lineno="179"><highlight class="comment"><sp/>*<sp/><sp/>assert(handle<sp/>!=<sp/>NULL);</highlight></codeline>
+<codeline lineno="180"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="181"><highlight class="comment"><sp/>*<sp/><sp/>//<sp/>We<sp/>can<sp/>configure<sp/>the<sp/>driver<sp/>even<sp/>after<sp/>SHA2_open()</highlight></codeline>
+<codeline lineno="182"><highlight class="comment"><sp/>*<sp/><sp/>result<sp/>=<sp/>SHA2_setHashType(handle,<sp/>SHA2_HASH_TYPE_256);</highlight></codeline>
+<codeline lineno="183"><highlight class="comment"><sp/>*<sp/><sp/>assert(result<sp/>==<sp/>SHA2_STATUS_SUCCESS);</highlight></codeline>
+<codeline lineno="184"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="185"><highlight class="comment"><sp/>*<sp/><sp/>//<sp/>Process<sp/>data<sp/>in<sp/>chunks.<sp/>The<sp/>driver<sp/>buffers<sp/>incomplete<sp/>blocks<sp/>internally.</highlight></codeline>
+<codeline lineno="186"><highlight class="comment"><sp/>*<sp/><sp/>result<sp/>=<sp/>SHA2_addData(handle,<sp/>&amp;message[0],<sp/>17);</highlight></codeline>
+<codeline lineno="187"><highlight class="comment"><sp/>*<sp/><sp/>assert(result<sp/>==<sp/>SHA2_STATUS_SUCCESS);</highlight></codeline>
+<codeline lineno="188"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="189"><highlight class="comment"><sp/>*<sp/><sp/>result<sp/>=<sp/>SHA2_addData(handle,<sp/>&amp;message[17],<sp/>strlen(message)<sp/>-<sp/>17);</highlight></codeline>
+<codeline lineno="190"><highlight class="comment"><sp/>*<sp/><sp/>assert(result<sp/>==<sp/>SHA2_STATUS_SUCCESS);</highlight></codeline>
+<codeline lineno="191"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="192"><highlight class="comment"><sp/>*<sp/><sp/>//<sp/>Compute<sp/>the<sp/>resulting<sp/>digest</highlight></codeline>
+<codeline lineno="193"><highlight class="comment"><sp/>*<sp/><sp/>result<sp/>=<sp/>SHA2_finalize(handle,<sp/>actualDigest);</highlight></codeline>
+<codeline lineno="194"><highlight class="comment"><sp/>*<sp/><sp/>assert(result<sp/>==<sp/>SHA2_STATUS_SUCCESS);</highlight></codeline>
+<codeline lineno="195"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="196"><highlight class="comment"><sp/>*<sp/><sp/>//<sp/>Verify</highlight></codeline>
+<codeline lineno="197"><highlight class="comment"><sp/>*<sp/><sp/>result<sp/>=<sp/>memcmp(actualDigest,<sp/>expectedDigest,<sp/>SHA2_DIGEST_LENGTH_BYTES_256);</highlight></codeline>
+<codeline lineno="198"><highlight class="comment"><sp/>*<sp/><sp/>assert(result<sp/>==<sp/>0);</highlight></codeline>
+<codeline lineno="199"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="200"><highlight class="comment"><sp/>*<sp/><sp/>SHA2_close(handle);</highlight></codeline>
+<codeline lineno="201"><highlight class="comment"><sp/>*<sp/><sp/>@endcode</highlight></codeline>
+<codeline lineno="202"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="203"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="204"><highlight class="normal"></highlight></codeline>
+<codeline lineno="205"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>ti_drivers_SHA2__include</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="206"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ti_drivers_SHA2__include</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="207"><highlight class="normal"></highlight></codeline>
+<codeline lineno="208"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdbool.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stddef.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="210"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="211"><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="213"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="215"><highlight class="normal"></highlight></codeline>
+<codeline lineno="228" refid="_s_h_a2_8h_1af86590d86ab05868e5d9768a53864c51" refkind="member"><highlight class="preprocessor">#define<sp/>SHA2_STATUS_RESERVED<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(-32)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="229"><highlight class="normal"></highlight></codeline>
+<codeline lineno="236" refid="_s_h_a2_8h_1af830601fb3cebbf96c405ca6f1cbbc79" refkind="member"><highlight class="preprocessor">#define<sp/>SHA2_STATUS_SUCCESS<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="237"><highlight class="normal"></highlight></codeline>
+<codeline lineno="244" refid="_s_h_a2_8h_1af9c9e8e3c5044c83eefdaef9063860a0" refkind="member"><highlight class="preprocessor">#define<sp/>SHA2_STATUS_ERROR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(-1)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="245"><highlight class="normal"></highlight></codeline>
+<codeline lineno="254" refid="_s_h_a2_8h_1a79f870938f2275ff40d9a923839baba9" refkind="member"><highlight class="preprocessor">#define<sp/>SHA2_STATUS_RESOURCE_UNAVAILABLE<sp/>(-2)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="255"><highlight class="normal"></highlight></codeline>
+<codeline lineno="259" refid="_s_h_a2_8h_1a233fd6c6912964d0a4918075081c08c2" refkind="member"><highlight class="preprocessor">#define<sp/>SHA2_STATUS_CANCELED<sp/>(-3)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="260"><highlight class="normal"></highlight></codeline>
+<codeline lineno="282" refid="_s_h_a2_8h_1a224eb3d293bb76a360d13f3fb6cdcd58" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="283" refid="_s_h_a2_8h_1a224eb3d293bb76a360d13f3fb6cdcd58a24089a94926440a2b1ef80f2f12a6eea" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_h_a2_8h_1a224eb3d293bb76a360d13f3fb6cdcd58a24089a94926440a2b1ef80f2f12a6eea" kindref="member">SHA2_RETURN_BEHAVIOR_CALLBACK</ref><sp/>=<sp/>1,<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="289" refid="_s_h_a2_8h_1a224eb3d293bb76a360d13f3fb6cdcd58a1886f2611fbf1ec1c64b32b3308ca6e4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_h_a2_8h_1a224eb3d293bb76a360d13f3fb6cdcd58a1886f2611fbf1ec1c64b32b3308ca6e4" kindref="member">SHA2_RETURN_BEHAVIOR_BLOCKING</ref><sp/>=<sp/>2,<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="293" refid="_s_h_a2_8h_1a224eb3d293bb76a360d13f3fb6cdcd58acb21dfa07af8bd9ea8b69e3821f14bc4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_h_a2_8h_1a224eb3d293bb76a360d13f3fb6cdcd58acb21dfa07af8bd9ea8b69e3821f14bc4" kindref="member">SHA2_RETURN_BEHAVIOR_POLLING</ref><sp/><sp/>=<sp/>4,<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="297"><highlight class="normal">}<sp/><ref refid="_s_h_a2_8h_1a224eb3d293bb76a360d13f3fb6cdcd58" kindref="member">SHA2_ReturnBehavior</ref>;</highlight></codeline>
+<codeline lineno="298"><highlight class="normal"></highlight></codeline>
+<codeline lineno="302" refid="_s_h_a2_8h_1ac736b297766eec40ca782cbc559d1f29" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="303" refid="_s_h_a2_8h_1ac736b297766eec40ca782cbc559d1f29ac04c761878b57de09ecd0a15f18216c5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_h_a2_8h_1ac736b297766eec40ca782cbc559d1f29ac04c761878b57de09ecd0a15f18216c5" kindref="member">SHA2_HASH_TYPE_224</ref><sp/>=<sp/>0,</highlight></codeline>
+<codeline lineno="304" refid="_s_h_a2_8h_1ac736b297766eec40ca782cbc559d1f29afb54f73866a407de412f1612deba102e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_h_a2_8h_1ac736b297766eec40ca782cbc559d1f29afb54f73866a407de412f1612deba102e" kindref="member">SHA2_HASH_TYPE_256</ref><sp/>=<sp/>1,</highlight></codeline>
+<codeline lineno="305" refid="_s_h_a2_8h_1ac736b297766eec40ca782cbc559d1f29aa2a402addbc8c70d1cf8eda44e5ea0eb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_h_a2_8h_1ac736b297766eec40ca782cbc559d1f29aa2a402addbc8c70d1cf8eda44e5ea0eb" kindref="member">SHA2_HASH_TYPE_384</ref><sp/>=<sp/>2,</highlight></codeline>
+<codeline lineno="306" refid="_s_h_a2_8h_1ac736b297766eec40ca782cbc559d1f29a95382db804c412fd6ad3d86aaf743f3d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_h_a2_8h_1ac736b297766eec40ca782cbc559d1f29a95382db804c412fd6ad3d86aaf743f3d" kindref="member">SHA2_HASH_TYPE_512</ref><sp/>=<sp/>3,</highlight></codeline>
+<codeline lineno="307"><highlight class="normal">}<sp/><ref refid="_s_h_a2_8h_1ac736b297766eec40ca782cbc559d1f29" kindref="member">SHA2_HashType</ref>;</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"></highlight></codeline>
+<codeline lineno="312" refid="_s_h_a2_8h_1a80743185c031d98f1ed370161c1f253d" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="313" refid="_s_h_a2_8h_1a80743185c031d98f1ed370161c1f253daa5d0d0cca946f78996634d3e0cd1e1f6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_h_a2_8h_1a80743185c031d98f1ed370161c1f253daa5d0d0cca946f78996634d3e0cd1e1f6" kindref="member">SHA2_DIGEST_LENGTH_BYTES_224</ref><sp/>=<sp/>28,</highlight></codeline>
+<codeline lineno="314" refid="_s_h_a2_8h_1a80743185c031d98f1ed370161c1f253da485865fb1d5fd1dd0d79ac98c2d6eedf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_h_a2_8h_1a80743185c031d98f1ed370161c1f253da485865fb1d5fd1dd0d79ac98c2d6eedf" kindref="member">SHA2_DIGEST_LENGTH_BYTES_256</ref><sp/>=<sp/>32,</highlight></codeline>
+<codeline lineno="315" refid="_s_h_a2_8h_1a80743185c031d98f1ed370161c1f253da8d406e8f97117db168ec92ff25be9a80" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_h_a2_8h_1a80743185c031d98f1ed370161c1f253da8d406e8f97117db168ec92ff25be9a80" kindref="member">SHA2_DIGEST_LENGTH_BYTES_384</ref><sp/>=<sp/>48,</highlight></codeline>
+<codeline lineno="316" refid="_s_h_a2_8h_1a80743185c031d98f1ed370161c1f253dac9cfb34c079c68dc42e945d15183ab8b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_h_a2_8h_1a80743185c031d98f1ed370161c1f253dac9cfb34c079c68dc42e945d15183ab8b" kindref="member">SHA2_DIGEST_LENGTH_BYTES_512</ref><sp/>=<sp/>64,</highlight></codeline>
+<codeline lineno="317"><highlight class="normal">}<sp/><ref refid="_s_h_a2_8h_1a80743185c031d98f1ed370161c1f253d" kindref="member">SHA2_DigestLengthBytes</ref>;</highlight></codeline>
+<codeline lineno="318"><highlight class="normal"></highlight></codeline>
+<codeline lineno="332" refid="_s_h_a2_8h_1a068b58fab712a0c1ad7091803314c5d0" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="333" refid="_s_h_a2_8h_1a068b58fab712a0c1ad7091803314c5d0a02b165a6d502cb6bfc35a4718a52f25a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_h_a2_8h_1a068b58fab712a0c1ad7091803314c5d0a02b165a6d502cb6bfc35a4718a52f25a" kindref="member">SHA2_BLOCK_SIZE_BYTES_224</ref><sp/>=<sp/>64,</highlight></codeline>
+<codeline lineno="334" refid="_s_h_a2_8h_1a068b58fab712a0c1ad7091803314c5d0a37bd6cb465e5a0c77c15933525f25103" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_h_a2_8h_1a068b58fab712a0c1ad7091803314c5d0a37bd6cb465e5a0c77c15933525f25103" kindref="member">SHA2_BLOCK_SIZE_BYTES_256</ref><sp/>=<sp/>64,</highlight></codeline>
+<codeline lineno="335" refid="_s_h_a2_8h_1a068b58fab712a0c1ad7091803314c5d0ac41032a24580877dd5c1be886d75a897" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_h_a2_8h_1a068b58fab712a0c1ad7091803314c5d0ac41032a24580877dd5c1be886d75a897" kindref="member">SHA2_BLOCK_SIZE_BYTES_384</ref><sp/>=<sp/>128,</highlight></codeline>
+<codeline lineno="336" refid="_s_h_a2_8h_1a068b58fab712a0c1ad7091803314c5d0a8ba20289cd607ae3b078487c5111833a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_h_a2_8h_1a068b58fab712a0c1ad7091803314c5d0a8ba20289cd607ae3b078487c5111833a" kindref="member">SHA2_BLOCK_SIZE_BYTES_512</ref><sp/>=<sp/>128,</highlight></codeline>
+<codeline lineno="337"><highlight class="normal">}<sp/><ref refid="_s_h_a2_8h_1a068b58fab712a0c1ad7091803314c5d0" kindref="member">SHA2_BlockSizeBytes</ref>;</highlight></codeline>
+<codeline lineno="338"><highlight class="normal"></highlight></codeline>
+<codeline lineno="350" refid="struct_s_h_a2___config" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="352" refid="struct_s_h_a2___config_1ac2b5fd13aeea22e6337bdb55206810fd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="struct_s_h_a2___config_1ac2b5fd13aeea22e6337bdb55206810fd" kindref="member">object</ref>;</highlight></codeline>
+<codeline lineno="353"><highlight class="normal"></highlight></codeline>
+<codeline lineno="355" refid="struct_s_h_a2___config_1a4f78c4a20fea50a67a56a71e7235fee1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>*<ref refid="struct_s_h_a2___config_1a4f78c4a20fea50a67a56a71e7235fee1" kindref="member">hwAttrs</ref>;</highlight></codeline>
+<codeline lineno="356"><highlight class="normal">}<sp/><ref refid="struct_s_h_a2___config" kindref="compound">SHA2_Config</ref>;</highlight></codeline>
+<codeline lineno="357"><highlight class="normal"></highlight></codeline>
+<codeline lineno="361" refid="_s_h_a2_8h_1a0a6ddcbf393ff5f2677ebe47e1f3d798" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="struct_s_h_a2___config" kindref="compound">SHA2_Config</ref>*<sp/><ref refid="_s_h_a2_8h_1a0a6ddcbf393ff5f2677ebe47e1f3d798" kindref="member">SHA2_Handle</ref>;</highlight></codeline>
+<codeline lineno="362"><highlight class="normal"></highlight></codeline>
+<codeline lineno="373" refid="_s_h_a2_8h_1a4a605367d5d35ab77de06dcb9f54c921" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>void<sp/>(*<ref refid="_s_h_a2_8h_1a4a605367d5d35ab77de06dcb9f54c921" kindref="member">SHA2_CallbackFxn</ref>)<sp/>(SHA2_Handle<sp/>handle,<sp/>int_fast16_t<sp/>returnStatus);</highlight></codeline>
+<codeline lineno="374"><highlight class="normal"></highlight></codeline>
+<codeline lineno="383" refid="struct_s_h_a2___params" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="384" refid="struct_s_h_a2___params_1af4e727bc27c0e8841d3e29733766e059" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_h_a2_8h_1ac736b297766eec40ca782cbc559d1f29" kindref="member">SHA2_HashType</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_s_h_a2___params_1af4e727bc27c0e8841d3e29733766e059" kindref="member">hashType</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="387" refid="struct_s_h_a2___params_1ab8486d42556be0df51c3450b0ccb151d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_h_a2_8h_1a224eb3d293bb76a360d13f3fb6cdcd58" kindref="member">SHA2_ReturnBehavior</ref><sp/><sp/><sp/><sp/><sp/><ref refid="struct_s_h_a2___params_1ab8486d42556be0df51c3450b0ccb151d" kindref="member">returnBehavior</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="388" refid="struct_s_h_a2___params_1ad443e5775dba2d44238eff1595d4af78" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_h_a2_8h_1a4a605367d5d35ab77de06dcb9f54c921" kindref="member">SHA2_CallbackFxn</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_s_h_a2___params_1ad443e5775dba2d44238eff1595d4af78" kindref="member">callbackFxn</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="389" refid="struct_s_h_a2___params_1aeca064ee25e6e6d3e6383fe8d54b9185" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_s_h_a2___params_1aeca064ee25e6e6d3e6383fe8d54b9185" kindref="member">timeout</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="392"><highlight class="normal">}<sp/><ref refid="struct_s_h_a2___params" kindref="compound">SHA2_Params</ref>;</highlight></codeline>
+<codeline lineno="393"><highlight class="normal"></highlight></codeline>
+<codeline lineno="402"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_s_h_a2___config" kindref="compound">SHA2_Config</ref><sp/><ref refid="_s_h_a2_8h_1aa8005577cc49a5805d5e123395b74185" kindref="member">SHA2_config</ref>[];</highlight></codeline>
+<codeline lineno="403"><highlight class="normal"></highlight></codeline>
+<codeline lineno="411"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint_least8_t<sp/><ref refid="_s_h_a2_8h_1a0bbbbf10608e8b702cd04166617903b2" kindref="member">SHA2_count</ref>;</highlight></codeline>
+<codeline lineno="412"><highlight class="normal"></highlight></codeline>
+<codeline lineno="418"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_s_h_a2___params" kindref="compound">SHA2_Params</ref><sp/><ref refid="_s_h_a2_8h_1a2bc55a3d74a3fecd6f00d498bce96f26" kindref="member">SHA2_defaultParams</ref>;</highlight></codeline>
+<codeline lineno="419"><highlight class="normal"></highlight></codeline>
+<codeline lineno="420"><highlight class="normal"></highlight></codeline>
+<codeline lineno="429"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_s_h_a2_8h_1a52bac540341a588612f9e375cc504439" kindref="member">SHA2_init</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="430"><highlight class="normal"></highlight></codeline>
+<codeline lineno="443"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_s_h_a2_8h_1a35012f3a93e7a6f7252c53ae31d28aed" kindref="member">SHA2_Params_init</ref>(<ref refid="struct_s_h_a2___params" kindref="compound">SHA2_Params</ref><sp/>*params);</highlight></codeline>
+<codeline lineno="444"><highlight class="normal"></highlight></codeline>
+<codeline lineno="461"><highlight class="normal">SHA2_Handle<sp/><ref refid="_s_h_a2_8h_1abd8e7d5cf0cad89a9a218d5ce6d41e13" kindref="member">SHA2_open</ref>(uint_least8_t<sp/>index,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_s_h_a2___params" kindref="compound">SHA2_Params</ref><sp/>*params);</highlight></codeline>
+<codeline lineno="462"><highlight class="normal"></highlight></codeline>
+<codeline lineno="472"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_s_h_a2_8h_1a57cfbb0eecdf3449cbfa4e2dcb471dd4" kindref="member">SHA2_close</ref>(SHA2_Handle<sp/>handle);</highlight></codeline>
+<codeline lineno="473"><highlight class="normal"></highlight></codeline>
+<codeline lineno="500"><highlight class="normal">int_fast16_t<sp/><ref refid="_s_h_a2_8h_1ac5155c684c254a894ea06f4cd5290990" kindref="member">SHA2_addData</ref>(SHA2_Handle<sp/>handle,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>data,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>length);</highlight></codeline>
+<codeline lineno="501"><highlight class="normal"></highlight></codeline>
+<codeline lineno="531"><highlight class="normal">int_fast16_t<sp/><ref refid="_s_h_a2_8h_1a600ae605f0fe066173c8dc2f536d5b8f" kindref="member">SHA2_hashData</ref>(SHA2_Handle<sp/>handle,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>data,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>size,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*digest);</highlight></codeline>
+<codeline lineno="532"><highlight class="normal"></highlight></codeline>
+<codeline lineno="555"><highlight class="normal">int_fast16_t<sp/><ref refid="_s_h_a2_8h_1ae8e6a9aa91a05977f2db52ba67ee80da" kindref="member">SHA2_finalize</ref>(SHA2_Handle<sp/>handle,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*digest);</highlight></codeline>
+<codeline lineno="556"><highlight class="normal"></highlight></codeline>
+<codeline lineno="568"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_s_h_a2_8h_1ab56e3f36e56ffb06c2c8aaa7528ac321" kindref="member">SHA2_reset</ref>(SHA2_Handle<sp/>handle);</highlight></codeline>
+<codeline lineno="569"><highlight class="normal"></highlight></codeline>
+<codeline lineno="585"><highlight class="normal">int_fast16_t<sp/><ref refid="_s_h_a2_8h_1a8274ea547e11bfe8e9d406f646ad0432" kindref="member">SHA2_cancelOperation</ref>(SHA2_Handle<sp/>handle);</highlight></codeline>
+<codeline lineno="586"><highlight class="normal"></highlight></codeline>
+<codeline lineno="606"><highlight class="normal">int_fast16_t<sp/><ref refid="_s_h_a2_8h_1a46075b17a244bac1b9123559da37f6f5" kindref="member">SHA2_setHashType</ref>(SHA2_Handle<sp/>handle,<sp/><ref refid="_s_h_a2_8h_1ac736b297766eec40ca782cbc559d1f29" kindref="member">SHA2_HashType</ref><sp/>type);</highlight></codeline>
+<codeline lineno="607"><highlight class="normal"></highlight></codeline>
+<codeline lineno="631"><highlight class="normal">SHA2_Handle<sp/><ref refid="_s_h_a2_8h_1a954040f0843fafbee57fa7589207ef00" kindref="member">SHA2_construct</ref>(<ref refid="struct_s_h_a2___config" kindref="compound">SHA2_Config</ref><sp/>*config,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_s_h_a2___params" kindref="compound">SHA2_Params</ref><sp/>*params);</highlight></codeline>
+<codeline lineno="632"><highlight class="normal"></highlight></codeline>
+<codeline lineno="633"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="634"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="635"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="636"><highlight class="normal"></highlight></codeline>
+<codeline lineno="637"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>ti_drivers_SHA2__include<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="exports/tidrivers_msp432e4/source/ti/drivers/SHA2.h"/>
+  </compounddef>
+</doxygen>

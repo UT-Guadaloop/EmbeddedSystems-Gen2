@@ -1,0 +1,187 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="struct_u_a_r_t2___params" kind="struct" language="C++" prot="public">
+    <compoundname>UART2_Params</compoundname>
+    <includes refid="_u_a_r_t2_8h" local="no">UART2.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_u_a_r_t2___params_1a6dd95ee323c2aabf14b1aa82e27bc7a3" prot="public" static="no" mutable="no">
+        <type><ref refid="_u_a_r_t2_8h_1a5bfa1a3442db9943342497e519a08863" kindref="member">UART2_Mode</ref></type>
+        <definition>UART2_Mode UART2_Params::readMode</definition>
+        <argsstring></argsstring>
+        <name>readMode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Mode for all read calls </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/UART2.h" line="425" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/UART2.h" bodystart="425" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_u_a_r_t2___params_1a7ee665634b02989a5a506dce0b51d298" prot="public" static="no" mutable="no">
+        <type><ref refid="_u_a_r_t2_8h_1a5bfa1a3442db9943342497e519a08863" kindref="member">UART2_Mode</ref></type>
+        <definition>UART2_Mode UART2_Params::writeMode</definition>
+        <argsstring></argsstring>
+        <name>writeMode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Mode for all write calls </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/UART2.h" line="426" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/UART2.h" bodystart="426" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_u_a_r_t2___params_1a72feec1f368666cc1d330400b0eec1c7" prot="public" static="no" mutable="no">
+        <type><ref refid="_u_a_r_t2_8h_1a00d68ce47bb8b798f31c3338077d301a" kindref="member">UART2_Callback</ref></type>
+        <definition>UART2_Callback UART2_Params::readCallback</definition>
+        <argsstring></argsstring>
+        <name>readCallback</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pointer to read callback function for callback mode. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/UART2.h" line="427" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/UART2.h" bodystart="427" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_u_a_r_t2___params_1aadcf916de5cdd5591997d289f03ccfdd" prot="public" static="no" mutable="no">
+        <type><ref refid="_u_a_r_t2_8h_1a00d68ce47bb8b798f31c3338077d301a" kindref="member">UART2_Callback</ref></type>
+        <definition>UART2_Callback UART2_Params::writeCallback</definition>
+        <argsstring></argsstring>
+        <name>writeCallback</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pointer to write callback function for callback mode. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/UART2.h" line="428" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/UART2.h" bodystart="428" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_u_a_r_t2___params_1a6932346cebafafca64fd705d5416b32a" prot="public" static="no" mutable="no">
+        <type><ref refid="_u_a_r_t2_8h_1ab233d65776f6f909c674c5baae27637d" kindref="member">UART2_ReadReturnMode</ref></type>
+        <definition>UART2_ReadReturnMode UART2_Params::readReturnMode</definition>
+        <argsstring></argsstring>
+        <name>readReturnMode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Receive return mode </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/UART2.h" line="429" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/UART2.h" bodystart="429" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_u_a_r_t2___params_1a52da516a384dd7b59d8570ac05562f9e" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t UART2_Params::baudRate</definition>
+        <argsstring></argsstring>
+        <name>baudRate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Baud rate for UART </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/UART2.h" line="430" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/UART2.h" bodystart="430" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_u_a_r_t2___params_1aed9521ee8f72ce949f611b37b9fc20ba" prot="public" static="no" mutable="no">
+        <type><ref refid="_u_a_r_t2_8h_1a6c14675701ba732f156c2eea7e3f6515" kindref="member">UART2_DataLen</ref></type>
+        <definition>UART2_DataLen UART2_Params::dataLength</definition>
+        <argsstring></argsstring>
+        <name>dataLength</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Data length for UART </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/UART2.h" line="431" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/UART2.h" bodystart="431" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_u_a_r_t2___params_1a32a2799eac42264531c0885ce4c79b71" prot="public" static="no" mutable="no">
+        <type><ref refid="_u_a_r_t2_8h_1ae0d2d6413d7e338fd053569d848c239f" kindref="member">UART2_StopBits</ref></type>
+        <definition>UART2_StopBits UART2_Params::stopBits</definition>
+        <argsstring></argsstring>
+        <name>stopBits</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Stop bits for UART </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/UART2.h" line="432" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/UART2.h" bodystart="432" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_u_a_r_t2___params_1aeab242e0d26c1a6faf3e9bdc799de916" prot="public" static="no" mutable="no">
+        <type><ref refid="_u_a_r_t2_8h_1a259cb78d1b403c91619af5153a84994d" kindref="member">UART2_Parity</ref></type>
+        <definition>UART2_Parity UART2_Params::parityType</definition>
+        <argsstring></argsstring>
+        <name>parityType</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Parity bit type for UART </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/UART2.h" line="433" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/UART2.h" bodystart="433" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_u_a_r_t2___params_1a309c74a40012a74de35b6e916b625bc0" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* UART2_Params::userArg</definition>
+        <argsstring></argsstring>
+        <name>userArg</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>User supplied argument for callback functions </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/UART2.h" line="434" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/UART2.h" bodystart="434" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>UART2 Parameters. </para>    </briefdescription>
+    <detaileddescription>
+<para>UART2 parameters are used with the <ref refid="_u_a_r_t2_8h_1a03b76166f16518bc1cdf85fdf6aa206b" kindref="member">UART2_open()</ref> call. Default values for these parameters are set using <ref refid="_u_a_r_t2_8h_1a8fd27db3b9bcca2fc88f65b2d26895d5" kindref="member">UART2_Params_init()</ref>.</para><para><simplesect kind="see"><para><ref refid="_u_a_r_t2_8h_1a8fd27db3b9bcca2fc88f65b2d26895d5" kindref="member">UART2_Params_init()</ref> </para></simplesect>
+</para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="407">
+        <label>UART2_FxnTable</label>
+        <link refid="struct_u_a_r_t2___fxn_table"/>
+        <childnode refid="406" relation="usage">
+          <edgelabel>writeFxn</edgelabel>
+          <edgelabel>readCancelFxn</edgelabel>
+          <edgelabel>closeFxn</edgelabel>
+          <edgelabel>flushRxFxn</edgelabel>
+          <edgelabel>writeCancelFxn</edgelabel>
+          <edgelabel>openFxn</edgelabel>
+          <edgelabel>readFxn</edgelabel>
+        </childnode>
+      </node>
+      <node id="405">
+        <label>UART2_Params</label>
+        <link refid="struct_u_a_r_t2___params"/>
+        <childnode refid="406" relation="usage">
+          <edgelabel>readCallback</edgelabel>
+          <edgelabel>writeCallback</edgelabel>
+        </childnode>
+      </node>
+      <node id="406">
+        <label>UART2_Config_</label>
+        <link refid="struct_u_a_r_t2___config__"/>
+        <childnode refid="407" relation="usage">
+          <edgelabel>fxnTablePtr</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="exports/tidrivers_msp432e4/source/ti/drivers/UART2.h" line="424" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/UART2.h" bodystart="424" bodyend="435"/>
+    <listofallmembers>
+      <member refid="struct_u_a_r_t2___params_1a52da516a384dd7b59d8570ac05562f9e" prot="public" virt="non-virtual"><scope>UART2_Params</scope><name>baudRate</name></member>
+      <member refid="struct_u_a_r_t2___params_1aed9521ee8f72ce949f611b37b9fc20ba" prot="public" virt="non-virtual"><scope>UART2_Params</scope><name>dataLength</name></member>
+      <member refid="struct_u_a_r_t2___params_1aeab242e0d26c1a6faf3e9bdc799de916" prot="public" virt="non-virtual"><scope>UART2_Params</scope><name>parityType</name></member>
+      <member refid="struct_u_a_r_t2___params_1a72feec1f368666cc1d330400b0eec1c7" prot="public" virt="non-virtual"><scope>UART2_Params</scope><name>readCallback</name></member>
+      <member refid="struct_u_a_r_t2___params_1a6dd95ee323c2aabf14b1aa82e27bc7a3" prot="public" virt="non-virtual"><scope>UART2_Params</scope><name>readMode</name></member>
+      <member refid="struct_u_a_r_t2___params_1a6932346cebafafca64fd705d5416b32a" prot="public" virt="non-virtual"><scope>UART2_Params</scope><name>readReturnMode</name></member>
+      <member refid="struct_u_a_r_t2___params_1a32a2799eac42264531c0885ce4c79b71" prot="public" virt="non-virtual"><scope>UART2_Params</scope><name>stopBits</name></member>
+      <member refid="struct_u_a_r_t2___params_1a309c74a40012a74de35b6e916b625bc0" prot="public" virt="non-virtual"><scope>UART2_Params</scope><name>userArg</name></member>
+      <member refid="struct_u_a_r_t2___params_1aadcf916de5cdd5591997d289f03ccfdd" prot="public" virt="non-virtual"><scope>UART2_Params</scope><name>writeCallback</name></member>
+      <member refid="struct_u_a_r_t2___params_1a7ee665634b02989a5a506dce0b51d298" prot="public" virt="non-virtual"><scope>UART2_Params</scope><name>writeMode</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

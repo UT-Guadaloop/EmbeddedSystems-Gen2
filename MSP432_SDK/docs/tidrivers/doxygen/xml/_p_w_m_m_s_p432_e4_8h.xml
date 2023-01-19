@@ -1,0 +1,447 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="_p_w_m_m_s_p432_e4_8h" kind="file" language="C++">
+    <compoundname>PWMMSP432E4.h</compoundname>
+    <includes local="no">stdbool.h</includes>
+    <includes local="no">stdint.h</includes>
+    <includes local="no">ti/devices/msp432e4/inc/msp432.h</includes>
+    <includes local="no">ti/devices/msp432e4/driverlib/gpio.h</includes>
+    <includes local="no">ti/devices/msp432e4/driverlib/pin_map.h</includes>
+    <includes refid="_g_p_i_o_m_s_p432_e4_8h" local="no">ti/drivers/gpio/GPIOMSP432E4.h</includes>
+    <includes refid="_p_w_m_8h" local="no">ti/drivers/PWM.h</includes>
+    <incdepgraph>
+      <node id="371">
+        <label>stdbool.h</label>
+      </node>
+      <node id="378">
+        <label>ti/drivers/PWM.h</label>
+        <link refid="_p_w_m_8h"/>
+        <childnode refid="372" relation="include">
+        </childnode>
+      </node>
+      <node id="376">
+        <label>ti/drivers/gpio/GPIOMSP432E4.h</label>
+        <link refid="_g_p_i_o_m_s_p432_e4_8h"/>
+        <childnode refid="372" relation="include">
+        </childnode>
+        <childnode refid="373" relation="include">
+        </childnode>
+        <childnode refid="374" relation="include">
+        </childnode>
+        <childnode refid="377" relation="include">
+        </childnode>
+      </node>
+      <node id="372">
+        <label>stdint.h</label>
+      </node>
+      <node id="374">
+        <label>ti/devices/msp432e4/driverlib/gpio.h</label>
+      </node>
+      <node id="370">
+        <label>PWMMSP432E4.h</label>
+        <link refid="_p_w_m_m_s_p432_e4_8h"/>
+        <childnode refid="371" relation="include">
+        </childnode>
+        <childnode refid="372" relation="include">
+        </childnode>
+        <childnode refid="373" relation="include">
+        </childnode>
+        <childnode refid="374" relation="include">
+        </childnode>
+        <childnode refid="375" relation="include">
+        </childnode>
+        <childnode refid="376" relation="include">
+        </childnode>
+        <childnode refid="378" relation="include">
+        </childnode>
+      </node>
+      <node id="377">
+        <label>ti/drivers/GPIO.h</label>
+        <link refid="_g_p_i_o_8h"/>
+        <childnode refid="372" relation="include">
+        </childnode>
+      </node>
+      <node id="375">
+        <label>ti/devices/msp432e4/driverlib/pin_map.h</label>
+      </node>
+      <node id="373">
+        <label>ti/devices/msp432e4/inc/msp432.h</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="struct_p_w_m_m_s_p432_e4___h_w_attrs" prot="public">PWMMSP432E4_HWAttrs</innerclass>
+    <innerclass refid="struct_p_w_m_m_s_p432_e4___status" prot="public">PWMMSP432E4_Status</innerclass>
+    <innerclass refid="struct_p_w_m_m_s_p432_e4___object" prot="public">PWMMSP432E4_Object</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_p_w_m_m_s_p432_e4_8h_1a2eed10ad33fa10644f09264389b463f5" prot="public" static="no">
+        <name>PWMMSP432E4_NUM_PWM_PERIPHERALS</name>
+        <initializer>(1)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/pwm/PWMMSP432E4.h" line="132" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/pwm/PWMMSP432E4.h" bodystart="132" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_w_m_m_s_p432_e4_8h_1a464943f0a54faefb7cbefc35ea80841b" prot="public" static="no">
+        <name>PWMMSP432E4_NUM_PWM_GENERATORS</name>
+        <initializer>(4)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/pwm/PWMMSP432E4.h" line="135" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/pwm/PWMMSP432E4.h" bodystart="135" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_w_m_m_s_p432_e4_8h_1a9c42c1b138a1eca014c551c675e2150f" prot="public" static="no">
+        <name>PWMMSP432E4_NUM_PWM_OUTPUTS</name>
+        <initializer>(8)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/pwm/PWMMSP432E4.h" line="138" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/pwm/PWMMSP432E4.h" bodystart="138" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_w_m_m_s_p432_e4_8h_1ac4d126a2a7ed89666a845359914b7d1a" prot="public" static="no">
+        <name>PWMMSP432E4_PF0_M0PWM0</name>
+        <initializer><ref refid="_g_p_i_o_m_s_p432_e4_8h_1ae77f77ea12a04525c78d194dbf04edcf" kindref="member">GPIOMSP432E4_pinConfigMask</ref>(<ref refid="_g_p_i_o_m_s_p432_e4_8h_1aace72b9277a3dc611fecf03736b2ee22" kindref="member">GPIOMSP432E4_PORTF</ref>, 0, GPIO_PF0_M0PWM0)</initializer>
+        <briefdescription>
+<para>PF0 is used for M0PWM0. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/pwm/PWMMSP432E4.h" line="143" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/pwm/PWMMSP432E4.h" bodystart="143" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_w_m_m_s_p432_e4_8h_1a18408317451cd39011f529fdb8025aed" prot="public" static="no">
+        <name>PWMMSP432E4_PR0_M0PWM0</name>
+        <initializer><ref refid="_g_p_i_o_m_s_p432_e4_8h_1ae77f77ea12a04525c78d194dbf04edcf" kindref="member">GPIOMSP432E4_pinConfigMask</ref>(<ref refid="_g_p_i_o_m_s_p432_e4_8h_1a309cb0200789ece5dc0f7d54be158e39" kindref="member">GPIOMSP432E4_PORTR</ref>, 0, GPIO_PR0_M0PWM0)</initializer>
+        <briefdescription>
+<para>PR0 is used for M0PWM0. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/pwm/PWMMSP432E4.h" line="148" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/pwm/PWMMSP432E4.h" bodystart="148" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_w_m_m_s_p432_e4_8h_1ab9a025ef54e20f3fe693f23e0f6ad257" prot="public" static="no">
+        <name>PWMMSP432E4_PF1_M0PWM1</name>
+        <initializer><ref refid="_g_p_i_o_m_s_p432_e4_8h_1ae77f77ea12a04525c78d194dbf04edcf" kindref="member">GPIOMSP432E4_pinConfigMask</ref>(<ref refid="_g_p_i_o_m_s_p432_e4_8h_1aace72b9277a3dc611fecf03736b2ee22" kindref="member">GPIOMSP432E4_PORTF</ref>, 1, GPIO_PF1_M0PWM1)</initializer>
+        <briefdescription>
+<para>PF1 is used for M0PWM1. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/pwm/PWMMSP432E4.h" line="153" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/pwm/PWMMSP432E4.h" bodystart="153" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_w_m_m_s_p432_e4_8h_1a6aa3fb83303e18b66053c48ff1b73dab" prot="public" static="no">
+        <name>PWMMSP432E4_PR1_M0PWM1</name>
+        <initializer><ref refid="_g_p_i_o_m_s_p432_e4_8h_1ae77f77ea12a04525c78d194dbf04edcf" kindref="member">GPIOMSP432E4_pinConfigMask</ref>(<ref refid="_g_p_i_o_m_s_p432_e4_8h_1a309cb0200789ece5dc0f7d54be158e39" kindref="member">GPIOMSP432E4_PORTR</ref>, 1, GPIO_PR1_M0PWM1)</initializer>
+        <briefdescription>
+<para>PR1 is used for M0PWM1. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/pwm/PWMMSP432E4.h" line="158" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/pwm/PWMMSP432E4.h" bodystart="158" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_w_m_m_s_p432_e4_8h_1a0340cb0cf32badb0ce8b6daa4b402f94" prot="public" static="no">
+        <name>PWMMSP432E4_PF2_M0PWM2</name>
+        <initializer><ref refid="_g_p_i_o_m_s_p432_e4_8h_1ae77f77ea12a04525c78d194dbf04edcf" kindref="member">GPIOMSP432E4_pinConfigMask</ref>(<ref refid="_g_p_i_o_m_s_p432_e4_8h_1aace72b9277a3dc611fecf03736b2ee22" kindref="member">GPIOMSP432E4_PORTF</ref>, 2, GPIO_PF2_M0PWM2)</initializer>
+        <briefdescription>
+<para>PF2 is used for M0PWM2. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/pwm/PWMMSP432E4.h" line="163" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/pwm/PWMMSP432E4.h" bodystart="163" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_w_m_m_s_p432_e4_8h_1a58cd0c3af43e7618a398ae7686b93489" prot="public" static="no">
+        <name>PWMMSP432E4_PR2_M0PWM2</name>
+        <initializer><ref refid="_g_p_i_o_m_s_p432_e4_8h_1ae77f77ea12a04525c78d194dbf04edcf" kindref="member">GPIOMSP432E4_pinConfigMask</ref>(<ref refid="_g_p_i_o_m_s_p432_e4_8h_1a309cb0200789ece5dc0f7d54be158e39" kindref="member">GPIOMSP432E4_PORTR</ref>, 2, GPIO_PR2_M0PWM2)</initializer>
+        <briefdescription>
+<para>PR2 is used for M0PWM2. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/pwm/PWMMSP432E4.h" line="168" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/pwm/PWMMSP432E4.h" bodystart="168" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_w_m_m_s_p432_e4_8h_1a4efd26eb96633f5c37c2fe70f3c337cc" prot="public" static="no">
+        <name>PWMMSP432E4_PF3_M0PWM3</name>
+        <initializer><ref refid="_g_p_i_o_m_s_p432_e4_8h_1ae77f77ea12a04525c78d194dbf04edcf" kindref="member">GPIOMSP432E4_pinConfigMask</ref>(<ref refid="_g_p_i_o_m_s_p432_e4_8h_1aace72b9277a3dc611fecf03736b2ee22" kindref="member">GPIOMSP432E4_PORTF</ref>, 3, GPIO_PF3_M0PWM3)</initializer>
+        <briefdescription>
+<para>PF3 is used for M0PWM3. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/pwm/PWMMSP432E4.h" line="173" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/pwm/PWMMSP432E4.h" bodystart="173" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_w_m_m_s_p432_e4_8h_1a7c6f8b0183bf37f0918cf4b4eb212647" prot="public" static="no">
+        <name>PWMMSP432E4_PR3_M0PWM3</name>
+        <initializer><ref refid="_g_p_i_o_m_s_p432_e4_8h_1ae77f77ea12a04525c78d194dbf04edcf" kindref="member">GPIOMSP432E4_pinConfigMask</ref>(<ref refid="_g_p_i_o_m_s_p432_e4_8h_1a309cb0200789ece5dc0f7d54be158e39" kindref="member">GPIOMSP432E4_PORTR</ref>, 3, GPIO_PR3_M0PWM3)</initializer>
+        <briefdescription>
+<para>PR3 is used for M0PWM3. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/pwm/PWMMSP432E4.h" line="178" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/pwm/PWMMSP432E4.h" bodystart="178" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_w_m_m_s_p432_e4_8h_1ae0748f1b17b523854ee0fa0cdcf5abdd" prot="public" static="no">
+        <name>PWMMSP432E4_PG0_M0PWM4</name>
+        <initializer><ref refid="_g_p_i_o_m_s_p432_e4_8h_1ae77f77ea12a04525c78d194dbf04edcf" kindref="member">GPIOMSP432E4_pinConfigMask</ref>(<ref refid="_g_p_i_o_m_s_p432_e4_8h_1a8b580d72b305e40cd46114ff45f47d6a" kindref="member">GPIOMSP432E4_PORTG</ref>, 0, GPIO_PG0_M0PWM4)</initializer>
+        <briefdescription>
+<para>PG0 is used for M0PWM4. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/pwm/PWMMSP432E4.h" line="183" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/pwm/PWMMSP432E4.h" bodystart="183" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_w_m_m_s_p432_e4_8h_1a1c1ca23398ede0182cd2d793c29fe28b" prot="public" static="no">
+        <name>PWMMSP432E4_PR4_M0PWM4</name>
+        <initializer><ref refid="_g_p_i_o_m_s_p432_e4_8h_1ae77f77ea12a04525c78d194dbf04edcf" kindref="member">GPIOMSP432E4_pinConfigMask</ref>(<ref refid="_g_p_i_o_m_s_p432_e4_8h_1a309cb0200789ece5dc0f7d54be158e39" kindref="member">GPIOMSP432E4_PORTR</ref>, 4, GPIO_PR4_M0PWM4)</initializer>
+        <briefdescription>
+<para>PR4 is used for M0PWM4. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/pwm/PWMMSP432E4.h" line="188" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/pwm/PWMMSP432E4.h" bodystart="188" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_w_m_m_s_p432_e4_8h_1a2241d12837f312cdb7dcc42fe57ddb6d" prot="public" static="no">
+        <name>PWMMSP432E4_PG1_M0PWM5</name>
+        <initializer><ref refid="_g_p_i_o_m_s_p432_e4_8h_1ae77f77ea12a04525c78d194dbf04edcf" kindref="member">GPIOMSP432E4_pinConfigMask</ref>(<ref refid="_g_p_i_o_m_s_p432_e4_8h_1a8b580d72b305e40cd46114ff45f47d6a" kindref="member">GPIOMSP432E4_PORTG</ref>, 1, GPIO_PG1_M0PWM5)</initializer>
+        <briefdescription>
+<para>PG1 is used for M0PWM5. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/pwm/PWMMSP432E4.h" line="193" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/pwm/PWMMSP432E4.h" bodystart="193" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_w_m_m_s_p432_e4_8h_1a5f021b4bda00b153c94431e7646e8663" prot="public" static="no">
+        <name>PWMMSP432E4_PR5_M0PWM5</name>
+        <initializer><ref refid="_g_p_i_o_m_s_p432_e4_8h_1ae77f77ea12a04525c78d194dbf04edcf" kindref="member">GPIOMSP432E4_pinConfigMask</ref>(<ref refid="_g_p_i_o_m_s_p432_e4_8h_1a309cb0200789ece5dc0f7d54be158e39" kindref="member">GPIOMSP432E4_PORTR</ref>, 5, GPIO_PR5_M0PWM5)</initializer>
+        <briefdescription>
+<para>PR5 is used for M0PWM5. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/pwm/PWMMSP432E4.h" line="198" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/pwm/PWMMSP432E4.h" bodystart="198" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_w_m_m_s_p432_e4_8h_1a9a08491a737bd1d4ba49d8534441954a" prot="public" static="no">
+        <name>PWMMSP432E4_PK4_M0PWM6</name>
+        <initializer><ref refid="_g_p_i_o_m_s_p432_e4_8h_1ae77f77ea12a04525c78d194dbf04edcf" kindref="member">GPIOMSP432E4_pinConfigMask</ref>(<ref refid="_g_p_i_o_m_s_p432_e4_8h_1a78d9a398d7bd191183cdae9712061571" kindref="member">GPIOMSP432E4_PORTK</ref>, 4, GPIO_PK4_M0PWM6)</initializer>
+        <briefdescription>
+<para>PK4 is used for M0PWM6. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/pwm/PWMMSP432E4.h" line="203" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/pwm/PWMMSP432E4.h" bodystart="203" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_w_m_m_s_p432_e4_8h_1a619da045d29827570e524b3f358539da" prot="public" static="no">
+        <name>PWMMSP432E4_PR6_M0PWM6</name>
+        <initializer><ref refid="_g_p_i_o_m_s_p432_e4_8h_1ae77f77ea12a04525c78d194dbf04edcf" kindref="member">GPIOMSP432E4_pinConfigMask</ref>(<ref refid="_g_p_i_o_m_s_p432_e4_8h_1a309cb0200789ece5dc0f7d54be158e39" kindref="member">GPIOMSP432E4_PORTR</ref>, 6, GPIO_PR6_M0PWM6)</initializer>
+        <briefdescription>
+<para>PR6 is used for M0PWM6. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/pwm/PWMMSP432E4.h" line="208" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/pwm/PWMMSP432E4.h" bodystart="208" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_w_m_m_s_p432_e4_8h_1a7de65b5d67a5dd8f40b664c9cdf7e726" prot="public" static="no">
+        <name>PWMMSP432E4_PK5_M0PWM7</name>
+        <initializer><ref refid="_g_p_i_o_m_s_p432_e4_8h_1ae77f77ea12a04525c78d194dbf04edcf" kindref="member">GPIOMSP432E4_pinConfigMask</ref>(<ref refid="_g_p_i_o_m_s_p432_e4_8h_1a78d9a398d7bd191183cdae9712061571" kindref="member">GPIOMSP432E4_PORTK</ref>, 5, GPIO_PK5_M0PWM7)</initializer>
+        <briefdescription>
+<para>PK5 is used for M0PWM7. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/pwm/PWMMSP432E4.h" line="213" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/pwm/PWMMSP432E4.h" bodystart="213" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_p_w_m_m_s_p432_e4_8h_1aaf4dbfc944ceaa2fdd7893370f159dd6" prot="public" static="no">
+        <name>PWMMSP432E4_PR7_M0PWM7</name>
+        <initializer><ref refid="_g_p_i_o_m_s_p432_e4_8h_1ae77f77ea12a04525c78d194dbf04edcf" kindref="member">GPIOMSP432E4_pinConfigMask</ref>(<ref refid="_g_p_i_o_m_s_p432_e4_8h_1a309cb0200789ece5dc0f7d54be158e39" kindref="member">GPIOMSP432E4_PORTR</ref>, 7, GPIO_PR7_M0PWM7)</initializer>
+        <briefdescription>
+<para>PR7 is used for M0PWM7. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/pwm/PWMMSP432E4.h" line="218" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/pwm/PWMMSP432E4.h" bodystart="218" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_p_w_m_m_s_p432_e4_8h_1ae661c4ced145c29576a83e1f49dbd447" prot="public" static="no" mutable="no">
+        <type>const <ref refid="struct_p_w_m___fxn_table" kindref="compound">PWM_FxnTable</ref></type>
+        <definition>const PWM_FxnTable PWMMSP432E4_fxnTable</definition>
+        <argsstring></argsstring>
+        <name>PWMMSP432E4_fxnTable</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/pwm/PWMMSP432E4.h" line="221" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>PWM driver implementation for MSP432E4 PWM peripherals. </para>    </briefdescription>
+    <detaileddescription>
+<para>============================================================================</para><para>The PWM header file should be included in an application as follows: <programlisting><codeline><highlight class="normal">#include<sp/>&lt;ti/drivers/PWM.h&gt;</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&lt;ti/drivers/pwm/PWMMSP432E4.h&gt;</highlight></codeline>
+</programlisting></para><para>Refer to <ref refid="_p_w_m_8h" kindref="compound">PWM.h</ref> for a complete description of APIs &amp; example of use.</para><para><heading level="2">Operation</heading>
+</para><para>This driver implementation uses the Pulse Width Modulator (PWM) peripherals present on MSP432E4 devices to generate PWM signals. Each PWM peripheral instance contains 4 PWM signal generators, each controlling 2 PWM outputs (8 PWM outputs total). This driver manages each PWM output individually (each output has it&apos;s own PWM handle/instance). However since a single clock prescalar is available for a peripheral and a generator is responsible for producing 2 outputs, there are some limitations in place to ensure proper operation:<itemizedlist>
+<listitem><para>The peripheral prescalar will be set according to the period of the first PWM instance opened. Any subsequent outputs will fail to open if a greater prescalar is required to generate the PWM period.</para></listitem><listitem><para>A PWM generator&apos;s period is set to the period of first instance opened. Opening the second output will fail if the period used is not the same as what was set by the first output.</para></listitem><listitem><para>A PWM generator&apos;s options are set by the first instance opened. Opening the second output will fail if the options are not the same as what was set by the first output.</para></listitem></itemizedlist>
+</para><para>Since the period and duty registers are 16 bits wide the prescalar is used to divide the input clock and allow for larger periods. The maximum period supported is calculated as:<itemizedlist>
+<listitem><para>MAX_PERIOD = (MAX_PRESCALAR * MAX_MATCH_VALUE) / CYCLES_PER_US</para></listitem><listitem><para>Ex:<itemizedlist>
+<listitem><para>80 MHz clock: (64 * 65535) / 80 = 52428 microseconds</para></listitem><listitem><para>120 MHz clock: (64 * 65535) / 120 = 34952 microseconds</para></listitem></itemizedlist>
+</para></listitem></itemizedlist>
+</para><para>After opening, the PWM_setPeriodl() API can be used to change a PWM generator period. However, the clock prescalar is shared by all generators so the new period must be a value that can be generated with the same prescaler. Also keep in mind that changing a period affects both generator outputs, so the period must be larger than both duties. The equation below can be used to determine the prescalar for a given period (the prescalar will be the following power of 2 (2^x)):<itemizedlist>
+<listitem><para>prescalar = (period * CYCLES_PER_US) / MAX_MATCH_VALUE</para></listitem><listitem><para>Ex:<itemizedlist>
+<listitem><para>100 microseconds -&gt; (100 * 80) / 65535 = (0.1220) = 1</para></listitem><listitem><para>10000 microseconds -&gt; (10000 * 80) / 65535 = (12.20) = 16 <hruler/>
+ </para></listitem></itemizedlist>
+</para></listitem></itemizedlist>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2017-2019,<sp/>Texas<sp/>Instruments<sp/>Incorporated</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Redistribution<sp/>and<sp/>use<sp/>in<sp/>source<sp/>and<sp/>binary<sp/>forms,<sp/>with<sp/>or<sp/>without</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>modification,<sp/>are<sp/>permitted<sp/>provided<sp/>that<sp/>the<sp/>following<sp/>conditions</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>are<sp/>met:</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>of<sp/>source<sp/>code<sp/>must<sp/>retain<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer.</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>in<sp/>binary<sp/>form<sp/>must<sp/>reproduce<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer<sp/>in<sp/>the</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>documentation<sp/>and/or<sp/>other<sp/>materials<sp/>provided<sp/>with<sp/>the<sp/>distribution.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Neither<sp/>the<sp/>name<sp/>of<sp/>Texas<sp/>Instruments<sp/>Incorporated<sp/>nor<sp/>the<sp/>names<sp/>of</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>its<sp/>contributors<sp/>may<sp/>be<sp/>used<sp/>to<sp/>endorse<sp/>or<sp/>promote<sp/>products<sp/>derived</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>from<sp/>this<sp/>software<sp/>without<sp/>specific<sp/>prior<sp/>written<sp/>permission.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>THIS<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>BY<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>AND<sp/>CONTRIBUTORS<sp/>&quot;AS<sp/>IS&quot;</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>AND<sp/>ANY<sp/>EXPRESS<sp/>OR<sp/>IMPLIED<sp/>WARRANTIES,<sp/>INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>THE<sp/>IMPLIED<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY<sp/>AND<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>PURPOSE<sp/>ARE<sp/>DISCLAIMED.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE<sp/>COPYRIGHT<sp/>OWNER<sp/>OR</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>CONTRIBUTORS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>DIRECT,<sp/>INDIRECT,<sp/>INCIDENTAL,<sp/>SPECIAL,</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>EXEMPLARY,<sp/>OR<sp/>CONSEQUENTIAL<sp/>DAMAGES<sp/>(INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>PROCUREMENT<sp/>OF<sp/>SUBSTITUTE<sp/>GOODS<sp/>OR<sp/>SERVICES;<sp/>LOSS<sp/>OF<sp/>USE,<sp/>DATA,<sp/>OR<sp/>PROFITS;</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>OR<sp/>BUSINESS<sp/>INTERRUPTION)<sp/>HOWEVER<sp/>CAUSED<sp/>AND<sp/>ON<sp/>ANY<sp/>THEORY<sp/>OF<sp/>LIABILITY,</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/>STRICT<sp/>LIABILITY,<sp/>OR<sp/>TORT<sp/>(INCLUDING<sp/>NEGLIGENCE<sp/>OR</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*<sp/>OTHERWISE)<sp/>ARISING<sp/>IN<sp/>ANY<sp/>WAY<sp/>OUT<sp/>OF<sp/>THE<sp/>USE<sp/>OF<sp/>THIS<sp/>SOFTWARE,</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*<sp/>EVEN<sp/>IF<sp/>ADVISED<sp/>OF<sp/>THE<sp/>POSSIBILITY<sp/>OF<sp/>SUCH<sp/>DAMAGE.</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*/</highlight></codeline>
+<codeline lineno="87"><highlight class="preprocessor">#ifndef<sp/>ti_drivers_pwm_PWMMSP432E4__include</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ti_drivers_pwm_PWMMSP432E4__include</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdbool.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ti/devices/msp432e4/inc/msp432.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ti/devices/msp432e4/driverlib/gpio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ti/devices/msp432e4/driverlib/pin_map.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_g_p_i_o_m_s_p432_e4_8h" kindref="compound">ti/drivers/gpio/GPIOMSP432E4.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_p_w_m_8h" kindref="compound">ti/drivers/PWM.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="comment">/*<sp/>Add<sp/>PWMMSP432E4_STATUS_*<sp/>macros<sp/>here<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="comment">/*<sp/>Number<sp/>of<sp/>PWM<sp/>peripherals<sp/>available<sp/>on<sp/>a<sp/>device.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132" refid="_p_w_m_m_s_p432_e4_8h_1a2eed10ad33fa10644f09264389b463f5" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PWMMSP432E4_NUM_PWM_PERIPHERALS<sp/><sp/><sp/><sp/><sp/><sp/>(1)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Number<sp/>of<sp/>signal<sp/>generator<sp/>blocks<sp/>per<sp/>PWM<sp/>peripheral.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="135" refid="_p_w_m_m_s_p432_e4_8h_1a464943f0a54faefb7cbefc35ea80841b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PWMMSP432E4_NUM_PWM_GENERATORS<sp/><sp/><sp/><sp/><sp/><sp/><sp/>(4)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/></highlight><highlight class="comment">/*<sp/>Number<sp/>of<sp/>PWM<sp/>signals<sp/>a<sp/>PWM<sp/>peripheral<sp/>can<sp/>generate.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="138" refid="_p_w_m_m_s_p432_e4_8h_1a9c42c1b138a1eca014c551c675e2150f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PWMMSP432E4_NUM_PWM_OUTPUTS<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(8)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143" refid="_p_w_m_m_s_p432_e4_8h_1ac4d126a2a7ed89666a845359914b7d1a" refkind="member"><highlight class="preprocessor">#define<sp/>PWMMSP432E4_PF0_M0PWM0<sp/>GPIOMSP432E4_pinConfigMask(GPIOMSP432E4_PORTF,<sp/>0,<sp/>GPIO_PF0_M0PWM0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148" refid="_p_w_m_m_s_p432_e4_8h_1a18408317451cd39011f529fdb8025aed" refkind="member"><highlight class="preprocessor">#define<sp/>PWMMSP432E4_PR0_M0PWM0<sp/>GPIOMSP432E4_pinConfigMask(GPIOMSP432E4_PORTR,<sp/>0,<sp/>GPIO_PR0_M0PWM0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight></codeline>
+<codeline lineno="153" refid="_p_w_m_m_s_p432_e4_8h_1ab9a025ef54e20f3fe693f23e0f6ad257" refkind="member"><highlight class="preprocessor">#define<sp/>PWMMSP432E4_PF1_M0PWM1<sp/>GPIOMSP432E4_pinConfigMask(GPIOMSP432E4_PORTF,<sp/>1,<sp/>GPIO_PF1_M0PWM1)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight></codeline>
+<codeline lineno="158" refid="_p_w_m_m_s_p432_e4_8h_1a6aa3fb83303e18b66053c48ff1b73dab" refkind="member"><highlight class="preprocessor">#define<sp/>PWMMSP432E4_PR1_M0PWM1<sp/>GPIOMSP432E4_pinConfigMask(GPIOMSP432E4_PORTR,<sp/>1,<sp/>GPIO_PR1_M0PWM1)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="163" refid="_p_w_m_m_s_p432_e4_8h_1a0340cb0cf32badb0ce8b6daa4b402f94" refkind="member"><highlight class="preprocessor">#define<sp/>PWMMSP432E4_PF2_M0PWM2<sp/>GPIOMSP432E4_pinConfigMask(GPIOMSP432E4_PORTF,<sp/>2,<sp/>GPIO_PF2_M0PWM2)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight></codeline>
+<codeline lineno="168" refid="_p_w_m_m_s_p432_e4_8h_1a58cd0c3af43e7618a398ae7686b93489" refkind="member"><highlight class="preprocessor">#define<sp/>PWMMSP432E4_PR2_M0PWM2<sp/>GPIOMSP432E4_pinConfigMask(GPIOMSP432E4_PORTR,<sp/>2,<sp/>GPIO_PR2_M0PWM2)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight></codeline>
+<codeline lineno="173" refid="_p_w_m_m_s_p432_e4_8h_1a4efd26eb96633f5c37c2fe70f3c337cc" refkind="member"><highlight class="preprocessor">#define<sp/>PWMMSP432E4_PF3_M0PWM3<sp/>GPIOMSP432E4_pinConfigMask(GPIOMSP432E4_PORTF,<sp/>3,<sp/>GPIO_PF3_M0PWM3)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight></codeline>
+<codeline lineno="178" refid="_p_w_m_m_s_p432_e4_8h_1a7c6f8b0183bf37f0918cf4b4eb212647" refkind="member"><highlight class="preprocessor">#define<sp/>PWMMSP432E4_PR3_M0PWM3<sp/>GPIOMSP432E4_pinConfigMask(GPIOMSP432E4_PORTR,<sp/>3,<sp/>GPIO_PR3_M0PWM3)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"></highlight></codeline>
+<codeline lineno="183" refid="_p_w_m_m_s_p432_e4_8h_1ae0748f1b17b523854ee0fa0cdcf5abdd" refkind="member"><highlight class="preprocessor">#define<sp/>PWMMSP432E4_PG0_M0PWM4<sp/>GPIOMSP432E4_pinConfigMask(GPIOMSP432E4_PORTG,<sp/>0,<sp/>GPIO_PG0_M0PWM4)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="normal"></highlight></codeline>
+<codeline lineno="188" refid="_p_w_m_m_s_p432_e4_8h_1a1c1ca23398ede0182cd2d793c29fe28b" refkind="member"><highlight class="preprocessor">#define<sp/>PWMMSP432E4_PR4_M0PWM4<sp/>GPIOMSP432E4_pinConfigMask(GPIOMSP432E4_PORTR,<sp/>4,<sp/>GPIO_PR4_M0PWM4)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight></codeline>
+<codeline lineno="193" refid="_p_w_m_m_s_p432_e4_8h_1a2241d12837f312cdb7dcc42fe57ddb6d" refkind="member"><highlight class="preprocessor">#define<sp/>PWMMSP432E4_PG1_M0PWM5<sp/>GPIOMSP432E4_pinConfigMask(GPIOMSP432E4_PORTG,<sp/>1,<sp/>GPIO_PG1_M0PWM5)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"></highlight></codeline>
+<codeline lineno="198" refid="_p_w_m_m_s_p432_e4_8h_1a5f021b4bda00b153c94431e7646e8663" refkind="member"><highlight class="preprocessor">#define<sp/>PWMMSP432E4_PR5_M0PWM5<sp/>GPIOMSP432E4_pinConfigMask(GPIOMSP432E4_PORTR,<sp/>5,<sp/>GPIO_PR5_M0PWM5)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"></highlight></codeline>
+<codeline lineno="203" refid="_p_w_m_m_s_p432_e4_8h_1a9a08491a737bd1d4ba49d8534441954a" refkind="member"><highlight class="preprocessor">#define<sp/>PWMMSP432E4_PK4_M0PWM6<sp/>GPIOMSP432E4_pinConfigMask(GPIOMSP432E4_PORTK,<sp/>4,<sp/>GPIO_PK4_M0PWM6)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="204"><highlight class="normal"></highlight></codeline>
+<codeline lineno="208" refid="_p_w_m_m_s_p432_e4_8h_1a619da045d29827570e524b3f358539da" refkind="member"><highlight class="preprocessor">#define<sp/>PWMMSP432E4_PR6_M0PWM6<sp/>GPIOMSP432E4_pinConfigMask(GPIOMSP432E4_PORTR,<sp/>6,<sp/>GPIO_PR6_M0PWM6)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"></highlight></codeline>
+<codeline lineno="213" refid="_p_w_m_m_s_p432_e4_8h_1a7de65b5d67a5dd8f40b664c9cdf7e726" refkind="member"><highlight class="preprocessor">#define<sp/>PWMMSP432E4_PK5_M0PWM7<sp/>GPIOMSP432E4_pinConfigMask(GPIOMSP432E4_PORTK,<sp/>5,<sp/>GPIO_PK5_M0PWM7)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="214"><highlight class="normal"></highlight></codeline>
+<codeline lineno="218" refid="_p_w_m_m_s_p432_e4_8h_1aaf4dbfc944ceaa2fdd7893370f159dd6" refkind="member"><highlight class="preprocessor">#define<sp/>PWMMSP432E4_PR7_M0PWM7<sp/>GPIOMSP432E4_pinConfigMask(GPIOMSP432E4_PORTR,<sp/>7,<sp/>GPIO_PR7_M0PWM7)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="219"><highlight class="normal"></highlight></codeline>
+<codeline lineno="220"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>PWM<sp/>function<sp/>table<sp/>pointer<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="221"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_p_w_m___fxn_table" kindref="compound">PWM_FxnTable</ref><sp/><ref refid="_p_w_m_m_s_p432_e4_8h_1ae661c4ced145c29576a83e1f49dbd447" kindref="member">PWMMSP432E4_fxnTable</ref>;</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"></highlight></codeline>
+<codeline lineno="244" refid="struct_p_w_m_m_s_p432_e4___h_w_attrs" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="246" refid="struct_p_w_m_m_s_p432_e4___h_w_attrs_1aba56f470fa58ee424afb316ff78206a5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_p_w_m_m_s_p432_e4___h_w_attrs_1aba56f470fa58ee424afb316ff78206a5" kindref="member">pwmBaseAddr</ref>;</highlight></codeline>
+<codeline lineno="248" refid="struct_p_w_m_m_s_p432_e4___h_w_attrs_1a9013f596f994ff7f552183b7f7b8e1fd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_p_w_m_m_s_p432_e4___h_w_attrs_1a9013f596f994ff7f552183b7f7b8e1fd" kindref="member">pwmOutput</ref>;</highlight></codeline>
+<codeline lineno="250" refid="struct_p_w_m_m_s_p432_e4___h_w_attrs_1aa58621c16ade90e1d9ea255de78cf50c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_p_w_m_m_s_p432_e4___h_w_attrs_1aa58621c16ade90e1d9ea255de78cf50c" kindref="member">pwmGenOpts</ref>;</highlight></codeline>
+<codeline lineno="252" refid="struct_p_w_m_m_s_p432_e4___h_w_attrs_1a6a25432da51e98021f23f6533b76ac3e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_p_w_m_m_s_p432_e4___h_w_attrs_1a6a25432da51e98021f23f6533b76ac3e" kindref="member">pinConfig</ref>;</highlight></codeline>
+<codeline lineno="253"><highlight class="normal">}<sp/><ref refid="struct_p_w_m_m_s_p432_e4___h_w_attrs" kindref="compound">PWMMSP432E4_HWAttrs</ref>;</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"></highlight></codeline>
+<codeline lineno="260" refid="struct_p_w_m_m_s_p432_e4___status" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="261" refid="struct_p_w_m_m_s_p432_e4___status_1aed536a82882c63c200b61dc5d5922c7b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>pwmDuties[<ref refid="_p_w_m_m_s_p432_e4_8h_1a9c42c1b138a1eca014c551c675e2150f" kindref="member">PWMMSP432E4_NUM_PWM_OUTPUTS</ref>];</highlight></codeline>
+<codeline lineno="262" refid="struct_p_w_m_m_s_p432_e4___status_1ad086af5c4ba85882567e07b1d156b6da" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>genPeriods[<ref refid="_p_w_m_m_s_p432_e4_8h_1a464943f0a54faefb7cbefc35ea80841b" kindref="member">PWMMSP432E4_NUM_PWM_GENERATORS</ref>];</highlight></codeline>
+<codeline lineno="263" refid="struct_p_w_m_m_s_p432_e4___status_1ad418cb2eb0f3772c2476674616277e1c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><sp/><ref refid="struct_p_w_m_m_s_p432_e4___status_1ad418cb2eb0f3772c2476674616277e1c" kindref="member">prescalar</ref>;</highlight></codeline>
+<codeline lineno="264" refid="struct_p_w_m_m_s_p432_e4___status_1a27629e63f346f0b1f86f20e10ba84fc6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><sp/><ref refid="struct_p_w_m_m_s_p432_e4___status_1a27629e63f346f0b1f86f20e10ba84fc6" kindref="member">activeOutputs</ref>;</highlight></codeline>
+<codeline lineno="265"><highlight class="normal">}<sp/><ref refid="struct_p_w_m_m_s_p432_e4___status" kindref="compound">PWMMSP432E4_Status</ref>;</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"></highlight></codeline>
+<codeline lineno="272" refid="struct_p_w_m_m_s_p432_e4___object" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="273" refid="struct_p_w_m_m_s_p432_e4___object_1ae5dcb2b2382b7326a1a1b1ae5a9fb4f9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_p_w_m_m_s_p432_e4___status" kindref="compound">PWMMSP432E4_Status</ref><sp/>*<ref refid="struct_p_w_m_m_s_p432_e4___object_1ae5dcb2b2382b7326a1a1b1ae5a9fb4f9" kindref="member">pwmStatusStruct</ref>;</highlight></codeline>
+<codeline lineno="274" refid="struct_p_w_m_m_s_p432_e4___object_1a975bcbff7c7ec37542fcb895d4d91fcc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_p_w_m_8h_1abc7bc5565f2767cf9f06c1572044a8ee" kindref="member">PWM_Duty_Units</ref><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_p_w_m_m_s_p432_e4___object_1a975bcbff7c7ec37542fcb895d4d91fcc" kindref="member">dutyUnits</ref>;</highlight></codeline>
+<codeline lineno="275" refid="struct_p_w_m_m_s_p432_e4___object_1ae4dfa6cda0eb6c46a06cb9904a74df31" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_p_w_m_8h_1a11aa442e82549992c98729216d64fd63" kindref="member">PWM_Period_Units</ref><sp/><sp/><sp/><sp/><ref refid="struct_p_w_m_m_s_p432_e4___object_1ae4dfa6cda0eb6c46a06cb9904a74df31" kindref="member">periodUnits</ref>;</highlight></codeline>
+<codeline lineno="276" refid="struct_p_w_m_m_s_p432_e4___object_1a5b79762acbedc6a61e4542c7835dedb9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_p_w_m_8h_1a5a40c7014745d15b0c1a604dae5593f9" kindref="member">PWM_IdleLevel</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_p_w_m_m_s_p432_e4___object_1a5b79762acbedc6a61e4542c7835dedb9" kindref="member">idleLevel</ref>;</highlight></codeline>
+<codeline lineno="277" refid="struct_p_w_m_m_s_p432_e4___object_1a4e0f4a5ec5b9935ffe7facde60588ad0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_p_w_m_m_s_p432_e4___object_1a4e0f4a5ec5b9935ffe7facde60588ad0" kindref="member">pwmOutputNum</ref>;</highlight></codeline>
+<codeline lineno="278" refid="struct_p_w_m_m_s_p432_e4___object_1abaa6a6b106df552fc623db8c2d246e30" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_p_w_m_m_s_p432_e4___object_1abaa6a6b106df552fc623db8c2d246e30" kindref="member">pwmOutputBit</ref>;</highlight></codeline>
+<codeline lineno="279" refid="struct_p_w_m_m_s_p432_e4___object_1ab18201f012111893cace68081b20a3cc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_p_w_m_m_s_p432_e4___object_1ab18201f012111893cace68081b20a3cc" kindref="member">isOpen</ref>;</highlight></codeline>
+<codeline lineno="280" refid="struct_p_w_m_m_s_p432_e4___object_1a57e49646c3bd62a5f92769d4eaca41fa" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_p_w_m_m_s_p432_e4___object_1a57e49646c3bd62a5f92769d4eaca41fa" kindref="member">isRunning</ref>;</highlight></codeline>
+<codeline lineno="281"><highlight class="normal">}<sp/><ref refid="struct_p_w_m_m_s_p432_e4___object" kindref="compound">PWMMSP432E4_Object</ref>;</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"></highlight></codeline>
+<codeline lineno="283"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="284"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="286"><highlight class="normal"></highlight></codeline>
+<codeline lineno="287"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>ti_drivers_pwm_PWMMSP432E4__include<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="exports/tidrivers_msp432e4/source/ti/drivers/pwm/PWMMSP432E4.h"/>
+  </compounddef>
+</doxygen>

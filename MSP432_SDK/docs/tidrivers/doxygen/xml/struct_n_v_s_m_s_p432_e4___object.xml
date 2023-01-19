@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="struct_n_v_s_m_s_p432_e4___object" kind="struct" language="C++" prot="public">
+    <compoundname>NVSMSP432E4_Object</compoundname>
+    <includes refid="_n_v_s_m_s_p432_e4_8h" local="no">NVSMSP432E4.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_n_v_s_m_s_p432_e4___object_1af1c6c5df4f97a94601edec993e36b53e" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool NVSMSP432E4_Object::opened</definition>
+        <argsstring></argsstring>
+        <name>opened</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/nvs/NVSMSP432E4.h" line="219" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/nvs/NVSMSP432E4.h" bodystart="219" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="exports/tidrivers_msp432e4/source/ti/drivers/nvs/NVSMSP432E4.h" line="218" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/nvs/NVSMSP432E4.h" bodystart="218" bodyend="220"/>
+    <listofallmembers>
+      <member refid="struct_n_v_s_m_s_p432_e4___object_1af1c6c5df4f97a94601edec993e36b53e" prot="public" virt="non-virtual"><scope>NVSMSP432E4_Object</scope><name>opened</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

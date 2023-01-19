@@ -1,0 +1,727 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>1 Overview &mdash; NDK Users Guide  documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="2 Network Application Development" href="03_network-application-development.html" />
+    <link rel="prev" title="NDK Users Guide" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> NDK Users Guide
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">1 Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">1.1 Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rebuilding-ndk-libraries">1.2 Rebuilding NDK Libraries</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#simplelink-sdks">1.2.1 SimpleLink SDKs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#standalone-ndk-products">1.2.2 Standalone NDK Products</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#compiler-options">1.2.3 Compiler Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#ndk-stack-library-design">1.3 NDK Stack Library Design</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#design-philosophy">1.3.1 Design Philosophy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#control-flow">1.3.2 Control Flow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#library-directory-structure">1.3.3 Library Directory Structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#the-stack-library">1.3.4 The STACK Library</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#nettool-libraries">1.3.5 NETTOOL Libraries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#os-libraries">1.3.6 OS Libraries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hal-libraries">1.3.7 HAL Libraries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#netctrl-libraries">1.3.8 NETCTRL Libraries</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#ndk-programming-apis">1.4 NDK Programming APIs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#operating-system-abstraction">1.4.1 Operating System Abstraction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sockets-and-stream-io-api">1.4.2 Sockets and Stream IO API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#nettool-services-and-support-functions">1.4.3 NETTOOL Services and Support Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#internal-stack-api">1.4.4 Internal Stack API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hardware-adaptation-layer-api">1.4.5 Hardware Adaptation Layer API</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#ndk-directory-structure">1.5 NDK Directory Structure</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ndk-include-file-directory">1.5.1 NDK Include File Directory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tool-programs">1.5.2 Tool Programs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example-programs">1.5.3 Example Programs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#configuring-ndk-modules">1.6 Configuring NDK Modules</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="03_network-application-development.html">2 Network Application Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stack.html">3 Stack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_network-control-functions.html">4 Network Control Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_os-adaptation-layer.html">5 OS Adaptation Layer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="99_endmaterial.html">Related Documentation From Texas Instruments</a></li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">NDK Users Guide</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>1 Overview</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="overview">
+<h1>1 Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h1>
+<p>This chapter introduces the Network Developer’s Kit (NDK) by providing a brief overview of the purpose and construction of the NDK, along with hardware and software environment specifics in the context of NDK deployment. This Network Developer’s Kit (NDK) Software User’s Guide serves as an introduction to both the NDK and to developing network applications.</p>
+<div class="section" id="introduction">
+<h2>1.1 Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>The Network Developer’s Kit (NDK) is a platform for development and demonstration of network enabled applications on TI embedded processors. The code included in this NDK release is generic C code which runs on a variety of TI devices.</p>
+<p>The NDK is typically paired with the Network Services (NS) Component. NS provides a stack independent implementation of BSD sockets, as well as higher level services (e.g. HTTP, SNTP). For more information, see the NS documentation.</p>
+<p>Although not strictly precise (e.g. applications will call NDK APIs directly as well), the following diagram shows how NS and the NDK typically relate to each other in a complete system.</p>
+<div class="figure align-default" id="id1">
+<img alt="Components of an NDK-Enabled Application" src="../_images/overview_diagram2.png" />
+<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text"><em>Components of an NDK-Enabled Application</em></span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>In the figure above, the user application can make calls using the standard BSD sockets APIs, or it can directly call into the SlNetSock layer to communicate with a network connection. The SlNetSock layer is a stack-independent layer between the user application and the service-specific stacks.</p>
+<p>Within an SDK, the Network Services SlNetSock module utilizes the NDK as the network stack for wired Ethernet communications. The “SlNetIfNDK” is the implementation of the SlNetSock interface for the NDK (and can be found in the NDK’s <code class="docutils literal notranslate"><span class="pre">/ti/ndk/slnetif</span></code> directory).</p>
+<p>The NDK stack’s settings may be configured at run time by making calls to the NDK’s <code class="docutils literal notranslate"><span class="pre">Cfg*()</span></code> functions.</p>
+<p>The NDK is designed to provide a platform-independent, device-independent, and RTOS-independent API interface for use by the application. Many of the API modules described in this document and in the <a class="reference external" href="../../NDK_API_Reference.html">NDK API Reference Guide</a> are rarely used by applications. Instead they are available to those who are writing device drivers and network stacks.</p>
+<p>A user application typically uses the following APIs provided by the NDK:</p>
+<ul class="simple">
+<li><p><strong>Cfg functions</strong> add settings to the configuration database that determine which network services will be available to the application. For details, see the <a class="reference external" href="../../NDK_API_Reference.html">NDK API Reference Guide</a>.</p></li>
+<li><p><strong>NC_ functions</strong> cause the network services system to be initialized, started, and stopped. For details, see the <a class="reference external" href="../../NDK_API_Reference.html">NDK API Reference Guide</a>.</p></li>
+<li><p><strong>TaskCreate() or native OS functions</strong> to handle application threading. The NDK’s <code class="docutils literal notranslate"><span class="pre">TaskCreate()</span></code> API can be used to create a thread for any RTOS supported for the target environment. For most environments, this includes the TI-RTOS Kernel, and in some cases FreeRTOS is supoprted. Alternatively, the native thread creation APIs can be used for the supported RTOS being used. For details, see <a class="reference external" href="03_network-application-development.html#creating-a-task">“Creating a Task”</a>.</p></li>
+<li><p><strong>NDK socket APIs</strong> to perform socket actions such as accept, send, and receive. For a pure NDK application, these are the BSD-like <code class="docutils literal notranslate"><span class="pre">NDK_*()</span></code> functions. But typical applications should use the standard BSD APIs provided by NS. For details on the BSD-like NDK APIs, see the <a class="reference external" href="../../NDK_API_Reference.html">NDK API Reference Guide</a>.</p></li>
+</ul>
+</div>
+<div class="section" id="rebuilding-ndk-libraries">
+<h2>1.2 Rebuilding NDK Libraries<a class="headerlink" href="#rebuilding-ndk-libraries" title="Permalink to this headline">¶</a></h2>
+<p>The NDK installation includes all source files and full support for rebuilding its libraries.</p>
+<blockquote>
+<div><p><strong>NOTE:</strong> Rebuilding the NDK libraries will (obviously) overwrite the officially distributed libraries. So you may want to ensure you make a backup of the official libraries before rebuilding.</p>
+</div></blockquote>
+<p>Rebuilding the NDK libraries requires 2 general steps:</p>
+<ol class="arabic">
+<li><p>define the locations of your installed toolchains</p></li>
+<li><p>issue an appropriate <a class="reference external" href="https://www.gnu.org/software/make/">GNU Make</a> <code class="docutils literal notranslate"><span class="pre">make</span></code> command</p>
+<blockquote>
+<div><p><strong>NOTE:</strong> If you do not have <code class="docutils literal notranslate"><span class="pre">make</span></code> installed on your system, it is bundled with XDCtools as <code class="docutils literal notranslate"><span class="pre">&lt;XDC_INSTALL_DIR&gt;/gmake</span></code>.</p>
+</div></blockquote>
+</li>
+</ol>
+<p>These two steps differ, depending on the SDK distributing the NDK.</p>
+<div class="section" id="simplelink-sdks">
+<h3>1.2.1 SimpleLink SDKs<a class="headerlink" href="#simplelink-sdks" title="Permalink to this headline">¶</a></h3>
+<p>SimpleLink SDKs contain an <code class="docutils literal notranslate"><span class="pre">imports.mak</span></code> at the root of the SDK for defining toolchain locations. Variables in this file are also used when building your RTOS kernels and SDK examples (when using makefiles), so it’s possible these variables have already been set.</p>
+<p>After setting those variables, the NDK libraries can be rebuilt by entering the <code class="docutils literal notranslate"><span class="pre">&lt;SDK_INSTALL_DIR&gt;/sources/ti/ndk</span></code> directory and executing <code class="docutils literal notranslate"><span class="pre">make</span></code>. Typing <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">debug</span></code> will rebuild the libraries in a debug profile, which is helpful when debugging.</p>
+</div>
+<div class="section" id="standalone-ndk-products">
+<h3>1.2.2 Standalone NDK Products<a class="headerlink" href="#standalone-ndk-products" title="Permalink to this headline">¶</a></h3>
+<p>Standalone NDK distributions contain an <code class="docutils literal notranslate"><span class="pre">ndk.mak</span></code> at the root of the NDK distribution for defining toolchain locations. Once those are set, the NDK libraries can be rebuilt by entering the root directory of the NDK and executing <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">-f</span> <span class="pre">ndk.mak</span></code>. Typing <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">-f</span> <span class="pre">ndk.mak</span> <span class="pre">debug</span></code> will rebuild the libraries in a debug profile, which is helpful when debugging.</p>
+</div>
+<div class="section" id="compiler-options">
+<h3>1.2.3 Compiler Options<a class="headerlink" href="#compiler-options" title="Permalink to this headline">¶</a></h3>
+<p>The following macros cause variations in the behavior of the rebuilt NDK libraries, by including or excluding the features described by the macro. Some are utilized by default in various build scripts (i.e. <code class="docutils literal notranslate"><span class="pre">&lt;NDK_INSTALL_DIR&gt;/src/ti/ndk/stack/package.bld</span></code>). See <a class="reference external" href="#ndk-stack-library-design">NDK Stack Library Design</a> for further details.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">_INCLUDE_IPv6_CODE</span></code> – If defined, IPv6 support is enabled.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">_INCLUDE_JUMBOFRAME_SUPPORT</span></code> – If defined, packet sizes larger than 1500 bytes are supported.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">_INCLUDE_NAT_CODE</span></code> – If defined, Network Address Translation (NAT) support is provided by the stack.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">_INCLUDE_PPP_CODE</span></code> – If defined, the Point-to-Point Protocol (PPP) module is included.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">_INCLUDE_PPPOE_CODE</span></code> – If defined, enable the PPP over Ethernet (PPPoE) client.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">_STRONG_CHECKING</span></code> – If defined, error checking is performed on all handles.</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">_INCLUDE_JUMBOFRAME_SUPPORT</span></code> can be defined by passing <code class="docutils literal notranslate"><span class="pre">ENABLE_JUMBO=1</span></code> on the command line when building the NDK. Similarly, <code class="docutils literal notranslate"><span class="pre">_STRONG_CHECKING</span></code> can be defined by passing <code class="docutils literal notranslate"><span class="pre">ENABLE_STRONG_CHECKING=1</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># i.e. At the root of your NDK installation, execute</span>
+$ make <span class="nv">ENABLE_JUMBO</span><span class="o">=</span><span class="m">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="ndk-stack-library-design">
+<h2>1.3 NDK Stack Library Design<a class="headerlink" href="#ndk-stack-library-design" title="Permalink to this headline">¶</a></h2>
+<p>The NDK was designed to provide a full TCP/IP functional environment, with or without routing, in a small memory footprint.</p>
+<div class="section" id="design-philosophy">
+<h3>1.3.1 Design Philosophy<a class="headerlink" href="#design-philosophy" title="Permalink to this headline">¶</a></h3>
+<p>The NDK is isolated from both the native OS and the low-level hardware by abstracted programming interfaces. The native OS is abstracted by an operating system adaptation layer (OS), and custom hardware is supported via a hardware adaptation layer (HAL) library. These libraries are used to interface the stack to the RTOS and to the system peripherals.</p>
+<p>The features of the NDK include the following:</p>
+<ul class="simple">
+<li><p><strong>Virtual LAN (VLAN) support.</strong> VLAN support enables the stack to receive, process, and transmit VLAN tagged packets.</p></li>
+<li><p><strong>Raw Ethernet socket support.</strong> Raw Ethernet sockets (different from Raw IPv4/IPv6 sockets) enable any application using the NDK stack to send/receive Ethernet packets with custom Layer 2 (L2) protocol type, i.e., protocol type in the Ethernet header of the packet other than any of the well-known standard protocol types like IP (0x800), IPv6 (0x806), VLAN (0x8100), PPPoE Control (0x8863) or PPPoE Data (0x8864).</p></li>
+<li><p><strong>IPv6 stack support.</strong> The stack is available for both IPv6 and IPv4.</p></li>
+<li><p><strong>Jumbo frames support.</strong> Jumbo frames have packet sizes larger than 1500 bytes. Jumbo frame support can be built into an application by linking with libraries compiled for Jumbo frame support. The libraries and application would have to be recompiled with the following pre-processor definition added: <code class="docutils literal notranslate"><span class="pre">_INCLUDE_JUMBOFRAME_SUPPORT</span></code>.</p></li>
+</ul>
+<p>For more details on VLAN, IPv6, Raw Ethernet sockets and Jumbo frames support, see the <a class="reference external" href="../../NDK_API_Reference.html">NDK API Reference Guide</a>.</p>
+</div>
+<div class="section" id="control-flow">
+<h3>1.3.2 Control Flow<a class="headerlink" href="#control-flow" title="Permalink to this headline">¶</a></h3>
+<p>The following figure shows a conceptual diagram of how the stack package is organized in terms of function call control flow. The five main libraries that make up the NDK are shown. These are STACK, NETTOOL, OS, HAL, and NETCTRL. These libraries are summarized in sections that follow. NIMU related changes are also discussed in the affected libraries (STACK, NETCTRL, and NETTOOL).</p>
+<div class="figure align-default" id="id2">
+<img alt="Stack Control Flow" src="../_images/ctrl_fl_pru523.png" />
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text"><em>Stack Control Flow</em></span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="library-directory-structure">
+<h3>1.3.3 Library Directory Structure<a class="headerlink" href="#library-directory-structure" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p><strong>NOTE:</strong> The location of NDK files referenced in this document will vary depending on the type of installation you performed to obtain the NDK component. If you installed a SimpleLink SDK, the files are likely to be located in your <code class="docutils literal notranslate"><span class="pre">&lt;SDK_INSTALL_DIR&gt;/sources/ti/ndk</span></code> directory. If you installed some other type of SDK, the files are likely to be located in your <code class="docutils literal notranslate"><span class="pre">&lt;NDK_INSTALL_DIR&gt;/packages/ti/ndk</span></code> directory. For simplicity, this document refers to the directories beginning at the <code class="docutils literal notranslate"><span class="pre">/ti/ndk</span></code> level, which is common to all installations.</p>
+</div></blockquote>
+<p>Pre-built linkable libraries and source code are provided for each of the libraries that make up the NDK in the <code class="docutils literal notranslate"><span class="pre">/ti/ndk</span></code> directory tree. The pre-built libraries are in a lib subdirectory of the directory for each library. See <a class="reference external" href="#ndk-directory-structure">“NDK Directory Structure”</a> for more about the directory tree.</p>
+<ul class="simple">
+<li><p>Both IPv4 and IPv6 libraries are provided. Filenames that do not include “ipv4” are compiled for IPv6. However, in the <code class="docutils literal notranslate"><span class="pre">/ti/ndk/stack/lib</span></code> directory, filenames that do not include “6” are compiled for IPv4.</p></li>
+<li><p>The NETCTRL library comes in “min”, regular, and “full” versions. For example, netctrl_min, netctrl, and netctrl_full. See <a class="reference external" href="#netctrl-libraries">“NETCTRL Libraries”</a> for details.</p></li>
+<li><p>The OS library comes in TI-RTOS Kernel (“os” and “os_sem”) and FreeRTOS (“os_freertos” and “os_sem_freertos”) versions.</p></li>
+<li><p>Libraries with Jumbo Frame support (for packet sizes larger than 1500 bytes) are not included in the NDK installation. If you want NDK libraries with Jumbo Frame support enabled, you will need to #define the <code class="docutils literal notranslate"><span class="pre">_INCLUDE_JUMBOFRAME_SUPPORT</span></code> pre-processor definition and rebuild the libraries as described in the <a class="reference external" href="#rebuilding-ndk-libraries">Rebuilding NDK Libraries</a> section.</p></li>
+</ul>
+<p>The file extensions for pre-built libraries provided with the NDK include the following:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 8%" />
+<col style="width: 92%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Extension</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>.aa8fg</p></td>
+<td><p>For Cortex-A8 targets (ELF format, little endian, GNU compiler)</p></td>
+</tr>
+<tr class="row-odd"><td><p>.aa9fg</p></td>
+<td><p>For Cortex-A9 targets (ELF format, little endian, GNU compiler)</p></td>
+</tr>
+<tr class="row-even"><td><p>.aa15fg</p></td>
+<td><p>For Cortex-A15 targets (ELF format, little endian, GNU compiler)</p></td>
+</tr>
+<tr class="row-odd"><td><p>.ae9</p></td>
+<td><p>For ARM9 targets (ELF format, little endian, TI compiler)</p></td>
+</tr>
+<tr class="row-even"><td><p>.ae66</p></td>
+<td><p>For C66x targets (ELF format, little endian, TI compiler)</p></td>
+</tr>
+<tr class="row-odd"><td><p>.ae674</p></td>
+<td><p>For C674x targets (ELF format, little endian, TI compiler)</p></td>
+</tr>
+<tr class="row-even"><td><p>.aea8f</p></td>
+<td><p>For Cortex-A8 targets (ELF format, little endian, TI compiler, does not use hardware-based floating point support, for legacy application support)</p></td>
+</tr>
+<tr class="row-odd"><td><p>.aea8fnv</p></td>
+<td><p>For Cortex-A8 targets (ELF format, little endian, TI compiler, uses hardware-based vector floating point support, recommended over .aea8f)</p></td>
+</tr>
+<tr class="row-even"><td><p>.aem3</p></td>
+<td><p>For Cortex-M3 targets (ELF format, little endian, TI compiler)</p></td>
+</tr>
+<tr class="row-odd"><td><p>.am3g</p></td>
+<td><p>For Cortex-M3 targets (ELF format, little endian, GNU compiler)</p></td>
+</tr>
+<tr class="row-even"><td><p>.arm3</p></td>
+<td><p>For Cortex-M3 targets (ELF format, little endian, IAR compiler)</p></td>
+</tr>
+<tr class="row-odd"><td><p>.aem4</p></td>
+<td><p>For Cortex-M4 targets (ELF format, little endian, TI compiler)</p></td>
+</tr>
+<tr class="row-even"><td><p>.am4g</p></td>
+<td><p>For Cortex-M4 targets (ELF format, little endian, GNU compiler)</p></td>
+</tr>
+<tr class="row-odd"><td><p>.arm4</p></td>
+<td><p>For Cortex-M4 targets (ELF format, little endian, IAR compiler)</p></td>
+</tr>
+<tr class="row-even"><td><p>.aem4f</p></td>
+<td><p>For Cortex-M4F floating point targets (ELF format, little endian, TI compiler)</p></td>
+</tr>
+<tr class="row-odd"><td><p>.am4fg</p></td>
+<td><p>For Cortex-M4F floating point targets (ELF format, little endian, GNU compiler)</p></td>
+</tr>
+<tr class="row-even"><td><p>.arm4f</p></td>
+<td><p>For Cortex-M4F floating point targets (ELF format, little endian, IAR compiler)</p></td>
+</tr>
+</tbody>
+</table>
+<p>The libraries provided with the NDK are platform independent. That is, versions of these libraries are provided for all platforms. Any hardware-dependent libraries that exist only for certain platforms are distributed in the appropriate NDK Support Package (NSP), which you download separately from the NDK.</p>
+<p>The NDK installation includes all source files and full support for rebuilding its libraries. Please see the <a class="reference external" href="#rebuilding-ndk-libraries">Rebuilding NDK Libraries</a> section for more details.</p>
+</div>
+<div class="section" id="the-stack-library">
+<h3>1.3.4 The STACK Library<a class="headerlink" href="#the-stack-library" title="Permalink to this headline">¶</a></h3>
+<p>The STACK library is the main TCP/IP networking stack. It contains everything from the sockets layer at the top to the Ethernet and Point-to-Point Protocol (PPP) layers at the bottom. The library is compiled to make use of the RTOS, and does not need to be ported when moved from one platform to another. Several builds of the library are included in the NDK.</p>
+<p>The STACK libraries are provided in the <code class="docutils literal notranslate"><span class="pre">/ti/ndk/stack/lib</span></code> directory. The following versions of the library either include or exclude features like PPP, PPP over Ethernet (PPPoE), and Network Address Translation (NAT).</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 5%" />
+<col style="width: 23%" />
+<col style="width: 71%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Library</p></th>
+<th class="head"><p>Variants</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>STK</p></td>
+<td><p>stk, stk6</p></td>
+<td><p>Stack with NIMU, VLAN, and Raw Ethernet Socket support. Variants support IPv4 or IPv6. No support for PPP, PPPoE, NAT and LL architectures.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>stk_nat, stk6_nat</p></td>
+<td><p>Stack with NAT, NIMU, VLAN, and Raw Ethernet Socket support. Variants support IPv4 or IPv6. No support for PPP, PPPoE, and LL architectures.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>stk_nat_ppp, stk6_nat_ppp</p></td>
+<td><p>Stack with NAT, PPP, NIMU, VLAN, and Raw Ethernet Socket support. Variants support IPv4 or IPv6. No support for PPPoE and LL architectures.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>stk_nat_ppp_pppoe, stk6_nat_ppp_pppoe</p></td>
+<td><p>Stack with NAT, PPP, PPPoE, NIMU, VLAN, and Raw Ethernet Socket support. Variants support IPv4 or IPv6. No support for LL architectures.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>stk_ppp, stk6_ppp</p></td>
+<td><p>Stack with PPP, NIMU, VLAN, and Raw Ethernet Socket support. Variants support IPv4 or IPv6. No support for NAT, PPPoE and LL architectures.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>stk_ppp_pppoe, stk6_ppp_pppoe</p></td>
+<td><p>Stack with PPP, PPPoE, NIMU, VLAN, and Raw Ethernet Socket support. Variants support IPv4 or IPv6. No support for NAT and LL architectures.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="nettool-libraries">
+<h3>1.3.5 NETTOOL Libraries<a class="headerlink" href="#nettool-libraries" title="Permalink to this headline">¶</a></h3>
+<p>The Network Tools (NETTOOL) function library contains all the sockets-based network services supplied with the NDK, plus a few additional tools designed to aid in the development of network applications. The most frequently used component in the NETTOOL library is the tag-based configuration system. The configuration system controls nearly every facet of the stack and its services. Configurations can be stored in non-volatile RAM for auto-loading at BOOT time.</p>
+<p>The NETTOOL libraries are provided in the <code class="docutils literal notranslate"><span class="pre">/ti/ndk/nettools/lib</span></code> directory.</p>
+<p>The tools provided in the NETTOOL library use the NIMU IOCTL calls directly to retrieve device-related information.</p>
+<p>See <a class="reference external" href="#nettool-services-and-support-functions">“NETTOOL Services and Support Functions”</a> for more information.</p>
+</div>
+<div class="section" id="os-libraries">
+<h3>1.3.6 OS Libraries<a class="headerlink" href="#os-libraries" title="Permalink to this headline">¶</a></h3>
+<p>These libraries form a thin adaptation layer that maps some abstracted OS function calls to POSIX and native OS API calls. This includes Task thread management, memory allocation, packet buffer management, printing, logging, critical sectioning, and jumbo packet buffer management.</p>
+<p>The OS libraries are provided in the <code class="docutils literal notranslate"><span class="pre">/ti/ndk/os/lib</span></code> directory. The “os” library is the OS Adaptation Layer library with priority exclusion. The “os_sem” library uses semaphore exclusion, instead. See <a class="reference external" href="#operating-system-abstraction">“Operating System Abstraction”</a> for more information.</p>
+</div>
+<div class="section" id="hal-libraries">
+<h3>1.3.7 HAL Libraries<a class="headerlink" href="#hal-libraries" title="Permalink to this headline">¶</a></h3>
+<p>The HAL libraries contain files that interface the hardware peripherals to the NDK. These include timers, LED indicators, Ethernet devices, and serial ports. The drivers contained in the <code class="docutils literal notranslate"><span class="pre">/ti/ndk/hal</span></code> directory are as follows:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 49%" />
+<col style="width: 51%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Library</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>eth_stub/lib/hal_eth_stub</p></td>
+<td><p>Ethernet Stub Driver</p></td>
+</tr>
+<tr class="row-odd"><td><p>ser_stub/lib/hal_ser_stub</p></td>
+<td><p>Serial Stub Driver</p></td>
+</tr>
+<tr class="row-even"><td><p>timer_bios/lib/hal_timer</p></td>
+<td><p>Timer Driver Using POSIX Timer object</p></td>
+</tr>
+<tr class="row-odd"><td><p>userled_stub/lib/hal_userled_stub</p></td>
+<td><p>User LED Stub Driver</p></td>
+</tr>
+</tbody>
+</table>
+<p>See <a class="reference external" href="#hardware-adaptation-layer-api">“Hardware Adaptation Layer API”</a> for information about the HAL APIs. The HAL is also discussed in the <a class="reference external" href="../../NDK_API_Reference.html">NDK API Reference Guide</a> and the <em>NDK Support Package Ethernet Driver Design Guide</em> (<a class="reference external" href="http://www.ti.com/lit/pdf/SPRUFP2">SPRUFP2</a>).</p>
+</div>
+<div class="section" id="netctrl-libraries">
+<h3>1.3.8 NETCTRL Libraries<a class="headerlink" href="#netctrl-libraries" title="Permalink to this headline">¶</a></h3>
+<p>The NETCTRL or Network Control library can be considered the center of the stack. It controls the interaction between the TCP/IP and the outside world. Of all the stack modules, it is the most important to the operation of the NDK. Its responsibilities include:</p>
+<ul class="simple">
+<li><p>Initialize the NDK and low-level device drivers</p></li>
+<li><p>Boot and maintain system configuration via configuration service provider callback functions</p></li>
+<li><p>Interface to the low-level device drivers and scheduling driver events to call into the NDK</p></li>
+<li><p>Unload the system configuration and driver cleanup on exit</p></li>
+<li><p>Initialize the NIMU core during stack bring-up, which in turn initializes and starts all the device drivers registered with the NIMU core. Initialize the VLAN module in the NDK core stack.</p></li>
+<li><p>De-initialize the NIMU core during stack shutdown, which in turn cycles through all the registered device drivers and shuts them down.</p></li>
+<li><p>Poll all the registered devices periodically so as to allow them to perform any routine maintenance activity, such as link management. Also, checks for any events, like packet reception, from any of the registered devices.</p></li>
+<li><p>Initialize the IPv6 Stack if built in during stack bring up.</p></li>
+</ul>
+<p>The NETCTRL library is designed to support “potential” stack features that the user may desire within their application (e.g. DHCP server). However, the drawback of this is that the code for such features will be included in the executable even if the application never uses the features. This results in a larger footprint than is usually necessary.</p>
+<p>To minimize this problem, the following different versions of the NETCTRL library are available in the <code class="docutils literal notranslate"><span class="pre">/ti/ndk/netctrl/lib</span></code> directory:</p>
+<ul class="simple">
+<li><p><strong>netctrl_min.</strong> This minimal library enables only the DHCP client. It should be used when a minimal footprint is desired.</p></li>
+<li><p><strong>netctrl.</strong> This “standard” version of the NETCTRL library enables the following features and has a medium footprint:</p>
+<ul>
+<li><p>Telnet server</p></li>
+<li><p>DHCP client</p></li>
+</ul>
+</li>
+<li><p><strong>netctrl_full.</strong> This “full” library enables all supported NETCTRL features, which include:</p>
+<ul>
+<li><p>Telnet server</p></li>
+<li><p>NAT server</p></li>
+<li><p>DHCP client</p></li>
+<li><p>DHCP server</p></li>
+<li><p>DNS server</p></li>
+</ul>
+</li>
+</ul>
+<p>All versions of NETCTRL support NIMU, VLAN, and Raw Ethernet Socket. Each of these NETCTRL library versions is built for both pure IPv4 as well as IPv6.</p>
+<p>If you configure the NDK using SysConfig, the appropriate NETCTRL library is automatically added to the generated linker.cmd file, based on the modules you enable.</p>
+<p>You can rebuild the NETCTRL library to include only features you want to use. To do this, edit the package.bld file in the <code class="docutils literal notranslate"><span class="pre">/ti/ndk/netctrl</span></code> directory, and redefine any of the following options. For information about rebuilding the NDK libraries, see the <a class="reference external" href="#rebuilding-ndk-libraries">Rebuilding NDK Libraries</a> section.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">NETSRV_ENABLE_TELNET</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">NETSRV_ENABLE_NAT</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">NETSRV_ENABLE_DHCPCLIENT</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">NETSRV_ENABLE_DHCPSERVER</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">NETSRV_ENABLE_DNSSERVER</span></code></p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="ndk-programming-apis">
+<h2>1.4 NDK Programming APIs<a class="headerlink" href="#ndk-programming-apis" title="Permalink to this headline">¶</a></h2>
+<p>As previously stated, the stack has been designed for optimal isolation, and so that it may seamlessly plug in to varying run-time environments. Therefore, you may have the opportunity to use to several different programming interfaces. They are listed here in decreasing order of relevance. All of the following are described in detail in the <a class="reference external" href="../../NDK_API_Reference.html">NDK API Reference Guide</a>.</p>
+<div class="section" id="operating-system-abstraction">
+<h3>1.4.1 Operating System Abstraction<a class="headerlink" href="#operating-system-abstraction" title="Permalink to this headline">¶</a></h3>
+<p>The OS abstraction provides services enabling porting to other operating systems. In most cases, these are internal to the NDK stack, and application developers will not use these APIs. However there are times when application developers may need to use the Task module. See the <a class="reference external" href="../../NDK_API_Reference.html">NDK API Reference Guide</a> for those details.</p>
+</div>
+<div class="section" id="sockets-and-stream-io-api">
+<h3>1.4.2 Sockets and Stream IO API<a class="headerlink" href="#sockets-and-stream-io-api" title="Permalink to this headline">¶</a></h3>
+<p>The sockets API primarily consists of BSD-like socket services API, but contains a few other useful calls. These functions are reentrant and thread safe. They appear as an extension of the standard IO supplied with the operating system, and should not conflict with any native file support functions.</p>
+</div>
+<div class="section" id="nettool-services-and-support-functions">
+<h3>1.4.3 NETTOOL Services and Support Functions<a class="headerlink" href="#nettool-services-and-support-functions" title="Permalink to this headline">¶</a></h3>
+<p>The NETTOOL library includes both network services and basic network support functions. The API to the support functions is similar to that of Berkeley Unix where it makes sense, with some additional functions provided for custom features.</p>
+<p>The NETTOOL services include most network protocol servers required to operate the stack as a network server or router. The API to the services is standardized and uniform across all supported services, plus services may also be invoked by using the configuration system, bypassing the NETTOOL APIs entirely.</p>
+</div>
+<div class="section" id="internal-stack-api">
+<h3>1.4.4 Internal Stack API<a class="headerlink" href="#internal-stack-api" title="Permalink to this headline">¶</a></h3>
+<p>You will almost never use the internal stack API (can be thought of as kernel level API). However, it is required for some types of stack maintenance, and it is called by some of the sample source code.</p>
+</div>
+<div class="section" id="hardware-adaptation-layer-api">
+<h3>1.4.5 Hardware Adaptation Layer API<a class="headerlink" href="#hardware-adaptation-layer-api" title="Permalink to this headline">¶</a></h3>
+<p>You will most likely never call the HAL API directly, but it is required when moving the stack to an alternate hardware platform. The HAL is described in more detail in the <a class="reference external" href="../../NDK_API_Reference.html">NDK API Reference Guide</a> and the <em>Network Developer’s Kit (NDK) Support Package Ethernet Driver</em> (<a class="reference external" href="http://www.ti.com/lit/pdf/SPRUFP2">SPRUFP2</a>).</p>
+</div>
+</div>
+<div class="section" id="ndk-directory-structure">
+<h2>1.5 NDK Directory Structure<a class="headerlink" href="#ndk-directory-structure" title="Permalink to this headline">¶</a></h2>
+<p>The NDK files are located in <code class="docutils literal notranslate"><span class="pre">/ti/ndk</span></code> and are organized into the following subdirectories. (Any other directories are for internal use only.) For each library, both source files and pre-build libraries are provided.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 6%" />
+<col style="width: 94%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Directory</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>config</p></td>
+<td><p>Used internally. Contains packages for all the modules configured by XGCONF and used by application code.</p></td>
+</tr>
+<tr class="row-odd"><td><p>hal</p></td>
+<td><p>Contains NDK driver libraries and source code. See <a class="reference external" href="#hal-libraries">“HAL Libraries”</a>.</p></td>
+</tr>
+<tr class="row-even"><td><p>inc</p></td>
+<td><p>NDK include file directory. See <a class="reference external" href="#ndk-include-file-directory">“NDK Include File Directory”</a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>netctrl</p></td>
+<td><p>Contains libraries and source code for network startup and shutdown, including special versions for various subsets of network functionality. See <a class="reference external" href="#netctrl-libraries">“NETCTRL Libraries”</a>.</p></td>
+</tr>
+<tr class="row-even"><td><p>nettools</p></td>
+<td><p>Contains libraries and source code for network tools, such as DHCP, and DNS. See <a class="reference external" href="#nettool-libraries">“NETTOOL Libraries”</a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>os</p></td>
+<td><p>Contains libraries and source code for the OS Adaptation Layer. See <a class="reference external" href="#os-libraries">“OS Libraries”</a>.</p></td>
+</tr>
+<tr class="row-even"><td><p>stack</p></td>
+<td><p>Contains libraries and source code for the network stack. See <a class="reference external" href="#the-stack-library">“STACK Libraries”</a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>tools</p></td>
+<td><p>Contains libraries and source code for several network tools. See <a class="reference external" href="#tool-programs">“Tool Programs”</a>.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="ndk-include-file-directory">
+<h3>1.5.1 NDK Include File Directory<a class="headerlink" href="#ndk-include-file-directory" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">/ti/ndk/inc</span></code> directory contains headers for applications that use the NDK APIs (not to be confused with BSD/POSIX APIs that are provided by the Network Services Component). Users of the NDK APIs must add this directory to their include path. The major include files are as follows:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 89%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Filename</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>netmain.h</p></td>
+<td><p>Master include file for applications (stacksys.h, _nettool.h, _netctrl.h)</p></td>
+</tr>
+<tr class="row-odd"><td><p>stacksys.h</p></td>
+<td><p>Main include file (minus the end-application oriented include files) (usertype.h, serrno.h, socket.h, osif.h, hal.h)</p></td>
+</tr>
+<tr class="row-even"><td><p>_netctrl.h</p></td>
+<td><p>Includes references for the NETCTRL scheduler library</p></td>
+</tr>
+<tr class="row-odd"><td><p>_nettool.h</p></td>
+<td><p>Includes references for all the services in the NETTOOL library</p></td>
+</tr>
+<tr class="row-even"><td><p>_oskern.h</p></td>
+<td><p>Includes kernel level OS functions declarations</p></td>
+</tr>
+<tr class="row-odd"><td><p>_stack.h</p></td>
+<td><p>Includes all low level STACK interface functions</p></td>
+</tr>
+<tr class="row-even"><td><p>serrno.h</p></td>
+<td><p>Standard error values</p></td>
+</tr>
+<tr class="row-odd"><td><p>socket.h</p></td>
+<td><p>Prototypes for all file descriptor based functions</p></td>
+</tr>
+<tr class="row-even"><td><p>stkmain.h</p></td>
+<td><p>Include file used by low-level modules (not for use by applications)</p></td>
+</tr>
+<tr class="row-odd"><td><p>usertype.h</p></td>
+<td><p>Standard types used by the stack</p></td>
+</tr>
+</tbody>
+</table>
+<p>Additional include files are provided in the subdirectories for the HAL, NETCTRL, NETTOOLS, OS, STACK, and TOOLS libraries.</p>
+</div>
+<div class="section" id="tool-programs">
+<h3>1.5.2 Tool Programs<a class="headerlink" href="#tool-programs" title="Permalink to this headline">¶</a></h3>
+<p>The NDK provides several tools for various purposes. These are located in the <code class="docutils literal notranslate"><span class="pre">/ti/ndk/tools</span></code> directory.</p>
+<blockquote>
+<div><p><strong>NOTE</strong>: Tools under the /servers subdirectory are deprecated and planned for removal!</p>
+</div></blockquote>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 26%" />
+<col style="width: 58%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Subdirectory</p></th>
+<th class="head"><p>Variants</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>/console</p></td>
+<td><p>console, console_ipv4</p></td>
+<td><p>Command-line based console program.</p></td>
+</tr>
+<tr class="row-odd"><td><p>/hdlc</p></td>
+<td><p>hdlc</p></td>
+<td><p>High-Level Data Link Control (HDLC) client and server.</p></td>
+</tr>
+<tr class="row-even"><td><p>/servers</p></td>
+<td><p>servers, servers_ipv4</p></td>
+<td><p>Servers used for testing NDK.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="example-programs">
+<h3>1.5.3 Example Programs<a class="headerlink" href="#example-programs" title="Permalink to this headline">¶</a></h3>
+<p>Examples for use with the NDK are provided with your SDK, and will differ depending on the SDK target.</p>
+</div>
+</div>
+<div class="section" id="configuring-ndk-modules">
+<h2>1.6 Configuring NDK Modules<a class="headerlink" href="#configuring-ndk-modules" title="Permalink to this headline">¶</a></h2>
+<p>The NDK has many configurable options, and over time has supported several different configuration technologies. All configuration can be done using C APIs, and that is supported in all SDKs. Some SDKs (SimpleLink) have recently added support for SysConfig, where commonly configured options can be managed in a GUI. And some SDKs enable NDK configuration using XDC-based tooling (though this approach is now deprecated and no longer recommended).</p>
+<p>Choose one method to configure the NDK for your application.</p>
+<ul>
+<li><p><strong>C Code</strong>: C code can use <code class="docutils literal notranslate"><span class="pre">CfgNew()</span></code> to create a configuration database and other <code class="docutils literal notranslate"><span class="pre">Cfg*()</span></code> APIs to add various settings to that configuration database. For details, see <a class="reference external" href="03_network-application-development.html#configuring-the-ndk-with-c-code">Configuring the NDK with C Code</a>. You will also have to explicitly create and manage the NDK stack thread.</p></li>
+<li><p><strong>SysConfig</strong>: This method is currently only provided on SimpleLink SDKs. It provides a graphical interface for configuring NDK content, along with other SimpleLink software. NDK initialization code is generated, including the NDK stack thread.</p></li>
+<li><p><strong>XDC/XGCONF</strong> This method is now deprecated and no longer recommended for configuring the NDK. If you are using this method, you are encouraged to migrate to another option. Please refer to the NDK examples in your SDK for your recommended, device-tailored config approach.</p>
+<blockquote>
+<div><p><strong>NOTE:</strong> You should not mix configuration methods.</p>
+</div></blockquote>
+</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="03_network-application-development.html" class="btn btn-neutral float-right" title="2 Network Application Development" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="NDK Users Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">&copy; Copyright 1995-2020</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div>
+    
+    
+      Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

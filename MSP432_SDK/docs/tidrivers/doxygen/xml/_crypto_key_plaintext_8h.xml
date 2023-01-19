@@ -1,0 +1,307 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="_crypto_key_plaintext_8h" kind="file" language="C++">
+    <compoundname>CryptoKeyPlaintext.h</compoundname>
+    <includes local="no">stddef.h</includes>
+    <includes local="no">stdint.h</includes>
+    <includes local="no">stdbool.h</includes>
+    <includes refid="_crypto_key_8h" local="no">ti/drivers/cryptoutils/cryptokey/CryptoKey.h</includes>
+    <incdepgraph>
+      <node id="193">
+        <label>stdbool.h</label>
+      </node>
+      <node id="190">
+        <label>CryptoKeyPlaintext.h</label>
+        <link refid="_crypto_key_plaintext_8h"/>
+        <childnode refid="191" relation="include">
+        </childnode>
+        <childnode refid="192" relation="include">
+        </childnode>
+        <childnode refid="193" relation="include">
+        </childnode>
+        <childnode refid="194" relation="include">
+        </childnode>
+      </node>
+      <node id="194">
+        <label>ti/drivers/cryptoutils/cryptokey/CryptoKey.h</label>
+        <link refid="_crypto_key_8h"/>
+        <childnode refid="192" relation="include">
+        </childnode>
+        <childnode refid="193" relation="include">
+        </childnode>
+      </node>
+      <node id="192">
+        <label>stdint.h</label>
+      </node>
+      <node id="191">
+        <label>stddef.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_crypto_key_plaintext_8h_1ace81a1078fd0befbde3f44a9d9d58cc4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int_fast16_t</type>
+        <definition>int_fast16_t CryptoKeyPlaintext_initKey</definition>
+        <argsstring>(CryptoKey *keyHandle, uint8_t *key, size_t keyLength)</argsstring>
+        <name>CryptoKeyPlaintext_initKey</name>
+        <param>
+          <type><ref refid="struct_crypto_key" kindref="compound">CryptoKey</ref> *</type>
+          <declname>keyHandle</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>keyLength</declname>
+        </param>
+        <briefdescription>
+<para>Initializes a <ref refid="struct_crypto_key" kindref="compound">CryptoKey</ref> type. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">keyHandle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to a <ref refid="struct_crypto_key" kindref="compound">CryptoKey</ref> which will be initialized to type CryptoKey_PLAINTEXT and ready for use </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to keying material</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">keyLength</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Length of keying material in bytes</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns a status code from <ref refid="_crypto_key_8h" kindref="compound">CryptoKey.h</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/cryptoutils/cryptokey/CryptoKeyPlaintext.h" line="89" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_crypto_key_plaintext_8h_1a85196071ac68f8d826f5073b86ce593e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int_fast16_t</type>
+        <definition>int_fast16_t CryptoKeyPlaintext_initBlankKey</definition>
+        <argsstring>(CryptoKey *keyHandle, uint8_t *keyLocation, size_t keyLength)</argsstring>
+        <name>CryptoKeyPlaintext_initBlankKey</name>
+        <param>
+          <type><ref refid="struct_crypto_key" kindref="compound">CryptoKey</ref> *</type>
+          <declname>keyHandle</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>keyLocation</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>keyLength</declname>
+        </param>
+        <briefdescription>
+<para>Initializes an empty plaintext <ref refid="struct_crypto_key" kindref="compound">CryptoKey</ref> type. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">keyHandle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to a <ref refid="struct_crypto_key" kindref="compound">CryptoKey</ref> which will be initialized to type CryptoKey_BLANK_PLAINTEXT</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">keyLocation</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to location where plaintext keying material can be stored</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">keyLength</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Length of keying material, in bytes</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns a status code from <ref refid="_crypto_key_8h" kindref="compound">CryptoKey.h</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/cryptoutils/cryptokey/CryptoKeyPlaintext.h" line="104" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_crypto_key_plaintext_8h_1a68af8ecfb9a0ff08f662a93d6f6840c6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int_fast16_t</type>
+        <definition>int_fast16_t CryptoKeyPlaintext_getKeyLength</definition>
+        <argsstring>(CryptoKey *keyHandle, size_t *length)</argsstring>
+        <name>CryptoKeyPlaintext_getKeyLength</name>
+        <param>
+          <type><ref refid="struct_crypto_key" kindref="compound">CryptoKey</ref> *</type>
+          <declname>keyHandle</declname>
+        </param>
+        <param>
+          <type>size_t *</type>
+          <declname>length</declname>
+        </param>
+        <briefdescription>
+<para>Gets the length of a plaintext key. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">keyHandle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to a plaintext <ref refid="struct_crypto_key" kindref="compound">CryptoKey</ref></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">length</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Length of the keying material, in bytes</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns a status code from <ref refid="_crypto_key_8h" kindref="compound">CryptoKey.h</ref></para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">keyHandle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to a <ref refid="struct_crypto_key" kindref="compound">CryptoKey</ref></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">length</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Length value will be updated to <ref refid="struct_crypto_key" kindref="compound">CryptoKey</ref> length, in bytes</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns a status code from <ref refid="_crypto_key_8h" kindref="compound">CryptoKey.h</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/cryptoutils/cryptokey/CryptoKeyPlaintext.h" line="115" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_crypto_key_plaintext_8h_1a15b8d8b766411818ca33a9137433ff1c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int_fast16_t</type>
+        <definition>int_fast16_t CryptoKeyPlaintext_setKeyLocation</definition>
+        <argsstring>(CryptoKey *keyHandle, uint8_t *location)</argsstring>
+        <name>CryptoKeyPlaintext_setKeyLocation</name>
+        <param>
+          <type><ref refid="struct_crypto_key" kindref="compound">CryptoKey</ref> *</type>
+          <declname>keyHandle</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>location</declname>
+        </param>
+        <briefdescription>
+<para>Sets the <ref refid="struct_crypto_key" kindref="compound">CryptoKey</ref> keyMaterial pointer. </para>        </briefdescription>
+        <detaileddescription>
+<para>Updates the key location for a plaintext <ref refid="struct_crypto_key" kindref="compound">CryptoKey</ref>. Does not modify data at the pointer location.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">keyHandle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to a plaintext <ref refid="struct_crypto_key" kindref="compound">CryptoKey</ref> who&apos;s key data pointer will be modified</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">location</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to key data location</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns a status code from <ref refid="_crypto_key_8h" kindref="compound">CryptoKey.h</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/cryptoutils/cryptokey/CryptoKeyPlaintext.h" line="129" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>============================================================================</para><para><simplesect kind="warning"><para>This is a beta API. It may change in future releases.</para></simplesect>
+<heading level="1">Overview</heading>
+</para><para>This file contains the APIs to initialize and access plaintext CryptoKeys. Plaintext CryptoKeys point to keying material stored in flash or RAM and are not subject to enforced usage restrictions. That only means that calling a function that requires an assymmetric public key with a symmetric key will not return an error. It will likely not yield the desired results.</para><para><heading level="1">Usage</heading>
+</para><para>Plaintext keys are the simplest of the CryptoKeys. All they do is store the length of and a pointer to the keying material. Their use is hence simple as well. After calling the initialization function, the <ref refid="struct_crypto_key" kindref="compound">CryptoKey</ref> may be used in any of the crypto operation APIs that take a <ref refid="struct_crypto_key" kindref="compound">CryptoKey</ref> as an input.</para><para><programlisting><codeline><highlight class="normal">uint8_t<sp/>keyingMaterial[16];</highlight></codeline>
+<codeline><highlight class="normal">CryptoKey<sp/>cryptoKey;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Initialise<sp/>the<sp/>CryptoKey</highlight></codeline>
+<codeline><highlight class="normal">CryptoKeyPlaintext_initKey(&amp;cryptoKey,<sp/>keyingMaterial,<sp/>sizeof(keyingMaterial));</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Use<sp/>the<sp/>CryptoKey<sp/>in<sp/>another<sp/>crypto<sp/>operation</highlight></codeline>
+</programlisting> </para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2017,<sp/>Texas<sp/>Instruments<sp/>Incorporated</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Redistribution<sp/>and<sp/>use<sp/>in<sp/>source<sp/>and<sp/>binary<sp/>forms,<sp/>with<sp/>or<sp/>without</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>modification,<sp/>are<sp/>permitted<sp/>provided<sp/>that<sp/>the<sp/>following<sp/>conditions</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>are<sp/>met:</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>of<sp/>source<sp/>code<sp/>must<sp/>retain<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer.</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>in<sp/>binary<sp/>form<sp/>must<sp/>reproduce<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer<sp/>in<sp/>the</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>documentation<sp/>and/or<sp/>other<sp/>materials<sp/>provided<sp/>with<sp/>the<sp/>distribution.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Neither<sp/>the<sp/>name<sp/>of<sp/>Texas<sp/>Instruments<sp/>Incorporated<sp/>nor<sp/>the<sp/>names<sp/>of</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>its<sp/>contributors<sp/>may<sp/>be<sp/>used<sp/>to<sp/>endorse<sp/>or<sp/>promote<sp/>products<sp/>derived</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>from<sp/>this<sp/>software<sp/>without<sp/>specific<sp/>prior<sp/>written<sp/>permission.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>THIS<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>BY<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>AND<sp/>CONTRIBUTORS<sp/>&quot;AS<sp/>IS&quot;</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>AND<sp/>ANY<sp/>EXPRESS<sp/>OR<sp/>IMPLIED<sp/>WARRANTIES,<sp/>INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>THE<sp/>IMPLIED<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY<sp/>AND<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>PURPOSE<sp/>ARE<sp/>DISCLAIMED.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE<sp/>COPYRIGHT<sp/>OWNER<sp/>OR</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>CONTRIBUTORS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>DIRECT,<sp/>INDIRECT,<sp/>INCIDENTAL,<sp/>SPECIAL,</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>EXEMPLARY,<sp/>OR<sp/>CONSEQUENTIAL<sp/>DAMAGES<sp/>(INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>PROCUREMENT<sp/>OF<sp/>SUBSTITUTE<sp/>GOODS<sp/>OR<sp/>SERVICES;<sp/>LOSS<sp/>OF<sp/>USE,<sp/>DATA,<sp/>OR<sp/>PROFITS;</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>OR<sp/>BUSINESS<sp/>INTERRUPTION)<sp/>HOWEVER<sp/>CAUSED<sp/>AND<sp/>ON<sp/>ANY<sp/>THEORY<sp/>OF<sp/>LIABILITY,</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/>STRICT<sp/>LIABILITY,<sp/>OR<sp/>TORT<sp/>(INCLUDING<sp/>NEGLIGENCE<sp/>OR</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*<sp/>OTHERWISE)<sp/>ARISING<sp/>IN<sp/>ANY<sp/>WAY<sp/>OUT<sp/>OF<sp/>THE<sp/>USE<sp/>OF<sp/>THIS<sp/>SOFTWARE,</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*<sp/>EVEN<sp/>IF<sp/>ADVISED<sp/>OF<sp/>THE<sp/>POSSIBILITY<sp/>OF<sp/>SUCH<sp/>DAMAGE.</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*/</highlight></codeline>
+<codeline lineno="65"><highlight class="preprocessor">#ifndef<sp/>ti_drivers_cryptoutils_cyptokey_CryptoKeyPlaintext__include</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ti_drivers_cryptoutils_cyptokey_CryptoKeyPlaintext__include</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stddef.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdbool.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_crypto_key_8h" kindref="compound">ti/drivers/cryptoutils/cryptokey/CryptoKey.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal">int_fast16_t<sp/><ref refid="_crypto_key_plaintext_8h_1ace81a1078fd0befbde3f44a9d9d58cc4" kindref="member">CryptoKeyPlaintext_initKey</ref>(<ref refid="struct_crypto_key" kindref="compound">CryptoKey</ref><sp/>*keyHandle,<sp/>uint8_t<sp/>*key,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>keyLength);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal">int_fast16_t<sp/><ref refid="_crypto_key_plaintext_8h_1a85196071ac68f8d826f5073b86ce593e" kindref="member">CryptoKeyPlaintext_initBlankKey</ref>(<ref refid="struct_crypto_key" kindref="compound">CryptoKey</ref><sp/>*keyHandle,<sp/>uint8_t<sp/>*keyLocation,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>keyLength);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal">int_fast16_t<sp/><ref refid="_crypto_key_plaintext_8h_1a68af8ecfb9a0ff08f662a93d6f6840c6" kindref="member">CryptoKeyPlaintext_getKeyLength</ref>(<ref refid="struct_crypto_key" kindref="compound">CryptoKey</ref><sp/>*keyHandle,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>*length);</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal">int_fast16_t<sp/><ref refid="_crypto_key_plaintext_8h_1a15b8d8b766411818ca33a9137433ff1c" kindref="member">CryptoKeyPlaintext_setKeyLocation</ref>(<ref refid="struct_crypto_key" kindref="compound">CryptoKey</ref><sp/>*keyHandle,<sp/>uint8_t<sp/>*location);</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal">int_fast16_t<sp/><ref refid="_crypto_key_plaintext_8h_1a68af8ecfb9a0ff08f662a93d6f6840c6" kindref="member">CryptoKeyPlaintext_getKeyLength</ref>(<ref refid="struct_crypto_key" kindref="compound">CryptoKey</ref><sp/>*keyHandle,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>*length);</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>ti_drivers_cryptoutils_cyptoKey_CryptoKeyPlaintext__include<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="exports/tidrivers_msp432e4/source/ti/drivers/cryptoutils/cryptokey/CryptoKeyPlaintext.h"/>
+  </compounddef>
+</doxygen>

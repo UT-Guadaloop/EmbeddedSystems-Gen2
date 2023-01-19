@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IAR Project Connection File -->
+
+<iarProjectConnection version="1.2" name="Boot EMAC Flash App Magicpacket Update" oneShot="true"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="IarProjectConnection_1.2.xsd">
+
+    <device>
+        <name>MSP432E401Y</name>
+    </device>
+
+    <asmIncludePath>
+        <path>$PROJ_DIR$</path>
+        <path>$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source</path>
+        <path>$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/CMSIS/Include</path>
+    </asmIncludePath>
+
+    <asmDefines>
+        <define>DeviceFamily_MSP432E4</define>
+        <define>__MSP432E401Y__</define>
+    </asmDefines>
+
+    <includePath>
+        <path>$PROJ_DIR$</path>
+        <path>$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/ports/msp432e4/include</path>
+        <path>$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/ports/msp432e4/include/utils</path>
+        <path>$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include</path>
+        <path>$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source</path>
+        <path>$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/CMSIS/Include</path>
+        <path>$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/ti/net/bsd</path>
+    </includePath>
+
+    <defines>
+        <define>USE_FLASH_BOOT_LOADER</define>
+        <define>DeviceFamily_MSP432E4</define>
+        <define>__MSP432E401Y__</define>
+    </defines>
+
+    <extraOptions>
+        <args>
+            <arg>--debug</arg>
+            <arg>--silent</arg>
+            <arg>-e</arg>
+            <arg>--aeabi</arg>
+            <arg>--thumb</arg>
+            <arg>--diag_suppress=Pa050</arg>
+        </args>
+    </extraOptions>
+
+    <linkerFile>
+        <override>true</override>
+        <path>$PROJ_DIR$/msp432e401y.icf</path>
+    </linkerFile>
+
+    <linkerExtraOptions>
+        <args>
+            <arg>$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/ti/display/lib/display.arm4f</arg>
+            <arg>$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/ti/grlib/lib/iar/m4f/grlib.a</arg>
+            <arg>$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/spiffs/lib/iar/m4f/spiffs.a</arg>
+            <arg>$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/ti/drivers/lib/drivers_msp432e4.arm4f</arg>
+            <arg>$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/fatfs/lib/iar/m4f/fatfs.a</arg>
+            <arg>$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/ti/devices/msp432e4/driverlib/lib/iar/m4f/msp432e4_driverlib.a</arg>
+            <arg>--silent</arg>
+            <arg>--cpu=Cortex-M4F</arg>
+        </args>
+    </linkerExtraOptions>
+
+    <customBuildTools>
+    </customBuildTools>
+
+    <heaps>
+        <heap> <!-- If omitted, id="0" -->
+            <size>0</size>
+        </heap>
+        <heap id="1">
+            <size>0</size>
+        </heap>
+    </heaps>
+    <stacks>
+        <stack> <!-- If omitted, id="0" -->
+            <size>512</size>
+        </stack>
+    </stacks>
+
+
+    <files>
+        <path copyTo="$PROJ_DIR$/enet_lwip.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/examples/nortos/MSP_EXP432E401Y/boot_loader/boot_emac_flash_app_magicpacket_update/enet_lwip.c</path>
+        <path copyTo="$PROJ_DIR$/uartstdio.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/examples/nortos/MSP_EXP432E401Y/boot_loader/boot_emac_flash_app_magicpacket_update/uartstdio.c</path>
+        <path copyTo="$PROJ_DIR$/uartstdio.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/examples/nortos/MSP_EXP432E401Y/boot_loader/boot_emac_flash_app_magicpacket_update/uartstdio.h</path>
+        <path copyTo="$PROJ_DIR$/ustdlib.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/examples/nortos/MSP_EXP432E401Y/boot_loader/boot_emac_flash_app_magicpacket_update/ustdlib.c</path>
+        <path copyTo="$PROJ_DIR$/ustdlib.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/examples/nortos/MSP_EXP432E401Y/boot_loader/boot_emac_flash_app_magicpacket_update/ustdlib.h</path>
+        <path copyTo="$PROJ_DIR$/lwipopts.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/examples/nortos/MSP_EXP432E401Y/boot_loader/boot_emac_flash_app_magicpacket_update/lwipopts.h</path>
+        <path copyTo="$PROJ_DIR$/system_msp432e401y.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/examples/nortos/MSP_EXP432E401Y/boot_loader/boot_emac_flash_app_magicpacket_update/system_msp432e401y.c</path>
+        <path copyTo="$PROJ_DIR$/README.md">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/examples/nortos/MSP_EXP432E401Y/boot_loader/boot_emac_flash_app_magicpacket_update/README.md</path>
+        <path copyTo="$PROJ_DIR$/README.html">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/examples/nortos/MSP_EXP432E401Y/boot_loader/boot_emac_flash_app_magicpacket_update/README.html</path>
+        <path copyTo="$PROJ_DIR$/msp432e401y.icf">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/examples/nortos/MSP_EXP432E401Y/boot_loader/boot_emac_flash_app_magicpacket_update/iar/msp432e401y.icf</path>
+        <group name="iar" build="true">
+            <path copyTo="$PROJ_DIR$/iar/startup_msp432e401y_ewarm.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/examples/nortos/MSP_EXP432E401Y/boot_loader/boot_emac_flash_app_magicpacket_update/iar/startup_msp432e401y_ewarm.c</path>
+        </group>
+        <group name="lwip/ports/msp432e4" build="true">
+            <path reference="$PROJ_DIR$/lwip/ports/msp432e4/perf.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/ports/msp432e4/perf.c</path>
+            <path reference="$PROJ_DIR$/lwip/ports/msp432e4/sys_arch.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/ports/msp432e4/sys_arch.c</path>
+        </group>
+        <group name="lwip/ports/msp432e4/include/arch" build="true">
+            <path reference="$PROJ_DIR$/lwip/ports/msp432e4/include/arch/bpstruct.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/ports/msp432e4/include/arch/bpstruct.h</path>
+            <path reference="$PROJ_DIR$/lwip/ports/msp432e4/include/arch/cc.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/ports/msp432e4/include/arch/cc.h</path>
+            <path reference="$PROJ_DIR$/lwip/ports/msp432e4/include/arch/epstruct.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/ports/msp432e4/include/arch/epstruct.h</path>
+            <path reference="$PROJ_DIR$/lwip/ports/msp432e4/include/arch/perf.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/ports/msp432e4/include/arch/perf.h</path>
+            <path reference="$PROJ_DIR$/lwip/ports/msp432e4/include/arch/sys_arch.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/ports/msp432e4/include/arch/sys_arch.h</path>
+        </group>
+        <group name="lwip/ports/msp432e4/include/netif" build="true">
+            <path reference="$PROJ_DIR$/lwip/ports/msp432e4/include/netif/msp432e4if.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/ports/msp432e4/include/netif/msp432e4if.h</path>
+        </group>
+        <group name="lwip/ports/msp432e4/include/utils" build="true">
+            <path reference="$PROJ_DIR$/lwip/ports/msp432e4/include/utils/locator.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/ports/msp432e4/include/utils/locator.h</path>
+            <path reference="$PROJ_DIR$/lwip/ports/msp432e4/include/utils/lwiplib.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/ports/msp432e4/include/utils/lwiplib.h</path>
+            <path reference="$PROJ_DIR$/lwip/ports/msp432e4/include/utils/swupdate.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/ports/msp432e4/include/utils/swupdate.h</path>
+        </group>
+        <group name="lwip/ports/msp432e4/netif" build="true">
+            <path reference="$PROJ_DIR$/lwip/ports/msp432e4/netif/msp432e4if.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/ports/msp432e4/netif/msp432e4if.c</path>
+        </group>
+        <group name="lwip/ports/msp432e4/utils" build="true">
+            <path reference="$PROJ_DIR$/lwip/ports/msp432e4/utils/locator.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/ports/msp432e4/utils/locator.c</path>
+            <path reference="$PROJ_DIR$/lwip/ports/msp432e4/utils/lwiplib.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/ports/msp432e4/utils/lwiplib.c</path>
+            <path reference="$PROJ_DIR$/lwip/ports/msp432e4/utils/swupdate.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/ports/msp432e4/utils/swupdate.c</path>
+        </group>
+        <group name="lwip/src/api" build="true">
+            <path reference="$PROJ_DIR$/lwip/src/api/api_lib.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/api/api_lib.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/api/api_msg.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/api/api_msg.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/api/err.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/api/err.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/api/netbuf.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/api/netbuf.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/api/netdb.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/api/netdb.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/api/netifapi.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/api/netifapi.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/api/sockets.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/api/sockets.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/api/tcpip.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/api/tcpip.c</path>
+        </group>
+        <group name="lwip/src/apps/httpd" build="true">
+            <path reference="$PROJ_DIR$/lwip/src/apps/httpd/fsdata.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/apps/httpd/fsdata.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/apps/httpd/httpd.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/apps/httpd/httpd.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/apps/httpd/httpd_structs.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/apps/httpd/httpd_structs.h</path>
+        </group>
+        <group name="lwip/src/apps/lwiperf" build="true">
+            <path reference="$PROJ_DIR$/lwip/src/apps/lwiperf/lwiperf.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/apps/lwiperf/lwiperf.c</path>
+        </group>
+        <group name="lwip/src/apps/mdns" build="true">
+            <path reference="$PROJ_DIR$/lwip/src/apps/mdns/mdns.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/apps/mdns/mdns.c</path>
+        </group>
+        <group name="lwip/src/apps/mqtt" build="true">
+            <path reference="$PROJ_DIR$/lwip/src/apps/mqtt/mqtt.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/apps/mqtt/mqtt.c</path>
+        </group>
+        <group name="lwip/src/apps/netbiosns" build="true">
+            <path reference="$PROJ_DIR$/lwip/src/apps/netbiosns/netbiosns.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/apps/netbiosns/netbiosns.c</path>
+        </group>
+        <group name="lwip/src/apps/snmp" build="true">
+            <path reference="$PROJ_DIR$/lwip/src/apps/snmp/snmp_asn1.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/apps/snmp/snmp_asn1.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/apps/snmp/snmp_asn1.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/apps/snmp/snmp_asn1.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/apps/snmp/snmp_core.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/apps/snmp/snmp_core.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/apps/snmp/snmp_core_priv.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/apps/snmp/snmp_core_priv.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/apps/snmp/snmp_mib2.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/apps/snmp/snmp_mib2.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/apps/snmp/snmp_mib2_icmp.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/apps/snmp/snmp_mib2_icmp.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/apps/snmp/snmp_mib2_interfaces.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/apps/snmp/snmp_mib2_interfaces.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/apps/snmp/snmp_mib2_ip.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/apps/snmp/snmp_mib2_ip.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/apps/snmp/snmp_mib2_snmp.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/apps/snmp/snmp_mib2_snmp.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/apps/snmp/snmp_mib2_system.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/apps/snmp/snmp_mib2_system.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/apps/snmp/snmp_mib2_tcp.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/apps/snmp/snmp_mib2_tcp.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/apps/snmp/snmp_mib2_udp.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/apps/snmp/snmp_mib2_udp.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/apps/snmp/snmp_msg.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/apps/snmp/snmp_msg.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/apps/snmp/snmp_msg.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/apps/snmp/snmp_msg.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/apps/snmp/snmp_netconn.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/apps/snmp/snmp_netconn.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/apps/snmp/snmp_pbuf_stream.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/apps/snmp/snmp_pbuf_stream.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/apps/snmp/snmp_pbuf_stream.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/apps/snmp/snmp_pbuf_stream.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/apps/snmp/snmp_raw.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/apps/snmp/snmp_raw.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/apps/snmp/snmp_scalar.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/apps/snmp/snmp_scalar.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/apps/snmp/snmp_table.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/apps/snmp/snmp_table.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/apps/snmp/snmp_threadsync.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/apps/snmp/snmp_threadsync.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/apps/snmp/snmp_traps.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/apps/snmp/snmp_traps.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/apps/snmp/snmpv3.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/apps/snmp/snmpv3.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/apps/snmp/snmpv3_dummy.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/apps/snmp/snmpv3_dummy.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/apps/snmp/snmpv3_mbedtls.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/apps/snmp/snmpv3_mbedtls.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/apps/snmp/snmpv3_priv.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/apps/snmp/snmpv3_priv.h</path>
+        </group>
+        <group name="lwip/src/apps/sntp" build="true">
+            <path reference="$PROJ_DIR$/lwip/src/apps/sntp/sntp.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/apps/sntp/sntp.c</path>
+        </group>
+        <group name="lwip/src/apps/tftp" build="true">
+            <path reference="$PROJ_DIR$/lwip/src/apps/tftp/tftp_server.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/apps/tftp/tftp_server.c</path>
+        </group>
+        <group name="lwip/src/core" build="true">
+            <path reference="$PROJ_DIR$/lwip/src/core/def.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/core/def.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/core/dns.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/core/dns.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/core/inet_chksum.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/core/inet_chksum.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/core/init.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/core/init.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/core/ip.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/core/ip.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/core/mem.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/core/mem.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/core/memp.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/core/memp.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/core/netif.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/core/netif.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/core/pbuf.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/core/pbuf.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/core/raw.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/core/raw.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/core/stats.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/core/stats.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/core/sys.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/core/sys.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/core/tcp.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/core/tcp.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/core/tcp_in.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/core/tcp_in.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/core/tcp_out.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/core/tcp_out.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/core/timeouts.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/core/timeouts.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/core/udp.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/core/udp.c</path>
+        </group>
+        <group name="lwip/src/core/ipv4" build="true">
+            <path reference="$PROJ_DIR$/lwip/src/core/ipv4/autoip.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/core/ipv4/autoip.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/core/ipv4/dhcp.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/core/ipv4/dhcp.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/core/ipv4/etharp.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/core/ipv4/etharp.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/core/ipv4/icmp.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/core/ipv4/icmp.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/core/ipv4/igmp.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/core/ipv4/igmp.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/core/ipv4/ip4.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/core/ipv4/ip4.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/core/ipv4/ip4_addr.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/core/ipv4/ip4_addr.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/core/ipv4/ip4_frag.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/core/ipv4/ip4_frag.c</path>
+        </group>
+        <group name="lwip/src/core/ipv6" build="true">
+            <path reference="$PROJ_DIR$/lwip/src/core/ipv6/dhcp6.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/core/ipv6/dhcp6.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/core/ipv6/ethip6.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/core/ipv6/ethip6.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/core/ipv6/icmp6.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/core/ipv6/icmp6.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/core/ipv6/inet6.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/core/ipv6/inet6.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/core/ipv6/ip6.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/core/ipv6/ip6.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/core/ipv6/ip6_addr.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/core/ipv6/ip6_addr.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/core/ipv6/ip6_frag.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/core/ipv6/ip6_frag.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/core/ipv6/mld6.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/core/ipv6/mld6.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/core/ipv6/nd6.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/core/ipv6/nd6.c</path>
+        </group>
+        <group name="lwip/src/include/lwip" build="true">
+            <path reference="$PROJ_DIR$/lwip/src/include/lwip/api.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/lwip/api.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/lwip/arch.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/lwip/arch.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/lwip/autoip.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/lwip/autoip.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/lwip/debug.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/lwip/debug.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/lwip/def.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/lwip/def.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/lwip/dhcp.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/lwip/dhcp.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/lwip/dhcp6.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/lwip/dhcp6.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/lwip/dns.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/lwip/dns.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/lwip/err.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/lwip/err.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/lwip/errno.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/lwip/errno.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/lwip/etharp.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/lwip/etharp.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/lwip/ethip6.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/lwip/ethip6.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/lwip/icmp.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/lwip/icmp.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/lwip/icmp6.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/lwip/icmp6.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/lwip/igmp.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/lwip/igmp.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/lwip/inet.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/lwip/inet.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/lwip/inet_chksum.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/lwip/inet_chksum.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/lwip/init.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/lwip/init.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/lwip/ip.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/lwip/ip.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/lwip/ip4.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/lwip/ip4.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/lwip/ip4_addr.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/lwip/ip4_addr.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/lwip/ip4_frag.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/lwip/ip4_frag.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/lwip/ip6.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/lwip/ip6.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/lwip/ip6_addr.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/lwip/ip6_addr.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/lwip/ip6_frag.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/lwip/ip6_frag.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/lwip/ip_addr.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/lwip/ip_addr.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/lwip/mem.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/lwip/mem.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/lwip/memp.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/lwip/memp.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/lwip/mld6.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/lwip/mld6.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/lwip/nd6.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/lwip/nd6.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/lwip/netbuf.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/lwip/netbuf.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/lwip/netdb.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/lwip/netdb.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/lwip/netif.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/lwip/netif.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/lwip/netifapi.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/lwip/netifapi.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/lwip/opt.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/lwip/opt.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/lwip/pbuf.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/lwip/pbuf.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/lwip/raw.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/lwip/raw.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/lwip/sio.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/lwip/sio.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/lwip/snmp.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/lwip/snmp.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/lwip/sockets.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/lwip/sockets.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/lwip/stats.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/lwip/stats.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/lwip/sys.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/lwip/sys.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/lwip/tcp.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/lwip/tcp.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/lwip/tcpip.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/lwip/tcpip.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/lwip/timeouts.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/lwip/timeouts.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/lwip/udp.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/lwip/udp.h</path>
+        </group>
+        <group name="lwip/src/include/lwip/apps" build="true">
+            <path reference="$PROJ_DIR$/lwip/src/include/lwip/apps/fs.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/lwip/apps/fs.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/lwip/apps/httpd.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/lwip/apps/httpd.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/lwip/apps/httpd_opts.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/lwip/apps/httpd_opts.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/lwip/apps/lwiperf.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/lwip/apps/lwiperf.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/lwip/apps/mdns.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/lwip/apps/mdns.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/lwip/apps/mdns_opts.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/lwip/apps/mdns_opts.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/lwip/apps/mdns_priv.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/lwip/apps/mdns_priv.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/lwip/apps/mqtt.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/lwip/apps/mqtt.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/lwip/apps/mqtt_opts.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/lwip/apps/mqtt_opts.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/lwip/apps/netbiosns.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/lwip/apps/netbiosns.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/lwip/apps/netbiosns_opts.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/lwip/apps/netbiosns_opts.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/lwip/apps/snmp.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/lwip/apps/snmp.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/lwip/apps/snmp_core.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/lwip/apps/snmp_core.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/lwip/apps/snmp_mib2.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/lwip/apps/snmp_mib2.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/lwip/apps/snmp_opts.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/lwip/apps/snmp_opts.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/lwip/apps/snmp_scalar.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/lwip/apps/snmp_scalar.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/lwip/apps/snmp_table.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/lwip/apps/snmp_table.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/lwip/apps/snmp_threadsync.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/lwip/apps/snmp_threadsync.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/lwip/apps/snmpv3.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/lwip/apps/snmpv3.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/lwip/apps/sntp.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/lwip/apps/sntp.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/lwip/apps/sntp_opts.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/lwip/apps/sntp_opts.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/lwip/apps/tftp_opts.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/lwip/apps/tftp_opts.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/lwip/apps/tftp_server.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/lwip/apps/tftp_server.h</path>
+        </group>
+        <group name="lwip/src/include/lwip/priv" build="true">
+            <path reference="$PROJ_DIR$/lwip/src/include/lwip/priv/api_msg.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/lwip/priv/api_msg.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/lwip/priv/memp_priv.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/lwip/priv/memp_priv.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/lwip/priv/memp_std.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/lwip/priv/memp_std.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/lwip/priv/nd6_priv.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/lwip/priv/nd6_priv.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/lwip/priv/tcp_priv.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/lwip/priv/tcp_priv.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/lwip/priv/tcpip_priv.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/lwip/priv/tcpip_priv.h</path>
+        </group>
+        <group name="lwip/src/include/netif" build="true">
+            <path reference="$PROJ_DIR$/lwip/src/include/netif/etharp.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/netif/etharp.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/netif/ethernet.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/netif/ethernet.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/netif/lowpan6.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/netif/lowpan6.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/netif/lowpan6_opts.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/netif/lowpan6_opts.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/netif/slipif.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/netif/slipif.h</path>
+        </group>
+        <group name="lwip/src/include/netif/ppp" build="true">
+            <path reference="$PROJ_DIR$/lwip/src/include/netif/ppp/ccp.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/netif/ppp/ccp.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/netif/ppp/chap-md5.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/netif/ppp/chap-md5.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/netif/ppp/chap-new.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/netif/ppp/chap-new.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/netif/ppp/chap_ms.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/netif/ppp/chap_ms.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/netif/ppp/eap.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/netif/ppp/eap.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/netif/ppp/ecp.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/netif/ppp/ecp.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/netif/ppp/eui64.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/netif/ppp/eui64.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/netif/ppp/fsm.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/netif/ppp/fsm.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/netif/ppp/ipcp.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/netif/ppp/ipcp.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/netif/ppp/ipv6cp.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/netif/ppp/ipv6cp.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/netif/ppp/lcp.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/netif/ppp/lcp.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/netif/ppp/magic.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/netif/ppp/magic.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/netif/ppp/mppe.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/netif/ppp/mppe.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/netif/ppp/ppp.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/netif/ppp/ppp.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/netif/ppp/ppp_impl.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/netif/ppp/ppp_impl.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/netif/ppp/ppp_opts.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/netif/ppp/ppp_opts.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/netif/ppp/pppapi.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/netif/ppp/pppapi.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/netif/ppp/pppcrypt.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/netif/ppp/pppcrypt.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/netif/ppp/pppdebug.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/netif/ppp/pppdebug.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/netif/ppp/pppoe.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/netif/ppp/pppoe.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/netif/ppp/pppol2tp.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/netif/ppp/pppol2tp.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/netif/ppp/pppos.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/netif/ppp/pppos.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/netif/ppp/upap.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/netif/ppp/upap.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/netif/ppp/vj.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/netif/ppp/vj.h</path>
+        </group>
+        <group name="lwip/src/include/netif/ppp/polarssl" build="true">
+            <path reference="$PROJ_DIR$/lwip/src/include/netif/ppp/polarssl/arc4.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/netif/ppp/polarssl/arc4.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/netif/ppp/polarssl/des.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/netif/ppp/polarssl/des.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/netif/ppp/polarssl/md4.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/netif/ppp/polarssl/md4.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/netif/ppp/polarssl/md5.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/netif/ppp/polarssl/md5.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/netif/ppp/polarssl/sha1.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/netif/ppp/polarssl/sha1.h</path>
+        </group>
+        <group name="lwip/src/include/posix" build="true">
+            <path reference="$PROJ_DIR$/lwip/src/include/posix/errno.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/posix/errno.h</path>
+            <path reference="$PROJ_DIR$/lwip/src/include/posix/netdb.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/posix/netdb.h</path>
+        </group>
+        <group name="lwip/src/include/posix/sys" build="true">
+            <path reference="$PROJ_DIR$/lwip/src/include/posix/sys/socket.h">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/include/posix/sys/socket.h</path>
+        </group>
+        <group name="lwip/src/netif" build="true">
+            <path reference="$PROJ_DIR$/lwip/src/netif/ethernet.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/netif/ethernet.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/netif/ethernetif.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/netif/ethernetif.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/netif/lowpan6.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/netif/lowpan6.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/netif/slipif.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/netif/slipif.c</path>
+        </group>
+        <group name="lwip/src/netif/ppp" build="true">
+            <path reference="$PROJ_DIR$/lwip/src/netif/ppp/auth.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/netif/ppp/auth.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/netif/ppp/ccp.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/netif/ppp/ccp.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/netif/ppp/chap-md5.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/netif/ppp/chap-md5.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/netif/ppp/chap-new.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/netif/ppp/chap-new.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/netif/ppp/chap_ms.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/netif/ppp/chap_ms.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/netif/ppp/demand.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/netif/ppp/demand.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/netif/ppp/eap.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/netif/ppp/eap.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/netif/ppp/ecp.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/netif/ppp/ecp.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/netif/ppp/eui64.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/netif/ppp/eui64.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/netif/ppp/fsm.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/netif/ppp/fsm.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/netif/ppp/ipcp.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/netif/ppp/ipcp.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/netif/ppp/ipv6cp.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/netif/ppp/ipv6cp.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/netif/ppp/lcp.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/netif/ppp/lcp.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/netif/ppp/magic.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/netif/ppp/magic.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/netif/ppp/mppe.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/netif/ppp/mppe.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/netif/ppp/multilink.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/netif/ppp/multilink.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/netif/ppp/ppp.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/netif/ppp/ppp.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/netif/ppp/pppapi.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/netif/ppp/pppapi.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/netif/ppp/pppcrypt.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/netif/ppp/pppcrypt.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/netif/ppp/pppoe.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/netif/ppp/pppoe.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/netif/ppp/pppol2tp.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/netif/ppp/pppol2tp.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/netif/ppp/pppos.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/netif/ppp/pppos.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/netif/ppp/upap.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/netif/ppp/upap.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/netif/ppp/utils.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/netif/ppp/utils.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/netif/ppp/vj.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/netif/ppp/vj.c</path>
+        </group>
+        <group name="lwip/src/netif/ppp/polarssl" build="true">
+            <path reference="$PROJ_DIR$/lwip/src/netif/ppp/polarssl/arc4.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/netif/ppp/polarssl/arc4.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/netif/ppp/polarssl/des.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/netif/ppp/polarssl/des.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/netif/ppp/polarssl/md4.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/netif/ppp/polarssl/md4.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/netif/ppp/polarssl/md5.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/netif/ppp/polarssl/md5.c</path>
+            <path reference="$PROJ_DIR$/lwip/src/netif/ppp/polarssl/sha1.c">$SIMPLELINK_MSP432E4_SDK_INSTALL_DIR$/source/third_party/lwip/src/netif/ppp/polarssl/sha1.c</path>
+        </group>
+    </files>
+</iarProjectConnection>

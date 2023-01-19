@@ -1,0 +1,4 @@
+<map id="DisplayUart2_Object" name="DisplayUart2_Object">
+<area shape="rect" id="node2" href="$struct_u_a_r_t2___config__.html" title="UART2 Global configuration. " alt="" coords="85,5,204,32"/>
+<area shape="rect" id="node3" href="$struct_u_a_r_t2___fxn_table.html" title="The definition of a UART2 function table that contains the required set of functions to control a spe..." alt="" coords="188,183,315,209"/>
+</map>

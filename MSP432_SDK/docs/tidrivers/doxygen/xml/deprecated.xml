@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="deprecated" kind="page">
+    <compoundname>deprecated</compoundname>
+    <title>Deprecated List</title>
+    <detaileddescription>
+<para><variablelist>
+<varlistentry><term><anchor id="deprecated_1_deprecated000001"/>Global <ref refid="_a_d_c_8h_1ab9f0fda9cf7e26636cee5817789f0030" kindref="member">ADC_convertRawToMicroVolts</ref>  </term></varlistentry>
+<listitem><para><ref refid="_a_d_c_8h_1ab9f0fda9cf7e26636cee5817789f0030" kindref="member">ADC_convertRawToMicroVolts()</ref> is succeeded by <ref refid="_a_d_c_8h_1aa1cd6feaa85ea5409dbe1769586bff20" kindref="member">ADC_convertToMicroVolts()</ref>.  </para></listitem>
+<varlistentry><term><anchor id="deprecated_1_deprecated000002"/>Global <ref refid="_a_e_s_c_b_c_8h_1a807f254a97d04e2b8e2c73d026d3c81a" kindref="member">AESCBC_cancelOperation</ref>  (AESCBC_Handle handle)</term></varlistentry>
+<listitem><para>This function will be deprecated in the 3Q20 SDK release. The asynchronicity of the function can not be handled by all accelerators. </para></listitem>
+<varlistentry><term><anchor id="deprecated_1_deprecated000003"/>Global <ref refid="_a_e_s_c_c_m_8h_1afc9d5aa7105de5d54f1e380efa0eaef0" kindref="member">AESCCM_cancelOperation</ref>  (AESCCM_Handle handle)</term></varlistentry>
+<listitem><para>This function will be deprecated in the 3Q20 SDK release. The asynchronicity of the function can not be handled by all accelerators. </para></listitem>
+<varlistentry><term><anchor id="deprecated_1_deprecated000004"/>Global <ref refid="_a_e_s_c_t_r_8h_1a738efd3afe2bf4a14ebe9a19aecbe91f" kindref="member">AESCTR_cancelOperation</ref>  (AESCTR_Handle handle)</term></varlistentry>
+<listitem><para>This function will be deprecated in the 3Q20 SDK release. The asynchronicity of the function can not be handled by all accelerators. </para></listitem>
+<varlistentry><term><anchor id="deprecated_1_deprecated000005"/>Global <ref refid="_a_e_s_e_c_b_8h_1a95851e372c5fb57b80036034d0d829b8" kindref="member">AESECB_cancelOperation</ref>  (AESECB_Handle handle)</term></varlistentry>
+<listitem><para>This function will be deprecated in the 3Q20 SDK release. The asynchronicity of the function can not be handled by all accellerators. </para></listitem>
+<varlistentry><term><anchor id="deprecated_1_deprecated000006"/>Global <ref refid="_a_e_s_g_c_m_8h_1a8898853d26da1c3adb0ea8bf11e811c2" kindref="member">AESGCM_cancelOperation</ref>  (AESGCM_Handle handle)</term></varlistentry>
+<listitem><para>This function will be deprecated in the 3Q20 SDK release. The asynchronicity of the function can not be handled by all accelerators. </para></listitem>
+<varlistentry><term><anchor id="deprecated_1_deprecated000007"/>Global <ref refid="_s_h_a2_8h_1a8274ea547e11bfe8e9d406f646ad0432" kindref="member">SHA2_cancelOperation</ref>  (SHA2_Handle handle)</term></varlistentry>
+<listitem><para>This function will be deprecated in the 3Q20 SDK release. The asynchronicity of the function can not be handled by all accelerators.</para></listitem>
+</variablelist>
+</para>    </detaileddescription>
+  </compounddef>
+</doxygen>

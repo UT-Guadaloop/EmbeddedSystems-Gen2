@@ -1,0 +1,1198 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="_c_r_c_8h" kind="file" language="C++">
+    <compoundname>CRC.h</compoundname>
+    <includes local="no">stddef.h</includes>
+    <includes local="no">stdint.h</includes>
+    <includes local="no">stdbool.h</includes>
+    <includedby refid="_c_r_c_m_s_p432_e4_8h" local="no">CRCMSP432E4.h</includedby>
+    <incdepgraph>
+      <node id="164">
+        <label>stdbool.h</label>
+      </node>
+      <node id="163">
+        <label>stdint.h</label>
+      </node>
+      <node id="161">
+        <label>CRC.h</label>
+        <link refid="_c_r_c_8h"/>
+        <childnode refid="162" relation="include">
+        </childnode>
+        <childnode refid="163" relation="include">
+        </childnode>
+        <childnode refid="164" relation="include">
+        </childnode>
+      </node>
+      <node id="162">
+        <label>stddef.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="165">
+        <label>CRC.h</label>
+        <link refid="_c_r_c_8h"/>
+        <childnode refid="166" relation="include">
+        </childnode>
+      </node>
+      <node id="166">
+        <label>CRCMSP432E4.h</label>
+        <link refid="_c_r_c_m_s_p432_e4_8h"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="struct_c_r_c___config" prot="public">CRC_Config</innerclass>
+    <innerclass refid="struct_c_r_c___params" prot="public">CRC_Params</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_c_r_c_8h_1a4387f9699605361fa1cf5eec6d2cf31d" prot="public" static="no">
+        <name>CRC_STATUS_RESERVED</name>
+        <initializer>(-32)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/CRC.h" line="279" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/CRC.h" bodystart="279" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_c_r_c_8h_1a58b2c7c08c6bcaf86c6f77a85484de3c" prot="public" static="no">
+        <name>CRC_STATUS_SUCCESS</name>
+        <initializer>(0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Operation completed successfully </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/CRC.h" line="282" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/CRC.h" bodystart="282" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_c_r_c_8h_1ac2ee821dd20d05f2207ea9ae3ad1faf3" prot="public" static="no">
+        <name>CRC_STATUS_ERROR</name>
+        <initializer>(-1)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returned for incorrect parameters </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/CRC.h" line="285" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/CRC.h" bodystart="285" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_c_r_c_8h_1a2f4f35f6372d7d9fe8f12d964ef11236" prot="public" static="no">
+        <name>CRC_STATUS_RESOURCE_UNAVAILABLE</name>
+        <initializer>(-2)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The handle or HW accelerator is currently busy with another operation </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/CRC.h" line="288" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/CRC.h" bodystart="288" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_c_r_c_8h_1a95944bf2499afc8b09e2f4178f39545f" prot="public" static="no">
+        <name>CRC_STATUS_OPERATION_NOT_SUPPORTED</name>
+        <initializer>(-3)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returned for polynomial (or programmable polynomial) not supported </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/CRC.h" line="291" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/CRC.h" bodystart="291" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_c_r_c_8h_1ad631f200d7bf5c390f7f262c27b8f31b" prot="public" static="no">
+        <name>CRC_STATUS_LEFTOVER_BYTES_PRESENT</name>
+        <initializer>(-4)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returned when the number of bytes passed is not a multiple of the data size </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/CRC.h" line="294" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/CRC.h" bodystart="294" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="_c_r_c_8h_1a8b296466741fa36ab51155a7edc1dd4f" prot="public" static="no">
+        <name>CRC_ReturnBehavior</name>
+        <enumvalue id="_c_r_c_8h_1a8b296466741fa36ab51155a7edc1dd4fa227cd7780379aaf77badc213efc794f1" prot="public">
+          <name>CRC_RETURN_BEHAVIOR_CALLBACK</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>The function call will return immediately while the CRC operation goes on in the background. The registered callback function is called after the operation completes. The context the callback function is called (task, HWI, SWI) is implementation-dependent. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_c_r_c_8h_1a8b296466741fa36ab51155a7edc1dd4fa6003bf009d265125d597752f60ea22f1" prot="public">
+          <name>CRC_RETURN_BEHAVIOR_BLOCKING</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>The function call will block while CRC operation goes on in the background. CRC operation results are available after the function returns. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_c_r_c_8h_1a8b296466741fa36ab51155a7edc1dd4faf3c071e4007dd0de8c9e15d5b423f9c6" prot="public">
+          <name>CRC_RETURN_BEHAVIOR_POLLING</name>
+          <initializer>= 4</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>The CPU is used to feed data to the CRC. CRC operation results are available after the function returns. </para>          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>The way in which CRC function calls return after completing. </para>        </briefdescription>
+        <detaileddescription>
+<para>This setting controls the return behavior of CRC_calculateFull and CRC_addData. These functions have restrictions on the context from which they may be called (see below). All other functions return immediately.</para><para><table rows="4" cols="4"><row>
+<entry thead="yes"><para></para></entry><entry thead="yes"><para>Task </para></entry><entry thead="yes"><para>Hwi </para></entry><entry thead="yes"><para>Swi  </para></entry></row>
+<row>
+<entry thead="no"><para>CRC_RETURN_BEHAVIOR_CALLBACK </para></entry><entry thead="no"><para>X </para></entry><entry thead="no"><para>X </para></entry><entry thead="no"><para>X </para></entry></row>
+<row>
+<entry thead="no"><para>CRC_RETURN_BEHAVIOR_BLOCKING </para></entry><entry thead="no"><para>X </para></entry><entry thead="no"><para></para></entry><entry thead="no"><para></para></entry></row>
+<row>
+<entry thead="no"><para>CRC_RETURN_BEHAVIOR_POLLING </para></entry><entry thead="no"><para>X </para></entry><entry thead="no"><para>X </para></entry><entry thead="no"><para>X </para></entry></row>
+</table>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/CRC.h" line="329" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/CRC.h" bodystart="329" bodyend="340"/>
+      </memberdef>
+      <memberdef kind="enum" id="_c_r_c_8h_1af56fbf0622a9de9658ea1e86485a8e8e" prot="public" static="no">
+        <name>CRC_Polynomial</name>
+        <enumvalue id="_c_r_c_8h_1af56fbf0622a9de9658ea1e86485a8e8ea4016357a1589b4898727ced2eefb0c8a" prot="public">
+          <name>CRC_POLYNOMIAL_CRC_8_CCITT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>CRC-8 CCITT: polynomial 0x07 </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_c_r_c_8h_1af56fbf0622a9de9658ea1e86485a8e8ea7fc21d7151b11f63ae3c1dda623b542d" prot="public">
+          <name>CRC_POLYNOMIAL_CRC_16_CCITT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>CRC-16 CCITT: polynomial 0x1021 </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_c_r_c_8h_1af56fbf0622a9de9658ea1e86485a8e8ea47ef11a29f774a6ec271728e4b7e84e4" prot="public">
+          <name>CRC_POLYNOMIAL_CRC_16_IBM</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>CRC-16 IBM: polynomial 0x8005 </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_c_r_c_8h_1af56fbf0622a9de9658ea1e86485a8e8eac0367c13df9715e90aa867d6ab933887" prot="public">
+          <name>CRC_POLYNOMIAL_CRC_32_IEEE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>CRC-32 IEEE/Ethernet: polynomial 0x04C11DB7 </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_c_r_c_8h_1af56fbf0622a9de9658ea1e86485a8e8ea8854edee82722360b9adbfbfda3843b1" prot="public">
+          <name>CRC_POLYNOMIAL_CRC_32C</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>CRC-32C Castagnoli: polynomial 0x1EDC6F41 </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_c_r_c_8h_1af56fbf0622a9de9658ea1e86485a8e8eab910bbfe281424a19c10eae4040484f8" prot="public">
+          <name>CRC_POLYNOMIAL_CRC_32_IO_LINK</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>CRC-32 IO-LINK: polynomial 0xF4ACFB13 </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_c_r_c_8h_1af56fbf0622a9de9658ea1e86485a8e8eab17bc6d14eefac89d17972a91dcc658d" prot="public">
+          <name>CRC_POLYNOMIAL_CRC_TCP</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>The TCP Checksum does not have a traditional polynomial, as it consists of repeated addition rather than typical long division operations. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_c_r_c_8h_1af56fbf0622a9de9658ea1e86485a8e8eaa7e3b61b25e921e5316b4b258e2da7d1" prot="public">
+          <name>CRC_POLYNOMIAL_CUSTOM_PROGRAMMABLE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Some implementations support programmable polynomials. In this case, use CUSTOM_PROGRAMMABLE and set the polynomial in the programmablePoly field of the Operation struct. </para>          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/CRC.h" line="352" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/CRC.h" bodystart="352" bodyend="374"/>
+      </memberdef>
+      <memberdef kind="enum" id="_c_r_c_8h_1a54c1e040e01bddb039a9a3632aee034c" prot="public" static="no">
+        <name>CRC_ByteSwap</name>
+        <enumvalue id="_c_r_c_8h_1a54c1e040e01bddb039a9a3632aee034caa3e5d15aa34f030b7c4582b223c2ee7c" prot="public">
+          <name>CRC_BYTESWAP_UNCHANGED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_c_r_c_8h_1a54c1e040e01bddb039a9a3632aee034caf509ca9bfecab3b6a3b81b877a4e3ed3" prot="public">
+          <name>CRC_BYTESWAP_HALF_WORDS</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_c_r_c_8h_1a54c1e040e01bddb039a9a3632aee034ca2c083e19f62d3ea543f3b972f0bf2e8d" prot="public">
+          <name>CRC_BYTESWAP_BYTES_IN_HALF_WORDS</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_c_r_c_8h_1a54c1e040e01bddb039a9a3632aee034ca366e0f8ff311ba5120f8d40f63832303" prot="public">
+          <name>CRC_BYTESWAP_BYTES_AND_HALF_WORDS</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>These byte swapping configurations are primarily for dealing with endianness mismatch. Not all implementations support all configurations. </para>        </briefdescription>
+        <detaileddescription>
+<para>Specific configurations are only permitted for sufficiently wide data sizes:<itemizedlist>
+<listitem><para>32-bit data size: all byte swap configurations are permitted</para></listitem><listitem><para>16-bit data size: only UNCHANGED and BYTES_IN_HALF_WORDS are permitted</para></listitem><listitem><para>8-bit data size: only UNCHANGED is permitted </para></listitem></itemizedlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/CRC.h" line="384" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/CRC.h" bodystart="384" bodyend="389"/>
+      </memberdef>
+      <memberdef kind="enum" id="_c_r_c_8h_1a4ab2a6288a9a24b832bc4a2d57447f45" prot="public" static="no">
+        <name>CRC_DataSize</name>
+        <enumvalue id="_c_r_c_8h_1a4ab2a6288a9a24b832bc4a2d57447f45af3a39fd93d7a066857133d103b66dc8f" prot="public">
+          <name>CRC_DATA_SIZE_8BIT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_c_r_c_8h_1a4ab2a6288a9a24b832bc4a2d57447f45a5082ceb63d9b04255f102f307e2a0a5d" prot="public">
+          <name>CRC_DATA_SIZE_16BIT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_c_r_c_8h_1a4ab2a6288a9a24b832bc4a2d57447f45acf75515ea26972d894d578957b952674" prot="public">
+          <name>CRC_DATA_SIZE_32BIT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>The CRC driver will consume data in blocks of this size. Not all implementations support all sizes. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/CRC.h" line="395" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/CRC.h" bodystart="395" bodyend="399"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="_c_r_c_8h_1aa2baf3474dc38f2f462dd9eb1cdbf086" prot="public" static="no">
+        <type><ref refid="struct_c_r_c___config" kindref="compound">CRC_Config</ref> *</type>
+        <definition>typedef CRC_Config* CRC_Handle</definition>
+        <argsstring></argsstring>
+        <name>CRC_Handle</name>
+        <briefdescription>
+<para>A handle that is returned from an <ref refid="_c_r_c_8h_1a4557643f2f2ac07736cfb295e5b77b04" kindref="member">CRC_open()</ref> call. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/CRC.h" line="315" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/CRC.h" bodystart="315" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_c_r_c_8h_1a238af244318c919652636cc82abefcbc" prot="public" static="no">
+        <type>void(*</type>
+        <definition>typedef void(* CRC_CallbackFxn) (CRC_Handle handle, int_fast16_t status, void *result)</definition>
+        <argsstring>)(CRC_Handle handle, int_fast16_t status, void *result)</argsstring>
+        <name>CRC_CallbackFxn</name>
+        <briefdescription>
+<para>The definition of a callback function used by the CRC driver when used in CALLBACK mode. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Handle of the client that started the CRC operation.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>status</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Contains the CRC status code from the operation.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Contains the 8/16/32-bit result of the CRC operation. The rest of the word (if unused) will contain zeroes. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/CRC.h" line="412" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/CRC.h" bodystart="412" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_c_r_c_8h_1a9244fddd88f16005a195fbea9765f4ed" prot="public" static="no" mutable="no">
+        <type>const <ref refid="struct_c_r_c___params" kindref="compound">CRC_Params</ref></type>
+        <definition>const CRC_Params CRC_defaultParams</definition>
+        <argsstring></argsstring>
+        <name>CRC_defaultParams</name>
+        <briefdescription>
+<para>Default <ref refid="struct_c_r_c___params" kindref="compound">CRC_Params</ref> structure. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="_c_r_c_8h_1aa24a651af4fc21f28fb688052937affe" kindref="member">CRC_Params_init()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/CRC.h" line="463" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_c_r_c_8h_1a347e1e5ca096c24e6d3b11da6a69ff3d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CRC_init</definition>
+        <argsstring>(void)</argsstring>
+        <name>CRC_init</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This function initializes the CRC module. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>The CRC_config structure must exist and be persistent before this function can be called. This function must also be called before any other CRC driver APIs. This function call does not modify any peripheral registers. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/CRC.h" line="473" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_c_r_c_8h_1aa24a651af4fc21f28fb688052937affe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CRC_Params_init</definition>
+        <argsstring>(CRC_Params *params)</argsstring>
+        <name>CRC_Params_init</name>
+        <param>
+          <type><ref refid="struct_c_r_c___params" kindref="compound">CRC_Params</ref> *</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+<para>Function to initialize the <ref refid="struct_c_r_c___params" kindref="compound">CRC_Params</ref> struct to its defaults. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>params</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An pointer to <ref refid="struct_c_r_c___params" kindref="compound">CRC_Params</ref> structure for initialization</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+Defaults values are: returnBehavior = CRC_RETURN_BEHAVIOR_POLLING callbackFxn = NULL timeout = SemaphoreP_WAIT_FOREVER custom = NULL</para><para>seed = 0xFFFFFFFF, polynomial = CRC_POLYNOMIAL_CRC_8_CCITT, programmablePoly = 0, programmablePolyOrder = 0,</para><para>dataSize = CRC_DATA_SIZE_8BIT, finalXorValue = 0, byteSwapInput = CRC_BYTESWAP_UNCHANGED, reverseInputBits = false, invertOutputBits = false, reverseOutputBits = false, </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/CRC.h" line="498" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_c_r_c_8h_1a4557643f2f2ac07736cfb295e5b77b04" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_c_r_c_8h_1aa2baf3474dc38f2f462dd9eb1cdbf086" kindref="member">CRC_Handle</ref></type>
+        <definition>CRC_Handle CRC_open</definition>
+        <argsstring>(uint_least8_t index, const CRC_Params *params)</argsstring>
+        <name>CRC_open</name>
+        <param>
+          <type>uint_least8_t</type>
+          <declname>index</declname>
+        </param>
+        <param>
+          <type>const <ref refid="struct_c_r_c___params" kindref="compound">CRC_Params</ref> *</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+<para>This function opens a given CRC peripheral. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>CRC controller has been initialized using <ref refid="_c_r_c_8h_1a347e1e5ca096c24e6d3b11da6a69ff3d" kindref="member">CRC_init()</ref></para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Logical peripheral number for the CRC indexed into the CRC_config table</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>params</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to an parameter block, if NULL it will use default values. All the fields in this structure are RO (read-only).</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A CRC_Handle on success or a NULL on an error or if it has been opened already.</para></simplesect>
+<simplesect kind="see"><para><ref refid="_c_r_c_8h_1a347e1e5ca096c24e6d3b11da6a69ff3d" kindref="member">CRC_init()</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="_c_r_c_8h_1ae6e3fb25f75f0237ec439cdf37144f0b" kindref="member">CRC_close()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/CRC.h" line="518" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_c_r_c_8h_1a0a4322229a3007f7b028d8e9cbf68734" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int_fast16_t</type>
+        <definition>int_fast16_t CRC_calculateFull</definition>
+        <argsstring>(CRC_Handle handle, const void *source, size_t sourceBytes, void *result)</argsstring>
+        <name>CRC_calculateFull</name>
+        <param>
+          <type><ref refid="_c_r_c_8h_1aa2baf3474dc38f2f462dd9eb1cdbf086" kindref="member">CRC_Handle</ref></type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>source</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>sourceBytes</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Performs the CRC of the provided bytes, placing the final CRC into result. Waits for HW access. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>The data source array will be accessed in multiples of the data size defined in the operation struct. If padding bytes are required (e.g. to pad a 9-byte message to 12 bytes for 32-bit operation) this must be handled by the application.</para></simplesect>
+<simplesect kind="pre"><para><ref refid="_c_r_c_8h_1a4557643f2f2ac07736cfb295e5b77b04" kindref="member">CRC_open()</ref> has to be called first.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A CRC handle returned from <ref refid="_c_r_c_8h_1a4557643f2f2ac07736cfb295e5b77b04" kindref="member">CRC_open()</ref></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">source</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to a data source array.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">sourceBytes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The length of the source array in bytes.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to a memory location for the result. Should be at least the width of the data size.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A status code </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/CRC.h" line="542" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_c_r_c_8h_1aacec75d202a8f35d6cea1e3616b2758e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int_fast16_t</type>
+        <definition>int_fast16_t CRC_addData</definition>
+        <argsstring>(CRC_Handle handle, const void *source, size_t sourceBytes)</argsstring>
+        <name>CRC_addData</name>
+        <param>
+          <type><ref refid="_c_r_c_8h_1aa2baf3474dc38f2f462dd9eb1cdbf086" kindref="member">CRC_Handle</ref></type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>source</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>sourceBytes</declname>
+        </param>
+        <briefdescription>
+<para>Performs the CRC of the provided bytes. Waits for HW access. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>The data source array will be accessed in multiples of the data size defined in the operation struct. If padding bytes are required (e.g. to pad a 9-byte message to 12 bytes for 32-bit operation) this must be handled by the application.</para></simplesect>
+<simplesect kind="pre"><para><ref refid="_c_r_c_8h_1a4557643f2f2ac07736cfb295e5b77b04" kindref="member">CRC_open()</ref> has to be called first.</para></simplesect>
+<simplesect kind="post"><para>CRC_addData to check another data block or CRC_finalize to extract the result. CRC_reset will clear an existing partial result (finalise also does this.)</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A CRC handle returned from <ref refid="_c_r_c_8h_1a4557643f2f2ac07736cfb295e5b77b04" kindref="member">CRC_open()</ref></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">source</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to a data source array.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">sourceBytes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The length of the source array in bytes.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A status code</para></simplesect>
+<simplesect kind="see"><para>CRC_setup </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/CRC.h" line="567" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_c_r_c_8h_1aa4ed9634419b64658bbdc788e97ccbef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CRC_finalize</definition>
+        <argsstring>(CRC_Handle handle, void *result)</argsstring>
+        <name>CRC_finalize</name>
+        <param>
+          <type><ref refid="_c_r_c_8h_1aa2baf3474dc38f2f462dd9eb1cdbf086" kindref="member">CRC_Handle</ref></type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Completes the CRC calculation and places the final CRC into result. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>The data source array will be accessed in multiples of the data size defined in the operation struct. If padding bytes are required (e.g. to pad a 9-byte message to 12 bytes for 32-bit operation) this must be handled by the application.</para></simplesect>
+<simplesect kind="pre"><para><ref refid="_c_r_c_8h_1a4557643f2f2ac07736cfb295e5b77b04" kindref="member">CRC_open()</ref> must be called. CRC_addData should be called at least once.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A CRC handle returned from <ref refid="_c_r_c_8h_1a4557643f2f2ac07736cfb295e5b77b04" kindref="member">CRC_open()</ref></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to a memory location containing the result.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para>CRC_setup </para></simplesect>
+<simplesect kind="see"><para><ref refid="_c_r_c_8h_1aacec75d202a8f35d6cea1e3616b2758e" kindref="member">CRC_addData</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/CRC.h" line="587" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_c_r_c_8h_1a9d07f39cbafb84fe733c9b8c6c8ad42a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CRC_reset</definition>
+        <argsstring>(CRC_Handle handle)</argsstring>
+        <name>CRC_reset</name>
+        <param>
+          <type><ref refid="_c_r_c_8h_1aa2baf3474dc38f2f462dd9eb1cdbf086" kindref="member">CRC_Handle</ref></type>
+          <declname>handle</declname>
+        </param>
+        <briefdescription>
+<para>Clears any intermediate results such that the next addData call will begin a new CRC. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para><ref refid="_c_r_c_8h_1a4557643f2f2ac07736cfb295e5b77b04" kindref="member">CRC_open()</ref> must be called. CRC_addData should be called at least once.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A CRC handle returned from <ref refid="_c_r_c_8h_1a4557643f2f2ac07736cfb295e5b77b04" kindref="member">CRC_open()</ref></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para>CRC_setup </para></simplesect>
+<simplesect kind="see"><para><ref refid="_c_r_c_8h_1aacec75d202a8f35d6cea1e3616b2758e" kindref="member">CRC_addData</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/CRC.h" line="600" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_c_r_c_8h_1ae6e3fb25f75f0237ec439cdf37144f0b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CRC_close</definition>
+        <argsstring>(CRC_Handle handle)</argsstring>
+        <name>CRC_close</name>
+        <param>
+          <type><ref refid="_c_r_c_8h_1aa2baf3474dc38f2f462dd9eb1cdbf086" kindref="member">CRC_Handle</ref></type>
+          <declname>handle</declname>
+        </param>
+        <briefdescription>
+<para>Function to close a CRC peripheral specified by the CRC handle. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para><ref refid="_c_r_c_8h_1a4557643f2f2ac07736cfb295e5b77b04" kindref="member">CRC_open()</ref> has to be called first.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A CRC handle returned from <ref refid="_c_r_c_8h_1a4557643f2f2ac07736cfb295e5b77b04" kindref="member">CRC_open()</ref></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="_c_r_c_8h_1a4557643f2f2ac07736cfb295e5b77b04" kindref="member">CRC_open()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/CRC.h" line="611" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>CRC driver interface. </para>    </briefdescription>
+    <detaileddescription>
+<para><hruler/>
+</para><para><anchor id="_c_r_c_8h_1ti_drivers_CRC_Overview"/><heading level="1">Overview</heading>
+</para><para>The CRC driver interface provides device independent APIs, data types, and macros. The CRC header file should be included in an application as follows: <programlisting><codeline><highlight class="normal">#include<sp/>&lt;ti/drivers/CRC.h&gt;</highlight></codeline>
+</programlisting></para><para>The Cyclic Redundancy Check (CRC) driver is a generic driver that supports calculating a variety of standard CRC codes on blocks of input data.</para><para><hruler/>
+ <anchor id="_c_r_c_8h_1ti_drivers_CRC_Usage"/><heading level="1">Usage</heading>
+</para><para>To calculate the CRC of a block of available data, an application should call:<itemizedlist>
+<listitem><para><ref refid="_c_r_c_8h_1a347e1e5ca096c24e6d3b11da6a69ff3d" kindref="member">CRC_init()</ref>: Initialize the CRC driver.</para></listitem><listitem><para><ref refid="_c_r_c_8h_1aa24a651af4fc21f28fb688052937affe" kindref="member">CRC_Params_init()</ref>: Initialize a default <ref refid="struct_c_r_c___params" kindref="compound">CRC_Params</ref> structure.</para></listitem><listitem><para><ref refid="_c_r_c_8h_1a4557643f2f2ac07736cfb295e5b77b04" kindref="member">CRC_open()</ref>: Open an instance of the CRC driver, passing the initialized parameters, or NULL, and an index (described later).</para></listitem><listitem><para><ref refid="_c_r_c_8h_1a0a4322229a3007f7b028d8e9cbf68734" kindref="member">CRC_calculateFull()</ref>: Calculate the CRC of a data block.</para></listitem><listitem><para><ref refid="_c_r_c_8h_1ae6e3fb25f75f0237ec439cdf37144f0b" kindref="member">CRC_close()</ref>: De-initialize the CRC instance.</para></listitem></itemizedlist>
+</para><para>If the data is only available in noncontiguous memory or is being made available in blocks (e.g. over UART) then the addData and finalise methods may be used to calculate the CRC of individual blocks.</para><para>The CRC driver only accepts data lengths that are a multiple of the CRC size. If asked to CRC 7 bytes with a 4-byte CRC, it will throw an error. Similarly, if padding bytes are required for a particular application this must be handled by the caller.</para><para><anchor id="_c_r_c_8h_1ti_drivers_CRC_Synopsis"/><heading level="2">Synopsis</heading>
+</para><para><anchor id="_c_r_c_8h_1ti_drivers_CRC_Synopsis_Code"/><programlisting><codeline><highlight class="normal">CRC_Handle<sp/><sp/><sp/><sp/><sp/><sp/>handle;</highlight></codeline>
+<codeline><highlight class="normal">CRC_Params<sp/><sp/><sp/><sp/><sp/><sp/>params;</highlight></codeline>
+<codeline><highlight class="normal">int_fast16_t<sp/><sp/><sp/><sp/>status;</highlight></codeline>
+<codeline><highlight class="normal">uint32_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>result;</highlight></codeline>
+<codeline><highlight class="normal">uint8_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>source[NUM_BYTES];</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">CRC_init();<sp/><sp/>//<sp/>Initialize<sp/>the<sp/>CRC<sp/>driver</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">CRC_Params_init(&amp;params);<sp/><sp/><sp/><sp/><sp/>//<sp/>Initialize<sp/>CRC<sp/>parameters</highlight></codeline>
+<codeline><highlight class="normal">params.returnBehavior<sp/>=<sp/>CRC_RETURN_BEHAVIOR_BLOCKING;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">params.polynomial<sp/>=<sp/>CRC_POLYNOMIAL_CRC_16_CCITT;</highlight></codeline>
+<codeline><highlight class="normal">params.dataSize<sp/>=<sp/>CRC_DATA_SIZE_32BIT;</highlight></codeline>
+<codeline><highlight class="normal">params.seed<sp/>=<sp/>0xFFFF;</highlight></codeline>
+<codeline><highlight class="normal">params.byteSwapInput<sp/>=<sp/>CRC_BYTESWAP_UNCHANGED;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">handle<sp/>=<sp/>CRC_open(CONFIG_CRC0,<sp/>&amp;params);</highlight></codeline>
+<codeline><highlight class="normal">if<sp/>(handle<sp/>==<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>while<sp/>(1);<sp/><sp/>//<sp/>CRC_open()<sp/>failed</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Fill<sp/>in<sp/>source</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">status<sp/>=<sp/>CRC_calculateFull(handle,<sp/>source,<sp/>NUM_BYTES,<sp/>&amp;result);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">if<sp/>(status<sp/>!=<sp/>CRC_STATUS_SUCCESS)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>Error<sp/>with<sp/>parameters,<sp/>or<sp/>CRC<sp/>resource<sp/>was<sp/>unavailable</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>while<sp/>(1);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting></para><para>More details on usage are provided in the following sections.</para><para><hruler/>
+ <anchor id="_c_r_c_8h_1ti_drivers_CRC_Examples"/><heading level="1">Examples</heading>
+</para><para><itemizedlist>
+<listitem><para><ref refid="_c_r_c_8h_1ti_drivers_CRC_Examples_open" kindref="member">Opening a CRC instance</ref> </para></listitem>
+<listitem><para><ref refid="_c_r_c_8h_1ti_drivers_CRC_Examples_calculateFull" kindref="member">Calculating a full check value</ref> </para></listitem>
+<listitem><para><ref refid="_c_r_c_8h_1ti_drivers_CRC_Examples_calculatePartial" kindref="member">Partial check calculations</ref></para></listitem>
+</itemizedlist>
+<anchor id="_c_r_c_8h_1ti_drivers_CRC_Examples_open"/><heading level="2">Opening a CRC instance</heading>
+</para><para>After initializing the CRC driver by calling <ref refid="_c_r_c_8h_1a347e1e5ca096c24e6d3b11da6a69ff3d" kindref="member">CRC_init()</ref>, the application can open a CRC instance by calling <ref refid="_c_r_c_8h_1a4557643f2f2ac07736cfb295e5b77b04" kindref="member">CRC_open()</ref>. This function takes an index into the CRC_config[] array, and a CRC parameters data structure. The CRC instance is specified by the index of the CRC in CRC_config[]. Only one CRC index can be used at a time; calling <ref refid="_c_r_c_8h_1a4557643f2f2ac07736cfb295e5b77b04" kindref="member">CRC_open()</ref> a second time with the same index previously passed to <ref refid="_c_r_c_8h_1a4557643f2f2ac07736cfb295e5b77b04" kindref="member">CRC_open()</ref> will result in an error. You can, though, re-use the index if the instance is closed via <ref refid="_c_r_c_8h_1ae6e3fb25f75f0237ec439cdf37144f0b" kindref="member">CRC_close()</ref>.</para><para>If no <ref refid="struct_c_r_c___params" kindref="compound">CRC_Params</ref> structure is passed to <ref refid="_c_r_c_8h_1a4557643f2f2ac07736cfb295e5b77b04" kindref="member">CRC_open()</ref>, default values are used. If the open call is successful, it returns a non-NULL value.</para><para><programlisting><codeline><highlight class="normal">CRC_Handle<sp/>handle;</highlight></codeline>
+<codeline><highlight class="normal">CRC_Params<sp/>params;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Initialize<sp/>the<sp/>CRC<sp/>driver</highlight></codeline>
+<codeline><highlight class="normal">CRC_init();</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Initialize<sp/>optional<sp/>CRC<sp/>parameters<sp/>for<sp/>CALLBACK<sp/>mode</highlight></codeline>
+<codeline><highlight class="normal">CRC_Params_init(&amp;params);</highlight></codeline>
+<codeline><highlight class="normal">params.returnBehavior<sp/>=<sp/>CRC_RETURN_BEHAVIOR_CALLBACK;</highlight></codeline>
+<codeline><highlight class="normal">params.callbackFxn<sp/>=<sp/>myCallbackFunction;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">handle<sp/>=<sp/>CRC_open(CONFIG_CRC0,<sp/>&amp;params);</highlight></codeline>
+<codeline><highlight class="normal">if<sp/>(handle<sp/>==<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>CRC_open()<sp/>failed</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>while<sp/>(1);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting></para><para><anchor id="_c_r_c_8h_1ti_drivers_CRC_Examples_calculateFull"/><heading level="2">Using the calculateFull API</heading>
+</para><para><heading level="3">CRC-8-CCITT without data processing</heading>
+</para><para>An 8-bit CRC with no data processing options. Note that the default POLLING mode uses the CPU to move data so will not allow the device to enter standby in low-power applications.</para><para><programlisting><codeline><highlight class="normal">CRC_Handle<sp/><sp/><sp/><sp/><sp/><sp/>handle;</highlight></codeline>
+<codeline><highlight class="normal">int_fast16_t<sp/><sp/><sp/><sp/>status;</highlight></codeline>
+<codeline><highlight class="normal">uint8_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>source[NUM_BYTES];</highlight></codeline>
+<codeline><highlight class="normal">uint8_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>result;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Initialize<sp/>the<sp/>CRC<sp/>driver</highlight></codeline>
+<codeline><highlight class="normal">CRC_init();</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>The<sp/>defaults<sp/>are<sp/>set<sp/>to<sp/>a<sp/>POLLING<sp/>mode<sp/>8-bit<sp/>CRC<sp/>with<sp/>seed<sp/>0xFF</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>We<sp/>can<sp/>pass<sp/>NULL<sp/>instead<sp/>of<sp/>a<sp/>Params<sp/>struct<sp/>to<sp/>make<sp/>use<sp/>of<sp/>this</highlight></codeline>
+<codeline><highlight class="normal">handle<sp/>=<sp/>CRC_open(CONFIG_CRC0,<sp/>NULL);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">if<sp/>(handle<sp/>==<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>while<sp/>(1);<sp/><sp/>//<sp/>CRC_open()<sp/>failed</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">status<sp/>=<sp/>CRC_calculateFull(handle,<sp/>source,<sp/>NUM_BYTES,<sp/>&amp;result);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">if<sp/>(status<sp/>!=<sp/>CRC_STATUS_SUCCESS)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>Error<sp/>with<sp/>parameters,<sp/>or<sp/>CRC<sp/>resource<sp/>was<sp/>unavailable</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>while<sp/>(1);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting></para><para><heading level="3">CRC-32-IEEE with endianness reversal</heading>
+</para><para>A 32-bit CRC with data processing options, in BLOCKING mode.</para><para><programlisting><codeline><highlight class="normal">CRC_Handle<sp/><sp/><sp/><sp/><sp/><sp/>handle;</highlight></codeline>
+<codeline><highlight class="normal">CRC_Params<sp/><sp/><sp/><sp/><sp/><sp/>params;</highlight></codeline>
+<codeline><highlight class="normal">int_fast16_t<sp/><sp/><sp/><sp/>status;</highlight></codeline>
+<codeline><highlight class="normal">uint32_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>result;</highlight></codeline>
+<codeline><highlight class="normal">uint8_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>source[NUM_BYTES];</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">CRC_init();<sp/><sp/>//<sp/>Initialize<sp/>the<sp/>CRC<sp/>driver</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">CRC_Params_init(&amp;params);<sp/><sp/><sp/><sp/><sp/>//<sp/>Initialize<sp/>CRC<sp/>parameters</highlight></codeline>
+<codeline><highlight class="normal">params.returnBehavior<sp/>=<sp/>CRC_RETURN_BEHAVIOR_BLOCKING;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">params.byteSwapInput<sp/>=<sp/>CRC_BYTESWAP_BYTES_AND_HALF_WORDS;</highlight></codeline>
+<codeline><highlight class="normal">params.polynomial<sp/>=<sp/>CRC_POLYNOMIAL_CRC_32_IEEE;</highlight></codeline>
+<codeline><highlight class="normal">params.dataSize<sp/>=<sp/>CRC_DATA_SIZE_32BIT;</highlight></codeline>
+<codeline><highlight class="normal">params.seed<sp/>=<sp/>0xFFFFFFFF;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">handle<sp/>=<sp/>CRC_open(CONFIG_CRC0,<sp/>&amp;params);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">if<sp/>(handle<sp/>==<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>while<sp/>(1);<sp/><sp/>//<sp/>CRC_open()<sp/>failed</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Obtain<sp/>data<sp/>for<sp/>the<sp/>source<sp/>buffer</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">status<sp/>=<sp/>CRC_calculateFull(handle,<sp/>source,<sp/>NUM_BYTES,<sp/>&amp;result);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">if<sp/>(status<sp/>!=<sp/>CRC_STATUS_SUCCESS)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>Error<sp/>with<sp/>parameters,<sp/>or<sp/>CRC<sp/>resource<sp/>was<sp/>unavailable</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>while<sp/>(1);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting></para><para><anchor id="_c_r_c_8h_1ti_drivers_CRC_Examples_calculatePartial"/><heading level="2">Using the addData API</heading>
+</para><para>It may be desirable to use the CRC to calculate over blocks of data that are available at different times or non-contiguous in memory. A block-by-block API is available to do this. The following code calculates the CRC of two separate arrays as though they were concatenated.</para><para><programlisting><codeline><highlight class="normal">CRC_Handle<sp/><sp/><sp/><sp/><sp/><sp/>handle;</highlight></codeline>
+<codeline><highlight class="normal">CRC_Params<sp/><sp/><sp/><sp/><sp/><sp/>params;</highlight></codeline>
+<codeline><highlight class="normal">int_fast16_t<sp/><sp/><sp/><sp/>status;</highlight></codeline>
+<codeline><highlight class="normal">uint32_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>result;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">uint32_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sourceA<sp/>[NUM_BYTES]<sp/>=<sp/>{<sp/>...<sp/>};</highlight></codeline>
+<codeline><highlight class="normal">uint32_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sourceB<sp/>[NUM_BYTES]<sp/>=<sp/>{<sp/>...<sp/>};</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">CRC_init();</highlight></codeline>
+<codeline><highlight class="normal">CRC_Params_init(&amp;params);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">params.byteSwapInput<sp/>=<sp/>CRC_BYTESWAP_UNCHANGED;</highlight></codeline>
+<codeline><highlight class="normal">params.polynomial<sp/>=<sp/>CRC_POLYNOMIAL_CRC_32C;</highlight></codeline>
+<codeline><highlight class="normal">params.dataSize<sp/>=<sp/>CRC_DATA_SIZE_32BIT;</highlight></codeline>
+<codeline><highlight class="normal">params.seed<sp/>=<sp/>0xFFFFFFFF;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">handle<sp/>=<sp/>CRC_open(CONFIG_CRC0,<sp/>&amp;params);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">if<sp/>(handle<sp/>==<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>while<sp/>(1);<sp/><sp/>//<sp/>CRC_open()<sp/>failed</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">status<sp/>=<sp/>CRC_addData(handle,<sp/>sourceA,<sp/>NUM_BYTES);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">if<sp/>(status<sp/>!=<sp/>CRC_STATUS_SUCCESS)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>CRC<sp/>resource<sp/>was<sp/>unavailable</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>while<sp/>(1);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">status<sp/>=<sp/>CRC_addData(handle,<sp/>sourceB,<sp/>NUM_BYTES);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">if<sp/>(status<sp/>!=<sp/>CRC_STATUS_SUCCESS)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>CRC<sp/>resource<sp/>was<sp/>unavailable</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>while<sp/>(1);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">CRC_finalize(handle,<sp/>&amp;result);</highlight></codeline>
+</programlisting> </para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2019,<sp/>Texas<sp/>Instruments<sp/>Incorporated</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Redistribution<sp/>and<sp/>use<sp/>in<sp/>source<sp/>and<sp/>binary<sp/>forms,<sp/>with<sp/>or<sp/>without</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>modification,<sp/>are<sp/>permitted<sp/>provided<sp/>that<sp/>the<sp/>following<sp/>conditions</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>are<sp/>met:</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>of<sp/>source<sp/>code<sp/>must<sp/>retain<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer.</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>in<sp/>binary<sp/>form<sp/>must<sp/>reproduce<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer<sp/>in<sp/>the</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>documentation<sp/>and/or<sp/>other<sp/>materials<sp/>provided<sp/>with<sp/>the<sp/>distribution.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Neither<sp/>the<sp/>name<sp/>of<sp/>Texas<sp/>Instruments<sp/>Incorporated<sp/>nor<sp/>the<sp/>names<sp/>of</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>its<sp/>contributors<sp/>may<sp/>be<sp/>used<sp/>to<sp/>endorse<sp/>or<sp/>promote<sp/>products<sp/>derived</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>from<sp/>this<sp/>software<sp/>without<sp/>specific<sp/>prior<sp/>written<sp/>permission.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>THIS<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>BY<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>AND<sp/>CONTRIBUTORS<sp/>&quot;AS<sp/>IS&quot;</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>AND<sp/>ANY<sp/>EXPRESS<sp/>OR<sp/>IMPLIED<sp/>WARRANTIES,<sp/>INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>THE<sp/>IMPLIED<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY<sp/>AND<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>PURPOSE<sp/>ARE<sp/>DISCLAIMED.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE<sp/>COPYRIGHT<sp/>OWNER<sp/>OR</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>CONTRIBUTORS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>DIRECT,<sp/>INDIRECT,<sp/>INCIDENTAL,<sp/>SPECIAL,</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>EXEMPLARY,<sp/>OR<sp/>CONSEQUENTIAL<sp/>DAMAGES<sp/>(INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>PROCUREMENT<sp/>OF<sp/>SUBSTITUTE<sp/>GOODS<sp/>OR<sp/>SERVICES;<sp/>LOSS<sp/>OF<sp/>USE,<sp/>DATA,<sp/>OR<sp/>PROFITS;</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>OR<sp/>BUSINESS<sp/>INTERRUPTION)<sp/>HOWEVER<sp/>CAUSED<sp/>AND<sp/>ON<sp/>ANY<sp/>THEORY<sp/>OF<sp/>LIABILITY,</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/>STRICT<sp/>LIABILITY,<sp/>OR<sp/>TORT<sp/>(INCLUDING<sp/>NEGLIGENCE<sp/>OR</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*<sp/>OTHERWISE)<sp/>ARISING<sp/>IN<sp/>ANY<sp/>WAY<sp/>OUT<sp/>OF<sp/>THE<sp/>USE<sp/>OF<sp/>THIS<sp/>SOFTWARE,</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*<sp/>EVEN<sp/>IF<sp/>ADVISED<sp/>OF<sp/>THE<sp/>POSSIBILITY<sp/>OF<sp/>SUCH<sp/>DAMAGE.</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="comment">/*!*****************************************************************************</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>*<sp/><sp/>@file<sp/><sp/><sp/><sp/><sp/><sp/><sp/>CRC.h</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/>*<sp/><sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/>CRC<sp/>driver<sp/>interface</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="37"><highlight class="comment"><sp/>*<sp/><sp/>@anchor<sp/>ti_drivers_CRC_Overview</highlight></codeline>
+<codeline lineno="38"><highlight class="comment"><sp/>*<sp/><sp/>#<sp/>Overview<sp/>#</highlight></codeline>
+<codeline lineno="39"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="40"><highlight class="comment"><sp/>*<sp/><sp/>The<sp/>CRC<sp/>driver<sp/>interface<sp/>provides<sp/>device<sp/>independent<sp/>APIs,<sp/>data<sp/>types,</highlight></codeline>
+<codeline lineno="41"><highlight class="comment"><sp/>*<sp/><sp/>and<sp/>macros.<sp/>The<sp/>CRC<sp/>header<sp/>file<sp/>should<sp/>be<sp/>included<sp/>in<sp/>an<sp/>application<sp/>as</highlight></codeline>
+<codeline lineno="42"><highlight class="comment"><sp/>*<sp/><sp/>follows:</highlight></codeline>
+<codeline lineno="43"><highlight class="comment"><sp/>*<sp/><sp/>@code</highlight></codeline>
+<codeline lineno="44"><highlight class="comment"><sp/>*<sp/><sp/>#include<sp/>&lt;ti/drivers/CRC.h&gt;</highlight></codeline>
+<codeline lineno="45"><highlight class="comment"><sp/>*<sp/><sp/>@endcode</highlight></codeline>
+<codeline lineno="46"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="47"><highlight class="comment"><sp/>*<sp/><sp/>The<sp/>Cyclic<sp/>Redundancy<sp/>Check<sp/>(CRC)<sp/>driver<sp/>is<sp/>a<sp/>generic<sp/>driver<sp/>that<sp/>supports</highlight></codeline>
+<codeline lineno="48"><highlight class="comment"><sp/>*<sp/><sp/>calculating<sp/>a<sp/>variety<sp/>of<sp/>standard<sp/>CRC<sp/>codes<sp/>on<sp/>blocks<sp/>of<sp/>input<sp/>data.</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="50"><highlight class="comment"><sp/>*<sp/><sp/>&lt;hr&gt;</highlight></codeline>
+<codeline lineno="51"><highlight class="comment"><sp/>*<sp/><sp/>@anchor<sp/>ti_drivers_CRC_Usage</highlight></codeline>
+<codeline lineno="52"><highlight class="comment"><sp/>*<sp/><sp/>#<sp/>Usage<sp/>#</highlight></codeline>
+<codeline lineno="53"><highlight class="comment"><sp/>*<sp/><sp/>To<sp/>calculate<sp/>the<sp/>CRC<sp/>of<sp/>a<sp/>block<sp/>of<sp/>available<sp/>data,<sp/>an<sp/>application<sp/>should<sp/>call:</highlight></codeline>
+<codeline lineno="54"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>-<sp/>CRC_init():<sp/>Initialize<sp/>the<sp/>CRC<sp/>driver.</highlight></codeline>
+<codeline lineno="55"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>-<sp/>CRC_Params_init():<sp/><sp/>Initialize<sp/>a<sp/>default<sp/>#CRC_Params<sp/>structure.</highlight></codeline>
+<codeline lineno="56"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>-<sp/>CRC_open():<sp/>Open<sp/>an<sp/>instance<sp/>of<sp/>the<sp/>CRC<sp/>driver,<sp/>passing<sp/>the</highlight></codeline>
+<codeline lineno="57"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>initialized<sp/>parameters,<sp/>or<sp/>NULL,<sp/>and<sp/>an<sp/>index<sp/>(described<sp/>later).</highlight></codeline>
+<codeline lineno="58"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>-<sp/>CRC_calculateFull():<sp/>Calculate<sp/>the<sp/>CRC<sp/>of<sp/>a<sp/>data<sp/>block.</highlight></codeline>
+<codeline lineno="59"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>-<sp/>CRC_close():<sp/>De-initialize<sp/>the<sp/>CRC<sp/>instance.</highlight></codeline>
+<codeline lineno="60"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="61"><highlight class="comment"><sp/>*<sp/><sp/>If<sp/>the<sp/>data<sp/>is<sp/>only<sp/>available<sp/>in<sp/>noncontiguous<sp/>memory<sp/>or<sp/>is<sp/>being<sp/>made</highlight></codeline>
+<codeline lineno="62"><highlight class="comment"><sp/>*<sp/><sp/>available<sp/>in<sp/>blocks<sp/>(e.g.<sp/>over<sp/>UART)<sp/>then<sp/>the<sp/>addData<sp/>and<sp/>finalise<sp/>methods</highlight></codeline>
+<codeline lineno="63"><highlight class="comment"><sp/>*<sp/><sp/>may<sp/>be<sp/>used<sp/>to<sp/>calculate<sp/>the<sp/>CRC<sp/>of<sp/>individual<sp/>blocks.</highlight></codeline>
+<codeline lineno="64"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="65"><highlight class="comment"><sp/>*<sp/><sp/>The<sp/>CRC<sp/>driver<sp/>only<sp/>accepts<sp/>data<sp/>lengths<sp/>that<sp/>are<sp/>a<sp/>multiple<sp/>of<sp/>the<sp/>CRC<sp/>size.</highlight></codeline>
+<codeline lineno="66"><highlight class="comment"><sp/>*<sp/><sp/>If<sp/>asked<sp/>to<sp/>CRC<sp/>7<sp/>bytes<sp/>with<sp/>a<sp/>4-byte<sp/>CRC,<sp/>it<sp/>will<sp/>throw<sp/>an<sp/>error.<sp/>Similarly,</highlight></codeline>
+<codeline lineno="67"><highlight class="comment"><sp/>*<sp/><sp/>if<sp/>padding<sp/>bytes<sp/>are<sp/>required<sp/>for<sp/>a<sp/>particular<sp/>application<sp/>this<sp/>must<sp/>be<sp/>handled</highlight></codeline>
+<codeline lineno="68"><highlight class="comment"><sp/>*<sp/><sp/>by<sp/>the<sp/>caller.</highlight></codeline>
+<codeline lineno="69"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="70"><highlight class="comment"><sp/>*<sp/><sp/>@anchor<sp/>ti_drivers_CRC_Synopsis</highlight></codeline>
+<codeline lineno="71"><highlight class="comment"><sp/>*<sp/><sp/>##<sp/>Synopsis</highlight></codeline>
+<codeline lineno="72"><highlight class="comment"><sp/>*<sp/><sp/>@anchor<sp/>ti_drivers_CRC_Synopsis_Code</highlight></codeline>
+<codeline lineno="73"><highlight class="comment"><sp/>*<sp/><sp/>@code</highlight></codeline>
+<codeline lineno="74"><highlight class="comment"><sp/>*<sp/><sp/>CRC_Handle<sp/><sp/><sp/><sp/><sp/><sp/>handle;</highlight></codeline>
+<codeline lineno="75"><highlight class="comment"><sp/>*<sp/><sp/>CRC_Params<sp/><sp/><sp/><sp/><sp/><sp/>params;</highlight></codeline>
+<codeline lineno="76"><highlight class="comment"><sp/>*<sp/><sp/>int_fast16_t<sp/><sp/><sp/><sp/>status;</highlight></codeline>
+<codeline lineno="77"><highlight class="comment"><sp/>*<sp/><sp/>uint32_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>result;</highlight></codeline>
+<codeline lineno="78"><highlight class="comment"><sp/>*<sp/><sp/>uint8_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>source[NUM_BYTES];</highlight></codeline>
+<codeline lineno="79"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="80"><highlight class="comment"><sp/>*<sp/><sp/>CRC_init();<sp/><sp/>//<sp/>Initialize<sp/>the<sp/>CRC<sp/>driver</highlight></codeline>
+<codeline lineno="81"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="82"><highlight class="comment"><sp/>*<sp/><sp/>CRC_Params_init(&amp;params);<sp/><sp/><sp/><sp/><sp/>//<sp/>Initialize<sp/>CRC<sp/>parameters</highlight></codeline>
+<codeline lineno="83"><highlight class="comment"><sp/>*<sp/><sp/>params.returnBehavior<sp/>=<sp/>CRC_RETURN_BEHAVIOR_BLOCKING;</highlight></codeline>
+<codeline lineno="84"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="85"><highlight class="comment"><sp/>*<sp/><sp/>params.polynomial<sp/>=<sp/>CRC_POLYNOMIAL_CRC_16_CCITT;</highlight></codeline>
+<codeline lineno="86"><highlight class="comment"><sp/>*<sp/><sp/>params.dataSize<sp/>=<sp/>CRC_DATA_SIZE_32BIT;</highlight></codeline>
+<codeline lineno="87"><highlight class="comment"><sp/>*<sp/><sp/>params.seed<sp/>=<sp/>0xFFFF;</highlight></codeline>
+<codeline lineno="88"><highlight class="comment"><sp/>*<sp/><sp/>params.byteSwapInput<sp/>=<sp/>CRC_BYTESWAP_UNCHANGED;</highlight></codeline>
+<codeline lineno="89"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="90"><highlight class="comment"><sp/>*<sp/><sp/>handle<sp/>=<sp/>CRC_open(CONFIG_CRC0,<sp/>&amp;params);</highlight></codeline>
+<codeline lineno="91"><highlight class="comment"><sp/>*<sp/><sp/>if<sp/>(handle<sp/>==<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline lineno="92"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>while<sp/>(1);<sp/><sp/>//<sp/>CRC_open()<sp/>failed</highlight></codeline>
+<codeline lineno="93"><highlight class="comment"><sp/>*<sp/><sp/>}</highlight></codeline>
+<codeline lineno="94"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="95"><highlight class="comment"><sp/>*<sp/><sp/>//<sp/>Fill<sp/>in<sp/>source</highlight></codeline>
+<codeline lineno="96"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="97"><highlight class="comment"><sp/>*<sp/><sp/>status<sp/>=<sp/>CRC_calculateFull(handle,<sp/>source,<sp/>NUM_BYTES,<sp/>&amp;result);</highlight></codeline>
+<codeline lineno="98"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="99"><highlight class="comment"><sp/>*<sp/><sp/>if<sp/>(status<sp/>!=<sp/>CRC_STATUS_SUCCESS)<sp/>{</highlight></codeline>
+<codeline lineno="100"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>Error<sp/>with<sp/>parameters,<sp/>or<sp/>CRC<sp/>resource<sp/>was<sp/>unavailable</highlight></codeline>
+<codeline lineno="101"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>while<sp/>(1);</highlight></codeline>
+<codeline lineno="102"><highlight class="comment"><sp/>*<sp/><sp/>}</highlight></codeline>
+<codeline lineno="103"><highlight class="comment"><sp/>*<sp/><sp/>@endcode</highlight></codeline>
+<codeline lineno="104"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="105"><highlight class="comment"><sp/>*<sp/><sp/>More<sp/>details<sp/>on<sp/>usage<sp/>are<sp/>provided<sp/>in<sp/>the<sp/>following<sp/>sections.</highlight></codeline>
+<codeline lineno="106"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="107"><highlight class="comment"><sp/>*<sp/><sp/>&lt;hr&gt;</highlight></codeline>
+<codeline lineno="108"><highlight class="comment"><sp/>*<sp/><sp/>@anchor<sp/>ti_drivers_CRC_Examples</highlight></codeline>
+<codeline lineno="109"><highlight class="comment"><sp/>*<sp/><sp/>#<sp/>Examples</highlight></codeline>
+<codeline lineno="110"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="111"><highlight class="comment"><sp/>*<sp/><sp/>@li<sp/>@ref<sp/>ti_drivers_CRC_Examples_open<sp/>&quot;Opening<sp/>a<sp/>CRC<sp/>instance&quot;</highlight></codeline>
+<codeline lineno="112"><highlight class="comment"><sp/>*<sp/><sp/>@li<sp/>@ref<sp/>ti_drivers_CRC_Examples_calculateFull<sp/>&quot;Calculating<sp/>a<sp/>full<sp/>check<sp/>value&quot;</highlight></codeline>
+<codeline lineno="113"><highlight class="comment"><sp/>*<sp/><sp/>@li<sp/>@ref<sp/>ti_drivers_CRC_Examples_calculatePartial<sp/>&quot;Partial<sp/>check<sp/>calculations&quot;</highlight></codeline>
+<codeline lineno="114"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="115"><highlight class="comment"><sp/>*<sp/><sp/>@anchor<sp/>ti_drivers_CRC_Examples_open</highlight></codeline>
+<codeline lineno="116"><highlight class="comment"><sp/>*<sp/><sp/>##<sp/>Opening<sp/>a<sp/>CRC<sp/>instance</highlight></codeline>
+<codeline lineno="117"><highlight class="comment"><sp/>*<sp/><sp/>After<sp/>initializing<sp/>the<sp/>CRC<sp/>driver<sp/>by<sp/>calling<sp/>CRC_init(),<sp/>the<sp/>application</highlight></codeline>
+<codeline lineno="118"><highlight class="comment"><sp/>*<sp/><sp/>can<sp/>open<sp/>a<sp/>CRC<sp/>instance<sp/>by<sp/>calling<sp/>CRC_open().<sp/><sp/>This<sp/>function</highlight></codeline>
+<codeline lineno="119"><highlight class="comment"><sp/>*<sp/><sp/>takes<sp/>an<sp/>index<sp/>into<sp/>the<sp/>CRC_config[]<sp/>array,<sp/>and<sp/>a<sp/>CRC<sp/>parameters<sp/>data</highlight></codeline>
+<codeline lineno="120"><highlight class="comment"><sp/>*<sp/><sp/>structure.<sp/>The<sp/>CRC<sp/>instance<sp/>is<sp/>specified<sp/>by<sp/>the<sp/>index<sp/>of<sp/>the<sp/>CRC<sp/>in</highlight></codeline>
+<codeline lineno="121"><highlight class="comment"><sp/>*<sp/><sp/>CRC_config[].<sp/>Only<sp/>one<sp/>CRC<sp/>index<sp/>can<sp/>be<sp/>used<sp/>at<sp/>a<sp/>time;</highlight></codeline>
+<codeline lineno="122"><highlight class="comment"><sp/>*<sp/><sp/>calling<sp/>CRC_open()<sp/>a<sp/>second<sp/>time<sp/>with<sp/>the<sp/>same<sp/>index<sp/>previously</highlight></codeline>
+<codeline lineno="123"><highlight class="comment"><sp/>*<sp/><sp/>passed<sp/>to<sp/>CRC_open()<sp/>will<sp/>result<sp/>in<sp/>an<sp/>error.<sp/>You<sp/>can,</highlight></codeline>
+<codeline lineno="124"><highlight class="comment"><sp/>*<sp/><sp/>though,<sp/>re-use<sp/>the<sp/>index<sp/>if<sp/>the<sp/>instance<sp/>is<sp/>closed<sp/>via<sp/>CRC_close().</highlight></codeline>
+<codeline lineno="125"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="126"><highlight class="comment"><sp/>*<sp/><sp/>If<sp/>no<sp/>CRC_Params<sp/>structure<sp/>is<sp/>passed<sp/>to<sp/>CRC_open(),<sp/>default<sp/>values<sp/>are</highlight></codeline>
+<codeline lineno="127"><highlight class="comment"><sp/>*<sp/><sp/>used.<sp/>If<sp/>the<sp/>open<sp/>call<sp/>is<sp/>successful,<sp/>it<sp/>returns<sp/>a<sp/>non-NULL<sp/>value.</highlight></codeline>
+<codeline lineno="128"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="129"><highlight class="comment"><sp/>*<sp/><sp/>@code</highlight></codeline>
+<codeline lineno="130"><highlight class="comment"><sp/>*<sp/><sp/>CRC_Handle<sp/>handle;</highlight></codeline>
+<codeline lineno="131"><highlight class="comment"><sp/>*<sp/><sp/>CRC_Params<sp/>params;</highlight></codeline>
+<codeline lineno="132"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="133"><highlight class="comment"><sp/>*<sp/><sp/>//<sp/>Initialize<sp/>the<sp/>CRC<sp/>driver</highlight></codeline>
+<codeline lineno="134"><highlight class="comment"><sp/>*<sp/><sp/>CRC_init();</highlight></codeline>
+<codeline lineno="135"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="136"><highlight class="comment"><sp/>*<sp/><sp/>//<sp/>Initialize<sp/>optional<sp/>CRC<sp/>parameters<sp/>for<sp/>CALLBACK<sp/>mode</highlight></codeline>
+<codeline lineno="137"><highlight class="comment"><sp/>*<sp/><sp/>CRC_Params_init(&amp;params);</highlight></codeline>
+<codeline lineno="138"><highlight class="comment"><sp/>*<sp/><sp/>params.returnBehavior<sp/>=<sp/>CRC_RETURN_BEHAVIOR_CALLBACK;</highlight></codeline>
+<codeline lineno="139"><highlight class="comment"><sp/>*<sp/><sp/>params.callbackFxn<sp/>=<sp/>myCallbackFunction;</highlight></codeline>
+<codeline lineno="140"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="141"><highlight class="comment"><sp/>*<sp/><sp/>handle<sp/>=<sp/>CRC_open(CONFIG_CRC0,<sp/>&amp;params);</highlight></codeline>
+<codeline lineno="142"><highlight class="comment"><sp/>*<sp/><sp/>if<sp/>(handle<sp/>==<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline lineno="143"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>CRC_open()<sp/>failed</highlight></codeline>
+<codeline lineno="144"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>while<sp/>(1);</highlight></codeline>
+<codeline lineno="145"><highlight class="comment"><sp/>*<sp/><sp/>}</highlight></codeline>
+<codeline lineno="146"><highlight class="comment"><sp/>*<sp/><sp/>@endcode</highlight></codeline>
+<codeline lineno="147"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="148"><highlight class="comment"><sp/>*<sp/><sp/>@anchor<sp/>ti_drivers_CRC_Examples_calculateFull</highlight></codeline>
+<codeline lineno="149"><highlight class="comment"><sp/>*<sp/><sp/>##<sp/>Using<sp/>the<sp/>calculateFull<sp/>API</highlight></codeline>
+<codeline lineno="150"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="151"><highlight class="comment"><sp/>*<sp/><sp/>###<sp/>CRC-8-CCITT<sp/>without<sp/>data<sp/>processing</highlight></codeline>
+<codeline lineno="152"><highlight class="comment"><sp/>*<sp/><sp/>An<sp/>8-bit<sp/>CRC<sp/>with<sp/>no<sp/>data<sp/>processing<sp/>options.<sp/>Note<sp/>that<sp/>the</highlight></codeline>
+<codeline lineno="153"><highlight class="comment"><sp/>*<sp/><sp/>default<sp/>POLLING<sp/>mode<sp/>uses<sp/>the<sp/>CPU<sp/>to<sp/>move<sp/>data<sp/>so<sp/>will<sp/>not</highlight></codeline>
+<codeline lineno="154"><highlight class="comment"><sp/>*<sp/><sp/>allow<sp/>the<sp/>device<sp/>to<sp/>enter<sp/>standby<sp/>in<sp/>low-power<sp/>applications.</highlight></codeline>
+<codeline lineno="155"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="156"><highlight class="comment"><sp/>*<sp/><sp/>@code</highlight></codeline>
+<codeline lineno="157"><highlight class="comment"><sp/>*<sp/><sp/>CRC_Handle<sp/><sp/><sp/><sp/><sp/><sp/>handle;</highlight></codeline>
+<codeline lineno="158"><highlight class="comment"><sp/>*<sp/><sp/>int_fast16_t<sp/><sp/><sp/><sp/>status;</highlight></codeline>
+<codeline lineno="159"><highlight class="comment"><sp/>*<sp/><sp/>uint8_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>source[NUM_BYTES];</highlight></codeline>
+<codeline lineno="160"><highlight class="comment"><sp/>*<sp/><sp/>uint8_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>result;</highlight></codeline>
+<codeline lineno="161"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="162"><highlight class="comment"><sp/>*<sp/><sp/>//<sp/>Initialize<sp/>the<sp/>CRC<sp/>driver</highlight></codeline>
+<codeline lineno="163"><highlight class="comment"><sp/>*<sp/><sp/>CRC_init();</highlight></codeline>
+<codeline lineno="164"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="165"><highlight class="comment"><sp/>*<sp/><sp/>//<sp/>The<sp/>defaults<sp/>are<sp/>set<sp/>to<sp/>a<sp/>POLLING<sp/>mode<sp/>8-bit<sp/>CRC<sp/>with<sp/>seed<sp/>0xFF</highlight></codeline>
+<codeline lineno="166"><highlight class="comment"><sp/>*<sp/><sp/>//<sp/>We<sp/>can<sp/>pass<sp/>NULL<sp/>instead<sp/>of<sp/>a<sp/>Params<sp/>struct<sp/>to<sp/>make<sp/>use<sp/>of<sp/>this</highlight></codeline>
+<codeline lineno="167"><highlight class="comment"><sp/>*<sp/><sp/>handle<sp/>=<sp/>CRC_open(CONFIG_CRC0,<sp/>NULL);</highlight></codeline>
+<codeline lineno="168"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="169"><highlight class="comment"><sp/>*<sp/><sp/>if<sp/>(handle<sp/>==<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline lineno="170"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>while<sp/>(1);<sp/><sp/>//<sp/>CRC_open()<sp/>failed</highlight></codeline>
+<codeline lineno="171"><highlight class="comment"><sp/>*<sp/><sp/>}</highlight></codeline>
+<codeline lineno="172"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="173"><highlight class="comment"><sp/>*<sp/><sp/>status<sp/>=<sp/>CRC_calculateFull(handle,<sp/>source,<sp/>NUM_BYTES,<sp/>&amp;result);</highlight></codeline>
+<codeline lineno="174"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="175"><highlight class="comment"><sp/>*<sp/><sp/>if<sp/>(status<sp/>!=<sp/>CRC_STATUS_SUCCESS)<sp/>{</highlight></codeline>
+<codeline lineno="176"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>Error<sp/>with<sp/>parameters,<sp/>or<sp/>CRC<sp/>resource<sp/>was<sp/>unavailable</highlight></codeline>
+<codeline lineno="177"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>while<sp/>(1);</highlight></codeline>
+<codeline lineno="178"><highlight class="comment"><sp/>*<sp/><sp/>}</highlight></codeline>
+<codeline lineno="179"><highlight class="comment"><sp/>*<sp/><sp/>@endcode</highlight></codeline>
+<codeline lineno="180"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="181"><highlight class="comment"><sp/>*<sp/><sp/>###<sp/>CRC-32-IEEE<sp/>with<sp/>endianness<sp/>reversal</highlight></codeline>
+<codeline lineno="182"><highlight class="comment"><sp/>*<sp/><sp/>A<sp/>32-bit<sp/>CRC<sp/>with<sp/>data<sp/>processing<sp/>options,<sp/>in<sp/>BLOCKING<sp/>mode.</highlight></codeline>
+<codeline lineno="183"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="184"><highlight class="comment"><sp/>*<sp/><sp/>@code</highlight></codeline>
+<codeline lineno="185"><highlight class="comment"><sp/>*<sp/><sp/>CRC_Handle<sp/><sp/><sp/><sp/><sp/><sp/>handle;</highlight></codeline>
+<codeline lineno="186"><highlight class="comment"><sp/>*<sp/><sp/>CRC_Params<sp/><sp/><sp/><sp/><sp/><sp/>params;</highlight></codeline>
+<codeline lineno="187"><highlight class="comment"><sp/>*<sp/><sp/>int_fast16_t<sp/><sp/><sp/><sp/>status;</highlight></codeline>
+<codeline lineno="188"><highlight class="comment"><sp/>*<sp/><sp/>uint32_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>result;</highlight></codeline>
+<codeline lineno="189"><highlight class="comment"><sp/>*<sp/><sp/>uint8_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>source[NUM_BYTES];</highlight></codeline>
+<codeline lineno="190"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="191"><highlight class="comment"><sp/>*<sp/><sp/>CRC_init();<sp/><sp/>//<sp/>Initialize<sp/>the<sp/>CRC<sp/>driver</highlight></codeline>
+<codeline lineno="192"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="193"><highlight class="comment"><sp/>*<sp/><sp/>CRC_Params_init(&amp;params);<sp/><sp/><sp/><sp/><sp/>//<sp/>Initialize<sp/>CRC<sp/>parameters</highlight></codeline>
+<codeline lineno="194"><highlight class="comment"><sp/>*<sp/><sp/>params.returnBehavior<sp/>=<sp/>CRC_RETURN_BEHAVIOR_BLOCKING;</highlight></codeline>
+<codeline lineno="195"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="196"><highlight class="comment"><sp/>*<sp/><sp/>params.byteSwapInput<sp/>=<sp/>CRC_BYTESWAP_BYTES_AND_HALF_WORDS;</highlight></codeline>
+<codeline lineno="197"><highlight class="comment"><sp/>*<sp/><sp/>params.polynomial<sp/>=<sp/>CRC_POLYNOMIAL_CRC_32_IEEE;</highlight></codeline>
+<codeline lineno="198"><highlight class="comment"><sp/>*<sp/><sp/>params.dataSize<sp/>=<sp/>CRC_DATA_SIZE_32BIT;</highlight></codeline>
+<codeline lineno="199"><highlight class="comment"><sp/>*<sp/><sp/>params.seed<sp/>=<sp/>0xFFFFFFFF;</highlight></codeline>
+<codeline lineno="200"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="201"><highlight class="comment"><sp/>*<sp/><sp/>handle<sp/>=<sp/>CRC_open(CONFIG_CRC0,<sp/>&amp;params);</highlight></codeline>
+<codeline lineno="202"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="203"><highlight class="comment"><sp/>*<sp/><sp/>if<sp/>(handle<sp/>==<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline lineno="204"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>while<sp/>(1);<sp/><sp/>//<sp/>CRC_open()<sp/>failed</highlight></codeline>
+<codeline lineno="205"><highlight class="comment"><sp/>*<sp/><sp/>}</highlight></codeline>
+<codeline lineno="206"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="207"><highlight class="comment"><sp/>*<sp/><sp/>//<sp/>Obtain<sp/>data<sp/>for<sp/>the<sp/>source<sp/>buffer</highlight></codeline>
+<codeline lineno="208"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="209"><highlight class="comment"><sp/>*<sp/><sp/>status<sp/>=<sp/>CRC_calculateFull(handle,<sp/>source,<sp/>NUM_BYTES,<sp/>&amp;result);</highlight></codeline>
+<codeline lineno="210"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="211"><highlight class="comment"><sp/>*<sp/><sp/>if<sp/>(status<sp/>!=<sp/>CRC_STATUS_SUCCESS)<sp/>{</highlight></codeline>
+<codeline lineno="212"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>Error<sp/>with<sp/>parameters,<sp/>or<sp/>CRC<sp/>resource<sp/>was<sp/>unavailable</highlight></codeline>
+<codeline lineno="213"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>while<sp/>(1);</highlight></codeline>
+<codeline lineno="214"><highlight class="comment"><sp/>*<sp/><sp/>}</highlight></codeline>
+<codeline lineno="215"><highlight class="comment"><sp/>*<sp/><sp/>@endcode</highlight></codeline>
+<codeline lineno="216"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="217"><highlight class="comment"><sp/>*<sp/><sp/>@anchor<sp/>ti_drivers_CRC_Examples_calculatePartial</highlight></codeline>
+<codeline lineno="218"><highlight class="comment"><sp/>*<sp/><sp/>##<sp/>Using<sp/>the<sp/>addData<sp/>API</highlight></codeline>
+<codeline lineno="219"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="220"><highlight class="comment"><sp/>*<sp/><sp/>It<sp/>may<sp/>be<sp/>desirable<sp/>to<sp/>use<sp/>the<sp/>CRC<sp/>to<sp/>calculate<sp/>over<sp/>blocks<sp/>of<sp/>data<sp/>that</highlight></codeline>
+<codeline lineno="221"><highlight class="comment"><sp/>*<sp/><sp/>are<sp/>available<sp/>at<sp/>different<sp/>times<sp/>or<sp/>non-contiguous<sp/>in<sp/>memory.<sp/>A</highlight></codeline>
+<codeline lineno="222"><highlight class="comment"><sp/>*<sp/><sp/>block-by-block<sp/>API<sp/>is<sp/>available<sp/>to<sp/>do<sp/>this.<sp/>The<sp/>following<sp/>code<sp/>calculates</highlight></codeline>
+<codeline lineno="223"><highlight class="comment"><sp/>*<sp/><sp/>the<sp/>CRC<sp/>of<sp/>two<sp/>separate<sp/>arrays<sp/>as<sp/>though<sp/>they<sp/>were<sp/>concatenated.</highlight></codeline>
+<codeline lineno="224"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="225"><highlight class="comment"><sp/>*<sp/><sp/>@code</highlight></codeline>
+<codeline lineno="226"><highlight class="comment"><sp/>*<sp/><sp/>CRC_Handle<sp/><sp/><sp/><sp/><sp/><sp/>handle;</highlight></codeline>
+<codeline lineno="227"><highlight class="comment"><sp/>*<sp/><sp/>CRC_Params<sp/><sp/><sp/><sp/><sp/><sp/>params;</highlight></codeline>
+<codeline lineno="228"><highlight class="comment"><sp/>*<sp/><sp/>int_fast16_t<sp/><sp/><sp/><sp/>status;</highlight></codeline>
+<codeline lineno="229"><highlight class="comment"><sp/>*<sp/><sp/>uint32_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>result;</highlight></codeline>
+<codeline lineno="230"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="231"><highlight class="comment"><sp/>*<sp/><sp/>uint32_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sourceA<sp/>[NUM_BYTES]<sp/>=<sp/>{<sp/>...<sp/>};</highlight></codeline>
+<codeline lineno="232"><highlight class="comment"><sp/>*<sp/><sp/>uint32_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sourceB<sp/>[NUM_BYTES]<sp/>=<sp/>{<sp/>...<sp/>};</highlight></codeline>
+<codeline lineno="233"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="234"><highlight class="comment"><sp/>*<sp/><sp/>CRC_init();</highlight></codeline>
+<codeline lineno="235"><highlight class="comment"><sp/>*<sp/><sp/>CRC_Params_init(&amp;params);</highlight></codeline>
+<codeline lineno="236"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="237"><highlight class="comment"><sp/>*<sp/><sp/>params.byteSwapInput<sp/>=<sp/>CRC_BYTESWAP_UNCHANGED;</highlight></codeline>
+<codeline lineno="238"><highlight class="comment"><sp/>*<sp/><sp/>params.polynomial<sp/>=<sp/>CRC_POLYNOMIAL_CRC_32C;</highlight></codeline>
+<codeline lineno="239"><highlight class="comment"><sp/>*<sp/><sp/>params.dataSize<sp/>=<sp/>CRC_DATA_SIZE_32BIT;</highlight></codeline>
+<codeline lineno="240"><highlight class="comment"><sp/>*<sp/><sp/>params.seed<sp/>=<sp/>0xFFFFFFFF;</highlight></codeline>
+<codeline lineno="241"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="242"><highlight class="comment"><sp/>*<sp/><sp/>handle<sp/>=<sp/>CRC_open(CONFIG_CRC0,<sp/>&amp;params);</highlight></codeline>
+<codeline lineno="243"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="244"><highlight class="comment"><sp/>*<sp/><sp/>if<sp/>(handle<sp/>==<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline lineno="245"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>while<sp/>(1);<sp/><sp/>//<sp/>CRC_open()<sp/>failed</highlight></codeline>
+<codeline lineno="246"><highlight class="comment"><sp/>*<sp/><sp/>}</highlight></codeline>
+<codeline lineno="247"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="248"><highlight class="comment"><sp/>*<sp/><sp/>status<sp/>=<sp/>CRC_addData(handle,<sp/>sourceA,<sp/>NUM_BYTES);</highlight></codeline>
+<codeline lineno="249"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="250"><highlight class="comment"><sp/>*<sp/><sp/>if<sp/>(status<sp/>!=<sp/>CRC_STATUS_SUCCESS)<sp/>{</highlight></codeline>
+<codeline lineno="251"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>CRC<sp/>resource<sp/>was<sp/>unavailable</highlight></codeline>
+<codeline lineno="252"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>while<sp/>(1);</highlight></codeline>
+<codeline lineno="253"><highlight class="comment"><sp/>*<sp/><sp/>}</highlight></codeline>
+<codeline lineno="254"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="255"><highlight class="comment"><sp/>*<sp/><sp/>status<sp/>=<sp/>CRC_addData(handle,<sp/>sourceB,<sp/>NUM_BYTES);</highlight></codeline>
+<codeline lineno="256"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="257"><highlight class="comment"><sp/>*<sp/><sp/>if<sp/>(status<sp/>!=<sp/>CRC_STATUS_SUCCESS)<sp/>{</highlight></codeline>
+<codeline lineno="258"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>CRC<sp/>resource<sp/>was<sp/>unavailable</highlight></codeline>
+<codeline lineno="259"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>while<sp/>(1);</highlight></codeline>
+<codeline lineno="260"><highlight class="comment"><sp/>*<sp/><sp/>}</highlight></codeline>
+<codeline lineno="261"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="262"><highlight class="comment"><sp/>*<sp/><sp/>CRC_finalize(handle,<sp/>&amp;result);</highlight></codeline>
+<codeline lineno="263"><highlight class="comment"><sp/>*<sp/><sp/>@endcode</highlight></codeline>
+<codeline lineno="264"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="265"><highlight class="comment"><sp/>*******************************************************************************</highlight></codeline>
+<codeline lineno="266"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="267"><highlight class="normal"></highlight></codeline>
+<codeline lineno="268"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>ti_drivers_CRC__include</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="269"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ti_drivers_CRC__include</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="270"><highlight class="normal"></highlight></codeline>
+<codeline lineno="271"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stddef.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="272"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="273"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdbool.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="274"><highlight class="normal"></highlight></codeline>
+<codeline lineno="275"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="276"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="278"><highlight class="normal"></highlight></codeline>
+<codeline lineno="279" refid="_c_r_c_8h_1a4387f9699605361fa1cf5eec6d2cf31d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CRC_STATUS_RESERVED<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(-32)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="280"><highlight class="normal"></highlight></codeline>
+<codeline lineno="282" refid="_c_r_c_8h_1a58b2c7c08c6bcaf86c6f77a85484de3c" refkind="member"><highlight class="preprocessor">#define<sp/>CRC_STATUS_SUCCESS<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="283"><highlight class="normal"></highlight></codeline>
+<codeline lineno="285" refid="_c_r_c_8h_1ac2ee821dd20d05f2207ea9ae3ad1faf3" refkind="member"><highlight class="preprocessor">#define<sp/>CRC_STATUS_ERROR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(-1)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="286"><highlight class="normal"></highlight></codeline>
+<codeline lineno="288" refid="_c_r_c_8h_1a2f4f35f6372d7d9fe8f12d964ef11236" refkind="member"><highlight class="preprocessor">#define<sp/>CRC_STATUS_RESOURCE_UNAVAILABLE<sp/><sp/><sp/><sp/><sp/>(-2)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="289"><highlight class="normal"></highlight></codeline>
+<codeline lineno="291" refid="_c_r_c_8h_1a95944bf2499afc8b09e2f4178f39545f" refkind="member"><highlight class="preprocessor">#define<sp/>CRC_STATUS_OPERATION_NOT_SUPPORTED<sp/><sp/>(-3)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="292"><highlight class="normal"></highlight></codeline>
+<codeline lineno="294" refid="_c_r_c_8h_1ad631f200d7bf5c390f7f262c27b8f31b" refkind="member"><highlight class="preprocessor">#define<sp/>CRC_STATUS_LEFTOVER_BYTES_PRESENT<sp/><sp/><sp/>(-4)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="295"><highlight class="normal"></highlight></codeline>
+<codeline lineno="307" refid="struct_c_r_c___config" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="308" refid="struct_c_r_c___config_1aeb28b40f2704d80712fe6951373df796" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="struct_c_r_c___config_1aeb28b40f2704d80712fe6951373df796" kindref="member">object</ref>;</highlight></codeline>
+<codeline lineno="309" refid="struct_c_r_c___config_1a5cb1d2386eda022528f7f5a6f2616a24" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>*<ref refid="struct_c_r_c___config_1a5cb1d2386eda022528f7f5a6f2616a24" kindref="member">hwAttrs</ref>;</highlight></codeline>
+<codeline lineno="310"><highlight class="normal">}<sp/><ref refid="struct_c_r_c___config" kindref="compound">CRC_Config</ref>;</highlight></codeline>
+<codeline lineno="311"><highlight class="normal"></highlight></codeline>
+<codeline lineno="315" refid="_c_r_c_8h_1aa2baf3474dc38f2f462dd9eb1cdbf086" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="struct_c_r_c___config" kindref="compound">CRC_Config</ref><sp/>*<ref refid="_c_r_c_8h_1aa2baf3474dc38f2f462dd9eb1cdbf086" kindref="member">CRC_Handle</ref>;</highlight></codeline>
+<codeline lineno="316"><highlight class="normal"></highlight></codeline>
+<codeline lineno="329" refid="_c_r_c_8h_1a8b296466741fa36ab51155a7edc1dd4f" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="330" refid="_c_r_c_8h_1a8b296466741fa36ab51155a7edc1dd4fa227cd7780379aaf77badc213efc794f1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_c_r_c_8h_1a8b296466741fa36ab51155a7edc1dd4fa227cd7780379aaf77badc213efc794f1" kindref="member">CRC_RETURN_BEHAVIOR_CALLBACK</ref><sp/>=<sp/>1,<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="335" refid="_c_r_c_8h_1a8b296466741fa36ab51155a7edc1dd4fa6003bf009d265125d597752f60ea22f1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_c_r_c_8h_1a8b296466741fa36ab51155a7edc1dd4fa6003bf009d265125d597752f60ea22f1" kindref="member">CRC_RETURN_BEHAVIOR_BLOCKING</ref><sp/>=<sp/>2,<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="338" refid="_c_r_c_8h_1a8b296466741fa36ab51155a7edc1dd4faf3c071e4007dd0de8c9e15d5b423f9c6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_c_r_c_8h_1a8b296466741fa36ab51155a7edc1dd4faf3c071e4007dd0de8c9e15d5b423f9c6" kindref="member">CRC_RETURN_BEHAVIOR_POLLING</ref><sp/><sp/>=<sp/>4,<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="340"><highlight class="normal">}<sp/><ref refid="_c_r_c_8h_1a8b296466741fa36ab51155a7edc1dd4f" kindref="member">CRC_ReturnBehavior</ref>;</highlight></codeline>
+<codeline lineno="341"><highlight class="normal"></highlight></codeline>
+<codeline lineno="342"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Not<sp/>all<sp/>polynomials<sp/>are<sp/>supported<sp/>on<sp/>all<sp/>implementations;<sp/>see<sp/>the<sp/>device<sp/>specific</highlight></codeline>
+<codeline lineno="343"><highlight class="comment"><sp/>*<sp/>header<sp/>files<sp/>for<sp/>details.<sp/>OPERATION_NOT_SUPPORTED<sp/>will<sp/>be<sp/>returned<sp/>if<sp/>an</highlight></codeline>
+<codeline lineno="344"><highlight class="comment"><sp/>*<sp/>unsupported<sp/>polynomial<sp/>is<sp/>requested.</highlight></codeline>
+<codeline lineno="345"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="346"><highlight class="comment"><sp/>*<sp/>Texas<sp/>Instruments<sp/>does<sp/>not<sp/>provide<sp/>advice<sp/>on<sp/>polynomial<sp/>suitability.<sp/>The</highlight></codeline>
+<codeline lineno="347"><highlight class="comment"><sp/>*<sp/>availability<sp/>of<sp/>polynomials<sp/>in<sp/>this<sp/>driver<sp/>or<sp/>on<sp/>a<sp/>particular<sp/>device<sp/>does</highlight></codeline>
+<codeline lineno="348"><highlight class="comment"><sp/>*<sp/>not<sp/>imply<sp/>fitness<sp/>for<sp/>any<sp/>particular<sp/>task.<sp/>If<sp/>highly<sp/>reliable<sp/>error</highlight></codeline>
+<codeline lineno="349"><highlight class="comment"><sp/>*<sp/>detection<sp/>capabilities<sp/>are<sp/>required,<sp/>please<sp/>consult<sp/>a<sp/>domain<sp/>expert</highlight></codeline>
+<codeline lineno="350"><highlight class="comment"><sp/>*<sp/>before<sp/>choosing<sp/>a<sp/>polynomial.</highlight></codeline>
+<codeline lineno="351"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="352" refid="_c_r_c_8h_1af56fbf0622a9de9658ea1e86485a8e8e" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="354" refid="_c_r_c_8h_1af56fbf0622a9de9658ea1e86485a8e8ea4016357a1589b4898727ced2eefb0c8a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_c_r_c_8h_1af56fbf0622a9de9658ea1e86485a8e8ea4016357a1589b4898727ced2eefb0c8a" kindref="member">CRC_POLYNOMIAL_CRC_8_CCITT</ref>,</highlight></codeline>
+<codeline lineno="356" refid="_c_r_c_8h_1af56fbf0622a9de9658ea1e86485a8e8ea7fc21d7151b11f63ae3c1dda623b542d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_c_r_c_8h_1af56fbf0622a9de9658ea1e86485a8e8ea7fc21d7151b11f63ae3c1dda623b542d" kindref="member">CRC_POLYNOMIAL_CRC_16_CCITT</ref>,</highlight></codeline>
+<codeline lineno="358" refid="_c_r_c_8h_1af56fbf0622a9de9658ea1e86485a8e8ea47ef11a29f774a6ec271728e4b7e84e4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_c_r_c_8h_1af56fbf0622a9de9658ea1e86485a8e8ea47ef11a29f774a6ec271728e4b7e84e4" kindref="member">CRC_POLYNOMIAL_CRC_16_IBM</ref>,</highlight></codeline>
+<codeline lineno="360" refid="_c_r_c_8h_1af56fbf0622a9de9658ea1e86485a8e8eac0367c13df9715e90aa867d6ab933887" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_c_r_c_8h_1af56fbf0622a9de9658ea1e86485a8e8eac0367c13df9715e90aa867d6ab933887" kindref="member">CRC_POLYNOMIAL_CRC_32_IEEE</ref>,</highlight></codeline>
+<codeline lineno="362" refid="_c_r_c_8h_1af56fbf0622a9de9658ea1e86485a8e8ea8854edee82722360b9adbfbfda3843b1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_c_r_c_8h_1af56fbf0622a9de9658ea1e86485a8e8ea8854edee82722360b9adbfbfda3843b1" kindref="member">CRC_POLYNOMIAL_CRC_32C</ref>,</highlight></codeline>
+<codeline lineno="364" refid="_c_r_c_8h_1af56fbf0622a9de9658ea1e86485a8e8eab910bbfe281424a19c10eae4040484f8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_c_r_c_8h_1af56fbf0622a9de9658ea1e86485a8e8eab910bbfe281424a19c10eae4040484f8" kindref="member">CRC_POLYNOMIAL_CRC_32_IO_LINK</ref>,</highlight></codeline>
+<codeline lineno="365"><highlight class="normal"></highlight></codeline>
+<codeline lineno="368" refid="_c_r_c_8h_1af56fbf0622a9de9658ea1e86485a8e8eab17bc6d14eefac89d17972a91dcc658d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_c_r_c_8h_1af56fbf0622a9de9658ea1e86485a8e8eab17bc6d14eefac89d17972a91dcc658d" kindref="member">CRC_POLYNOMIAL_CRC_TCP</ref>,</highlight></codeline>
+<codeline lineno="369"><highlight class="normal"></highlight></codeline>
+<codeline lineno="373" refid="_c_r_c_8h_1af56fbf0622a9de9658ea1e86485a8e8eaa7e3b61b25e921e5316b4b258e2da7d1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_c_r_c_8h_1af56fbf0622a9de9658ea1e86485a8e8eaa7e3b61b25e921e5316b4b258e2da7d1" kindref="member">CRC_POLYNOMIAL_CUSTOM_PROGRAMMABLE</ref>,</highlight></codeline>
+<codeline lineno="374"><highlight class="normal">}<sp/><ref refid="_c_r_c_8h_1af56fbf0622a9de9658ea1e86485a8e8e" kindref="member">CRC_Polynomial</ref>;</highlight></codeline>
+<codeline lineno="375"><highlight class="normal"></highlight></codeline>
+<codeline lineno="384" refid="_c_r_c_8h_1a54c1e040e01bddb039a9a3632aee034c" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="385" refid="_c_r_c_8h_1a54c1e040e01bddb039a9a3632aee034caa3e5d15aa34f030b7c4582b223c2ee7c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_c_r_c_8h_1a54c1e040e01bddb039a9a3632aee034caa3e5d15aa34f030b7c4582b223c2ee7c" kindref="member">CRC_BYTESWAP_UNCHANGED</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>A<sp/>B<sp/>C<sp/>D<sp/>-&gt;<sp/>A<sp/>B<sp/>C<sp/>D<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="386" refid="_c_r_c_8h_1a54c1e040e01bddb039a9a3632aee034caf509ca9bfecab3b6a3b81b877a4e3ed3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_c_r_c_8h_1a54c1e040e01bddb039a9a3632aee034caf509ca9bfecab3b6a3b81b877a4e3ed3" kindref="member">CRC_BYTESWAP_HALF_WORDS</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>A<sp/>B<sp/>C<sp/>D<sp/>-&gt;<sp/>C<sp/>D<sp/>A<sp/>B<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="387" refid="_c_r_c_8h_1a54c1e040e01bddb039a9a3632aee034ca2c083e19f62d3ea543f3b972f0bf2e8d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_c_r_c_8h_1a54c1e040e01bddb039a9a3632aee034ca2c083e19f62d3ea543f3b972f0bf2e8d" kindref="member">CRC_BYTESWAP_BYTES_IN_HALF_WORDS</ref>,<sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>A<sp/>B<sp/>C<sp/>D<sp/>-&gt;<sp/>B<sp/>A<sp/>D<sp/>C<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="388" refid="_c_r_c_8h_1a54c1e040e01bddb039a9a3632aee034ca366e0f8ff311ba5120f8d40f63832303" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_c_r_c_8h_1a54c1e040e01bddb039a9a3632aee034ca366e0f8ff311ba5120f8d40f63832303" kindref="member">CRC_BYTESWAP_BYTES_AND_HALF_WORDS</ref>,<sp/><sp/></highlight><highlight class="comment">/*<sp/>A<sp/>B<sp/>C<sp/>D<sp/>-&gt;<sp/>D<sp/>C<sp/>B<sp/>A<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="389"><highlight class="normal">}<sp/><ref refid="_c_r_c_8h_1a54c1e040e01bddb039a9a3632aee034c" kindref="member">CRC_ByteSwap</ref>;</highlight></codeline>
+<codeline lineno="390"><highlight class="normal"></highlight></codeline>
+<codeline lineno="395" refid="_c_r_c_8h_1a4ab2a6288a9a24b832bc4a2d57447f45" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="396" refid="_c_r_c_8h_1a4ab2a6288a9a24b832bc4a2d57447f45af3a39fd93d7a066857133d103b66dc8f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_c_r_c_8h_1a4ab2a6288a9a24b832bc4a2d57447f45af3a39fd93d7a066857133d103b66dc8f" kindref="member">CRC_DATA_SIZE_8BIT</ref>,</highlight></codeline>
+<codeline lineno="397" refid="_c_r_c_8h_1a4ab2a6288a9a24b832bc4a2d57447f45a5082ceb63d9b04255f102f307e2a0a5d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_c_r_c_8h_1a4ab2a6288a9a24b832bc4a2d57447f45a5082ceb63d9b04255f102f307e2a0a5d" kindref="member">CRC_DATA_SIZE_16BIT</ref>,</highlight></codeline>
+<codeline lineno="398" refid="_c_r_c_8h_1a4ab2a6288a9a24b832bc4a2d57447f45acf75515ea26972d894d578957b952674" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_c_r_c_8h_1a4ab2a6288a9a24b832bc4a2d57447f45acf75515ea26972d894d578957b952674" kindref="member">CRC_DATA_SIZE_32BIT</ref>,</highlight></codeline>
+<codeline lineno="399"><highlight class="normal">}<sp/><ref refid="_c_r_c_8h_1a4ab2a6288a9a24b832bc4a2d57447f45" kindref="member">CRC_DataSize</ref>;</highlight></codeline>
+<codeline lineno="400"><highlight class="normal"></highlight></codeline>
+<codeline lineno="412" refid="_c_r_c_8h_1a238af244318c919652636cc82abefcbc" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>void<sp/>(*<ref refid="_c_r_c_8h_1a238af244318c919652636cc82abefcbc" kindref="member">CRC_CallbackFxn</ref>)<sp/>(CRC_Handle<sp/>handle,<sp/>int_fast16_t<sp/>status,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*result);</highlight></codeline>
+<codeline lineno="413"><highlight class="normal"></highlight></codeline>
+<codeline lineno="418" refid="struct_c_r_c___params" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="420" refid="struct_c_r_c___params_1a992bb41f2ecf3e346a7edd66254c9d5a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_c_r_c_8h_1a8b296466741fa36ab51155a7edc1dd4f" kindref="member">CRC_ReturnBehavior</ref><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_c_r_c___params_1a992bb41f2ecf3e346a7edd66254c9d5a" kindref="member">returnBehavior</ref>;</highlight></codeline>
+<codeline lineno="422" refid="struct_c_r_c___params_1a2a46f3906d45653dc52cb261a3fad5cd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_c_r_c_8h_1a238af244318c919652636cc82abefcbc" kindref="member">CRC_CallbackFxn</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_c_r_c___params_1a2a46f3906d45653dc52cb261a3fad5cd" kindref="member">callbackFxn</ref>;</highlight></codeline>
+<codeline lineno="426" refid="struct_c_r_c___params_1ae2f1c1004670fbd9eb4086a034900793" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_c_r_c___params_1ae2f1c1004670fbd9eb4086a034900793" kindref="member">timeout</ref>;</highlight></codeline>
+<codeline lineno="428" refid="struct_c_r_c___params_1ab4ae3e2b7fc4fc2e45464da690d7a68f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="struct_c_r_c___params_1ab4ae3e2b7fc4fc2e45464da690d7a68f" kindref="member">custom</ref>;</highlight></codeline>
+<codeline lineno="429"><highlight class="normal"></highlight></codeline>
+<codeline lineno="432" refid="struct_c_r_c___params_1abaa0d46b2c3959aa5864832895676bea" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_c_r_c___params_1abaa0d46b2c3959aa5864832895676bea" kindref="member">seed</ref>;</highlight></codeline>
+<codeline lineno="435" refid="struct_c_r_c___params_1ad695ce6adcd3a4075a58776604d8ac4d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>CRC_Polynomial<sp/><sp/><sp/><sp/><ref refid="struct_c_r_c___params_1ad695ce6adcd3a4075a58776604d8ac4d" kindref="member">polynomial</ref>;</highlight></codeline>
+<codeline lineno="437" refid="struct_c_r_c___params_1a2242de716a5a0a1158909fa9c9c20bd3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_c_r_c___params_1a2242de716a5a0a1158909fa9c9c20bd3" kindref="member">programmablePoly</ref>;</highlight></codeline>
+<codeline lineno="439" refid="struct_c_r_c___params_1aa420ae95ab2fa829d056a4bd189f793d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_c_r_c___params_1aa420ae95ab2fa829d056a4bd189f793d" kindref="member">programmablePolyOrder</ref>;</highlight></codeline>
+<codeline lineno="440"><highlight class="normal"></highlight></codeline>
+<codeline lineno="443" refid="struct_c_r_c___params_1ab25bfd5983d10e16d5698f9c6c49f3a9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>CRC_DataSize<sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_c_r_c___params_1ab25bfd5983d10e16d5698f9c6c49f3a9" kindref="member">dataSize</ref>;</highlight></codeline>
+<codeline lineno="446" refid="struct_c_r_c___params_1ae2c8ad7697a9e73d917498c9e1ed0ca5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>CRC_ByteSwap<sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_c_r_c___params_1ae2c8ad7697a9e73d917498c9e1ed0ca5" kindref="member">byteSwapInput</ref>;</highlight></codeline>
+<codeline lineno="447"><highlight class="normal"></highlight></codeline>
+<codeline lineno="449" refid="struct_c_r_c___params_1aa1f4c3aee33eb37cfe93ad8808460c75" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_c_r_c___params_1aa1f4c3aee33eb37cfe93ad8808460c75" kindref="member">reverseInputBits</ref>;</highlight></codeline>
+<codeline lineno="451" refid="struct_c_r_c___params_1a94525c596e51708fc986ca4d229871ed" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_c_r_c___params_1a94525c596e51708fc986ca4d229871ed" kindref="member">invertOutputBits</ref>;</highlight></codeline>
+<codeline lineno="453" refid="struct_c_r_c___params_1ae6b06f2498ea8fd0aef1b5cf4b4144d3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_c_r_c___params_1ae6b06f2498ea8fd0aef1b5cf4b4144d3" kindref="member">reverseOutputBits</ref>;</highlight></codeline>
+<codeline lineno="455" refid="struct_c_r_c___params_1aa3f37d358ed9b9098a6e3a61a03a6131" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_c_r_c___params_1aa3f37d358ed9b9098a6e3a61a03a6131" kindref="member">finalXorValue</ref>;</highlight></codeline>
+<codeline lineno="456"><highlight class="normal">}<sp/><ref refid="struct_c_r_c___params" kindref="compound">CRC_Params</ref>;</highlight></codeline>
+<codeline lineno="457"><highlight class="normal"></highlight></codeline>
+<codeline lineno="463"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_c_r_c___params" kindref="compound">CRC_Params</ref><sp/><ref refid="_c_r_c_8h_1a9244fddd88f16005a195fbea9765f4ed" kindref="member">CRC_defaultParams</ref>;</highlight></codeline>
+<codeline lineno="464"><highlight class="normal"></highlight></codeline>
+<codeline lineno="473"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_c_r_c_8h_1a347e1e5ca096c24e6d3b11da6a69ff3d" kindref="member">CRC_init</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="474"><highlight class="normal"></highlight></codeline>
+<codeline lineno="498"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_c_r_c_8h_1aa24a651af4fc21f28fb688052937affe" kindref="member">CRC_Params_init</ref>(<ref refid="struct_c_r_c___params" kindref="compound">CRC_Params</ref><sp/>*params);</highlight></codeline>
+<codeline lineno="499"><highlight class="normal"></highlight></codeline>
+<codeline lineno="518"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>CRC_Handle<sp/><ref refid="_c_r_c_8h_1a4557643f2f2ac07736cfb295e5b77b04" kindref="member">CRC_open</ref>(uint_least8_t<sp/>index,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_c_r_c___params" kindref="compound">CRC_Params</ref><sp/>*params);</highlight></codeline>
+<codeline lineno="519"><highlight class="normal"></highlight></codeline>
+<codeline lineno="542"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>int_fast16_t<sp/><ref refid="_c_r_c_8h_1a0a4322229a3007f7b028d8e9cbf68734" kindref="member">CRC_calculateFull</ref>(CRC_Handle<sp/>handle,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*source,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>sourceBytes,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*result);</highlight></codeline>
+<codeline lineno="543"><highlight class="normal"></highlight></codeline>
+<codeline lineno="567"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>int_fast16_t<sp/><ref refid="_c_r_c_8h_1aacec75d202a8f35d6cea1e3616b2758e" kindref="member">CRC_addData</ref>(CRC_Handle<sp/>handle,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*source,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>sourceBytes);</highlight></codeline>
+<codeline lineno="568"><highlight class="normal"></highlight></codeline>
+<codeline lineno="587"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_c_r_c_8h_1aa4ed9634419b64658bbdc788e97ccbef" kindref="member">CRC_finalize</ref>(CRC_Handle<sp/>handle,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*result);</highlight></codeline>
+<codeline lineno="588"><highlight class="normal"></highlight></codeline>
+<codeline lineno="600"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_c_r_c_8h_1a9d07f39cbafb84fe733c9b8c6c8ad42a" kindref="member">CRC_reset</ref>(CRC_Handle<sp/>handle);</highlight></codeline>
+<codeline lineno="601"><highlight class="normal"></highlight></codeline>
+<codeline lineno="611"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_c_r_c_8h_1ae6e3fb25f75f0237ec439cdf37144f0b" kindref="member">CRC_close</ref>(CRC_Handle<sp/>handle);</highlight></codeline>
+<codeline lineno="612"><highlight class="normal"></highlight></codeline>
+<codeline lineno="613"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="614"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="615"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="616"><highlight class="normal"></highlight></codeline>
+<codeline lineno="617"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>ti_drivers_CRC__include<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="exports/tidrivers_msp432e4/source/ti/drivers/CRC.h"/>
+  </compounddef>
+</doxygen>

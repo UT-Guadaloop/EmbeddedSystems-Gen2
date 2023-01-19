@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="struct_c_r_c___config" kind="struct" language="C++" prot="public">
+    <compoundname>CRC_Config</compoundname>
+    <includes refid="_c_r_c_8h" local="no">CRC.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_c_r_c___config_1aeb28b40f2704d80712fe6951373df796" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* CRC_Config::object</definition>
+        <argsstring></argsstring>
+        <name>object</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/CRC.h" line="308" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/CRC.h" bodystart="308" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_c_r_c___config_1a5cb1d2386eda022528f7f5a6f2616a24" prot="public" static="no" mutable="no">
+        <type>void const  *</type>
+        <definition>void const* CRC_Config::hwAttrs</definition>
+        <argsstring></argsstring>
+        <name>hwAttrs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/CRC.h" line="309" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/CRC.h" bodystart="309" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>CRC Global configuration. </para>    </briefdescription>
+    <detaileddescription>
+<para>The <ref refid="struct_c_r_c___config" kindref="compound">CRC_Config</ref> structure contains a set of pointers used to characterize the CRC driver implementation.</para><para>This structure needs to be defined before calling <ref refid="_c_r_c_8h_1a347e1e5ca096c24e6d3b11da6a69ff3d" kindref="member">CRC_init()</ref> and it must not be changed thereafter.</para><para><simplesect kind="see"><para><ref refid="_c_r_c_8h_1a347e1e5ca096c24e6d3b11da6a69ff3d" kindref="member">CRC_init()</ref> </para></simplesect>
+</para>    </detaileddescription>
+    <location file="exports/tidrivers_msp432e4/source/ti/drivers/CRC.h" line="307" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/CRC.h" bodystart="307" bodyend="310"/>
+    <listofallmembers>
+      <member refid="struct_c_r_c___config_1a5cb1d2386eda022528f7f5a6f2616a24" prot="public" virt="non-virtual"><scope>CRC_Config</scope><name>hwAttrs</name></member>
+      <member refid="struct_c_r_c___config_1aeb28b40f2704d80712fe6951373df796" prot="public" virt="non-virtual"><scope>CRC_Config</scope><name>object</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

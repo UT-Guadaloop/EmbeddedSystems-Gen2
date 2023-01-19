@@ -1,0 +1,192 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="_watchdog_m_s_p432_e4_8h" kind="file" language="C++">
+    <compoundname>WatchdogMSP432E4.h</compoundname>
+    <includes local="no">stdbool.h</includes>
+    <includes local="no">stdint.h</includes>
+    <includes refid="_watchdog_8h" local="no">ti/drivers/Watchdog.h</includes>
+    <incdepgraph>
+      <node id="557">
+        <label>stdbool.h</label>
+      </node>
+      <node id="558">
+        <label>stdint.h</label>
+      </node>
+      <node id="559">
+        <label>ti/drivers/Watchdog.h</label>
+        <link refid="_watchdog_8h"/>
+        <childnode refid="558" relation="include">
+        </childnode>
+      </node>
+      <node id="556">
+        <label>WatchdogMSP432E4.h</label>
+        <link refid="_watchdog_m_s_p432_e4_8h"/>
+        <childnode refid="557" relation="include">
+        </childnode>
+        <childnode refid="558" relation="include">
+        </childnode>
+        <childnode refid="559" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innerclass refid="struct_watchdog_m_s_p432_e4___h_w_attrs" prot="public">WatchdogMSP432E4_HWAttrs</innerclass>
+    <innerclass refid="struct_watchdog_m_s_p432_e4___object" prot="public">WatchdogMSP432E4_Object</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_watchdog_m_s_p432_e4_8h_1aaf0519df8821544f0b4e2d7023af1396" prot="public" static="no" mutable="no">
+        <type>const <ref refid="struct_watchdog___fxn_table" kindref="compound">Watchdog_FxnTable</ref></type>
+        <definition>const Watchdog_FxnTable WatchdogMSP432E4_fxnTable</definition>
+        <argsstring></argsstring>
+        <name>WatchdogMSP432E4_fxnTable</name>
+        <briefdescription>
+<para>Watchdog function table for MSP432E4. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/watchdog/WatchdogMSP432E4.h" line="128" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Watchdog driver implementation for MSP432E4. </para>    </briefdescription>
+    <detaileddescription>
+<para><hruler/>
+</para><para>The Watchdog header file for MSP432E4 should be included in an application as follows: <programlisting><codeline><highlight class="normal">#include<sp/>&lt;ti/drivers/Watchdog.h&gt;</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&lt;ti/drivers/watchdog/WatchdogMSP432E4.h&gt;</highlight></codeline>
+</programlisting></para><para>Refer to <ref refid="_watchdog_8h" kindref="compound">Watchdog.h</ref> for a complete description of APIs.</para><para><heading level="2">Overview</heading>
+</para><para>This Watchdog driver implementation is designed to operate on a MSP432E4 device. Once opened, MSP432E4 Watchdog will count down from the reload value specified in the <ref refid="struct_watchdog_m_s_p432_e4___h_w_attrs" kindref="compound">WatchdogMSP432E4_HWAttrs</ref>. If it times out, the Watchdog interrupt flag will be set, and a user-provided callback function will be called. If resets have been enabled in the <ref refid="struct_watchdog___params" kindref="compound">Watchdog_Params</ref> and the Watchdog Timer is allowed to timeout again while the interrupt flag is still pending, a reset signal will be generated. To prevent a reset, <ref refid="_watchdog_8h_1a396decd6b1807db10c636f9987c3be4c" kindref="member">Watchdog_clear()</ref> must be called to clear the interrupt flag.</para><para><simplesect kind="warning"><para>The watchdog peripheral does not support a Non-Maskable Interrupt (NMI).</para></simplesect>
+The reload value from which the Watchdog Timer counts down may be changed during runtime using <ref refid="_watchdog_8h_1a63ea82dda83e42e236578b9810e56880" kindref="member">Watchdog_setReload()</ref>.</para><para><ref refid="_watchdog_8h_1a1c0dfea7011b06f303d01afb631ffbdd" kindref="member">Watchdog_close()</ref> is <bold>not</bold> supported by this driver implementation.</para><para>By default the Watchdog driver has resets turned on. However, they may be turned off in the <ref refid="struct_watchdog___params" kindref="compound">Watchdog_Params</ref> which allows the Watchdog Timer to be used like another timer interrupt. This functionality is <bold>not</bold> supported by all platforms, refer to device specific documentation for details.</para><para>To have a user-defined function run at the warning interrupt, first define a void-type function that takes a Watchdog_Handle cast to a uintptr_t as an argument such as the one shown below.</para><para><programlisting><codeline><highlight class="normal">void<sp/>callback(uintptr_t<sp/>handle);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">...</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Watchdog_Handle<sp/>handle;</highlight></codeline>
+<codeline><highlight class="normal">Watchdog_Params<sp/>params;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Watchdog_Params_init(&amp;params);</highlight></codeline>
+<codeline><highlight class="normal">params.callbackFxn<sp/>=<sp/>callback;</highlight></codeline>
+<codeline><highlight class="normal">handle<sp/>=<sp/>Watchdog_open(CONFIG_WATCHDOG0,<sp/>&amp;params);</highlight></codeline>
+</programlisting> </para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2017-2019,<sp/>Texas<sp/>Instruments<sp/>Incorporated</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Redistribution<sp/>and<sp/>use<sp/>in<sp/>source<sp/>and<sp/>binary<sp/>forms,<sp/>with<sp/>or<sp/>without</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>modification,<sp/>are<sp/>permitted<sp/>provided<sp/>that<sp/>the<sp/>following<sp/>conditions</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>are<sp/>met:</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>of<sp/>source<sp/>code<sp/>must<sp/>retain<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer.</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>in<sp/>binary<sp/>form<sp/>must<sp/>reproduce<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer<sp/>in<sp/>the</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>documentation<sp/>and/or<sp/>other<sp/>materials<sp/>provided<sp/>with<sp/>the<sp/>distribution.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Neither<sp/>the<sp/>name<sp/>of<sp/>Texas<sp/>Instruments<sp/>Incorporated<sp/>nor<sp/>the<sp/>names<sp/>of</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>its<sp/>contributors<sp/>may<sp/>be<sp/>used<sp/>to<sp/>endorse<sp/>or<sp/>promote<sp/>products<sp/>derived</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>from<sp/>this<sp/>software<sp/>without<sp/>specific<sp/>prior<sp/>written<sp/>permission.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>THIS<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>BY<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>AND<sp/>CONTRIBUTORS<sp/>&quot;AS<sp/>IS&quot;</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>AND<sp/>ANY<sp/>EXPRESS<sp/>OR<sp/>IMPLIED<sp/>WARRANTIES,<sp/>INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>THE<sp/>IMPLIED<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY<sp/>AND<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>PURPOSE<sp/>ARE<sp/>DISCLAIMED.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE<sp/>COPYRIGHT<sp/>OWNER<sp/>OR</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>CONTRIBUTORS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>DIRECT,<sp/>INDIRECT,<sp/>INCIDENTAL,<sp/>SPECIAL,</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>EXEMPLARY,<sp/>OR<sp/>CONSEQUENTIAL<sp/>DAMAGES<sp/>(INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>PROCUREMENT<sp/>OF<sp/>SUBSTITUTE<sp/>GOODS<sp/>OR<sp/>SERVICES;<sp/>LOSS<sp/>OF<sp/>USE,<sp/>DATA,<sp/>OR<sp/>PROFITS;</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>OR<sp/>BUSINESS<sp/>INTERRUPTION)<sp/>HOWEVER<sp/>CAUSED<sp/>AND<sp/>ON<sp/>ANY<sp/>THEORY<sp/>OF<sp/>LIABILITY,</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/>STRICT<sp/>LIABILITY,<sp/>OR<sp/>TORT<sp/>(INCLUDING<sp/>NEGLIGENCE<sp/>OR</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*<sp/>OTHERWISE)<sp/>ARISING<sp/>IN<sp/>ANY<sp/>WAY<sp/>OUT<sp/>OF<sp/>THE<sp/>USE<sp/>OF<sp/>THIS<sp/>SOFTWARE,</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*<sp/>EVEN<sp/>IF<sp/>ADVISED<sp/>OF<sp/>THE<sp/>POSSIBILITY<sp/>OF<sp/>SUCH<sp/>DAMAGE.</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="comment">/*!****************************************************************************</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>*<sp/><sp/>@file<sp/><sp/><sp/><sp/><sp/><sp/><sp/>WatchdogMSP432E4.h</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/>*<sp/><sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/>Watchdog<sp/>driver<sp/>implementation<sp/>for<sp/>MSP432E4</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="37"><highlight class="comment"><sp/>*<sp/><sp/>The<sp/>Watchdog<sp/>header<sp/>file<sp/>for<sp/>MSP432E4<sp/>should<sp/>be<sp/>included<sp/>in<sp/>an<sp/>application</highlight></codeline>
+<codeline lineno="38"><highlight class="comment"><sp/>*<sp/><sp/>as<sp/>follows:</highlight></codeline>
+<codeline lineno="39"><highlight class="comment"><sp/>*<sp/><sp/>@code</highlight></codeline>
+<codeline lineno="40"><highlight class="comment"><sp/>*<sp/><sp/>#include<sp/>&lt;ti/drivers/Watchdog.h&gt;</highlight></codeline>
+<codeline lineno="41"><highlight class="comment"><sp/>*<sp/><sp/>#include<sp/>&lt;ti/drivers/watchdog/WatchdogMSP432E4.h&gt;</highlight></codeline>
+<codeline lineno="42"><highlight class="comment"><sp/>*<sp/><sp/>@endcode</highlight></codeline>
+<codeline lineno="43"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="44"><highlight class="comment"><sp/>*<sp/><sp/>Refer<sp/>to<sp/>@ref<sp/>Watchdog.h<sp/>for<sp/>a<sp/>complete<sp/>description<sp/>of<sp/>APIs.</highlight></codeline>
+<codeline lineno="45"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="46"><highlight class="comment"><sp/>*<sp/><sp/>##<sp/>Overview<sp/>#</highlight></codeline>
+<codeline lineno="47"><highlight class="comment"><sp/>*<sp/><sp/>This<sp/>Watchdog<sp/>driver<sp/>implementation<sp/>is<sp/>designed<sp/>to<sp/>operate<sp/>on<sp/>a<sp/>MSP432E4</highlight></codeline>
+<codeline lineno="48"><highlight class="comment"><sp/>*<sp/><sp/>device.<sp/>Once<sp/>opened,<sp/>MSP432E4<sp/>Watchdog<sp/>will<sp/>count<sp/>down<sp/>from<sp/>the<sp/>reload</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/>*<sp/><sp/>value<sp/>specified<sp/>in<sp/>the<sp/>WatchdogMSP432E4_HWAttrs.<sp/>If<sp/>it<sp/>times<sp/>out,<sp/>the</highlight></codeline>
+<codeline lineno="50"><highlight class="comment"><sp/>*<sp/><sp/>Watchdog<sp/>interrupt<sp/>flag<sp/>will<sp/>be<sp/>set,<sp/>and<sp/>a<sp/>user-provided<sp/>callback<sp/>function</highlight></codeline>
+<codeline lineno="51"><highlight class="comment"><sp/>*<sp/><sp/>will<sp/>be<sp/>called.<sp/>If<sp/>resets<sp/>have<sp/>been<sp/>enabled<sp/>in<sp/>the<sp/>#Watchdog_Params<sp/>and</highlight></codeline>
+<codeline lineno="52"><highlight class="comment"><sp/>*<sp/><sp/>the<sp/>Watchdog<sp/>Timer<sp/>is<sp/>allowed<sp/>to<sp/>timeout<sp/>again<sp/>while<sp/>the<sp/>interrupt<sp/>flag<sp/>is</highlight></codeline>
+<codeline lineno="53"><highlight class="comment"><sp/>*<sp/><sp/>still<sp/>pending,<sp/>a<sp/>reset<sp/>signal<sp/>will<sp/>be<sp/>generated.<sp/>To<sp/>prevent<sp/>a<sp/>reset,</highlight></codeline>
+<codeline lineno="54"><highlight class="comment"><sp/>*<sp/><sp/>Watchdog_clear()<sp/>must<sp/>be<sp/>called<sp/>to<sp/>clear<sp/>the<sp/>interrupt<sp/>flag.</highlight></codeline>
+<codeline lineno="55"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="56"><highlight class="comment"><sp/>*<sp/><sp/>@warning<sp/>The<sp/>watchdog<sp/>peripheral<sp/>does<sp/>not<sp/>support<sp/>a<sp/>Non-Maskable<sp/>Interrupt<sp/>(NMI).</highlight></codeline>
+<codeline lineno="57"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="58"><highlight class="comment"><sp/>*<sp/><sp/>The<sp/>reload<sp/>value<sp/>from<sp/>which<sp/>the<sp/>Watchdog<sp/>Timer<sp/>counts<sp/>down<sp/>may<sp/>be<sp/>changed</highlight></codeline>
+<codeline lineno="59"><highlight class="comment"><sp/>*<sp/><sp/>during<sp/>runtime<sp/>using<sp/>Watchdog_setReload().</highlight></codeline>
+<codeline lineno="60"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="61"><highlight class="comment"><sp/>*<sp/><sp/>Watchdog_close()<sp/>is<sp/>&lt;b&gt;not&lt;/b&gt;<sp/>supported<sp/>by<sp/>this<sp/>driver<sp/>implementation.</highlight></codeline>
+<codeline lineno="62"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="63"><highlight class="comment"><sp/>*<sp/><sp/>By<sp/>default<sp/>the<sp/>Watchdog<sp/>driver<sp/>has<sp/>resets<sp/>turned<sp/>on.<sp/>However,<sp/>they<sp/>may<sp/>be</highlight></codeline>
+<codeline lineno="64"><highlight class="comment"><sp/>*<sp/><sp/>turned<sp/>off<sp/>in<sp/>the<sp/>#Watchdog_Params<sp/>which<sp/>allows<sp/>the<sp/>Watchdog<sp/>Timer<sp/>to<sp/>be</highlight></codeline>
+<codeline lineno="65"><highlight class="comment"><sp/>*<sp/><sp/>used<sp/>like<sp/>another<sp/>timer<sp/>interrupt.<sp/>This<sp/>functionality<sp/>is<sp/>&lt;b&gt;not&lt;/b&gt;</highlight></codeline>
+<codeline lineno="66"><highlight class="comment"><sp/>*<sp/><sp/>supported<sp/>by<sp/>all<sp/>platforms,<sp/>refer<sp/>to<sp/>device<sp/>specific<sp/>documentation<sp/>for</highlight></codeline>
+<codeline lineno="67"><highlight class="comment"><sp/>*<sp/><sp/>details.</highlight></codeline>
+<codeline lineno="68"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="69"><highlight class="comment"><sp/>*<sp/><sp/>To<sp/>have<sp/>a<sp/>user-defined<sp/>function<sp/>run<sp/>at<sp/>the<sp/>warning<sp/>interrupt,<sp/>first<sp/>define</highlight></codeline>
+<codeline lineno="70"><highlight class="comment"><sp/>*<sp/><sp/>a<sp/>void-type<sp/>function<sp/>that<sp/>takes<sp/>a<sp/>Watchdog_Handle<sp/>cast<sp/>to<sp/>a<sp/>uintptr_t<sp/>as<sp/>an</highlight></codeline>
+<codeline lineno="71"><highlight class="comment"><sp/>*<sp/><sp/>argument<sp/>such<sp/>as<sp/>the<sp/>one<sp/>shown<sp/>below.</highlight></codeline>
+<codeline lineno="72"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="73"><highlight class="comment"><sp/>*<sp/><sp/>@code</highlight></codeline>
+<codeline lineno="74"><highlight class="comment"><sp/>*<sp/><sp/>void<sp/>callback(uintptr_t<sp/>handle);</highlight></codeline>
+<codeline lineno="75"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="76"><highlight class="comment"><sp/>*<sp/><sp/>...</highlight></codeline>
+<codeline lineno="77"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="78"><highlight class="comment"><sp/>*<sp/><sp/>Watchdog_Handle<sp/>handle;</highlight></codeline>
+<codeline lineno="79"><highlight class="comment"><sp/>*<sp/><sp/>Watchdog_Params<sp/>params;</highlight></codeline>
+<codeline lineno="80"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="81"><highlight class="comment"><sp/>*<sp/><sp/>Watchdog_Params_init(&amp;params);</highlight></codeline>
+<codeline lineno="82"><highlight class="comment"><sp/>*<sp/><sp/>params.callbackFxn<sp/>=<sp/>callback;</highlight></codeline>
+<codeline lineno="83"><highlight class="comment"><sp/>*<sp/><sp/>handle<sp/>=<sp/>Watchdog_open(CONFIG_WATCHDOG0,<sp/>&amp;params);</highlight></codeline>
+<codeline lineno="84"><highlight class="comment"><sp/>*<sp/><sp/>@endcode</highlight></codeline>
+<codeline lineno="85"><highlight class="comment"><sp/>******************************************************************************</highlight></codeline>
+<codeline lineno="86"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>ti_drivers_watchdog_WatchdogMSP432E4__include</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ti_drivers_watchdog_WatchdogMSP432E4__include</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdbool.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_watchdog_8h" kindref="compound">ti/drivers/Watchdog.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="comment">/*<sp/>Add<sp/>WatchdogMSP432E4_STATUS_*<sp/>macros<sp/>here<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="comment">/*<sp/>Add<sp/>WatchdogMSP432E4_CMD_*<sp/>macros<sp/>here<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_watchdog___fxn_table" kindref="compound">Watchdog_FxnTable</ref><sp/><ref refid="_watchdog_m_s_p432_e4_8h_1aaf0519df8821544f0b4e2d7023af1396" kindref="member">WatchdogMSP432E4_fxnTable</ref>;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="165" refid="struct_watchdog_m_s_p432_e4___h_w_attrs" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="166" refid="struct_watchdog_m_s_p432_e4___h_w_attrs_1a640226bce302c76abc547e36ec9c0674" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_watchdog_m_s_p432_e4___h_w_attrs_1a640226bce302c76abc547e36ec9c0674" kindref="member">baseAddr</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="167" refid="struct_watchdog_m_s_p432_e4___h_w_attrs_1a74f7cfce12ae5bb44f9509af9c6f08e2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_watchdog_m_s_p432_e4___h_w_attrs_1a74f7cfce12ae5bb44f9509af9c6f08e2" kindref="member">intNum</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="168" refid="struct_watchdog_m_s_p432_e4___h_w_attrs_1ad703f96951cf85a7b3c17c73f9e88936" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_watchdog_m_s_p432_e4___h_w_attrs_1ad703f96951cf85a7b3c17c73f9e88936" kindref="member">intPriority</ref>;<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="169" refid="struct_watchdog_m_s_p432_e4___h_w_attrs_1a7a03a910df6cf469711179dc65a94593" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_watchdog_m_s_p432_e4___h_w_attrs_1a7a03a910df6cf469711179dc65a94593" kindref="member">reloadValue</ref>;<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="170"><highlight class="normal">}<sp/><ref refid="struct_watchdog_m_s_p432_e4___h_w_attrs" kindref="compound">WatchdogMSP432E4_HWAttrs</ref>;</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight></codeline>
+<codeline lineno="177" refid="struct_watchdog_m_s_p432_e4___object" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="178" refid="struct_watchdog_m_s_p432_e4___object_1a457e1b4794caa2332f2ec38fd86874b1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_watchdog_m_s_p432_e4___object_1a457e1b4794caa2332f2ec38fd86874b1" kindref="member">isOpen</ref>;<sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Flag<sp/>for<sp/>open/close<sp/>status<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal">}<sp/><ref refid="struct_watchdog_m_s_p432_e4___object" kindref="compound">WatchdogMSP432E4_Object</ref>;</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="normal"></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>ti_drivers_watchdog_WatchdogMSP432E4__include<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="exports/tidrivers_msp432e4/source/ti/drivers/watchdog/WatchdogMSP432E4.h"/>
+  </compounddef>
+</doxygen>

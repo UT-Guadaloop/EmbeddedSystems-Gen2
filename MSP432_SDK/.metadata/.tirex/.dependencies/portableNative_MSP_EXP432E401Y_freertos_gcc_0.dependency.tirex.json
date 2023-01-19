@@ -1,0 +1,14 @@
+[
+    {
+        "files": [
+            "+../../README.md -> README.md",
+            "+../../README.html -> README.html",
+            "+../main_freertos.c -> main_freertos.c",
+            "+../console_freertos.c -> freertos/console_freertos.c",
+            "+../temperature_freertos.c -> freertos/temperature_freertos.c",
+            "+../portableNative.syscfg -> portableNative.syscfg",
+            "+../../../../../../../source/ti/boards/MSP_EXP432E401Y/Board.html -> Board.html",
+            "+MSP_EXP432E401Y_FREERTOS.lds -> MSP_EXP432E401Y_FREERTOS.lds"
+        ]
+    }
+]

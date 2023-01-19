@@ -1,0 +1,594 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="_display_uart2_8h" kind="file" language="C++">
+    <compoundname>DisplayUart2.h</compoundname>
+    <includes local="no">ti/drivers/dpl/SemaphoreP.h</includes>
+    <includes refid="_u_a_r_t2_8h" local="no">ti/drivers/UART2.h</includes>
+    <includes refid="_display_8h" local="no">ti/display/Display.h</includes>
+    <includes local="no">stdint.h</includes>
+    <incdepgraph>
+      <node id="253">
+        <label>stdarg.h</label>
+      </node>
+      <node id="247">
+        <label>DisplayUart2.h</label>
+        <link refid="_display_uart2_8h"/>
+        <childnode refid="248" relation="include">
+        </childnode>
+        <childnode refid="249" relation="include">
+        </childnode>
+        <childnode refid="252" relation="include">
+        </childnode>
+        <childnode refid="251" relation="include">
+        </childnode>
+      </node>
+      <node id="251">
+        <label>stdint.h</label>
+      </node>
+      <node id="248">
+        <label>ti/drivers/dpl/SemaphoreP.h</label>
+      </node>
+      <node id="250">
+        <label>stddef.h</label>
+      </node>
+      <node id="249">
+        <label>ti/drivers/UART2.h</label>
+        <link refid="_u_a_r_t2_8h"/>
+        <childnode refid="250" relation="include">
+        </childnode>
+        <childnode refid="251" relation="include">
+        </childnode>
+      </node>
+      <node id="252">
+        <label>ti/display/Display.h</label>
+        <link refid="_display_8h"/>
+        <childnode refid="251" relation="include">
+        </childnode>
+        <childnode refid="253" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innerclass refid="struct_display_uart2___h_w_attrs" prot="public">DisplayUart2_HWAttrs</innerclass>
+    <innerclass refid="struct_display_uart2___object" prot="public">DisplayUart2_Object</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_display_uart2_8h_1aca20083081af57e114cca057e9c7a470" prot="public" static="no">
+        <name>DisplayUart2_SCROLLING</name>
+        <initializer>0xFF</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/display/DisplayUart2.h" line="137" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/display/DisplayUart2.h" bodystart="137" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="_display_uart2_8h_1a92a0040189b014183013f033c7623e97" prot="public" static="no">
+        <type>struct <ref refid="struct_display_uart2___object" kindref="compound">DisplayUart2_Object</ref> *</type>
+        <definition>typedef  struct DisplayUart2_Object * DisplayUart2_Handle</definition>
+        <argsstring></argsstring>
+        <name>DisplayUart2_Handle</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/display/DisplayUart2.h" line="174" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_display_uart2_8h_1a44ef06399448c39146856585497b0d13" prot="public" static="no" mutable="no">
+        <type>const <ref refid="struct_display___fxn_table" kindref="compound">Display_FxnTable</ref></type>
+        <definition>const Display_FxnTable DisplayUart2Min_fxnTable</definition>
+        <argsstring></argsstring>
+        <name>DisplayUart2Min_fxnTable</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/display/DisplayUart2.h" line="139" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_display_uart2_8h_1a1597d08d64b1f0b19f009ca065b31aac" prot="public" static="no" mutable="no">
+        <type>const <ref refid="struct_display___fxn_table" kindref="compound">Display_FxnTable</ref></type>
+        <definition>const Display_FxnTable DisplayUart2Ansi_fxnTable</definition>
+        <argsstring></argsstring>
+        <name>DisplayUart2Ansi_fxnTable</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/display/DisplayUart2.h" line="140" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_display_uart2_8h_1a4ba8103114ba6eeaa1806ee3831429e9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DisplayUart2Min_init</definition>
+        <argsstring>(Display_Handle handle)</argsstring>
+        <name>DisplayUart2Min_init</name>
+        <param>
+          <type><ref refid="_display_8h_1a045a26811755aabf1886d982c49e54ab" kindref="member">Display_Handle</ref></type>
+          <declname>handle</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/display/DisplayUart2.h" line="177" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_display_uart2_8h_1aa4b719b3e4b94d790000668753fe6688" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DisplayUart2Ansi_init</definition>
+        <argsstring>(Display_Handle handle)</argsstring>
+        <name>DisplayUart2Ansi_init</name>
+        <param>
+          <type><ref refid="_display_8h_1a045a26811755aabf1886d982c49e54ab" kindref="member">Display_Handle</ref></type>
+          <declname>handle</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/display/DisplayUart2.h" line="178" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_display_uart2_8h_1a853458a8a1bbe4c400fcfac8a4b27be4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_display_8h_1a045a26811755aabf1886d982c49e54ab" kindref="member">Display_Handle</ref></type>
+        <definition>Display_Handle DisplayUart2Min_open</definition>
+        <argsstring>(Display_Handle, Display_Params *params)</argsstring>
+        <name>DisplayUart2Min_open</name>
+        <param>
+          <type><ref refid="_display_8h_1a045a26811755aabf1886d982c49e54ab" kindref="member">Display_Handle</ref></type>
+        </param>
+        <param>
+          <type><ref refid="struct_display___params" kindref="compound">Display_Params</ref> *</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/display/DisplayUart2.h" line="180" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_display_uart2_8h_1adf9ec1f776b49351ce889d89c67b98f0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_display_8h_1a045a26811755aabf1886d982c49e54ab" kindref="member">Display_Handle</ref></type>
+        <definition>Display_Handle DisplayUart2Ansi_open</definition>
+        <argsstring>(Display_Handle, Display_Params *params)</argsstring>
+        <name>DisplayUart2Ansi_open</name>
+        <param>
+          <type><ref refid="_display_8h_1a045a26811755aabf1886d982c49e54ab" kindref="member">Display_Handle</ref></type>
+        </param>
+        <param>
+          <type><ref refid="struct_display___params" kindref="compound">Display_Params</ref> *</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/display/DisplayUart2.h" line="181" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_display_uart2_8h_1a4e1dc949baa0f90ca880c74dcfa7c05c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DisplayUart2Min_clear</definition>
+        <argsstring>(Display_Handle handle)</argsstring>
+        <name>DisplayUart2Min_clear</name>
+        <param>
+          <type><ref refid="_display_8h_1a045a26811755aabf1886d982c49e54ab" kindref="member">Display_Handle</ref></type>
+          <declname>handle</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/display/DisplayUart2.h" line="183" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_display_uart2_8h_1a4e801a706946ce87543af3ae7bcf11f9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DisplayUart2Ansi_clear</definition>
+        <argsstring>(Display_Handle handle)</argsstring>
+        <name>DisplayUart2Ansi_clear</name>
+        <param>
+          <type><ref refid="_display_8h_1a045a26811755aabf1886d982c49e54ab" kindref="member">Display_Handle</ref></type>
+          <declname>handle</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/display/DisplayUart2.h" line="184" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_display_uart2_8h_1a249fabb75b9b06ba52cc98d14723fcc1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DisplayUart2Min_clearLines</definition>
+        <argsstring>(Display_Handle handle, uint8_t fromLine, uint8_t toLine)</argsstring>
+        <name>DisplayUart2Min_clearLines</name>
+        <param>
+          <type><ref refid="_display_8h_1a045a26811755aabf1886d982c49e54ab" kindref="member">Display_Handle</ref></type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>fromLine</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>toLine</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/display/DisplayUart2.h" line="186" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_display_uart2_8h_1ab37aff8e711af0b755706b7e0eeb5b56" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DisplayUart2Ansi_clearLines</definition>
+        <argsstring>(Display_Handle handle, uint8_t fromLine, uint8_t toLine)</argsstring>
+        <name>DisplayUart2Ansi_clearLines</name>
+        <param>
+          <type><ref refid="_display_8h_1a045a26811755aabf1886d982c49e54ab" kindref="member">Display_Handle</ref></type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>fromLine</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>toLine</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/display/DisplayUart2.h" line="189" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_display_uart2_8h_1a888408c1aa337341dae9100b55910677" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DisplayUart2Min_vprintf</definition>
+        <argsstring>(Display_Handle handle, uint8_t line, uint8_t column, const char *fmt, va_list va)</argsstring>
+        <name>DisplayUart2Min_vprintf</name>
+        <param>
+          <type><ref refid="_display_8h_1a045a26811755aabf1886d982c49e54ab" kindref="member">Display_Handle</ref></type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>line</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>column</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>fmt</declname>
+        </param>
+        <param>
+          <type>va_list</type>
+          <declname>va</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/display/DisplayUart2.h" line="193" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_display_uart2_8h_1aabdf2532ea7b81c6afc05de78f5a3b26" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DisplayUart2Ansi_vprintf</definition>
+        <argsstring>(Display_Handle handle, uint8_t line, uint8_t column, const char *fmt, va_list va)</argsstring>
+        <name>DisplayUart2Ansi_vprintf</name>
+        <param>
+          <type><ref refid="_display_8h_1a045a26811755aabf1886d982c49e54ab" kindref="member">Display_Handle</ref></type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>line</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>column</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>fmt</declname>
+        </param>
+        <param>
+          <type>va_list</type>
+          <declname>va</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/display/DisplayUart2.h" line="195" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_display_uart2_8h_1a20a68c23f2e6dca2e0f5332863c43301" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DisplayUart2Min_close</definition>
+        <argsstring>(Display_Handle)</argsstring>
+        <name>DisplayUart2Min_close</name>
+        <param>
+          <type><ref refid="_display_8h_1a045a26811755aabf1886d982c49e54ab" kindref="member">Display_Handle</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/display/DisplayUart2.h" line="198" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_display_uart2_8h_1a3d45eedcb53e4a026f9f6502ff3a4dcc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DisplayUart2Ansi_close</definition>
+        <argsstring>(Display_Handle)</argsstring>
+        <name>DisplayUart2Ansi_close</name>
+        <param>
+          <type><ref refid="_display_8h_1a045a26811755aabf1886d982c49e54ab" kindref="member">Display_Handle</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/display/DisplayUart2.h" line="199" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_display_uart2_8h_1a644e61090589d597900c676ff794cc42" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int DisplayUart2Min_control</definition>
+        <argsstring>(Display_Handle handle, unsigned int cmd, void *arg)</argsstring>
+        <name>DisplayUart2Min_control</name>
+        <param>
+          <type><ref refid="_display_8h_1a045a26811755aabf1886d982c49e54ab" kindref="member">Display_Handle</ref></type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>cmd</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>arg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/display/DisplayUart2.h" line="201" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_display_uart2_8h_1a0d80628761115de879d4401dc7afab76" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int DisplayUart2Ansi_control</definition>
+        <argsstring>(Display_Handle handle, unsigned int cmd, void *arg)</argsstring>
+        <name>DisplayUart2Ansi_control</name>
+        <param>
+          <type><ref refid="_display_8h_1a045a26811755aabf1886d982c49e54ab" kindref="member">Display_Handle</ref></type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>cmd</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>arg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/display/DisplayUart2.h" line="202" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_display_uart2_8h_1acad946ed0ef6ad1f5c358608377b1d01" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned int</type>
+        <definition>unsigned int DisplayUart2Min_getType</definition>
+        <argsstring>(void)</argsstring>
+        <name>DisplayUart2Min_getType</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/display/DisplayUart2.h" line="204" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_display_uart2_8h_1a4709d3ac506abe52f32f11bfa25e6db3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned int</type>
+        <definition>unsigned int DisplayUart2Ansi_getType</definition>
+        <argsstring>(void)</argsstring>
+        <name>DisplayUart2Ansi_getType</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/display/DisplayUart2.h" line="205" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="_display_8h" kindref="compound">Display.h</ref> implementation for UART output. </para>    </briefdescription>
+    <detaileddescription>
+<para>============================================================================</para><para><heading level="1">DisplayUart2 specifics</heading>
+</para><para>DisplayUart2 has two sets of function pointer tables. One which adds some ANSI/VT100 codes to the output, for cursor placement etc, and a minimal implementation which basically is a wrapper for UART2_write.<itemizedlist>
+<listitem><para>DisplayUart2Ansi_fxnTable</para></listitem><listitem><para>DisplayUart2Min_fxnTable</para></listitem></itemizedlist>
+</para><para><heading level="2">DisplayUart2Min</heading>
+</para><para>DisplayUart2Min simply formats and outputs the text over UART and adds a newline at the end of each statement.</para><para>Calls to Display_clear, <ref refid="_display_8h_1a4dacdea7e09ccbb7fc6464bb9af6c2cd" kindref="member">Display_clearLine(s)</ref>, and the line and column specifiers in Display_printf(handle, line, col, fmt, ...) are ignored.</para><para><heading level="2">DisplayUart2Ansi</heading>
+</para><para>DisplayUart2Ansi will send the following escape-strings to the UART when it is opened:<itemizedlist>
+<listitem><para>Reset terminal</para></listitem><listitem><para>Clear screen</para></listitem><listitem><para>Set scrolling region from line 10 (not inclusive)</para></listitem><listitem><para>Set cursor to line 11</para></listitem></itemizedlist>
+</para><para>When Display_print(handle, line, col, fmt, ...) is called with a line number the following is sent:<itemizedlist>
+<listitem><para>Save cursor position</para></listitem><listitem><para>Set scroll region from line 10</para></listitem><listitem><para>Move cursor to line, column</para></listitem><listitem><para>String to be printed</para></listitem><listitem><para>Restore cursor position</para></listitem></itemizedlist>
+</para><para>If Display_printf is called with the line &quot;number&quot; <computeroutput>DisplayUart2_SCROLLING</computeroutput>, the string to be printed is simply output at the current cursor location, without saving or restoring the position. If the terminal supports the scrolling region feature, as most do, then the terminal will ensure that the content output here will scroll up but not overwrite the text written outside the scroll region.</para><para>In this manner it is possible to have two separate outputs, one with a log of events, and one with fixed positions as on an LCD. Unless the <computeroutput>DisplayUart_SCROLLING</computeroutput> line specifier is used, any line number can be used, also those nominally inside the scrolling region.</para><para>There is also a helper file &lt;<ref refid="_ansi_color_8h" kindref="compound">ti/display/AnsiColor.h</ref>&gt; with a macro to set the color and style of the text.</para><para><heading level="1">Usage Example</heading>
+</para><para><programlisting><codeline><highlight class="normal">#include<sp/>&lt;ti/display/Display.h&gt;</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&lt;ti/display/DisplayUart2.h&gt;</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&lt;ti/display/AnsiColor.h&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#define<sp/>MAXPRINTLEN<sp/>128</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">DisplayUart2_Object<sp/>displayUart2Object;</highlight></codeline>
+<codeline><highlight class="normal">static<sp/>char<sp/>uartStringBuf[MAXPRINTLEN];</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">const<sp/>DisplayUart2_HWAttrs<sp/>displayUart2HWAttrs<sp/>=<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>.uartIdx<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>CONFIG_UART0,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>.baudRate<sp/><sp/><sp/><sp/><sp/>=<sp/>115200,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>.mutexTimeout<sp/>=<sp/>BIOS_WAIT_FOREVER,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>.strBuf<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>uartStringBuf,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>.strBufLen<sp/><sp/><sp/><sp/>=<sp/>MAXPRINTLEN,</highlight></codeline>
+<codeline><highlight class="normal">};</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">const<sp/>Display_Config<sp/>Display_config[]<sp/>=<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.fxnTablePtr<sp/>=<sp/>&amp;DisplayUart2Ansi_fxnTable,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>//.fxnTablePtr<sp/>=<sp/>&amp;DisplayUart2Min_fxnTable,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.object<sp/>=<sp/>&amp;displayUartObject,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.hwAttrs<sp/>=<sp/>&amp;displayUartHWAttrs</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal">};</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">const<sp/>uint8_t<sp/>Display_count<sp/>=<sp/>sizeof(Display_config)<sp/>/<sp/>sizeof(Display_Config);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">void<sp/>myTask(uintptr_t<sp/>a0,<sp/>uintptr_t<sp/>a1)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>Display_Handle<sp/>handle<sp/>=<sp/>Display_open(Display_Type_UART);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>Display_printf(handle,<sp/>1,<sp/>0,<sp/>&quot;Hello&quot;);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>Display_printf(handle,<sp/>2,<sp/>6,<sp/>ANSI_COLOR(FG_GREEN)<sp/>&quot;World!&quot;<sp/>ANSI_COLOR(ATTR_RESET));</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting> <hruler/>
+ </para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2020,<sp/>Texas<sp/>Instruments<sp/>Incorporated</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Redistribution<sp/>and<sp/>use<sp/>in<sp/>source<sp/>and<sp/>binary<sp/>forms,<sp/>with<sp/>or<sp/>without</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>modification,<sp/>are<sp/>permitted<sp/>provided<sp/>that<sp/>the<sp/>following<sp/>conditions</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>are<sp/>met:</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>of<sp/>source<sp/>code<sp/>must<sp/>retain<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer.</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>in<sp/>binary<sp/>form<sp/>must<sp/>reproduce<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer<sp/>in<sp/>the</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>documentation<sp/>and/or<sp/>other<sp/>materials<sp/>provided<sp/>with<sp/>the<sp/>distribution.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Neither<sp/>the<sp/>name<sp/>of<sp/>Texas<sp/>Instruments<sp/>Incorporated<sp/>nor<sp/>the<sp/>names<sp/>of</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>its<sp/>contributors<sp/>may<sp/>be<sp/>used<sp/>to<sp/>endorse<sp/>or<sp/>promote<sp/>products<sp/>derived</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>from<sp/>this<sp/>software<sp/>without<sp/>specific<sp/>prior<sp/>written<sp/>permission.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>THIS<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>BY<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>AND<sp/>CONTRIBUTORS<sp/>&quot;AS<sp/>IS&quot;</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>AND<sp/>ANY<sp/>EXPRESS<sp/>OR<sp/>IMPLIED<sp/>WARRANTIES,<sp/>INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>THE<sp/>IMPLIED<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY<sp/>AND<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>PURPOSE<sp/>ARE<sp/>DISCLAIMED.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE<sp/>COPYRIGHT<sp/>OWNER<sp/>OR</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>CONTRIBUTORS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>DIRECT,<sp/>INDIRECT,<sp/>INCIDENTAL,<sp/>SPECIAL,</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>EXEMPLARY,<sp/>OR<sp/>CONSEQUENTIAL<sp/>DAMAGES<sp/>(INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>PROCUREMENT<sp/>OF<sp/>SUBSTITUTE<sp/>GOODS<sp/>OR<sp/>SERVICES;<sp/>LOSS<sp/>OF<sp/>USE,<sp/>DATA,<sp/>OR<sp/>PROFITS;</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>OR<sp/>BUSINESS<sp/>INTERRUPTION)<sp/>HOWEVER<sp/>CAUSED<sp/>AND<sp/>ON<sp/>ANY<sp/>THEORY<sp/>OF<sp/>LIABILITY,</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/>STRICT<sp/>LIABILITY,<sp/>OR<sp/>TORT<sp/>(INCLUDING<sp/>NEGLIGENCE<sp/>OR</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*<sp/>OTHERWISE)<sp/>ARISING<sp/>IN<sp/>ANY<sp/>WAY<sp/>OUT<sp/>OF<sp/>THE<sp/>USE<sp/>OF<sp/>THIS<sp/>SOFTWARE,</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*<sp/>EVEN<sp/>IF<sp/>ADVISED<sp/>OF<sp/>THE<sp/>POSSIBILITY<sp/>OF<sp/>SUCH<sp/>DAMAGE.</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*/</highlight></codeline>
+<codeline lineno="128"><highlight class="preprocessor">#ifndef<sp/>ti_display_DisplayUart2__include</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ti_display_DisplayUart2__include</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ti/drivers/dpl/SemaphoreP.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_u_a_r_t2_8h" kindref="compound">ti/drivers/UART2.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_display_8h" kindref="compound">ti/display/Display.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Line<sp/>number<sp/>that<sp/>means<sp/>&apos;put<sp/>in<sp/>scrolling<sp/>section&apos;,<sp/>if<sp/>exists<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="137" refid="_display_uart2_8h_1aca20083081af57e114cca057e9c7a470" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DisplayUart2_SCROLLING<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xFF</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_display___fxn_table" kindref="compound">Display_FxnTable</ref><sp/><ref refid="_display_uart2_8h_1a44ef06399448c39146856585497b0d13" kindref="member">DisplayUart2Min_fxnTable</ref>;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_display___fxn_table" kindref="compound">Display_FxnTable</ref><sp/><ref refid="_display_uart2_8h_1a1597d08d64b1f0b19f009ca065b31aac" kindref="member">DisplayUart2Ansi_fxnTable</ref>;</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="151" refid="struct_display_uart2___h_w_attrs" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="153" refid="struct_display_uart2___h_w_attrs_1aea00fe74dddebe9656020dd4a0fdab31" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="struct_display_uart2___h_w_attrs_1aea00fe74dddebe9656020dd4a0fdab31" kindref="member">uartIdx</ref>;</highlight></codeline>
+<codeline lineno="155" refid="struct_display_uart2___h_w_attrs_1a31e06bac9b245a7b6da8b4bf9f4dc506" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="struct_display_uart2___h_w_attrs_1a31e06bac9b245a7b6da8b4bf9f4dc506" kindref="member">baudRate</ref>;</highlight></codeline>
+<codeline lineno="157" refid="struct_display_uart2___h_w_attrs_1a7ab888784423f3a30a593d27c18ba573" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="struct_display_uart2___h_w_attrs_1a7ab888784423f3a30a593d27c18ba573" kindref="member">mutexTimeout</ref>;</highlight></codeline>
+<codeline lineno="159" refid="struct_display_uart2___h_w_attrs_1a18e30a9a37197b2dfb0e74b828967e3f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="struct_display_uart2___h_w_attrs_1a18e30a9a37197b2dfb0e74b828967e3f" kindref="member">strBuf</ref>;</highlight></codeline>
+<codeline lineno="161" refid="struct_display_uart2___h_w_attrs_1a19d46b01f241b4098917fc3bcda8c9d3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint16_t<sp/><sp/><sp/><sp/><sp/><ref refid="struct_display_uart2___h_w_attrs_1a19d46b01f241b4098917fc3bcda8c9d3" kindref="member">strBufLen</ref>;</highlight></codeline>
+<codeline lineno="162"><highlight class="normal">}<sp/><ref refid="struct_display_uart2___h_w_attrs" kindref="compound">DisplayUart2_HWAttrs</ref>;</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight></codeline>
+<codeline lineno="170" refid="struct_display_uart2___object" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="171" refid="struct_display_uart2___object_1a216439458e407b061cdb5a8aeaa29fce" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_u_a_r_t2___config__" kindref="compound">UART2_Handle</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_display_uart2___object_1a216439458e407b061cdb5a8aeaa29fce" kindref="member">hUart</ref>;</highlight></codeline>
+<codeline lineno="172" refid="struct_display_uart2___object_1abf139f6735264768d2b832c13489387a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>SemaphoreP_Handle<sp/><sp/><ref refid="struct_display_uart2___object_1abf139f6735264768d2b832c13489387a" kindref="member">mutex</ref>;</highlight></codeline>
+<codeline lineno="173" refid="struct_display_uart2___object_1a9dd5654d8617452468554995dad6ead4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="struct_display_uart2___object_1a9dd5654d8617452468554995dad6ead4" kindref="member">lineClearSeq</ref>;</highlight></codeline>
+<codeline lineno="174"><highlight class="normal">}<sp/><ref refid="struct_display_uart2___object" kindref="compound">DisplayUart2_Object</ref>,<sp/>*<ref refid="_display_uart2_8h_1a92a0040189b014183013f033c7623e97" kindref="member">DisplayUart2_Handle</ref>;</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_display_uart2_8h_1a4ba8103114ba6eeaa1806ee3831429e9" kindref="member">DisplayUart2Min_init</ref>(<ref refid="struct_display___config" kindref="compound">Display_Handle</ref><sp/>handle);</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_display_uart2_8h_1aa4b719b3e4b94d790000668753fe6688" kindref="member">DisplayUart2Ansi_init</ref>(<ref refid="struct_display___config" kindref="compound">Display_Handle</ref><sp/>handle);</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><ref refid="struct_display___config" kindref="compound">Display_Handle</ref><sp/><ref refid="_display_uart2_8h_1a853458a8a1bbe4c400fcfac8a4b27be4" kindref="member">DisplayUart2Min_open</ref>(<ref refid="struct_display___config" kindref="compound">Display_Handle</ref>,<sp/><ref refid="struct_display___params" kindref="compound">Display_Params</ref><sp/>*<sp/>params);</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><ref refid="struct_display___config" kindref="compound">Display_Handle</ref><sp/><ref refid="_display_uart2_8h_1adf9ec1f776b49351ce889d89c67b98f0" kindref="member">DisplayUart2Ansi_open</ref>(<ref refid="struct_display___config" kindref="compound">Display_Handle</ref>,<sp/><ref refid="struct_display___params" kindref="compound">Display_Params</ref><sp/>*<sp/>params);</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"></highlight></codeline>
+<codeline lineno="183"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_display_uart2_8h_1a4e1dc949baa0f90ca880c74dcfa7c05c" kindref="member">DisplayUart2Min_clear</ref>(<ref refid="struct_display___config" kindref="compound">Display_Handle</ref><sp/>handle);</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_display_uart2_8h_1a4e801a706946ce87543af3ae7bcf11f9" kindref="member">DisplayUart2Ansi_clear</ref>(<ref refid="struct_display___config" kindref="compound">Display_Handle</ref><sp/>handle);</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_display_uart2_8h_1a249fabb75b9b06ba52cc98d14723fcc1" kindref="member">DisplayUart2Min_clearLines</ref>(<ref refid="struct_display___config" kindref="compound">Display_Handle</ref><sp/>handle,</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>fromLine,</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>toLine);</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_display_uart2_8h_1ab37aff8e711af0b755706b7e0eeb5b56" kindref="member">DisplayUart2Ansi_clearLines</ref>(<ref refid="struct_display___config" kindref="compound">Display_Handle</ref><sp/>handle,</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>fromLine,</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>toLine);</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_display_uart2_8h_1a888408c1aa337341dae9100b55910677" kindref="member">DisplayUart2Min_vprintf</ref>(<ref refid="struct_display___config" kindref="compound">Display_Handle</ref><sp/>handle,<sp/>uint8_t<sp/>line,</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>column,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*fmt,<sp/>va_list<sp/>va);</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_display_uart2_8h_1aabdf2532ea7b81c6afc05de78f5a3b26" kindref="member">DisplayUart2Ansi_vprintf</ref>(<ref refid="struct_display___config" kindref="compound">Display_Handle</ref><sp/>handle,<sp/>uint8_t<sp/>line,</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>column,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*fmt,<sp/>va_list<sp/>va);</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_display_uart2_8h_1a20a68c23f2e6dca2e0f5332863c43301" kindref="member">DisplayUart2Min_close</ref>(<ref refid="struct_display___config" kindref="compound">Display_Handle</ref>);</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_display_uart2_8h_1a3d45eedcb53e4a026f9f6502ff3a4dcc" kindref="member">DisplayUart2Ansi_close</ref>(<ref refid="struct_display___config" kindref="compound">Display_Handle</ref>);</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"></highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="_display_uart2_8h_1a644e61090589d597900c676ff794cc42" kindref="member">DisplayUart2Min_control</ref>(<ref refid="struct_display___config" kindref="compound">Display_Handle</ref><sp/>handle,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>cmd,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*arg);</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="_display_uart2_8h_1a0d80628761115de879d4401dc7afab76" kindref="member">DisplayUart2Ansi_control</ref>(<ref refid="struct_display___config" kindref="compound">Display_Handle</ref><sp/>handle,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>cmd,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*arg);</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"></highlight></codeline>
+<codeline lineno="204"><highlight class="normal"></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><ref refid="_display_uart2_8h_1acad946ed0ef6ad1f5c358608377b1d01" kindref="member">DisplayUart2Min_getType</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><ref refid="_display_uart2_8h_1a4709d3ac506abe52f32f11bfa25e6db3" kindref="member">DisplayUart2Ansi_getType</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"></highlight></codeline>
+<codeline lineno="207"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>ti_display_DisplayUart2__include<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="exports/tidrivers_msp432e4/source/ti/display/DisplayUart2.h"/>
+  </compounddef>
+</doxygen>

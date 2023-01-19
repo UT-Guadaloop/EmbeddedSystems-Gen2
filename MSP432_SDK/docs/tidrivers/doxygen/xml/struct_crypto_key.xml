@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="struct_crypto_key" kind="struct" language="C++" prot="public">
+    <compoundname>CryptoKey</compoundname>
+    <includes refid="_crypto_key_8h" local="no">CryptoKey.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_crypto_key_1aca98dd203405514003b840747e216ba2" prot="public" static="no" mutable="no">
+        <type><ref refid="_crypto_key_8h_1a0f873057fadfdcb5d99fd38f72c74e86" kindref="member">CryptoKey_Encoding</ref></type>
+        <definition>CryptoKey_Encoding CryptoKey::encoding</definition>
+        <argsstring></argsstring>
+        <name>encoding</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/cryptoutils/cryptokey/CryptoKey.h" line="210" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/cryptoutils/cryptokey/CryptoKey.h" bodystart="210" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_crypto_key_1aaaaeeeb8717326cc4e98cf19e5b31101" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_crypto_key___plaintext" kindref="compound">CryptoKey_Plaintext</ref></type>
+        <definition>CryptoKey_Plaintext CryptoKey::plaintext</definition>
+        <argsstring></argsstring>
+        <name>plaintext</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/cryptoutils/cryptokey/CryptoKey.h" line="212" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/cryptoutils/cryptokey/CryptoKey.h" bodystart="212" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_crypto_key_1afb8577e2118da199c81fd8b27b017d73" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_crypto_key___key_store" kindref="compound">CryptoKey_KeyStore</ref></type>
+        <definition>CryptoKey_KeyStore CryptoKey::keyStore</definition>
+        <argsstring></argsstring>
+        <name>keyStore</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/cryptoutils/cryptokey/CryptoKey.h" line="213" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/cryptoutils/cryptokey/CryptoKey.h" bodystart="213" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_crypto_key_1a1f0bb1d004456e30f4d6ec204d0695db" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_crypto_key___key_blob" kindref="compound">CryptoKey_KeyBlob</ref></type>
+        <definition>CryptoKey_KeyBlob CryptoKey::keyBlob</definition>
+        <argsstring></argsstring>
+        <name>keyBlob</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/cryptoutils/cryptokey/CryptoKey.h" line="214" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/cryptoutils/cryptokey/CryptoKey.h" bodystart="214" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_crypto_key_1adf587dc6c1239e969fbfa817f2f374f4" prot="public" static="no" mutable="no">
+        <type>union CryptoKey::@6</type>
+        <definition>union CryptoKey::@6  CryptoKey::u</definition>
+        <argsstring></argsstring>
+        <name>u</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/cryptoutils/cryptokey/CryptoKey.h" line="215" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="struct_crypto_key" kindref="compound">CryptoKey</ref> datastructure. </para>    </briefdescription>
+    <detaileddescription>
+<para>This structure contains a CryptoKey_Encoding and one of<itemizedlist>
+<listitem><para><ref refid="struct_crypto_key___plaintext" kindref="compound">CryptoKey_Plaintext</ref></para></listitem><listitem><para><ref refid="struct_crypto_key___key_store" kindref="compound">CryptoKey_KeyStore</ref></para></listitem><listitem><para><ref refid="struct_crypto_key___key_blob" kindref="compound">CryptoKey_KeyBlob</ref> </para></listitem></itemizedlist>
+</para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="175">
+        <label>CryptoKey</label>
+        <link refid="struct_crypto_key"/>
+        <childnode refid="176" relation="usage">
+          <edgelabel>plaintext</edgelabel>
+        </childnode>
+        <childnode refid="177" relation="usage">
+          <edgelabel>keyStore</edgelabel>
+        </childnode>
+        <childnode refid="178" relation="usage">
+          <edgelabel>keyBlob</edgelabel>
+        </childnode>
+      </node>
+      <node id="176">
+        <label>CryptoKey_Plaintext</label>
+        <link refid="struct_crypto_key___plaintext"/>
+      </node>
+      <node id="178">
+        <label>CryptoKey_KeyBlob</label>
+        <link refid="struct_crypto_key___key_blob"/>
+      </node>
+      <node id="177">
+        <label>CryptoKey_KeyStore</label>
+        <link refid="struct_crypto_key___key_store"/>
+      </node>
+    </collaborationgraph>
+    <location file="exports/tidrivers_msp432e4/source/ti/drivers/cryptoutils/cryptokey/CryptoKey.h" line="209" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/cryptoutils/cryptokey/CryptoKey.h" bodystart="209" bodyend="216"/>
+    <listofallmembers>
+      <member refid="struct_crypto_key_1aca98dd203405514003b840747e216ba2" prot="public" virt="non-virtual"><scope>CryptoKey</scope><name>encoding</name></member>
+      <member refid="struct_crypto_key_1a1f0bb1d004456e30f4d6ec204d0695db" prot="public" virt="non-virtual"><scope>CryptoKey</scope><name>keyBlob</name></member>
+      <member refid="struct_crypto_key_1afb8577e2118da199c81fd8b27b017d73" prot="public" virt="non-virtual"><scope>CryptoKey</scope><name>keyStore</name></member>
+      <member refid="struct_crypto_key_1aaaaeeeb8717326cc4e98cf19e5b31101" prot="public" virt="non-virtual"><scope>CryptoKey</scope><name>plaintext</name></member>
+      <member refid="struct_crypto_key_1adf587dc6c1239e969fbfa817f2f374f4" prot="public" virt="non-virtual"><scope>CryptoKey</scope><name>u</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

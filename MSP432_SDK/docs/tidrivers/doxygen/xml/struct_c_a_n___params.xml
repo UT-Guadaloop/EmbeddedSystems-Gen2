@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="struct_c_a_n___params" kind="struct" language="C++" prot="public">
+    <compoundname>CAN_Params</compoundname>
+    <includes refid="_c_a_n_8h" local="no">CAN.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_c_a_n___params_1a39b78e712b6b9cff8ee39bcd960f4cbf" prot="public" static="no" mutable="no">
+        <type><ref refid="_c_a_n_8h_1a4d6db79b5847128a849ac24b3c281960" kindref="member">CAN_Mode</ref></type>
+        <definition>CAN_Mode CAN_Params::mode</definition>
+        <argsstring></argsstring>
+        <name>mode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Mode to open device in </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/CAN.h" line="360" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/CAN.h" bodystart="360" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_c_a_n___params_1acb0c88905a9bdf060e2d0af89b4d7030" prot="public" static="no" mutable="no">
+        <type><ref refid="_c_a_n_8h_1a34e5130739e2ad4bdf3cbf3eccbdf83f" kindref="member">CAN_Direction</ref></type>
+        <definition>CAN_Direction CAN_Params::direction</definition>
+        <argsstring></argsstring>
+        <name>direction</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Read, write, or readwrite mode </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/CAN.h" line="361" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/CAN.h" bodystart="361" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_c_a_n___params_1ad248c9634334dd5413fdd113e987e66d" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t CAN_Params::filterID</definition>
+        <argsstring></argsstring>
+        <name>filterID</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Initial receive filter ID </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/CAN.h" line="362" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/CAN.h" bodystart="362" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_c_a_n___params_1a3746fda33cd771848e460681aacb104b" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t CAN_Params::filterMask</definition>
+        <argsstring></argsstring>
+        <name>filterMask</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Initial receive filter mask </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/CAN.h" line="363" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/CAN.h" bodystart="363" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_c_a_n___params_1ab02c55c5f4f582437a274a772e9b5c0c" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t CAN_Params::readTimeout</definition>
+        <argsstring></argsstring>
+        <name>readTimeout</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Timeout for read calls in blocking mode. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/CAN.h" line="364" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/CAN.h" bodystart="364" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_c_a_n___params_1a9c2958cc4b339eb2f755517628d6685e" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t CAN_Params::writeTimeout</definition>
+        <argsstring></argsstring>
+        <name>writeTimeout</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Timeout for write calls in blocking mode. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/CAN.h" line="365" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/CAN.h" bodystart="365" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>CAN Parameters. </para>    </briefdescription>
+    <detaileddescription>
+<para>CAN parameters are used with the <ref refid="_c_a_n_8h_1ac007ed113727f16540e8b8e5d4e88fe4" kindref="member">CAN_open()</ref> call. Default values for these parameters are set using <ref refid="_c_a_n_8h_1a9a7a7042e4948d4e04b9cb5205c50acf" kindref="member">CAN_Params_init()</ref>.</para><para><simplesect kind="see"><para><ref refid="_c_a_n_8h_1a9a7a7042e4948d4e04b9cb5205c50acf" kindref="member">CAN_Params_init()</ref> </para></simplesect>
+</para>    </detaileddescription>
+    <location file="exports/tidrivers_msp432e4/source/ti/drivers/CAN.h" line="359" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/CAN.h" bodystart="359" bodyend="366"/>
+    <listofallmembers>
+      <member refid="struct_c_a_n___params_1acb0c88905a9bdf060e2d0af89b4d7030" prot="public" virt="non-virtual"><scope>CAN_Params</scope><name>direction</name></member>
+      <member refid="struct_c_a_n___params_1ad248c9634334dd5413fdd113e987e66d" prot="public" virt="non-virtual"><scope>CAN_Params</scope><name>filterID</name></member>
+      <member refid="struct_c_a_n___params_1a3746fda33cd771848e460681aacb104b" prot="public" virt="non-virtual"><scope>CAN_Params</scope><name>filterMask</name></member>
+      <member refid="struct_c_a_n___params_1a39b78e712b6b9cff8ee39bcd960f4cbf" prot="public" virt="non-virtual"><scope>CAN_Params</scope><name>mode</name></member>
+      <member refid="struct_c_a_n___params_1ab02c55c5f4f582437a274a772e9b5c0c" prot="public" virt="non-virtual"><scope>CAN_Params</scope><name>readTimeout</name></member>
+      <member refid="struct_c_a_n___params_1a9c2958cc4b339eb2f755517628d6685e" prot="public" virt="non-virtual"><scope>CAN_Params</scope><name>writeTimeout</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

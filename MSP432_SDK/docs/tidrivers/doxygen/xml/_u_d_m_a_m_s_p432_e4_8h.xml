@@ -1,0 +1,233 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="_u_d_m_a_m_s_p432_e4_8h" kind="file" language="C++">
+    <compoundname>UDMAMSP432E4.h</compoundname>
+    <includes local="no">stdbool.h</includes>
+    <includes local="no">stdint.h</includes>
+    <includes local="no">ti/drivers/dpl/HwiP.h</includes>
+    <includedby refid="_a_d_c_buf_m_s_p432_e4_8h" local="no">ADCBufMSP432E4.h</includedby>
+    <includedby refid="_s_p_i_m_s_p432_e4_d_m_a_8h" local="no">SPIMSP432E4DMA.h</includedby>
+    <includedby refid="_u_a_r_t2_m_s_p432_e4_8h" local="no">UART2MSP432E4.h</includedby>
+    <incdepgraph>
+      <node id="540">
+        <label>stdbool.h</label>
+      </node>
+      <node id="541">
+        <label>stdint.h</label>
+      </node>
+      <node id="542">
+        <label>ti/drivers/dpl/HwiP.h</label>
+      </node>
+      <node id="539">
+        <label>UDMAMSP432E4.h</label>
+        <link refid="_u_d_m_a_m_s_p432_e4_8h"/>
+        <childnode refid="540" relation="include">
+        </childnode>
+        <childnode refid="541" relation="include">
+        </childnode>
+        <childnode refid="542" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="544">
+        <label>ADCBufMSP432E4.h</label>
+        <link refid="_a_d_c_buf_m_s_p432_e4_8h"/>
+      </node>
+      <node id="543">
+        <label>UDMAMSP432E4.h</label>
+        <link refid="_u_d_m_a_m_s_p432_e4_8h"/>
+        <childnode refid="544" relation="include">
+        </childnode>
+        <childnode refid="545" relation="include">
+        </childnode>
+        <childnode refid="546" relation="include">
+        </childnode>
+      </node>
+      <node id="546">
+        <label>UART2MSP432E4.h</label>
+        <link refid="_u_a_r_t2_m_s_p432_e4_8h"/>
+      </node>
+      <node id="545">
+        <label>SPIMSP432E4DMA.h</label>
+        <link refid="_s_p_i_m_s_p432_e4_d_m_a_8h"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="struct_u_d_m_a_m_s_p432_e4___h_w_attrs" prot="public">UDMAMSP432E4_HWAttrs</innerclass>
+    <innerclass refid="struct_u_d_m_a_m_s_p432_e4___config" prot="public">UDMAMSP432E4_Config</innerclass>
+    <innerclass refid="struct_u_d_m_a_m_s_p432_e4___object" prot="public">UDMAMSP432E4_Object</innerclass>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="_u_d_m_a_m_s_p432_e4_8h_1aa6a436a4eee390264492ada4b6fa8d19" prot="public" static="no">
+        <type>void(*</type>
+        <definition>typedef void(* UDMAMSP432E4_ErrorFxn) (uintptr_t arg)</definition>
+        <argsstring>)(uintptr_t arg)</argsstring>
+        <name>UDMAMSP432E4_ErrorFxn</name>
+        <briefdescription>
+<para>UDMA error function pointer. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/dma/UDMAMSP432E4.h" line="70" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/dma/UDMAMSP432E4.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_u_d_m_a_m_s_p432_e4_8h_1a8b4992f371af050056a4cb46b22a1ea8" prot="public" static="no">
+        <type><ref refid="struct_u_d_m_a_m_s_p432_e4___config" kindref="compound">UDMAMSP432E4_Config</ref> *</type>
+        <definition>typedef UDMAMSP432E4_Config* UDMAMSP432E4_Handle</definition>
+        <argsstring></argsstring>
+        <name>UDMAMSP432E4_Handle</name>
+        <briefdescription>
+<para>A handle that is returned from a <ref refid="_u_d_m_a_m_s_p432_e4_8h_1a6f4ba7294131d8319f1064176971f75d" kindref="member">UDMAMSP432E4_open()</ref> call. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/dma/UDMAMSP432E4.h" line="151" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/dma/UDMAMSP432E4.h" bodystart="151" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_u_d_m_a_m_s_p432_e4_8h_1a50251c4169a92cdc74286128f377a4e5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void UDMAMSP432E4_close</definition>
+        <argsstring>(UDMAMSP432E4_Handle handle)</argsstring>
+        <name>UDMAMSP432E4_close</name>
+        <param>
+          <type><ref refid="_u_d_m_a_m_s_p432_e4_8h_1a8b4992f371af050056a4cb46b22a1ea8" kindref="member">UDMAMSP432E4_Handle</ref></type>
+          <declname>handle</declname>
+        </param>
+        <briefdescription>
+<para>Function to close the DMA driver. </para>        </briefdescription>
+        <detaileddescription>
+<para>Close a DMA handle returned from <ref refid="_u_d_m_a_m_s_p432_e4_8h_1a6f4ba7294131d8319f1064176971f75d" kindref="member">UDMAMSP432E4_open()</ref>.</para><para><simplesect kind="pre"><para><ref refid="_u_d_m_a_m_s_p432_e4_8h_1a6f4ba7294131d8319f1064176971f75d" kindref="member">UDMAMSP432E4_open()</ref> has to be called first. Calling context: Task</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A UDMAMSP432E4_Handle returned from <ref refid="_u_d_m_a_m_s_p432_e4_8h_1a6f4ba7294131d8319f1064176971f75d" kindref="member">UDMAMSP432E4_open()</ref></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>none</para></simplesect>
+<simplesect kind="see"><para><ref refid="_u_d_m_a_m_s_p432_e4_8h_1a6f4ba7294131d8319f1064176971f75d" kindref="member">UDMAMSP432E4_open</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/dma/UDMAMSP432E4.h" line="177" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_u_d_m_a_m_s_p432_e4_8h_1aa19be18eb81f20d8e4f63c564d3808c0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void UDMAMSP432E4_init</definition>
+        <argsstring>()</argsstring>
+        <name>UDMAMSP432E4_init</name>
+        <briefdescription>
+<para>Function to initialize the MSP432E4 DMA driver. </para>        </briefdescription>
+        <detaileddescription>
+<para>The function should be called prior to opening the DMA driver.</para><para><simplesect kind="return"><para>none</para></simplesect>
+<simplesect kind="see"><para><ref refid="_u_d_m_a_m_s_p432_e4_8h_1a6f4ba7294131d8319f1064176971f75d" kindref="member">UDMAMSP432E4_open()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/dma/UDMAMSP432E4.h" line="188" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_u_d_m_a_m_s_p432_e4_8h_1a6f4ba7294131d8319f1064176971f75d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_u_d_m_a_m_s_p432_e4_8h_1a8b4992f371af050056a4cb46b22a1ea8" kindref="member">UDMAMSP432E4_Handle</ref></type>
+        <definition>UDMAMSP432E4_Handle UDMAMSP432E4_open</definition>
+        <argsstring>()</argsstring>
+        <name>UDMAMSP432E4_open</name>
+        <briefdescription>
+<para>Function to initialize the MSP432E4 DMA peripheral. </para>        </briefdescription>
+        <detaileddescription>
+<para><ref refid="_u_d_m_a_m_s_p432_e4_8h_1a6f4ba7294131d8319f1064176971f75d" kindref="member">UDMAMSP432E4_open()</ref> can be called multiple times. * <simplesect kind="pre"><para><ref refid="_u_d_m_a_m_s_p432_e4_8h_1aa19be18eb81f20d8e4f63c564d3808c0" kindref="member">UDMAMSP432E4_init()</ref> has to be called first. Calling context: Task</para></simplesect>
+<simplesect kind="return"><para>UDMAMSP432E4_Handle on success or NULL if an error has occurred.</para></simplesect>
+<simplesect kind="see"><para><ref refid="_u_d_m_a_m_s_p432_e4_8h_1a50251c4169a92cdc74286128f377a4e5" kindref="member">UDMAMSP432E4_close()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/dma/UDMAMSP432E4.h" line="201" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>uDMA driver implementation for MSP432E4. </para>    </briefdescription>
+    <detaileddescription>
+<para>============================================================================</para><para>This driver is intended for use only by drivers that use the uDMA peripheral (e.g., SPI). This driver is mainly used for management of the control table base address of the UDMA peripheral, and to create the DMA error Hwi.</para><para>The application should only define the memory for the control table and set up the <ref refid="struct_u_d_m_a_m_s_p432_e4___h_w_attrs" kindref="compound">UDMAMSP432E4_HWAttrs</ref> and <ref refid="struct_u_d_m_a_m_s_p432_e4___config" kindref="compound">UDMAMSP432E4_Config</ref> structures.</para><para>The UDMAMSP432E4 header file should be included in an application as follows:</para><para><programlisting><codeline><highlight class="normal">#include<sp/>&lt;ti/drivers/dma/UDMAMSP432E4.h&gt;</highlight></codeline>
+</programlisting> <hruler/>
+ </para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2017-2019,<sp/>Texas<sp/>Instruments<sp/>Incorporated</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Redistribution<sp/>and<sp/>use<sp/>in<sp/>source<sp/>and<sp/>binary<sp/>forms,<sp/>with<sp/>or<sp/>without</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>modification,<sp/>are<sp/>permitted<sp/>provided<sp/>that<sp/>the<sp/>following<sp/>conditions</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>are<sp/>met:</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>of<sp/>source<sp/>code<sp/>must<sp/>retain<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer.</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>in<sp/>binary<sp/>form<sp/>must<sp/>reproduce<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer<sp/>in<sp/>the</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>documentation<sp/>and/or<sp/>other<sp/>materials<sp/>provided<sp/>with<sp/>the<sp/>distribution.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Neither<sp/>the<sp/>name<sp/>of<sp/>Texas<sp/>Instruments<sp/>Incorporated<sp/>nor<sp/>the<sp/>names<sp/>of</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>its<sp/>contributors<sp/>may<sp/>be<sp/>used<sp/>to<sp/>endorse<sp/>or<sp/>promote<sp/>products<sp/>derived</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>from<sp/>this<sp/>software<sp/>without<sp/>specific<sp/>prior<sp/>written<sp/>permission.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>THIS<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>BY<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>AND<sp/>CONTRIBUTORS<sp/>&quot;AS<sp/>IS&quot;</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>AND<sp/>ANY<sp/>EXPRESS<sp/>OR<sp/>IMPLIED<sp/>WARRANTIES,<sp/>INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>THE<sp/>IMPLIED<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY<sp/>AND<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>PURPOSE<sp/>ARE<sp/>DISCLAIMED.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE<sp/>COPYRIGHT<sp/>OWNER<sp/>OR</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>CONTRIBUTORS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>DIRECT,<sp/>INDIRECT,<sp/>INCIDENTAL,<sp/>SPECIAL,</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>EXEMPLARY,<sp/>OR<sp/>CONSEQUENTIAL<sp/>DAMAGES<sp/>(INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>PROCUREMENT<sp/>OF<sp/>SUBSTITUTE<sp/>GOODS<sp/>OR<sp/>SERVICES;<sp/>LOSS<sp/>OF<sp/>USE,<sp/>DATA,<sp/>OR<sp/>PROFITS;</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>OR<sp/>BUSINESS<sp/>INTERRUPTION)<sp/>HOWEVER<sp/>CAUSED<sp/>AND<sp/>ON<sp/>ANY<sp/>THEORY<sp/>OF<sp/>LIABILITY,</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/>STRICT<sp/>LIABILITY,<sp/>OR<sp/>TORT<sp/>(INCLUDING<sp/>NEGLIGENCE<sp/>OR</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*<sp/>OTHERWISE)<sp/>ARISING<sp/>IN<sp/>ANY<sp/>WAY<sp/>OUT<sp/>OF<sp/>THE<sp/>USE<sp/>OF<sp/>THIS<sp/>SOFTWARE,</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*<sp/>EVEN<sp/>IF<sp/>ADVISED<sp/>OF<sp/>THE<sp/>POSSIBILITY<sp/>OF<sp/>SUCH<sp/>DAMAGE.</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*/</highlight></codeline>
+<codeline lineno="55"><highlight class="preprocessor">#ifndef<sp/>ti_drivers_dma_UDMAMSP432E4__include</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ti_drivers_dma_UDMAMSP432E4__include</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdbool.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ti/drivers/dpl/HwiP.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70" refid="_u_d_m_a_m_s_p432_e4_8h_1aa6a436a4eee390264492ada4b6fa8d19" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>void<sp/>(*<ref refid="_u_d_m_a_m_s_p432_e4_8h_1aa6a436a4eee390264492ada4b6fa8d19" kindref="member">UDMAMSP432E4_ErrorFxn</ref>)(uintptr_t<sp/>arg);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127" refid="struct_u_d_m_a_m_s_p432_e4___h_w_attrs" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="128" refid="struct_u_d_m_a_m_s_p432_e4___h_w_attrs_1afafcbbe81ea9a5abac183b9af75b053c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="struct_u_d_m_a_m_s_p432_e4___h_w_attrs_1afafcbbe81ea9a5abac183b9af75b053c" kindref="member">controlBaseAddr</ref>;<sp/></highlight></codeline>
+<codeline lineno="129" refid="struct_u_d_m_a_m_s_p432_e4___h_w_attrs_1ad8e7cdac6b3ad9dbe18a86b2ea7433de" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_u_d_m_a_m_s_p432_e4_8h_1aa6a436a4eee390264492ada4b6fa8d19" kindref="member">UDMAMSP432E4_ErrorFxn</ref><sp/><ref refid="struct_u_d_m_a_m_s_p432_e4___h_w_attrs_1ad8e7cdac6b3ad9dbe18a86b2ea7433de" kindref="member">dmaErrorFxn</ref>;<sp/></highlight></codeline>
+<codeline lineno="130" refid="struct_u_d_m_a_m_s_p432_e4___h_w_attrs_1a7302288d2eb8fdac2667820031046718" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><sp/><sp/><sp/><sp/><ref refid="struct_u_d_m_a_m_s_p432_e4___h_w_attrs_1a7302288d2eb8fdac2667820031046718" kindref="member">intNum</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="131" refid="struct_u_d_m_a_m_s_p432_e4___h_w_attrs_1afb0bfccf71981207d8097b20a76b3a4d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><sp/><sp/><sp/><sp/><ref refid="struct_u_d_m_a_m_s_p432_e4___h_w_attrs_1afb0bfccf71981207d8097b20a76b3a4d" kindref="member">intPriority</ref>;<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="132"><highlight class="normal">}<sp/><ref refid="struct_u_d_m_a_m_s_p432_e4___h_w_attrs" kindref="compound">UDMAMSP432E4_HWAttrs</ref>;</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143" refid="struct_u_d_m_a_m_s_p432_e4___config" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="144" refid="struct_u_d_m_a_m_s_p432_e4___config_1addfb811a31e8bf44266747761e54baae" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="struct_u_d_m_a_m_s_p432_e4___config_1addfb811a31e8bf44266747761e54baae" kindref="member">object</ref>;<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="145" refid="struct_u_d_m_a_m_s_p432_e4___config_1ab489f4e737772028beb2e4faab6b7b27" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="struct_u_d_m_a_m_s_p432_e4___config_1ab489f4e737772028beb2e4faab6b7b27" kindref="member">hwAttrs</ref>;<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="146"><highlight class="normal">}<sp/><ref refid="struct_u_d_m_a_m_s_p432_e4___config" kindref="compound">UDMAMSP432E4_Config</ref>;</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight></codeline>
+<codeline lineno="151" refid="_u_d_m_a_m_s_p432_e4_8h_1a8b4992f371af050056a4cb46b22a1ea8" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="struct_u_d_m_a_m_s_p432_e4___config" kindref="compound">UDMAMSP432E4_Config</ref><sp/>*<ref refid="_u_d_m_a_m_s_p432_e4_8h_1a8b4992f371af050056a4cb46b22a1ea8" kindref="member">UDMAMSP432E4_Handle</ref>;</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight></codeline>
+<codeline lineno="158" refid="struct_u_d_m_a_m_s_p432_e4___object" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="159" refid="struct_u_d_m_a_m_s_p432_e4___object_1a0379d25a0cd5f6430f42d413aa80ef9b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_u_d_m_a_m_s_p432_e4___object_1a0379d25a0cd5f6430f42d413aa80ef9b" kindref="member">isOpen</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Flag<sp/>for<sp/>open/close<sp/>status<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="160" refid="struct_u_d_m_a_m_s_p432_e4___object_1a58c483fef82372df1ed605ec104047b6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>HwiP_Handle<sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_u_d_m_a_m_s_p432_e4___object_1a58c483fef82372df1ed605ec104047b6" kindref="member">hwiHandle</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>DMA<sp/>error<sp/>Hwi<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal">}<sp/><ref refid="struct_u_d_m_a_m_s_p432_e4___object" kindref="compound">UDMAMSP432E4_Object</ref>;</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_u_d_m_a_m_s_p432_e4_8h_1a50251c4169a92cdc74286128f377a4e5" kindref="member">UDMAMSP432E4_close</ref>(UDMAMSP432E4_Handle<sp/>handle);</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_u_d_m_a_m_s_p432_e4_8h_1aa19be18eb81f20d8e4f63c564d3808c0" kindref="member">UDMAMSP432E4_init</ref>();</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight></codeline>
+<codeline lineno="201"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>UDMAMSP432E4_Handle<sp/><ref refid="_u_d_m_a_m_s_p432_e4_8h_1a6f4ba7294131d8319f1064176971f75d" kindref="member">UDMAMSP432E4_open</ref>();</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="204"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="206"><highlight class="normal"></highlight></codeline>
+<codeline lineno="207"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>ti_drivers_dma_UDMAMSP432E4__include<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="exports/tidrivers_msp432e4/source/ti/drivers/dma/UDMAMSP432E4.h"/>
+  </compounddef>
+</doxygen>

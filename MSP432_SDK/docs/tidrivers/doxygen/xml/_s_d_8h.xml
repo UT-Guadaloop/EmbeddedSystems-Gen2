@@ -1,0 +1,917 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="_s_d_8h" kind="file" language="C++">
+    <compoundname>SD.h</compoundname>
+    <includes local="no">stdint.h</includes>
+    <includedby refid="_s_d_s_p_i_8h" local="no">SDSPI.h</includedby>
+    <includedby refid="_s_d_fat_f_s_8h" local="no">SDFatFS.h</includedby>
+    <incdepgraph>
+      <node id="392">
+        <label>stdint.h</label>
+      </node>
+      <node id="391">
+        <label>SD.h</label>
+        <link refid="_s_d_8h"/>
+        <childnode refid="392" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="394">
+        <label>SDSPI.h</label>
+        <link refid="_s_d_s_p_i_8h"/>
+      </node>
+      <node id="393">
+        <label>SD.h</label>
+        <link refid="_s_d_8h"/>
+        <childnode refid="394" relation="include">
+        </childnode>
+        <childnode refid="395" relation="include">
+        </childnode>
+      </node>
+      <node id="395">
+        <label>SDFatFS.h</label>
+        <link refid="_s_d_fat_f_s_8h"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="struct_s_d___params" prot="public">SD_Params</innerclass>
+    <innerclass refid="struct_s_d___fxn_table" prot="public">SD_FxnTable</innerclass>
+    <innerclass refid="struct_s_d___config__" prot="public">SD_Config_</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="group___s_d___c_o_n_t_r_o_l_1gaeae6617d0410c8dfd0df727b44d9fc48" prot="public" static="no">
+        <name>SD_CMD_RESERVED</name>
+        <initializer>(32)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Common <ref refid="_s_d_8h_1adeeaa4d71a639131abb9377322b3b226" kindref="member">SD_control()</ref> command code reservation offset. SD driver implementations should offset command codes with SD_CMD_RESERVED growing positively.</para><para>Example implementation specific command codes: <programlisting><codeline><highlight class="normal">#define<sp/>SDXYZ_CMD_COMMAND0<sp/><sp/><sp/><sp/>(SD_CMD_RESERVED<sp/>+<sp/>0)</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>SDXYZ_CMD_COMMAND1<sp/><sp/><sp/><sp/>(SD_CMD_RESERVED<sp/>+<sp/>1)</highlight></codeline>
+</programlisting> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/SD.h" line="131" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/SD.h" bodystart="131" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___s_d___c_o_n_t_r_o_l_1gabca601c1ba0b541c82e3065b5f115ace" prot="public" static="no">
+        <name>SD_STATUS_RESERVED</name>
+        <initializer>(-32)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Common SD_control status code reservation offset. SD driver implementations should offset status codes with SD_STATUS_RESERVED growing negatively.</para><para>Example implementation specific status codes: <programlisting><codeline><highlight class="normal">#define<sp/>SDXYZ_STATUS_ERROR0<sp/><sp/><sp/><sp/>(SD_STATUS_RESERVED<sp/>-<sp/>0)</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>SDXYZ_STATUS_ERROR1<sp/><sp/><sp/><sp/>(SD_STATUS_RESERVED<sp/>-<sp/>1)</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>SDXYZ_STATUS_ERROR2<sp/><sp/><sp/><sp/>(SD_STATUS_RESERVED<sp/>-<sp/>2)</highlight></codeline>
+</programlisting> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/SD.h" line="145" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/SD.h" bodystart="145" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___s_d___s_t_a_t_u_s_1ga691cc2fe1fe0fa94560519b53f18c647" prot="public" static="no">
+        <name>SD_STATUS_SUCCESS</name>
+        <initializer>(0)</initializer>
+        <briefdescription>
+<para>Successful status code returned by <ref refid="_s_d_8h_1adeeaa4d71a639131abb9377322b3b226" kindref="member">SD_control()</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para><ref refid="_s_d_8h_1adeeaa4d71a639131abb9377322b3b226" kindref="member">SD_control()</ref> returns SD_STATUS_SUCCESS if the control code was executed successfully. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/SD.h" line="160" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/SD.h" bodystart="160" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___s_d___s_t_a_t_u_s_1ga2ed21a29e85502f5a205d5273df01713" prot="public" static="no">
+        <name>SD_STATUS_ERROR</name>
+        <initializer>(-1)</initializer>
+        <briefdescription>
+<para>Generic error status code returned by <ref refid="_s_d_8h_1adeeaa4d71a639131abb9377322b3b226" kindref="member">SD_control()</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para><ref refid="_s_d_8h_1adeeaa4d71a639131abb9377322b3b226" kindref="member">SD_control()</ref> returns SD_STATUS_ERROR if the control code was not executed successfully. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/SD.h" line="168" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/SD.h" bodystart="168" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___s_d___s_t_a_t_u_s_1ga072054678e68aafcd16a7bf45892d8c8" prot="public" static="no">
+        <name>SD_STATUS_UNDEFINEDCMD</name>
+        <initializer>(-2)</initializer>
+        <briefdescription>
+<para>An error status code returned by <ref refid="_s_d_8h_1adeeaa4d71a639131abb9377322b3b226" kindref="member">SD_control()</ref> for undefined command codes. </para>        </briefdescription>
+        <detaileddescription>
+<para><ref refid="_s_d_8h_1adeeaa4d71a639131abb9377322b3b226" kindref="member">SD_control()</ref> returns SD_STATUS_UNDEFINEDCMD if the control code is not recognized by the driver implementation. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/SD.h" line="177" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/SD.h" bodystart="177" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="_s_d_8h_1a90b1bf9153b1d83c5aaa80cad97bbec2" prot="public" static="no">
+        <name>SD_CardType</name>
+        <enumvalue id="_s_d_8h_1a90b1bf9153b1d83c5aaa80cad97bbec2a1c121b7f5d4826090374c3c34b748d34" prot="public">
+          <name>SD_NOCARD</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Unrecognized Card </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_s_d_8h_1a90b1bf9153b1d83c5aaa80cad97bbec2a2d3cce4eff19e313516ca5b215f721be" prot="public">
+          <name>SD_MMC</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Multi-media Memory Card (MMC) </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_s_d_8h_1a90b1bf9153b1d83c5aaa80cad97bbec2ae884372680134cfc338a4bc9f339bc85" prot="public">
+          <name>SD_SDSC</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Standard SDCard (SDSC) </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_s_d_8h_1a90b1bf9153b1d83c5aaa80cad97bbec2a328ee7940776cc398388d56e4eba5175" prot="public">
+          <name>SD_SDHC</name>
+          <initializer>= 3</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>High Capacity SDCard (SDHC) </para>          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>SD Card type inserted. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/SD.h" line="197" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/SD.h" bodystart="197" bodyend="202"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="_s_d_8h_1ac00382e8276a2b571ef3bc511455812d" prot="public" static="no">
+        <type>struct <ref refid="struct_s_d___config__" kindref="compound">SD_Config_</ref> *</type>
+        <definition>typedef struct SD_Config_* SD_Handle</definition>
+        <argsstring></argsstring>
+        <name>SD_Handle</name>
+        <briefdescription>
+<para>A handle that is returned from a <ref refid="_s_d_8h_1a0c897f68603b2f1341be1378ec976a2d" kindref="member">SD_open()</ref> call. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/SD.h" line="207" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/SD.h" bodystart="207" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_s_d_8h_1a1b83788bc426bb2b7c1eb7ed92958b4d" prot="public" static="no">
+        <type>void(*</type>
+        <definition>typedef void(* SD_CloseFxn) (SD_Handle handle)</definition>
+        <argsstring>)(SD_Handle handle)</argsstring>
+        <name>SD_CloseFxn</name>
+        <briefdescription>
+<para>A function pointer to a driver specific implementation of <ref refid="_s_d_8h_1a1b83788bc426bb2b7c1eb7ed92958b4d" kindref="member">SD_CloseFxn()</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/SD.h" line="227" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/SD.h" bodystart="227" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_s_d_8h_1ae2308be8eec454cf4d95c8d6fc78c526" prot="public" static="no">
+        <type>int_fast16_t(*</type>
+        <definition>typedef int_fast16_t(* SD_ControlFxn) (SD_Handle handle, uint_fast16_t cmd, void *arg)</definition>
+        <argsstring>)(SD_Handle handle, uint_fast16_t cmd, void *arg)</argsstring>
+        <name>SD_ControlFxn</name>
+        <briefdescription>
+<para>A function pointer to a driver specific implementation of SD_controlFxn(). </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/SD.h" line="233" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/SD.h" bodystart="233" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_s_d_8h_1a2bf3ce8664f81012e946ed39028be875" prot="public" static="no">
+        <type>uint_fast32_t(*</type>
+        <definition>typedef uint_fast32_t(* SD_getNumSectorsFxn) (SD_Handle handle)</definition>
+        <argsstring>)(SD_Handle handle)</argsstring>
+        <name>SD_getNumSectorsFxn</name>
+        <briefdescription>
+<para>A function pointer to a driver specific implementation of <ref refid="_s_d_8h_1a2bf3ce8664f81012e946ed39028be875" kindref="member">SD_getNumSectorsFxn()</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/SD.h" line="240" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/SD.h" bodystart="240" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_s_d_8h_1ac3130521800102206c45ab597ce4f453" prot="public" static="no">
+        <type>uint_fast32_t(*</type>
+        <definition>typedef uint_fast32_t(* SD_getSectorSizeFxn) (SD_Handle handle)</definition>
+        <argsstring>)(SD_Handle handle)</argsstring>
+        <name>SD_getSectorSizeFxn</name>
+        <briefdescription>
+<para>A function pointer to a driver specific implementation of <ref refid="_s_d_8h_1ac3130521800102206c45ab597ce4f453" kindref="member">SD_getSectorSizeFxn()</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/SD.h" line="246" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/SD.h" bodystart="246" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_s_d_8h_1a49c5d5c34eaed7e73a2e3dd6ff38959a" prot="public" static="no">
+        <type>void(*</type>
+        <definition>typedef void(* SD_InitFxn) (SD_Handle handle)</definition>
+        <argsstring>)(SD_Handle handle)</argsstring>
+        <name>SD_InitFxn</name>
+        <briefdescription>
+<para>A function pointer to a driver specific implementation of <ref refid="_s_d_8h_1a49c5d5c34eaed7e73a2e3dd6ff38959a" kindref="member">SD_InitFxn()</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/SD.h" line="252" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/SD.h" bodystart="252" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_s_d_8h_1a10d9d8767b6521bdb55f08d504131999" prot="public" static="no">
+        <type>int_fast16_t(*</type>
+        <definition>typedef int_fast16_t(* SD_InitializeFxn) (SD_Handle handle)</definition>
+        <argsstring>)(SD_Handle handle)</argsstring>
+        <name>SD_InitializeFxn</name>
+        <briefdescription>
+<para>A function pointer to a driver specific implementation of SD_initializeFxn(). </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/SD.h" line="258" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/SD.h" bodystart="258" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_s_d_8h_1ab4bcae6f0885b93f6d5c3da91040638f" prot="public" static="no">
+        <type><ref refid="_s_d_8h_1ac00382e8276a2b571ef3bc511455812d" kindref="member">SD_Handle</ref>(*</type>
+        <definition>typedef SD_Handle(* SD_OpenFxn) (SD_Handle handle, SD_Params *params)</definition>
+        <argsstring>)(SD_Handle handle, SD_Params *params)</argsstring>
+        <name>SD_OpenFxn</name>
+        <briefdescription>
+<para>A function pointer to a driver specific implementation of <ref refid="_s_d_8h_1ab4bcae6f0885b93f6d5c3da91040638f" kindref="member">SD_OpenFxn()</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/SD.h" line="264" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/SD.h" bodystart="264" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_s_d_8h_1ab4201c8b89040c3f1829c2a154057b07" prot="public" static="no">
+        <type>int_fast16_t(*</type>
+        <definition>typedef int_fast16_t(* SD_ReadFxn) (SD_Handle handle, void *buf, int_fast32_t sector, uint_fast32_t secCount)</definition>
+        <argsstring>)(SD_Handle handle, void *buf, int_fast32_t sector, uint_fast32_t secCount)</argsstring>
+        <name>SD_ReadFxn</name>
+        <briefdescription>
+<para>A function pointer to a driver specific implementation of SD_readFxn(). </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/SD.h" line="270" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/SD.h" bodystart="270" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_s_d_8h_1a67504aaf6db25bed624e5bbcf3043ecd" prot="public" static="no">
+        <type>int_fast16_t(*</type>
+        <definition>typedef int_fast16_t(* SD_WriteFxn) (SD_Handle handle, const void *buf, int_fast32_t sector, uint_fast32_t secCount)</definition>
+        <argsstring>)(SD_Handle handle, const void *buf, int_fast32_t sector, uint_fast32_t secCount)</argsstring>
+        <name>SD_WriteFxn</name>
+        <briefdescription>
+<para>A function pointer to a driver specific implementation of SD_writeFxn(). </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/SD.h" line="277" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/SD.h" bodystart="277" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_s_d_8h_1ae0de5710be04fcc793b2d8946d151b29" prot="public" static="no">
+        <type>struct <ref refid="struct_s_d___config__" kindref="compound">SD_Config_</ref></type>
+        <definition>typedef struct SD_Config_  SD_Config</definition>
+        <argsstring></argsstring>
+        <name>SD_Config</name>
+        <briefdescription>
+<para>SD Global configuration. </para>        </briefdescription>
+        <detaileddescription>
+<para>The SD_Config structure contains a set of pointers used to characterize the SD driver implementation.</para><para>This structure needs to be defined before calling <ref refid="_s_d_8h_1a0cfa8bf08501f1c19d2357856d4236ae" kindref="member">SD_init()</ref> and it must not be changed thereafter.</para><para><simplesect kind="see"><para><ref refid="_s_d_8h_1a0cfa8bf08501f1c19d2357856d4236ae" kindref="member">SD_init()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/SD.h" line="326" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_s_d_8h_1ae7f98db7753385361e0f7927b1771c41" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SD_close</definition>
+        <argsstring>(SD_Handle handle)</argsstring>
+        <name>SD_close</name>
+        <param>
+          <type><ref refid="_s_d_8h_1ac00382e8276a2b571ef3bc511455812d" kindref="member">SD_Handle</ref></type>
+          <declname>handle</declname>
+        </param>
+        <briefdescription>
+<para>Function to close a SD peripheral specified by the SD handle. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para><ref refid="_s_d_8h_1a0c897f68603b2f1341be1378ec976a2d" kindref="member">SD_open()</ref> had to be called first.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A <ref refid="_s_d_8h_1ac00382e8276a2b571ef3bc511455812d" kindref="member">SD_Handle</ref> returned from <ref refid="_s_d_8h_1a0c897f68603b2f1341be1378ec976a2d" kindref="member">SD_open()</ref></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="_s_d_8h_1a0c897f68603b2f1341be1378ec976a2d" kindref="member">SD_open()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/SD.h" line="337" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_8h_1adeeaa4d71a639131abb9377322b3b226" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int_fast16_t</type>
+        <definition>int_fast16_t SD_control</definition>
+        <argsstring>(SD_Handle handle, uint_fast16_t cmd, void *arg)</argsstring>
+        <name>SD_control</name>
+        <param>
+          <type><ref refid="_s_d_8h_1ac00382e8276a2b571ef3bc511455812d" kindref="member">SD_Handle</ref></type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type>uint_fast16_t</type>
+          <declname>cmd</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>arg</declname>
+        </param>
+        <briefdescription>
+<para>Function performs implementation specific features on a given <ref refid="_s_d_8h_1ac00382e8276a2b571ef3bc511455812d" kindref="member">SD_Handle</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para>Commands for SD_control can originate from <ref refid="_s_d_8h" kindref="compound">SD.h</ref> or from implementation specific SD*.h files. While commands from <ref refid="_s_d_8h" kindref="compound">SD.h</ref> are API portable across driver implementations, not all implementations may support all these commands. Conversely, commands from driver implementation specific SD*.h files add unique driver capabilities but are not API portable across all SD driver implementations.</para><para>Commands supported by <ref refid="_s_d_8h" kindref="compound">SD.h</ref> follow a SD*_CMD naming convention.</para><para>Commands supported by SD*.h follow a SD*_CMD naming convention. Each control command defines arg differently. The types of arg are documented with each command.</para><para>See <ref refid="group___s_d___c_m_d" kindref="compound">SD_control command codes</ref> for command codes.</para><para>See <ref refid="group___s_d___s_t_a_t_u_s" kindref="compound">SD_control return status codes</ref> for status codes.</para><para><simplesect kind="pre"><para><ref refid="_s_d_8h_1a0c897f68603b2f1341be1378ec976a2d" kindref="member">SD_open()</ref> has to be called first.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A <ref refid="_s_d_8h_1ac00382e8276a2b571ef3bc511455812d" kindref="member">SD_Handle</ref> returned from <ref refid="_s_d_8h_1a0c897f68603b2f1341be1378ec976a2d" kindref="member">SD_open()</ref>.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>cmd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="_s_d_8h" kindref="compound">SD.h</ref> or SD*.h commands.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>arg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An optional R/W (read/write) command argument accompanied with cmd.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Implementation specific return codes. Negative values indicate unsuccessful operations.</para></simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_8h_1a0c897f68603b2f1341be1378ec976a2d" kindref="member">SD_open()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/SD.h" line="377" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_8h_1aecff5a5f73ac1cfbe27c2a0593dd7558" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint_fast32_t</type>
+        <definition>uint_fast32_t SD_getNumSectors</definition>
+        <argsstring>(SD_Handle handle)</argsstring>
+        <name>SD_getNumSectors</name>
+        <param>
+          <type><ref refid="_s_d_8h_1ac00382e8276a2b571ef3bc511455812d" kindref="member">SD_Handle</ref></type>
+          <declname>handle</declname>
+        </param>
+        <briefdescription>
+<para>A function pointer to a driver specific implementation of <ref refid="_s_d_8h_1aecff5a5f73ac1cfbe27c2a0593dd7558" kindref="member">SD_getNumSectors()</ref>. Note: Total Card capacity is the (NumberOfSectors * SectorSize). </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>SD Card has been initialized using <ref refid="_s_d_8h_1a6532267348f0afa007adec0e3ff2c3e0" kindref="member">SD_initialize()</ref>.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A <ref refid="_s_d_8h_1ac00382e8276a2b571ef3bc511455812d" kindref="member">SD_Handle</ref> returned from <ref refid="_s_d_8h_1a0c897f68603b2f1341be1378ec976a2d" kindref="member">SD_open()</ref>.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The total number of sectors on the SD card, or 0 if an error occurred.</para></simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_8h_1a6532267348f0afa007adec0e3ff2c3e0" kindref="member">SD_initialize()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/SD.h" line="393" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_8h_1aa88b4d26d76ad3cdfcf652c0284e8f3d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint_fast32_t</type>
+        <definition>uint_fast32_t SD_getSectorSize</definition>
+        <argsstring>(SD_Handle handle)</argsstring>
+        <name>SD_getSectorSize</name>
+        <param>
+          <type><ref refid="_s_d_8h_1ac00382e8276a2b571ef3bc511455812d" kindref="member">SD_Handle</ref></type>
+          <declname>handle</declname>
+        </param>
+        <briefdescription>
+<para>Function to obtain the sector size used to access the SD card. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>SD Card has been initialized using <ref refid="_s_d_8h_1a6532267348f0afa007adec0e3ff2c3e0" kindref="member">SD_initialize()</ref>.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A <ref refid="_s_d_8h_1ac00382e8276a2b571ef3bc511455812d" kindref="member">SD_Handle</ref> returned from <ref refid="_s_d_8h_1a0c897f68603b2f1341be1378ec976a2d" kindref="member">SD_open()</ref>.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The sector size set for use during SD card read/write operations.</para></simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_8h_1a6532267348f0afa007adec0e3ff2c3e0" kindref="member">SD_initialize()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/SD.h" line="406" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_8h_1a0cfa8bf08501f1c19d2357856d4236ae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SD_init</definition>
+        <argsstring>(void)</argsstring>
+        <name>SD_init</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This function initializes the SD driver. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>The SD_config[] array must exist and be persistent before this function can be called. This function must also be called before any other SD driver APIs. This function call does not modify any peripheral registers. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/SD.h" line="416" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_8h_1afd09eeb2f5a0dc0a05a238a1e455e260" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SD_Params_init</definition>
+        <argsstring>(SD_Params *params)</argsstring>
+        <name>SD_Params_init</name>
+        <param>
+          <type><ref refid="struct_s_d___params" kindref="compound">SD_Params</ref> *</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+<para>Function to initialize the <ref refid="struct_s_d___params" kindref="compound">SD_Params</ref> struct to its defaults. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>params</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to <ref refid="struct_s_d___params" kindref="compound">SD_Params</ref> structure for initialization. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/SD.h" line="423" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_8h_1a6532267348f0afa007adec0e3ff2c3e0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int_fast16_t</type>
+        <definition>int_fast16_t SD_initialize</definition>
+        <argsstring>(SD_Handle handle)</argsstring>
+        <name>SD_initialize</name>
+        <param>
+          <type><ref refid="_s_d_8h_1ac00382e8276a2b571ef3bc511455812d" kindref="member">SD_Handle</ref></type>
+          <declname>handle</declname>
+        </param>
+        <briefdescription>
+<para>A function pointer to a driver specific implementation of <ref refid="_s_d_8h_1a6532267348f0afa007adec0e3ff2c3e0" kindref="member">SD_initialize()</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>SD controller has been opened by calling <ref refid="_s_d_8h_1a0c897f68603b2f1341be1378ec976a2d" kindref="member">SD_open()</ref>.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A <ref refid="_s_d_8h_1ac00382e8276a2b571ef3bc511455812d" kindref="member">SD_Handle</ref> returned from <ref refid="_s_d_8h_1a0c897f68603b2f1341be1378ec976a2d" kindref="member">SD_open()</ref>.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group___s_d___s_t_a_t_u_s_1ga691cc2fe1fe0fa94560519b53f18c647" kindref="member">SD_STATUS_SUCCESS</ref> if no errors occurred during the initialization, <ref refid="group___s_d___s_t_a_t_u_s_1ga2ed21a29e85502f5a205d5273df01713" kindref="member">SD_STATUS_ERROR</ref> otherwise. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/SD.h" line="436" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_8h_1a0c897f68603b2f1341be1378ec976a2d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_s_d_8h_1ac00382e8276a2b571ef3bc511455812d" kindref="member">SD_Handle</ref></type>
+        <definition>SD_Handle SD_open</definition>
+        <argsstring>(uint_least8_t index, SD_Params *params)</argsstring>
+        <name>SD_open</name>
+        <param>
+          <type>uint_least8_t</type>
+          <declname>index</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_s_d___params" kindref="compound">SD_Params</ref> *</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+<para>A function pointer to a driver specific implementation of <ref refid="_s_d_8h_1a0c897f68603b2f1341be1378ec976a2d" kindref="member">SD_open()</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>SD controller has been initialized using <ref refid="_s_d_8h_1a0cfa8bf08501f1c19d2357856d4236ae" kindref="member">SD_init()</ref>.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Logical peripheral number for the SD indexed into the SD_config[] table.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>params</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to a parameter block, if NULL it will use default values. All the fields in this structure are RO (read-only).</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A <ref refid="_s_d_8h_1ac00382e8276a2b571ef3bc511455812d" kindref="member">SD_Handle</ref> on success or a NULL on an error or if it has been opened already.</para></simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_8h_1a0cfa8bf08501f1c19d2357856d4236ae" kindref="member">SD_init()</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_8h_1ae7f98db7753385361e0f7927b1771c41" kindref="member">SD_close()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/SD.h" line="457" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_8h_1ad28e80ec85e28612af735a6a20d831c0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int_fast16_t</type>
+        <definition>int_fast16_t SD_read</definition>
+        <argsstring>(SD_Handle handle, void *buf, int_fast32_t sector, uint_fast32_t secCount)</argsstring>
+        <name>SD_read</name>
+        <param>
+          <type><ref refid="_s_d_8h_1ac00382e8276a2b571ef3bc511455812d" kindref="member">SD_Handle</ref></type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>buf</declname>
+        </param>
+        <param>
+          <type>int_fast32_t</type>
+          <declname>sector</declname>
+        </param>
+        <param>
+          <type>uint_fast32_t</type>
+          <declname>secCount</declname>
+        </param>
+        <briefdescription>
+<para>A function pointer to a driver specific implementation of <ref refid="_s_d_8h_1ad28e80ec85e28612af735a6a20d831c0" kindref="member">SD_read()</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>SD controller has been opened and initialized by calling <ref refid="_s_d_8h_1a0c897f68603b2f1341be1378ec976a2d" kindref="member">SD_open()</ref> followed by <ref refid="_s_d_8h_1a6532267348f0afa007adec0e3ff2c3e0" kindref="member">SD_initialize()</ref>.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A <ref refid="_s_d_8h_1ac00382e8276a2b571ef3bc511455812d" kindref="member">SD_Handle</ref> returned from <ref refid="_s_d_8h_1a0c897f68603b2f1341be1378ec976a2d" kindref="member">SD_open()</ref>.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>buf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to a buffer to read data into.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Starting sector on the disk to read from.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>secCount</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of sectors to be read.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group___s_d___s_t_a_t_u_s_1ga691cc2fe1fe0fa94560519b53f18c647" kindref="member">SD_STATUS_SUCCESS</ref> if no errors occurred during the write, <ref refid="group___s_d___s_t_a_t_u_s_1ga2ed21a29e85502f5a205d5273df01713" kindref="member">SD_STATUS_ERROR</ref> otherwise.</para></simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_8h_1a6532267348f0afa007adec0e3ff2c3e0" kindref="member">SD_initialize()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/SD.h" line="479" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_8h_1afb413a941fd83b75abdbb3dead5401d8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int_fast16_t</type>
+        <definition>int_fast16_t SD_write</definition>
+        <argsstring>(SD_Handle handle, const void *buf, int_fast32_t sector, uint_fast32_t secCount)</argsstring>
+        <name>SD_write</name>
+        <param>
+          <type><ref refid="_s_d_8h_1ac00382e8276a2b571ef3bc511455812d" kindref="member">SD_Handle</ref></type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>buf</declname>
+        </param>
+        <param>
+          <type>int_fast32_t</type>
+          <declname>sector</declname>
+        </param>
+        <param>
+          <type>uint_fast32_t</type>
+          <declname>secCount</declname>
+        </param>
+        <briefdescription>
+<para>A function pointer to a driver specific implementation of <ref refid="_s_d_8h_1afb413a941fd83b75abdbb3dead5401d8" kindref="member">SD_write()</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>SD controller has been opened and initialized by calling <ref refid="_s_d_8h_1a0c897f68603b2f1341be1378ec976a2d" kindref="member">SD_open()</ref> followed by <ref refid="_s_d_8h_1a6532267348f0afa007adec0e3ff2c3e0" kindref="member">SD_initialize()</ref>.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A <ref refid="_s_d_8h_1ac00382e8276a2b571ef3bc511455812d" kindref="member">SD_Handle</ref> returned from <ref refid="_s_d_8h_1a0c897f68603b2f1341be1378ec976a2d" kindref="member">SD_open()</ref>.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>buf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to a buffer containing data to write to disk.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Starting sector on the disk to write to.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>secCount</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of sectors to be written.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="group___s_d___s_t_a_t_u_s_1ga691cc2fe1fe0fa94560519b53f18c647" kindref="member">SD_STATUS_SUCCESS</ref> if no errors occurred during the write, <ref refid="group___s_d___s_t_a_t_u_s_1ga2ed21a29e85502f5a205d5273df01713" kindref="member">SD_STATUS_ERROR</ref> otherwise.</para></simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_8h_1a6532267348f0afa007adec0e3ff2c3e0" kindref="member">SD_initialize()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/SD.h" line="502" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Secure Digital (SD) Driver. </para>    </briefdescription>
+    <detaileddescription>
+<para><hruler/>
+</para><para><anchor id="_s_d_8h_1ti_drivers_SD_Overview"/><heading level="1">Overview</heading>
+</para><para>The SD driver is designed to serve as an interface to perform basic transfers directly to the SD card.</para><para><hruler/>
+ <anchor id="_s_d_8h_1ti_drivers_SD_Usage"/><heading level="1">Usage</heading>
+</para><para>This section will cover driver usage.</para><para><anchor id="_s_d_8h_1ti_drivers_SD_Synopsis"/><heading level="2">Synopsis</heading>
+</para><para><anchor id="_s_d_8h_1ti_drivers_SD_Synopsis_Code"/><programlisting><codeline><highlight class="normal">SD_Handle<sp/>handle;</highlight></codeline>
+<codeline><highlight class="normal">uint16_t<sp/>status;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">SD_init();</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Open<sp/>SD<sp/>and<sp/>initialize<sp/>card</highlight></codeline>
+<codeline><highlight class="normal">handle<sp/>=<sp/>SD_open(CONFIG_SD0,<sp/>NULL);</highlight></codeline>
+<codeline><highlight class="normal">status<sp/>=<sp/>SD_initialize(handle);</highlight></codeline>
+<codeline><highlight class="normal">if<sp/>(handle<sp/>==<sp/>NULL<sp/>||<sp/>status<sp/>!=<sp/>SD_STATUS_SUCCESS)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//Error<sp/>opening<sp/>SD<sp/>driver</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>while<sp/>(1);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Write<sp/>and<sp/>read<sp/>back<sp/>the<sp/>first<sp/>sector</highlight></codeline>
+<codeline><highlight class="normal">status<sp/>=<sp/>SD_write(handle,<sp/>sendBuffer,<sp/>0,<sp/>1);</highlight></codeline>
+<codeline><highlight class="normal">if<sp/>(status<sp/>==<sp/>SD_STATUS_SUCCESS)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>status<sp/>=<sp/>SD_read(handle,<sp/>readBuffer,<sp/>0<sp/>,<sp/>1);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">SD_close(handle);</highlight></codeline>
+</programlisting></para><para><anchor id="_s_d_8h_1ti_drivers_SD_Examples"/><heading level="1">Examples</heading>
+</para><para><itemizedlist>
+<listitem><para><ref refid="_s_d_8h_1ti_drivers_SD_Synopsis" kindref="member">Overview</ref></para></listitem><listitem><para><ref refid="_s_d_8h_1ti_drivers_SD_Example_getCardSpace" kindref="member">Get SD card size</ref></para></listitem></itemizedlist>
+</para><para>Get total capacity of an SD card: <anchor id="_s_d_8h_1ti_drivers_SD_Example_getCardSpace"/><programlisting><codeline><highlight class="normal">SD_Handle<sp/>handle;</highlight></codeline>
+<codeline><highlight class="normal">Display_Handle<sp/>display;</highlight></codeline>
+<codeline><highlight class="normal">uint_fast32_t<sp/>sectorSize,<sp/>sectorCount;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Init,<sp/>open,<sp/>etc</highlight></codeline>
+<codeline><highlight class="normal">...</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">sectorSize<sp/>=<sp/>SD_getSectorSize(handle);</highlight></codeline>
+<codeline><highlight class="normal">sectorCount<sp/>=<sp/>SD_getNumSectors(handle);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Display_printf(display,<sp/>0,<sp/>0,&quot;SD<sp/>card<sp/>total<sp/>capacity<sp/>is<sp/>%lu<sp/>bytes.&quot;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sectorSize<sp/>*<sp/>sectorCount);</highlight></codeline>
+</programlisting></para><para><hruler/>
+ <anchor id="_s_d_8h_1ti_drivers_SD_Configuration"/><heading level="1">Configuration</heading>
+</para><para>Refer to the <ref refid="index_1driver_configuration" kindref="member">Driver&apos;s Configuration</ref> section for driver configuration information.</para><para><hruler/>
+ </para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2016-2019,<sp/>Texas<sp/>Instruments<sp/>Incorporated</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Redistribution<sp/>and<sp/>use<sp/>in<sp/>source<sp/>and<sp/>binary<sp/>forms,<sp/>with<sp/>or<sp/>without</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>modification,<sp/>are<sp/>permitted<sp/>provided<sp/>that<sp/>the<sp/>following<sp/>conditions</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>are<sp/>met:</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>of<sp/>source<sp/>code<sp/>must<sp/>retain<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer.</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>in<sp/>binary<sp/>form<sp/>must<sp/>reproduce<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer<sp/>in<sp/>the</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>documentation<sp/>and/or<sp/>other<sp/>materials<sp/>provided<sp/>with<sp/>the<sp/>distribution.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Neither<sp/>the<sp/>name<sp/>of<sp/>Texas<sp/>Instruments<sp/>Incorporated<sp/>nor<sp/>the<sp/>names<sp/>of</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>its<sp/>contributors<sp/>may<sp/>be<sp/>used<sp/>to<sp/>endorse<sp/>or<sp/>promote<sp/>products<sp/>derived</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>from<sp/>this<sp/>software<sp/>without<sp/>specific<sp/>prior<sp/>written<sp/>permission.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>THIS<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>BY<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>AND<sp/>CONTRIBUTORS<sp/>&quot;AS<sp/>IS&quot;</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>AND<sp/>ANY<sp/>EXPRESS<sp/>OR<sp/>IMPLIED<sp/>WARRANTIES,<sp/>INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>THE<sp/>IMPLIED<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY<sp/>AND<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>PURPOSE<sp/>ARE<sp/>DISCLAIMED.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE<sp/>COPYRIGHT<sp/>OWNER<sp/>OR</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>CONTRIBUTORS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>DIRECT,<sp/>INDIRECT,<sp/>INCIDENTAL,<sp/>SPECIAL,</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>EXEMPLARY,<sp/>OR<sp/>CONSEQUENTIAL<sp/>DAMAGES<sp/>(INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>PROCUREMENT<sp/>OF<sp/>SUBSTITUTE<sp/>GOODS<sp/>OR<sp/>SERVICES;<sp/>LOSS<sp/>OF<sp/>USE,<sp/>DATA,<sp/>OR<sp/>PROFITS;</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>OR<sp/>BUSINESS<sp/>INTERRUPTION)<sp/>HOWEVER<sp/>CAUSED<sp/>AND<sp/>ON<sp/>ANY<sp/>THEORY<sp/>OF<sp/>LIABILITY,</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/>STRICT<sp/>LIABILITY,<sp/>OR<sp/>TORT<sp/>(INCLUDING<sp/>NEGLIGENCE<sp/>OR</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*<sp/>OTHERWISE)<sp/>ARISING<sp/>IN<sp/>ANY<sp/>WAY<sp/>OUT<sp/>OF<sp/>THE<sp/>USE<sp/>OF<sp/>THIS<sp/>SOFTWARE,</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*<sp/>EVEN<sp/>IF<sp/>ADVISED<sp/>OF<sp/>THE<sp/>POSSIBILITY<sp/>OF<sp/>SUCH<sp/>DAMAGE.</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="comment">/*!***************************************************************************</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>*<sp/><sp/>@file<sp/><sp/><sp/><sp/><sp/><sp/><sp/>SD.h</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/>*<sp/><sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/>Secure<sp/>Digital<sp/>(SD)<sp/>Driver</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="37"><highlight class="comment"><sp/>*<sp/><sp/>@anchor<sp/>ti_drivers_SD_Overview</highlight></codeline>
+<codeline lineno="38"><highlight class="comment"><sp/>*<sp/><sp/>#<sp/>Overview</highlight></codeline>
+<codeline lineno="39"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="40"><highlight class="comment"><sp/>*<sp/><sp/>The<sp/>SD<sp/>driver<sp/>is<sp/>designed<sp/>to<sp/>serve<sp/>as<sp/>an<sp/>interface<sp/>to<sp/>perform<sp/>basic</highlight></codeline>
+<codeline lineno="41"><highlight class="comment"><sp/>*<sp/><sp/>transfers<sp/>directly<sp/>to<sp/>the<sp/>SD<sp/>card.</highlight></codeline>
+<codeline lineno="42"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="43"><highlight class="comment"><sp/>*<sp/><sp/>&lt;hr&gt;</highlight></codeline>
+<codeline lineno="44"><highlight class="comment"><sp/>*<sp/><sp/>@anchor<sp/>ti_drivers_SD_Usage</highlight></codeline>
+<codeline lineno="45"><highlight class="comment"><sp/>*<sp/><sp/>#<sp/>Usage</highlight></codeline>
+<codeline lineno="46"><highlight class="comment"><sp/>*<sp/><sp/>This<sp/>section<sp/>will<sp/>cover<sp/>driver<sp/>usage.</highlight></codeline>
+<codeline lineno="47"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="48"><highlight class="comment"><sp/>*<sp/><sp/>@anchor<sp/>ti_drivers_SD_Synopsis</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/>*<sp/><sp/>##<sp/>Synopsis</highlight></codeline>
+<codeline lineno="50"><highlight class="comment"><sp/>*<sp/><sp/>@anchor<sp/>ti_drivers_SD_Synopsis_Code</highlight></codeline>
+<codeline lineno="51"><highlight class="comment"><sp/>*<sp/><sp/>@code</highlight></codeline>
+<codeline lineno="52"><highlight class="comment"><sp/>*<sp/><sp/>SD_Handle<sp/>handle;</highlight></codeline>
+<codeline lineno="53"><highlight class="comment"><sp/>*<sp/><sp/>uint16_t<sp/>status;</highlight></codeline>
+<codeline lineno="54"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="55"><highlight class="comment"><sp/>*<sp/><sp/>SD_init();</highlight></codeline>
+<codeline lineno="56"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="57"><highlight class="comment"><sp/>*<sp/><sp/>//<sp/>Open<sp/>SD<sp/>and<sp/>initialize<sp/>card</highlight></codeline>
+<codeline lineno="58"><highlight class="comment"><sp/>*<sp/><sp/>handle<sp/>=<sp/>SD_open(CONFIG_SD0,<sp/>NULL);</highlight></codeline>
+<codeline lineno="59"><highlight class="comment"><sp/>*<sp/><sp/>status<sp/>=<sp/>SD_initialize(handle);</highlight></codeline>
+<codeline lineno="60"><highlight class="comment"><sp/>*<sp/><sp/>if<sp/>(handle<sp/>==<sp/>NULL<sp/>||<sp/>status<sp/>!=<sp/>SD_STATUS_SUCCESS)<sp/>{</highlight></codeline>
+<codeline lineno="61"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>//Error<sp/>opening<sp/>SD<sp/>driver</highlight></codeline>
+<codeline lineno="62"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>while<sp/>(1);</highlight></codeline>
+<codeline lineno="63"><highlight class="comment"><sp/>*<sp/><sp/>}</highlight></codeline>
+<codeline lineno="64"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="65"><highlight class="comment"><sp/>*<sp/><sp/>//<sp/>Write<sp/>and<sp/>read<sp/>back<sp/>the<sp/>first<sp/>sector</highlight></codeline>
+<codeline lineno="66"><highlight class="comment"><sp/>*<sp/><sp/>status<sp/>=<sp/>SD_write(handle,<sp/>sendBuffer,<sp/>0,<sp/>1);</highlight></codeline>
+<codeline lineno="67"><highlight class="comment"><sp/>*<sp/><sp/>if<sp/>(status<sp/>==<sp/>SD_STATUS_SUCCESS)<sp/>{</highlight></codeline>
+<codeline lineno="68"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/>SD_read(handle,<sp/>readBuffer,<sp/>0<sp/>,<sp/>1);</highlight></codeline>
+<codeline lineno="69"><highlight class="comment"><sp/>*<sp/><sp/>}</highlight></codeline>
+<codeline lineno="70"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="71"><highlight class="comment"><sp/>*<sp/><sp/>SD_close(handle);</highlight></codeline>
+<codeline lineno="72"><highlight class="comment"><sp/>*<sp/><sp/>@endcode</highlight></codeline>
+<codeline lineno="73"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="74"><highlight class="comment"><sp/>*<sp/><sp/>@anchor<sp/>ti_drivers_SD_Examples</highlight></codeline>
+<codeline lineno="75"><highlight class="comment"><sp/>*<sp/><sp/>#<sp/>Examples</highlight></codeline>
+<codeline lineno="76"><highlight class="comment"><sp/>*<sp/><sp/>-<sp/>@ref<sp/>ti_drivers_SD_Synopsis<sp/>&quot;Overview&quot;</highlight></codeline>
+<codeline lineno="77"><highlight class="comment"><sp/>*<sp/><sp/>-<sp/>@ref<sp/>ti_drivers_SD_Example_getCardSpace<sp/>&quot;Get<sp/>SD<sp/>card<sp/>size&quot;</highlight></codeline>
+<codeline lineno="78"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="79"><highlight class="comment"><sp/>*<sp/><sp/>Get<sp/>total<sp/>capacity<sp/>of<sp/>an<sp/>SD<sp/>card:</highlight></codeline>
+<codeline lineno="80"><highlight class="comment"><sp/>*<sp/><sp/>@anchor<sp/>ti_drivers_SD_Example_getCardSpace</highlight></codeline>
+<codeline lineno="81"><highlight class="comment"><sp/>*<sp/><sp/>@code</highlight></codeline>
+<codeline lineno="82"><highlight class="comment"><sp/>*<sp/><sp/>SD_Handle<sp/>handle;</highlight></codeline>
+<codeline lineno="83"><highlight class="comment"><sp/>*<sp/><sp/>Display_Handle<sp/>display;</highlight></codeline>
+<codeline lineno="84"><highlight class="comment"><sp/>*<sp/><sp/>uint_fast32_t<sp/>sectorSize,<sp/>sectorCount;</highlight></codeline>
+<codeline lineno="85"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="86"><highlight class="comment"><sp/>*<sp/><sp/>//<sp/>Init,<sp/>open,<sp/>etc</highlight></codeline>
+<codeline lineno="87"><highlight class="comment"><sp/>*<sp/><sp/>...</highlight></codeline>
+<codeline lineno="88"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="89"><highlight class="comment"><sp/>*<sp/><sp/>sectorSize<sp/>=<sp/>SD_getSectorSize(handle);</highlight></codeline>
+<codeline lineno="90"><highlight class="comment"><sp/>*<sp/><sp/>sectorCount<sp/>=<sp/>SD_getNumSectors(handle);</highlight></codeline>
+<codeline lineno="91"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="92"><highlight class="comment"><sp/>*<sp/><sp/>Display_printf(display,<sp/>0,<sp/>0,&quot;SD<sp/>card<sp/>total<sp/>capacity<sp/>is<sp/>%lu<sp/>bytes.&quot;,</highlight></codeline>
+<codeline lineno="93"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sectorSize<sp/>*<sp/>sectorCount);</highlight></codeline>
+<codeline lineno="94"><highlight class="comment"><sp/>*<sp/><sp/>@endcode</highlight></codeline>
+<codeline lineno="95"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="96"><highlight class="comment"><sp/>*<sp/><sp/>&lt;hr&gt;</highlight></codeline>
+<codeline lineno="97"><highlight class="comment"><sp/>*<sp/><sp/>@anchor<sp/>ti_drivers_SD_Configuration</highlight></codeline>
+<codeline lineno="98"><highlight class="comment"><sp/>*<sp/><sp/>#<sp/>Configuration</highlight></codeline>
+<codeline lineno="99"><highlight class="comment"><sp/>*<sp/><sp/>Refer<sp/>to<sp/>the<sp/>@ref<sp/>driver_configuration<sp/>&quot;Driver&apos;s<sp/>Configuration&quot;</highlight></codeline>
+<codeline lineno="100"><highlight class="comment"><sp/>*<sp/><sp/>section<sp/>for<sp/>driver<sp/>configuration<sp/>information.</highlight></codeline>
+<codeline lineno="101"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="102"><highlight class="comment"><sp/>*<sp/><sp/>&lt;hr&gt;</highlight></codeline>
+<codeline lineno="103"><highlight class="comment"><sp/>******************************************************************************</highlight></codeline>
+<codeline lineno="104"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>ti_drivers_SD__include</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ti_drivers_SD__include</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131" refid="group___s_d___c_o_n_t_r_o_l_1gaeae6617d0410c8dfd0df727b44d9fc48" refkind="member"><highlight class="preprocessor">#define<sp/>SD_CMD_RESERVED<sp/><sp/><sp/><sp/>(32)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145" refid="group___s_d___c_o_n_t_r_o_l_1gabca601c1ba0b541c82e3065b5f115ace" refkind="member"><highlight class="preprocessor">#define<sp/>SD_STATUS_RESERVED<sp/><sp/><sp/><sp/>(-32)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="160" refid="group___s_d___s_t_a_t_u_s_1ga691cc2fe1fe0fa94560519b53f18c647" refkind="member"><highlight class="preprocessor">#define<sp/>SD_STATUS_SUCCESS<sp/><sp/><sp/><sp/>(0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight></codeline>
+<codeline lineno="168" refid="group___s_d___s_t_a_t_u_s_1ga2ed21a29e85502f5a205d5273df01713" refkind="member"><highlight class="preprocessor">#define<sp/>SD_STATUS_ERROR<sp/><sp/><sp/><sp/>(-1)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight></codeline>
+<codeline lineno="177" refid="group___s_d___s_t_a_t_u_s_1ga072054678e68aafcd16a7bf45892d8c8" refkind="member"><highlight class="preprocessor">#define<sp/>SD_STATUS_UNDEFINEDCMD<sp/><sp/><sp/><sp/>(-2)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="comment">/*<sp/>Add<sp/>SD_CMD_&lt;commands&gt;<sp/>here<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight></codeline>
+<codeline lineno="197" refid="_s_d_8h_1a90b1bf9153b1d83c5aaa80cad97bbec2" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="198" refid="_s_d_8h_1a90b1bf9153b1d83c5aaa80cad97bbec2a1c121b7f5d4826090374c3c34b748d34" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_d_8h_1a90b1bf9153b1d83c5aaa80cad97bbec2a1c121b7f5d4826090374c3c34b748d34" kindref="member">SD_NOCARD</ref><sp/>=<sp/>0,<sp/></highlight></codeline>
+<codeline lineno="199" refid="_s_d_8h_1a90b1bf9153b1d83c5aaa80cad97bbec2a2d3cce4eff19e313516ca5b215f721be" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_d_8h_1a90b1bf9153b1d83c5aaa80cad97bbec2a2d3cce4eff19e313516ca5b215f721be" kindref="member">SD_MMC</ref><sp/>=<sp/>1,<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="200" refid="_s_d_8h_1a90b1bf9153b1d83c5aaa80cad97bbec2ae884372680134cfc338a4bc9f339bc85" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_d_8h_1a90b1bf9153b1d83c5aaa80cad97bbec2ae884372680134cfc338a4bc9f339bc85" kindref="member">SD_SDSC</ref><sp/>=<sp/>2,<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="201" refid="_s_d_8h_1a90b1bf9153b1d83c5aaa80cad97bbec2a328ee7940776cc398388d56e4eba5175" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_d_8h_1a90b1bf9153b1d83c5aaa80cad97bbec2a328ee7940776cc398388d56e4eba5175" kindref="member">SD_SDHC</ref><sp/>=<sp/>3<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="202"><highlight class="normal">}<sp/><ref refid="_s_d_8h_1a90b1bf9153b1d83c5aaa80cad97bbec2" kindref="member">SD_CardType</ref>;</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"></highlight></codeline>
+<codeline lineno="207" refid="_s_d_8h_1ac00382e8276a2b571ef3bc511455812d" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_s_d___config__" kindref="compound">SD_Config_</ref><sp/>*<ref refid="_s_d_8h_1ac00382e8276a2b571ef3bc511455812d" kindref="member">SD_Handle</ref>;</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"></highlight></codeline>
+<codeline lineno="218"><highlight class="comment">/*<sp/>SD<sp/>Parameters<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="219" refid="struct_s_d___params" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="220" refid="struct_s_d___params_1a8da6e2fe984f911a17d0649c6308f509" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/>*<ref refid="struct_s_d___params_1a8da6e2fe984f911a17d0649c6308f509" kindref="member">custom</ref>;<sp/><sp/></highlight></codeline>
+<codeline lineno="221"><highlight class="normal">}<sp/><ref refid="struct_s_d___params" kindref="compound">SD_Params</ref>;</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"></highlight></codeline>
+<codeline lineno="227" refid="_s_d_8h_1a1b83788bc426bb2b7c1eb7ed92958b4d" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>void<sp/>(*<ref refid="_s_d_8h_1a1b83788bc426bb2b7c1eb7ed92958b4d" kindref="member">SD_CloseFxn</ref>)<sp/>(SD_Handle<sp/>handle);</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"></highlight></codeline>
+<codeline lineno="233" refid="_s_d_8h_1ae2308be8eec454cf4d95c8d6fc78c526" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>int_fast16_t<sp/>(*<ref refid="_s_d_8h_1ae2308be8eec454cf4d95c8d6fc78c526" kindref="member">SD_ControlFxn</ref>)<sp/>(SD_Handle<sp/>handle,</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/>uint_fast16_t<sp/>cmd,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*arg);</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"></highlight></codeline>
+<codeline lineno="240" refid="_s_d_8h_1a2bf3ce8664f81012e946ed39028be875" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>uint_fast32_t<sp/>(*<ref refid="_s_d_8h_1a2bf3ce8664f81012e946ed39028be875" kindref="member">SD_getNumSectorsFxn</ref>)<sp/>(SD_Handle<sp/>handle);</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"></highlight></codeline>
+<codeline lineno="246" refid="_s_d_8h_1ac3130521800102206c45ab597ce4f453" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>uint_fast32_t<sp/>(*<ref refid="_s_d_8h_1ac3130521800102206c45ab597ce4f453" kindref="member">SD_getSectorSizeFxn</ref>)<sp/>(SD_Handle<sp/>handle);</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"></highlight></codeline>
+<codeline lineno="252" refid="_s_d_8h_1a49c5d5c34eaed7e73a2e3dd6ff38959a" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>void<sp/>(*<ref refid="_s_d_8h_1a49c5d5c34eaed7e73a2e3dd6ff38959a" kindref="member">SD_InitFxn</ref>)<sp/>(SD_Handle<sp/>handle);</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"></highlight></codeline>
+<codeline lineno="258" refid="_s_d_8h_1a10d9d8767b6521bdb55f08d504131999" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>int_fast16_t<sp/>(*<ref refid="_s_d_8h_1a10d9d8767b6521bdb55f08d504131999" kindref="member">SD_InitializeFxn</ref>)<sp/>(SD_Handle<sp/>handle);</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"></highlight></codeline>
+<codeline lineno="264" refid="_s_d_8h_1ab4bcae6f0885b93f6d5c3da91040638f" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="_s_d_8h_1ac00382e8276a2b571ef3bc511455812d" kindref="member">SD_Handle</ref><sp/>(*<ref refid="_s_d_8h_1ab4bcae6f0885b93f6d5c3da91040638f" kindref="member">SD_OpenFxn</ref>)<sp/>(SD_Handle<sp/>handle,<sp/><ref refid="struct_s_d___params" kindref="compound">SD_Params</ref><sp/>*params);</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"></highlight></codeline>
+<codeline lineno="270" refid="_s_d_8h_1ab4201c8b89040c3f1829c2a154057b07" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>int_fast16_t<sp/>(*<ref refid="_s_d_8h_1ab4201c8b89040c3f1829c2a154057b07" kindref="member">SD_ReadFxn</ref>)<sp/>(SD_Handle<sp/>handle,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*buf,</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/>int_fast32_t<sp/>sector,<sp/>uint_fast32_t<sp/>secCount);</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"></highlight></codeline>
+<codeline lineno="277" refid="_s_d_8h_1a67504aaf6db25bed624e5bbcf3043ecd" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>int_fast16_t<sp/>(*<ref refid="_s_d_8h_1a67504aaf6db25bed624e5bbcf3043ecd" kindref="member">SD_WriteFxn</ref>)<sp/>(SD_Handle<sp/>handle,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*buf,</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/>int_fast32_t<sp/>sector,<sp/>uint_fast32_t<sp/>secCount);</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"></highlight></codeline>
+<codeline lineno="285" refid="struct_s_d___fxn_table" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="287" refid="struct_s_d___fxn_table_1a33d7845495c34c489fa467ec627dcfcc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_d_8h_1a1b83788bc426bb2b7c1eb7ed92958b4d" kindref="member">SD_CloseFxn</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_s_d___fxn_table_1a33d7845495c34c489fa467ec627dcfcc" kindref="member">closeFxn</ref>;</highlight></codeline>
+<codeline lineno="289" refid="struct_s_d___fxn_table_1a703eeb45ed06146af3553f0f47aa7966" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_d_8h_1ae2308be8eec454cf4d95c8d6fc78c526" kindref="member">SD_ControlFxn</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_s_d___fxn_table_1a703eeb45ed06146af3553f0f47aa7966" kindref="member">controlFxn</ref>;</highlight></codeline>
+<codeline lineno="291" refid="struct_s_d___fxn_table_1aa49b9f42a37683084826c9a27a392fbe" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_d_8h_1a2bf3ce8664f81012e946ed39028be875" kindref="member">SD_getNumSectorsFxn</ref><sp/><sp/><sp/><sp/><sp/><ref refid="struct_s_d___fxn_table_1aa49b9f42a37683084826c9a27a392fbe" kindref="member">getNumSectorsFxn</ref>;</highlight></codeline>
+<codeline lineno="293" refid="struct_s_d___fxn_table_1af010d32dd82422ce72ea813b821f191e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_d_8h_1ac3130521800102206c45ab597ce4f453" kindref="member">SD_getSectorSizeFxn</ref><sp/><sp/><sp/><sp/><sp/><ref refid="struct_s_d___fxn_table_1af010d32dd82422ce72ea813b821f191e" kindref="member">getSectorSizeFxn</ref>;</highlight></codeline>
+<codeline lineno="295" refid="struct_s_d___fxn_table_1a6eb6b67d00c9c9cddbcfd57c36d70591" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_d_8h_1a49c5d5c34eaed7e73a2e3dd6ff38959a" kindref="member">SD_InitFxn</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_s_d___fxn_table_1a6eb6b67d00c9c9cddbcfd57c36d70591" kindref="member">initFxn</ref>;</highlight></codeline>
+<codeline lineno="297" refid="struct_s_d___fxn_table_1af8c5d6b2d6246456b69df269f98064ba" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_d_8h_1a10d9d8767b6521bdb55f08d504131999" kindref="member">SD_InitializeFxn</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_s_d___fxn_table_1af8c5d6b2d6246456b69df269f98064ba" kindref="member">initializeFxn</ref>;</highlight></codeline>
+<codeline lineno="299" refid="struct_s_d___fxn_table_1a92541f8ec79dd250d7238aff590dbdea" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_d_8h_1ab4bcae6f0885b93f6d5c3da91040638f" kindref="member">SD_OpenFxn</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_s_d___fxn_table_1a92541f8ec79dd250d7238aff590dbdea" kindref="member">openFxn</ref>;</highlight></codeline>
+<codeline lineno="301" refid="struct_s_d___fxn_table_1ada7b76e6fbeba6ba0fa6fc7237093a2c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_d_8h_1ab4201c8b89040c3f1829c2a154057b07" kindref="member">SD_ReadFxn</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_s_d___fxn_table_1ada7b76e6fbeba6ba0fa6fc7237093a2c" kindref="member">readFxn</ref>;</highlight></codeline>
+<codeline lineno="303" refid="struct_s_d___fxn_table_1a70a8e6d62ec5f38ba8218c8b40797d7a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_d_8h_1a67504aaf6db25bed624e5bbcf3043ecd" kindref="member">SD_WriteFxn</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_s_d___fxn_table_1a70a8e6d62ec5f38ba8218c8b40797d7a" kindref="member">writeFxn</ref>;</highlight></codeline>
+<codeline lineno="304"><highlight class="normal">}<sp/><ref refid="struct_s_d___fxn_table" kindref="compound">SD_FxnTable</ref>;</highlight></codeline>
+<codeline lineno="305"><highlight class="normal"></highlight></codeline>
+<codeline lineno="317" refid="struct_s_d___config__" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_s_d___config__" kindref="compound">SD_Config_</ref><sp/>{</highlight></codeline>
+<codeline lineno="319" refid="struct_s_d___config___1a15df01acc4194fe38acd711e668840da" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_s_d___fxn_table" kindref="compound">SD_FxnTable</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>*<ref refid="struct_s_d___config___1a15df01acc4194fe38acd711e668840da" kindref="member">fxnTablePtr</ref>;</highlight></codeline>
+<codeline lineno="320"><highlight class="normal"></highlight></codeline>
+<codeline lineno="322" refid="struct_s_d___config___1afe674251049a6d824b2a65dfdaf446ae" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="struct_s_d___config___1afe674251049a6d824b2a65dfdaf446ae" kindref="member">object</ref>;</highlight></codeline>
+<codeline lineno="323"><highlight class="normal"></highlight></codeline>
+<codeline lineno="325" refid="struct_s_d___config___1aead18f144f5939a3ef9501b550fe63a7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="struct_s_d___config___1aead18f144f5939a3ef9501b550fe63a7" kindref="member">hwAttrs</ref>;</highlight></codeline>
+<codeline lineno="326"><highlight class="normal">}<sp/><ref refid="_s_d_8h_1ae0de5710be04fcc793b2d8946d151b29" kindref="member">SD_Config</ref>;</highlight></codeline>
+<codeline lineno="327"><highlight class="normal"></highlight></codeline>
+<codeline lineno="337"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_s_d_8h_1ae7f98db7753385361e0f7927b1771c41" kindref="member">SD_close</ref>(SD_Handle<sp/>handle);</highlight></codeline>
+<codeline lineno="338"><highlight class="normal"></highlight></codeline>
+<codeline lineno="377"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>int_fast16_t<sp/><ref refid="_s_d_8h_1adeeaa4d71a639131abb9377322b3b226" kindref="member">SD_control</ref>(SD_Handle<sp/>handle,<sp/>uint_fast16_t<sp/>cmd,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*arg);</highlight></codeline>
+<codeline lineno="378"><highlight class="normal"></highlight></codeline>
+<codeline lineno="393"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>uint_fast32_t<sp/><ref refid="_s_d_8h_1aecff5a5f73ac1cfbe27c2a0593dd7558" kindref="member">SD_getNumSectors</ref>(SD_Handle<sp/>handle);</highlight></codeline>
+<codeline lineno="394"><highlight class="normal"></highlight></codeline>
+<codeline lineno="406"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>uint_fast32_t<sp/><ref refid="_s_d_8h_1aa88b4d26d76ad3cdfcf652c0284e8f3d" kindref="member">SD_getSectorSize</ref>(SD_Handle<sp/>handle);</highlight></codeline>
+<codeline lineno="407"><highlight class="normal"></highlight></codeline>
+<codeline lineno="416"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_s_d_8h_1a0cfa8bf08501f1c19d2357856d4236ae" kindref="member">SD_init</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="417"><highlight class="normal"></highlight></codeline>
+<codeline lineno="423"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_s_d_8h_1afd09eeb2f5a0dc0a05a238a1e455e260" kindref="member">SD_Params_init</ref>(<ref refid="struct_s_d___params" kindref="compound">SD_Params</ref><sp/>*params);</highlight></codeline>
+<codeline lineno="424"><highlight class="normal"></highlight></codeline>
+<codeline lineno="436"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>int_fast16_t<sp/><ref refid="_s_d_8h_1a6532267348f0afa007adec0e3ff2c3e0" kindref="member">SD_initialize</ref>(SD_Handle<sp/>handle);</highlight></codeline>
+<codeline lineno="437"><highlight class="normal"></highlight></codeline>
+<codeline lineno="457"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>SD_Handle<sp/><ref refid="_s_d_8h_1a0c897f68603b2f1341be1378ec976a2d" kindref="member">SD_open</ref>(uint_least8_t<sp/>index,<sp/><ref refid="struct_s_d___params" kindref="compound">SD_Params</ref><sp/>*params);</highlight></codeline>
+<codeline lineno="458"><highlight class="normal"></highlight></codeline>
+<codeline lineno="479"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>int_fast16_t<sp/><ref refid="_s_d_8h_1ad28e80ec85e28612af735a6a20d831c0" kindref="member">SD_read</ref>(SD_Handle<sp/>handle,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*buf,</highlight></codeline>
+<codeline lineno="480"><highlight class="normal"><sp/><sp/><sp/><sp/>int_fast32_t<sp/>sector,<sp/>uint_fast32_t<sp/>secCount);</highlight></codeline>
+<codeline lineno="481"><highlight class="normal"></highlight></codeline>
+<codeline lineno="502"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>int_fast16_t<sp/><ref refid="_s_d_8h_1afb413a941fd83b75abdbb3dead5401d8" kindref="member">SD_write</ref>(SD_Handle<sp/>handle,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*buf,</highlight></codeline>
+<codeline lineno="503"><highlight class="normal"><sp/><sp/><sp/><sp/>int_fast32_t<sp/>sector,<sp/>uint_fast32_t<sp/>secCount);</highlight></codeline>
+<codeline lineno="504"><highlight class="normal"></highlight></codeline>
+<codeline lineno="505"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="506"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="507"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="508"><highlight class="normal"></highlight></codeline>
+<codeline lineno="509"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>ti_drivers_SD__include<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="exports/tidrivers_msp432e4/source/ti/drivers/SD.h"/>
+  </compounddef>
+</doxygen>

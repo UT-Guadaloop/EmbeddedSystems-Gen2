@@ -1,0 +1,5 @@
+<map id="CANMSP432E4_HWAttrs" name="CANMSP432E4_HWAttrs">
+<area shape="rect" id="node2" href="$struct_c_a_n___config__.html" title="CAN Global configuration. " alt="" coords="125,109,228,136"/>
+<area shape="rect" id="node3" href="$struct_c_a_n___fxn_table.html" title="The definition of a CAN function table that contains the required set of functions to control a speci..." alt="" coords="209,287,321,313"/>
+<area shape="rect" id="node4" href="$structcan__frame.html" title="CAN frame structure. " alt="" coords="135,5,218,32"/>
+</map>

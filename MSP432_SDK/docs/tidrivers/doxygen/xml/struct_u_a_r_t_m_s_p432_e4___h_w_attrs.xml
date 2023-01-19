@@ -1,0 +1,235 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="struct_u_a_r_t_m_s_p432_e4___h_w_attrs" kind="struct" language="C++" prot="public">
+    <compoundname>UARTMSP432E4_HWAttrs</compoundname>
+    <includes refid="_u_a_r_t_m_s_p432_e4_8h" local="no">UARTMSP432E4.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_u_a_r_t_m_s_p432_e4___h_w_attrs_1ab9a92717d0ccd08aa54e87b5c0c40c37" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t UARTMSP432E4_HWAttrs::baseAddr</definition>
+        <argsstring></argsstring>
+        <name>baseAddr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>UART Peripheral&apos;s base address </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/uart/UARTMSP432E4.h" line="518" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/uart/UARTMSP432E4.h" bodystart="518" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_u_a_r_t_m_s_p432_e4___h_w_attrs_1a92a4fb618c096a3a24314c88510f7a0a" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t UARTMSP432E4_HWAttrs::intNum</definition>
+        <argsstring></argsstring>
+        <name>intNum</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>UART Peripheral&apos;s interrupt vector </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/uart/UARTMSP432E4.h" line="520" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/uart/UARTMSP432E4.h" bodystart="520" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_u_a_r_t_m_s_p432_e4___h_w_attrs_1abb0c1d8bdc9ee0a6cdb2a32e0a789660" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t UARTMSP432E4_HWAttrs::intPriority</definition>
+        <argsstring></argsstring>
+        <name>intPriority</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>UART Peripheral&apos;s interrupt priority </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/uart/UARTMSP432E4.h" line="522" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/uart/UARTMSP432E4.h" bodystart="522" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_u_a_r_t_m_s_p432_e4___h_w_attrs_1ad2a944d28ea14389f6c68c34c262d86f" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t UARTMSP432E4_HWAttrs::flowControl</definition>
+        <argsstring></argsstring>
+        <name>flowControl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Hardware flow control setting defined by driverlib </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/uart/UARTMSP432E4.h" line="524" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/uart/UARTMSP432E4.h" bodystart="524" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_u_a_r_t_m_s_p432_e4___h_w_attrs_1a328a8f20ef9bdcca84df6c415d492417" prot="public" static="no" mutable="no">
+        <type>unsigned char *</type>
+        <definition>unsigned char* UARTMSP432E4_HWAttrs::ringBufPtr</definition>
+        <argsstring></argsstring>
+        <name>ringBufPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pointer to a application ring buffer </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/uart/UARTMSP432E4.h" line="526" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/uart/UARTMSP432E4.h" bodystart="526" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_u_a_r_t_m_s_p432_e4___h_w_attrs_1a0daa1ccf974a75d643e4d29e61dbfd58" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t UARTMSP432E4_HWAttrs::ringBufSize</definition>
+        <argsstring></argsstring>
+        <name>ringBufSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Size of ringBufPtr </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/uart/UARTMSP432E4.h" line="528" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/uart/UARTMSP432E4.h" bodystart="528" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_u_a_r_t_m_s_p432_e4___h_w_attrs_1aee8802a1e32ae475ed95a69d4e1974c7" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t UARTMSP432E4_HWAttrs::rxPin</definition>
+        <argsstring></argsstring>
+        <name>rxPin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>UART RX pin assignment </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/uart/UARTMSP432E4.h" line="530" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/uart/UARTMSP432E4.h" bodystart="530" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_u_a_r_t_m_s_p432_e4___h_w_attrs_1a88d32e16386c25bd6f22cfd3dddebc03" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t UARTMSP432E4_HWAttrs::txPin</definition>
+        <argsstring></argsstring>
+        <name>txPin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>UART TX pin assignment </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/uart/UARTMSP432E4.h" line="532" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/uart/UARTMSP432E4.h" bodystart="532" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_u_a_r_t_m_s_p432_e4___h_w_attrs_1a4d7710328a2ae97607418aaa64e4166a" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t UARTMSP432E4_HWAttrs::ctsPin</definition>
+        <argsstring></argsstring>
+        <name>ctsPin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>UART clear to send (CTS) pin assignment </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/uart/UARTMSP432E4.h" line="534" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/uart/UARTMSP432E4.h" bodystart="534" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_u_a_r_t_m_s_p432_e4___h_w_attrs_1af50d39ff28883666cf5aaf618177b622" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t UARTMSP432E4_HWAttrs::rtsPin</definition>
+        <argsstring></argsstring>
+        <name>rtsPin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>UART request to send (RTS) pin assignment </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/uart/UARTMSP432E4.h" line="536" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/uart/UARTMSP432E4.h" bodystart="536" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_u_a_r_t_m_s_p432_e4___h_w_attrs_1a9a206dccc07bdb56ecc42accd5b820ac" prot="public" static="no" mutable="no">
+        <type><ref refid="_u_a_r_t_m_s_p432_e4_8h_1aa47bb76ce2a00db8b9b70cd92eb6fd64" kindref="member">UARTMSP432E4_ErrorCallback</ref></type>
+        <definition>UARTMSP432E4_ErrorCallback UARTMSP432E4_HWAttrs::errorFxn</definition>
+        <argsstring></argsstring>
+        <name>errorFxn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Application error function to be called on receive errors </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/uart/UARTMSP432E4.h" line="538" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/uart/UARTMSP432E4.h" bodystart="538" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>UARTMSP432E4 Hardware attributes. </para>    </briefdescription>
+    <detaileddescription>
+<para>The baseAddr, intNum, and flowControl fields are used by driverlib APIs and therefore must be populated by driverlib macro definitions. For MSP432E4 driverlib these definitions are found in:<itemizedlist>
+<listitem><para>ti/devices/msp432e4/driverlib/inc/msp432e4xxx.h</para></listitem><listitem><para>ti/devices/msp432e4/driverlib/interrupt.h</para></listitem><listitem><para>ti/devices/msp432e4/driverlib/uart.h</para></listitem></itemizedlist>
+</para><para>intPriority is the UART peripheral&apos;s interrupt priority, as defined by the underlying OS. It is passed unmodified to the underlying OS&apos;s interrupt handler creation code, so you need to refer to the OS documentation for usage. For example, for SYS/BIOS applications, refer to the ti.sysbios.family.arm.m3.Hwi documentation for SYS/BIOS usage of interrupt priorities. If the driver uses the ti.dpl interface instead of making OS calls directly, then the HwiP port handles the interrupt priority in an OS specific way. In the case of the SYS/BIOS port, intPriority is passed unmodified to Hwi_create().</para><para>A sample structure is shown below: <programlisting><codeline><highlight class="normal">unsigned<sp/>char<sp/>uartMSP432E4RingBuffer[2][32];</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">const<sp/>UARTMSP432E4_HWAttrs<sp/>uartMSP432E4HWAttrs[]<sp/>=<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.baseAddr<sp/>=<sp/>UART0_BASE,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.intNum<sp/>=<sp/>INT_UART0,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.intPriority<sp/>=<sp/>(~0),</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.flowControl<sp/>=<sp/>UARTMSP432E4_FLOWCTRL_NONE,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.ringBufPtr<sp/><sp/>=<sp/>uartMSP432E4RingBuffer[0],</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.ringBufSize<sp/>=<sp/>sizeof(uartMSP432E4RingBuffer[0]),</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.rxPin<sp/>=<sp/>UARTMSP432E4_PA0_U0RX,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.txPin<sp/>=<sp/>UARTMSP432E4_PA1_U0TX,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.ctsPin<sp/>=<sp/>UARTMSP432E4_PIN_UNASSIGNED,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.rtsPin<sp/>=<sp/>UARTMSP432E4_PIN_UNASSIGNED,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.errorFxn<sp/>=<sp/>NULL</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>},</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.baseAddr<sp/>=<sp/>UART1_BASE,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.intNum<sp/>=<sp/>INT_UART1,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.intPriority<sp/>=<sp/>(~0),</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.flowControl<sp/>=<sp/>UARTMSP432E4_FLOWCTRL_NONE,,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.ringBufPtr<sp/><sp/>=<sp/>uartMSP432E4RingBuffer[1],</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.ringBufSize<sp/>=<sp/>sizeof(uartMSP432E4RingBuffer[1]),</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.rxPin<sp/>=<sp/>UARTMSP432E4_PB0_U1RX,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.txPin<sp/>=<sp/>UARTMSP432E4_PB1_U1TX,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.ctsPin<sp/>=<sp/>UARTMSP432E4_PIN_UNASSIGNED,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.rtsPin<sp/>=<sp/>UARTMSP432E4_PIN_UNASSIGNED,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.errorFxn<sp/>=<sp/>NULL</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal">};</highlight></codeline>
+</programlisting> </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="430">
+        <label>UART_FxnTable</label>
+        <link refid="struct_u_a_r_t___fxn_table"/>
+        <childnode refid="429" relation="usage">
+          <edgelabel>writeFxn</edgelabel>
+          <edgelabel>readCancelFxn</edgelabel>
+          <edgelabel>closeFxn</edgelabel>
+          <edgelabel>initFxn</edgelabel>
+          <edgelabel>readPollingFxn</edgelabel>
+          <edgelabel>writeCancelFxn</edgelabel>
+          <edgelabel>controlFxn</edgelabel>
+          <edgelabel>openFxn</edgelabel>
+          <edgelabel>writePollingFxn</edgelabel>
+          <edgelabel>readFxn</edgelabel>
+          <edgelabel>...</edgelabel>
+        </childnode>
+      </node>
+      <node id="428">
+        <label>UARTMSP432E4_HWAttrs</label>
+        <link refid="struct_u_a_r_t_m_s_p432_e4___h_w_attrs"/>
+        <childnode refid="429" relation="usage">
+          <edgelabel>errorFxn</edgelabel>
+        </childnode>
+      </node>
+      <node id="429">
+        <label>UART_Config_</label>
+        <link refid="struct_u_a_r_t___config__"/>
+        <childnode refid="430" relation="usage">
+          <edgelabel>fxnTablePtr</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="exports/tidrivers_msp432e4/source/ti/drivers/uart/UARTMSP432E4.h" line="516" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/uart/UARTMSP432E4.h" bodystart="516" bodyend="539"/>
+    <listofallmembers>
+      <member refid="struct_u_a_r_t_m_s_p432_e4___h_w_attrs_1ab9a92717d0ccd08aa54e87b5c0c40c37" prot="public" virt="non-virtual"><scope>UARTMSP432E4_HWAttrs</scope><name>baseAddr</name></member>
+      <member refid="struct_u_a_r_t_m_s_p432_e4___h_w_attrs_1a4d7710328a2ae97607418aaa64e4166a" prot="public" virt="non-virtual"><scope>UARTMSP432E4_HWAttrs</scope><name>ctsPin</name></member>
+      <member refid="struct_u_a_r_t_m_s_p432_e4___h_w_attrs_1a9a206dccc07bdb56ecc42accd5b820ac" prot="public" virt="non-virtual"><scope>UARTMSP432E4_HWAttrs</scope><name>errorFxn</name></member>
+      <member refid="struct_u_a_r_t_m_s_p432_e4___h_w_attrs_1ad2a944d28ea14389f6c68c34c262d86f" prot="public" virt="non-virtual"><scope>UARTMSP432E4_HWAttrs</scope><name>flowControl</name></member>
+      <member refid="struct_u_a_r_t_m_s_p432_e4___h_w_attrs_1a92a4fb618c096a3a24314c88510f7a0a" prot="public" virt="non-virtual"><scope>UARTMSP432E4_HWAttrs</scope><name>intNum</name></member>
+      <member refid="struct_u_a_r_t_m_s_p432_e4___h_w_attrs_1abb0c1d8bdc9ee0a6cdb2a32e0a789660" prot="public" virt="non-virtual"><scope>UARTMSP432E4_HWAttrs</scope><name>intPriority</name></member>
+      <member refid="struct_u_a_r_t_m_s_p432_e4___h_w_attrs_1a328a8f20ef9bdcca84df6c415d492417" prot="public" virt="non-virtual"><scope>UARTMSP432E4_HWAttrs</scope><name>ringBufPtr</name></member>
+      <member refid="struct_u_a_r_t_m_s_p432_e4___h_w_attrs_1a0daa1ccf974a75d643e4d29e61dbfd58" prot="public" virt="non-virtual"><scope>UARTMSP432E4_HWAttrs</scope><name>ringBufSize</name></member>
+      <member refid="struct_u_a_r_t_m_s_p432_e4___h_w_attrs_1af50d39ff28883666cf5aaf618177b622" prot="public" virt="non-virtual"><scope>UARTMSP432E4_HWAttrs</scope><name>rtsPin</name></member>
+      <member refid="struct_u_a_r_t_m_s_p432_e4___h_w_attrs_1aee8802a1e32ae475ed95a69d4e1974c7" prot="public" virt="non-virtual"><scope>UARTMSP432E4_HWAttrs</scope><name>rxPin</name></member>
+      <member refid="struct_u_a_r_t_m_s_p432_e4___h_w_attrs_1a88d32e16386c25bd6f22cfd3dddebc03" prot="public" virt="non-virtual"><scope>UARTMSP432E4_HWAttrs</scope><name>txPin</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,16 @@
+[
+    {
+        "files": [
+            "+../crc32.c -> crc32.c",
+            "+../uartstdio.c -> uartstdio.c",
+            "+../uartstdio.h -> uartstdio.h",
+            "+../pinout.c -> pinout.c",
+            "+../pinout.h -> pinout.h",
+            "+../system_msp432e401y.c -> system_msp432e401y.c",
+            "+../README.md -> README.md",
+            "+../README.html -> README.html",
+            "+startup_msp432e401y_gcc.c -> gcc/startup_msp432e401y_gcc.c",
+            "+msp432e401y.lds -> msp432e401y.lds"
+        ]
+    }
+]

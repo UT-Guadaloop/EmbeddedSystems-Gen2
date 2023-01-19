@@ -1,0 +1,170 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="indexpage" kind="page">
+    <compoundname>index</compoundname>
+    <title>SimpleLink MCU SDK Driver API Reference</title>
+    <detaileddescription>
+<sect1 id="index_1tableofcontents">
+<title>Table of Contents</title>
+<para><itemizedlist>
+<listitem><para><ref refid="index_1drivers_common_overview" kindref="member">TI-Drivers Overview</ref> </para></listitem>
+<listitem><para><ref refid="index_1drivers" kindref="member">Drivers and Documentation</ref> </para></listitem>
+<listitem><para><ref refid="index_1display" kindref="member">Display Driver</ref> </para></listitem>
+<listitem><para><ref refid="index_1apps" kindref="member">Driver Apps</ref> </para></listitem>
+<listitem><para><ref refid="index_1utilities" kindref="member">Driver Utilities</ref> </para></listitem>
+<listitem><para><ref refid="index_1driver_configuration" kindref="member">Driver Configuration</ref><itemizedlist>
+<listitem><para><ref refid="index_1driver_configuration_files" kindref="member">Driver Configuration Files</ref></para></listitem><listitem><para><ref refid="index_1driver_objects" kindref="member">Driver Objects</ref></para></listitem><listitem><para><ref refid="index_1driver_hardware_attributes" kindref="member">Driver Hardware Attributes</ref></para></listitem><listitem><para><ref refid="index_1driver_function_table" kindref="member">Driver Function Table</ref> </para></listitem></itemizedlist>
+</para></listitem>
+<listitem><para><ref refid="index_1nortos" kindref="member">NoRTOS Framework Module</ref></para></listitem>
+</itemizedlist>
+<hruler/>
+</para></sect1>
+<sect1 id="index_1drivers_common_overview">
+<title>TI-Drivers Overview</title>
+<para><para>TI-Drivers is a collective of peripheral drivers for TI&apos;s SimpleLink portfolio. The drivers are centered around a portable application programming interface (API) which enables seamless migration across the SimpleLink SDK portfolio. Unless specifically stated otherwise, TI-Drivers are designed to be thread safe and work seamlessly inside of a real time operating system (RTOS) application. All TI-Driver implementations utilize the Power driver APIs to ensure low power consumption at all times. The drivers support TI-RTOS (SYS/BIOS) and NoRTOS with examples provided for each variant. Lastly, the drivers are supported by SysConfig to enable easy re-configuration of the drivers.</para><para><simplesect kind="par"><title>Features:</title><para><itemizedlist>
+<listitem><para><bold> Portable APIs </bold> </para></listitem>
+<listitem><para><bold> Native support for TI-RTOS and NoRTOS usage </bold> </para></listitem>
+<listitem><para><bold> Thread safe APIs </bold> </para></listitem>
+<listitem><para><bold> SysConfig support </bold> </para></listitem>
+<listitem><para><bold> Example usage </bold> </para></listitem>
+<listitem><para><bold> Power driver support </bold></para></listitem>
+</itemizedlist>
+</para></simplesect>
+</para><hruler/>
+</para></sect1>
+<sect1 id="index_1drivers">
+<title>Drivers and Documentation</title>
+<para>Shown below is a matrix of available drivers and documentation.</para><para><simplesect kind="note"><para>Please view the <bold>Device Specific</bold> driver implementations as they may contain or exclude certain features that are defined in the top level interfaces.</para></simplesect>
+<table rows="22" cols="2"><row>
+<entry thead="yes"><para>Driver Interfaces </para></entry><entry thead="yes"><para>MSP432E4<linebreak/>
+ Implementations  </para></entry></row>
+<row>
+<entry thead="no"><para><ref refid="_a_d_c_8h" kindref="compound">ADC.h</ref> </para></entry><entry thead="no"><para><ref refid="_a_d_c_m_s_p432_e4_8h" kindref="compound">ADCMSP432E4.h</ref>  </para></entry></row>
+<row>
+<entry thead="no"><para><ref refid="_a_d_c_buf_8h" kindref="compound">ADCBuf.h</ref> </para></entry><entry thead="no"><para><ref refid="_a_d_c_buf_m_s_p432_e4_8h" kindref="compound">ADCBufMSP432E4.h</ref><linebreak/>
+  </para></entry></row>
+<row>
+<entry thead="no"><para><ref refid="_a_e_s_c_b_c_8h" kindref="compound">AESCBC.h</ref> </para></entry><entry thead="no"><para><ref refid="_a_e_s_c_b_c_m_s_p432_e4_8h" kindref="compound">AESCBCMSP432E4.h</ref><linebreak/>
+  </para></entry></row>
+<row>
+<entry thead="no"><para><ref refid="_a_e_s_c_c_m_8h" kindref="compound">AESCCM.h</ref> </para></entry><entry thead="no"><para><ref refid="_a_e_s_c_c_m_m_s_p432_e4_8h" kindref="compound">AESCCMMSP432E4.h</ref><linebreak/>
+  </para></entry></row>
+<row>
+<entry thead="no"><para><ref refid="_a_e_s_c_t_r_8h" kindref="compound">AESCTR.h</ref> </para></entry><entry thead="no"><para><ref refid="_a_e_s_c_t_r_m_s_p432_e4_8h" kindref="compound">AESCTRMSP432E4.h</ref><linebreak/>
+  </para></entry></row>
+<row>
+<entry thead="no"><para><ref refid="_a_e_s_c_t_r_d_r_b_g_8h" kindref="compound">AESCTRDRBG.h</ref> </para></entry><entry thead="no"><para><ref refid="_a_e_s_c_t_r_d_r_b_g_x_x_8h" kindref="compound">AESCTRDRBGXX.h</ref><linebreak/>
+  </para></entry></row>
+<row>
+<entry thead="no"><para><ref refid="_a_e_s_g_c_m_8h" kindref="compound">AESGCM.h</ref> </para></entry><entry thead="no"><para><ref refid="_a_e_s_g_c_m_m_s_p432_e4_8h" kindref="compound">AESGCMMSP432E4.h</ref><linebreak/>
+  </para></entry></row>
+<row>
+<entry thead="no"><para><ref refid="_c_r_c_8h" kindref="compound">CRC.h</ref> </para></entry><entry thead="no"><para><ref refid="_c_r_c_m_s_p432_e4_8h" kindref="compound">CRCMSP432E4.h</ref>  </para></entry></row>
+<row>
+<entry thead="no"><para>EMAC </para></entry><entry thead="no"><para><ref refid="_e_m_a_c_m_s_p432_e4_8h" kindref="compound">EMACMSP432E4.h</ref>  </para></entry></row>
+<row>
+<entry thead="no"><para><ref refid="_g_p_i_o_8h" kindref="compound">GPIO.h</ref> </para></entry><entry thead="no"><para><ref refid="_g_p_i_o_m_s_p432_e4_8h" kindref="compound">GPIOMSP432E4.h</ref>  </para></entry></row>
+<row>
+<entry thead="no"><para><ref refid="_i2_c_8h" kindref="compound">I2C.h</ref> </para></entry><entry thead="no"><para><ref refid="_i2_c_m_s_p432_e4_8h" kindref="compound">I2CMSP432E4.h</ref><linebreak/>
+  </para></entry></row>
+<row>
+<entry thead="no"><para><ref refid="_n_v_s_8h" kindref="compound">NVS.h</ref> </para></entry><entry thead="no"><para><ref refid="_n_v_s_m_s_p432_e4_8h" kindref="compound">NVSMSP432E4.h</ref> <linebreak/>
+ <ref refid="_n_v_s_r_a_m_8h" kindref="compound">NVSRAM.h</ref> <linebreak/>
+ <ref refid="_n_v_s_s_p_i25_x_8h" kindref="compound">NVSSPI25X.h</ref><linebreak/>
+  </para></entry></row>
+<row>
+<entry thead="no"><para><ref refid="_power_8h" kindref="compound">Power.h</ref> </para></entry><entry thead="no"><para><ref refid="_power_m_s_p432_e4_8h" kindref="compound">PowerMSP432E4.h</ref><linebreak/>
+  </para></entry></row>
+<row>
+<entry thead="no"><para><ref refid="_p_w_m_8h" kindref="compound">PWM.h</ref> </para></entry><entry thead="no"><para><ref refid="_p_w_m_m_s_p432_e4_8h" kindref="compound">PWMMSP432E4.h</ref><linebreak/>
+  </para></entry></row>
+<row>
+<entry thead="no"><para><ref refid="_s_d_8h" kindref="compound">SD.h</ref> </para></entry><entry thead="no"><para><ref refid="_s_d_s_p_i_8h" kindref="compound">SDSPI.h</ref>  </para></entry></row>
+<row>
+<entry thead="no"><para><ref refid="_s_p_i_8h" kindref="compound">SPI.h</ref> </para></entry><entry thead="no"><para><ref refid="_s_p_i_m_s_p432_e4_d_m_a_8h" kindref="compound">SPIMSP432E4DMA.h</ref>  </para></entry></row>
+<row>
+<entry thead="no"><para><ref refid="_timer_8h" kindref="compound">Timer.h</ref> </para></entry><entry thead="no"><para><ref refid="_timer_m_s_p432_e4_8h" kindref="compound">TimerMSP432E4.h</ref>  </para></entry></row>
+<row>
+<entry thead="no"><para><ref refid="_u_a_r_t_8h" kindref="compound">UART.h</ref> </para></entry><entry thead="no"><para><ref refid="_u_a_r_t_m_s_p432_e4_8h" kindref="compound">UARTMSP432E4.h</ref>  </para></entry></row>
+<row>
+<entry thead="no"><para><ref refid="_u_a_r_t2_8h" kindref="compound">UART2.h</ref> </para></entry><entry thead="no"><para><ref refid="_u_a_r_t2_m_s_p432_e4_8h" kindref="compound">UART2MSP432E4.h</ref>  </para></entry></row>
+<row>
+<entry thead="no"><para>UDMA </para></entry><entry thead="no"><para><ref refid="_u_d_m_a_m_s_p432_e4_8h" kindref="compound">UDMAMSP432E4.h</ref>  </para></entry></row>
+<row>
+<entry thead="no"><para><ref refid="_watchdog_8h" kindref="compound">Watchdog.h</ref> </para></entry><entry thead="no"><para><ref refid="_watchdog_m_s_p432_e4_8h" kindref="compound">WatchdogMSP432E4.h</ref>  </para></entry></row>
+</table>
+<hruler/>
+</para></sect1>
+<sect1 id="index_1display">
+<title>Display Driver</title>
+<para><para>The Display driver is designed to abstract operations &amp; considerations specific to a given output method. </para> <para><table rows="2" cols="2"><row>
+<entry thead="yes"><para>Display Driver Interface </para></entry><entry thead="yes"><para>Implementations </para></entry></row>
+<row>
+<entry thead="no"><para><ref refid="_display_8h" kindref="compound">Display.h</ref> </para></entry><entry thead="no"><para><ref refid="_display_host_8h" kindref="compound">DisplayHost.h</ref> <linebreak/>
+ <ref refid="_display_uart_8h" kindref="compound">DisplayUart.h</ref> </para></entry></row>
+</table>
+</para><hruler/>
+</para></sect1>
+<sect1 id="index_1apps">
+<title>Driver Apps</title>
+<para><para>These helper apps utilize TI drivers and are available to user applications.</para><para><table rows="3" cols="2"><row>
+<entry thead="yes"><para>Module </para></entry><entry thead="yes"><para>Description </para></entry></row>
+<row>
+<entry thead="no"><para><ref refid="_button_8h" kindref="compound">Button.h</ref> </para></entry><entry thead="no"><para>Provides an API for button like hardware attached to a GPIO line. </para></entry></row>
+<row>
+<entry thead="no"><para><ref refid="_l_e_d_8h" kindref="compound">LED.h</ref> </para></entry><entry thead="no"><para>Provides an API for LEDs attached to GPIO lines.  </para></entry></row>
+</table>
+</para><hruler/>
+</para></sect1>
+<sect1 id="index_1utilities">
+<title>Driver Utilities</title>
+<para><para>These utilities are helper modules available to drivers.</para><para><table rows="6" cols="2"><row>
+<entry thead="yes"><para>Module </para></entry><entry thead="yes"><para>Description </para></entry></row>
+<row>
+<entry thead="no"><para><ref refid="_list_8h" kindref="compound">List.h</ref> </para></entry><entry thead="no"><para>Double linked list </para></entry></row>
+<row>
+<entry thead="no"><para><ref refid="_random_8h" kindref="compound">Random.h</ref> </para></entry><entry thead="no"><para>Fast and light-weight pseudo random number generator  </para></entry></row>
+<row>
+<entry thead="no"><para><ref refid="_ring_buf_8h" kindref="compound">RingBuf.h</ref> </para></entry><entry thead="no"><para>Array-based ring buffer for bytes </para></entry></row>
+<row>
+<entry thead="no"><para><ref refid="_s_d_fat_f_s_8h" kindref="compound">SDFatFS.h</ref> </para></entry><entry thead="no"><para>Wrapper to enable the use of file systems for the SD driver. </para></entry></row>
+<row>
+<entry thead="no"><para><ref refid="_s_p_i_f_f_s_n_v_s_8h" kindref="compound">SPIFFSNVS.h</ref> </para></entry><entry thead="no"><para>Enables NVS as the physical layer to read/write memory for the SPIFFS file system </para></entry></row>
+</table>
+</para><hruler/>
+</para></sect1>
+<sect1 id="index_1driver_configuration">
+<title>Driver Configuration</title>
+<para><para>The generic driver interface defines a configuration structure using the <computeroutput>typedef</computeroutput> keyword. The name of this declared type follows the naming pattern <computeroutput>&lt;driver&gt;_Config</computeroutput>. A driver is configured by declaring an array of this configuration data structure. Each <computeroutput>config</computeroutput> array index contains pointers to other data objects necessary for the driver to function at runtime. These data objects may include a <ref refid="index_1driver_hardware_attributes" kindref="member">hardware attributes</ref>, a <ref refid="index_1driver_function_table" kindref="member">function table</ref>, and <ref refid="index_1driver_objects" kindref="member">object memory</ref>. Multiple indexes of the <computeroutput>config</computeroutput> array should not share these data objects--with the exception of the <ref refid="index_1driver_function_table" kindref="member">function table</ref>. Each index of the <computeroutput>config</computeroutput> array supports an independent instance of the driver.</para><para><simplesect kind="warning"><para>The declared array, <computeroutput>&lt;driver&gt;_Config</computeroutput>, must have a specific C identifier. This identifies follows the case-sensitive pattern <computeroutput>&lt;driver&gt;_config</computeroutput>.</para></simplesect>
+<simplesect kind="warning"><para>The configuration must also contain a count of indexes in the <computeroutput>&lt;driver&gt;_config</computeroutput>. This must also have a specific C identifier following the case-sensitive pattern <computeroutput>&lt;driver&gt;_count</computeroutput>. The data type must be a <computeroutput>uint_least8_t</computeroutput>.</para></simplesect>
+The driver interface is joined together during the link process at build time. The <computeroutput>&lt;driver&gt;_config</computeroutput> and <computeroutput>&lt;driver&gt;_count</computeroutput> symbols are resolved. </para><hruler/>
+</para><sect2 id="index_1driver_configuration_files">
+<title>Driver Configuration Files</title>
+<para><para>The driver configuration files contain all <ref refid="index_1driver_configuration" kindref="member">driver configurations</ref> needed by TI-Drivers at runtime. The SysConfig tool is used to automatically generate the TI-Driver&apos;s configuration files. Two files are presently generated for TI-Drivers:</para><para><itemizedlist>
+<listitem><para><bold>ti_drivers_config.c</bold> </para></listitem>
+<listitem><para><bold>ti_drivers_config.h</bold> </para></listitem>
+</itemizedlist>
+</para><hruler/>
+</para></sect2>
+<sect2 id="index_1driver_objects">
+<title>Driver Objects</title>
+<para><para>The driver objects are device specific structures that hold data for an instance of a driver. The driver objects are used exclusively by the driver and should never be accessed by the application. Device specific drivers define an object structure as a new type using the <computeroutput>typedef</computeroutput> keyword. Each index in a driver&apos;s <ref refid="index_1driver_configuration" kindref="member">configuration</ref> will contain a pointer to a driver object. </para><hruler/>
+</para></sect2>
+<sect2 id="index_1driver_hardware_attributes">
+<title>Driver Hardware Attributes</title>
+<para><para>The hardware attributes, also commonly referred to as <computeroutput>HWAttrs</computeroutput>, are device specific settings that typically do not change during runtime operation of a driver. The hardware attributes also aid in abstracting the generic driver interface from the device specific hardware. Device specific drivers define a hardware attribute structure as a new type using the <computeroutput>typedef</computeroutput> keyword. Each index in a driver&apos;s <ref refid="index_1driver_configuration" kindref="member">configuration</ref> will contain a pointer to a hardware attribute structure. </para><hruler/>
+</para></sect2>
+<sect2 id="index_1driver_function_table">
+<title>Driver Function Table</title>
+<para><para>The function pointer table is a structure simply containing pointers to functions. Each index in a driver&apos;s <ref refid="index_1driver_configuration" kindref="member">configuration</ref> will contain a pointer to a function pointer table. The TI-Driver&apos;s interface uses function pointers to abstract a generic driver from a device specific driver. Each device specific driver declares a default function pointer table which may be referenced by default in the driver&apos;s <ref refid="index_1driver_configuration" kindref="member">configuration</ref>. </para><hruler/>
+</para></sect2>
+</sect1>
+<sect1 id="index_1nortos">
+<title>NoRTOS Framework Module</title>
+<para><para>The NoRTOS framework module is provided to enable use of drivers without an underlying operating system. The module provides interfaces used by drivers to perform delays, block execution, register interrupts and more. <itemizedlist>
+<listitem><para><ref refid="_no_r_t_o_s_8h" kindref="compound">NoRTOS.h</ref> </para></listitem>
+</itemizedlist>
+</para></para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

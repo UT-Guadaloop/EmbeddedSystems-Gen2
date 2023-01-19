@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="group___comparator_m_s_p432_e4___e_v_e_n_t" kind="group">
+    <compoundname>ComparatorMSP432E4_EVENT</compoundname>
+    <title>values that will be passed to the</title>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="group___comparator_m_s_p432_e4___e_v_e_n_t_1ga4d1752473ab4d518446bb93d16030fd8" prot="public" static="no">
+        <name>ComparatorMSP432E4_EVENT_RISING</name>
+        <initializer>(<ref refid="group___comparator___e_v_e_n_t_1ga8eee3343a2691d8dbf963301c68f9aac" kindref="member">Comparator_EVENT_RESERVED</ref> + 1)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/comparator/ComparatorMSP432E4.h" line="63" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/comparator/ComparatorMSP432E4.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___comparator_m_s_p432_e4___e_v_e_n_t_1gaf7f3c2bd0f297de63c5a9f7db37d5e05" prot="public" static="no">
+        <name>ComparatorMSP432E4_EVENT_FALLING</name>
+        <initializer>(<ref refid="group___comparator___e_v_e_n_t_1ga8eee3343a2691d8dbf963301c68f9aac" kindref="member">Comparator_EVENT_RESERVED</ref> + 2)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/comparator/ComparatorMSP432E4.h" line="64" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/comparator/ComparatorMSP432E4.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___comparator_m_s_p432_e4___e_v_e_n_t_1gaff94240ea6e348b75b7fbad2a7111bd6" prot="public" static="no">
+        <name>ComparatorMSP432E4_EVENT_EDGE</name>
+        <initializer>(<ref refid="group___comparator___e_v_e_n_t_1ga8eee3343a2691d8dbf963301c68f9aac" kindref="member">Comparator_EVENT_RESERVED</ref> + 3)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/comparator/ComparatorMSP432E4.h" line="65" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/comparator/ComparatorMSP432E4.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___comparator_m_s_p432_e4___e_v_e_n_t_1ga0c2704a2cb6f18ef43a0d57938a58abb" prot="public" static="no">
+        <name>ComparatorMSP432E4_EVENT_HIGH</name>
+        <initializer>(<ref refid="group___comparator___e_v_e_n_t_1ga8eee3343a2691d8dbf963301c68f9aac" kindref="member">Comparator_EVENT_RESERVED</ref> + 4)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/comparator/ComparatorMSP432E4.h" line="66" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/comparator/ComparatorMSP432E4.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___comparator_m_s_p432_e4___e_v_e_n_t_1gafec6af94c1609ac9b495526aca12f04a" prot="public" static="no">
+        <name>ComparatorMSP432E4_EVENT_LOW</name>
+        <initializer>(<ref refid="group___comparator___e_v_e_n_t_1ga8eee3343a2691d8dbf963301c68f9aac" kindref="member">Comparator_EVENT_RESERVED</ref> + 5)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/comparator/ComparatorMSP432E4.h" line="67" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/comparator/ComparatorMSP432E4.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Comparator callback function. In the case of both edges, the edge will not be determined for accuracy. </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

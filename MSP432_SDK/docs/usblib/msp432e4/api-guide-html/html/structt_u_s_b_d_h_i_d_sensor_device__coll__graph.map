@@ -1,0 +1,11 @@
+<map id="tUSBDHIDSensorDevice" name="tUSBDHIDSensorDevice">
+<area shape="rect" id="node2" href="$structt_u_s_b_d_sensor_instance.html" title="tUSBDSensorInstance" alt="" coords="351,452,514,479"/>
+<area shape="rect" id="node3" href="$structt_u_s_b_d_h_i_d_device.html" title="tUSBDHIDDevice" alt="" coords="299,363,433,389"/>
+<area shape="rect" id="node4" href="$structt_h_i_d_instance.html" title="tHIDInstance" alt="" coords="186,273,293,300"/>
+<area shape="rect" id="node5" href="$structt_device_info.html" title="tDeviceInfo" alt="" coords="57,184,155,211"/>
+<area shape="rect" id="node6" href="$structt_custom_handlers.html" title="tCustomHandlers" alt="" coords="5,95,140,121"/>
+<area shape="rect" id="node7" href="$structt_config_header.html" title="tConfigHeader" alt="" coords="227,95,342,121"/>
+<area shape="rect" id="node8" href="$structt_config_section.html" title="tConfigSection" alt="" coords="227,5,343,32"/>
+<area shape="rect" id="node9" href="$structt_u_s_b_host_device.html" title="tUSBHostDevice" alt="" coords="179,184,308,211"/>
+<area shape="rect" id="node10" href="$structt_h_i_d_report_idle.html" title="tHIDReportIdle" alt="" coords="413,273,530,300"/>
+</map>

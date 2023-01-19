@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="group___c_a_n___s_t_a_t_u_s" kind="group">
+    <compoundname>CAN_STATUS</compoundname>
+    <title>Status Codes</title>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="group___c_a_n___s_t_a_t_u_s_1gaec519b2472a0cb3c778a1e2cffd7de5d" prot="public" static="no">
+        <name>CAN_STATUS_SUCCESS</name>
+        <initializer>(0)</initializer>
+        <briefdescription>
+<para>Successful status code returned by <ref refid="_c_a_n_8h_1a16c50386c49aa57fb2576a89ffa22a6b" kindref="member">CAN_control()</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para><ref refid="_c_a_n_8h_1a16c50386c49aa57fb2576a89ffa22a6b" kindref="member">CAN_control()</ref> returns CAN_STATUS_SUCCESS if the control code was executed successfully. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/CAN.h" line="281" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/CAN.h" bodystart="281" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___c_a_n___s_t_a_t_u_s_1gaf97bc85f9b1ce1bd427ab76347994217" prot="public" static="no">
+        <name>CAN_STATUS_ERROR</name>
+        <initializer>(-1)</initializer>
+        <briefdescription>
+<para>Generic error status code returned by <ref refid="_c_a_n_8h_1a16c50386c49aa57fb2576a89ffa22a6b" kindref="member">CAN_control()</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para><ref refid="_c_a_n_8h_1a16c50386c49aa57fb2576a89ffa22a6b" kindref="member">CAN_control()</ref> returns CAN_STATUS_ERROR if the control code was not executed successfully. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/CAN.h" line="289" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/CAN.h" bodystart="289" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___c_a_n___s_t_a_t_u_s_1ga4b40d390fb347ceb930b54982e62e8c3" prot="public" static="no">
+        <name>CAN_STATUS_UNDEFINEDCMD</name>
+        <initializer>(-2)</initializer>
+        <briefdescription>
+<para>An error status code returned by <ref refid="_c_a_n_8h_1a16c50386c49aa57fb2576a89ffa22a6b" kindref="member">CAN_control()</ref> for undefined command codes. </para>        </briefdescription>
+        <detaileddescription>
+<para><ref refid="_c_a_n_8h_1a16c50386c49aa57fb2576a89ffa22a6b" kindref="member">CAN_control()</ref> returns CAN_STATUS_UNDEFINEDCMD if the control code is not recognized by the driver implementation. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/CAN.h" line="298" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/CAN.h" bodystart="298" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>CAN_STATUS_* macros are general status codes returned by <ref refid="_c_a_n_8h_1a16c50386c49aa57fb2576a89ffa22a6b" kindref="member">CAN_control()</ref> </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="dir_c7beff926320f79682b845f481facb08" kind="dir">
+    <compoundname>aesctrdrbg</compoundname>
+    <innerfile refid="_a_e_s_c_t_r_d_r_b_g_x_x_8h">AESCTRDRBGXX.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="exports/tidrivers_msp432e4/source/ti/drivers/aesctrdrbg/"/>
+  </compounddef>
+</doxygen>

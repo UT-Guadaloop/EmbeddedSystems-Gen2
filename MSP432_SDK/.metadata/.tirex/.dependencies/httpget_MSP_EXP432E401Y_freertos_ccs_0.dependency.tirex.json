@@ -1,0 +1,14 @@
+[
+    {
+        "files": [
+            "+../../httpget.c -> httpget.c",
+            "+../../README.md -> README.md",
+            "+../../README.html -> README.html",
+            "+../../httpgethooks.c -> httpgethooks.c",
+            "+../main_freertos.c -> main_freertos.c",
+            "+../httpget.syscfg -> httpget.syscfg",
+            "+../../../../../../../source/ti/boards/MSP_EXP432E401Y/Board.html -> Board.html",
+            "+MSP_EXP432E401Y_FREERTOS.cmd -> MSP_EXP432E401Y_FREERTOS.cmd"
+        ]
+    }
+]

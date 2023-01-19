@@ -1,0 +1,18 @@
+[
+    {
+        "files": [
+            "+../usb_dev_cdc_serial.c -> usb_dev_cdc_serial.c",
+            "+../usb_structs.c -> usb_structs.c",
+            "+../usb_structs.h -> usb_structs.h",
+            "+../pinout.c -> pinout.c",
+            "+../pinout.h -> pinout.h",
+            "+../ustdlib.c -> ustdlib.c",
+            "+../ustdlib.h -> ustdlib.h",
+            "+../system_msp432e401y.c -> system_msp432e401y.c",
+            "+../README.md -> README.md",
+            "+../README.html -> README.html",
+            "+startup_msp432e401y_gcc.c -> gcc/startup_msp432e401y_gcc.c",
+            "+msp432e401y.lds -> msp432e401y.lds"
+        ]
+    }
+]

@@ -1,0 +1,1662 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=9"/>
+    <title>MSP432E4 Configuration Reference</title>
+    <link href="tiapistylesheet.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <table width="100%">
+      <tbody><tr>
+        <td bgcolor="black" width="1"><a href="http://www.ti.com"><img border="0" src="html/tilogo.gif"></a></td>
+        <td bgcolor="red"><img src="html/titagline.gif"></td>
+     </tr></tbody>
+  </table>
+    <div class="contents">
+      <div class="textblock">
+        <div id="General_Description">
+          <h1 class="headertitle" title="General Description">General: General network configuration</h1>
+<p>High level NDK stack configuration and settings. Use this module to configure stack size, task priority, operating mode of the NDK scheduler, and user hook functions.</p>
+
+          <hr />
+        </div> <!-- end General_Description -->
+        <div id="General_Configuration_Options">
+          <h2 class="groupheader" title="Summary of all General configuration options">General Configuration Synopsis_Lines</h2>
+          <table style="margin-left:35px">
+            <tr><td><var>General</var><a href="#ti_ndk_General_ipv6"><code>.ipv6</code></a><code> = false;</code></td><td><code>// Enable IPv6 support</code></td></tr>
+            <tr><td><var>General</var><a href="#ti_ndk_General_hostname"><code>.hostname</code></a><code> = 'tisoc';</code></td><td><code>// Hostname</code></td></tr>
+            <tr><td><var>General</var><a href="#ti_ndk_General_maxNumSocks"><code>.maxNumSocks</code></a><code> = 10;</code></td><td><code>// Maximum Number of Sockets</code></td></tr>
+            <tr><td><var>General</var><a href="#ti_ndk_General_localIPAddrConfig"><code>.localIPAddrConfig</code></a><code> = 'Use DHCP to Obtain IP Address';</code></td><td><code>// Local IP Address Configuration</code></td></tr>
+            <tr><td><var>General</var><a href="#ti_ndk_General_staticIPAddr"><code>.staticIPAddr</code></a><code> = '0.0.0.0';</code></td><td><code>// Static IP Address</code></td></tr>
+            <tr><td><var>General</var><a href="#ti_ndk_General_ipMask"><code>.ipMask</code></a><code> = '255.255.255.0';</code></td><td><code>// IP Mask</code></td></tr>
+            <tr><td><var>General</var><a href="#ti_ndk_General_gatewayIpAddr"><code>.gatewayIpAddr</code></a><code> = '0.0.0.0';</code></td><td><code>// Gateway IP Address</code></td></tr>
+            <tr><td><var>General</var><a href="#ti_ndk_General_domainName"><code>.domainName</code></a><code> = 'demo.net';</code></td><td><code>// Domain Name</code></td></tr>
+            <tr><td><var>General</var><a href="#ti_ndk_General_dhcpcServReportFxn"><code>.dhcpcServReportFxn</code></a><code> = '';</code></td><td><code>// Service Report Function Used by DHCP</code></td></tr>
+            <tr><td><var>General</var><a href="#ti_ndk_General_tcpTxBufSize"><code>.tcpTxBufSize</code></a><code> = 8192;</code></td><td><code>// TCP Transmit Buffer Size</code></td></tr>
+            <tr><td><var>General</var><a href="#ti_ndk_General_tcpRxBufSize"><code>.tcpRxBufSize</code></a><code> = 8192;</code></td><td><code>// TCP Receive Buffer Size (Copy Mode)</code></td></tr>
+            <tr><td><var>General</var><a href="#ti_ndk_General_tcpRxBufLimit"><code>.tcpRxBufLimit</code></a><code> = 8192;</code></td><td><code>// TCP Receive Size Maximum (Non-Copy Mode)</code></td></tr>
+            <tr><td><var>General</var><a href="#ti_ndk_General_udpRxBufSize"><code>.udpRxBufSize</code></a><code> = 8192;</code></td><td><code>// UDP Receive Buffer Size</code></td></tr>
+            <tr><td><var>General</var><a href="#ti_ndk_General_beginHook"><code>.beginHook</code></a><code> = '';</code></td><td><code>// Network Stack Begin Callback</code></td></tr>
+            <tr><td><var>General</var><a href="#ti_ndk_General_initHook"><code>.initHook</code></a><code> = '';</code></td><td><code>// Network Stack Initialization Callback</code></td></tr>
+            <tr><td><var>General</var><a href="#ti_ndk_General_rebootHook"><code>.rebootHook</code></a><code> = '';</code></td><td><code>// Network Stack Reboot Callback</code></td></tr>
+            <tr><td><var>General</var><a href="#ti_ndk_General_deleteHook"><code>.deleteHook</code></a><code> = '';</code></td><td><code>// Network Stack Delete Callback</code></td></tr>
+            <tr><td><var>General</var><a href="#ti_ndk_General_networkOpenHook"><code>.networkOpenHook</code></a><code> = '';</code></td><td><code>// Network Start Callback</code></td></tr>
+            <tr><td><var>General</var><a href="#ti_ndk_General_networkCloseHook"><code>.networkCloseHook</code></a><code> = '';</code></td><td><code>// Network Stop Callback</code></td></tr>
+            <tr><td><var>General</var><a href="#ti_ndk_General_networkIPAddrHook"><code>.networkIPAddrHook</code></a><code> = '';</code></td><td><code>// Network IP Address Callback</code></td></tr>
+            <tr><td><var>General</var><a href="#ti_ndk_General_numPBMFrames"><code>.numPBMFrames</code></a><code> = 10;</code></td><td><code>// Number of PBM Frames</code></td></tr>
+            <tr><td><var>General</var><a href="#ti_ndk_General_pbmFrameBufSize"><code>.pbmFrameBufSize</code></a><code> = 1536;</code></td><td><code>// PBM Frame Buffer Size</code></td></tr>
+            <tr><td><var>General</var><a href="#ti_ndk_General_pbmDataSection"><code>.pbmDataSection</code></a><code> = '.bss:NDK_PACKETMEM';</code></td><td><code>// PBM Data Section</code></td></tr>
+            <tr><td><var>General</var><a href="#ti_ndk_General_pageSize"><code>.pageSize</code></a><code> = 3072;</code></td><td><code>// Page Size</code></td></tr>
+            <tr><td><var>General</var><a href="#ti_ndk_General_numPages"><code>.numPages</code></a><code> = 6;</code></td><td><code>// Number of Pages</code></td></tr>
+            <tr><td><var>General</var><a href="#ti_ndk_General_bufDataSection"><code>.bufDataSection</code></a><code> = '.bss:NDK_MMBUFFER';</code></td><td><code>// Buffer Data Section</code></td></tr>
+            <tr><td><var>General</var><a href="#ti_ndk_General_enableExtDNS"><code>.enableExtDNS</code></a><code> = false;</code></td><td><code>// Enable External DNS Server</code></td></tr>
+            <tr><td><var>General</var><a href="#ti_ndk_General_externDNSServIPAddr"><code>.externDNSServIPAddr</code></a><code> = '0.0.0.0';</code></td><td><code>// External DNS Server IP Address</code></td></tr>
+            <tr><td><var>General</var><a href="#ti_ndk_General_netTaskSchedulerTaskPri"><code>.netTaskSchedulerTaskPri</code></a><code> = 'NC_PRIORITY_LOW';</code></td><td><code>// Network Task Scheduler Task Priority</code></td></tr>
+            <tr><td><var>General</var><a href="#ti_ndk_General_ndkTickPeriod"><code>.ndkTickPeriod</code></a><code> = 100;</code></td><td><code>// NDK Tick Period</code></td></tr>
+            <tr><td><var>General</var><a href="#ti_ndk_General_netSchedulerOpMode"><code>.netSchedulerOpMode</code></a><code> = 'NC_OPMODE_INTERRUPT';</code></td><td><code>// Network Scheduler Operating Mode</code></td></tr>
+            <tr><td><var>General</var><a href="#ti_ndk_General_stackThreadPriLevel"><code>.stackThreadPriLevel</code></a><code> = 5;</code></td><td><code>// Stack Thread Priority Level</code></td></tr>
+            <tr><td><var>General</var><a href="#ti_ndk_General_ndkThreadStkSize"><code>.ndkThreadStkSize</code></a><code> = 8192;</code></td><td><code>// Stack Thread Stack Size</code></td></tr>
+            <tr><td><var>General</var><a href="#ti_ndk_General_lowPriTaskPriLevel"><code>.lowPriTaskPriLevel</code></a><code> = 3;</code></td><td><code>// Low Priority Tasks Priority Level</code></td></tr>
+            <tr><td><var>General</var><a href="#ti_ndk_General_lowPriTaskDefStkSize"><code>.lowPriTaskDefStkSize</code></a><code> = 3072;</code></td><td><code>// Low Priority Tasks Default Stack Size</code></td></tr>
+            <tr><td><var>General</var><a href="#ti_ndk_General_normPriTaskPriLevel"><code>.normPriTaskPriLevel</code></a><code> = 5;</code></td><td><code>// Normal Priority Tasks Priority Level</code></td></tr>
+            <tr><td><var>General</var><a href="#ti_ndk_General_normPriTaskDefStkSize"><code>.normPriTaskDefStkSize</code></a><code> = 4096;</code></td><td><code>// Normal Priority Tasks Default Stack Size</code></td></tr>
+            <tr><td><var>General</var><a href="#ti_ndk_General_highPriTaskPriLevel"><code>.highPriTaskPriLevel</code></a><code> = 7;</code></td><td><code>// High Priority Tasks Priority Level</code></td></tr>
+            <tr><td><var>General</var><a href="#ti_ndk_General_highPriTaskDefStkSize"><code>.highPriTaskDefStkSize</code></a><code> = 5120;</code></td><td><code>// High Priority Tasks Default Stack Size</code></td></tr>
+            <tr><td><var>General</var><a href="#ti_ndk_General_kernPriLevel"><code>.kernPriLevel</code></a><code> = 9;</code></td><td><code>// Kernel Priority Level</code></td></tr>
+            <tr><td><var>General</var><a href="#ti_ndk_General_stackThreadUser"><code>.stackThreadUser</code></a><code> = '';</code></td><td><code>// User NDK thread function</code></td></tr>
+            <tr><td><var>General</var><a href="#ti_ndk_General_enableCodeGeneration"><code>.enableCodeGeneration</code></a><code> = true;</code></td><td><code>// Enable Code Generation</code></td></tr>
+          </table>
+          <hr />
+        </div> <!-- end Configuration_Options summary -->
+        <div id="General_Module_Configuration_Options">
+          <h2 class="groupheader" title="Options that apply to the General driver as a whole">General Module Configuration Options</h2>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_ndk_General_ipv6"></a>Enable IPv6 support
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Module parameter's script
+                 name and its default value">
+                 [<var>General</var><code>.ipv6 = false]</code>
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> When selected, the IPv6 version of the NDK libraries will be used, otherwise the IPv4 versions will be used.<p />
+            </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_ndk_General_hostname"></a>Hostname
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Module parameter's script
+                 name and its default value">
+                 [<var>General</var><code>.hostname = 'tisoc']</code>
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> <p /><p>Add our device hostname to configuration (to be claimed in all connected domains)</p>
+<p>This translates directly into the following runtime call to
+<a href="html/group__ti__ndk__inc__nettools__inc____Cfg.html#ga72795e289e7a5e347b54b94f40667dc2">CfgAddEntry()</a>.</p>
+<pre><code>unsigned char *hostname = YOUR_CONFIGURED_VALUE;
+
+CfgAddEntry(hCfg, CFGTAG_SYSINFO, CFGITEM_DHCP_HOSTNAME, 0,
+             strlen(hostname), hostname, 0);</code></pre>
+            </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_ndk_General_maxNumSocks"></a>Maximum Number of Sockets
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Module parameter's script
+                 name and its default value">
+                 [<var>General</var><code>.maxNumSocks = 10]</code>
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> Determine the size of the socket file descriptor table<p />
+            </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_ndk_General_localIPAddrConfig"></a>Local IP Address Configuration
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Module parameter's script
+                 name and its default value">
+                 [<var>General</var><code>.localIPAddrConfig = 'Use DHCP to Obtain IP Address']</code>
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> <p />
+              <p style="margin-bottom:2px;">Valid options include the following:</p>
+              <table style="margin-left:35px">
+  <tr><td style="padding:10px;vertical-align: top"><code>'Use DHCP to Obtain IP Address'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'Enable Static IP Address'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'Do Not Configure an IP Address'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+</table><p />
+            </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_ndk_General_staticIPAddr"></a>Static IP Address
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Module parameter's script
+                 name and its default value">
+                 [<var>General</var><code>.staticIPAddr = '0.0.0.0']</code>
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> This setting has been moved to the NDK Interface module<p />
+            </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_ndk_General_ipMask"></a>IP Mask
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Module parameter's script
+                 name and its default value">
+                 [<var>General</var><code>.ipMask = '255.255.255.0']</code>
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> This setting has been moved to the NDK Interface module<p />
+            </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_ndk_General_gatewayIpAddr"></a>Gateway IP Address
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Module parameter's script
+                 name and its default value">
+                 [<var>General</var><code>.gatewayIpAddr = '0.0.0.0']</code>
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> This setting has been moved to the NDK Interface module<p />
+            </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_ndk_General_domainName"></a>Domain Name
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Module parameter's script
+                 name and its default value">
+                 [<var>General</var><code>.domainName = 'demo.net']</code>
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> This setting has been moved to the NDK Interface module<p />
+            </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_ndk_General_dhcpcServReportFxn"></a>Service Report Function Used by DHCP
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Module parameter's script
+                 name and its default value">
+                 [<var>General</var><code>.dhcpcServReportFxn = '']</code>
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> This setting has been moved to the NDK Interface module<p />
+            </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_ndk_General_tcpTxBufSize"></a>TCP Transmit Buffer Size
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Module parameter's script
+                 name and its default value">
+                 [<var>General</var><code>.tcpTxBufSize = 8192]</code>
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> Default TCP send buffer size (bytes)<p /><p>Sets the default size (in bytes) of the TCP send buffer</p>
+<p>This translates directly into the following runtime call to
+<a href="html/group__ti__ndk__inc__nettools__inc____Cfg.html#ga72795e289e7a5e347b54b94f40667dc2">CfgAddEntry()</a>.</p>
+<pre><code>uint32_t transmitBufSize = YOUR_CONFIGURED_VALUE;
+
+CfgAddEntry(hCfg, CFGTAG_IP, CFGITEM_IP_SOCKTCPTXBUF, CFG_ADDMODE_UNIQUE,
+        sizeof(uint32_t), (unsigned char *)&amp;transmitBufSize, NULL);</code></pre>
+            </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_ndk_General_tcpRxBufSize"></a>TCP Receive Buffer Size (Copy Mode)
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Module parameter's script
+                 name and its default value">
+                 [<var>General</var><code>.tcpRxBufSize = 8192]</code>
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> Default TCP receive size (bytes)<p /><p>Sets the default size (in bytes) of the TCP receive buffer</p>
+<p>This translates directly into the following runtime call to
+<a href="html/group__ti__ndk__inc__nettools__inc____Cfg.html#ga72795e289e7a5e347b54b94f40667dc2">CfgAddEntry()</a>.</p>
+<pre><code>uint32_t receiveBufSize = YOUR_CONFIGURED_VALUE;
+
+CfgAddEntry(hCfg, CFGTAG_IP, CFGITEM_IP_SOCKTCPRXBUF, CFG_ADDMODE_UNIQUE,
+        sizeof(uint32_t), (unsigned char *)&amp;receiveBufSize, NULL);</code></pre>
+            </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_ndk_General_tcpRxBufLimit"></a>TCP Receive Size Maximum (Non-Copy Mode)
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Module parameter's script
+                 name and its default value">
+                 [<var>General</var><code>.tcpRxBufLimit = 8192]</code>
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> Default maximum TCP receive size (bytes)<p /><p>Sets the default size (in bytes) of the maximum TCP receive buffer</p>
+<p>This translates directly into the following runtime call to
+<a href="html/group__ti__ndk__inc__nettools__inc____Cfg.html#ga72795e289e7a5e347b54b94f40667dc2">CfgAddEntry()</a>.</p>
+<pre><code>uint32_t receiveBufLimit = YOUR_CONFIGURED_VALUE;
+
+CfgAddEntry(hCfg, CFGTAG_IP, CFGITEM_IP_SOCKTCPRXLIMIT, CFG_ADDMODE_UNIQUE,
+        sizeof(uint32_t), (unsigned char *)&amp;receiveBufLimit, NULL);</code></pre>
+            </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_ndk_General_udpRxBufSize"></a>UDP Receive Buffer Size
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Module parameter's script
+                 name and its default value">
+                 [<var>General</var><code>.udpRxBufSize = 8192]</code>
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> <p /><p>Sets the default size (in bytes) of the maximum UDP receive buffer</p>
+<p>This translates directly into the following runtime call to
+<a href="html/group__ti__ndk__inc__nettools__inc____Cfg.html#ga72795e289e7a5e347b54b94f40667dc2">CfgAddEntry()</a>.</p>
+<pre><code>uint32_t udpRxBufSize = YOUR_CONFIGURED_VALUE;
+
+CfgAddEntry(hCfg, CFGTAG_IP, CFGITEM_IP_SOCKUDPRXLIMIT, CFG_ADDMODE_UNIQUE,
+        sizeof(uint32_t), (unsigned char *)&amp;udpRxBufSize, NULL);</code></pre>
+            </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_ndk_General_beginHook"></a>Network Stack Begin Callback
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Module parameter's script
+                 name and its default value">
+                 [<var>General</var><code>.beginHook = '']</code>
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> Callback run when the NDK stack thread begins<p /><p>Optional user defined callback function, called from the NDK stack
+thread, at the very beginning of the stack thread&#39;s execution.  This
+callback is called before the call to NC_SystemOpen(). It will not be
+passed any arguments.</p>
+<p>For more information on stack thread callbacks see the
+<a href="ug/ug_ndk/03_network-application-development.html#global-hook-configuration">NDK User&#39;s Guide</a>.</p>
+
+            </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_ndk_General_initHook"></a>Network Stack Initialization Callback
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Module parameter's script
+                 name and its default value">
+                 [<var>General</var><code>.initHook = '']</code>
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> Callback run when the NDK stack initializes<p /><p>Optional user defined callback function, called from the NDK stack
+thread, as the stack thread is initializing.  This callback is called
+immediately after the stack thread has created a new configuration,
+CfgNew(), and will be passed the handle to that configuration</p>
+<p>For more information on stack thread callbacks see the
+<a href="ug/ug_ndk/03_network-application-development.html#global-hook-configuration">NDK User&#39;s Guide</a>.</p>
+
+            </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_ndk_General_rebootHook"></a>Network Stack Reboot Callback
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Module parameter's script
+                 name and its default value">
+                 [<var>General</var><code>.rebootHook = '']</code>
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> Callback run when the NDK stack is about to reboot<p /><p>Optional user defined callback function, called from the NDK stack
+thread, when the stack is about to reboot. This function will run
+immediately after the return from NC_NetStart() and within the while()
+loop which contains the NC_NetStart() call. It will be passed a handle
+to the configuration as well as the valued returned from NC_NetStart.</p>
+<p>For more information on stack thread callbacks see the
+<a href="ug/ug_ndk/03_network-application-development.html#global-hook-configuration">NDK User&#39;s Guide</a>.</p>
+
+            </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_ndk_General_deleteHook"></a>Network Stack Delete Callback
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Module parameter's script
+                 name and its default value">
+                 [<var>General</var><code>.deleteHook = '']</code>
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> Callback run when the stack is about to be deleted<p /><p>Optional user defined callback function, called from the NDK stack
+thread, when the stack is about to be destroyed. This function will
+run immediately after exiting from the while() loop which contains the
+call to NC_NetStart(), but before the subsequent calls to
+CfgFree(hCfg) and NC_SystemClose(). It will be passed a handle to the
+configuration as well as the valued returned from NC_NetStart.</p>
+<p>For more information on stack thread hooks see the
+<a href="ug/ug_ndk/03_network-application-development.html#global-hook-configuration">NDK User&#39;s Guide</a>.</p>
+
+            </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_ndk_General_networkOpenHook"></a>Network Start Callback
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Module parameter's script
+                 name and its default value">
+                 [<var>General</var><code>.networkOpenHook = '']</code>
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> Callback run when the network starts<p /><p>Optional &quot;Network Start&quot; callback, called when the stack is ready to
+begin the creation of any application supplied network tasks.</p>
+<p>Note that this callback is called during the early stages of the stack
+startup, and must return in order for the stack to resume operations. It is
+not passed any arguments.</p>
+<p>This callback is internally passed, as the NetStartCb argument, to
+NC_NetStart() in the config-generated stack thread.  For more information,
+see the
+<a href="../ndk/html/group__ti__ndk__inc__netctrl__NC.html#gaa3e76836e265a4dfc7e7f58b9c9c5d85">NDK API Reference on NC_NetStart()</a>.</p>
+
+            </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_ndk_General_networkCloseHook"></a>Network Stop Callback
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Module parameter's script
+                 name and its default value">
+                 [<var>General</var><code>.networkCloseHook = '']</code>
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> Callback run when the network stops<p /><p>Optional &quot;Network Stop&quot; callback, called when the stack is about to shut down.
+It is not passed any arguments.</p>
+<p>This callback is internally passed, as the NetStopCb argument, to
+NC_NetStart() in the config-generated stack thread.  For more information,
+see the
+<a href="../ndk/html/group__ti__ndk__inc__netctrl__NC.html#gaa3e76836e265a4dfc7e7f58b9c9c5d85">NDK API Reference on NC_NetStart()</a>.</p>
+
+            </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_ndk_General_networkIPAddrHook"></a>Network IP Address Callback
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Module parameter's script
+                 name and its default value">
+                 [<var>General</var><code>.networkIPAddrHook = '']</code>
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> Callback run for network IP address changes<p /><p>Optional &quot;IP Address&quot; callback, called when an IP address is added to,
+or removed from, the system. It is passed IPAddr, IfIdx, fAdd arguments.</p>
+<p>This callback is internally passed, as the NetIPCb argument, to
+NC_NetStart() in the config-generated stack thread.  For more information,
+see the
+<a href="../ndk/html/group__ti__ndk__inc__netctrl__NC.html#gaa3e76836e265a4dfc7e7f58b9c9c5d85">NDK API Reference on NC_NetStart()</a>.</p>
+
+            </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_ndk_General_numPBMFrames"></a>Number of PBM Frames
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Module parameter's script
+                 name and its default value">
+                 [<var>General</var><code>.numPBMFrames = 10]</code>
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> Packet Buffer Manager (PBM) number of frames<p /><p>Sets the number of frames in the Packet Buffer Manager</p>
+<p>For more information on the Packet Buffer Manager see the
+<a href="ug/ug_ndk/stack.html#packet-buffer-manager-pbm-c">NDK User&#39;s Guide</a>.</p>
+
+            </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_ndk_General_pbmFrameBufSize"></a>PBM Frame Buffer Size
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Module parameter's script
+                 name and its default value">
+                 [<var>General</var><code>.pbmFrameBufSize = 1536]</code>
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> Packet Buffer Manager (PBM) frame buffer size, in bytes.<p /><p>Sets the frame buffer size in the Packet Buffer Manager</p>
+<p>For more information on the Packet Buffer Manager see the
+<a href="ug/ug_ndk/stack.html#packet-buffer-manager-pbm-c">NDK User&#39;s Guide</a>.</p>
+
+            </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_ndk_General_pbmDataSection"></a>PBM Data Section
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Module parameter's script
+                 name and its default value">
+                 [<var>General</var><code>.pbmDataSection = '.bss:NDK_PACKETMEM']</code>
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> Packet Buffer Manager (PBM) buffer data section<p /><p>Defines the memory section used to place the the PBM frame buffer array.</p>
+<p>For more information on the Packet Buffer Manager see the
+<a href="ug/ug_ndk/stack.html#packet-buffer-manager-pbm-c">NDK User&#39;s Guide</a>.</p>
+
+            </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_ndk_General_pageSize"></a>Page Size
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Module parameter's script
+                 name and its default value">
+                 [<var>General</var><code>.pageSize = 3072]</code>
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> Memory Manager page size in bytes<p /><p>Sets the page size for the NDK&#39;s memory allocation system.</p>
+<p>For more information on the memory allocation system see the
+<a href="ug/ug_ndk/05_os-adaptation-layer.html#memory-allocation-system-mem-c">NDK User&#39;s Guide</a>.</p>
+
+            </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_ndk_General_numPages"></a>Number of Pages
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Module parameter's script
+                 name and its default value">
+                 [<var>General</var><code>.numPages = 6]</code>
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> Memory Manager page count<p /><p>Sets the number of pages for the NDK&#39;s memory allocation system.</p>
+<p>For more information on the memory allocation system see the
+<a href="ug/ug_ndk/05_os-adaptation-layer.html#memory-allocation-system-mem-c">NDK User&#39;s Guide</a>.</p>
+
+            </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_ndk_General_bufDataSection"></a>Buffer Data Section
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Module parameter's script
+                 name and its default value">
+                 [<var>General</var><code>.bufDataSection = '.bss:NDK_MMBUFFER']</code>
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> Memory Manager buffer data section<p /><p>Defines the memory section used to place the Memory Manager&#39;s allocation pool
+buffer</p>
+<p>For more information on the memory allocation system see the
+<a href="ug/ug_ndk/05_os-adaptation-layer.html#memory-allocation-system-mem-c">NDK User&#39;s Guide</a>.</p>
+
+            </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_ndk_General_enableExtDNS"></a>Enable External DNS Server
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Module parameter's script
+                 name and its default value">
+                 [<var>General</var><code>.enableExtDNS = false]</code>
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> Allow manually configuring the external DNS server<p /><p>Enable this option if you would like to manually configure an external DNS
+server rather than receiving one from the DHCP client.</p>
+<p>Selecting this option will unlock the
+<a href="#ti_ndk_General_enableExtDNS">External DNS Server IP Address</a> option.</p>
+
+            </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_ndk_General_externDNSServIPAddr"></a>External DNS Server IP Address
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Module parameter's script
+                 name and its default value">
+                 [<var>General</var><code>.externDNSServIPAddr = '0.0.0.0']</code>
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> Used to specify an external DNS Server.<p /><p>Use this to specify which external DNS server to use.</p>
+<p>This generates the code detailed in the Statically Defined DNS Server section
+of the
+<a href="ug/ug_ndk/03_network-application-development.html#using-a-statically-defined-dns-server">NDK User&#39;s Guide</a>.
+Note that you are responsible for writing the code in the DHCP Client&#39;s Service
+Report Function.</p>
+
+            </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_ndk_General_netTaskSchedulerTaskPri"></a>Network Task Scheduler Task Priority
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Module parameter's script
+                 name and its default value">
+                 [<var>General</var><code>.netTaskSchedulerTaskPri = 'NC_PRIORITY_LOW']</code>
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> The priority level at which the NDK net scheduler task runs.<p /><p>Set the NDK scheduler Task&#39;s priority relative to other networking Tasks in
+the system.</p>
+<p>This translates directly into the following runtime call to
+<a href="html/group__ti__ndk__inc__netctrl__NC.html#ga07a431ba384014587a24666c8532f505">NC_SystemOpen()</a>.</p>
+<pre><code>int priority = YOUR_CONFIGURED_VALUE;
+
+rc = NC_SystemOpen(priority, NC_OPMODE_INTERRUPT );</code></pre>
+              <p style="margin-bottom:2px;">Valid options include the following:</p>
+              <table style="margin-left:35px">
+  <tr><td style="padding:10px;vertical-align: top"><code>'NC_PRIORITY_LOW'</code></td><td style="padding:10px"><code>Low Priority</code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'NC_PRIORITY_HIGH'</code></td><td style="padding:10px"><code>High Priority</code></td><td style="padding:10px"></td></tr>
+</table><p />
+            </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_ndk_General_ndkTickPeriod"></a>NDK Tick Period
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Module parameter's script
+                 name and its default value">
+                 [<var>General</var><code>.ndkTickPeriod = 100]</code>
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> Tick period in clock ticks for the NDK heartbeat.<p /><p>Lets you adjust the NDK heartbeat rate</p>
+<p>The default is 100ms, and is created with POSIX apis, so it will function the
+same in both TIRTOS and FreeRTOS.</p>
+
+            </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_ndk_General_netSchedulerOpMode"></a>Network Scheduler Operating Mode
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Module parameter's script
+                 name and its default value">
+                 [<var>General</var><code>.netSchedulerOpMode = 'NC_OPMODE_INTERRUPT']</code>
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> The manner at which the NDK net scheduler task runs.<p /><p>Set to either Polling Mode (NC_OPMODE_POLLING) or Interrupt Mode
+(NC_OPMODE_INTERRUPT), and determines when the scheduler attempts to execute.
+Interrupt mode is used in the vast majority of applications. Note that
+polling mode attempts to run continuously, so when polling is used, a low
+priority must be used.</p>
+<p>This translates directly into the following runtime call to
+<a href="html/group__ti__ndk__inc__netctrl__NC.html#ga07a431ba384014587a24666c8532f505">NC_SystemOpen()</a>.</p>
+<pre><code>int mode = YOUR_CONFIGURED_VALUE;
+
+rc = NC_SystemOpen(NC_PRIORITY_HIGH, mode);</code></pre>
+              <p style="margin-bottom:2px;">Valid options include the following:</p>
+              <table style="margin-left:35px">
+  <tr><td style="padding:10px;vertical-align: top"><code>'NC_OPMODE_POLLING'</code></td><td style="padding:10px"><code>Polling</code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'NC_OPMODE_INTERRUPT'</code></td><td style="padding:10px"><code>Interrupt</code></td><td style="padding:10px"></td></tr>
+</table><p />
+            </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_ndk_General_stackThreadPriLevel"></a>Stack Thread Priority Level
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Module parameter's script
+                 name and its default value">
+                 [<var>General</var><code>.stackThreadPriLevel = 5]</code>
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> <p /><p>Sets the priority of the generated NDK task ndkStackThread()</p>
+<p>This function will ultimately startup the stack</p>
+
+            </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_ndk_General_ndkThreadStkSize"></a>Stack Thread Stack Size
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Module parameter's script
+                 name and its default value">
+                 [<var>General</var><code>.ndkThreadStkSize = 8192]</code>
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> Stack size, in bytes, of the generated NDK task ndkStackThread()<p /><p>Sets the stack size of the generated NDK task ndkStackThread()</p>
+<p>This function will ultimately startup the stack</p>
+
+            </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_ndk_General_lowPriTaskPriLevel"></a>Low Priority Tasks Priority Level
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Module parameter's script
+                 name and its default value">
+                 [<var>General</var><code>.lowPriTaskPriLevel = 3]</code>
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> Sets the priority value for low priority NDK tasks.<p /><p>Allows you to configure the priority level for network tasks</p>
+<p>Set the priority for the macro OS_TASKPRILOW that is used in the call to
+<a href="NDK_API_Reference.html#taskcreate-create-a-task-thread">TaskCreate()</a>.</p>
+<p>For more information on NDK task priorities see the
+<a href="ug/ug_ndk/03_network-application-development.html#priority-levels-for-network-tasks">NDK User&#39;s Guide</a>.</p>
+
+            </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_ndk_General_lowPriTaskDefStkSize"></a>Low Priority Tasks Default Stack Size
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Module parameter's script
+                 name and its default value">
+                 [<var>General</var><code>.lowPriTaskDefStkSize = 3072]</code>
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> Set the default stack size, in bytes, for low priority NDK tasks.<p /><p>Allows you to configure the stack size for network tasks</p>
+<p>Set the priority for the macro OS_TASKSTKLOW that is used in the call to
+<a href="NDK_API_Reference.html#taskcreate-create-a-task-thread">TaskCreate()</a>.</p>
+
+            </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_ndk_General_normPriTaskPriLevel"></a>Normal Priority Tasks Priority Level
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Module parameter's script
+                 name and its default value">
+                 [<var>General</var><code>.normPriTaskPriLevel = 5]</code>
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> Sets the priority value for normal priority NDK tasks.<p /><p>Allows you to configure the priority level for network tasks</p>
+<p>Set the priority for the macro OS_TASKPRINORM that is used in the call to
+<a href="NDK_API_Reference.html#taskcreate-create-a-task-thread">TaskCreate()</a>.</p>
+<p>For more information on NDK task priorities see the
+<a href="ug/ug_ndk/03_network-application-development.html#priority-levels-for-network-tasks">NDK User&#39;s Guide</a>.</p>
+
+            </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_ndk_General_normPriTaskDefStkSize"></a>Normal Priority Tasks Default Stack Size
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Module parameter's script
+                 name and its default value">
+                 [<var>General</var><code>.normPriTaskDefStkSize = 4096]</code>
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> Set the default stack size, in bytes, for normal priority NDK tasks.<p /><p>Allows you to configure the stack size for network tasks</p>
+<p>Set the priority for the macro OS_TASKSTKNORM that is used in the call to
+<a href="NDK_API_Reference.html#taskcreate-create-a-task-thread">TaskCreate()</a>.</p>
+
+            </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_ndk_General_highPriTaskPriLevel"></a>High Priority Tasks Priority Level
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Module parameter's script
+                 name and its default value">
+                 [<var>General</var><code>.highPriTaskPriLevel = 7]</code>
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> Sets the priority value for high priority NDK tasks.<p /><p>Allows you to configure the priority level for network tasks</p>
+<p>Set the priority for the macro OS_TASKPRIHIGH that is used in the call to
+<a href="NDK_API_Reference.html#taskcreate-create-a-task-thread">TaskCreate()</a>.</p>
+<p>For more information on NDK task priorities see the
+<a href="ug/ug_ndk/03_network-application-development.html#priority-levels-for-network-tasks">NDK User&#39;s Guide</a>.</p>
+
+            </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_ndk_General_highPriTaskDefStkSize"></a>High Priority Tasks Default Stack Size
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Module parameter's script
+                 name and its default value">
+                 [<var>General</var><code>.highPriTaskDefStkSize = 5120]</code>
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> Set the default stack size, in bytes, for high priority NDK tasks.<p /><p>Allows you to configure the stack size for network tasks</p>
+<p>Set the priority for the macro OS_TASKSTKHIGH that is used in the call to
+<a href="NDK_API_Reference.html#taskcreate-create-a-task-thread">TaskCreate()</a>.</p>
+
+            </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_ndk_General_kernPriLevel"></a>Kernel Priority Level
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Module parameter's script
+                 name and its default value">
+                 [<var>General</var><code>.kernPriLevel = 9]</code>
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> Sets the value for NDK kernel priority<p /><p>Allows you to configure the NDK kernel level priority.</p>
+<p>Note that this only applies when the stack is configured to use priority
+exclusion (not semaphores).</p>
+<p>Tasks enter kernel mode during an llEnter()/llExit() block, during
+which their priority will be raised to the level specified in this
+configuration parameter.</p>
+<p>For more information on llEnter()/llExit(). See the
+<a href="ug/ug_ndk/05_os-adaptation-layer.html#choosing-the-llenter-llexit-exclusion-method">NDK User&#39;s Guide</a>.</p>
+
+            </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_ndk_General_stackThreadUser"></a>User NDK thread function
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Module parameter's script
+                 name and its default value">
+                 [<var>General</var><code>.stackThreadUser = '']</code>
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> Example: User_stackThreadFxn<p /><p>User defined stack function that will run instead of the generated
+ndkStackThread.</p>
+<p>Only use your own stack thread if you do not want any of the generated SysConfig
+content involved with starting up the stack.</p>
+<p>If set, the user is responsible for defining the NDK stack thread, which has
+no return value and has two parameters of type uintptr_t.</p>
+<p>For example (C code):</p>
+<p>  void MYMODULE_stackThreadUser(uintptr_t arg0, uintptr_t arg1);</p>
+<p>The user is also responsible for creating the RTOS Clock
+instance for the NDK 100ms heartbeat, calling appropriate NC_* APIs,
+and adding the appropriate C run time configuration code that matches
+the settings of the BIOS config file in the function. (e.g. if
+configuring the Ip module, the stack thread must call NC_SystemOpen(),
+&#39;ti_ndk_config_ip_init(hCfg)&#39;, etc.).</p>
+<p>For more information on the requirements for a user stack thread see the
+<a href="ug/ug_ndk/03_network-application-development.html#constructing-a-configuration-for-a-static-ip-and-gateway">NDK User&#39;s Guide</a></p>
+
+            </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_ndk_General_enableCodeGeneration"></a>Enable Code Generation
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Module parameter's script
+                 name and its default value">
+                 [<var>General</var><code>.enableCodeGeneration = true]</code>
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> Generate NDK stack thread and C configuration code<p /><p>Only disable this if you know what you are doing. Disableing will prevent any
+of the NDK stack thread from generating.</p>
+<p>This setting is similar to the &quot;User NDK thread function&quot; setting, except it
+will not even generate the code to start a stack thread.</p>
+
+            </div>
+          </div>
+          <hr />
+        </div> <!-- end Module_Configuration_Options -->
+
+        <div id="NIMU_Description">
+          <h1 class="headertitle" title="NIMU Description">NIMU: NDK NIMU Config</h1>
+<p>This module configures the
+<a href="../../../ndk/ug/ug_ndk/stack.html#nimu-device-table">NIMU Device Table</a> by enumerating all
+your desired network interfaces into the table. This table is required for any
+NDK application.</p>
+<p>You can also configure the IP Options for each NDK Interface here.</p>
+<p>If you have already defined <code>NIMU_DEVICE_TABLE_ENTRY  NIMUDeviceTable[]</code> in
+your application code you do not need to use this module, however you will also
+have to manually configure each table entry&#39;s IP Options.</p>
+
+          <hr />
+        </div> <!-- end NIMU_Description -->
+        <div id="NIMU_Configuration_Options">
+          <h2 class="groupheader" title="Summary of all NIMU configuration options">NIMU Configuration Synopsis_Lines</h2>
+          <table style="margin-left:35px">
+            <tr><td><var>inst</var><a href="#ti_ndk_NIMU_$name"><code>.$name</code></a><code> = 'CONFIG_NIMU_{num}';</code></td><td><code>// Name</code></td></tr>
+            <tr><td><var>inst</var><a href="#ti_ndk_NIMU_device"><code>.device</code></a><code> = 'EMAC';</code></td><td><code>// Device</code></td></tr>
+            <tr><td><var>inst</var><a href="#ti_ndk_NIMU_custom"><code>.custom</code></a><code> = '';</code></td><td><code>// Custom NIMU .init function</code></td></tr>
+            <tr><td><var>inst</var><a href="#ti_ndk_NIMU_localIPAddrConfig"><code>.localIPAddrConfig</code></a><code> = 'Use DHCP to Obtain IP Address';</code></td><td><code>// Local IP Address Configuration</code></td></tr>
+            <tr><td><var>inst</var><a href="#ti_ndk_NIMU_staticIPAddr"><code>.staticIPAddr</code></a><code> = '0.0.0.0';</code></td><td><code>// Static IP Address</code></td></tr>
+            <tr><td><var>inst</var><a href="#ti_ndk_NIMU_ipMask"><code>.ipMask</code></a><code> = '255.255.255.0';</code></td><td><code>// IP Mask</code></td></tr>
+            <tr><td><var>inst</var><a href="#ti_ndk_NIMU_gatewayIpAddr"><code>.gatewayIpAddr</code></a><code> = '0.0.0.0';</code></td><td><code>// Gateway IP Address</code></td></tr>
+            <tr><td><var>inst</var><a href="#ti_ndk_NIMU_domainName"><code>.domainName</code></a><code> = 'demo.net';</code></td><td><code>// Domain Name</code></td></tr>
+            <tr><td><var>inst</var><a href="#ti_ndk_NIMU_dhcpcServReportFxn"><code>.dhcpcServReportFxn</code></a><code> = '';</code></td><td><code>// Service Report Function used by DHCP</code></td></tr>
+          </table>
+          <hr />
+        </div> <!-- end Configuration_Options summary -->
+
+        <div id="NIMU_Instance_Configuration_Options">
+          <h2 class="groupheader" title="Options that are separately set for each added NIMU instance">NIMU Instance Configuration Options</h2>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_ndk_NIMU_$name"></a>Name
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Instance parameter's script
+                 name and its default value">
+                 [<var>inst</var><code>.$name = 'CONFIG_NIMU_{num}'</code>]
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> NIMU Name<p />
+           </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_ndk_NIMU_device"></a>Device
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Instance parameter's script
+                 name and its default value">
+                 [<var>inst</var><code>.device = 'EMAC'</code>]
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> Choose the desired interface<p /><p>Choose the desired interface:</p>
+<p><strong>EMAC</strong> - Automatically selects the NIMU EMAC driver for your device</p>
+<p><strong>Custom</strong> - Allows you to manually specify the <code>.init</code> function for a
+NIMU driver.</p>
+<p>This option is equivalent to creating a NIMU Device Table entry and setting
+its .init member.</p>
+<p>For more information on NIMU Device Table entries see the
+<a href="ug/ug_ndk/stack.html#nimu-device-table">NDK User&#39;s Guide</a></p>
+
+              <p style="margin-bottom:2px;">Valid options include the following:</p>
+              <table style="margin-left:35px">
+  <tr><td style="padding:10px;vertical-align: top"><code>'EMAC'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'Custom'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+</table><p />
+           </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_ndk_NIMU_custom"></a>Custom NIMU .init function
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Instance parameter's script
+                 name and its default value">
+                 [<var>inst</var><code>.custom = ''</code>]
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> Name of the user made .init function to place in the NIMU Device Table<p /><p>Name of the user made .init function to place in the NIMU Device Table.
+The .init function must be defined in the application code.</p>
+<p>This option is equivalent to setting the .init member of a NIMU Device
+Table entry. .init must point to a valid init function in a NIMU driver.</p>
+<p>For more information on NIMU drivers visit the
+<a href="ug/ug_ndk/stack.html#network-interface-manager-unit-nimu">NDK User&#39;s Guide</a></p>
+
+           </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_ndk_NIMU_localIPAddrConfig"></a>Local IP Address Configuration
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Instance parameter's script
+                 name and its default value">
+                 [<var>inst</var><code>.localIPAddrConfig = 'Use DHCP to Obtain IP Address'</code>]
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> <p /><p>The method to obtain an IP address.</p>
+
+              <p style="margin-bottom:2px;">Valid options include the following:</p>
+              <table style="margin-left:35px">
+  <tr><td style="padding:10px;vertical-align: top"><code>'Use DHCP to Obtain IP Address'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'Enable Static IP Address'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'Do Not Configure an IP Address'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+</table><p />
+           </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_ndk_NIMU_staticIPAddr"></a>Static IP Address
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Instance parameter's script
+                 name and its default value">
+                 [<var>inst</var><code>.staticIPAddr = '0.0.0.0'</code>]
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> Enter a valid address for static IP configuration<p /><p>The static IPv4 address to be used.</p>
+<p>The IP Mask must be set in conjunction with this setting.
+This translates directly into the following runtime call to.
+<a href="html/group__ti__ndk__inc__nettools__inc____Cfg.html#ga72795e289e7a5e347b54b94f40667dc2">CfgAddEntry()</a>.</p>
+<pre><code>char *LocalIPAddr = YOUR_CONFIGURED_ADDRESS_VALUE;
+char *LocalIPMask = YOUR_CONFIGURED_MASK_VALUE;
+char *DomainName  = YOUR_CONFIGURED_DOMAIN_VALUE;
+
+/* setup manual IP address */
+memset(&amp;NA, 0, sizeof(NA));
+NA.IPAddr = inet_addr(LocalIPAddr);
+NA.IPMask = inet_addr(LocalIPMask);
+strcpy(NA.Domain, DomainName);
+NA.NetType = 0;
+
+CfgAddEntry(hCfg, CFGTAG_IPNET, 1, 0,
+        sizeof(CI_IPNET), (unsigned char *)&amp;NA, 0);</code></pre>
+           </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_ndk_NIMU_ipMask"></a>IP Mask
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Instance parameter's script
+                 name and its default value">
+                 [<var>inst</var><code>.ipMask = '255.255.255.0'</code>]
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> Must be specified when using a static IP address<p /><p>Used for manual/static IP configuration.  If configuring a static IP,
+this must be set to a valid ipMask value.</p>
+<p>The IP Mask must be set in conjunction with the static IP address setting.
+This translates directly into the following runtime call to.
+<a href="html/group__ti__ndk__inc__nettools__inc____Cfg.html#ga72795e289e7a5e347b54b94f40667dc2">CfgAddEntry()</a>.</p>
+<pre><code>char *LocalIPAddr = YOUR_CONFIGURED_ADDRESS_VALUE;
+char *LocalIPMask = YOUR_CONFIGURED_MASK_VALUE;
+char *DomainName  = YOUR_CONFIGURED_DOMAIN_VALUE;
+
+/* setup manual IP address */
+memset(&amp;NA, 0, sizeof(NA));
+NA.IPAddr = inet_addr(LocalIPAddr);
+NA.IPMask = inet_addr(LocalIPMask);
+strcpy(NA.Domain, DomainName);
+NA.NetType = 0;
+
+CfgAddEntry(hCfg, CFGTAG_IPNET, 1, 0,
+        sizeof(CI_IPNET), (unsigned char *)&amp;NA, 0);</code></pre>
+           </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_ndk_NIMU_gatewayIpAddr"></a>Gateway IP Address
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Instance parameter's script
+                 name and its default value">
+                 [<var>inst</var><code>.gatewayIpAddr = '0.0.0.0'</code>]
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> Must be specified when using a static IP address<p /><p>Used for manual/static IP configuration.  If configuring a static IP,
+this must be set to the IP address of the gateway.</p>
+<p>The gateway IP address must be set in conjunction with the static IP address setting.
+This translates directly into the following runtime call to.
+<a href="html/group__ti__ndk__inc__nettools__inc____Cfg.html#ga72795e289e7a5e347b54b94f40667dc2">CfgAddEntry()</a>.</p>
+<pre><code>char *GatewayIP = YOUR_CONFIGURED_VALUE;
+
+memset(&amp;RT, 0, sizeof(RT));
+RT.IPDestAddr = 0;
+RT.IPDestMask = 0;
+RT.IPGateAddr = inet_addr(GatewayIP);
+
+CfgAddEntry(hCfg, CFGTAG_ROUTE, 0, 0,
+        sizeof(CI_ROUTE), (unsigned char *)&amp;RT, 0);</code></pre>
+           </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_ndk_NIMU_domainName"></a>Domain Name
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Instance parameter's script
+                 name and its default value">
+                 [<var>inst</var><code>.domainName = 'demo.net'</code>]
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> Must be specified when using a static IP address<p /><p>Used for manual/static IP configuration.  If configuring a static IP,
+this must be set to the IP address of the gateway.</p>
+<p>The domain name must be set in conjunction with the static IP address setting.
+This translates directly into the following runtime call to.
+<a href="html/group__ti__ndk__inc__nettools__inc____Cfg.html#ga72795e289e7a5e347b54b94f40667dc2">CfgAddEntry()</a>.</p>
+<pre><code>char *LocalIPAddr = YOUR_CONFIGURED_ADDRESS_VALUE;
+char *LocalIPMask = YOUR_CONFIGURED_MASK_VALUE;
+char *DomainName  = YOUR_CONFIGURED_DOMAIN_VALUE;
+
+/* setup manual IP address */
+memset(&amp;NA, 0, sizeof(NA));
+NA.IPAddr = inet_addr(LocalIPAddr);
+NA.IPMask = inet_addr(LocalIPMask);
+strcpy(NA.Domain, DomainName);
+NA.NetType = 0;
+
+CfgAddEntry(hCfg, CFGTAG_IPNET, 1, 0,
+        sizeof(CI_IPNET), (unsigned char *)&amp;NA, 0);</code></pre>
+           </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_ndk_NIMU_dhcpcServReportFxn"></a>Service Report Function used by DHCP
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Instance parameter's script
+                 name and its default value">
+                 [<var>inst</var><code>.dhcpcServReportFxn = ''</code>]
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> DHCP client service reporting function<p /><p>Optional, user defined service report function to handle DHCP client
+reports. Note that multiple services (e.g. DNS Server and DHCP Client)
+can use the same service report function.  This function is needed if
+configuring an external DNS server.</p>
+<p>If set, this service report function must be provided by the application, and
+the function signature must match this prototype:</p>
+<pre><code>extern void userDHCPClientServReportFxn(uint32_t item, uint32_t status,
+        uint32_t report, void *h);</code></pre><p>Information on adding your own service report report function can be found in the
+<a href="ug/ug_ndk/03_network-application-development.html#adding-status-report-services">NDK User&#39;s Guide</a>.</p>
+<p>If you are configuring an external DNS server you will need to add the code
+detailed in the following
+<a href="ug/ug_ndk/03_network-application-development.html#using-a-statically-defined-dns-server">section</a>
+of the NDK User&#39;s Guide to the service report function.</p>
+
+           </div>
+          </div>
+          <hr />
+        </div> <!-- end Instance_Configuration_Options -->
+        <div id="DNS_Description">
+          <h1 class="headertitle" title="DNS Description">DNS: NDK Domain Name System (DNS) configuration</h1>
+<p>Create and configure DNS Server instances. Multiple DNS server instances are supported, but each one must be configured to have a unique IP address. This means only one instance can be bound to &quot;Any IP Address&quot;</p>
+
+          <hr />
+        </div> <!-- end DNS_Description -->
+        <div id="DNS_Configuration_Options">
+          <h2 class="groupheader" title="Summary of all DNS configuration options">DNS Configuration Synopsis_Lines</h2>
+          <table style="margin-left:35px">
+            <tr><td><var>inst</var><a href="#ti_ndk_DNS_setDNSSIP"><code>.setDNSSIP</code></a><code> = 'Any IP Address';</code></td><td><code>// Set DNS Server IP Address:</code></td></tr>
+            <tr><td><var>inst</var><a href="#ti_ndk_DNS_servReportFxn"><code>.servReportFxn</code></a><code> = '';</code></td><td><code>// Service Report Function</code></td></tr>
+          </table>
+          <hr />
+        </div> <!-- end Configuration_Options summary -->
+
+        <div id="DNS_Instance_Configuration_Options">
+          <h2 class="groupheader" title="Options that are separately set for each added DNS instance">DNS Instance Configuration Options</h2>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_ndk_DNS_setDNSSIP"></a>Set DNS Server IP Address:
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Instance parameter's script
+                 name and its default value">
+                 [<var>inst</var><code>.setDNSSIP = 'Any IP Address'</code>]
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> <p /><p>Use this option to choose which device IP address(es) the DNS server will
+bind itself too.</p>
+<p>Any IP Addresses - Binds the service to any IP address on the target.
+Equivalent to setting IP Address to &quot;0.0.0.0&quot;</p>
+<p>By Interface ID - Allows you to choose an interface ID, and the DNS Service
+will bind to whatever IP that interface receives.</p>
+<p>This setting manipulates the common argument structure for NDK services.
+It alters the Mode field documentated in
+<a href="NDK_API_Reference.html#common-argument-structure">NDK API Guide</a>.</p>
+
+              <p style="margin-bottom:2px;">Valid options include the following:</p>
+              <table style="margin-left:35px">
+  <tr><td style="padding:10px;vertical-align: top"><code>'Any IP Address'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'By NDK Interface'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+</table><p />
+           </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_ndk_DNS_servReportFxn"></a>Service Report Function
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Instance parameter's script
+                 name and its default value">
+                 [<var>inst</var><code>.servReportFxn = ''</code>]
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> DNS service reporting function.<p /><p>Optional, user defined service report function to handle DNS Server reports.
+Note that multiple services (e.g. DNS Server and DHCP Server) can use the
+same service report function.</p>
+<p>If set, this service report function must be provided by the application, and
+the function signature must match this prototype:</p>
+<pre><code>extern void userDNSServerServReportFxn(uint32_t item, uint32_t status,
+        uint32_t report, void *h);</code></pre><p>For more information on service report functions see the
+<a href="ug/ug_ndk/03_network-application-development.html#adding-status-report-services">NDK User&#39;s Guide</a>.</p>
+
+           </div>
+          </div>
+          <hr />
+        </div> <!-- end Instance_Configuration_Options -->
+        <div id="DHCP_Description">
+          <h1 class="headertitle" title="DHCP Description">DHCP: NDK DHCP Server configuration</h1>
+<p>Create and configure DHCP server instances. Multiple DHCP Server instances are supported, but each one must be configured to have a unique NDK Interface.</p>
+
+          <hr />
+        </div> <!-- end DHCP_Description -->
+        <div id="DHCP_Configuration_Options">
+          <h2 class="groupheader" title="Summary of all DHCP configuration options">DHCP Configuration Synopsis_Lines</h2>
+          <table style="margin-left:35px">
+            <tr><td><var>inst</var><a href="#ti_ndk_DHCP_reportLocalDomainName"><code>.reportLocalDomainName</code></a><code> = false;</code></td><td><code>// Report Local Domain Name</code></td></tr>
+            <tr><td><var>inst</var><a href="#ti_ndk_DHCP_reportLocalDNSS"><code>.reportLocalDNSS</code></a><code> = false;</code></td><td><code>// Report Ourselves as the Local DNS Server</code></td></tr>
+            <tr><td><var>inst</var><a href="#ti_ndk_DHCP_ifIdx"><code>.ifIdx</code></a><code> = 1;</code></td><td><code>// Interface ID</code></td></tr>
+            <tr><td><var>inst</var><a href="#ti_ndk_DHCP_ipAddrPoolBase"><code>.ipAddrPoolBase</code></a><code> = '192.168.1.2';</code></td><td><code>// IP Address Pool Base</code></td></tr>
+            <tr><td><var>inst</var><a href="#ti_ndk_DHCP_ipAddrPoolCount"><code>.ipAddrPoolCount</code></a><code> = '253';</code></td><td><code>// IP Address Pool Count</code></td></tr>
+            <tr><td><var>inst</var><a href="#ti_ndk_DHCP_servReportFxn"><code>.servReportFxn</code></a><code> = '';</code></td><td><code>// Service Report Function</code></td></tr>
+          </table>
+          <hr />
+        </div> <!-- end Configuration_Options summary -->
+
+        <div id="DHCP_Instance_Configuration_Options">
+          <h2 class="groupheader" title="Options that are separately set for each added DHCP instance">DHCP Instance Configuration Options</h2>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_ndk_DHCP_reportLocalDomainName"></a>Report Local Domain Name
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Instance parameter's script
+                 name and its default value">
+                 [<var>inst</var><code>.reportLocalDomainName = false</code>]
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> Report the local domain name assigned to the virtual network to clients (DHCPS_FLG_LOCALDOMAIN)<p /><p>Causes DHCPS to report the local domain name assigned to the virtual network to
+clients. If this flag is not set, DHCPS reports the public domain name to
+clients</p>
+<p>More information on the DHCP Server flags can be found in the
+<a href="NDK_API_Reference.html#dhcp-server-parameter-structure">NDK API Flag</a>.</p>
+
+           </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_ndk_DHCP_reportLocalDNSS"></a>Report Ourselves as the Local DNS Server
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Instance parameter's script
+                 name and its default value">
+                 [<var>inst</var><code>.reportLocalDNSS = false</code>]
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> Report ourselves as the local DNS server to clients (DHCPS_FLG_LOCALDNS)<p /><p>Causes DHCPS to report its own IP address as the local DNS server to clients.
+If this flag is not set, DHCPS reports the DNS servers as contained in the
+SYSINFO portion of the configuration.</p>
+<p>More information on the DHCP Server flags can be found in the
+<a href="NDK_API_Reference.html#dhcp-server-parameter-structure">NDK API Flag</a>.</p>
+
+           </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_ndk_DHCP_ifIdx"></a>Interface ID
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Instance parameter's script
+                 name and its default value">
+                 [<var>inst</var><code>.ifIdx = 1</code>]
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> The physical device index on which the DHCP server shall be executed. Must be greater than zero.<p />
+           </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_ndk_DHCP_ipAddrPoolBase"></a>IP Address Pool Base
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Instance parameter's script
+                 name and its default value">
+                 [<var>inst</var><code>.ipAddrPoolBase = '192.168.1.2'</code>]
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> The first IP address of the DHCP server address pool.<p /><p>The first IP address (in dotted decimal notation) of the address pool.</p>
+<p>More information on the DHCP Server Service can be found in the
+<a href="NDK_API_Reference.html#dhcp-server-service">NDK API Flag</a>.</p>
+
+           </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_ndk_DHCP_ipAddrPoolCount"></a>IP Address Pool Count
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Instance parameter's script
+                 name and its default value">
+                 [<var>inst</var><code>.ipAddrPoolCount = '253'</code>]
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> The number of IP addresses in the DHCP server address pool.<p /><p>The number of addresses in the address pool.</p>
+<p>More information on the DHCP Server Service can be found in the
+<a href="NDK_API_Reference.html#dhcp-server-service">NDK API Flag</a>.</p>
+
+           </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_ndk_DHCP_servReportFxn"></a>Service Report Function
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Instance parameter's script
+                 name and its default value">
+                 [<var>inst</var><code>.servReportFxn = ''</code>]
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> DHCP service reporting function.<p /><p>Optional, user defined service report function to handle DHCP Server reports.
+Note that multiple services (e.g. Telnet Server and DHCP Server) can use the
+same service report function.</p>
+<p>If set, this service report function must be provided by the application, and
+the function signature must match this prototype:</p>
+<pre><code>extern void userDHCPServerServReportFxn(uint32_t item, uint32_t status,
+        uint32_t report, void *h);</code></pre><p>For more information on service report functions see the
+<a href="ug/ug_ndk/03_network-application-development.html#adding-status-report-services">NDK User&#39;s Guide</a>.</p>
+
+           </div>
+          </div>
+          <hr />
+        </div> <!-- end Instance_Configuration_Options -->
+        <div id="NAT_Description">
+          <h1 class="headertitle" title="NAT Description">NAT: NDK NAT Service Configuration</h1>
+<p>Create and configure NAT Service. Only one NAT Service instance is supported. The NAT Service needs to be associated with a unique NDK Interface</p>
+
+          <hr />
+        </div> <!-- end NAT_Description -->
+        <div id="NAT_Configuration_Options">
+          <h2 class="groupheader" title="Summary of all NAT configuration options">NAT Configuration Synopsis_Lines</h2>
+          <table style="margin-left:35px">
+            <tr><td><var>inst</var><a href="#ti_ndk_NAT_virtualIpAddr"><code>.virtualIpAddr</code></a><code> = '0.0.0.0';</code></td><td><code>// Virtual IP Address</code></td></tr>
+            <tr><td><var>inst</var><a href="#ti_ndk_NAT_virtualIPMask"><code>.virtualIPMask</code></a><code> = '255.255.255.0';</code></td><td><code>// Virtual IP Mask</code></td></tr>
+            <tr><td><var>inst</var><a href="#ti_ndk_NAT_mtu"><code>.mtu</code></a><code> = '1500';</code></td><td><code>// MTU</code></td></tr>
+            <tr><td><var>inst</var><a href="#ti_ndk_NAT_servReportFxn"><code>.servReportFxn</code></a><code> = '';</code></td><td><code>// Service Report Function</code></td></tr>
+          </table>
+          <hr />
+        </div> <!-- end Configuration_Options summary -->
+
+        <div id="NAT_Instance_Configuration_Options">
+          <h2 class="groupheader" title="Options that are separately set for each added NAT instance">NAT Instance Configuration Options</h2>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_ndk_NAT_virtualIpAddr"></a>Virtual IP Address
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Instance parameter's script
+                 name and its default value">
+                 [<var>inst</var><code>.virtualIpAddr = '0.0.0.0'</code>]
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> Specifies the NAT group virtual network IP address.<p /><p>Sets the NAT Group virtual network address</p>
+<p>More information on the NAT Service can be found in the
+<a href="NDK_API_Reference.html#network-address-translation-nat-service">NDK API Guide</a>.</p>
+
+           </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_ndk_NAT_virtualIPMask"></a>Virtual IP Mask
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Instance parameter's script
+                 name and its default value">
+                 [<var>inst</var><code>.virtualIPMask = '255.255.255.0'</code>]
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> Specifies the subnet mask of the NAT group virtual network.<p /><p>Sets the subnet mask of NAT Group virtual network</p>
+<p>More information on the NAT Service can be found in the
+<a href="NDK_API_Reference.html#network-address-translation-nat-service">NDK API Guide</a>.</p>
+
+           </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_ndk_NAT_mtu"></a>MTU
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Instance parameter's script
+                 name and its default value">
+                 [<var>inst</var><code>.mtu = '1500'</code>]
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> Specifies the IP MTU limit.<p /><p>Sets the IP MTU Limit (1500 for Ethernet, 1492 for PPPoE, etc.)</p>
+<p>More information on the NAT Service can be found in the
+<a href="NDK_API_Reference.html#network-address-translation-nat-service">NDK API Guide</a>.</p>
+
+           </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_ndk_NAT_servReportFxn"></a>Service Report Function
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Instance parameter's script
+                 name and its default value">
+                 [<var>inst</var><code>.servReportFxn = ''</code>]
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> NAT Server service reporting function.<p /><p>Optional, user defined service report function to handle NAT Server reports.
+Note that multiple services (e.g. NAT Server and DHCP Server) can use the
+same service report function.</p>
+<p>If set, this service report function must be provided by the application, and
+the function signature must match this prototype:</p>
+<pre><code>extern void userNATServerServReportFxn(uint32_t item, uint32_t status,
+        uint32_t report, void *h);</code></pre><p>For more information on service report functions see the
+<a href="ug/ug_ndk/03_network-application-development.html#adding-status-report-services">NDK User&#39;s Guide</a>.</p>
+
+           </div>
+          </div>
+          <hr />
+        </div> <!-- end Instance_Configuration_Options -->
+        <div id="Telnet_Description">
+          <h1 class="headertitle" title="Telnet Description">Telnet: NDK Telnet configuration</h1>
+<p>Create and configure Telnet server instances. Multiple Telnet server instances are supported, but each one must be configured to have a unique port number.</p>
+
+          <hr />
+        </div> <!-- end Telnet_Description -->
+        <div id="Telnet_Configuration_Options">
+          <h2 class="groupheader" title="Summary of all Telnet configuration options">Telnet Configuration Synopsis_Lines</h2>
+          <table style="margin-left:35px">
+            <tr><td><var>inst</var><a href="#ti_ndk_Telnet_setTelnetIP"><code>.setTelnetIP</code></a><code> = 'Any IP Address';</code></td><td><code>// Set Telnet IP Address:</code></td></tr>
+            <tr><td><var>inst</var><a href="#ti_ndk_Telnet_maxCon"><code>.maxCon</code></a><code> = 8;</code></td><td><code>// Maximum Connections</code></td></tr>
+            <tr><td><var>inst</var><a href="#ti_ndk_Telnet_port"><code>.port</code></a><code> = 23;</code></td><td><code>// Port</code></td></tr>
+            <tr><td><var>inst</var><a href="#ti_ndk_Telnet_servReportFxn"><code>.servReportFxn</code></a><code> = '';</code></td><td><code>// Service Report Function</code></td></tr>
+            <tr><td><var>inst</var><a href="#ti_ndk_Telnet_callbackFxn"><code>.callbackFxn</code></a><code> = 'ConsoleOpen';</code></td><td><code>// Callback Function</code></td></tr>
+          </table>
+          <hr />
+        </div> <!-- end Configuration_Options summary -->
+
+        <div id="Telnet_Instance_Configuration_Options">
+          <h2 class="groupheader" title="Options that are separately set for each added Telnet instance">Telnet Instance Configuration Options</h2>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_ndk_Telnet_setTelnetIP"></a>Set Telnet IP Address:
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Instance parameter's script
+                 name and its default value">
+                 [<var>inst</var><code>.setTelnetIP = 'Any IP Address'</code>]
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> <p /><p>Use this option to choose which device IP address(es) the Telnet server will
+bind itself too.</p>
+<p>Any IP Addresses - Binds the service to any IP address on the target.
+Equivalent to setting the IP Address to &quot;0.0.0.0&quot;</p>
+<p>By NDK Interface - Allows you to choose an interface ID, and the Telnet Service
+will bind to whatever IP that interface receives.</p>
+<p>This setting manipulates the common argument structure for NDK services.
+It alters the Mode field documentated in
+<a href="NDK_API_Reference.html#common-argument-structure">NDK API Guide</a>.</p>
+
+              <p style="margin-bottom:2px;">Valid options include the following:</p>
+              <table style="margin-left:35px">
+  <tr><td style="padding:10px;vertical-align: top"><code>'Any IP Address'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+  <tr><td style="padding:10px;vertical-align: top"><code>'By NDK Interface'</code></td><td style="padding:10px"><code></code></td><td style="padding:10px"></td></tr>
+</table><p />
+           </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_ndk_Telnet_maxCon"></a>Maximum Connections
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Instance parameter's script
+                 name and its default value">
+                 [<var>inst</var><code>.maxCon = 8</code>]
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> The maximum number of connections for the telnet server (1 - 24).<p /><p>Sets the maximum number of connections allowed by the telnet server. Must fall
+between 1 and 24.</p>
+<p>More information on the Telnet Server Service can be found in the
+<a href="NDK_API_Reference.html#telnet-server-service">NDK API Guide</a>.</p>
+
+           </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_ndk_Telnet_port"></a>Port
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Instance parameter's script
+                 name and its default value">
+                 [<var>inst</var><code>.port = 23</code>]
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> The port number which this telnet server will accept connections.<p /><p>The port number that telnet will accept connections. Typically this port will
+be 23.</p>
+<p>More information on the Telnet Server Service can be found in the
+<a href="NDK_API_Reference.html#telnet-server-service">NDK API Guide</a>.</p>
+
+           </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_ndk_Telnet_servReportFxn"></a>Service Report Function
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Instance parameter's script
+                 name and its default value">
+                 [<var>inst</var><code>.servReportFxn = ''</code>]
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> Telnet Server service reporting function.<p /><p>Optional, user defined service report function to handle Telnet Server reports.
+Note that multiple services (e.g. Telnet Server and DHCP Server) can use the
+same service report function.</p>
+<p>If set, this service report function must be provided by the application, and
+the function signature must match this prototype:</p>
+<pre><code>extern void userTelnetServiceServReportFxn(uint32_t item, uint32_t status,
+        uint32_t report, void *h);</code></pre><p>For more information on service report functions see the
+<a href="ug/ug_ndk/03_network-application-development.html#adding-status-report-services">NDK User&#39;s Guide</a>.</p>
+
+           </div>
+          </div>
+          <div class="memitem">
+            <div class="memproto">
+              <table class="memname"><tbody><tr><td>
+              <a id="ti_ndk_Telnet_callbackFxn"></a>Callback Function
+              <a href="#How_to_Read_SysConfig_Synopsis_Lines"
+                 title="Instance parameter's script
+                 name and its default value">
+                 [<var>inst</var><code>.callbackFxn = 'ConsoleOpen'</code>]
+              </a>
+              </td></tr></tbody></table>
+            </div>
+            <div class="memdoc">
+              <em></em> Telnet callback function.  This is the function which contains the telnet server code.<p /><p>Service report function used by the Telnet server. The default value will use the
+report function generated by SysConfig.</p>
+<p>Information on adding your own service report function can be found in the
+<a href="ug/ug_ndk/03_network-application-development.html#adding-status-report-services">NDK User&#39;s Guide</a>.</p>
+
+           </div>
+          </div>
+          <hr />
+        </div> <!-- end Instance_Configuration_Options -->
+        <a id="How_to_Read_SysConfig_Synopsis_Lines"></a>
+        <h3>How to Read SysConfig Synopsis Lines</h3>
+        <p>SysConfig configuration scripts consist of a sequence of assignments
+          to configuration parameters defined by the modules used in an
+          application.  There are two types of assignments: assignments to
+          module-level configuration parameters (that apply to all
+          instances of the module) and assignments to instance-level
+          configuration parameters (which are specific to the instance
+          alone). All configuration parameters have a default value
+          that's used in the event that it's not explicitly set in the
+          configuration script.
+        </p>
+        <p>Synopsis lines of the form<br>
+          <table style="margin-left:35px">
+            <tr><td>
+              <var>MOD</var><code>.paramName = defaultValue</code>
+            </td></tr>
+          </table>
+          illustrate an assignment of a module configuration
+          parameter's default value to the configuration
+          parameter itself.
+        </p>
+        <p>Similarily,<br>
+          <table style="margin-left:35px">
+            <tr><td>
+              <var>inst</var><code>.paramName = defaultValue</code>
+            </td></tr>
+          </table>
+          illustrates an assignment of a instance configuration
+          parameter's default value to the configuration
+          parameter itself.
+        </p>
+        <p>For example, the following is a snippet of a SysConfg
+          script that configures the GPIO module and a GPIO instance.
+        </p>
+        <div class="fragment">
+          <div class="line"><span class="comment">// Add the GPIO module to this configuration</span></div>
+          <div class="line"><span class="keyword">var</span> GPIO = system.addModule('/ti/drivers/GPIO');</div>
+          <div class="line"></div>
+          <div class="line"><span class="comment">// Set a GPIO module configuration parameter</span></div>
+          <div class="line">GPIO.optimizeCallbackTableSize = true;</div>
+          <div class="line"></div>
+          <div class="line"><span class="comment">// Add a new GPIO instance</span></div>
+          <div class="line"><span class="keyword">var</span> led = GPIO.addInstance();</div>
+          <div class="line"></div>
+          <div class="line"><span class="comment">// Set this instance's configuration parameters</span></div>
+          <div class="line">led.$name = 'LED';</div>
+          <div class="line">led.mode = 'Output';</div>
+        </div> <!-- end class "fragment" -->
+      </div> <!-- end class "textblock" -->
+    </div> <!-- end class "contents" -->
+  </body>
+</html>

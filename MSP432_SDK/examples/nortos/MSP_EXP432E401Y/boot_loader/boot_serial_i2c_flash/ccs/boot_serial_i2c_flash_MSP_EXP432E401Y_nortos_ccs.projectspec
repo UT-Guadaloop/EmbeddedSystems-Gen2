@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectSpec>
+    <applicability>
+        <when>
+            <context
+                deviceFamily="MSP432"
+                deviceId="MSP432E401Y"
+            />
+        </when>
+    </applicability>
+
+    <project
+        title="Boot Serial I2C Flash"
+        name="boot_serial_i2c_flash_MSP_EXP432E401Y_nortos_ccs"
+        configurations="Debug"
+        toolChain="TI"
+        connection="TIXDS110_Connection.xml"
+        device="MSP432E401Y"
+        ignoreDefaultDeviceSettings="true"
+        ignoreDefaultCCSSettings="true"
+        products="com.ti.SIMPLELINK_MSP432E4_SDK"
+        compilerBuildOptions="
+            -I${PROJECT_ROOT}
+            -I${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/source
+            -I${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/source/third_party/CMSIS/Include
+            -I${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/source/ti/net/bsd
+            --advice:power=none
+            -DDeviceFamily_MSP432E4
+            -D__MSP432E401Y__
+            --silicon_version=7M4
+            --code_state=16
+            --little_endian
+            --display_error_number
+            --diag_warning=255
+            --diag_wrap=off
+            --gen_func_subsections=on
+            --float_support=FPv4SPD16
+            --symdebug:dwarf
+            -I${CG_TOOL_ROOT}/include
+        "
+        linkerBuildOptions="
+            --ram_model
+            --stack_size=512
+            -i${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/source
+            -lti/display/lib/display.aem4f
+            -lti/grlib/lib/ccs/m4f/grlib.a
+            -lthird_party/spiffs/lib/ccs/m4f/spiffs.a
+            -lti/drivers/lib/drivers_msp432e4.aem4f
+            -lthird_party/fatfs/lib/ccs/m4f/fatfs.a
+            -lti/devices/msp432e4/driverlib/lib/ccs/m4f/msp432e4_driverlib.a
+            --warn_sections
+            --display_error_number
+            --diag_wrap=off
+            
+            -i${CG_TOOL_ROOT}/lib
+            -llibc.a
+        "
+        description="TODO: Write description">
+
+        <property name="buildProfile" value="release"/>
+        <property name="isHybrid" value="true"/>
+        <file path="../bl_config.h" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../system_msp432e401y.c" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../README.md" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="../README.html" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/source/ti/devices/msp432e4/boot_loader/bl_autobaud.c" openOnCreation="false" excludeFromBuild="false" action="link">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/source/ti/devices/msp432e4/boot_loader/bl_can.c" openOnCreation="false" excludeFromBuild="false" action="link">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/source/ti/devices/msp432e4/boot_loader/bl_check.c" openOnCreation="false" excludeFromBuild="false" action="link">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/source/ti/devices/msp432e4/boot_loader/bl_crc32.c" openOnCreation="false" excludeFromBuild="false" action="link">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/source/ti/devices/msp432e4/boot_loader/bl_decrypt.c" openOnCreation="false" excludeFromBuild="false" action="link">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/source/ti/devices/msp432e4/boot_loader/bl_emac.c" openOnCreation="false" excludeFromBuild="false" action="link">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/source/ti/devices/msp432e4/boot_loader/bl_flash.c" openOnCreation="false" excludeFromBuild="false" action="link">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/source/ti/devices/msp432e4/boot_loader/bl_i2c.c" openOnCreation="false" excludeFromBuild="false" action="link">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/source/ti/devices/msp432e4/boot_loader/bl_main.c" openOnCreation="false" excludeFromBuild="false" action="link">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/source/ti/devices/msp432e4/boot_loader/bl_packet.c" openOnCreation="false" excludeFromBuild="false" action="link">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/source/ti/devices/msp432e4/boot_loader/bl_ssi.c" openOnCreation="false" excludeFromBuild="false" action="link">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/source/ti/devices/msp432e4/boot_loader/bl_uart.c" openOnCreation="false" excludeFromBuild="false" action="link">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/source/ti/devices/msp432e4/boot_loader/bl_usb.c" openOnCreation="false" excludeFromBuild="false" action="link">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/source/ti/devices/msp432e4/boot_loader/bl_usbfuncs.c" openOnCreation="false" excludeFromBuild="false" action="link">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/source/ti/devices/msp432e4/boot_loader/bl_can.h" openOnCreation="false" excludeFromBuild="false" action="link">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/source/ti/devices/msp432e4/boot_loader/bl_can_timing.h" openOnCreation="false" excludeFromBuild="false" action="link">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/source/ti/devices/msp432e4/boot_loader/bl_check.h" openOnCreation="false" excludeFromBuild="false" action="link">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/source/ti/devices/msp432e4/boot_loader/bl_commands.h" openOnCreation="false" excludeFromBuild="false" action="link">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/source/ti/devices/msp432e4/boot_loader/bl_crc32.h" openOnCreation="false" excludeFromBuild="false" action="link">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/source/ti/devices/msp432e4/boot_loader/bl_crystal.h" openOnCreation="false" excludeFromBuild="false" action="link">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/source/ti/devices/msp432e4/boot_loader/bl_decrypt.h" openOnCreation="false" excludeFromBuild="false" action="link">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/source/ti/devices/msp432e4/boot_loader/bl_flash.h" openOnCreation="false" excludeFromBuild="false" action="link">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/source/ti/devices/msp432e4/boot_loader/bl_hooks.h" openOnCreation="false" excludeFromBuild="false" action="link">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/source/ti/devices/msp432e4/boot_loader/bl_i2c.h" openOnCreation="false" excludeFromBuild="false" action="link">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/source/ti/devices/msp432e4/boot_loader/bl_packet.h" openOnCreation="false" excludeFromBuild="false" action="link">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/source/ti/devices/msp432e4/boot_loader/bl_ssi.h" openOnCreation="false" excludeFromBuild="false" action="link">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/source/ti/devices/msp432e4/boot_loader/bl_uart.h" openOnCreation="false" excludeFromBuild="false" action="link">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/source/ti/devices/msp432e4/boot_loader/bl_usbfuncs.h" openOnCreation="false" excludeFromBuild="false" action="link">
+        </file>
+        <file path="${COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR}/source/ti/devices/msp432e4/boot_loader/usbdfu.h" openOnCreation="false" excludeFromBuild="false" action="link">
+        </file>
+        <file path="../ccs/bl_startup_ccs.s" openOnCreation="false" excludeFromBuild="false" action="copy" targetDirectory="ccs">
+        </file>
+        <file path="../ccs/bl_link_ccs.cmd" openOnCreation="false" excludeFromBuild="false" action="copy">
+        </file>
+    </project>
+</projectSpec>

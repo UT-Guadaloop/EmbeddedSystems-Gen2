@@ -1,0 +1,361 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="group___a_d_c_buf_m_s_p432_e4_pin_identifier" kind="group">
+    <compoundname>ADCBufMSP432E4PinIdentifier</compoundname>
+    <title>used for</title>
+      <sectiondef kind="user-defined">
+      <header>PB4, Analog Channel 10</header>
+      <memberdef kind="define" id="group___a_d_c_buf_m_s_p432_e4_pin_identifier_1ga3dc695d3458fa81259f83e147c86e778" prot="public" static="no">
+        <name>ADCBufMSP432E4_PB_4_A10</name>
+        <initializer>((10 &lt;&lt; 16) | 0x5910)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/adcbuf/ADCBufMSP432E4.h" line="180" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/adcbuf/ADCBufMSP432E4.h" bodystart="180" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>PB5, Analog Channel 11</header>
+      <memberdef kind="define" id="group___a_d_c_buf_m_s_p432_e4_pin_identifier_1gabb313e53dfab5a0c2458758059ee8cea" prot="public" static="no">
+        <name>ADCBufMSP432E4_PB_5_A11</name>
+        <initializer>((11 &lt;&lt; 16) | 0x5920)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/adcbuf/ADCBufMSP432E4.h" line="186" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/adcbuf/ADCBufMSP432E4.h" bodystart="186" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>PD0, Analog Channel 15</header>
+      <memberdef kind="define" id="group___a_d_c_buf_m_s_p432_e4_pin_identifier_1ga305921344e92aeea88014642c2d632c3" prot="public" static="no">
+        <name>ADCBufMSP432E4_PD_0_A15</name>
+        <initializer>((15 &lt;&lt; 16) | 0x5B01)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/adcbuf/ADCBufMSP432E4.h" line="193" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/adcbuf/ADCBufMSP432E4.h" bodystart="193" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>PD1, Analog Channel 14</header>
+      <memberdef kind="define" id="group___a_d_c_buf_m_s_p432_e4_pin_identifier_1gaec63518515d38985f9f667bb03d9d944" prot="public" static="no">
+        <name>ADCBufMSP432E4_PD_1_A14</name>
+        <initializer>((14 &lt;&lt; 16) | 0x5B02)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/adcbuf/ADCBufMSP432E4.h" line="199" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/adcbuf/ADCBufMSP432E4.h" bodystart="199" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>PD2, Analog Channel 13</header>
+      <memberdef kind="define" id="group___a_d_c_buf_m_s_p432_e4_pin_identifier_1ga094219f1ee78f4a4e7f0eeb531b13ca2" prot="public" static="no">
+        <name>ADCBufMSP432E4_PD_2_A13</name>
+        <initializer>((13 &lt;&lt; 16) | 0x5B04)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/adcbuf/ADCBufMSP432E4.h" line="205" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/adcbuf/ADCBufMSP432E4.h" bodystart="205" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>PD3, Analog Channel 12</header>
+      <memberdef kind="define" id="group___a_d_c_buf_m_s_p432_e4_pin_identifier_1ga3a5919c209de8758589224d5d14e335e" prot="public" static="no">
+        <name>ADCBufMSP432E4_PD_3_A12</name>
+        <initializer>((12 &lt;&lt; 16) | 0x5B08)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/adcbuf/ADCBufMSP432E4.h" line="211" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/adcbuf/ADCBufMSP432E4.h" bodystart="211" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>PD4, Analog Channel 7</header>
+      <memberdef kind="define" id="group___a_d_c_buf_m_s_p432_e4_pin_identifier_1ga28b980a7f4b140ce0a23810f7c829d89" prot="public" static="no">
+        <name>ADCBufMSP432E4_PD_4_A7</name>
+        <initializer>((7 &lt;&lt; 16) | 0x5B10)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/adcbuf/ADCBufMSP432E4.h" line="217" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/adcbuf/ADCBufMSP432E4.h" bodystart="217" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>PD5, Analog Channel 6</header>
+      <memberdef kind="define" id="group___a_d_c_buf_m_s_p432_e4_pin_identifier_1ga09621e54b75e8c7a26f9a4b5b341b65c" prot="public" static="no">
+        <name>ADCBufMSP432E4_PD_5_A6</name>
+        <initializer>((6 &lt;&lt; 16) | 0x5B20)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/adcbuf/ADCBufMSP432E4.h" line="223" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/adcbuf/ADCBufMSP432E4.h" bodystart="223" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>PD6, Analog Channel 5</header>
+      <memberdef kind="define" id="group___a_d_c_buf_m_s_p432_e4_pin_identifier_1ga0de671fe54351c0c5daa6abf33ad9cbe" prot="public" static="no">
+        <name>ADCBufMSP432E4_PD_6_A5</name>
+        <initializer>((5 &lt;&lt; 16) | 0x5B40)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/adcbuf/ADCBufMSP432E4.h" line="229" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/adcbuf/ADCBufMSP432E4.h" bodystart="229" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>PD7, Analog Channel 4</header>
+      <memberdef kind="define" id="group___a_d_c_buf_m_s_p432_e4_pin_identifier_1gaf436cdc1609bef3c38703cffd635de62" prot="public" static="no">
+        <name>ADCBufMSP432E4_PD_7_A4</name>
+        <initializer>((4 &lt;&lt; 16) | 0x5B80)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/adcbuf/ADCBufMSP432E4.h" line="235" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/adcbuf/ADCBufMSP432E4.h" bodystart="235" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>PE0, Analog Channel 3</header>
+      <memberdef kind="define" id="group___a_d_c_buf_m_s_p432_e4_pin_identifier_1ga1a21552f44ae8d75e1a86f4c49b82d3e" prot="public" static="no">
+        <name>ADCBufMSP432E4_PE_0_A3</name>
+        <initializer>((3 &lt;&lt; 16) | 0x5C01)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/adcbuf/ADCBufMSP432E4.h" line="241" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/adcbuf/ADCBufMSP432E4.h" bodystart="241" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>PE1, Analog Channel 2</header>
+      <memberdef kind="define" id="group___a_d_c_buf_m_s_p432_e4_pin_identifier_1ga46219516c80f56e226653fc7f549f0cc" prot="public" static="no">
+        <name>ADCBufMSP432E4_PE_1_A2</name>
+        <initializer>((2 &lt;&lt; 16) | 0x5C02)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/adcbuf/ADCBufMSP432E4.h" line="247" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/adcbuf/ADCBufMSP432E4.h" bodystart="247" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>PE2, Analog Channel 1</header>
+      <memberdef kind="define" id="group___a_d_c_buf_m_s_p432_e4_pin_identifier_1ga884b3a493fa1ac7622a6317237d398dd" prot="public" static="no">
+        <name>ADCBufMSP432E4_PE_2_A1</name>
+        <initializer>((1 &lt;&lt; 16) | 0x5C04)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/adcbuf/ADCBufMSP432E4.h" line="253" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/adcbuf/ADCBufMSP432E4.h" bodystart="253" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>PE3, Analog Channel 0</header>
+      <memberdef kind="define" id="group___a_d_c_buf_m_s_p432_e4_pin_identifier_1gad41491bbda347f2677847ee850c37705" prot="public" static="no">
+        <name>ADCBufMSP432E4_PE_3_A0</name>
+        <initializer>((0 &lt;&lt; 16) | 0x5C08)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/adcbuf/ADCBufMSP432E4.h" line="259" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/adcbuf/ADCBufMSP432E4.h" bodystart="259" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>PE4, Analog Channel 9</header>
+      <memberdef kind="define" id="group___a_d_c_buf_m_s_p432_e4_pin_identifier_1ga86126aca143d992122965f6211276cb6" prot="public" static="no">
+        <name>ADCBufMSP432E4_PE_4_A9</name>
+        <initializer>((9 &lt;&lt; 16) | 0x5C10)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/adcbuf/ADCBufMSP432E4.h" line="265" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/adcbuf/ADCBufMSP432E4.h" bodystart="265" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>PE5, Analog Channel 8</header>
+      <memberdef kind="define" id="group___a_d_c_buf_m_s_p432_e4_pin_identifier_1gaf377d612c54db740104b64d9a5c19eca" prot="public" static="no">
+        <name>ADCBufMSP432E4_PE_5_A8</name>
+        <initializer>((8 &lt;&lt; 16) | 0x5C20)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/adcbuf/ADCBufMSP432E4.h" line="271" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/adcbuf/ADCBufMSP432E4.h" bodystart="271" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>PE6, Analog Channel 20</header>
+      <memberdef kind="define" id="group___a_d_c_buf_m_s_p432_e4_pin_identifier_1ga6b13a7b05dd3d91196349f2b6120b1c8" prot="public" static="no">
+        <name>ADCBufMSP432E4_PE_6_A20</name>
+        <initializer>(((20-16) &lt;&lt; 16) | 0x5C40 | 0x01000000)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/adcbuf/ADCBufMSP432E4.h" line="277" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/adcbuf/ADCBufMSP432E4.h" bodystart="277" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>PE7, Analog Channel 21</header>
+      <memberdef kind="define" id="group___a_d_c_buf_m_s_p432_e4_pin_identifier_1ga399b53adec3d987e8ba9b17287fea715" prot="public" static="no">
+        <name>ADCBufMSP432E4_PE_7_A21</name>
+        <initializer>(((21-16) &lt;&lt; 16) | 0x5C80 | 0x01000000)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/adcbuf/ADCBufMSP432E4.h" line="283" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/adcbuf/ADCBufMSP432E4.h" bodystart="283" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>PK0, Analog Channel 16</header>
+      <memberdef kind="define" id="group___a_d_c_buf_m_s_p432_e4_pin_identifier_1ga6c54c645d0bdb6e5494ed1b0dedf0085" prot="public" static="no">
+        <name>ADCBufMSP432E4_PK_0_A16</name>
+        <initializer>(((16-16) &lt;&lt; 16) | 0x6101 | 0x01000000)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/adcbuf/ADCBufMSP432E4.h" line="289" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/adcbuf/ADCBufMSP432E4.h" bodystart="289" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>PK1, Analog Channel 17</header>
+      <memberdef kind="define" id="group___a_d_c_buf_m_s_p432_e4_pin_identifier_1ga9106701da823ebbc4f98879a072d1998" prot="public" static="no">
+        <name>ADCBufMSP432E4_PK_1_A17</name>
+        <initializer>(((17-16) &lt;&lt; 16) | 0x6102 | 0x01000000)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/adcbuf/ADCBufMSP432E4.h" line="295" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/adcbuf/ADCBufMSP432E4.h" bodystart="295" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>PK2, Analog Channel 18</header>
+      <memberdef kind="define" id="group___a_d_c_buf_m_s_p432_e4_pin_identifier_1ga7f173fd88e544845cc541be451b680bd" prot="public" static="no">
+        <name>ADCBufMSP432E4_PK_2_A18</name>
+        <initializer>(((18-16) &lt;&lt; 16) | 0x6104 | 0x01000000)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/adcbuf/ADCBufMSP432E4.h" line="301" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/adcbuf/ADCBufMSP432E4.h" bodystart="301" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>PK3, Analog Channel 19</header>
+      <memberdef kind="define" id="group___a_d_c_buf_m_s_p432_e4_pin_identifier_1ga80a782ecb1e8a81f08a299280be314ef" prot="public" static="no">
+        <name>ADCBufMSP432E4_PK_3_A19</name>
+        <initializer>(((19-16) &lt;&lt; 16) | 0x6108 | 0x01000000)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/adcbuf/ADCBufMSP432E4.h" line="307" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/adcbuf/ADCBufMSP432E4.h" bodystart="307" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>PP6, Analog Channel 23</header>
+      <memberdef kind="define" id="group___a_d_c_buf_m_s_p432_e4_pin_identifier_1ga4dc3e28c15aeef41e6163c471a358042" prot="public" static="no">
+        <name>ADCBufMSP432E4_PP_6_A23</name>
+        <initializer>(((23-16) &lt;&lt; 16) | 0x6540 | 0x01000000)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/adcbuf/ADCBufMSP432E4.h" line="313" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/adcbuf/ADCBufMSP432E4.h" bodystart="313" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>PP7, Analog Channel 22</header>
+      <memberdef kind="define" id="group___a_d_c_buf_m_s_p432_e4_pin_identifier_1gaa61e57916e4254efd08a8ba8e224560e" prot="public" static="no">
+        <name>ADCBufMSP432E4_PP_7_A22</name>
+        <initializer>(((22-16) &lt;&lt; 16) | 0x6580 | 0x01000000)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/adcbuf/ADCBufMSP432E4.h" line="319" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/adcbuf/ADCBufMSP432E4.h" bodystart="319" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>PIN NONE.</header>
+      <memberdef kind="define" id="group___a_d_c_buf_m_s_p432_e4_pin_identifier_1ga63c8af56f1cc189d06d5ac78abdbcceb" prot="public" static="no">
+        <name>ADCBufMSP432E4_PIN_NONE</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/adcbuf/ADCBufMSP432E4.h" line="325" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/adcbuf/ADCBufMSP432E4.h" bodystart="325" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><ref refid="struct_a_d_c_buf_m_s_p432_e4___channels_1a4b0b8b7aad2605a4ce6192f8adb39fd1" kindref="member">ADCBufMSP432E4_Channels.adcPin</ref> and <ref refid="struct_a_d_c_buf_m_s_p432_e4___channels_1a895c884d695e2ec72f3850464ff6e6c7" kindref="member">ADCBufMSP432E4_Channels.adcDifferentialPin</ref>.</para><para>Syntax: PB4 =&gt; Port B Pin 4 </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

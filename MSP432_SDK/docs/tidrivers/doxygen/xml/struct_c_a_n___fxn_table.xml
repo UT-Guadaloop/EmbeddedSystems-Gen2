@@ -1,0 +1,144 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="struct_c_a_n___fxn_table" kind="struct" language="C++" prot="public">
+    <compoundname>CAN_FxnTable</compoundname>
+    <includes refid="_c_a_n_8h" local="no">CAN.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_c_a_n___fxn_table_1aad85e3f44073370456e3b2608cebd82c" prot="public" static="no" mutable="no">
+        <type><ref refid="_c_a_n_8h_1acc8897d6cde8780b2ea1c6ded3f1f549" kindref="member">CAN_CloseFxn</ref></type>
+        <definition>CAN_CloseFxn CAN_FxnTable::closeFxn</definition>
+        <argsstring></argsstring>
+        <name>closeFxn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Function to close the specified peripheral </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/CAN.h" line="433" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/CAN.h" bodystart="433" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_c_a_n___fxn_table_1abe6eed1da51f5dd28cf4d848f59ada3b" prot="public" static="no" mutable="no">
+        <type><ref refid="_c_a_n_8h_1ad949f7ebd426255b83a5abd990a609c0" kindref="member">CAN_ControlFxn</ref></type>
+        <definition>CAN_ControlFxn CAN_FxnTable::controlFxn</definition>
+        <argsstring></argsstring>
+        <name>controlFxn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Function to implementation specific control function </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/CAN.h" line="436" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/CAN.h" bodystart="436" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_c_a_n___fxn_table_1a796e05c5237a6d06b01e25f4a11809e4" prot="public" static="no" mutable="no">
+        <type><ref refid="_c_a_n_8h_1a6f6668a04da1b06d98709be9a2426cc7" kindref="member">CAN_InitFxn</ref></type>
+        <definition>CAN_InitFxn CAN_FxnTable::initFxn</definition>
+        <argsstring></argsstring>
+        <name>initFxn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Function to initialize the given data object </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/CAN.h" line="439" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/CAN.h" bodystart="439" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_c_a_n___fxn_table_1a7bac211c90709a0ca128372e83b42703" prot="public" static="no" mutable="no">
+        <type><ref refid="_c_a_n_8h_1a51b71b8ad224e01470b5c9ee34b3f95e" kindref="member">CAN_OpenFxn</ref></type>
+        <definition>CAN_OpenFxn CAN_FxnTable::openFxn</definition>
+        <argsstring></argsstring>
+        <name>openFxn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Function to open the specified peripheral </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/CAN.h" line="442" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/CAN.h" bodystart="442" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_c_a_n___fxn_table_1afef5ad5234cdbc1b97af22b8aab212c0" prot="public" static="no" mutable="no">
+        <type><ref refid="_c_a_n_8h_1aee976ab0f943a5efa7d15e70906b11d1" kindref="member">CAN_ReadFxn</ref></type>
+        <definition>CAN_ReadFxn CAN_FxnTable::readFxn</definition>
+        <argsstring></argsstring>
+        <name>readFxn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Function to read from the specified peripheral </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/CAN.h" line="445" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/CAN.h" bodystart="445" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_c_a_n___fxn_table_1a42228d7cce176d1c40b7253b9ee4b288" prot="public" static="no" mutable="no">
+        <type><ref refid="_c_a_n_8h_1a37e1f018c6ee8289264e184cac3b6f32" kindref="member">CAN_WriteFxn</ref></type>
+        <definition>CAN_WriteFxn CAN_FxnTable::writeFxn</definition>
+        <argsstring></argsstring>
+        <name>writeFxn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Function to write from the specified peripheral </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/CAN.h" line="448" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/CAN.h" bodystart="448" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_c_a_n___fxn_table_1a43b0a5ee70533e9aca2e97b3808b7977" prot="public" static="no" mutable="no">
+        <type><ref refid="_c_a_n_8h_1a191c1d511cada1b1d82c634c6859666b" kindref="member">CAN_TxMsgFxn</ref></type>
+        <definition>CAN_TxMsgFxn CAN_FxnTable::txMsgFxn</definition>
+        <argsstring></argsstring>
+        <name>txMsgFxn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Function to kick the transmitter </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/CAN.h" line="451" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/CAN.h" bodystart="451" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The definition of a CAN function table that contains the required set of functions to control a specific CAN driver implementation. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="136">
+        <label>CAN_FxnTable</label>
+        <link refid="struct_c_a_n___fxn_table"/>
+        <childnode refid="137" relation="usage">
+          <edgelabel>writeFxn</edgelabel>
+          <edgelabel>closeFxn</edgelabel>
+          <edgelabel>initFxn</edgelabel>
+          <edgelabel>txMsgFxn</edgelabel>
+          <edgelabel>controlFxn</edgelabel>
+          <edgelabel>openFxn</edgelabel>
+          <edgelabel>readFxn</edgelabel>
+        </childnode>
+      </node>
+      <node id="138">
+        <label>can_frame</label>
+        <link refid="structcan__frame"/>
+      </node>
+      <node id="137">
+        <label>CAN_Config_</label>
+        <link refid="struct_c_a_n___config__"/>
+        <childnode refid="136" relation="usage">
+          <edgelabel>fxnTablePtr</edgelabel>
+        </childnode>
+        <childnode refid="138" relation="usage">
+          <edgelabel>rxBufPtr</edgelabel>
+          <edgelabel>txBufPtr</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="exports/tidrivers_msp432e4/source/ti/drivers/CAN.h" line="431" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/CAN.h" bodystart="431" bodyend="452"/>
+    <listofallmembers>
+      <member refid="struct_c_a_n___fxn_table_1aad85e3f44073370456e3b2608cebd82c" prot="public" virt="non-virtual"><scope>CAN_FxnTable</scope><name>closeFxn</name></member>
+      <member refid="struct_c_a_n___fxn_table_1abe6eed1da51f5dd28cf4d848f59ada3b" prot="public" virt="non-virtual"><scope>CAN_FxnTable</scope><name>controlFxn</name></member>
+      <member refid="struct_c_a_n___fxn_table_1a796e05c5237a6d06b01e25f4a11809e4" prot="public" virt="non-virtual"><scope>CAN_FxnTable</scope><name>initFxn</name></member>
+      <member refid="struct_c_a_n___fxn_table_1a7bac211c90709a0ca128372e83b42703" prot="public" virt="non-virtual"><scope>CAN_FxnTable</scope><name>openFxn</name></member>
+      <member refid="struct_c_a_n___fxn_table_1afef5ad5234cdbc1b97af22b8aab212c0" prot="public" virt="non-virtual"><scope>CAN_FxnTable</scope><name>readFxn</name></member>
+      <member refid="struct_c_a_n___fxn_table_1a43b0a5ee70533e9aca2e97b3808b7977" prot="public" virt="non-virtual"><scope>CAN_FxnTable</scope><name>txMsgFxn</name></member>
+      <member refid="struct_c_a_n___fxn_table_1a42228d7cce176d1c40b7253b9ee4b288" prot="public" virt="non-virtual"><scope>CAN_FxnTable</scope><name>writeFxn</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

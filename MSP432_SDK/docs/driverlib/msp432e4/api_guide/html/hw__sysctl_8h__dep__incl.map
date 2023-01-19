@@ -1,0 +1,20 @@
+<map id="hw_sysctl.h" name="hw_sysctl.h">
+<area shape="rect" id="node2" href="$adc_8c.html" title="adc.c" alt="" coords="5,80,59,107"/>
+<area shape="rect" id="node3" href="$can_8c.html" title="can.c" alt="" coords="83,80,137,107"/>
+<area shape="rect" id="node4" href="$eeprom_8c.html" title="eeprom.c" alt="" coords="162,80,237,107"/>
+<area shape="rect" id="node5" href="$epi_8c.html" title="epi.c" alt="" coords="263,80,313,107"/>
+<area shape="rect" id="node6" href="$flash_8c.html" title="flash.c" alt="" coords="337,80,399,107"/>
+<area shape="rect" id="node7" href="$gpio_8c.html" title="gpio.c" alt="" coords="423,80,480,107"/>
+<area shape="rect" id="node8" href="$hibernate_8c.html" title="hibernate.c" alt="" coords="505,80,591,107"/>
+<area shape="rect" id="node9" href="$i2c_8c.html" title="i2c.c" alt="" coords="616,80,667,107"/>
+<area shape="rect" id="node10" href="$onewire_8c.html" title="onewire.c" alt="" coords="691,80,769,107"/>
+<area shape="rect" id="node11" href="$pwm_8c.html" title="pwm.c" alt="" coords="795,80,856,107"/>
+<area shape="rect" id="node12" href="$qei_8c.html" title="qei.c" alt="" coords="880,80,931,107"/>
+<area shape="rect" id="node13" href="$ssi_8c.html" title="ssi.c" alt="" coords="955,80,1005,107"/>
+<area shape="rect" id="node14" href="$sysctl_8c.html" title="sysctl.c" alt="" coords="1030,80,1097,107"/>
+<area shape="rect" id="node15" href="$sysexc_8c.html" title="sysexc.c" alt="" coords="1123,80,1196,107"/>
+<area shape="rect" id="node16" href="$timer_8c.html" title="timer.c" alt="" coords="1222,80,1284,107"/>
+<area shape="rect" id="node17" href="$uart_8c.html" title="uart.c" alt="" coords="1309,80,1363,107"/>
+<area shape="rect" id="node18" href="$udma_8c.html" title="udma.c" alt="" coords="1387,80,1452,107"/>
+<area shape="rect" id="node19" href="$usb_8c.html" title="usb.c" alt="" coords="1477,80,1531,107"/>
+</map>

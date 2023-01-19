@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="_a_e_s_c_t_r_d_r_b_g_x_x_8h" kind="file" language="C++">
+    <compoundname>AESCTRDRBGXX.h</compoundname>
+    <includes local="no">stdint.h</includes>
+    <includes local="no">stdbool.h</includes>
+    <includes refid="_a_e_s_c_t_r_d_r_b_g_8h" local="no">ti/drivers/AESCTRDRBG.h</includes>
+    <incdepgraph>
+      <node id="72">
+        <label>stdbool.h</label>
+      </node>
+      <node id="70">
+        <label>AESCTRDRBGXX.h</label>
+        <link refid="_a_e_s_c_t_r_d_r_b_g_x_x_8h"/>
+        <childnode refid="71" relation="include">
+        </childnode>
+        <childnode refid="72" relation="include">
+        </childnode>
+        <childnode refid="73" relation="include">
+        </childnode>
+      </node>
+      <node id="76">
+        <label>ti/drivers/cryptoutils/cryptokey/CryptoKey.h</label>
+        <link refid="_crypto_key_8h"/>
+        <childnode refid="71" relation="include">
+        </childnode>
+        <childnode refid="72" relation="include">
+        </childnode>
+      </node>
+      <node id="71">
+        <label>stdint.h</label>
+      </node>
+      <node id="74">
+        <label>stddef.h</label>
+      </node>
+      <node id="75">
+        <label>ti/drivers/AESCTR.h</label>
+        <link refid="_a_e_s_c_t_r_8h"/>
+        <childnode refid="72" relation="include">
+        </childnode>
+        <childnode refid="74" relation="include">
+        </childnode>
+        <childnode refid="71" relation="include">
+        </childnode>
+        <childnode refid="76" relation="include">
+        </childnode>
+      </node>
+      <node id="73">
+        <label>ti/drivers/AESCTRDRBG.h</label>
+        <link refid="_a_e_s_c_t_r_d_r_b_g_8h"/>
+        <childnode refid="72" relation="include">
+        </childnode>
+        <childnode refid="74" relation="include">
+        </childnode>
+        <childnode refid="71" relation="include">
+        </childnode>
+        <childnode refid="75" relation="include">
+        </childnode>
+        <childnode refid="76" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innerclass refid="struct_a_e_s_c_t_r_d_r_b_g_x_x___h_w_attrs" prot="public">AESCTRDRBGXX_HWAttrs</innerclass>
+    <innerclass refid="struct_a_e_s_c_t_r_d_r_b_g_x_x___object" prot="public">AESCTRDRBGXX_Object</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_a_e_s_c_t_r_d_r_b_g_x_x_8h_1a204dbdf126458f5eb5a9c861f2ca54e6" prot="public" static="no">
+        <name>AESCTRDRBG_MAX_KEY_LENGTH</name>
+        <initializer><ref refid="_a_e_s_c_t_r_d_r_b_g_8h_1a1482c6747f5594d24d37f852967386a8ad9c83f7b6f813e9f8276e76cc850e0d2" kindref="member">AESCTRDRBG_AES_KEY_LENGTH_256</ref></initializer>
+        <briefdescription>
+<para>Define that specifies the maximum AES key length required. </para>        </briefdescription>
+        <detaileddescription>
+<para>This define defines what the largest AES key length used in an application is. Since this implementation needs to support all AES key lengths by default, temporary buffers and the internal driver state are sized to accomodate AES-256. If only AES-128 is used in an application, the driver can be recompiled with a different <ref refid="_a_e_s_c_t_r_d_r_b_g_x_x_8h_1a204dbdf126458f5eb5a9c861f2ca54e6" kindref="member">AESCTRDRBG_MAX_KEY_LENGTH</ref> to save RAM in the <ref refid="struct_a_e_s_c_t_r_d_r_b_g_x_x___object" kindref="compound">AESCTRDRBGXX_Object</ref> and reducing stack size requirements. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/aesctrdrbg/AESCTRDRBGXX.h" line="79" column="13" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/aesctrdrbg/AESCTRDRBGXX.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_e_s_c_t_r_d_r_b_g_x_x_8h_1af45b4cfd4c8983c3cfb2c97c1d4892ce" prot="public" static="no">
+        <name>AESCTRDRBG_MAX_SEED_LENGTH</name>
+        <initializer>(<ref refid="_a_e_s_c_t_r_d_r_b_g_x_x_8h_1a204dbdf126458f5eb5a9c861f2ca54e6" kindref="member">AESCTRDRBG_MAX_KEY_LENGTH</ref> + <ref refid="_a_e_s_c_t_r_d_r_b_g_8h_1a3dcf06dd21f3d01d2eeffc78bb3590e2" kindref="member">AESCTRDRBG_AES_BLOCK_SIZE_BYTES</ref>)</initializer>
+        <briefdescription>
+<para>Define that specifies the maximum seed length used by the driver. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/aesctrdrbg/AESCTRDRBGXX.h" line="83" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/aesctrdrbg/AESCTRDRBGXX.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Generic AESCTRDRBG implementation based on the AESCTR driver. </para>    </briefdescription>
+    <detaileddescription>
+<para><hruler/>
+</para><para>This file should only be included in the board file to fill the AESCTR_config struct.</para><para><heading level="1">Use of AESCTR</heading>
+</para><para>This implementation uses the AESCTR driver to generate the random bitstream required to mutate the internal AESCTRDRBG state and provide random output bits. The driver will open an instance of the AESCTR driver based on the index specified in <ref refid="struct_a_e_s_c_t_r_d_r_b_g_x_x___h_w_attrs" kindref="compound">AESCTRDRBGXX_HWAttrs</ref>:aesctrIndex. Mutual exclusion and hardware access are all handled by the AESCTR driver instance.</para><para><heading level="1">Implementation Limitations</heading>
+</para><para><itemizedlist>
+<listitem><para>Only plaintext CryptoKeys are supported by this implementation.</para></listitem></itemizedlist>
+</para><para><heading level="1">Runtime Parameter Validation</heading>
+</para><para>The driver implementation does not perform runtime checks for most input parameters. Only values that are likely to have a stochastic element to them are checked (such as whether a driver is already open). Higher input paramter validation coverage is achieved by turning on assertions when compiling the driver. </para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2019-2020,<sp/>Texas<sp/>Instruments<sp/>Incorporated</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Redistribution<sp/>and<sp/>use<sp/>in<sp/>source<sp/>and<sp/>binary<sp/>forms,<sp/>with<sp/>or<sp/>without</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>modification,<sp/>are<sp/>permitted<sp/>provided<sp/>that<sp/>the<sp/>following<sp/>conditions</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>are<sp/>met:</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>of<sp/>source<sp/>code<sp/>must<sp/>retain<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer.</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>in<sp/>binary<sp/>form<sp/>must<sp/>reproduce<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer<sp/>in<sp/>the</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>documentation<sp/>and/or<sp/>other<sp/>materials<sp/>provided<sp/>with<sp/>the<sp/>distribution.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Neither<sp/>the<sp/>name<sp/>of<sp/>Texas<sp/>Instruments<sp/>Incorporated<sp/>nor<sp/>the<sp/>names<sp/>of</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>its<sp/>contributors<sp/>may<sp/>be<sp/>used<sp/>to<sp/>endorse<sp/>or<sp/>promote<sp/>products<sp/>derived</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>from<sp/>this<sp/>software<sp/>without<sp/>specific<sp/>prior<sp/>written<sp/>permission.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>THIS<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>BY<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>AND<sp/>CONTRIBUTORS<sp/>&quot;AS<sp/>IS&quot;</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>AND<sp/>ANY<sp/>EXPRESS<sp/>OR<sp/>IMPLIED<sp/>WARRANTIES,<sp/>INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>THE<sp/>IMPLIED<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY<sp/>AND<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>PURPOSE<sp/>ARE<sp/>DISCLAIMED.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE<sp/>COPYRIGHT<sp/>OWNER<sp/>OR</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>CONTRIBUTORS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>DIRECT,<sp/>INDIRECT,<sp/>INCIDENTAL,<sp/>SPECIAL,</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>EXEMPLARY,<sp/>OR<sp/>CONSEQUENTIAL<sp/>DAMAGES<sp/>(INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>PROCUREMENT<sp/>OF<sp/>SUBSTITUTE<sp/>GOODS<sp/>OR<sp/>SERVICES;<sp/>LOSS<sp/>OF<sp/>USE,<sp/>DATA,<sp/>OR<sp/>PROFITS;</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>OR<sp/>BUSINESS<sp/>INTERRUPTION)<sp/>HOWEVER<sp/>CAUSED<sp/>AND<sp/>ON<sp/>ANY<sp/>THEORY<sp/>OF<sp/>LIABILITY,</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/>STRICT<sp/>LIABILITY,<sp/>OR<sp/>TORT<sp/>(INCLUDING<sp/>NEGLIGENCE<sp/>OR</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*<sp/>OTHERWISE)<sp/>ARISING<sp/>IN<sp/>ANY<sp/>WAY<sp/>OUT<sp/>OF<sp/>THE<sp/>USE<sp/>OF<sp/>THIS<sp/>SOFTWARE,</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*<sp/>EVEN<sp/>IF<sp/>ADVISED<sp/>OF<sp/>THE<sp/>POSSIBILITY<sp/>OF<sp/>SUCH<sp/>DAMAGE.</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="comment">/*!****************************************************************************</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>*<sp/><sp/>@file<sp/><sp/><sp/><sp/><sp/><sp/><sp/>AESCTRDRBGXX.h</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/>*<sp/><sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/>Generic<sp/>AESCTRDRBG<sp/>implementation<sp/>based<sp/>on<sp/>the<sp/>AESCTR<sp/>driver</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="37"><highlight class="comment"><sp/>*<sp/><sp/>This<sp/>file<sp/>should<sp/>only<sp/>be<sp/>included<sp/>in<sp/>the<sp/>board<sp/>file<sp/>to<sp/>fill<sp/>the<sp/>AESCTR_config</highlight></codeline>
+<codeline lineno="38"><highlight class="comment"><sp/>*<sp/><sp/>struct.</highlight></codeline>
+<codeline lineno="39"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="40"><highlight class="comment"><sp/>*<sp/><sp/>#<sp/>Use<sp/>of<sp/>AESCTR<sp/>#</highlight></codeline>
+<codeline lineno="41"><highlight class="comment"><sp/>*<sp/><sp/>This<sp/>implementation<sp/>uses<sp/>the<sp/>AESCTR<sp/>driver<sp/>to<sp/>generate<sp/>the<sp/>random<sp/>bitstream</highlight></codeline>
+<codeline lineno="42"><highlight class="comment"><sp/>*<sp/><sp/>required<sp/>to<sp/>mutate<sp/>the<sp/>internal<sp/>AESCTRDRBG<sp/>state<sp/>and<sp/>provide<sp/>random<sp/>output</highlight></codeline>
+<codeline lineno="43"><highlight class="comment"><sp/>*<sp/><sp/>bits.<sp/>The<sp/>driver<sp/>will<sp/>open<sp/>an<sp/>instance<sp/>of<sp/>the<sp/>AESCTR<sp/>driver<sp/>based<sp/>on<sp/>the<sp/>index</highlight></codeline>
+<codeline lineno="44"><highlight class="comment"><sp/>*<sp/><sp/>specified<sp/>in<sp/>#AESCTRDRBGXX_HWAttrs:aesctrIndex.<sp/>Mutual<sp/>exclusion<sp/>and<sp/>hardware</highlight></codeline>
+<codeline lineno="45"><highlight class="comment"><sp/>*<sp/><sp/>access<sp/>are<sp/>all<sp/>handled<sp/>by<sp/>the<sp/>AESCTR<sp/>driver<sp/>instance.</highlight></codeline>
+<codeline lineno="46"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="47"><highlight class="comment"><sp/>*<sp/><sp/>#<sp/>Implementation<sp/>Limitations</highlight></codeline>
+<codeline lineno="48"><highlight class="comment"><sp/>*<sp/><sp/>-<sp/>Only<sp/>plaintext<sp/>CryptoKeys<sp/>are<sp/>supported<sp/>by<sp/>this<sp/>implementation.</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="50"><highlight class="comment"><sp/>*<sp/><sp/>#<sp/>Runtime<sp/>Parameter<sp/>Validation<sp/>#</highlight></codeline>
+<codeline lineno="51"><highlight class="comment"><sp/>*<sp/><sp/>The<sp/>driver<sp/>implementation<sp/>does<sp/>not<sp/>perform<sp/>runtime<sp/>checks<sp/>for<sp/>most<sp/>input<sp/>parameters.</highlight></codeline>
+<codeline lineno="52"><highlight class="comment"><sp/>*<sp/><sp/>Only<sp/>values<sp/>that<sp/>are<sp/>likely<sp/>to<sp/>have<sp/>a<sp/>stochastic<sp/>element<sp/>to<sp/>them<sp/>are<sp/>checked<sp/>(such</highlight></codeline>
+<codeline lineno="53"><highlight class="comment"><sp/>*<sp/><sp/>as<sp/>whether<sp/>a<sp/>driver<sp/>is<sp/>already<sp/>open).<sp/>Higher<sp/>input<sp/>paramter<sp/>validation<sp/>coverage<sp/>is</highlight></codeline>
+<codeline lineno="54"><highlight class="comment"><sp/>*<sp/><sp/>achieved<sp/>by<sp/>turning<sp/>on<sp/>assertions<sp/>when<sp/>compiling<sp/>the<sp/>driver.</highlight></codeline>
+<codeline lineno="55"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>ti_drivers_aesctrdrbg_AESCTRDRBGXX__include</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ti_drivers_aesctrdrbg_AESCTRDRBGXX__include</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdbool.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_a_e_s_c_t_r_d_r_b_g_8h" kindref="compound">ti/drivers/AESCTRDRBG.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="preprocessor">#ifndef<sp/>AESCTRDRBG_MAX_KEY_LENGTH</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79" refid="_a_e_s_c_t_r_d_r_b_g_x_x_8h_1a204dbdf126458f5eb5a9c861f2ca54e6" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>AESCTRDRBG_MAX_KEY_LENGTH<sp/>AESCTRDRBG_AES_KEY_LENGTH_256</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83" refid="_a_e_s_c_t_r_d_r_b_g_x_x_8h_1af45b4cfd4c8983c3cfb2c97c1d4892ce" refkind="member"><highlight class="preprocessor">#define<sp/>AESCTRDRBG_MAX_SEED_LENGTH<sp/>(AESCTRDRBG_MAX_KEY_LENGTH<sp/>+<sp/>AESCTRDRBG_AES_BLOCK_SIZE_BYTES)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91" refid="struct_a_e_s_c_t_r_d_r_b_g_x_x___h_w_attrs" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="92" refid="struct_a_e_s_c_t_r_d_r_b_g_x_x___h_w_attrs_1a32eebfb8405bc967be9daae46af1fdf8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint_least8_t<sp/><sp/><sp/><ref refid="struct_a_e_s_c_t_r_d_r_b_g_x_x___h_w_attrs_1a32eebfb8405bc967be9daae46af1fdf8" kindref="member">aesctrIndex</ref>;<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="93"><highlight class="normal">}<sp/><ref refid="struct_a_e_s_c_t_r_d_r_b_g_x_x___h_w_attrs" kindref="compound">AESCTRDRBGXX_HWAttrs</ref>;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100" refid="struct_a_e_s_c_t_r_d_r_b_g_x_x___object" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="101" refid="struct_a_e_s_c_t_r_d_r_b_g_x_x___object_1a3d5e139c75aa7afb24bec4c77e8db299" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>keyingMaterial[<ref refid="_a_e_s_c_t_r_d_r_b_g_8h_1a1482c6747f5594d24d37f852967386a8ad9c83f7b6f813e9f8276e76cc850e0d2" kindref="member">AESCTRDRBG_AES_KEY_LENGTH_256</ref>];</highlight></codeline>
+<codeline lineno="102" refid="struct_a_e_s_c_t_r_d_r_b_g_x_x___object_1a15ae93c83f64d7328dc3eba547461d06" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>counter[<ref refid="_a_e_s_c_t_r_d_r_b_g_8h_1a3dcf06dd21f3d01d2eeffc78bb3590e2" kindref="member">AESCTRDRBG_AES_BLOCK_SIZE_BYTES</ref>];</highlight></codeline>
+<codeline lineno="103" refid="struct_a_e_s_c_t_r_d_r_b_g_x_x___object_1a35cdc9eecd6556a9ee914525b224187f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_crypto_key" kindref="compound">CryptoKey</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_a_e_s_c_t_r_d_r_b_g_x_x___object_1a35cdc9eecd6556a9ee914525b224187f" kindref="member">key</ref>;</highlight></codeline>
+<codeline lineno="104" refid="struct_a_e_s_c_t_r_d_r_b_g_x_x___object_1a586508ea4e7e45babb3a920ef296532d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_a_e_s_c_t_r___config" kindref="compound">AESCTR_Handle</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_a_e_s_c_t_r_d_r_b_g_x_x___object_1a586508ea4e7e45babb3a920ef296532d" kindref="member">ctrHandle</ref>;</highlight></codeline>
+<codeline lineno="105" refid="struct_a_e_s_c_t_r_d_r_b_g_x_x___object_1a73c2de7abcde310ef1ec150bcb0dc795" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_a_e_s_c_t_r_d_r_b_g_x_x___object_1a73c2de7abcde310ef1ec150bcb0dc795" kindref="member">seedLength</ref>;</highlight></codeline>
+<codeline lineno="106" refid="struct_a_e_s_c_t_r_d_r_b_g_x_x___object_1ade780815883ec6f03a7af0a12841ffef" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_a_e_s_c_t_r_d_r_b_g_x_x___object_1ade780815883ec6f03a7af0a12841ffef" kindref="member">reseedCounter</ref>;</highlight></codeline>
+<codeline lineno="107" refid="struct_a_e_s_c_t_r_d_r_b_g_x_x___object_1a03bd79e63eb929caee767c42908c0f7c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_a_e_s_c_t_r_d_r_b_g_x_x___object_1a03bd79e63eb929caee767c42908c0f7c" kindref="member">reseedInterval</ref>;</highlight></codeline>
+<codeline lineno="108" refid="struct_a_e_s_c_t_r_d_r_b_g_x_x___object_1a839e8a775e9949c12fc01e95078fc12b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>int_fast16_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_a_e_s_c_t_r_d_r_b_g_x_x___object_1a839e8a775e9949c12fc01e95078fc12b" kindref="member">returnStatus</ref>;</highlight></codeline>
+<codeline lineno="109" refid="struct_a_e_s_c_t_r_d_r_b_g_x_x___object_1a3ca16fe855e2b710954ef044b1ed4008" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_a_e_s_c_t_r_d_r_b_g_x_x___object_1a3ca16fe855e2b710954ef044b1ed4008" kindref="member">isOpen</ref>;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal">}<sp/><ref refid="struct_a_e_s_c_t_r_d_r_b_g_x_x___object" kindref="compound">AESCTRDRBGXX_Object</ref>;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>ti_drivers_aesctrdrbg_AESCTRDRBGXX__include<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="exports/tidrivers_msp432e4/source/ti/drivers/aesctrdrbg/AESCTRDRBGXX.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,18 @@
+[
+    {
+        "files": [
+            "+../aes_example.c -> aes_example.c",
+            "+../uartstdio.h -> uartstdio.h",
+            "+../uartstdio.c -> uartstdio.c",
+            "+../ustdlib.h -> ustdlib.h",
+            "+../ustdlib.c -> ustdlib.c",
+            "+../cmdline.h -> cmdline.h",
+            "+../cmdline.c -> cmdline.c",
+            "+../system_msp432e401y.c -> system_msp432e401y.c",
+            "+../README.md -> README.md",
+            "+../README.html -> README.html",
+            "+startup_msp432e401y_ccs.c -> ccs/startup_msp432e401y_ccs.c",
+            "+msp432e401y.cmd -> msp432e401y.cmd"
+        ]
+    }
+]

@@ -1,0 +1,159 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="group___i2_c___s_t_a_t_u_s" kind="group">
+    <compoundname>I2C_STATUS</compoundname>
+    <title>I2C Status codes</title>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="group___i2_c___s_t_a_t_u_s_1gaa63ec7e8376d0bfa4c6255a1f723e13f" prot="public" static="no">
+        <name>I2C_STATUS_QUEUED</name>
+        <initializer>(1)</initializer>
+        <briefdescription>
+<para>I2C transaction is queued but has not started. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/I2C.h" line="325" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/I2C.h" bodystart="325" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___i2_c___s_t_a_t_u_s_1gaa0bcf3acd26ac82bd8ff91daba2c78c4" prot="public" static="no">
+        <name>I2C_STATUS_SUCCESS</name>
+        <initializer>(0)</initializer>
+        <briefdescription>
+<para>Successful status code returned by I2C API. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/I2C.h" line="330" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/I2C.h" bodystart="330" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___i2_c___s_t_a_t_u_s_1ga7323fe57c39c46d0da9910e17f5f0b06" prot="public" static="no">
+        <name>I2C_STATUS_ERROR</name>
+        <initializer>(-1)</initializer>
+        <briefdescription>
+<para>Generic error status code returned by I2C API. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/I2C.h" line="335" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/I2C.h" bodystart="335" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___i2_c___s_t_a_t_u_s_1ga11c31c9869ed2441789205d9e5967d66" prot="public" static="no">
+        <name>I2C_STATUS_UNDEFINEDCMD</name>
+        <initializer>(-2)</initializer>
+        <briefdescription>
+<para>An error status code returned by <ref refid="_i2_c_8h_1a4c74b1b9f8e76ac22bec7608491cb223" kindref="member">I2C_control()</ref> for undefined command codes. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/I2C.h" line="341" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/I2C.h" bodystart="341" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___i2_c___s_t_a_t_u_s_1gacef5657ae83115da15f49dd76801638b" prot="public" static="no">
+        <name>I2C_STATUS_TIMEOUT</name>
+        <initializer>(-3)</initializer>
+        <briefdescription>
+<para>I2C operation timed-out. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/I2C.h" line="346" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/I2C.h" bodystart="346" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___i2_c___s_t_a_t_u_s_1gae1ce91f866196f18abebfd6aead32cbe" prot="public" static="no">
+        <name>I2C_STATUS_CLOCK_TIMEOUT</name>
+        <initializer>(-4)</initializer>
+        <briefdescription>
+<para>I2C serial clock line timeout. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/I2C.h" line="351" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/I2C.h" bodystart="351" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___i2_c___s_t_a_t_u_s_1ga75c95f62df35a6769b69904e6cd90181" prot="public" static="no">
+        <name>I2C_STATUS_ADDR_NACK</name>
+        <initializer>(-5)</initializer>
+        <briefdescription>
+<para>I2C slave address not acknowledged. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/I2C.h" line="356" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/I2C.h" bodystart="356" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___i2_c___s_t_a_t_u_s_1ga3773311442a356cd750e1cf34b85ed5a" prot="public" static="no">
+        <name>I2C_STATUS_DATA_NACK</name>
+        <initializer>(-6)</initializer>
+        <briefdescription>
+<para>I2C data byte not acknowledged. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/I2C.h" line="361" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/I2C.h" bodystart="361" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___i2_c___s_t_a_t_u_s_1gadb5718560335315df79d4abe7ddba317" prot="public" static="no">
+        <name>I2C_STATUS_ARB_LOST</name>
+        <initializer>(-7)</initializer>
+        <briefdescription>
+<para>I2C multi-master arbitration lost. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/I2C.h" line="366" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/I2C.h" bodystart="366" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___i2_c___s_t_a_t_u_s_1ga4d4ff3732548047b7c09a1f34ab93d98" prot="public" static="no">
+        <name>I2C_STATUS_INCOMPLETE</name>
+        <initializer>(-8)</initializer>
+        <briefdescription>
+<para>I2C transaction is in progress or returned without completing. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/I2C.h" line="371" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/I2C.h" bodystart="371" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___i2_c___s_t_a_t_u_s_1gaf7455cb02ee12dfc513ceb28323b4b8d" prot="public" static="no">
+        <name>I2C_STATUS_BUS_BUSY</name>
+        <initializer>(-9)</initializer>
+        <briefdescription>
+<para>I2C bus already in use by another controller. The I2C transaction was therefore unable to start. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/I2C.h" line="377" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/I2C.h" bodystart="377" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___i2_c___s_t_a_t_u_s_1ga2cca884b9720ab2ca750ebfdb8614601" prot="public" static="no">
+        <name>I2C_STATUS_CANCEL</name>
+        <initializer>(-10)</initializer>
+        <briefdescription>
+<para>I2C transaction canceled by <ref refid="_i2_c_8h_1a8cad0c04a9eca0fffc0ffe5586a5179b" kindref="member">I2C_cancel()</ref> </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/I2C.h" line="382" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/I2C.h" bodystart="382" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___i2_c___s_t_a_t_u_s_1gad92f93f1f1c8ef8fc2be70bb8b0c7aa9" prot="public" static="no">
+        <name>I2C_STATUS_INVALID_TRANS</name>
+        <initializer>(-11)</initializer>
+        <briefdescription>
+<para>I2C transaction is invalid. This may occur if: </para>        </briefdescription>
+        <detaileddescription>
+<para><orderedlist>
+<listitem><para>The <ref refid="struct_i2_c___transaction_1a2085d4c943f0d8617365b7c427e6a0de" kindref="member">I2C_Transaction.readCount</ref> and <ref refid="struct_i2_c___transaction_1a08959a9f098163d02d6002e73b3a4606" kindref="member">I2C_Transaction.writeCount</ref> are both set to 0.</para></listitem><listitem><para>A call to <ref refid="_i2_c_8h_1ac5d827b67fe77d7d179026941cc069d7" kindref="member">I2C_transfer()</ref> is made from a <ref refid="_i2_c_8h_1adaa5c99b7c23a00bac52d15a2469764e" kindref="member">I2C_CallbackFxn</ref> while queued transactions are being canceled. See also: <ref refid="_i2_c_8h_1a8cad0c04a9eca0fffc0ffe5586a5179b" kindref="member">I2C_cancel()</ref> </para></listitem></orderedlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/I2C.h" line="391" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/I2C.h" bodystart="391" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>These macros are reservations for <ref refid="_i2_c_8h" kindref="compound">I2C.h</ref></para><para>I2CMSP432E4_STATUS_* macros are command codes only defined in the <ref refid="_i2_c_m_s_p432_e4_8h" kindref="compound">I2CMSP432E4.h</ref> driver implementation and need to: <programlisting><codeline><highlight class="normal">#include<sp/>&lt;ti/drivers/i2c/I2CMSP432E4.h&gt;</highlight></codeline>
+</programlisting> </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

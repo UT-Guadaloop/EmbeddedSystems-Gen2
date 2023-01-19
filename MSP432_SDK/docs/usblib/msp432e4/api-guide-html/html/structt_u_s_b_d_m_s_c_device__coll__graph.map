@@ -1,0 +1,9 @@
+<map id="tUSBDMSCDevice" name="tUSBDMSCDevice">
+<area shape="rect" id="node2" href="$structt_m_s_c_d_media.html" title="Media Access functions. " alt="" coords="18,273,122,300"/>
+<area shape="rect" id="node3" href="$structt_m_s_c_instance.html" title="tMSCInstance" alt="" coords="157,273,268,300"/>
+<area shape="rect" id="node4" href="$structt_device_info.html" title="tDeviceInfo" alt="" coords="80,184,177,211"/>
+<area shape="rect" id="node5" href="$structt_custom_handlers.html" title="tCustomHandlers" alt="" coords="5,95,140,121"/>
+<area shape="rect" id="node6" href="$structt_config_header.html" title="tConfigHeader" alt="" coords="165,95,279,121"/>
+<area shape="rect" id="node7" href="$structt_config_section.html" title="tConfigSection" alt="" coords="164,5,280,32"/>
+<area shape="rect" id="node8" href="$structt_u_s_b_d_m_a_instance.html" title="tUSBDMAInstance" alt="" coords="202,184,341,211"/>
+</map>

@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="struct_a_e_s_c_c_m___config" kind="struct" language="C++" prot="public">
+    <compoundname>AESCCM_Config</compoundname>
+    <includes refid="_a_e_s_c_c_m_8h" local="no">AESCCM.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_a_e_s_c_c_m___config_1a46baedd48855bc3d5c41a8cc83aad637" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* AESCCM_Config::object</definition>
+        <argsstring></argsstring>
+        <name>object</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pointer to a driver specific data object </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/AESCCM.h" line="402" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/AESCCM.h" bodystart="402" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_a_e_s_c_c_m___config_1aa1931f1628df33b82defd89d3d965c2c" prot="public" static="no" mutable="no">
+        <type>void const  *</type>
+        <definition>void const* AESCCM_Config::hwAttrs</definition>
+        <argsstring></argsstring>
+        <name>hwAttrs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pointer to a driver specific hardware attributes structure </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/AESCCM.h" line="405" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/AESCCM.h" bodystart="405" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>AESCCM Global configuration. </para>    </briefdescription>
+    <detaileddescription>
+<para>The <ref refid="struct_a_e_s_c_c_m___config" kindref="compound">AESCCM_Config</ref> structure contains a set of pointers used to characterize the AESCCM driver implementation.</para><para>This structure needs to be defined before calling <ref refid="_a_e_s_c_c_m_8h_1a51982c7e9ace406edb69a0345f4c9dfc" kindref="member">AESCCM_init()</ref> and it must not be changed thereafter.</para><para><simplesect kind="see"><para><ref refid="_a_e_s_c_c_m_8h_1a51982c7e9ace406edb69a0345f4c9dfc" kindref="member">AESCCM_init()</ref> </para></simplesect>
+</para>    </detaileddescription>
+    <location file="exports/tidrivers_msp432e4/source/ti/drivers/AESCCM.h" line="400" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/AESCCM.h" bodystart="400" bodyend="406"/>
+    <listofallmembers>
+      <member refid="struct_a_e_s_c_c_m___config_1aa1931f1628df33b82defd89d3d965c2c" prot="public" virt="non-virtual"><scope>AESCCM_Config</scope><name>hwAttrs</name></member>
+      <member refid="struct_a_e_s_c_c_m___config_1a46baedd48855bc3d5c41a8cc83aad637" prot="public" virt="non-virtual"><scope>AESCCM_Config</scope><name>object</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

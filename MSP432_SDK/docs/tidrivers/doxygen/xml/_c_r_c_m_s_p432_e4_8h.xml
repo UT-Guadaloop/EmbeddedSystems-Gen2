@@ -1,0 +1,120 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="_c_r_c_m_s_p432_e4_8h" kind="file" language="C++">
+    <compoundname>CRCMSP432E4.h</compoundname>
+    <includes local="no">stdint.h</includes>
+    <includes local="no">stdbool.h</includes>
+    <includes refid="_c_r_c_8h" local="no">ti/drivers/CRC.h</includes>
+    <incdepgraph>
+      <node id="169">
+        <label>stdbool.h</label>
+      </node>
+      <node id="168">
+        <label>stdint.h</label>
+      </node>
+      <node id="170">
+        <label>ti/drivers/CRC.h</label>
+        <link refid="_c_r_c_8h"/>
+        <childnode refid="171" relation="include">
+        </childnode>
+        <childnode refid="168" relation="include">
+        </childnode>
+        <childnode refid="169" relation="include">
+        </childnode>
+      </node>
+      <node id="171">
+        <label>stddef.h</label>
+      </node>
+      <node id="167">
+        <label>CRCMSP432E4.h</label>
+        <link refid="_c_r_c_m_s_p432_e4_8h"/>
+        <childnode refid="168" relation="include">
+        </childnode>
+        <childnode refid="169" relation="include">
+        </childnode>
+        <childnode refid="170" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innerclass refid="struct_c_r_c_m_s_p432_e4___object" prot="public">CRCMSP432E4_Object</innerclass>
+    <briefdescription>
+<para>CRC driver implementation for MSP432E4. </para>    </briefdescription>
+    <detaileddescription>
+<para>============================================================================</para><para>The CRC header file should be included in an application as follows: <programlisting><codeline><highlight class="normal">#include<sp/>&lt;ti/drivers/CRC.h&gt;</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&lt;ti/drivers/crc/CRCMSP432E4.h&gt;</highlight></codeline>
+</programlisting></para><para><heading level="1">Supported Functionality</heading>
+</para><para>This driver supports the following CRCs:<itemizedlist>
+<listitem><para>CRC_POLYNOMIAL_CRC_16_IBM</para></listitem><listitem><para>CRC_POLYNOMIAL_CRC_16_CCITT</para></listitem><listitem><para>CRC_POLYNOMIAL_CRC_32_IEEE</para></listitem><listitem><para>CRC_POLYNOMIAL_CRC_32C</para></listitem><listitem><para>CRC_POLYNOMIAL_CRC_TCP</para></listitem></itemizedlist>
+</para><para>This driver supports only the following size options. Data processing is only supported for CRC_DATA_SIZE_32BIT.<itemizedlist>
+<listitem><para>CRC_DATA_SIZE_8BIT</para></listitem><listitem><para>CRC_DATA_SIZE_32BIT </para></listitem></itemizedlist>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2019,<sp/>Texas<sp/>Instruments<sp/>Incorporated</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Redistribution<sp/>and<sp/>use<sp/>in<sp/>source<sp/>and<sp/>binary<sp/>forms,<sp/>with<sp/>or<sp/>without</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>modification,<sp/>are<sp/>permitted<sp/>provided<sp/>that<sp/>the<sp/>following<sp/>conditions</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>are<sp/>met:</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>of<sp/>source<sp/>code<sp/>must<sp/>retain<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer.</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>in<sp/>binary<sp/>form<sp/>must<sp/>reproduce<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer<sp/>in<sp/>the</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>documentation<sp/>and/or<sp/>other<sp/>materials<sp/>provided<sp/>with<sp/>the<sp/>distribution.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Neither<sp/>the<sp/>name<sp/>of<sp/>Texas<sp/>Instruments<sp/>Incorporated<sp/>nor<sp/>the<sp/>names<sp/>of</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>its<sp/>contributors<sp/>may<sp/>be<sp/>used<sp/>to<sp/>endorse<sp/>or<sp/>promote<sp/>products<sp/>derived</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>from<sp/>this<sp/>software<sp/>without<sp/>specific<sp/>prior<sp/>written<sp/>permission.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>THIS<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>BY<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>AND<sp/>CONTRIBUTORS<sp/>&quot;AS<sp/>IS&quot;</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>AND<sp/>ANY<sp/>EXPRESS<sp/>OR<sp/>IMPLIED<sp/>WARRANTIES,<sp/>INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>THE<sp/>IMPLIED<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY<sp/>AND<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>PURPOSE<sp/>ARE<sp/>DISCLAIMED.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE<sp/>COPYRIGHT<sp/>OWNER<sp/>OR</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>CONTRIBUTORS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>DIRECT,<sp/>INDIRECT,<sp/>INCIDENTAL,<sp/>SPECIAL,</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>EXEMPLARY,<sp/>OR<sp/>CONSEQUENTIAL<sp/>DAMAGES<sp/>(INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>PROCUREMENT<sp/>OF<sp/>SUBSTITUTE<sp/>GOODS<sp/>OR<sp/>SERVICES;<sp/>LOSS<sp/>OF<sp/>USE,<sp/>DATA,<sp/>OR<sp/>PROFITS;</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>OR<sp/>BUSINESS<sp/>INTERRUPTION)<sp/>HOWEVER<sp/>CAUSED<sp/>AND<sp/>ON<sp/>ANY<sp/>THEORY<sp/>OF<sp/>LIABILITY,</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/>STRICT<sp/>LIABILITY,<sp/>OR<sp/>TORT<sp/>(INCLUDING<sp/>NEGLIGENCE<sp/>OR</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*<sp/>OTHERWISE)<sp/>ARISING<sp/>IN<sp/>ANY<sp/>WAY<sp/>OUT<sp/>OF<sp/>THE<sp/>USE<sp/>OF<sp/>THIS<sp/>SOFTWARE,</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*<sp/>EVEN<sp/>IF<sp/>ADVISED<sp/>OF<sp/>THE<sp/>POSSIBILITY<sp/>OF<sp/>SUCH<sp/>DAMAGE.</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="preprocessor">#ifndef<sp/>ti_drivers_crc_CRCMSP432E4__include</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ti_drivers_crc_CRCMSP432E4__include</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdbool.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_c_r_c_8h" kindref="compound">ti/drivers/CRC.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83" refid="struct_c_r_c_m_s_p432_e4___object" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="84" refid="struct_c_r_c_m_s_p432_e4___object_1a68e9cf65028b1ea1738413108ce02381" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_c_r_c_8h_1a238af244318c919652636cc82abefcbc" kindref="member">CRC_CallbackFxn</ref><sp/><sp/><sp/><sp/><sp/><ref refid="struct_c_r_c_m_s_p432_e4___object_1a68e9cf65028b1ea1738413108ce02381" kindref="member">callbackFxn</ref>;</highlight></codeline>
+<codeline lineno="85" refid="struct_c_r_c_m_s_p432_e4___object_1acc092354891fb37e37e3df2bb46be63d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_c_r_c_m_s_p432_e4___object_1acc092354891fb37e37e3df2bb46be63d" kindref="member">timeout</ref>;</highlight></codeline>
+<codeline lineno="86" refid="struct_c_r_c_m_s_p432_e4___object_1ad6337e7ec0d37d6602f3fda9acb100e0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_c_r_c_m_s_p432_e4___object_1ad6337e7ec0d37d6602f3fda9acb100e0" kindref="member">seed</ref>;</highlight></codeline>
+<codeline lineno="87" refid="struct_c_r_c_m_s_p432_e4___object_1a69c5795757ed9c07ccd6d954b84dbda0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_c_r_c_m_s_p432_e4___object_1a69c5795757ed9c07ccd6d954b84dbda0" kindref="member">finalXorValue</ref>;</highlight></codeline>
+<codeline lineno="88" refid="struct_c_r_c_m_s_p432_e4___object_1afc186937f7c471e1d61c31c224a0b6c1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_c_r_c_m_s_p432_e4___object_1afc186937f7c471e1d61c31c224a0b6c1" kindref="member">configRegister</ref>;</highlight></codeline>
+<codeline lineno="89" refid="struct_c_r_c_m_s_p432_e4___object_1a867b7091b73a41a8188af240c67f73eb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="struct_c_r_c_m_s_p432_e4___object_1a867b7091b73a41a8188af240c67f73eb" kindref="member">resultLocation</ref>;</highlight></codeline>
+<codeline lineno="90" refid="struct_c_r_c_m_s_p432_e4___object_1a5b2fed4141b10360dd3ddbd81f35474b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_c_r_c_m_s_p432_e4___object_1a5b2fed4141b10360dd3ddbd81f35474b" kindref="member">resultRawPartial</ref>;</highlight></codeline>
+<codeline lineno="91" refid="struct_c_r_c_m_s_p432_e4___object_1a12adad99e13f070ad5d55b5f4826b90b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_c_r_c_m_s_p432_e4___object_1a12adad99e13f070ad5d55b5f4826b90b" kindref="member">resultProcessedPartial</ref>;</highlight></codeline>
+<codeline lineno="92" refid="struct_c_r_c_m_s_p432_e4___object_1ad306762533896ea9cd95d6bd12efef14" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_c_r_c_8h_1a4ab2a6288a9a24b832bc4a2d57447f45" kindref="member">CRC_DataSize</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_c_r_c_m_s_p432_e4___object_1ad306762533896ea9cd95d6bd12efef14" kindref="member">dataSize</ref>;</highlight></codeline>
+<codeline lineno="93" refid="struct_c_r_c_m_s_p432_e4___object_1ab5128d60bf0136923026d7afc98f437c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_c_r_c_8h_1a54c1e040e01bddb039a9a3632aee034c" kindref="member">CRC_ByteSwap</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_c_r_c_m_s_p432_e4___object_1ab5128d60bf0136923026d7afc98f437c" kindref="member">byteSwapInput</ref>;</highlight></codeline>
+<codeline lineno="94" refid="struct_c_r_c_m_s_p432_e4___object_1a0154f900950d5b2ebb1ade9396030216" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_c_r_c_8h_1a8b296466741fa36ab51155a7edc1dd4f" kindref="member">CRC_ReturnBehavior</ref><sp/><sp/><ref refid="struct_c_r_c_m_s_p432_e4___object_1a0154f900950d5b2ebb1ade9396030216" kindref="member">returnBehavior</ref>;</highlight></codeline>
+<codeline lineno="95" refid="struct_c_r_c_m_s_p432_e4___object_1a6261b9ec8da9ae2a46ee646d839b36bb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_c_r_c_m_s_p432_e4___object_1a6261b9ec8da9ae2a46ee646d839b36bb" kindref="member">isOpen</ref>;</highlight></codeline>
+<codeline lineno="96" refid="struct_c_r_c_m_s_p432_e4___object_1a70545b4f972dedd1672215d5f078bb28" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_c_r_c_m_s_p432_e4___object_1a70545b4f972dedd1672215d5f078bb28" kindref="member">ongoingPartial</ref>;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal">}<sp/><ref refid="struct_c_r_c_m_s_p432_e4___object" kindref="compound">CRCMSP432E4_Object</ref>;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>ti_drivers_crc_CRCMSP432E4__include<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="exports/tidrivers_msp432e4/source/ti/drivers/crc/CRCMSP432E4.h"/>
+  </compounddef>
+</doxygen>

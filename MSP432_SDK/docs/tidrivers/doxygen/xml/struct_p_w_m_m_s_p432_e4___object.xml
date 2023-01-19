@@ -1,0 +1,141 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="struct_p_w_m_m_s_p432_e4___object" kind="struct" language="C++" prot="public">
+    <compoundname>PWMMSP432E4_Object</compoundname>
+    <includes refid="_p_w_m_m_s_p432_e4_8h" local="no">PWMMSP432E4.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_p_w_m_m_s_p432_e4___object_1ae5dcb2b2382b7326a1a1b1ae5a9fb4f9" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_p_w_m_m_s_p432_e4___status" kindref="compound">PWMMSP432E4_Status</ref> *</type>
+        <definition>PWMMSP432E4_Status* PWMMSP432E4_Object::pwmStatusStruct</definition>
+        <argsstring></argsstring>
+        <name>pwmStatusStruct</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/pwm/PWMMSP432E4.h" line="273" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/pwm/PWMMSP432E4.h" bodystart="273" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_p_w_m_m_s_p432_e4___object_1a975bcbff7c7ec37542fcb895d4d91fcc" prot="public" static="no" mutable="no">
+        <type><ref refid="_p_w_m_8h_1abc7bc5565f2767cf9f06c1572044a8ee" kindref="member">PWM_Duty_Units</ref></type>
+        <definition>PWM_Duty_Units PWMMSP432E4_Object::dutyUnits</definition>
+        <argsstring></argsstring>
+        <name>dutyUnits</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/pwm/PWMMSP432E4.h" line="274" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/pwm/PWMMSP432E4.h" bodystart="274" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_p_w_m_m_s_p432_e4___object_1ae4dfa6cda0eb6c46a06cb9904a74df31" prot="public" static="no" mutable="no">
+        <type><ref refid="_p_w_m_8h_1a11aa442e82549992c98729216d64fd63" kindref="member">PWM_Period_Units</ref></type>
+        <definition>PWM_Period_Units PWMMSP432E4_Object::periodUnits</definition>
+        <argsstring></argsstring>
+        <name>periodUnits</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/pwm/PWMMSP432E4.h" line="275" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/pwm/PWMMSP432E4.h" bodystart="275" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_p_w_m_m_s_p432_e4___object_1a5b79762acbedc6a61e4542c7835dedb9" prot="public" static="no" mutable="no">
+        <type><ref refid="_p_w_m_8h_1a5a40c7014745d15b0c1a604dae5593f9" kindref="member">PWM_IdleLevel</ref></type>
+        <definition>PWM_IdleLevel PWMMSP432E4_Object::idleLevel</definition>
+        <argsstring></argsstring>
+        <name>idleLevel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/pwm/PWMMSP432E4.h" line="276" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/pwm/PWMMSP432E4.h" bodystart="276" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_p_w_m_m_s_p432_e4___object_1a4e0f4a5ec5b9935ffe7facde60588ad0" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t PWMMSP432E4_Object::pwmOutputNum</definition>
+        <argsstring></argsstring>
+        <name>pwmOutputNum</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/pwm/PWMMSP432E4.h" line="277" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/pwm/PWMMSP432E4.h" bodystart="277" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_p_w_m_m_s_p432_e4___object_1abaa6a6b106df552fc623db8c2d246e30" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t PWMMSP432E4_Object::pwmOutputBit</definition>
+        <argsstring></argsstring>
+        <name>pwmOutputBit</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/pwm/PWMMSP432E4.h" line="278" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/pwm/PWMMSP432E4.h" bodystart="278" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_p_w_m_m_s_p432_e4___object_1ab18201f012111893cace68081b20a3cc" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool PWMMSP432E4_Object::isOpen</definition>
+        <argsstring></argsstring>
+        <name>isOpen</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/pwm/PWMMSP432E4.h" line="279" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/pwm/PWMMSP432E4.h" bodystart="279" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_p_w_m_m_s_p432_e4___object_1a57e49646c3bd62a5f92769d4eaca41fa" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool PWMMSP432E4_Object::isRunning</definition>
+        <argsstring></argsstring>
+        <name>isRunning</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/pwm/PWMMSP432E4.h" line="280" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/pwm/PWMMSP432E4.h" bodystart="280" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>PWMMSP432E4 Object. </para>    </briefdescription>
+    <detaileddescription>
+<para>The application must not access any member variables of this structure! </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="301">
+        <label>PWMMSP432E4_Status</label>
+        <link refid="struct_p_w_m_m_s_p432_e4___status"/>
+      </node>
+      <node id="300">
+        <label>PWMMSP432E4_Object</label>
+        <link refid="struct_p_w_m_m_s_p432_e4___object"/>
+        <childnode refid="301" relation="usage">
+          <edgelabel>pwmStatusStruct</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="exports/tidrivers_msp432e4/source/ti/drivers/pwm/PWMMSP432E4.h" line="272" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/pwm/PWMMSP432E4.h" bodystart="272" bodyend="281"/>
+    <listofallmembers>
+      <member refid="struct_p_w_m_m_s_p432_e4___object_1a975bcbff7c7ec37542fcb895d4d91fcc" prot="public" virt="non-virtual"><scope>PWMMSP432E4_Object</scope><name>dutyUnits</name></member>
+      <member refid="struct_p_w_m_m_s_p432_e4___object_1a5b79762acbedc6a61e4542c7835dedb9" prot="public" virt="non-virtual"><scope>PWMMSP432E4_Object</scope><name>idleLevel</name></member>
+      <member refid="struct_p_w_m_m_s_p432_e4___object_1ab18201f012111893cace68081b20a3cc" prot="public" virt="non-virtual"><scope>PWMMSP432E4_Object</scope><name>isOpen</name></member>
+      <member refid="struct_p_w_m_m_s_p432_e4___object_1a57e49646c3bd62a5f92769d4eaca41fa" prot="public" virt="non-virtual"><scope>PWMMSP432E4_Object</scope><name>isRunning</name></member>
+      <member refid="struct_p_w_m_m_s_p432_e4___object_1ae4dfa6cda0eb6c46a06cb9904a74df31" prot="public" virt="non-virtual"><scope>PWMMSP432E4_Object</scope><name>periodUnits</name></member>
+      <member refid="struct_p_w_m_m_s_p432_e4___object_1abaa6a6b106df552fc623db8c2d246e30" prot="public" virt="non-virtual"><scope>PWMMSP432E4_Object</scope><name>pwmOutputBit</name></member>
+      <member refid="struct_p_w_m_m_s_p432_e4___object_1a4e0f4a5ec5b9935ffe7facde60588ad0" prot="public" virt="non-virtual"><scope>PWMMSP432E4_Object</scope><name>pwmOutputNum</name></member>
+      <member refid="struct_p_w_m_m_s_p432_e4___object_1ae5dcb2b2382b7326a1a1b1ae5a9fb4f9" prot="public" virt="non-virtual"><scope>PWMMSP432E4_Object</scope><name>pwmStatusStruct</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

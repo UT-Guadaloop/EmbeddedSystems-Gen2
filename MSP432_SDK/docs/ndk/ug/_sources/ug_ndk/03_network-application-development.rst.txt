@@ -1,0 +1,1021 @@
+2 Network Application Development
+---------------------------------
+
+This chapter describes how to begin developing network applications. It discusses the issues and guidelines involved in the development of network applications using the NDK libraries.
+
+2.1 Configuring the NDK with C Code
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This section describes how to integrate the NDK when using C-based configuration.
+
+2.1.1 Required RTOS Objects
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The NDK internally contains an OS adaptation layer to access the RTOS (TI-RTOS Kernel or FreeRTOS) and the HAL layer to access the hardware. These layers require the following RTOS object to be created:
+
+-  **Timer object.** The timer driver in the HAL requires that an RTOS Timer object be created to drive its main timer. The Timer must be configured to fire every 100ms, and call the timer driver function ``llTimerTick()``. See `"Constructing a Configuration for a Static IP and Gateway" <#constructing-a-configuration-for-a-static-ip-and-gateway>`__ for an example from ``ndk.c`` that creates and starts a timer object.
+
+2.1.2 Include Files
+^^^^^^^^^^^^^^^^^^^
+
+If you are using the ``Cfg*()`` functions to add settings to the configuration database, you must add the appropriate directory to your include path. See the `NDK Include File Directory <02_overview.html#ndk-include-file-directory>`__ section for more details.
+
+2.1.3 Library Files
+^^^^^^^^^^^^^^^^^^^
+
+If you are using the ``Cfg*()`` functions for configuration, you are responsible for linking the correct libraries into your project.
+
+    Note, if you use SysConfig to configure the NDK, the config-specific libraries are provided in the generated linker command file.
+
+2.1.4 System Configuration
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If you are using the ``Cfg*()`` functions for configuration, you must create a system configuration in order to be able to use the NETCTRL API. The configuration is a handle-based object that holds a multitude of system parameters. These parameters control the operation of the stack. Typical configuration parameters include:
+
+-  Network Hostname
+-  IP Address and Subnet Mask
+-  IP Address of Default Routes
+-  Services to be Executed (DHCP, DNS, etc.)
+-  IP Address of name servers
+-  Stack Properties (IP routing, socket buffer size, ARP timeouts, etc.)
+
+The process of creating a configuration always begins with a call to ``CfgNew()`` to create a configuration handle. Once the configuration handle is created, configuration information can be loaded into the handle in bulk or constructed one entry at a time.
+
+Loading a configuration in bulk requires that a previously constructed configuration has been saved to non-volatile storage. Once the configuration is in memory, the information can be loaded into the configuration handle by calling ``CfgLoad()``. Another option is to manually add individual items to the configuration for the various desired properties. This is done by calling ``CfgAddEntry()`` for each individual entry to add.
+
+The exact specification of the stack's configuration API appears in the Initialization and Configuration section of the `NDK API Reference Guide <../../NDK_API_Reference.html>`__. Some additional examples are provided in the `Configuration Examples <#configuration-examples>`__ section of this document and in the NDK example programs provided with your SDK.
+
+2.1.4.1 Configuration Examples
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This section contains some sample code for constructing configurations using the ``Cfg*()`` functions.
+
+2.1.4.1.1 Constructing a Configuration for a Static IP and Gateway
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The ``ndkStackThread()`` function in this example consists of the main initialization thread for the stack. It creates a new configuration, configures IP, TCP, and UDP, and then boots up the stack.
+
+It performs the following actions:
+
+1. Create and start a timer object that will be used by the NDK by calling the POSIX ``timer_create()`` and ``timer_settime()`` functions. Internally, these POSIX functions may use any supported RTOS, such as TI-RTOS Kernel or FreeRTOS.
+2. Initiate a system session by calling ``NC_SystemOpen()``.
+3. Create a new configuration by calling ``CfgNew()``.
+4. Configure the stack's settings for IP, TCP, and UDP.
+5. Configure the stack sizes used for low, normal, and high priority tasks by calling ``CfgAddEntry()``.
+6. Boot the system using this configuration by calling ``NC_NetStart()``.
+7. Free the configuration on system shutdown (when ``NC_NetStart()`` returns) and call ``CfgFree()`` and ``NC_SystemClose()``.
+8. Call ``timer_delete()`` to delete the timer object.
+
+.. code:: c
+
+    static void *ndkStackThread(void *threadArgs)
+    {
+        void *hCfg;
+        int rc;
+        timer_t ndkHeartBeat;
+        struct sigevent sev;
+        struct itimerspec its;
+        struct itimerspec oldIts;
+        int ndkHeartBeatCount = 0;
+
+        /* create the NDK timer tick */
+        sev.sigev_notify = SIGEV_SIGNAL;
+        sev.sigev_value.sival_ptr = &ndkHeartBeatCount;
+        sev.sigev_notify_attributes = NULL;
+        sev.sigev_notify_function = &llTimerTick;
+
+        rc = timer_create(CLOCK_MONOTONIC, &sev, &ndkHeartBeat);
+        if (rc != 0) {
+            DbgPrintf(DBG_INFO, "ndkStackThread: failed to create timer (%d)\n");
+        }
+
+        /* start the NDK 100ms timer */
+        its.it_interval.tv_sec = 0;
+        its.it_interval.tv_nsec = 100000000;
+        its.it_value.tv_sec = 0;
+        its.it_value.tv_nsec = 100000000;
+
+        rc = timer_settime(ndkHeartBeat, 0, &its, NULL);
+        if (rc != 0) {
+            DbgPrintf(DBG_INFO, "ndkStackThread: failed to set time (%d)\n");
+        }
+
+        rc = NC_SystemOpen(NC_PRIORITY_LOW, NC_OPMODE_INTERRUPT);
+        if (rc) {
+            DbgPrintf(DBG_ERROR, "NC_SystemOpen Failed (%d)\n");
+        }
+
+        /* create and build the system configuration from scratch. */
+        hCfg = CfgNew();
+        if (!hCfg) {
+            DbgPrintf(DBG_INFO, "Unable to create configuration\n");
+            goto main_exit;
+        }
+
+        /* IP, TCP, and UDP config */
+        initIp(hCfg);
+        initTcp(hCfg);
+        initUdp(hCfg);
+
+        /* config low priority tasks stack size */
+        rc = 2048;
+        CfgAddEntry(hCfg, CFGTAG_OS, CFGITEM_OS_TASKSTKLOW, CFG_ADDMODE_UNIQUE,
+                sizeof(uint32_t), (unsigned char *)&rc, NULL);
+
+        /* config norm priority tasks stack size */
+        rc = 2048;
+        CfgAddEntry(hCfg, CFGTAG_OS, CFGITEM_OS_TASKSTKNORM, CFG_ADDMODE_UNIQUE,
+                sizeof(uint32_t), (unsigned char *)&rc, NULL);
+
+        /* config high priority tasks stack size */
+        rc = 2048;
+        CfgAddEntry(hCfg, CFGTAG_OS, CFGITEM_OS_TASKSTKHIGH, CFG_ADDMODE_UNIQUE,
+                sizeof(uint32_t), (unsigned char *)&rc, NULL);
+        do {
+            rc = NC_NetStart(hCfg, networkOpen, networkClose, networkIPAddr);
+        } while(rc > 0);
+
+        /* Shut down the stack */
+        CfgFree(hCfg);
+
+    main_exit:
+        NC_SystemClose();
+
+        /* stop and delete the NDK heartbeat */
+        its.it_value.tv_sec = 0;
+        its.it_value.tv_nsec = 0;
+
+        rc = timer_settime(ndkHeartBeat, 0, &its, &oldIts);
+        rc = timer_delete(ndkHeartBeat);
+        DbgPrintf(DBG_INFO, "ndkStackThread: exiting ...\n");
+        return (NULL);
+    }
+
+2.1.4.1.2 Constructing a Configuration using the DHCP Client Service
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This section examines the ``initIp()`` function from ``ndk.c`` that was called in the previous section. The function tells the stack to use the Dynamic Host Configuration Protocol (DHCP) client service to perform its IP address configuration.
+
+Since DHCP provides the IP address, route, domain, and domain name servers, you only need to provide the hostname. See the `NDK API Reference Guide <../../NDK_API_Reference.html>`__ for more details on using DHCP.
+
+The code below performs the following operations:
+
+1. Add a configuration entry for the local hostname using the hostName, which is declared as ``static char *hostName = "tisoc";``
+2. Set the elements of dhcpc, which has a structure of type ``CI_SERVICE_DHCPC``. This structure is described in the `NDK API Reference Guide <../../NDK_API_Reference.html>`__.
+3. Add a configuration entry specifying the DHCP client service to be used.
+
+.. code:: c
+
+    static void initIp(void *hCfg)
+    {
+        CI_SERVICE_DHCPC dhcpc;
+        unsigned char     DHCP_OPTIONS[] = { DHCPOPT_SUBNET_MASK };
+
+        /* Add global hostname to hCfg (to be claimed in all connected domains) */
+        CfgAddEntry(hCfg, CFGTAG_SYSINFO, CFGITEM_DHCP_HOSTNAME, 0,
+                strlen(hostName), (unsigned char *)hostName, NULL);
+
+        /* Use DHCP to obtain IP address on interface 1 */
+
+        /* Specify DHCP Service on IF specified by "IfIdx" */
+        memset(&dhcpc, 0, sizeof(dhcpc));
+        dhcpc.cisargs.Mode   = CIS_FLG_IFIDXVALID;
+        dhcpc.cisargs.IfIdx  = 1;
+        dhcpc.cisargs.pCbSrv = &serviceReport;
+        dhcpc.param.pOptions = DHCP_OPTIONS;
+        dhcpc.param.len = 1;
+        CfgAddEntry(hCfg, CFGTAG_SERVICE, CFGITEM_SERVICE_DHCPCLIENT, 0,
+                sizeof(dhcpc), (unsigned char *)&dhcpc, NULL);
+    }
+
+2.1.4.1.3 Using a Statically Defined DNS Server
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The area of the configuration system that is used by the DHCP client can be difficult. When the DHCP client is in use, it has full control over the first 256 entries in the system information portion of the configuration system. In some rare instances, it may be useful to share this space with DHCP.
+
+For example, assume a network application needs to manually add the IP address of a Domain Name System (DNS) server to the system configuration. When DHCP is not being used, this code is simple. To add a DNS server of 128.114.12.2, the following code would be added to the configuration build process (before calling ``NC_NetStart()``).
+
+.. code:: c
+
+    uint32_t IPTmp;
+
+    // Manually add the DNS server "128.114.12.2"
+    IPTmp = inet_addr("128.114.12.2");
+
+    CfgAddEntry( hCfg, CFGTAG_SYSINFO, CFGITEM_DHCP_DOMAINNAMESERVER,
+                 0, sizeof(IPTmp), (unsigned char *)&IPTmp, 0 );
+
+Now, when a DHCP client is used, it clears and resets the contents of the part of the configuration it controls. This includes the DNS server addresses. Therefore, if the above code was added to an application that used DHCP, the entry would be cleared whenever DHCP executed a status update.
+
+To share this configuration space with DHCP (or to read the results of a DHCP configuration), the DHCP status callback report codes must be used. The status callback function was introduced in `Adding Status Report Services <#adding-status-report-services>`__. When DHCP reports a status change, the application knows that the DHCP portion of the system configuration has been reset.
+
+The following code manually adds a DNS server address when the DHCP client is in use.
+
+.. code:: c
+
+    //
+    // Service Status Reports
+    //
+    static char *TaskName[] = { "Telnet","","NAT","DHCPS","DHCPC","DNS" };
+    static char *ReportStr[] = { "","Running","Updated","Complete","Fault" };
+    static char *StatusStr[] = { "Disabled","Waiting","IPTerm", "Failed","Enabled" };
+
+    static void ServiceReport( uint32_t Item, uint32_t Status, uint32_t Report, void *h )
+    {
+        printf( "Service Status: %-9s: %-9s: %-9s: %03d\n",
+            TaskName[Item-1], StatusStr[Status], ReportStr[Report/256], Report&0xFF );
+
+        // Example of adding to the DHCP configuration space
+        //
+        // When using the DHCP client, the client has full control over access
+        // to the first 256 entries in the CFGTAG_SYSINFO space. Here, we want
+        // to manually add a DNS server to the configuration, but we can only
+        // do it once DHCP has finished its programming.
+        //
+        if( Item == CFGITEM_SERVICE_DHCPCLIENT &&
+            Status == CIS_SRV_STATUS_ENABLED &&
+            (Report == (NETTOOLS_STAT_RUNNING|DHCPCODE_IPADD) ||
+            Report == (NETTOOLS_STAT_RUNNING|DHCPCODE_IPRENEW)) )
+        {
+            uint32_t IPTmp;
+
+            // Manually add the DNS server when specified. If the address
+            // string reads "0.0.0.0", IPTmp will be set to zero.
+            IPTmp = inet_addr(DNSServer);
+
+            if( IPTmp )
+                CfgAddEntry( 0, CFGTAG_SYSINFO, CFGITEM_DHCP_DOMAINNAMESERVER,
+                    0, sizeof(IPTmp), (unsigned char *)&IPTmp, 0 );
+        }
+    }
+
+2.1.4.2 Controlling NDK and OS Options via the Configuration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Along with specifying IP addresses, routes, and services, the configuration system allows you to directly manipulate the configuration structures of the OS adaptation layer and the NDK. The OS configuration structure is discussed in the Operating System Configuration section of the `NDK API Reference Guide <../../NDK_API_Reference.html>`__, and the NDK configuration structure is discussed in the Configuring the Stack section in the appendices. The configuration interface to these internal structures is consolidated into a single configuration API as specified in the Initialization and Configuration section.
+
+Although the values in these two configuration structures can be modified directly, adding the parameters to the system configuration is useful for two reasons. First, it provides a consistent API for all network configuration, and second, if the configuration load and save feature is used, these configuration parameters are saved along with the rest of the system configuration.
+
+As a quick example of setting an OS configuration option, the following code makes a change to the debug reporting mechanism. By default, all debug messages generated by the NDK are printed. However, the OS configuration can be adjusted to print only messages of a higher severity level, or to disable the debug messages entirely.
+
+.. code:: c
+
+    // We do not want to see debug messages less than WARNINGS
+    rc = DBG_WARN;
+
+    CfgAddEntry( hCfg, CFGTAG_OS, CFGITEM_OS_DBGPRINTLEVEL,
+                 CFG_ADDMODE_UNIQUE, sizeof(uint32_t), (unsigned char *)&rc, 0 );
+
+2.1.4.3 Shutdown
+^^^^^^^^^^^^^^^^
+
+There are two ways the stack can be shut down. The first is a manual shutdown that occurs when an application calls ``NC_NetStop()``. Here, the calling argument to the function is returned to the NETCTRL thread as the return value from ``NC_NetStart()``. Calling ``NC_NetStop(1)`` reboots the network stack, while calling ``NC_NetStop(0)`` shuts down the network stack.
+
+The second way the stack can be shut down is when the stack code detects a fatal error. A fatal error is an error above the fatal threshold set in the configuration. This type of error generally indicates that it is not safe for the stack to continue. When this occurs, the stack code calls ``NC_NetStop(-1)``. It is then up to you to determine what should be done next. The way the ``NC_NetStart()`` loop is coded determines whether the system will shut down or simply reboot.
+
+Note that the critical threshold to shut down can also be disabled. The following code can be added to the configuration to disable error-related shutdowns:
+
+.. code:: c
+
+    // We do not want the stack to abort on any error
+    uint32_t rc = DBG_NONE;
+
+    CfgAddEntry( hCfg, CFGTAG_OS, CFGITEM_OS_DBGABORTLEVEL,
+        CFG_ADDMODE_UNIQUE, sizeof(uint32_t), (unsigned char *)&rc, 0 );
+
+2.1.4.4 Saving and Loading a Configuration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Once a configuration is constructed, the application may save it off into non-volatile RAM so that it can be reloaded on the next cold boot. This is especially useful in an embedded system where the configuration can be modified at runtime (e.g. via serial cable, Telnet).
+
+2.1.4.4.1 Saving the Configuration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+To save the configuration, convert it to a linear buffer, and then save the linear buffer off to storage. Here is a quick example of a configuration save operation. Note the ``MyMemorySave()`` function is assumed to save off the linear buffer into non-volatile storage.
+
+.. code:: c
+
+    int SaveConfig(void *hCfg)
+    {
+        unsigned char *pBuf;
+        int size;
+
+        // Get the required size to save the configuration
+        CfgSave(hCfg, &size, 0);
+
+        if (size && (pBuf = malloc(size)))
+        {
+             CfgSave(hCfg, &size, pBuf);
+             MyMemorySave(pBuf, size);
+             free(pBuf);
+             return(1);
+        }
+        return(0);
+    }
+
+2.1.4.4.2 Loading the Configuration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Once a configuration is saved, it can be loaded from non-volatile memory on startup. For this final ``NetworkTest()`` example, assume that another Task has created, edited, or saved a valid configuration to some storage medium on a previous execution. In this network initialization routine, all that is required is to load the configuration from storage and boot the NDK using the current configuration.
+
+For this example, assume that the function ``MyMemorySize()`` returns the size of the configuration in a stored linear buffer and that ``MyMemoryLoad()`` loads the linear buffer from non-volatile storage.
+
+.. code:: c
+
+    int NetworkTest()
+    {
+        int           rc;
+        void          *hCfg;
+        unsigned char *pBuf;
+        Int           size;
+
+        //
+        // THIS MUST BE THE ABSOLUTE FIRST THING DONE IN AN APPLICATION!!
+        //
+        rc = NC_SystemOpen( NC_PRIORITY_LOW, NC_OPMODE_INTERRUPT );
+        if( rc )
+        {
+            printf("NC_SystemOpen Failed (%d)\n",rc);
+            for(;;);
+        }
+
+        //
+        // First load the linear memory block holding the configuration
+        //
+
+        // Allocate a buffer to hold the information
+        size = MyMemorySize();
+        if( !size )
+            goto main_exit;
+
+        pBuf = malloc( size );
+        if( !pBuf )
+            goto main_exit;
+
+        // Load from non-volatile storage
+        MyMemoryLoad( pBuf, size );
+
+        //
+        // Now create the configuration and load it
+        //
+
+        // Create a new configuration
+        hCfg = CfgNew();
+
+        if( !hCfg )
+        {
+            printf("Unable to create configuration\n");
+            free( pBuf );
+            goto main_exit;
+        }
+
+        // Load the configuration (and then we can free the buffer)
+        CfgLoad( hCfg, size, pBuf );
+
+        free(pBuf);
+
+        //
+        // Boot the system using this configuration
+        //
+        // We keep booting until the function returns less than 1. This allows
+        // us to have a "reboot" command.
+        //
+        do
+        {
+            rc = NC_NetStart( hCfg, networkOpen, networkClose, networkIPAddr );
+        } while( rc > 0 );
+
+        // Delete Configuration
+        CfgFree( hCfg );
+
+    // Close the OS
+    main_exit:
+        NC_SystemClose();
+        return(0);
+    }
+
+2.1.5 NDK Initialization
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Before an application can use the network, the stack must be properly configured and initialized. To facilitate a standard initialization process, and yet allow customization, source code to the network control module (``NETCTRL``) is included in the NDK. The NETCTRL module is the center of the stack's initialization and event scheduling. A solid comprehension of NETCTRL's operation is essential for building a solid networking application. This section describes how to use NETCTRL in a networking application. An explanation of how NETCTRL works and how it can be tuned is provided in `Section 3 <04_network-control-functions.html#network-control-functions>`__.
+
+The process of initialization of the NDK is described in detail in Chapter 4 of the `NDK API Reference Guide <../../NDK_API_Reference.html>`__. This section closely mirrors the initialization procedure described in the NDK Software Directory of that document. Here we describe the information with a more practical slant. Programmers concerned with the exact API of the functions mentioned here should refer to the `NDK API Reference Guide <../../NDK_API_Reference.html>`__ for a more precise description.
+
+2.1.5.1 The NETCTRL Task Thread
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The NETCTRL Task Thread (commonly referred to as the NDK stack thread, or scheduler thread) is the thread in which nearly all NETCTRL activity takes place. When using ``Cfg*()`` API calls for configuration, you must explicitly create this thread, which ultimately calls ``NC_NetStart()``, which in turn runs the network scheduler. The call to ``NC_NetStart()`` does not return until the stack shuts down. Application tasks, network-oriented or otherwise, are not executed within this thread.
+
+    **NOTE**: If you use SysConfig for configuration, the code for this NDK stack thread is automatically generated. The creation and scheduling of the thread itself happens as a side effect of calling the SysConfig-generated ``ti_ndk_config_Global_startupFxn()``.
+
+2.1.5.2 Pre-Initialization
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If you use ``Cfg*()`` API calls for configuration, your application must call the primary initialization function ``NC_SystemOpen()`` before calling any other stack API functions. This initializes the stack and the memory environment used by all the stack components. Two calling arguments, ``Priority`` and ``OpMode``, indicate how the scheduler should execute. For example:
+
+.. code:: c
+
+    rc = NC_SystemOpen( NC_PRIORITY_LOW, NC_OPMODE_INTERRUPT );
+    if( rc )
+    {
+        printf("NC_SystemOpen Failed (%d)\n",rc);
+        for(;;);
+    }
+
+2.1.5.3 Invoking New Network Tasks and Services
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Many standard network services can be specified in the NDK configuration; these are loaded and unloaded automatically by the NETCTRL module. Other services, including those written by an applications programmer should be launched from callback functions.
+
+You can use ``NC_NetStart()``'s ``NetStartCb`` argument (described in the next section) to add a "Network Start" callback. As an example, the ``networkStartApp()`` function below starts a theoretical, user-developed SMTP server.
+
+.. code:: c
+
+    static SMTP_Handle hSMTP;
+
+    //
+    // networkStartApp()
+    //
+    // This callback is passed to NC_NetStart(), and called when the stack has started
+    //
+    static void networkStartApp()
+    {
+        // Create an SMTP server Task
+        hSMTP = SMTP_open();
+    }
+
+The above code launches a self-contained application that needs no further monitoring, but the application must be shut down when the system shuts down. This is done via the ``networkStopApp()`` callback function. Therefore, the ``networkStopApp()`` function must undo what was done in ``networkStartApp()``.
+
+.. code:: c
+
+    //
+    // networkStopApp
+    //
+    // This callback is passed to NC_NetStart(), and called when the network is stopping
+    //
+    static void networkStopApp()
+    {
+        // Close our SMTP server Task
+        SMTP_close(hSMTP);
+    }
+
+The above example assumes that the network scheduler Task can be launched whether or not the stack has a local IP address. This is true for servers that listen on a wildcard address of 0.0.0.0. In some rare cases, an IP address may be required for Task initialization, or perhaps an IP address on a certain device type is required. In these circumstances, utilizing a ``NetIPCb`` callback (passed into ``NC_NetStart()``) can be used to detect when it is safe to start.
+
+The following example illustrates the calling parameters to the ``NetIPCb`` callback. Note that ``IFIndexGetHandle()`` and ``IFGetType()`` can be called to get the type of device (``HTYPE_ETH`` or ``HTYPE_PPP``) on which the new IP address is being added or removed. This example just prints a message. The most common use of this callback function is to synchronize network Tasks that require a local IP address to be installed before executing.
+
+.. code:: c
+
+    //
+    // networkIPApp
+    //
+    // This callback is passed to NC_NetStart(), and called when an IPv4 address
+    // binding is added or removed from the system.
+    //
+    static void networkIPApp(IPN IPAddr, uint32_t IfIdx, uint32_t fAdd)
+    {
+        IPN IPTmp;
+
+        if (fAdd) {
+            printf("Network Added: ");
+        }
+        else {
+            printf("Network Removed: ");
+        }
+
+        // Print a message
+        IPTmp = ntohl(IPAddr);
+
+        printf("If-%d:%d.%d.%d.%d\n", IfIdx, (unsigned char)(IPTmp>>24)&0xFF,
+            (unsigned char)(IPTmp>>16)&0xFF, (unsigned char)(IPTmp>>8)&0xFF,
+            (unsigned char)IPTmp&0xFF);
+    }
+
+2.1.5.4 Network Startup
+^^^^^^^^^^^^^^^^^^^^^^^
+
+If you use ``Cfg*()`` API calls for configuration, your application must call the NETCTRL function ``NC_NetStart()`` to invoke the network scheduler after the configuration is loaded. Besides the handle to the configuration, this function takes three optional callbacks; a "Network Start" callback (``NetStartCb``), a "Network Stop" callback (``NetStopCb``), and an "IP Address Event" callback (``NetIpCb``). These match the three examples described in the previous section.
+
+The first two callbacks are called only once. ``NetStartCb`` is called when the system is initialized and ready to execute network applications (note there may not be a local IP network address installed yet). ``NetStopCb`` is called when the system is shutting down and signifies that the stack will soon not be able to execute network applications. The third callback can be called multiple times. It is called when a local IP address is either added or removed from the system. This can be useful in detecting new DHCP or PPP address events, or just to record the local IP address for use by local network applications. The call to ``NC_NetStart()`` will not return until the system has shut down, and then it returns a shutdown code as its return value. How the system was shut down may be important to determine if the stack should be rebooted. For example, a reboot may be desired in order to load a new configuration. The return code from ``NC_NetStart()`` can be used to determine if
+``NC_NetStart()`` should be called again (and hence perform the reboot).
+
+For a simple example, the following code continuously reboots the stack using the current configuration handle if the stack shuts down with a return code greater than zero. The return code is set when the stack is shut down via a call to ``NC_NetStop()``.
+
+.. code:: c
+
+    //
+    // Boot the system using our configuration
+    //
+    // We keep booting until the function returns 0. This allows
+    // us to have a "reboot" command.
+    //
+    do
+    {
+        rc = NC_NetStart(hCfg, networkStartApp, networkStopApp, networkIPApp);
+    } while( rc > 0 );
+
+2.1.5.5 Adding Status Report Services
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The configuration system can also be used to invoke the standard network services found in the NETTOOLS library. The services available to network applications using the NDK are discussed in detail in Chapter 4 of the `NDK API Reference Guide <../../NDK_API_Reference.html>`__. This section summarized the services described in that chapter.
+
+When using the NETTOOLS library, the NETTOOLS status callback function is introduced. This callback function tracks the state of services that are enabled through the configuration. There are two levels to the status callback function. The first callback is made by the NETTOOLS service. It calls the configuration service provider when the status of the service changes. The configuration service provider then adds its own status to the information and calls back to the application's callback function. A pointer to the application's callback is provided when the application adds the service to the system configuration.
+
+If you use ``Cfg*()`` API calls for configuration, the basic status callback function follows:
+
+.. code:: c
+
+    //
+    // Service Status Reports
+    //
+    static char *TaskName[] = { "Telnet","","NAT","DHCPS","DHCPC","DNS" };
+    static char *ReportStr[] = { "","Running","Updated","Complete","Fault" };
+    static char *StatusStr[] = { "Disabled", "Waiting", "IPTerm", "Failed", "Enabled" }
+
+    static void ServiceReport( uint32_t Item, uint32_t Status, uint32_t Report, void *h )
+    {
+        printf( "Service Status: %-9s: %-9s: %-9s: %03d\n",
+            TaskName[Item-1], StatusStr[Status], ReportStr[Report/256], Report&0xFF );
+    }
+
+Note that the names of the individual services are listed in the ``TaskName[]`` array. This order is specified by the definition of the service items in the configuration system and is constant. See the file ``inc/nettools/netcfg.h`` for the physical declarations.
+
+Note that the strings defining the master report code are listed in the ``ReportStr[]`` array. This order is specified by the NETTOOLS standard reporting mechanism and is constant. See the file ``inc/nettools/nettools.h`` for the physical declarations.
+
+Note that the strings defining the Task state are defined in the ``StatusStr[]`` array. This order is specified by the definition of the standard service structure in the configuration system. See the file ``inc/nettools/netcfg.h`` for the physical declarations.
+
+The last value this callback function prints is the least significant 8 bits of the value passed in ``Report``. This value is specific to the service in question. For most services this value is redundant. Usually, if the service succeeds, it reports Complete, and if the service fails, it reports Fault. For services that never complete (for example, a DHCP client that continues to run while the IP lease is active), the upper byte of ``Report`` signifies Running and the service specific lower byte must be used to determine the current state.
+
+For example, the status codes returned in the 8 least significant bits of Report when using the DHCP client service are:
+
+::
+
+    DHCPCODE_IPADD       Client has added an IP address
+    DHCPCODE_IPREMOVE    IP address removed and CFG erased
+    DHCPCODE_IPRENEW     IP renewed, DHCP config space reset
+
+These DHCP client specific report codes are defined in ``inc/nettools/inc/dhcpif.h``. In most cases, you do not have to examine state report codes down to this level of detail, except in the following case. When using the DHCP client to configure the stack, the DHCP client controls the first 256 entries of the ``CFGTAG_SYSINFO`` tag space. These entries correspond to the 256 DHCP option tags. An application may check for ``DHCPCODE_IPADD`` or ``DHCPCODE_IPRENEW`` return codes so that it can read or alter information obtained by DHCP client. This is discussed further in `Constructing a Configuration using the DHCP Client Service <#constructing-a-configuration-using-the-dhcp-client-service>`__.
+
+2.2 Configuring the NDK with SysConfig
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    **NOTE:** this configuration approach is currently only supported on SimpleLink devices.
+
+An alternative (and recommended!) approach to configuring NDK applications is to use the `SysConfig tool <https://www.ti.com/tool/SYSCONFIG>`__. Your configuration is managed as a text file (javascript file with a .syscfg extension), that can be passed to SysConfig, which will generate a variety of files optimized for your specific configuration.
+
+Using SysConfig automatically performs the following actions for you:
+
+-  Generates C code to create and populate an NDK configuration database.
+-  Generates C code to act as the network scheduling function and to perform network activity.
+
+This section contains details about some common configuration options. In many cases, there is further documentation in the `SysConfig Reference Guide <../../ConfigDoc.html>`__ specific to your platform.
+
+2.2.1 Global Scheduling Configuration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+2.2.1.1 Network Scheduler Task Options
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+*Network Scheduler Task Priority* is set to either Low Priority (``NC_PRIORITY_LOW``) or High Priority (``NC_PRIORITY_HIGH``), and determines the scheduler Task's priority relative to other networking Tasks in the system.
+
+2.2.1.2 Priority Levels for Network Tasks
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The stack is designed to be flexible, and has an OS adaptation layer that can be adjusted to support any system software environment that is built on top of the TI-RTOS Kernel. Although the environment can be adjusted to suit any need by adjusting the HAL, NETCTRL and OS modules, the following restrictions should be noted for the most common environments:
+
+1. The Network Control Module (NETCTRL) contains a network scheduler thread that schedules the processing of network events. The scheduler thread can run at any priority with the proper adjustment. Typically, the scheduler priority is low (lower than any network Task), or high (higher than any network Task). Running the scheduler thread at a low priority places certain restrictions on how a Task can operate at the socket layer. For example:
+
+   -  If a Task polls for data using the ``NDK_recv()`` function in a non-block mode, no data is ever received because the application never blocks to allow the scheduler to process incoming packets.
+   -  If a Task calls ``NDK_send()`` in a loop using UDP, and the destination IP address is not in the ARP table, the UDP packets are not sent because the scheduler thread is never allowed to run to process the ARP reply. These cases are seen more in UDP operation than in TCP. To make the TCP/IP behave more like a standard socket environment for UDP, the priority of the scheduler thread can be set to high priority. See `Section 3 <04_network-control-functions.html#network-control-functions>`__ for more details on network event scheduling.
+
+2. The NDK requires a re-entrance exclusion methodology to call into internal stack functions. This is called kernel mode by the NDK, and is entered by calling the function ``llEnter()`` and exited via ``llExit()``. Application programmers do not typically call these functions, but you must be aware of how the functions work.
+
+By default, priority inversion is used to implement the kernel exclusion methods. When in kernel mode, a Task's priority is raised to ``OS_TASKPRIKERN``. Application programmers need to be careful not to call stack functions from threads with a priority equal to or above that of ``OS_TASKPRIKERN``, as this could cause illegal reentrancy into the stack's kernel functions. For systems that cannot tolerate priority restrictions, the NDK can be adjusted to use Semaphores for kernel exclusion. This can be done by altering the OS adaptation layer as discussed in `Choosing the llEnter()/llExit() Exclusion Method <05_os-adaptation-layer.html#choosing-the-llenter-llexit-exclusion-method>`__, or by using the Semaphore based version of the OS library: OS\_SEM.
+
+2.2.1.2.1 Stack Sizes for Network Tasks
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Care should be taken when choosing a Task stack size. Due to its recursive nature, a Task tends to consume a significant amount of stack. A stack size of 3072 is appropriate for UDP based communications. For TCP, 4096 should be used as a minimum, with 5120 being chosen for protocol servers. The thread that calls the NETCTRL library functions should have a stack size of at least 4096 bytes. If lesser values are used, stack overflow conditions may occur.
+
+2.2.1.3 Priorities for Tasks that Use NDK Functions
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+In general, Tasks that use functions in the network stack should be of a priority no less than ``OS_TASKPRILOW``, and no higher than ``OS_TASKPRIHIGH``. For a typical Task, use a priority of ``OS_TASKPRINORM``. The values for these variables can be changed in SysConfig, or by using ``CfgAddEntry()`` with various ``CFGTAG_OS`` values.
+
+When altering the priority band, care must be taken to account for both the network scheduler thread and the kernel priority.
+
+2.2.2 Global Hook Configuration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+You can configure several callback (hook) functions.
+
+**Stack Thread related callbacks**:
+
+-  **Stack Thread Begin.** Runs at the beginning of the generated NDK stack thread (``ndkStackThread()``), before it calls ``NC_SystemOpen()``. Note that no NDK-related code can run in this hook function because the ``NC_SystemOpen()`` function has not yet run.
+-  **Stack Thread Initialization.** Runs in the generated NDK stack thread (``ndkStackThread()``), after ``NC_SystemOpen()``, and after creating a new configuration, ``CfgNew()``. A handle to the new configuration is passed to this callback.
+-  **Stack Thread Reboot.** Runs in the generated NDK stack thread (``ndkStackThread()``), within the ``while()`` loop immediately after ``NC_NetStart()`` returns and before it is called again.
+-  **Stack Thread Delete.** Runs in the generated NDK stack thread (``ndkStackThread()``), immediately after exiting from ``NC_NetStart()``'s ``while()`` loop, but before the calls to ``CfgFree()`` and ``NC_SystemClose()``.
+
+**NC\_NetStart() callbacks**:
+
+-  **Network Start.** Passed as the ``NetStartCb`` argument to ``NC_NetStart()``. ``NetStartCb`` is called when the stack is ready to begin creating application supplied network Tasks. Note that this function is called during the early stages of stack startup, and must return in order for the stack to resume operations.
+-  **Network Stop.** Passed as the ``NetStopCb`` argument to ``NC_NetStart()``. ``NetStopCb`` is called when the stack is about to shut down.
+-  **Network IP Address.** Passed as the ``NetIPCb`` argument to ``NC_NetStart()``. ``NetIpCb`` is called when an IP address is added to or removed from the system. Note if you are using a static IP address, this hook will likely fire off before any network interfaces are ready to start sending and receiving data. The ``NC_setLinkHook()`` function described in section `3.2.4 <04_network-control-functions.html#tracking-events-with-stkevent>`__ will allow you to register a hook that fires when a network interface reports itself as up.
+
+    **NOTE**: If you specify a hook function in the configuration, but do not define the function in your C code, a linker error will result.
+
+For more information on ``NC_NetStart()`` callbacks, see:
+
+-  The `NC\_NetStart() <../../html/group__ti__ndk__inc__netctrl__NC.html#gaa3e76836e265a4dfc7e7f58b9c9c5d85>`__ API Reference
+-  The `Network Startup section <#network-startup>`__ above, where this same topic was raised in the context of C-based configuration.
+
+2.2.3 Advanced Global Configuration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+You can configure additional global NDK properties. You should be careful when setting these properties. In general, it is best to leave these properties set to their defaults. Some advanced properties include:
+
+-  **NDK Tick Period.** Lets you adjust the NDK heartbeat rate. The default is 100 ticks. This matches the default RTOS timer object, which drives the Clock and is configured so that 1 tick = 1 millisecond. However, you can configure a new Timer and use that to drive the Clock module. If that new Timer is not configured such that 1 tick = 1 millisecond, then you should also adjust the NDK tick period accordingly.
+
+2.3 Configuring the NDK with XGCONF
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**This configuration approach is deprecated and no longer recommended, nor documented!**
+
+2.4 Creating a Task
+~~~~~~~~~~~~~~~~~~~
+
+Applications that use the NDK may create Task threads in either of the following ways:
+
+-  **Call TaskCreate()** as described in the `NDK API Reference Guide <../../NDK_API_Reference.html>`__.
+-  **Call the native thread create APIs** corresponding to the RTOS you are using. For example, SYS/BIOS users would call ``Task_create()``. Note that if you use native thread APIs to create task threads directly, the code of your thread function needs to initializes the file descriptor table (see `"Initializing the File Descriptor Table" <#initializing-the-file-descriptor-table>`__) by calling ``fdOpenSession()`` at the beginning, and ``fdCloseSession()`` at the end.
+
+Internally, ``TaskCreate()`` calls ``fdOpenSession()`` and ``fdCloseSession()`` automatically, using the native OS API (corresponding to the RTOS the app is using) to create a thread.
+
+Priority-based exclusion makes it important that your application use only a priority in the range of the configured NDK priorities (``OS_TASKPRILOW`` to ``OS_TASKPRIHIGH``). Setting a thread to a higher priority than the NDK's high-priority thread level may disrupt the system and cause unpredictable behavior if the thread calls any stack-related functions.
+
+The following example uses ``TaskCreate()`` to create a Task with a normal priority level:
+
+.. code:: c
+
+    void *taskHandle = NULL;
+
+    taskHandle = TaskCreate(entrypoint, "TaskName", OS_TASKPRINORM, stacksize, arg1, arg2, arg3);
+
+The following example uses SYS/BIOS APIs to create a Task for use by the NDK. The thread has a normal priority level and a stack size of 2048.
+
+.. code:: c
+
+    #include <ti/sysbios/BIOS.h>
+    #include <ti/sysbios/knl/Task.h>
+    #include <ti/ndk/inc/netmain.h>
+
+    void myNetThreadFxn()
+    {
+        fdOpenSession((void *)Task_self());
+
+        /* do socket calls */
+
+        fdCloseSession((void *)Task_self());
+    }
+
+    void createNdkThread()
+    {
+        int status;
+        Task_Params params;
+        Task_Handle myNetThread;
+
+        Task_Params_init(&params);
+        params.instance->name = "myNetThread";
+        params.priority = OS_TASKPRINORM;
+        params.stackSize = 2048;
+
+        myNetThread = Task_create((Task_FuncPtr)myNetThreadFxn, &params, NULL);
+
+        if (!myNetThread) {
+            /* Error */
+        }
+    }
+
+2.4.1 Initializing the File Descriptor Table
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Each Task thread that uses the sockets or file API must allocate a file descriptor table and associate the table with the Task handle. The following code shows how to do this using SYS/BIOS Task APIs. This process is described fully in the `NDK API Reference Guide <../../NDK_API_Reference.html>`__. To accomplish this, a call to ``fdOpenSession()`` must be performed before any file descriptor oriented functions are used, and then ``fdCloseSession()`` should be called when these functions are no longer required.
+
+.. code:: c
+
+    void mySocketsFunction()
+    {
+        fdOpenSession((void *)Task_self());
+
+        /* do socket calls */
+
+        fdCloseSession((void *)Task_self());
+
+        return (NULL);
+    }
+
+2.5 Application Debug and Troubleshooting
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Although there is no instant or easy way to debug an NDK application, the following sections provide a quick description of some of the potential problem areas. Some of these topics are discussed elsewhere in the documentation as well.
+
+2.5.1 Troubleshooting Common Problems
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+One of the most common support requests for the NDK deals with the inability to either send or receive network packets. This may also take the form of dropping packets or general poor performance. There are many causes for this type of behavior. For potential scheduling issues, see `"Priority Levels for Network Tasks" <#priority-levels-for-network-tasks>`__. It is also recommended that application programmers fully understand the workings of the NETCTRL module. For this, see `Section 3 <04_network-control-functions.html#network-control-functions>`__.
+
+Here is a quick list. If you are using SysConfig for configuration, many of the potential configuration problems cannot occur.
+
+**All socket calls return "error" (-1)**
+
+-  Make sure there is a call to ``fdOpenSession()`` in the Task before it uses sockets, and a call to ``fdCloseSession()`` when the Task terminates.
+
+**No link indication, or will not re-link when cable is disconnected and reconnected.**
+
+-  Make sure there is a Timer object in your configuration that is calling the driver function ``llTimerTick()`` every 100 ms.
+
+**Not receiving any packets - ever**
+
+-  When polling for data by making ``NDK_recv()``, ``fdPoll()``, or ``fdSelect()`` calls in a non-blocking fashion, make sure you do not have any scheduling issues. When the NETCTRL scheduler is running in low priority, network applications are not allowed to poll without blocking. Try running the scheduler in high priority (via ``NC_SystemOpen()``).
+-  The NDK assumes there is some L2 cache. If the DSP or ARM is configured to *all internal memory* with nothing left for L2 cache, the NDK drivers will not function properly.
+
+**Performance is sluggish. Very slow ping response.**
+
+-  Make sure there is a Timer object in your configuration that is calling the driver function ``llTimerTick()`` every 100 ms.
+-  If porting an Ethernet driver and running NETCTRL in interrupt mode, make sure your device is correctly detecting interrupts. Make sure the interrupt polarity is correct.
+
+**UDP application drops packets on NDK\_send() calls.**
+
+-  If sending to a new IP address, the very first send may be held up in the ARP layer while the stack determines the MAC address for the packet destination. While in this mode, subsequent sends are discarded.
+-  When using UDP and sending multiple packets at once, make sure you have plenty of packet buffers available (see `"Packet Buffer Pool" <stack.html#packet-buffer-allocation-method>`__).
+-  Verify you do not have any scheduling issues. Try running the scheduler in high priority (via ``NC_SystemOpen()``).
+
+**UDP application drops packets on NDK\_recv() calls.**
+
+-  Make sure you have plenty of packet buffers available (see `"Packet Buffer Pool" <stack.html#packet-buffer-allocation-method>`__)).
+-  Make sure the packet threshold for UDP is high enough to hold all UDP data received in between calls to ``NDK_recv()`` (see ``CFGITEM_IP_SOCKUDPRXLIMIT`` in the *NDK Programmer's Reference Guide*).
+-  Verify you do not have any scheduling issues. Try running the scheduler in high priority (via ``NC_SystemOpen()``).
+-  It is possible that packets are being dropped by the Ethernet device driver. Some device drivers have adjustable RX queue depths, while others do not. Refer to the source code of your Ethernet device driver for more details (device driver source code is provided in NDK Support Package for your hardware platform).
+
+**Pings to NDK target Fails Beyond 3012 Size**
+
+The NDK's default configuration allows reassembly of packets up to "3012" bytes. To be able to ping bigger sizes, the stack needs to be reconfigured as follows:
+
+-  Change the ``MMALLOC_MAXSIZE`` definition in the ``pbm.c`` file. (i.e. ``#define MMALLOC_MAXSIZE 65500``) and rebuild the library.
+-  Increase the Memory Manager Buffer **Page Size** in the **Buffers** tab of the Global configuration.
+-  Increase the **Maximum IP Reassembly Size** property of the IP module configuration.
+
+**Sending and Receiving UDP Datagrams over MTU Size**
+
+The size of sending and receiving UDP datagrams are dependent on the following NDK configuration options, socket options, and OS Adaptation Layer definitions:
+
+-  NDK Configuration Options:
+
+   -  Increase the **Minimum Send Size** property of the IP module socket configuration. See the `NDK API Reference Guide <../../NDK_API_Reference.html>`__.
+   -  Increase the **Minimum Read Size** property of the IP module socket configuration.
+   -  If you use ``Cfg*()`` API calls for configuration, you can configure these IP module properties by using the following C code:
+
+.. code:: c
+
+    uint32_t tmp = 65500;
+
+    // configure NDK
+    CfgAddEntry(hCfg, CFGTAG_IP, CFGITEM_IP_IPREASMMAXSIZE,
+                CFG_ADDMODE_UNIQUE, sizeof(uint32_t), (unsigned char*) &tmp, 0);
+    CfgAddEntry(hCfg, CFGTAG_IP, CFGITEM_IP_SOCKUDPRXLIMIT,
+                CFG_ADDMODE_UNIQUE, sizeof(uint32_t), (unsigned char*) &tmp, 0);
+
+    // set socket options
+    NDK_setsockopt(s, SOL_SOCKET, SO_RCVBUF, &tmp, sizeof(int) );
+    NDK_setsockopt(s, SOL_SOCKET, SO_SNDBUF, &tmp, sizeof(int) );
+
+-  Socket Options:
+
+   -  ``SO_SNDBUF``: See the `NDK API Reference Guide <../../NDK_API_Reference.html>`__
+   -  ``SO_RCVBUF`` \_- See the `NDK API Reference Guide <../../NDK_API_Reference.html>`__
+
+-  OS Adaptation Layer Definitions:
+
+   -  Change the ``MMALLOC_MAXSIZE`` definition in the ``pbm.c`` file. (i.e. ``#define MMALLOC_MAXSIZE 65500``) and rebuild the library
+   -  Increase the Memory Manager Buffer **Page Size** in the **Buffers** tab of the Global configuration.
+   -  If you use ``Cfg*()`` API calls for configuration, you can edit the ``MMALLOC_MAXSIZE`` definition in the ``pbm.c`` file and ``RAW_PAGE_SIZE`` definition in the ``mem.c`` file. Then rebuild the appropriate OS Adaptation Layer library in ``/ti/ndk/os/lib``.
+
+**Timestamping UDP Datagram Payloads**
+
+The NDK allows the application to update the payload of UDP datagrams. The typical usage of this is to update the timestamp information of the datagram. This way, transmitting and receiving ends can more accurately adjust delivery delays depending on changing run-time characteristic of the system.
+
+On the transmitting end:
+
+-  The application can register a call-out function per socket basis by using the ``NDK_setsockopt()`` function.
+-  The call-out function is called by the stack before inserting the datagram into driver's transmit queue.
+-  It is the call-out function's responsibility to update the UDP checksum information in the header.
+-  The following code section is a sample of how to control it:
+
+.. code:: c
+
+    void myTxTimestampFxn(unsigned char *pIpHdr) {
+        ...
+    }
+
+    NDK_setsockopt(s, SOL_SOCKET, SO_TXTIMESTAMP, (void*) myTxTimestampFxn, sizeof(void*));
+
+On the receiving end:
+
+-  The application can register a call-out function per interface basis by using the ``EtherConfig()`` function. It is set in the ``NC_NetStart()`` function of ``netctrl.c``.
+-  The call-out function is called by the stack scheduler just before processing the packet.
+-  It is the call-out function's responsibility to update the UDP checksum information in the header.
+-  The following code section is a sample of how to control it:
+
+.. code:: c
+
+    void myRcvTimestampFxn(unsigned char *pIpHdr) {
+        ...
+    }
+
+    EtherConfig( hEther[i], 1518, 14, 0, 6, 12, 4, myRcvTimestampFxn);
+
+**In General**
+
+-  Do not try to tune the Timer function frequency. Make sure it calls ``llTimerTick()`` every 100 ms.
+-  Watch for out of memory conditions. These can be detected by the return from some functions, but will also print out warning messages when the messages are enabled. These messages contain the acronym OOM for out of memory. (Out of memory conditions can be caused by many things, but the most common cause in the NDK is when TCP sockets are created and closed very quickly without using the ``SO_LINGER`` socket option. This puts many sockets in the TCP timewait state, exhausting scratchpad memory. The solution is to use the ``SO_LINGER`` socket option.)
+
+2.5.2 Debug Messages
+^^^^^^^^^^^^^^^^^^^^
+
+Debug messages for TI-RTOS Kernel are handled using the ``System_printf()`` API, which is provided by XDCtools for use by TI-RTOS.
+
+Debug output for FreeRTOS is not currently supported, so the subsections that follow do not apply to applications that use FreeRTOS. You may modify the OS Adaptation Layer source code to add other types of program output as desired.
+
+2.5.2.1 Controlling Debug Messages
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Debug messages for TI-RTOS Kernel also include an associated severity level. These levels are ``DBG_INFO``, ``DBG_WARN``, and ``DBG_ERROR``. The severity level is used for two purposes. First, it determines whether or not the debug message will be printed, and second, it determines whether or not the debug message will cause the NDK to shut down.
+
+By default, all debug messages are printed, and messages with a level of ``DBG_ERROR`` causes a stack shutdown. This behavior can be modified through the system configuration as described in `"Controlling NDK and OS Options via the Configuration" <#controlling-ndk-and-os-options-via-the-configuration>`__ and `"Shutdown" <#shutdown>`__. Also see the `NDK API Reference Guide <../../NDK_API_Reference.html>`__.
+
+2.5.2.2 Interpreting Debug Messages
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The following is a list of some of the TI-RTOS Kernel debug messages that may occur during stack operation, along with the most commonly associated cause.
+
+2.5.2.2.1 TCP: Retransmit Timeout: Level DBG\_INFO
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This message is generated by TCP when it has sent a packet of data to a network peer, and the peer has not replied in the expected amount of time. This can be just about anything; the peer has gone down, the network is busy, the network packet was dropped or corrupted, and so on.
+
+2.5.2.2.2 FunctionName: Buffer OOM: Level DBG\_WARN
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This message is generated by some modules when unexpected out of memory conditions occur. The stack has an internal resource recovery routine to help deal with these situations; however, a significant number of these messages may also indicate that there is not enough large block memory available, or that there is a memory leak. See the notes on the memory manager reports in this section for more details.
+
+2.5.2.2.3 mmFree: Double Free: Level DBG\_WARN
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+A double free message occurs when the ``mmFree()`` function is called on a block of memory that was not marked as allocated. This can be caused by physically calling ``mmFree()`` twice for the same memory, but more commonly is caused by memory corruption. See `"Memory Corruption" <#memory-corruption>`__ for possible causes.
+
+2.5.2.2.4 FunctionName: HTYPE nnnn: Level DBG\_ERROR
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This message is generated only by the strong checking version of the stack. It is caused when a handle is passed to a function that is not of the proper handle type. Since the object oriented nature of the stack is hidden from the network applications writer, this error should never occur. If it is not caused by the attempt to call internal stack functions, then it is most likely the result of memory corruption. See the notes on memory corruption in this section for possible causes.
+
+2.5.2.2.5 mmAlloc: PIT ???? Sync: Level DBG\_ERROR
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This message is generated by the scratch memory allocation system. PIT is an acronym for page information table. Table synchronization errors can only be caused by memory corruption. See `"Memory Corruption" <#memory-corruption>`__ for possible causes.
+
+2.5.2.2.6 PBM\_enq: Invalid Packet: Level DBG\_ERROR
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This message is generated by the packet buffer manager (PBM) module driver in the OS adaptation layer. When the PBM module initially allocates its packet buffer pool, it marks each packet buffer with a magic number. During normal operation, packets are pushed and popped to and from various queues. On each push operation, the packet's magic number is checked. When the magic number is invalid, this message results. It is possible for an invalid packet to be introduced into the system when using the non copy sockets API extensions, but the vastly more common cause is memory corruption. See the notes on memory corruption in this section for possible causes.
+
+2.5.2.3 Additional Debug Messages
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Some stack modules contain additional trace statements that are not compiled in by default. In order to display these debug messages, it is necessary to rebuild the appropriate libraries with the proper macro defined.
+
+Note: the macros described in the following section are not part of any API. As such, their names may change over time, or even be removed altogether.
+
+2.5.2.3.1 TCP Error Messages
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The TCP module contains debug trace messages which display additional information for errors and or behavior that can be useful when trying to analyze TCP issues. These messages are disabled by default, but can be enabled by rebuilding the NDK stack libraries with the following macros defined:
+
+::
+
+    NDK_DEBUG_TCP
+
+::
+
+    TCP_DEBUG
+
+2.5.2.3.1 TCP State Transition Messages
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The TCP module contains trace messages which display TCP state transitions for TCP sockets/connections. These messages are disabled by default, but can be enabled by rebuilding the NDK stack libraries with the following macro defined:
+
+::
+
+    NDK_DEBUG_TCP_STATES
+
+2.5.3 Memory Corruption
+^^^^^^^^^^^^^^^^^^^^^^^
+
+Memory corruption errors may occur as NDK debug messages. This is because it is easy to corrupt memory on devices with cache. Often, applications are configured to use the full L2 cache. In this mode, any read or write access to the internal memory range of the CPU can cause cache corruption and hence cause memory corruption. Since the internal memory range starts at address 0x00000000, a NULL pointer can cause problems when using full cache.
+
+To check to see if corruption is being caused by a NULL pointer, change the cache mode to use less cache. When there is some internal memory available, reads or writes to address 0x0 do not cause cache corruption (the application still may not work, but the error messages should stop).
+
+Another way to track down any kind of cache corruption is to break on CPU reads or writes to the entire cache range. Code Composer Studio has the ability to trap reads or writes to a range of memory, but both cannot be checked simultaneously. Therefore, a couple of trials may be necessary.
+
+Of course, it is possible that the memory corruption has nothing to do with the stack. It could be a wild pointer. However, since corrupting the cache can corrupt memory throughout the system, the cache is the first place to start.
+
+2.5.4 Program Lockups
+^^^^^^^^^^^^^^^^^^^^^
+
+Many lockup conditions are caused by insufficiently sized task stacks. Therefore, using large amounts of stack is not recommended. In general, do not use the following code:
+
+.. code:: c
+
+    myTask()
+    {
+        char TempBuffer[2000];
+        myFun(TempBuffer);
+    }
+
+but instead, use the following:
+
+.. code:: c
+
+    myTask()
+    {
+        char *pTempBuf;
+
+        pTempBuf = malloc(2000);
+
+        if (pTempBuf != NULL)
+        {
+            myFun(pTempBuf);
+            free(pTempBuf);
+        }
+    }
+
+If calling a memory allocation function is too much of a speed overhead, consider using an external buffer.
+
+This is just an example, with a little forethought you can eliminate all possible stack overflow conditions, and eliminate the possibility of program lockups from this condition.
+
+2.5.5 Memory Management Reports
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The memory manager that manages scratch memory in the NDK has a built in reporting system. It tracks the use of scratch memory closely (calls to ``mmAlloc()`` and ``mmFree()``), and also tracks calls to the large block memory allocated (calls to ``mmBulkAlloc()`` and ``mmBulkFree()``). Note that the bulk allocation functions simply call ``malloc()`` and ``free()``. This behavior can be altered by adjusting the memory manager.
+
+The memory report is shown below. It lists the max number of blocks allocated per size bucket, the number of calls to ``mmAlloc()`` and ``mmFree()``, and a list of allocated memory. An example report is shown below:
+
+::
+
+    48:48   ( 75%)   18:96   ( 56%)   8:128  ( 33%)      28:256 ( 77%)
+     1:512  ( 16%)    0:1536          0:3072
+    (21504/46080 mmAlloc: 61347036/0/61346947, mmBulk: 25/0/17)
+
+    1 blocks alloced in 512 byte page
+    38 blocks alloced in 48 byte page
+    18 blocks alloced in 96 byte page
+    8 blocks alloced in 128 byte page
+    12 blocks alloced in 256 byte page
+    12 blocks alloced in 256 byte page
+
+Here, the entry 18:96 (56%) means that at most, 18 blocks were allocated in the 96 byte bucket. The page size on the memory manager is 3072, so 56% of a page was used. The entry 21504/46080 means that at most 21,504 bytes were allocated, with a total of 46,080 bytes available.
+
+The entry mmAlloc: 61347036/0/61346947 means that 61,347,036 calls were made to ``mmAlloc()``, of which 0 failed, and 61,346,947 calls were made to ``mmFree()``. Note that at any time, the call to ``mmAlloc()`` plus the failures must equal the calls to ``mmFree()`` plus any outstanding allocations. Therefore, on a final report where the report is mmAlloc: n1/n2/n3, n1+n2 should equal n3. If not, there is a memory leak.
+
+2.5.5.1 mmCheck - Generate Memory Manager Report
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Syntax**
+
+.. code:: c
+
+    void _mmCheck( uint32_t CallMode, int (*pPrn)(const char *,...) );
+
++----------------+-----------------------------------------------+
+| Parameter      | Description                                   |
++================+===============================================+
+| ``CallMode``   | Specifies the type of report to generate      |
++----------------+-----------------------------------------------+
+| ``pPrn``       | Pointer to ``printf()`` compatible function   |
++----------------+-----------------------------------------------+
+
+**Description**
+
+Prints out a memory report to the ``printf()`` compatible function pointed to by ``pPrn``. The type of report printed is determined by the value of ``CallMode``. The reporting function has the option of printing out memory block IDs. This means that the first uint32\_t sized field in the memory block of each allocated block is printed in the report. This is a useful option when the first field of allocated memory stores an object handle type, or some other unique identifier.
+
+**Call Mode**
+
+Can be set to one of the following:
+
+-  ``MMCHECK_MAP`` -- Map out allocated memory, but do not dump ID's
+-  ``MMCHECK_DUMP`` -- Dump allocated block IDs
+-  ``MMCHECK_SHUTDOWN`` -- Dump allocated block IDs & free scratchpad memory
+
+    **NOTE:** Do not attempt to use any ``mmAlloc()`` functions after requesting a ``MMCHECK_SHUTDOWN`` report!
+
+**Returns**
+
+None

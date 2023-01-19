@@ -1,0 +1,358 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="_c_a_n_m_s_p432_e4_8h" kind="file" language="C++">
+    <compoundname>CANMSP432E4.h</compoundname>
+    <includes local="no">stdbool.h</includes>
+    <includes local="no">stddef.h</includes>
+    <includes local="no">stdint.h</includes>
+    <includes local="no">ti/devices/msp432e4/inc/msp432.h</includes>
+    <includes local="no">ti/devices/msp432e4/driverlib/gpio.h</includes>
+    <includes local="no">ti/devices/msp432e4/driverlib/pin_map.h</includes>
+    <includes local="no">ti/drivers/dpl/ClockP.h</includes>
+    <includes local="no">ti/drivers/dpl/HwiP.h</includes>
+    <includes local="no">ti/drivers/dpl/SemaphoreP.h</includes>
+    <includes refid="_g_p_i_o_m_s_p432_e4_8h" local="no">ti/drivers/gpio/GPIOMSP432E4.h</includes>
+    <includes refid="_c_a_n_8h" local="no">ti/drivers/CAN.h</includes>
+    <includes refid="_list_8h" local="no">ti/drivers/utils/List.h</includes>
+    <includes refid="_struct_ring_buf_8h" local="no">ti/drivers/utils/StructRingBuf.h</includes>
+    <incdepgraph>
+      <node id="130">
+        <label>stdbool.h</label>
+      </node>
+      <node id="139">
+        <label>ti/drivers/gpio/GPIOMSP432E4.h</label>
+        <link refid="_g_p_i_o_m_s_p432_e4_8h"/>
+        <childnode refid="132" relation="include">
+        </childnode>
+        <childnode refid="133" relation="include">
+        </childnode>
+        <childnode refid="134" relation="include">
+        </childnode>
+        <childnode refid="140" relation="include">
+        </childnode>
+      </node>
+      <node id="132">
+        <label>stdint.h</label>
+      </node>
+      <node id="138">
+        <label>ti/drivers/dpl/SemaphoreP.h</label>
+      </node>
+      <node id="131">
+        <label>stddef.h</label>
+      </node>
+      <node id="134">
+        <label>ti/devices/msp432e4/driverlib/gpio.h</label>
+      </node>
+      <node id="145">
+        <label>string.h</label>
+      </node>
+      <node id="137">
+        <label>ti/drivers/dpl/HwiP.h</label>
+      </node>
+      <node id="136">
+        <label>ti/drivers/dpl/ClockP.h</label>
+      </node>
+      <node id="144">
+        <label>ti/drivers/utils/StructRingBuf.h</label>
+        <link refid="_struct_ring_buf_8h"/>
+        <childnode refid="132" relation="include">
+        </childnode>
+        <childnode refid="131" relation="include">
+        </childnode>
+        <childnode refid="130" relation="include">
+        </childnode>
+        <childnode refid="145" relation="include">
+        </childnode>
+      </node>
+      <node id="143">
+        <label>ti/drivers/utils/List.h</label>
+        <link refid="_list_8h"/>
+        <childnode refid="132" relation="include">
+        </childnode>
+        <childnode refid="130" relation="include">
+        </childnode>
+        <childnode refid="131" relation="include">
+        </childnode>
+      </node>
+      <node id="140">
+        <label>ti/drivers/GPIO.h</label>
+        <link refid="_g_p_i_o_8h"/>
+        <childnode refid="132" relation="include">
+        </childnode>
+      </node>
+      <node id="129">
+        <label>CANMSP432E4.h</label>
+        <link refid="_c_a_n_m_s_p432_e4_8h"/>
+        <childnode refid="130" relation="include">
+        </childnode>
+        <childnode refid="131" relation="include">
+        </childnode>
+        <childnode refid="132" relation="include">
+        </childnode>
+        <childnode refid="133" relation="include">
+        </childnode>
+        <childnode refid="134" relation="include">
+        </childnode>
+        <childnode refid="135" relation="include">
+        </childnode>
+        <childnode refid="136" relation="include">
+        </childnode>
+        <childnode refid="137" relation="include">
+        </childnode>
+        <childnode refid="138" relation="include">
+        </childnode>
+        <childnode refid="139" relation="include">
+        </childnode>
+        <childnode refid="141" relation="include">
+        </childnode>
+        <childnode refid="143" relation="include">
+        </childnode>
+        <childnode refid="144" relation="include">
+        </childnode>
+      </node>
+      <node id="135">
+        <label>ti/devices/msp432e4/driverlib/pin_map.h</label>
+      </node>
+      <node id="141">
+        <label>ti/drivers/CAN.h</label>
+        <link refid="_c_a_n_8h"/>
+        <childnode refid="131" relation="include">
+        </childnode>
+        <childnode refid="132" relation="include">
+        </childnode>
+        <childnode refid="142" relation="include">
+        </childnode>
+      </node>
+      <node id="133">
+        <label>ti/devices/msp432e4/inc/msp432.h</label>
+      </node>
+      <node id="142">
+        <label>ti/drivers/can/types.h</label>
+        <link refid="source_2ti_2drivers_2can_2types_8h"/>
+        <childnode refid="131" relation="include">
+        </childnode>
+        <childnode refid="132" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innerclass refid="struct_c_a_n_m_s_p432_e4___h_w_attrs" prot="public">CANMSP432E4_HWAttrs</innerclass>
+    <innerclass refid="struct_c_a_n_m_s_p432_e4___object" prot="public">CANMSP432E4_Object</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_c_a_n_m_s_p432_e4_8h_1aa8506d8745bf7466d4bcd66e882527e5" prot="public" static="no">
+        <name>CANMSP432E4_PA0_CAN0RX</name>
+        <initializer><ref refid="_g_p_i_o_m_s_p432_e4_8h_1ae77f77ea12a04525c78d194dbf04edcf" kindref="member">GPIOMSP432E4_pinConfigMask</ref>(<ref refid="_g_p_i_o_m_s_p432_e4_8h_1ad841f7bec52d81f497038d05c76b65d7" kindref="member">GPIOMSP432E4_PORTA</ref>, 0, GPIO_PA0_CAN0RX)</initializer>
+        <briefdescription>
+<para>PA0 is used for CAN0 RX. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/can/CANMSP432E4.h" line="77" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/can/CANMSP432E4.h" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_c_a_n_m_s_p432_e4_8h_1a8e0daae1bc08e383a2823a28cff24aa1" prot="public" static="no">
+        <name>CANMSP432E4_PA1_CAN0TX</name>
+        <initializer><ref refid="_g_p_i_o_m_s_p432_e4_8h_1ae77f77ea12a04525c78d194dbf04edcf" kindref="member">GPIOMSP432E4_pinConfigMask</ref>(<ref refid="_g_p_i_o_m_s_p432_e4_8h_1ad841f7bec52d81f497038d05c76b65d7" kindref="member">GPIOMSP432E4_PORTA</ref>, 1, GPIO_PA1_CAN0TX)</initializer>
+        <briefdescription>
+<para>PA1 is used for CAN0 RX. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/can/CANMSP432E4.h" line="82" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/can/CANMSP432E4.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_c_a_n_m_s_p432_e4_8h_1ad5b0609d0e45070b4f0d0a9c74631f54" prot="public" static="no">
+        <name>CANMSP432E4_PB0_CAN1RX</name>
+        <initializer><ref refid="_g_p_i_o_m_s_p432_e4_8h_1ae77f77ea12a04525c78d194dbf04edcf" kindref="member">GPIOMSP432E4_pinConfigMask</ref>(<ref refid="_g_p_i_o_m_s_p432_e4_8h_1a3c5917a889971791b19da0bd9542ac0f" kindref="member">GPIOMSP432E4_PORTB</ref>, 0, GPIO_PB0_CAN1RX)</initializer>
+        <briefdescription>
+<para>PB0 is used for CAN1 RX. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/can/CANMSP432E4.h" line="87" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/can/CANMSP432E4.h" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_c_a_n_m_s_p432_e4_8h_1a2af2b73041f038a4a5c72aa06b3c0951" prot="public" static="no">
+        <name>CANMSP432E4_PB1_CAN1TX</name>
+        <initializer><ref refid="_g_p_i_o_m_s_p432_e4_8h_1ae77f77ea12a04525c78d194dbf04edcf" kindref="member">GPIOMSP432E4_pinConfigMask</ref>(<ref refid="_g_p_i_o_m_s_p432_e4_8h_1a3c5917a889971791b19da0bd9542ac0f" kindref="member">GPIOMSP432E4_PORTB</ref>, 1, GPIO_PB1_CAN1TX)</initializer>
+        <briefdescription>
+<para>PB1 is used for CAN1 RX. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/can/CANMSP432E4.h" line="92" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/can/CANMSP432E4.h" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="_c_a_n_m_s_p432_e4_8h_1a7e37bf795c9f0aaada4b0249db9a8c64" prot="public" static="no">
+        <type>void(*</type>
+        <definition>typedef void(* CANMSP432E4_ErrorCallback) (CAN_Handle handle, uint32_t error)</definition>
+        <argsstring>)(CAN_Handle handle, uint32_t error)</argsstring>
+        <name>CANMSP432E4_ErrorCallback</name>
+        <briefdescription>
+<para>The definition of an optional callback function used by the CAN driver to notify the application when a receive error (FIFO overrun, parity error, etc) occurs. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>CAN_Handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>CAN_Handle</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The current value of the receive status register. Please refer to the device data sheet to interpret this value. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/can/CANMSP432E4.h" line="109" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/can/CANMSP432E4.h" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_c_a_n_m_s_p432_e4_8h_1abba33cf6ccefabe1634fb266a49a7d34" prot="public" static="no">
+        <type>struct <ref refid="struct_c_a_n_m_s_p432_e4___object" kindref="compound">CANMSP432E4_Object</ref> *</type>
+        <definition>typedef  struct CANMSP432E4_Object * CANMSP432E4_Handle</definition>
+        <argsstring></argsstring>
+        <name>CANMSP432E4_Handle</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/can/CANMSP432E4.h" line="203" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_c_a_n_m_s_p432_e4_8h_1a259508be434394f74ecb42089838edda" prot="public" static="no" mutable="no">
+        <type>const <ref refid="struct_c_a_n___fxn_table" kindref="compound">CAN_FxnTable</ref></type>
+        <definition>const CAN_FxnTable CANMSP432E4_fxnTable</definition>
+        <argsstring></argsstring>
+        <name>CANMSP432E4_fxnTable</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/can/CANMSP432E4.h" line="95" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>CAN driver implementation for a MSP432E4 CAN controller. </para>    </briefdescription>
+    <detaileddescription>
+<para>============================================================================</para><para>The CAN header file should be included in an application as follows: <programlisting><codeline><highlight class="normal">#include<sp/>&lt;ti/drivers/CAN.h&gt;</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&lt;ti/drivers/can/CANMSP432E4.h&gt;</highlight></codeline>
+</programlisting></para><para><heading level="1">Stack requirements</heading>
+</para><para>The CANMSP432E4 driver is a (ring) buffered driver that stores data it may <heading level="1">have already received in a user-supplied background buffer. </heading>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2018-2019,<sp/>Texas<sp/>Instruments<sp/>Incorporated</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Redistribution<sp/>and<sp/>use<sp/>in<sp/>source<sp/>and<sp/>binary<sp/>forms,<sp/>with<sp/>or<sp/>without</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>modification,<sp/>are<sp/>permitted<sp/>provided<sp/>that<sp/>the<sp/>following<sp/>conditions</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>are<sp/>met:</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>of<sp/>source<sp/>code<sp/>must<sp/>retain<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer.</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Redistributions<sp/>in<sp/>binary<sp/>form<sp/>must<sp/>reproduce<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer<sp/>in<sp/>the</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>documentation<sp/>and/or<sp/>other<sp/>materials<sp/>provided<sp/>with<sp/>the<sp/>distribution.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>*<sp/><sp/>Neither<sp/>the<sp/>name<sp/>of<sp/>Texas<sp/>Instruments<sp/>Incorporated<sp/>nor<sp/>the<sp/>names<sp/>of</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>its<sp/>contributors<sp/>may<sp/>be<sp/>used<sp/>to<sp/>endorse<sp/>or<sp/>promote<sp/>products<sp/>derived</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>from<sp/>this<sp/>software<sp/>without<sp/>specific<sp/>prior<sp/>written<sp/>permission.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>THIS<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>BY<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>AND<sp/>CONTRIBUTORS<sp/>&quot;AS<sp/>IS&quot;</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>AND<sp/>ANY<sp/>EXPRESS<sp/>OR<sp/>IMPLIED<sp/>WARRANTIES,<sp/>INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>THE<sp/>IMPLIED<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY<sp/>AND<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>PURPOSE<sp/>ARE<sp/>DISCLAIMED.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE<sp/>COPYRIGHT<sp/>OWNER<sp/>OR</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>CONTRIBUTORS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>DIRECT,<sp/>INDIRECT,<sp/>INCIDENTAL,<sp/>SPECIAL,</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>EXEMPLARY,<sp/>OR<sp/>CONSEQUENTIAL<sp/>DAMAGES<sp/>(INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>PROCUREMENT<sp/>OF<sp/>SUBSTITUTE<sp/>GOODS<sp/>OR<sp/>SERVICES;<sp/>LOSS<sp/>OF<sp/>USE,<sp/>DATA,<sp/>OR<sp/>PROFITS;</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>OR<sp/>BUSINESS<sp/>INTERRUPTION)<sp/>HOWEVER<sp/>CAUSED<sp/>AND<sp/>ON<sp/>ANY<sp/>THEORY<sp/>OF<sp/>LIABILITY,</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/>STRICT<sp/>LIABILITY,<sp/>OR<sp/>TORT<sp/>(INCLUDING<sp/>NEGLIGENCE<sp/>OR</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*<sp/>OTHERWISE)<sp/>ARISING<sp/>IN<sp/>ANY<sp/>WAY<sp/>OUT<sp/>OF<sp/>THE<sp/>USE<sp/>OF<sp/>THIS<sp/>SOFTWARE,</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*<sp/>EVEN<sp/>IF<sp/>ADVISED<sp/>OF<sp/>THE<sp/>POSSIBILITY<sp/>OF<sp/>SUCH<sp/>DAMAGE.</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*/</highlight></codeline>
+<codeline lineno="49"><highlight class="preprocessor">#ifndef<sp/>ti_drivers_can_CANMSP432E4__include</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ti_drivers_can_CANMSP432E4__include</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdbool.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stddef.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ti/devices/msp432e4/inc/msp432.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ti/devices/msp432e4/driverlib/gpio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ti/devices/msp432e4/driverlib/pin_map.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ti/drivers/dpl/ClockP.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ti/drivers/dpl/HwiP.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ti/drivers/dpl/SemaphoreP.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_g_p_i_o_m_s_p432_e4_8h" kindref="compound">ti/drivers/gpio/GPIOMSP432E4.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_c_a_n_8h" kindref="compound">ti/drivers/CAN.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_list_8h" kindref="compound">ti/drivers/utils/List.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_struct_ring_buf_8h" kindref="compound">ti/drivers/utils/StructRingBuf.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77" refid="_c_a_n_m_s_p432_e4_8h_1aa8506d8745bf7466d4bcd66e882527e5" refkind="member"><highlight class="preprocessor">#define<sp/>CANMSP432E4_PA0_CAN0RX<sp/>GPIOMSP432E4_pinConfigMask(GPIOMSP432E4_PORTA,<sp/>0,<sp/>GPIO_PA0_CAN0RX)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82" refid="_c_a_n_m_s_p432_e4_8h_1a8e0daae1bc08e383a2823a28cff24aa1" refkind="member"><highlight class="preprocessor">#define<sp/>CANMSP432E4_PA1_CAN0TX<sp/>GPIOMSP432E4_pinConfigMask(GPIOMSP432E4_PORTA,<sp/>1,<sp/>GPIO_PA1_CAN0TX)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87" refid="_c_a_n_m_s_p432_e4_8h_1ad5b0609d0e45070b4f0d0a9c74631f54" refkind="member"><highlight class="preprocessor">#define<sp/>CANMSP432E4_PB0_CAN1RX<sp/>GPIOMSP432E4_pinConfigMask(GPIOMSP432E4_PORTB,<sp/>0,<sp/>GPIO_PB0_CAN1RX)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92" refid="_c_a_n_m_s_p432_e4_8h_1a2af2b73041f038a4a5c72aa06b3c0951" refkind="member"><highlight class="preprocessor">#define<sp/>CANMSP432E4_PB1_CAN1TX<sp/>GPIOMSP432E4_pinConfigMask(GPIOMSP432E4_PORTB,<sp/>1,<sp/>GPIO_PB1_CAN1TX)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>CAN<sp/>function<sp/>table<sp/>pointer<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_c_a_n___fxn_table" kindref="compound">CAN_FxnTable</ref><sp/><ref refid="_c_a_n_m_s_p432_e4_8h_1a259508be434394f74ecb42089838edda" kindref="member">CANMSP432E4_fxnTable</ref>;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109" refid="_c_a_n_m_s_p432_e4_8h_1a7e37bf795c9f0aaada4b0249db9a8c64" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>void<sp/>(*<ref refid="_c_a_n_m_s_p432_e4_8h_1a7e37bf795c9f0aaada4b0249db9a8c64" kindref="member">CANMSP432E4_ErrorCallback</ref>)<sp/>(<ref refid="struct_c_a_n___config__" kindref="compound">CAN_Handle</ref><sp/>handle,</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/>error);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="160" refid="struct_c_a_n_m_s_p432_e4___h_w_attrs" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="162" refid="struct_c_a_n_m_s_p432_e4___h_w_attrs_1ae91c01ed5af2ecffd44c9db3c39b3bb6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_c_a_n_m_s_p432_e4___h_w_attrs_1ae91c01ed5af2ecffd44c9db3c39b3bb6" kindref="member">baseAddr</ref>;</highlight></codeline>
+<codeline lineno="164" refid="struct_c_a_n_m_s_p432_e4___h_w_attrs_1a422d3dec4c5daeb4bf6ff9359845286e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_c_a_n_m_s_p432_e4___h_w_attrs_1a422d3dec4c5daeb4bf6ff9359845286e" kindref="member">intNum</ref>;</highlight></codeline>
+<codeline lineno="166" refid="struct_c_a_n_m_s_p432_e4___h_w_attrs_1afc8c72633c7415fe4fb8e7cbd449ea72" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_c_a_n_m_s_p432_e4___h_w_attrs_1afc8c72633c7415fe4fb8e7cbd449ea72" kindref="member">intPriority</ref>;</highlight></codeline>
+<codeline lineno="168" refid="struct_c_a_n_m_s_p432_e4___h_w_attrs_1af54ccbbf707455d7dce0cd0fd235d882" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_c_a_n_m_s_p432_e4___h_w_attrs_1af54ccbbf707455d7dce0cd0fd235d882" kindref="member">rxPin</ref>;</highlight></codeline>
+<codeline lineno="170" refid="struct_c_a_n_m_s_p432_e4___h_w_attrs_1a59aabf5445ee99e8524e4c218bc366fa" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_c_a_n_m_s_p432_e4___h_w_attrs_1a59aabf5445ee99e8524e4c218bc366fa" kindref="member">txPin</ref>;</highlight></codeline>
+<codeline lineno="172" refid="struct_c_a_n_m_s_p432_e4___h_w_attrs_1a04d897cadb34a15608dbfc876a98971e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_c_a_n_m_s_p432_e4___h_w_attrs_1a04d897cadb34a15608dbfc876a98971e" kindref="member">baudRate</ref>;</highlight></codeline>
+<codeline lineno="174" refid="struct_c_a_n_m_s_p432_e4___h_w_attrs_1a1602e5cb16890ed63f558eab13035971" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_c_a_n_m_s_p432_e4_8h_1a7e37bf795c9f0aaada4b0249db9a8c64" kindref="member">CANMSP432E4_ErrorCallback</ref><sp/><ref refid="struct_c_a_n_m_s_p432_e4___h_w_attrs_1a1602e5cb16890ed63f558eab13035971" kindref="member">errorFxn</ref>;</highlight></codeline>
+<codeline lineno="175"><highlight class="normal">}<sp/><ref refid="struct_c_a_n_m_s_p432_e4___h_w_attrs" kindref="compound">CANMSP432E4_HWAttrs</ref>;</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight></codeline>
+<codeline lineno="182" refid="struct_c_a_n_m_s_p432_e4___object" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="183" refid="struct_c_a_n_m_s_p432_e4___object_1a8fcc37632ea43ca8fa9b17c47bf04773" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_list___elem__" kindref="compound">List_Elem</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_c_a_n_m_s_p432_e4___object_1a8fcc37632ea43ca8fa9b17c47bf04773" kindref="member">elem</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="185" refid="struct_c_a_n_m_s_p432_e4___object_1ac03f2c0f3b759b204faeceeb3962ab89" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_struct_ring_buf___object" kindref="compound">StructRingBuf_Object</ref><sp/><ref refid="struct_c_a_n_m_s_p432_e4___object_1ac03f2c0f3b759b204faeceeb3962ab89" kindref="member">txBuffer</ref>;<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="186" refid="struct_c_a_n_m_s_p432_e4___object_1a4ed35400c188bb2cb69a8ff8df5b3770" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_struct_ring_buf___object" kindref="compound">StructRingBuf_Object</ref><sp/><ref refid="struct_c_a_n_m_s_p432_e4___object_1a4ed35400c188bb2cb69a8ff8df5b3770" kindref="member">rxBuffer</ref>;<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="188" refid="struct_c_a_n_m_s_p432_e4___object_1ab8384591068d940ce964283ee68972f1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>SemaphoreP_Handle<sp/><sp/><sp/><sp/><ref refid="struct_c_a_n_m_s_p432_e4___object_1ab8384591068d940ce964283ee68972f1" kindref="member">readSem</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="189" refid="struct_c_a_n_m_s_p432_e4___object_1a3986c0dee11792d45c46419c1bdfc8e7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>SemaphoreP_Handle<sp/><sp/><sp/><sp/><ref refid="struct_c_a_n_m_s_p432_e4___object_1a3986c0dee11792d45c46419c1bdfc8e7" kindref="member">writeSem</ref>;<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="191" refid="struct_c_a_n_m_s_p432_e4___object_1ac6f928ce12fdc118f76be07bb45e292c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_c_a_n_8h_1a4d6db79b5847128a849ac24b3c281960" kindref="member">CAN_Mode</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_c_a_n_m_s_p432_e4___object_1ac6f928ce12fdc118f76be07bb45e292c" kindref="member">mode</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="192" refid="struct_c_a_n_m_s_p432_e4___object_1a364427d7d141259da1454a3ea9172c99" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_c_a_n_8h_1a34e5130739e2ad4bdf3cbf3eccbdf83f" kindref="member">CAN_Direction</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_c_a_n_m_s_p432_e4___object_1a364427d7d141259da1454a3ea9172c99" kindref="member">direction</ref>;<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="193" refid="struct_c_a_n_m_s_p432_e4___object_1a946d2ee109e4b58dc2c82caa113a8a3b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_c_a_n_m_s_p432_e4___object_1a946d2ee109e4b58dc2c82caa113a8a3b" kindref="member">writeTimeout</ref>;<sp/><sp/></highlight></codeline>
+<codeline lineno="194" refid="struct_c_a_n_m_s_p432_e4___object_1ac282aac9f9f53241a115d17af7e9a396" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_c_a_n_m_s_p432_e4___object_1ac282aac9f9f53241a115d17af7e9a396" kindref="member">readTimeout</ref>;<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="196" refid="struct_c_a_n_m_s_p432_e4___object_1ad0d963d5ffa952ef87cc372f8353e41a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_c_a_n_m_s_p432_e4___object_1ad0d963d5ffa952ef87cc372f8353e41a" kindref="member">rxInUseMask</ref>;<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="197" refid="struct_c_a_n_m_s_p432_e4___object_1afb14ac57818a5272d8cbe786faaf38b4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_c_a_n_m_s_p432_e4___object_1afb14ac57818a5272d8cbe786faaf38b4" kindref="member">txInUseMask</ref>;<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="199" refid="struct_c_a_n_m_s_p432_e4___object_1afdcb7d3c275c6c354831a5054714a2fb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_c_a_n_m_s_p432_e4___object_1afdcb7d3c275c6c354831a5054714a2fb" kindref="member">overrunCount</ref>;<sp/><sp/></highlight></codeline>
+<codeline lineno="201" refid="struct_c_a_n_m_s_p432_e4___object_1ae6692d5e2b96450bf77ab108521b928a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>opened<sp/><sp/><sp/><sp/>:<sp/>1;<sp/></highlight></codeline>
+<codeline lineno="202" refid="struct_c_a_n_m_s_p432_e4___object_1a636448da793bc48ec766f09d7f5bd8b6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>txPending<sp/>:<sp/>1;<sp/></highlight></codeline>
+<codeline lineno="203"><highlight class="normal">}<sp/><ref refid="struct_c_a_n_m_s_p432_e4___object" kindref="compound">CANMSP432E4_Object</ref>,<sp/>*<ref refid="_c_a_n_m_s_p432_e4_8h_1abba33cf6ccefabe1634fb266a49a7d34" kindref="member">CANMSP432E4_Handle</ref>;</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"></highlight></codeline>
+<codeline lineno="205"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="206"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="208"><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>ti_drivers_can_CANMSP432E4__include<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="exports/tidrivers_msp432e4/source/ti/drivers/can/CANMSP432E4.h"/>
+  </compounddef>
+</doxygen>

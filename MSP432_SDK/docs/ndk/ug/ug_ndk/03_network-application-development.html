@@ -1,0 +1,1201 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>2 Network Application Development &mdash; NDK Users Guide  documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="3 Stack" href="stack.html" />
+    <link rel="prev" title="1 Overview" href="02_overview.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> NDK Users Guide
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="02_overview.html">1 Overview</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">2 Network Application Development</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#configuring-the-ndk-with-c-code">2.1 Configuring the NDK with C Code</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#required-rtos-objects">2.1.1 Required RTOS Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#include-files">2.1.2 Include Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#library-files">2.1.3 Library Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#system-configuration">2.1.4 System Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configuration-examples">2.1.4.1 Configuration Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#constructing-a-configuration-for-a-static-ip-and-gateway">2.1.4.1.1 Constructing a Configuration for a Static IP and Gateway</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#constructing-a-configuration-using-the-dhcp-client-service">2.1.4.1.2 Constructing a Configuration using the DHCP Client Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#using-a-statically-defined-dns-server">2.1.4.1.3 Using a Statically Defined DNS Server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#controlling-ndk-and-os-options-via-the-configuration">2.1.4.2 Controlling NDK and OS Options via the Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#shutdown">2.1.4.3 Shutdown</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#saving-and-loading-a-configuration">2.1.4.4 Saving and Loading a Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#saving-the-configuration">2.1.4.4.1 Saving the Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#loading-the-configuration">2.1.4.4.2 Loading the Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ndk-initialization">2.1.5 NDK Initialization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#the-netctrl-task-thread">2.1.5.1 The NETCTRL Task Thread</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pre-initialization">2.1.5.2 Pre-Initialization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#invoking-new-network-tasks-and-services">2.1.5.3 Invoking New Network Tasks and Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#network-startup">2.1.5.4 Network Startup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#adding-status-report-services">2.1.5.5 Adding Status Report Services</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#configuring-the-ndk-with-sysconfig">2.2 Configuring the NDK with SysConfig</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#global-scheduling-configuration">2.2.1 Global Scheduling Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#network-scheduler-task-options">2.2.1.1 Network Scheduler Task Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#priority-levels-for-network-tasks">2.2.1.2 Priority Levels for Network Tasks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#stack-sizes-for-network-tasks">2.2.1.2.1 Stack Sizes for Network Tasks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#priorities-for-tasks-that-use-ndk-functions">2.2.1.3 Priorities for Tasks that Use NDK Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#global-hook-configuration">2.2.2 Global Hook Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#advanced-global-configuration">2.2.3 Advanced Global Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#configuring-the-ndk-with-xgconf">2.3 Configuring the NDK with XGCONF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creating-a-task">2.4 Creating a Task</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#initializing-the-file-descriptor-table">2.4.1 Initializing the File Descriptor Table</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#application-debug-and-troubleshooting">2.5 Application Debug and Troubleshooting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#troubleshooting-common-problems">2.5.1 Troubleshooting Common Problems</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#debug-messages">2.5.2 Debug Messages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#controlling-debug-messages">2.5.2.1 Controlling Debug Messages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#interpreting-debug-messages">2.5.2.2 Interpreting Debug Messages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tcp-retransmit-timeout-level-dbg-info">2.5.2.2.1 TCP: Retransmit Timeout: Level DBG_INFO</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#functionname-buffer-oom-level-dbg-warn">2.5.2.2.2 FunctionName: Buffer OOM: Level DBG_WARN</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mmfree-double-free-level-dbg-warn">2.5.2.2.3 mmFree: Double Free: Level DBG_WARN</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#functionname-htype-nnnn-level-dbg-error">2.5.2.2.4 FunctionName: HTYPE nnnn: Level DBG_ERROR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mmalloc-pit-sync-level-dbg-error">2.5.2.2.5 mmAlloc: PIT ???? Sync: Level DBG_ERROR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pbm-enq-invalid-packet-level-dbg-error">2.5.2.2.6 PBM_enq: Invalid Packet: Level DBG_ERROR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#additional-debug-messages">2.5.2.3 Additional Debug Messages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tcp-error-messages">2.5.2.3.1 TCP Error Messages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tcp-state-transition-messages">2.5.2.3.1 TCP State Transition Messages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#memory-corruption">2.5.3 Memory Corruption</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#program-lockups">2.5.4 Program Lockups</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#memory-management-reports">2.5.5 Memory Management Reports</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mmcheck-generate-memory-manager-report">2.5.5.1 mmCheck - Generate Memory Manager Report</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="stack.html">3 Stack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_network-control-functions.html">4 Network Control Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_os-adaptation-layer.html">5 OS Adaptation Layer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="99_endmaterial.html">Related Documentation From Texas Instruments</a></li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">NDK Users Guide</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>2 Network Application Development</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="network-application-development">
+<h1>2 Network Application Development<a class="headerlink" href="#network-application-development" title="Permalink to this headline">¶</a></h1>
+<p>This chapter describes how to begin developing network applications. It discusses the issues and guidelines involved in the development of network applications using the NDK libraries.</p>
+<div class="section" id="configuring-the-ndk-with-c-code">
+<h2>2.1 Configuring the NDK with C Code<a class="headerlink" href="#configuring-the-ndk-with-c-code" title="Permalink to this headline">¶</a></h2>
+<p>This section describes how to integrate the NDK when using C-based configuration.</p>
+<div class="section" id="required-rtos-objects">
+<h3>2.1.1 Required RTOS Objects<a class="headerlink" href="#required-rtos-objects" title="Permalink to this headline">¶</a></h3>
+<p>The NDK internally contains an OS adaptation layer to access the RTOS (TI-RTOS Kernel or FreeRTOS) and the HAL layer to access the hardware. These layers require the following RTOS object to be created:</p>
+<ul class="simple">
+<li><p><strong>Timer object.</strong> The timer driver in the HAL requires that an RTOS Timer object be created to drive its main timer. The Timer must be configured to fire every 100ms, and call the timer driver function <code class="docutils literal notranslate"><span class="pre">llTimerTick()</span></code>. See <a class="reference external" href="#constructing-a-configuration-for-a-static-ip-and-gateway">“Constructing a Configuration for a Static IP and Gateway”</a> for an example from <code class="docutils literal notranslate"><span class="pre">ndk.c</span></code> that creates and starts a timer object.</p></li>
+</ul>
+</div>
+<div class="section" id="include-files">
+<h3>2.1.2 Include Files<a class="headerlink" href="#include-files" title="Permalink to this headline">¶</a></h3>
+<p>If you are using the <code class="docutils literal notranslate"><span class="pre">Cfg*()</span></code> functions to add settings to the configuration database, you must add the appropriate directory to your include path. See the <a class="reference external" href="02_overview.html#ndk-include-file-directory">NDK Include File Directory</a> section for more details.</p>
+</div>
+<div class="section" id="library-files">
+<h3>2.1.3 Library Files<a class="headerlink" href="#library-files" title="Permalink to this headline">¶</a></h3>
+<p>If you are using the <code class="docutils literal notranslate"><span class="pre">Cfg*()</span></code> functions for configuration, you are responsible for linking the correct libraries into your project.</p>
+<blockquote>
+<div><p>Note, if you use SysConfig to configure the NDK, the config-specific libraries are provided in the generated linker command file.</p>
+</div></blockquote>
+</div>
+<div class="section" id="system-configuration">
+<h3>2.1.4 System Configuration<a class="headerlink" href="#system-configuration" title="Permalink to this headline">¶</a></h3>
+<p>If you are using the <code class="docutils literal notranslate"><span class="pre">Cfg*()</span></code> functions for configuration, you must create a system configuration in order to be able to use the NETCTRL API. The configuration is a handle-based object that holds a multitude of system parameters. These parameters control the operation of the stack. Typical configuration parameters include:</p>
+<ul class="simple">
+<li><p>Network Hostname</p></li>
+<li><p>IP Address and Subnet Mask</p></li>
+<li><p>IP Address of Default Routes</p></li>
+<li><p>Services to be Executed (DHCP, DNS, etc.)</p></li>
+<li><p>IP Address of name servers</p></li>
+<li><p>Stack Properties (IP routing, socket buffer size, ARP timeouts, etc.)</p></li>
+</ul>
+<p>The process of creating a configuration always begins with a call to <code class="docutils literal notranslate"><span class="pre">CfgNew()</span></code> to create a configuration handle. Once the configuration handle is created, configuration information can be loaded into the handle in bulk or constructed one entry at a time.</p>
+<p>Loading a configuration in bulk requires that a previously constructed configuration has been saved to non-volatile storage. Once the configuration is in memory, the information can be loaded into the configuration handle by calling <code class="docutils literal notranslate"><span class="pre">CfgLoad()</span></code>. Another option is to manually add individual items to the configuration for the various desired properties. This is done by calling <code class="docutils literal notranslate"><span class="pre">CfgAddEntry()</span></code> for each individual entry to add.</p>
+<p>The exact specification of the stack’s configuration API appears in the Initialization and Configuration section of the <a class="reference external" href="../../NDK_API_Reference.html">NDK API Reference Guide</a>. Some additional examples are provided in the <a class="reference external" href="#configuration-examples">Configuration Examples</a> section of this document and in the NDK example programs provided with your SDK.</p>
+</div>
+<div class="section" id="configuration-examples">
+<h3>2.1.4.1 Configuration Examples<a class="headerlink" href="#configuration-examples" title="Permalink to this headline">¶</a></h3>
+<p>This section contains some sample code for constructing configurations using the <code class="docutils literal notranslate"><span class="pre">Cfg*()</span></code> functions.</p>
+</div>
+<div class="section" id="constructing-a-configuration-for-a-static-ip-and-gateway">
+<h3>2.1.4.1.1 Constructing a Configuration for a Static IP and Gateway<a class="headerlink" href="#constructing-a-configuration-for-a-static-ip-and-gateway" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">ndkStackThread()</span></code> function in this example consists of the main initialization thread for the stack. It creates a new configuration, configures IP, TCP, and UDP, and then boots up the stack.</p>
+<p>It performs the following actions:</p>
+<ol class="arabic simple">
+<li><p>Create and start a timer object that will be used by the NDK by calling the POSIX <code class="docutils literal notranslate"><span class="pre">timer_create()</span></code> and <code class="docutils literal notranslate"><span class="pre">timer_settime()</span></code> functions. Internally, these POSIX functions may use any supported RTOS, such as TI-RTOS Kernel or FreeRTOS.</p></li>
+<li><p>Initiate a system session by calling <code class="docutils literal notranslate"><span class="pre">NC_SystemOpen()</span></code>.</p></li>
+<li><p>Create a new configuration by calling <code class="docutils literal notranslate"><span class="pre">CfgNew()</span></code>.</p></li>
+<li><p>Configure the stack’s settings for IP, TCP, and UDP.</p></li>
+<li><p>Configure the stack sizes used for low, normal, and high priority tasks by calling <code class="docutils literal notranslate"><span class="pre">CfgAddEntry()</span></code>.</p></li>
+<li><p>Boot the system using this configuration by calling <code class="docutils literal notranslate"><span class="pre">NC_NetStart()</span></code>.</p></li>
+<li><p>Free the configuration on system shutdown (when <code class="docutils literal notranslate"><span class="pre">NC_NetStart()</span></code> returns) and call <code class="docutils literal notranslate"><span class="pre">CfgFree()</span></code> and <code class="docutils literal notranslate"><span class="pre">NC_SystemClose()</span></code>.</p></li>
+<li><p>Call <code class="docutils literal notranslate"><span class="pre">timer_delete()</span></code> to delete the timer object.</p></li>
+</ol>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">static</span> <span class="kt">void</span> <span class="o">*</span><span class="nf">ndkStackThread</span><span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="n">threadArgs</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">void</span> <span class="o">*</span><span class="n">hCfg</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">rc</span><span class="p">;</span>
+    <span class="kt">timer_t</span> <span class="n">ndkHeartBeat</span><span class="p">;</span>
+    <span class="k">struct</span> <span class="n">sigevent</span> <span class="n">sev</span><span class="p">;</span>
+    <span class="k">struct</span> <span class="n">itimerspec</span> <span class="n">its</span><span class="p">;</span>
+    <span class="k">struct</span> <span class="n">itimerspec</span> <span class="n">oldIts</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">ndkHeartBeatCount</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="cm">/* create the NDK timer tick */</span>
+    <span class="n">sev</span><span class="p">.</span><span class="n">sigev_notify</span> <span class="o">=</span> <span class="n">SIGEV_SIGNAL</span><span class="p">;</span>
+    <span class="n">sev</span><span class="p">.</span><span class="n">sigev_value</span><span class="p">.</span><span class="n">sival_ptr</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">ndkHeartBeatCount</span><span class="p">;</span>
+    <span class="n">sev</span><span class="p">.</span><span class="n">sigev_notify_attributes</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+    <span class="n">sev</span><span class="p">.</span><span class="n">sigev_notify_function</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">llTimerTick</span><span class="p">;</span>
+
+    <span class="n">rc</span> <span class="o">=</span> <span class="n">timer_create</span><span class="p">(</span><span class="n">CLOCK_MONOTONIC</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">sev</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">ndkHeartBeat</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">rc</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">DbgPrintf</span><span class="p">(</span><span class="n">DBG_INFO</span><span class="p">,</span> <span class="s">&quot;ndkStackThread: failed to create timer (%d)</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="cm">/* start the NDK 100ms timer */</span>
+    <span class="n">its</span><span class="p">.</span><span class="n">it_interval</span><span class="p">.</span><span class="n">tv_sec</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">its</span><span class="p">.</span><span class="n">it_interval</span><span class="p">.</span><span class="n">tv_nsec</span> <span class="o">=</span> <span class="mi">100000000</span><span class="p">;</span>
+    <span class="n">its</span><span class="p">.</span><span class="n">it_value</span><span class="p">.</span><span class="n">tv_sec</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">its</span><span class="p">.</span><span class="n">it_value</span><span class="p">.</span><span class="n">tv_nsec</span> <span class="o">=</span> <span class="mi">100000000</span><span class="p">;</span>
+
+    <span class="n">rc</span> <span class="o">=</span> <span class="n">timer_settime</span><span class="p">(</span><span class="n">ndkHeartBeat</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">its</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">rc</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">DbgPrintf</span><span class="p">(</span><span class="n">DBG_INFO</span><span class="p">,</span> <span class="s">&quot;ndkStackThread: failed to set time (%d)</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="n">rc</span> <span class="o">=</span> <span class="n">NC_SystemOpen</span><span class="p">(</span><span class="n">NC_PRIORITY_LOW</span><span class="p">,</span> <span class="n">NC_OPMODE_INTERRUPT</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">rc</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">DbgPrintf</span><span class="p">(</span><span class="n">DBG_ERROR</span><span class="p">,</span> <span class="s">&quot;NC_SystemOpen Failed (%d)</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="cm">/* create and build the system configuration from scratch. */</span>
+    <span class="n">hCfg</span> <span class="o">=</span> <span class="n">CfgNew</span><span class="p">();</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">hCfg</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">DbgPrintf</span><span class="p">(</span><span class="n">DBG_INFO</span><span class="p">,</span> <span class="s">&quot;Unable to create configuration</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+        <span class="k">goto</span> <span class="n">main_exit</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="cm">/* IP, TCP, and UDP config */</span>
+    <span class="n">initIp</span><span class="p">(</span><span class="n">hCfg</span><span class="p">);</span>
+    <span class="n">initTcp</span><span class="p">(</span><span class="n">hCfg</span><span class="p">);</span>
+    <span class="n">initUdp</span><span class="p">(</span><span class="n">hCfg</span><span class="p">);</span>
+
+    <span class="cm">/* config low priority tasks stack size */</span>
+    <span class="n">rc</span> <span class="o">=</span> <span class="mi">2048</span><span class="p">;</span>
+    <span class="n">CfgAddEntry</span><span class="p">(</span><span class="n">hCfg</span><span class="p">,</span> <span class="n">CFGTAG_OS</span><span class="p">,</span> <span class="n">CFGITEM_OS_TASKSTKLOW</span><span class="p">,</span> <span class="n">CFG_ADDMODE_UNIQUE</span><span class="p">,</span>
+            <span class="k">sizeof</span><span class="p">(</span><span class="kt">uint32_t</span><span class="p">),</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="kt">char</span> <span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">rc</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+
+    <span class="cm">/* config norm priority tasks stack size */</span>
+    <span class="n">rc</span> <span class="o">=</span> <span class="mi">2048</span><span class="p">;</span>
+    <span class="n">CfgAddEntry</span><span class="p">(</span><span class="n">hCfg</span><span class="p">,</span> <span class="n">CFGTAG_OS</span><span class="p">,</span> <span class="n">CFGITEM_OS_TASKSTKNORM</span><span class="p">,</span> <span class="n">CFG_ADDMODE_UNIQUE</span><span class="p">,</span>
+            <span class="k">sizeof</span><span class="p">(</span><span class="kt">uint32_t</span><span class="p">),</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="kt">char</span> <span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">rc</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+
+    <span class="cm">/* config high priority tasks stack size */</span>
+    <span class="n">rc</span> <span class="o">=</span> <span class="mi">2048</span><span class="p">;</span>
+    <span class="n">CfgAddEntry</span><span class="p">(</span><span class="n">hCfg</span><span class="p">,</span> <span class="n">CFGTAG_OS</span><span class="p">,</span> <span class="n">CFGITEM_OS_TASKSTKHIGH</span><span class="p">,</span> <span class="n">CFG_ADDMODE_UNIQUE</span><span class="p">,</span>
+            <span class="k">sizeof</span><span class="p">(</span><span class="kt">uint32_t</span><span class="p">),</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="kt">char</span> <span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">rc</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+    <span class="k">do</span> <span class="p">{</span>
+        <span class="n">rc</span> <span class="o">=</span> <span class="n">NC_NetStart</span><span class="p">(</span><span class="n">hCfg</span><span class="p">,</span> <span class="n">networkOpen</span><span class="p">,</span> <span class="n">networkClose</span><span class="p">,</span> <span class="n">networkIPAddr</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">while</span><span class="p">(</span><span class="n">rc</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">);</span>
+
+    <span class="cm">/* Shut down the stack */</span>
+    <span class="n">CfgFree</span><span class="p">(</span><span class="n">hCfg</span><span class="p">);</span>
+
+<span class="nl">main_exit</span><span class="p">:</span>
+    <span class="n">NC_SystemClose</span><span class="p">();</span>
+
+    <span class="cm">/* stop and delete the NDK heartbeat */</span>
+    <span class="n">its</span><span class="p">.</span><span class="n">it_value</span><span class="p">.</span><span class="n">tv_sec</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">its</span><span class="p">.</span><span class="n">it_value</span><span class="p">.</span><span class="n">tv_nsec</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="n">rc</span> <span class="o">=</span> <span class="n">timer_settime</span><span class="p">(</span><span class="n">ndkHeartBeat</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">its</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">oldIts</span><span class="p">);</span>
+    <span class="n">rc</span> <span class="o">=</span> <span class="n">timer_delete</span><span class="p">(</span><span class="n">ndkHeartBeat</span><span class="p">);</span>
+    <span class="n">DbgPrintf</span><span class="p">(</span><span class="n">DBG_INFO</span><span class="p">,</span> <span class="s">&quot;ndkStackThread: exiting ...</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+    <span class="k">return</span> <span class="p">(</span><span class="nb">NULL</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="constructing-a-configuration-using-the-dhcp-client-service">
+<h3>2.1.4.1.2 Constructing a Configuration using the DHCP Client Service<a class="headerlink" href="#constructing-a-configuration-using-the-dhcp-client-service" title="Permalink to this headline">¶</a></h3>
+<p>This section examines the <code class="docutils literal notranslate"><span class="pre">initIp()</span></code> function from <code class="docutils literal notranslate"><span class="pre">ndk.c</span></code> that was called in the previous section. The function tells the stack to use the Dynamic Host Configuration Protocol (DHCP) client service to perform its IP address configuration.</p>
+<p>Since DHCP provides the IP address, route, domain, and domain name servers, you only need to provide the hostname. See the <a class="reference external" href="../../NDK_API_Reference.html">NDK API Reference Guide</a> for more details on using DHCP.</p>
+<p>The code below performs the following operations:</p>
+<ol class="arabic simple">
+<li><p>Add a configuration entry for the local hostname using the hostName, which is declared as <code class="docutils literal notranslate"><span class="pre">static</span> <span class="pre">char</span> <span class="pre">*hostName</span> <span class="pre">=</span> <span class="pre">&quot;tisoc&quot;;</span></code></p></li>
+<li><p>Set the elements of dhcpc, which has a structure of type <code class="docutils literal notranslate"><span class="pre">CI_SERVICE_DHCPC</span></code>. This structure is described in the <a class="reference external" href="../../NDK_API_Reference.html">NDK API Reference Guide</a>.</p></li>
+<li><p>Add a configuration entry specifying the DHCP client service to be used.</p></li>
+</ol>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">static</span> <span class="kt">void</span> <span class="nf">initIp</span><span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="n">hCfg</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">CI_SERVICE_DHCPC</span> <span class="n">dhcpc</span><span class="p">;</span>
+    <span class="kt">unsigned</span> <span class="kt">char</span>     <span class="n">DHCP_OPTIONS</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span> <span class="n">DHCPOPT_SUBNET_MASK</span> <span class="p">};</span>
+
+    <span class="cm">/* Add global hostname to hCfg (to be claimed in all connected domains) */</span>
+    <span class="n">CfgAddEntry</span><span class="p">(</span><span class="n">hCfg</span><span class="p">,</span> <span class="n">CFGTAG_SYSINFO</span><span class="p">,</span> <span class="n">CFGITEM_DHCP_HOSTNAME</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="n">strlen</span><span class="p">(</span><span class="n">hostName</span><span class="p">),</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="kt">char</span> <span class="o">*</span><span class="p">)</span><span class="n">hostName</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+
+    <span class="cm">/* Use DHCP to obtain IP address on interface 1 */</span>
+
+    <span class="cm">/* Specify DHCP Service on IF specified by &quot;IfIdx&quot; */</span>
+    <span class="n">memset</span><span class="p">(</span><span class="o">&amp;</span><span class="n">dhcpc</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">dhcpc</span><span class="p">));</span>
+    <span class="n">dhcpc</span><span class="p">.</span><span class="n">cisargs</span><span class="p">.</span><span class="n">Mode</span>   <span class="o">=</span> <span class="n">CIS_FLG_IFIDXVALID</span><span class="p">;</span>
+    <span class="n">dhcpc</span><span class="p">.</span><span class="n">cisargs</span><span class="p">.</span><span class="n">IfIdx</span>  <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">dhcpc</span><span class="p">.</span><span class="n">cisargs</span><span class="p">.</span><span class="n">pCbSrv</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">serviceReport</span><span class="p">;</span>
+    <span class="n">dhcpc</span><span class="p">.</span><span class="n">param</span><span class="p">.</span><span class="n">pOptions</span> <span class="o">=</span> <span class="n">DHCP_OPTIONS</span><span class="p">;</span>
+    <span class="n">dhcpc</span><span class="p">.</span><span class="n">param</span><span class="p">.</span><span class="n">len</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">CfgAddEntry</span><span class="p">(</span><span class="n">hCfg</span><span class="p">,</span> <span class="n">CFGTAG_SERVICE</span><span class="p">,</span> <span class="n">CFGITEM_SERVICE_DHCPCLIENT</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="k">sizeof</span><span class="p">(</span><span class="n">dhcpc</span><span class="p">),</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="kt">char</span> <span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">dhcpc</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="using-a-statically-defined-dns-server">
+<h3>2.1.4.1.3 Using a Statically Defined DNS Server<a class="headerlink" href="#using-a-statically-defined-dns-server" title="Permalink to this headline">¶</a></h3>
+<p>The area of the configuration system that is used by the DHCP client can be difficult. When the DHCP client is in use, it has full control over the first 256 entries in the system information portion of the configuration system. In some rare instances, it may be useful to share this space with DHCP.</p>
+<p>For example, assume a network application needs to manually add the IP address of a Domain Name System (DNS) server to the system configuration. When DHCP is not being used, this code is simple. To add a DNS server of 128.114.12.2, the following code would be added to the configuration build process (before calling <code class="docutils literal notranslate"><span class="pre">NC_NetStart()</span></code>).</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">uint32_t</span> <span class="n">IPTmp</span><span class="p">;</span>
+
+<span class="c1">// Manually add the DNS server &quot;128.114.12.2&quot;</span>
+<span class="n">IPTmp</span> <span class="o">=</span> <span class="n">inet_addr</span><span class="p">(</span><span class="s">&quot;128.114.12.2&quot;</span><span class="p">);</span>
+
+<span class="n">CfgAddEntry</span><span class="p">(</span> <span class="n">hCfg</span><span class="p">,</span> <span class="n">CFGTAG_SYSINFO</span><span class="p">,</span> <span class="n">CFGITEM_DHCP_DOMAINNAMESERVER</span><span class="p">,</span>
+             <span class="mi">0</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">IPTmp</span><span class="p">),</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="kt">char</span> <span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">IPTmp</span><span class="p">,</span> <span class="mi">0</span> <span class="p">);</span>
+</pre></div>
+</div>
+<p>Now, when a DHCP client is used, it clears and resets the contents of the part of the configuration it controls. This includes the DNS server addresses. Therefore, if the above code was added to an application that used DHCP, the entry would be cleared whenever DHCP executed a status update.</p>
+<p>To share this configuration space with DHCP (or to read the results of a DHCP configuration), the DHCP status callback report codes must be used. The status callback function was introduced in <a class="reference external" href="#adding-status-report-services">Adding Status Report Services</a>. When DHCP reports a status change, the application knows that the DHCP portion of the system configuration has been reset.</p>
+<p>The following code manually adds a DNS server address when the DHCP client is in use.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">//</span>
+<span class="c1">// Service Status Reports</span>
+<span class="c1">//</span>
+<span class="k">static</span> <span class="kt">char</span> <span class="o">*</span><span class="n">TaskName</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span> <span class="s">&quot;Telnet&quot;</span><span class="p">,</span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="s">&quot;NAT&quot;</span><span class="p">,</span><span class="s">&quot;DHCPS&quot;</span><span class="p">,</span><span class="s">&quot;DHCPC&quot;</span><span class="p">,</span><span class="s">&quot;DNS&quot;</span> <span class="p">};</span>
+<span class="k">static</span> <span class="kt">char</span> <span class="o">*</span><span class="n">ReportStr</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span> <span class="s">&quot;&quot;</span><span class="p">,</span><span class="s">&quot;Running&quot;</span><span class="p">,</span><span class="s">&quot;Updated&quot;</span><span class="p">,</span><span class="s">&quot;Complete&quot;</span><span class="p">,</span><span class="s">&quot;Fault&quot;</span> <span class="p">};</span>
+<span class="k">static</span> <span class="kt">char</span> <span class="o">*</span><span class="n">StatusStr</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span> <span class="s">&quot;Disabled&quot;</span><span class="p">,</span><span class="s">&quot;Waiting&quot;</span><span class="p">,</span><span class="s">&quot;IPTerm&quot;</span><span class="p">,</span> <span class="s">&quot;Failed&quot;</span><span class="p">,</span><span class="s">&quot;Enabled&quot;</span> <span class="p">};</span>
+
+<span class="k">static</span> <span class="kt">void</span> <span class="nf">ServiceReport</span><span class="p">(</span> <span class="kt">uint32_t</span> <span class="n">Item</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">Status</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">Report</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="n">h</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span> <span class="s">&quot;Service Status: %-9s: %-9s: %-9s: %03d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span>
+        <span class="n">TaskName</span><span class="p">[</span><span class="n">Item</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">StatusStr</span><span class="p">[</span><span class="n">Status</span><span class="p">],</span> <span class="n">ReportStr</span><span class="p">[</span><span class="n">Report</span><span class="o">/</span><span class="mi">256</span><span class="p">],</span> <span class="n">Report</span><span class="o">&amp;</span><span class="mh">0xFF</span> <span class="p">);</span>
+
+    <span class="c1">// Example of adding to the DHCP configuration space</span>
+    <span class="c1">//</span>
+    <span class="c1">// When using the DHCP client, the client has full control over access</span>
+    <span class="c1">// to the first 256 entries in the CFGTAG_SYSINFO space. Here, we want</span>
+    <span class="c1">// to manually add a DNS server to the configuration, but we can only</span>
+    <span class="c1">// do it once DHCP has finished its programming.</span>
+    <span class="c1">//</span>
+    <span class="k">if</span><span class="p">(</span> <span class="n">Item</span> <span class="o">==</span> <span class="n">CFGITEM_SERVICE_DHCPCLIENT</span> <span class="o">&amp;&amp;</span>
+        <span class="n">Status</span> <span class="o">==</span> <span class="n">CIS_SRV_STATUS_ENABLED</span> <span class="o">&amp;&amp;</span>
+        <span class="p">(</span><span class="n">Report</span> <span class="o">==</span> <span class="p">(</span><span class="n">NETTOOLS_STAT_RUNNING</span><span class="o">|</span><span class="n">DHCPCODE_IPADD</span><span class="p">)</span> <span class="o">||</span>
+        <span class="n">Report</span> <span class="o">==</span> <span class="p">(</span><span class="n">NETTOOLS_STAT_RUNNING</span><span class="o">|</span><span class="n">DHCPCODE_IPRENEW</span><span class="p">))</span> <span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">uint32_t</span> <span class="n">IPTmp</span><span class="p">;</span>
+
+        <span class="c1">// Manually add the DNS server when specified. If the address</span>
+        <span class="c1">// string reads &quot;0.0.0.0&quot;, IPTmp will be set to zero.</span>
+        <span class="n">IPTmp</span> <span class="o">=</span> <span class="n">inet_addr</span><span class="p">(</span><span class="n">DNSServer</span><span class="p">);</span>
+
+        <span class="k">if</span><span class="p">(</span> <span class="n">IPTmp</span> <span class="p">)</span>
+            <span class="n">CfgAddEntry</span><span class="p">(</span> <span class="mi">0</span><span class="p">,</span> <span class="n">CFGTAG_SYSINFO</span><span class="p">,</span> <span class="n">CFGITEM_DHCP_DOMAINNAMESERVER</span><span class="p">,</span>
+                <span class="mi">0</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">IPTmp</span><span class="p">),</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="kt">char</span> <span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">IPTmp</span><span class="p">,</span> <span class="mi">0</span> <span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="controlling-ndk-and-os-options-via-the-configuration">
+<h3>2.1.4.2 Controlling NDK and OS Options via the Configuration<a class="headerlink" href="#controlling-ndk-and-os-options-via-the-configuration" title="Permalink to this headline">¶</a></h3>
+<p>Along with specifying IP addresses, routes, and services, the configuration system allows you to directly manipulate the configuration structures of the OS adaptation layer and the NDK. The OS configuration structure is discussed in the Operating System Configuration section of the <a class="reference external" href="../../NDK_API_Reference.html">NDK API Reference Guide</a>, and the NDK configuration structure is discussed in the Configuring the Stack section in the appendices. The configuration interface to these internal structures is consolidated into a single configuration API as specified in the Initialization and Configuration section.</p>
+<p>Although the values in these two configuration structures can be modified directly, adding the parameters to the system configuration is useful for two reasons. First, it provides a consistent API for all network configuration, and second, if the configuration load and save feature is used, these configuration parameters are saved along with the rest of the system configuration.</p>
+<p>As a quick example of setting an OS configuration option, the following code makes a change to the debug reporting mechanism. By default, all debug messages generated by the NDK are printed. However, the OS configuration can be adjusted to print only messages of a higher severity level, or to disable the debug messages entirely.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">// We do not want to see debug messages less than WARNINGS</span>
+<span class="n">rc</span> <span class="o">=</span> <span class="n">DBG_WARN</span><span class="p">;</span>
+
+<span class="n">CfgAddEntry</span><span class="p">(</span> <span class="n">hCfg</span><span class="p">,</span> <span class="n">CFGTAG_OS</span><span class="p">,</span> <span class="n">CFGITEM_OS_DBGPRINTLEVEL</span><span class="p">,</span>
+             <span class="n">CFG_ADDMODE_UNIQUE</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">uint32_t</span><span class="p">),</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="kt">char</span> <span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">rc</span><span class="p">,</span> <span class="mi">0</span> <span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="shutdown">
+<h3>2.1.4.3 Shutdown<a class="headerlink" href="#shutdown" title="Permalink to this headline">¶</a></h3>
+<p>There are two ways the stack can be shut down. The first is a manual shutdown that occurs when an application calls <code class="docutils literal notranslate"><span class="pre">NC_NetStop()</span></code>. Here, the calling argument to the function is returned to the NETCTRL thread as the return value from <code class="docutils literal notranslate"><span class="pre">NC_NetStart()</span></code>. Calling <code class="docutils literal notranslate"><span class="pre">NC_NetStop(1)</span></code> reboots the network stack, while calling <code class="docutils literal notranslate"><span class="pre">NC_NetStop(0)</span></code> shuts down the network stack.</p>
+<p>The second way the stack can be shut down is when the stack code detects a fatal error. A fatal error is an error above the fatal threshold set in the configuration. This type of error generally indicates that it is not safe for the stack to continue. When this occurs, the stack code calls <code class="docutils literal notranslate"><span class="pre">NC_NetStop(-1)</span></code>. It is then up to you to determine what should be done next. The way the <code class="docutils literal notranslate"><span class="pre">NC_NetStart()</span></code> loop is coded determines whether the system will shut down or simply reboot.</p>
+<p>Note that the critical threshold to shut down can also be disabled. The following code can be added to the configuration to disable error-related shutdowns:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">// We do not want the stack to abort on any error</span>
+<span class="kt">uint32_t</span> <span class="n">rc</span> <span class="o">=</span> <span class="n">DBG_NONE</span><span class="p">;</span>
+
+<span class="n">CfgAddEntry</span><span class="p">(</span> <span class="n">hCfg</span><span class="p">,</span> <span class="n">CFGTAG_OS</span><span class="p">,</span> <span class="n">CFGITEM_OS_DBGABORTLEVEL</span><span class="p">,</span>
+    <span class="n">CFG_ADDMODE_UNIQUE</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">uint32_t</span><span class="p">),</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="kt">char</span> <span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">rc</span><span class="p">,</span> <span class="mi">0</span> <span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="saving-and-loading-a-configuration">
+<h3>2.1.4.4 Saving and Loading a Configuration<a class="headerlink" href="#saving-and-loading-a-configuration" title="Permalink to this headline">¶</a></h3>
+<p>Once a configuration is constructed, the application may save it off into non-volatile RAM so that it can be reloaded on the next cold boot. This is especially useful in an embedded system where the configuration can be modified at runtime (e.g. via serial cable, Telnet).</p>
+</div>
+<div class="section" id="saving-the-configuration">
+<h3>2.1.4.4.1 Saving the Configuration<a class="headerlink" href="#saving-the-configuration" title="Permalink to this headline">¶</a></h3>
+<p>To save the configuration, convert it to a linear buffer, and then save the linear buffer off to storage. Here is a quick example of a configuration save operation. Note the <code class="docutils literal notranslate"><span class="pre">MyMemorySave()</span></code> function is assumed to save off the linear buffer into non-volatile storage.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="nf">SaveConfig</span><span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="n">hCfg</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">unsigned</span> <span class="kt">char</span> <span class="o">*</span><span class="n">pBuf</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">size</span><span class="p">;</span>
+
+    <span class="c1">// Get the required size to save the configuration</span>
+    <span class="n">CfgSave</span><span class="p">(</span><span class="n">hCfg</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">size</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">size</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">pBuf</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="n">size</span><span class="p">)))</span>
+    <span class="p">{</span>
+         <span class="n">CfgSave</span><span class="p">(</span><span class="n">hCfg</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">size</span><span class="p">,</span> <span class="n">pBuf</span><span class="p">);</span>
+         <span class="n">MyMemorySave</span><span class="p">(</span><span class="n">pBuf</span><span class="p">,</span> <span class="n">size</span><span class="p">);</span>
+         <span class="n">free</span><span class="p">(</span><span class="n">pBuf</span><span class="p">);</span>
+         <span class="k">return</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">return</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="loading-the-configuration">
+<h3>2.1.4.4.2 Loading the Configuration<a class="headerlink" href="#loading-the-configuration" title="Permalink to this headline">¶</a></h3>
+<p>Once a configuration is saved, it can be loaded from non-volatile memory on startup. For this final <code class="docutils literal notranslate"><span class="pre">NetworkTest()</span></code> example, assume that another Task has created, edited, or saved a valid configuration to some storage medium on a previous execution. In this network initialization routine, all that is required is to load the configuration from storage and boot the NDK using the current configuration.</p>
+<p>For this example, assume that the function <code class="docutils literal notranslate"><span class="pre">MyMemorySize()</span></code> returns the size of the configuration in a stored linear buffer and that <code class="docutils literal notranslate"><span class="pre">MyMemoryLoad()</span></code> loads the linear buffer from non-volatile storage.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="nf">NetworkTest</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">int</span>           <span class="n">rc</span><span class="p">;</span>
+    <span class="kt">void</span>          <span class="o">*</span><span class="n">hCfg</span><span class="p">;</span>
+    <span class="kt">unsigned</span> <span class="kt">char</span> <span class="o">*</span><span class="n">pBuf</span><span class="p">;</span>
+    <span class="n">Int</span>           <span class="n">size</span><span class="p">;</span>
+
+    <span class="c1">//</span>
+    <span class="c1">// THIS MUST BE THE ABSOLUTE FIRST THING DONE IN AN APPLICATION!!</span>
+    <span class="c1">//</span>
+    <span class="n">rc</span> <span class="o">=</span> <span class="n">NC_SystemOpen</span><span class="p">(</span> <span class="n">NC_PRIORITY_LOW</span><span class="p">,</span> <span class="n">NC_OPMODE_INTERRUPT</span> <span class="p">);</span>
+    <span class="k">if</span><span class="p">(</span> <span class="n">rc</span> <span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;NC_SystemOpen Failed (%d)</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">rc</span><span class="p">);</span>
+        <span class="k">for</span><span class="p">(;;);</span>
+    <span class="p">}</span>
+
+    <span class="c1">//</span>
+    <span class="c1">// First load the linear memory block holding the configuration</span>
+    <span class="c1">//</span>
+
+    <span class="c1">// Allocate a buffer to hold the information</span>
+    <span class="n">size</span> <span class="o">=</span> <span class="n">MyMemorySize</span><span class="p">();</span>
+    <span class="k">if</span><span class="p">(</span> <span class="o">!</span><span class="n">size</span> <span class="p">)</span>
+        <span class="k">goto</span> <span class="n">main_exit</span><span class="p">;</span>
+
+    <span class="n">pBuf</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span> <span class="n">size</span> <span class="p">);</span>
+    <span class="k">if</span><span class="p">(</span> <span class="o">!</span><span class="n">pBuf</span> <span class="p">)</span>
+        <span class="k">goto</span> <span class="n">main_exit</span><span class="p">;</span>
+
+    <span class="c1">// Load from non-volatile storage</span>
+    <span class="n">MyMemoryLoad</span><span class="p">(</span> <span class="n">pBuf</span><span class="p">,</span> <span class="n">size</span> <span class="p">);</span>
+
+    <span class="c1">//</span>
+    <span class="c1">// Now create the configuration and load it</span>
+    <span class="c1">//</span>
+
+    <span class="c1">// Create a new configuration</span>
+    <span class="n">hCfg</span> <span class="o">=</span> <span class="n">CfgNew</span><span class="p">();</span>
+
+    <span class="k">if</span><span class="p">(</span> <span class="o">!</span><span class="n">hCfg</span> <span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Unable to create configuration</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+        <span class="n">free</span><span class="p">(</span> <span class="n">pBuf</span> <span class="p">);</span>
+        <span class="k">goto</span> <span class="n">main_exit</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Load the configuration (and then we can free the buffer)</span>
+    <span class="n">CfgLoad</span><span class="p">(</span> <span class="n">hCfg</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">pBuf</span> <span class="p">);</span>
+
+    <span class="n">free</span><span class="p">(</span><span class="n">pBuf</span><span class="p">);</span>
+
+    <span class="c1">//</span>
+    <span class="c1">// Boot the system using this configuration</span>
+    <span class="c1">//</span>
+    <span class="c1">// We keep booting until the function returns less than 1. This allows</span>
+    <span class="c1">// us to have a &quot;reboot&quot; command.</span>
+    <span class="c1">//</span>
+    <span class="k">do</span>
+    <span class="p">{</span>
+        <span class="n">rc</span> <span class="o">=</span> <span class="n">NC_NetStart</span><span class="p">(</span> <span class="n">hCfg</span><span class="p">,</span> <span class="n">networkOpen</span><span class="p">,</span> <span class="n">networkClose</span><span class="p">,</span> <span class="n">networkIPAddr</span> <span class="p">);</span>
+    <span class="p">}</span> <span class="k">while</span><span class="p">(</span> <span class="n">rc</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">);</span>
+
+    <span class="c1">// Delete Configuration</span>
+    <span class="n">CfgFree</span><span class="p">(</span> <span class="n">hCfg</span> <span class="p">);</span>
+
+<span class="c1">// Close the OS</span>
+<span class="nl">main_exit</span><span class="p">:</span>
+    <span class="n">NC_SystemClose</span><span class="p">();</span>
+    <span class="k">return</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ndk-initialization">
+<h3>2.1.5 NDK Initialization<a class="headerlink" href="#ndk-initialization" title="Permalink to this headline">¶</a></h3>
+<p>Before an application can use the network, the stack must be properly configured and initialized. To facilitate a standard initialization process, and yet allow customization, source code to the network control module (<code class="docutils literal notranslate"><span class="pre">NETCTRL</span></code>) is included in the NDK. The NETCTRL module is the center of the stack’s initialization and event scheduling. A solid comprehension of NETCTRL’s operation is essential for building a solid networking application. This section describes how to use NETCTRL in a networking application. An explanation of how NETCTRL works and how it can be tuned is provided in <a class="reference external" href="04_network-control-functions.html#network-control-functions">Section 3</a>.</p>
+<p>The process of initialization of the NDK is described in detail in Chapter 4 of the <a class="reference external" href="../../NDK_API_Reference.html">NDK API Reference Guide</a>. This section closely mirrors the initialization procedure described in the NDK Software Directory of that document. Here we describe the information with a more practical slant. Programmers concerned with the exact API of the functions mentioned here should refer to the <a class="reference external" href="../../NDK_API_Reference.html">NDK API Reference Guide</a> for a more precise description.</p>
+</div>
+<div class="section" id="the-netctrl-task-thread">
+<h3>2.1.5.1 The NETCTRL Task Thread<a class="headerlink" href="#the-netctrl-task-thread" title="Permalink to this headline">¶</a></h3>
+<p>The NETCTRL Task Thread (commonly referred to as the NDK stack thread, or scheduler thread) is the thread in which nearly all NETCTRL activity takes place. When using <code class="docutils literal notranslate"><span class="pre">Cfg*()</span></code> API calls for configuration, you must explicitly create this thread, which ultimately calls <code class="docutils literal notranslate"><span class="pre">NC_NetStart()</span></code>, which in turn runs the network scheduler. The call to <code class="docutils literal notranslate"><span class="pre">NC_NetStart()</span></code> does not return until the stack shuts down. Application tasks, network-oriented or otherwise, are not executed within this thread.</p>
+<blockquote>
+<div><p><strong>NOTE</strong>: If you use SysConfig for configuration, the code for this NDK stack thread is automatically generated. The creation and scheduling of the thread itself happens as a side effect of calling the SysConfig-generated <code class="docutils literal notranslate"><span class="pre">ti_ndk_config_Global_startupFxn()</span></code>.</p>
+</div></blockquote>
+</div>
+<div class="section" id="pre-initialization">
+<h3>2.1.5.2 Pre-Initialization<a class="headerlink" href="#pre-initialization" title="Permalink to this headline">¶</a></h3>
+<p>If you use <code class="docutils literal notranslate"><span class="pre">Cfg*()</span></code> API calls for configuration, your application must call the primary initialization function <code class="docutils literal notranslate"><span class="pre">NC_SystemOpen()</span></code> before calling any other stack API functions. This initializes the stack and the memory environment used by all the stack components. Two calling arguments, <code class="docutils literal notranslate"><span class="pre">Priority</span></code> and <code class="docutils literal notranslate"><span class="pre">OpMode</span></code>, indicate how the scheduler should execute. For example:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">rc</span> <span class="o">=</span> <span class="n">NC_SystemOpen</span><span class="p">(</span> <span class="n">NC_PRIORITY_LOW</span><span class="p">,</span> <span class="n">NC_OPMODE_INTERRUPT</span> <span class="p">);</span>
+<span class="k">if</span><span class="p">(</span> <span class="n">rc</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;NC_SystemOpen Failed (%d)</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">rc</span><span class="p">);</span>
+    <span class="k">for</span><span class="p">(;;);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="invoking-new-network-tasks-and-services">
+<h3>2.1.5.3 Invoking New Network Tasks and Services<a class="headerlink" href="#invoking-new-network-tasks-and-services" title="Permalink to this headline">¶</a></h3>
+<p>Many standard network services can be specified in the NDK configuration; these are loaded and unloaded automatically by the NETCTRL module. Other services, including those written by an applications programmer should be launched from callback functions.</p>
+<p>You can use <code class="docutils literal notranslate"><span class="pre">NC_NetStart()</span></code>’s <code class="docutils literal notranslate"><span class="pre">NetStartCb</span></code> argument (described in the next section) to add a “Network Start” callback. As an example, the <code class="docutils literal notranslate"><span class="pre">networkStartApp()</span></code> function below starts a theoretical, user-developed SMTP server.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">static</span> <span class="n">SMTP_Handle</span> <span class="n">hSMTP</span><span class="p">;</span>
+
+<span class="c1">//</span>
+<span class="c1">// networkStartApp()</span>
+<span class="c1">//</span>
+<span class="c1">// This callback is passed to NC_NetStart(), and called when the stack has started</span>
+<span class="c1">//</span>
+<span class="k">static</span> <span class="kt">void</span> <span class="nf">networkStartApp</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// Create an SMTP server Task</span>
+    <span class="n">hSMTP</span> <span class="o">=</span> <span class="n">SMTP_open</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The above code launches a self-contained application that needs no further monitoring, but the application must be shut down when the system shuts down. This is done via the <code class="docutils literal notranslate"><span class="pre">networkStopApp()</span></code> callback function. Therefore, the <code class="docutils literal notranslate"><span class="pre">networkStopApp()</span></code> function must undo what was done in <code class="docutils literal notranslate"><span class="pre">networkStartApp()</span></code>.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">//</span>
+<span class="c1">// networkStopApp</span>
+<span class="c1">//</span>
+<span class="c1">// This callback is passed to NC_NetStart(), and called when the network is stopping</span>
+<span class="c1">//</span>
+<span class="k">static</span> <span class="kt">void</span> <span class="nf">networkStopApp</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// Close our SMTP server Task</span>
+    <span class="n">SMTP_close</span><span class="p">(</span><span class="n">hSMTP</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The above example assumes that the network scheduler Task can be launched whether or not the stack has a local IP address. This is true for servers that listen on a wildcard address of 0.0.0.0. In some rare cases, an IP address may be required for Task initialization, or perhaps an IP address on a certain device type is required. In these circumstances, utilizing a <code class="docutils literal notranslate"><span class="pre">NetIPCb</span></code> callback (passed into <code class="docutils literal notranslate"><span class="pre">NC_NetStart()</span></code>) can be used to detect when it is safe to start.</p>
+<p>The following example illustrates the calling parameters to the <code class="docutils literal notranslate"><span class="pre">NetIPCb</span></code> callback. Note that <code class="docutils literal notranslate"><span class="pre">IFIndexGetHandle()</span></code> and <code class="docutils literal notranslate"><span class="pre">IFGetType()</span></code> can be called to get the type of device (<code class="docutils literal notranslate"><span class="pre">HTYPE_ETH</span></code> or <code class="docutils literal notranslate"><span class="pre">HTYPE_PPP</span></code>) on which the new IP address is being added or removed. This example just prints a message. The most common use of this callback function is to synchronize network Tasks that require a local IP address to be installed before executing.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">//</span>
+<span class="c1">// networkIPApp</span>
+<span class="c1">//</span>
+<span class="c1">// This callback is passed to NC_NetStart(), and called when an IPv4 address</span>
+<span class="c1">// binding is added or removed from the system.</span>
+<span class="c1">//</span>
+<span class="k">static</span> <span class="kt">void</span> <span class="nf">networkIPApp</span><span class="p">(</span><span class="n">IPN</span> <span class="n">IPAddr</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">IfIdx</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">fAdd</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">IPN</span> <span class="n">IPTmp</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">fAdd</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Network Added: &quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Network Removed: &quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Print a message</span>
+    <span class="n">IPTmp</span> <span class="o">=</span> <span class="n">ntohl</span><span class="p">(</span><span class="n">IPAddr</span><span class="p">);</span>
+
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;If-%d:%d.%d.%d.%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">IfIdx</span><span class="p">,</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="kt">char</span><span class="p">)(</span><span class="n">IPTmp</span><span class="o">&gt;&gt;</span><span class="mi">24</span><span class="p">)</span><span class="o">&amp;</span><span class="mh">0xFF</span><span class="p">,</span>
+        <span class="p">(</span><span class="kt">unsigned</span> <span class="kt">char</span><span class="p">)(</span><span class="n">IPTmp</span><span class="o">&gt;&gt;</span><span class="mi">16</span><span class="p">)</span><span class="o">&amp;</span><span class="mh">0xFF</span><span class="p">,</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="kt">char</span><span class="p">)(</span><span class="n">IPTmp</span><span class="o">&gt;&gt;</span><span class="mi">8</span><span class="p">)</span><span class="o">&amp;</span><span class="mh">0xFF</span><span class="p">,</span>
+        <span class="p">(</span><span class="kt">unsigned</span> <span class="kt">char</span><span class="p">)</span><span class="n">IPTmp</span><span class="o">&amp;</span><span class="mh">0xFF</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="network-startup">
+<h3>2.1.5.4 Network Startup<a class="headerlink" href="#network-startup" title="Permalink to this headline">¶</a></h3>
+<p>If you use <code class="docutils literal notranslate"><span class="pre">Cfg*()</span></code> API calls for configuration, your application must call the NETCTRL function <code class="docutils literal notranslate"><span class="pre">NC_NetStart()</span></code> to invoke the network scheduler after the configuration is loaded. Besides the handle to the configuration, this function takes three optional callbacks; a “Network Start” callback (<code class="docutils literal notranslate"><span class="pre">NetStartCb</span></code>), a “Network Stop” callback (<code class="docutils literal notranslate"><span class="pre">NetStopCb</span></code>), and an “IP Address Event” callback (<code class="docutils literal notranslate"><span class="pre">NetIpCb</span></code>). These match the three examples described in the previous section.</p>
+<p>The first two callbacks are called only once. <code class="docutils literal notranslate"><span class="pre">NetStartCb</span></code> is called when the system is initialized and ready to execute network applications (note there may not be a local IP network address installed yet). <code class="docutils literal notranslate"><span class="pre">NetStopCb</span></code> is called when the system is shutting down and signifies that the stack will soon not be able to execute network applications. The third callback can be called multiple times. It is called when a local IP address is either added or removed from the system. This can be useful in detecting new DHCP or PPP address events, or just to record the local IP address for use by local network applications. The call to <code class="docutils literal notranslate"><span class="pre">NC_NetStart()</span></code> will not return until the system has shut down, and then it returns a shutdown code as its return value. How the system was shut down may be important to determine if the stack should be rebooted. For example, a reboot may be desired in order to load a new configuration. The return code from <code class="docutils literal notranslate"><span class="pre">NC_NetStart()</span></code> can be used to determine if
+<code class="docutils literal notranslate"><span class="pre">NC_NetStart()</span></code> should be called again (and hence perform the reboot).</p>
+<p>For a simple example, the following code continuously reboots the stack using the current configuration handle if the stack shuts down with a return code greater than zero. The return code is set when the stack is shut down via a call to <code class="docutils literal notranslate"><span class="pre">NC_NetStop()</span></code>.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">//</span>
+<span class="c1">// Boot the system using our configuration</span>
+<span class="c1">//</span>
+<span class="c1">// We keep booting until the function returns 0. This allows</span>
+<span class="c1">// us to have a &quot;reboot&quot; command.</span>
+<span class="c1">//</span>
+<span class="k">do</span>
+<span class="p">{</span>
+    <span class="n">rc</span> <span class="o">=</span> <span class="n">NC_NetStart</span><span class="p">(</span><span class="n">hCfg</span><span class="p">,</span> <span class="n">networkStartApp</span><span class="p">,</span> <span class="n">networkStopApp</span><span class="p">,</span> <span class="n">networkIPApp</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">while</span><span class="p">(</span> <span class="n">rc</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="adding-status-report-services">
+<h3>2.1.5.5 Adding Status Report Services<a class="headerlink" href="#adding-status-report-services" title="Permalink to this headline">¶</a></h3>
+<p>The configuration system can also be used to invoke the standard network services found in the NETTOOLS library. The services available to network applications using the NDK are discussed in detail in Chapter 4 of the <a class="reference external" href="../../NDK_API_Reference.html">NDK API Reference Guide</a>. This section summarized the services described in that chapter.</p>
+<p>When using the NETTOOLS library, the NETTOOLS status callback function is introduced. This callback function tracks the state of services that are enabled through the configuration. There are two levels to the status callback function. The first callback is made by the NETTOOLS service. It calls the configuration service provider when the status of the service changes. The configuration service provider then adds its own status to the information and calls back to the application’s callback function. A pointer to the application’s callback is provided when the application adds the service to the system configuration.</p>
+<p>If you use <code class="docutils literal notranslate"><span class="pre">Cfg*()</span></code> API calls for configuration, the basic status callback function follows:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">//</span>
+<span class="c1">// Service Status Reports</span>
+<span class="c1">//</span>
+<span class="k">static</span> <span class="kt">char</span> <span class="o">*</span><span class="n">TaskName</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span> <span class="s">&quot;Telnet&quot;</span><span class="p">,</span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="s">&quot;NAT&quot;</span><span class="p">,</span><span class="s">&quot;DHCPS&quot;</span><span class="p">,</span><span class="s">&quot;DHCPC&quot;</span><span class="p">,</span><span class="s">&quot;DNS&quot;</span> <span class="p">};</span>
+<span class="k">static</span> <span class="kt">char</span> <span class="o">*</span><span class="n">ReportStr</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span> <span class="s">&quot;&quot;</span><span class="p">,</span><span class="s">&quot;Running&quot;</span><span class="p">,</span><span class="s">&quot;Updated&quot;</span><span class="p">,</span><span class="s">&quot;Complete&quot;</span><span class="p">,</span><span class="s">&quot;Fault&quot;</span> <span class="p">};</span>
+<span class="k">static</span> <span class="kt">char</span> <span class="o">*</span><span class="n">StatusStr</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span> <span class="s">&quot;Disabled&quot;</span><span class="p">,</span> <span class="s">&quot;Waiting&quot;</span><span class="p">,</span> <span class="s">&quot;IPTerm&quot;</span><span class="p">,</span> <span class="s">&quot;Failed&quot;</span><span class="p">,</span> <span class="s">&quot;Enabled&quot;</span> <span class="p">}</span>
+
+<span class="k">static</span> <span class="kt">void</span> <span class="n">ServiceReport</span><span class="p">(</span> <span class="kt">uint32_t</span> <span class="n">Item</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">Status</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">Report</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="n">h</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span> <span class="s">&quot;Service Status: %-9s: %-9s: %-9s: %03d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span>
+        <span class="n">TaskName</span><span class="p">[</span><span class="n">Item</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">StatusStr</span><span class="p">[</span><span class="n">Status</span><span class="p">],</span> <span class="n">ReportStr</span><span class="p">[</span><span class="n">Report</span><span class="o">/</span><span class="mi">256</span><span class="p">],</span> <span class="n">Report</span><span class="o">&amp;</span><span class="mh">0xFF</span> <span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Note that the names of the individual services are listed in the <code class="docutils literal notranslate"><span class="pre">TaskName[]</span></code> array. This order is specified by the definition of the service items in the configuration system and is constant. See the file <code class="docutils literal notranslate"><span class="pre">inc/nettools/netcfg.h</span></code> for the physical declarations.</p>
+<p>Note that the strings defining the master report code are listed in the <code class="docutils literal notranslate"><span class="pre">ReportStr[]</span></code> array. This order is specified by the NETTOOLS standard reporting mechanism and is constant. See the file <code class="docutils literal notranslate"><span class="pre">inc/nettools/nettools.h</span></code> for the physical declarations.</p>
+<p>Note that the strings defining the Task state are defined in the <code class="docutils literal notranslate"><span class="pre">StatusStr[]</span></code> array. This order is specified by the definition of the standard service structure in the configuration system. See the file <code class="docutils literal notranslate"><span class="pre">inc/nettools/netcfg.h</span></code> for the physical declarations.</p>
+<p>The last value this callback function prints is the least significant 8 bits of the value passed in <code class="docutils literal notranslate"><span class="pre">Report</span></code>. This value is specific to the service in question. For most services this value is redundant. Usually, if the service succeeds, it reports Complete, and if the service fails, it reports Fault. For services that never complete (for example, a DHCP client that continues to run while the IP lease is active), the upper byte of <code class="docutils literal notranslate"><span class="pre">Report</span></code> signifies Running and the service specific lower byte must be used to determine the current state.</p>
+<p>For example, the status codes returned in the 8 least significant bits of Report when using the DHCP client service are:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DHCPCODE_IPADD</span>       <span class="n">Client</span> <span class="n">has</span> <span class="n">added</span> <span class="n">an</span> <span class="n">IP</span> <span class="n">address</span>
+<span class="n">DHCPCODE_IPREMOVE</span>    <span class="n">IP</span> <span class="n">address</span> <span class="n">removed</span> <span class="ow">and</span> <span class="n">CFG</span> <span class="n">erased</span>
+<span class="n">DHCPCODE_IPRENEW</span>     <span class="n">IP</span> <span class="n">renewed</span><span class="p">,</span> <span class="n">DHCP</span> <span class="n">config</span> <span class="n">space</span> <span class="n">reset</span>
+</pre></div>
+</div>
+<p>These DHCP client specific report codes are defined in <code class="docutils literal notranslate"><span class="pre">inc/nettools/inc/dhcpif.h</span></code>. In most cases, you do not have to examine state report codes down to this level of detail, except in the following case. When using the DHCP client to configure the stack, the DHCP client controls the first 256 entries of the <code class="docutils literal notranslate"><span class="pre">CFGTAG_SYSINFO</span></code> tag space. These entries correspond to the 256 DHCP option tags. An application may check for <code class="docutils literal notranslate"><span class="pre">DHCPCODE_IPADD</span></code> or <code class="docutils literal notranslate"><span class="pre">DHCPCODE_IPRENEW</span></code> return codes so that it can read or alter information obtained by DHCP client. This is discussed further in <a class="reference external" href="#constructing-a-configuration-using-the-dhcp-client-service">Constructing a Configuration using the DHCP Client Service</a>.</p>
+</div>
+</div>
+<div class="section" id="configuring-the-ndk-with-sysconfig">
+<h2>2.2 Configuring the NDK with SysConfig<a class="headerlink" href="#configuring-the-ndk-with-sysconfig" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p><strong>NOTE:</strong> this configuration approach is currently only supported on SimpleLink devices.</p>
+</div></blockquote>
+<p>An alternative (and recommended!) approach to configuring NDK applications is to use the <a class="reference external" href="https://www.ti.com/tool/SYSCONFIG">SysConfig tool</a>. Your configuration is managed as a text file (javascript file with a .syscfg extension), that can be passed to SysConfig, which will generate a variety of files optimized for your specific configuration.</p>
+<p>Using SysConfig automatically performs the following actions for you:</p>
+<ul class="simple">
+<li><p>Generates C code to create and populate an NDK configuration database.</p></li>
+<li><p>Generates C code to act as the network scheduling function and to perform network activity.</p></li>
+</ul>
+<p>This section contains details about some common configuration options. In many cases, there is further documentation in the <a class="reference external" href="../../ConfigDoc.html">SysConfig Reference Guide</a> specific to your platform.</p>
+<div class="section" id="global-scheduling-configuration">
+<h3>2.2.1 Global Scheduling Configuration<a class="headerlink" href="#global-scheduling-configuration" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="network-scheduler-task-options">
+<h3>2.2.1.1 Network Scheduler Task Options<a class="headerlink" href="#network-scheduler-task-options" title="Permalink to this headline">¶</a></h3>
+<p><em>Network Scheduler Task Priority</em> is set to either Low Priority (<code class="docutils literal notranslate"><span class="pre">NC_PRIORITY_LOW</span></code>) or High Priority (<code class="docutils literal notranslate"><span class="pre">NC_PRIORITY_HIGH</span></code>), and determines the scheduler Task’s priority relative to other networking Tasks in the system.</p>
+</div>
+<div class="section" id="priority-levels-for-network-tasks">
+<h3>2.2.1.2 Priority Levels for Network Tasks<a class="headerlink" href="#priority-levels-for-network-tasks" title="Permalink to this headline">¶</a></h3>
+<p>The stack is designed to be flexible, and has an OS adaptation layer that can be adjusted to support any system software environment that is built on top of the TI-RTOS Kernel. Although the environment can be adjusted to suit any need by adjusting the HAL, NETCTRL and OS modules, the following restrictions should be noted for the most common environments:</p>
+<ol class="arabic simple">
+<li><p>The Network Control Module (NETCTRL) contains a network scheduler thread that schedules the processing of network events. The scheduler thread can run at any priority with the proper adjustment. Typically, the scheduler priority is low (lower than any network Task), or high (higher than any network Task). Running the scheduler thread at a low priority places certain restrictions on how a Task can operate at the socket layer. For example:</p>
+<ul class="simple">
+<li><p>If a Task polls for data using the <code class="docutils literal notranslate"><span class="pre">NDK_recv()</span></code> function in a non-block mode, no data is ever received because the application never blocks to allow the scheduler to process incoming packets.</p></li>
+<li><p>If a Task calls <code class="docutils literal notranslate"><span class="pre">NDK_send()</span></code> in a loop using UDP, and the destination IP address is not in the ARP table, the UDP packets are not sent because the scheduler thread is never allowed to run to process the ARP reply. These cases are seen more in UDP operation than in TCP. To make the TCP/IP behave more like a standard socket environment for UDP, the priority of the scheduler thread can be set to high priority. See <a class="reference external" href="04_network-control-functions.html#network-control-functions">Section 3</a> for more details on network event scheduling.</p></li>
+</ul>
+</li>
+<li><p>The NDK requires a re-entrance exclusion methodology to call into internal stack functions. This is called kernel mode by the NDK, and is entered by calling the function <code class="docutils literal notranslate"><span class="pre">llEnter()</span></code> and exited via <code class="docutils literal notranslate"><span class="pre">llExit()</span></code>. Application programmers do not typically call these functions, but you must be aware of how the functions work.</p></li>
+</ol>
+<p>By default, priority inversion is used to implement the kernel exclusion methods. When in kernel mode, a Task’s priority is raised to <code class="docutils literal notranslate"><span class="pre">OS_TASKPRIKERN</span></code>. Application programmers need to be careful not to call stack functions from threads with a priority equal to or above that of <code class="docutils literal notranslate"><span class="pre">OS_TASKPRIKERN</span></code>, as this could cause illegal reentrancy into the stack’s kernel functions. For systems that cannot tolerate priority restrictions, the NDK can be adjusted to use Semaphores for kernel exclusion. This can be done by altering the OS adaptation layer as discussed in <a class="reference external" href="05_os-adaptation-layer.html#choosing-the-llenter-llexit-exclusion-method">Choosing the llEnter()/llExit() Exclusion Method</a>, or by using the Semaphore based version of the OS library: OS_SEM.</p>
+</div>
+<div class="section" id="stack-sizes-for-network-tasks">
+<h3>2.2.1.2.1 Stack Sizes for Network Tasks<a class="headerlink" href="#stack-sizes-for-network-tasks" title="Permalink to this headline">¶</a></h3>
+<p>Care should be taken when choosing a Task stack size. Due to its recursive nature, a Task tends to consume a significant amount of stack. A stack size of 3072 is appropriate for UDP based communications. For TCP, 4096 should be used as a minimum, with 5120 being chosen for protocol servers. The thread that calls the NETCTRL library functions should have a stack size of at least 4096 bytes. If lesser values are used, stack overflow conditions may occur.</p>
+</div>
+<div class="section" id="priorities-for-tasks-that-use-ndk-functions">
+<h3>2.2.1.3 Priorities for Tasks that Use NDK Functions<a class="headerlink" href="#priorities-for-tasks-that-use-ndk-functions" title="Permalink to this headline">¶</a></h3>
+<p>In general, Tasks that use functions in the network stack should be of a priority no less than <code class="docutils literal notranslate"><span class="pre">OS_TASKPRILOW</span></code>, and no higher than <code class="docutils literal notranslate"><span class="pre">OS_TASKPRIHIGH</span></code>. For a typical Task, use a priority of <code class="docutils literal notranslate"><span class="pre">OS_TASKPRINORM</span></code>. The values for these variables can be changed in SysConfig, or by using <code class="docutils literal notranslate"><span class="pre">CfgAddEntry()</span></code> with various <code class="docutils literal notranslate"><span class="pre">CFGTAG_OS</span></code> values.</p>
+<p>When altering the priority band, care must be taken to account for both the network scheduler thread and the kernel priority.</p>
+</div>
+<div class="section" id="global-hook-configuration">
+<h3>2.2.2 Global Hook Configuration<a class="headerlink" href="#global-hook-configuration" title="Permalink to this headline">¶</a></h3>
+<p>You can configure several callback (hook) functions.</p>
+<p><strong>Stack Thread related callbacks</strong>:</p>
+<ul class="simple">
+<li><p><strong>Stack Thread Begin.</strong> Runs at the beginning of the generated NDK stack thread (<code class="docutils literal notranslate"><span class="pre">ndkStackThread()</span></code>), before it calls <code class="docutils literal notranslate"><span class="pre">NC_SystemOpen()</span></code>. Note that no NDK-related code can run in this hook function because the <code class="docutils literal notranslate"><span class="pre">NC_SystemOpen()</span></code> function has not yet run.</p></li>
+<li><p><strong>Stack Thread Initialization.</strong> Runs in the generated NDK stack thread (<code class="docutils literal notranslate"><span class="pre">ndkStackThread()</span></code>), after <code class="docutils literal notranslate"><span class="pre">NC_SystemOpen()</span></code>, and after creating a new configuration, <code class="docutils literal notranslate"><span class="pre">CfgNew()</span></code>. A handle to the new configuration is passed to this callback.</p></li>
+<li><p><strong>Stack Thread Reboot.</strong> Runs in the generated NDK stack thread (<code class="docutils literal notranslate"><span class="pre">ndkStackThread()</span></code>), within the <code class="docutils literal notranslate"><span class="pre">while()</span></code> loop immediately after <code class="docutils literal notranslate"><span class="pre">NC_NetStart()</span></code> returns and before it is called again.</p></li>
+<li><p><strong>Stack Thread Delete.</strong> Runs in the generated NDK stack thread (<code class="docutils literal notranslate"><span class="pre">ndkStackThread()</span></code>), immediately after exiting from <code class="docutils literal notranslate"><span class="pre">NC_NetStart()</span></code>’s <code class="docutils literal notranslate"><span class="pre">while()</span></code> loop, but before the calls to <code class="docutils literal notranslate"><span class="pre">CfgFree()</span></code> and <code class="docutils literal notranslate"><span class="pre">NC_SystemClose()</span></code>.</p></li>
+</ul>
+<p><strong>NC_NetStart() callbacks</strong>:</p>
+<ul>
+<li><p><strong>Network Start.</strong> Passed as the <code class="docutils literal notranslate"><span class="pre">NetStartCb</span></code> argument to <code class="docutils literal notranslate"><span class="pre">NC_NetStart()</span></code>. <code class="docutils literal notranslate"><span class="pre">NetStartCb</span></code> is called when the stack is ready to begin creating application supplied network Tasks. Note that this function is called during the early stages of stack startup, and must return in order for the stack to resume operations.</p></li>
+<li><p><strong>Network Stop.</strong> Passed as the <code class="docutils literal notranslate"><span class="pre">NetStopCb</span></code> argument to <code class="docutils literal notranslate"><span class="pre">NC_NetStart()</span></code>. <code class="docutils literal notranslate"><span class="pre">NetStopCb</span></code> is called when the stack is about to shut down.</p></li>
+<li><p><strong>Network IP Address.</strong> Passed as the <code class="docutils literal notranslate"><span class="pre">NetIPCb</span></code> argument to <code class="docutils literal notranslate"><span class="pre">NC_NetStart()</span></code>. <code class="docutils literal notranslate"><span class="pre">NetIpCb</span></code> is called when an IP address is added to or removed from the system. Note if you are using a static IP address, this hook will likely fire off before any network interfaces are ready to start sending and receiving data. The <code class="docutils literal notranslate"><span class="pre">NC_setLinkHook()</span></code> function described in section <a class="reference external" href="04_network-control-functions.html#tracking-events-with-stkevent">3.2.4</a> will allow you to register a hook that fires when a network interface reports itself as up.</p>
+<blockquote>
+<div><p><strong>NOTE</strong>: If you specify a hook function in the configuration, but do not define the function in your C code, a linker error will result.</p>
+</div></blockquote>
+</li>
+</ul>
+<p>For more information on <code class="docutils literal notranslate"><span class="pre">NC_NetStart()</span></code> callbacks, see:</p>
+<ul class="simple">
+<li><p>The <a class="reference external" href="../../html/group__ti__ndk__inc__netctrl__NC.html#gaa3e76836e265a4dfc7e7f58b9c9c5d85">NC_NetStart()</a> API Reference</p></li>
+<li><p>The <a class="reference external" href="#network-startup">Network Startup section</a> above, where this same topic was raised in the context of C-based configuration.</p></li>
+</ul>
+</div>
+<div class="section" id="advanced-global-configuration">
+<h3>2.2.3 Advanced Global Configuration<a class="headerlink" href="#advanced-global-configuration" title="Permalink to this headline">¶</a></h3>
+<p>You can configure additional global NDK properties. You should be careful when setting these properties. In general, it is best to leave these properties set to their defaults. Some advanced properties include:</p>
+<ul class="simple">
+<li><p><strong>NDK Tick Period.</strong> Lets you adjust the NDK heartbeat rate. The default is 100 ticks. This matches the default RTOS timer object, which drives the Clock and is configured so that 1 tick = 1 millisecond. However, you can configure a new Timer and use that to drive the Clock module. If that new Timer is not configured such that 1 tick = 1 millisecond, then you should also adjust the NDK tick period accordingly.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="configuring-the-ndk-with-xgconf">
+<h2>2.3 Configuring the NDK with XGCONF<a class="headerlink" href="#configuring-the-ndk-with-xgconf" title="Permalink to this headline">¶</a></h2>
+<p><strong>This configuration approach is deprecated and no longer recommended, nor documented!</strong></p>
+</div>
+<div class="section" id="creating-a-task">
+<h2>2.4 Creating a Task<a class="headerlink" href="#creating-a-task" title="Permalink to this headline">¶</a></h2>
+<p>Applications that use the NDK may create Task threads in either of the following ways:</p>
+<ul class="simple">
+<li><p><strong>Call TaskCreate()</strong> as described in the <a class="reference external" href="../../NDK_API_Reference.html">NDK API Reference Guide</a>.</p></li>
+<li><p><strong>Call the native thread create APIs</strong> corresponding to the RTOS you are using. For example, SYS/BIOS users would call <code class="docutils literal notranslate"><span class="pre">Task_create()</span></code>. Note that if you use native thread APIs to create task threads directly, the code of your thread function needs to initializes the file descriptor table (see <a class="reference external" href="#initializing-the-file-descriptor-table">“Initializing the File Descriptor Table”</a>) by calling <code class="docutils literal notranslate"><span class="pre">fdOpenSession()</span></code> at the beginning, and <code class="docutils literal notranslate"><span class="pre">fdCloseSession()</span></code> at the end.</p></li>
+</ul>
+<p>Internally, <code class="docutils literal notranslate"><span class="pre">TaskCreate()</span></code> calls <code class="docutils literal notranslate"><span class="pre">fdOpenSession()</span></code> and <code class="docutils literal notranslate"><span class="pre">fdCloseSession()</span></code> automatically, using the native OS API (corresponding to the RTOS the app is using) to create a thread.</p>
+<p>Priority-based exclusion makes it important that your application use only a priority in the range of the configured NDK priorities (<code class="docutils literal notranslate"><span class="pre">OS_TASKPRILOW</span></code> to <code class="docutils literal notranslate"><span class="pre">OS_TASKPRIHIGH</span></code>). Setting a thread to a higher priority than the NDK’s high-priority thread level may disrupt the system and cause unpredictable behavior if the thread calls any stack-related functions.</p>
+<p>The following example uses <code class="docutils literal notranslate"><span class="pre">TaskCreate()</span></code> to create a Task with a normal priority level:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="o">*</span><span class="n">taskHandle</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+
+<span class="n">taskHandle</span> <span class="o">=</span> <span class="n">TaskCreate</span><span class="p">(</span><span class="n">entrypoint</span><span class="p">,</span> <span class="s">&quot;TaskName&quot;</span><span class="p">,</span> <span class="n">OS_TASKPRINORM</span><span class="p">,</span> <span class="n">stacksize</span><span class="p">,</span> <span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">,</span> <span class="n">arg3</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>The following example uses SYS/BIOS APIs to create a Task for use by the NDK. The thread has a normal priority level and a stack size of 2048.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;ti/sysbios/BIOS.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;ti/sysbios/knl/Task.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;ti/ndk/inc/netmain.h&gt;</span><span class="cp"></span>
+
+<span class="kt">void</span> <span class="nf">myNetThreadFxn</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">fdOpenSession</span><span class="p">((</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="n">Task_self</span><span class="p">());</span>
+
+    <span class="cm">/* do socket calls */</span>
+
+    <span class="n">fdCloseSession</span><span class="p">((</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="n">Task_self</span><span class="p">());</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">createNdkThread</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">status</span><span class="p">;</span>
+    <span class="n">Task_Params</span> <span class="n">params</span><span class="p">;</span>
+    <span class="n">Task_Handle</span> <span class="n">myNetThread</span><span class="p">;</span>
+
+    <span class="n">Task_Params_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">params</span><span class="p">);</span>
+    <span class="n">params</span><span class="p">.</span><span class="n">instance</span><span class="o">-&gt;</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;myNetThread&quot;</span><span class="p">;</span>
+    <span class="n">params</span><span class="p">.</span><span class="n">priority</span> <span class="o">=</span> <span class="n">OS_TASKPRINORM</span><span class="p">;</span>
+    <span class="n">params</span><span class="p">.</span><span class="n">stackSize</span> <span class="o">=</span> <span class="mi">2048</span><span class="p">;</span>
+
+    <span class="n">myNetThread</span> <span class="o">=</span> <span class="n">Task_create</span><span class="p">((</span><span class="n">Task_FuncPtr</span><span class="p">)</span><span class="n">myNetThreadFxn</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">params</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">myNetThread</span><span class="p">)</span> <span class="p">{</span>
+        <span class="cm">/* Error */</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="section" id="initializing-the-file-descriptor-table">
+<h3>2.4.1 Initializing the File Descriptor Table<a class="headerlink" href="#initializing-the-file-descriptor-table" title="Permalink to this headline">¶</a></h3>
+<p>Each Task thread that uses the sockets or file API must allocate a file descriptor table and associate the table with the Task handle. The following code shows how to do this using SYS/BIOS Task APIs. This process is described fully in the <a class="reference external" href="../../NDK_API_Reference.html">NDK API Reference Guide</a>. To accomplish this, a call to <code class="docutils literal notranslate"><span class="pre">fdOpenSession()</span></code> must be performed before any file descriptor oriented functions are used, and then <code class="docutils literal notranslate"><span class="pre">fdCloseSession()</span></code> should be called when these functions are no longer required.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">mySocketsFunction</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">fdOpenSession</span><span class="p">((</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="n">Task_self</span><span class="p">());</span>
+
+    <span class="cm">/* do socket calls */</span>
+
+    <span class="n">fdCloseSession</span><span class="p">((</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="n">Task_self</span><span class="p">());</span>
+
+    <span class="k">return</span> <span class="p">(</span><span class="nb">NULL</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="application-debug-and-troubleshooting">
+<h2>2.5 Application Debug and Troubleshooting<a class="headerlink" href="#application-debug-and-troubleshooting" title="Permalink to this headline">¶</a></h2>
+<p>Although there is no instant or easy way to debug an NDK application, the following sections provide a quick description of some of the potential problem areas. Some of these topics are discussed elsewhere in the documentation as well.</p>
+<div class="section" id="troubleshooting-common-problems">
+<h3>2.5.1 Troubleshooting Common Problems<a class="headerlink" href="#troubleshooting-common-problems" title="Permalink to this headline">¶</a></h3>
+<p>One of the most common support requests for the NDK deals with the inability to either send or receive network packets. This may also take the form of dropping packets or general poor performance. There are many causes for this type of behavior. For potential scheduling issues, see <a class="reference external" href="#priority-levels-for-network-tasks">“Priority Levels for Network Tasks”</a>. It is also recommended that application programmers fully understand the workings of the NETCTRL module. For this, see <a class="reference external" href="04_network-control-functions.html#network-control-functions">Section 3</a>.</p>
+<p>Here is a quick list. If you are using SysConfig for configuration, many of the potential configuration problems cannot occur.</p>
+<p><strong>All socket calls return “error” (-1)</strong></p>
+<ul class="simple">
+<li><p>Make sure there is a call to <code class="docutils literal notranslate"><span class="pre">fdOpenSession()</span></code> in the Task before it uses sockets, and a call to <code class="docutils literal notranslate"><span class="pre">fdCloseSession()</span></code> when the Task terminates.</p></li>
+</ul>
+<p><strong>No link indication, or will not re-link when cable is disconnected and reconnected.</strong></p>
+<ul class="simple">
+<li><p>Make sure there is a Timer object in your configuration that is calling the driver function <code class="docutils literal notranslate"><span class="pre">llTimerTick()</span></code> every 100 ms.</p></li>
+</ul>
+<p><strong>Not receiving any packets - ever</strong></p>
+<ul class="simple">
+<li><p>When polling for data by making <code class="docutils literal notranslate"><span class="pre">NDK_recv()</span></code>, <code class="docutils literal notranslate"><span class="pre">fdPoll()</span></code>, or <code class="docutils literal notranslate"><span class="pre">fdSelect()</span></code> calls in a non-blocking fashion, make sure you do not have any scheduling issues. When the NETCTRL scheduler is running in low priority, network applications are not allowed to poll without blocking. Try running the scheduler in high priority (via <code class="docutils literal notranslate"><span class="pre">NC_SystemOpen()</span></code>).</p></li>
+<li><p>The NDK assumes there is some L2 cache. If the DSP or ARM is configured to <em>all internal memory</em> with nothing left for L2 cache, the NDK drivers will not function properly.</p></li>
+</ul>
+<p><strong>Performance is sluggish. Very slow ping response.</strong></p>
+<ul class="simple">
+<li><p>Make sure there is a Timer object in your configuration that is calling the driver function <code class="docutils literal notranslate"><span class="pre">llTimerTick()</span></code> every 100 ms.</p></li>
+<li><p>If porting an Ethernet driver and running NETCTRL in interrupt mode, make sure your device is correctly detecting interrupts. Make sure the interrupt polarity is correct.</p></li>
+</ul>
+<p><strong>UDP application drops packets on NDK_send() calls.</strong></p>
+<ul class="simple">
+<li><p>If sending to a new IP address, the very first send may be held up in the ARP layer while the stack determines the MAC address for the packet destination. While in this mode, subsequent sends are discarded.</p></li>
+<li><p>When using UDP and sending multiple packets at once, make sure you have plenty of packet buffers available (see <a class="reference external" href="stack.html#packet-buffer-allocation-method">“Packet Buffer Pool”</a>).</p></li>
+<li><p>Verify you do not have any scheduling issues. Try running the scheduler in high priority (via <code class="docutils literal notranslate"><span class="pre">NC_SystemOpen()</span></code>).</p></li>
+</ul>
+<p><strong>UDP application drops packets on NDK_recv() calls.</strong></p>
+<ul class="simple">
+<li><p>Make sure you have plenty of packet buffers available (see <a class="reference external" href="stack.html#packet-buffer-allocation-method">“Packet Buffer Pool”</a>)).</p></li>
+<li><p>Make sure the packet threshold for UDP is high enough to hold all UDP data received in between calls to <code class="docutils literal notranslate"><span class="pre">NDK_recv()</span></code> (see <code class="docutils literal notranslate"><span class="pre">CFGITEM_IP_SOCKUDPRXLIMIT</span></code> in the <em>NDK Programmer’s Reference Guide</em>).</p></li>
+<li><p>Verify you do not have any scheduling issues. Try running the scheduler in high priority (via <code class="docutils literal notranslate"><span class="pre">NC_SystemOpen()</span></code>).</p></li>
+<li><p>It is possible that packets are being dropped by the Ethernet device driver. Some device drivers have adjustable RX queue depths, while others do not. Refer to the source code of your Ethernet device driver for more details (device driver source code is provided in NDK Support Package for your hardware platform).</p></li>
+</ul>
+<p><strong>Pings to NDK target Fails Beyond 3012 Size</strong></p>
+<p>The NDK’s default configuration allows reassembly of packets up to “3012” bytes. To be able to ping bigger sizes, the stack needs to be reconfigured as follows:</p>
+<ul class="simple">
+<li><p>Change the <code class="docutils literal notranslate"><span class="pre">MMALLOC_MAXSIZE</span></code> definition in the <code class="docutils literal notranslate"><span class="pre">pbm.c</span></code> file. (i.e. <code class="docutils literal notranslate"><span class="pre">#define</span> <span class="pre">MMALLOC_MAXSIZE</span> <span class="pre">65500</span></code>) and rebuild the library.</p></li>
+<li><p>Increase the Memory Manager Buffer <strong>Page Size</strong> in the <strong>Buffers</strong> tab of the Global configuration.</p></li>
+<li><p>Increase the <strong>Maximum IP Reassembly Size</strong> property of the IP module configuration.</p></li>
+</ul>
+<p><strong>Sending and Receiving UDP Datagrams over MTU Size</strong></p>
+<p>The size of sending and receiving UDP datagrams are dependent on the following NDK configuration options, socket options, and OS Adaptation Layer definitions:</p>
+<ul class="simple">
+<li><p>NDK Configuration Options:</p>
+<ul>
+<li><p>Increase the <strong>Minimum Send Size</strong> property of the IP module socket configuration. See the <a class="reference external" href="../../NDK_API_Reference.html">NDK API Reference Guide</a>.</p></li>
+<li><p>Increase the <strong>Minimum Read Size</strong> property of the IP module socket configuration.</p></li>
+<li><p>If you use <code class="docutils literal notranslate"><span class="pre">Cfg*()</span></code> API calls for configuration, you can configure these IP module properties by using the following C code:</p></li>
+</ul>
+</li>
+</ul>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">uint32_t</span> <span class="n">tmp</span> <span class="o">=</span> <span class="mi">65500</span><span class="p">;</span>
+
+<span class="c1">// configure NDK</span>
+<span class="n">CfgAddEntry</span><span class="p">(</span><span class="n">hCfg</span><span class="p">,</span> <span class="n">CFGTAG_IP</span><span class="p">,</span> <span class="n">CFGITEM_IP_IPREASMMAXSIZE</span><span class="p">,</span>
+            <span class="n">CFG_ADDMODE_UNIQUE</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">uint32_t</span><span class="p">),</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="kt">char</span><span class="o">*</span><span class="p">)</span> <span class="o">&amp;</span><span class="n">tmp</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="n">CfgAddEntry</span><span class="p">(</span><span class="n">hCfg</span><span class="p">,</span> <span class="n">CFGTAG_IP</span><span class="p">,</span> <span class="n">CFGITEM_IP_SOCKUDPRXLIMIT</span><span class="p">,</span>
+            <span class="n">CFG_ADDMODE_UNIQUE</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">uint32_t</span><span class="p">),</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="kt">char</span><span class="o">*</span><span class="p">)</span> <span class="o">&amp;</span><span class="n">tmp</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+
+<span class="c1">// set socket options</span>
+<span class="n">NDK_setsockopt</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">SOL_SOCKET</span><span class="p">,</span> <span class="n">SO_RCVBUF</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">tmp</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="p">);</span>
+<span class="n">NDK_setsockopt</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">SOL_SOCKET</span><span class="p">,</span> <span class="n">SO_SNDBUF</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">tmp</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="p">);</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Socket Options:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">SO_SNDBUF</span></code>: See the <a class="reference external" href="../../NDK_API_Reference.html">NDK API Reference Guide</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SO_RCVBUF</span></code> _- See the <a class="reference external" href="../../NDK_API_Reference.html">NDK API Reference Guide</a></p></li>
+</ul>
+</li>
+<li><p>OS Adaptation Layer Definitions:</p>
+<ul>
+<li><p>Change the <code class="docutils literal notranslate"><span class="pre">MMALLOC_MAXSIZE</span></code> definition in the <code class="docutils literal notranslate"><span class="pre">pbm.c</span></code> file. (i.e. <code class="docutils literal notranslate"><span class="pre">#define</span> <span class="pre">MMALLOC_MAXSIZE</span> <span class="pre">65500</span></code>) and rebuild the library</p></li>
+<li><p>Increase the Memory Manager Buffer <strong>Page Size</strong> in the <strong>Buffers</strong> tab of the Global configuration.</p></li>
+<li><p>If you use <code class="docutils literal notranslate"><span class="pre">Cfg*()</span></code> API calls for configuration, you can edit the <code class="docutils literal notranslate"><span class="pre">MMALLOC_MAXSIZE</span></code> definition in the <code class="docutils literal notranslate"><span class="pre">pbm.c</span></code> file and <code class="docutils literal notranslate"><span class="pre">RAW_PAGE_SIZE</span></code> definition in the <code class="docutils literal notranslate"><span class="pre">mem.c</span></code> file. Then rebuild the appropriate OS Adaptation Layer library in <code class="docutils literal notranslate"><span class="pre">/ti/ndk/os/lib</span></code>.</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Timestamping UDP Datagram Payloads</strong></p>
+<p>The NDK allows the application to update the payload of UDP datagrams. The typical usage of this is to update the timestamp information of the datagram. This way, transmitting and receiving ends can more accurately adjust delivery delays depending on changing run-time characteristic of the system.</p>
+<p>On the transmitting end:</p>
+<ul class="simple">
+<li><p>The application can register a call-out function per socket basis by using the <code class="docutils literal notranslate"><span class="pre">NDK_setsockopt()</span></code> function.</p></li>
+<li><p>The call-out function is called by the stack before inserting the datagram into driver’s transmit queue.</p></li>
+<li><p>It is the call-out function’s responsibility to update the UDP checksum information in the header.</p></li>
+<li><p>The following code section is a sample of how to control it:</p></li>
+</ul>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">myTxTimestampFxn</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">char</span> <span class="o">*</span><span class="n">pIpHdr</span><span class="p">)</span> <span class="p">{</span>
+    <span class="p">...</span>
+<span class="p">}</span>
+
+<span class="n">NDK_setsockopt</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">SOL_SOCKET</span><span class="p">,</span> <span class="n">SO_TXTIMESTAMP</span><span class="p">,</span> <span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="p">)</span> <span class="n">myTxTimestampFxn</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="p">));</span>
+</pre></div>
+</div>
+<p>On the receiving end:</p>
+<ul class="simple">
+<li><p>The application can register a call-out function per interface basis by using the <code class="docutils literal notranslate"><span class="pre">EtherConfig()</span></code> function. It is set in the <code class="docutils literal notranslate"><span class="pre">NC_NetStart()</span></code> function of <code class="docutils literal notranslate"><span class="pre">netctrl.c</span></code>.</p></li>
+<li><p>The call-out function is called by the stack scheduler just before processing the packet.</p></li>
+<li><p>It is the call-out function’s responsibility to update the UDP checksum information in the header.</p></li>
+<li><p>The following code section is a sample of how to control it:</p></li>
+</ul>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">myRcvTimestampFxn</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">char</span> <span class="o">*</span><span class="n">pIpHdr</span><span class="p">)</span> <span class="p">{</span>
+    <span class="p">...</span>
+<span class="p">}</span>
+
+<span class="n">EtherConfig</span><span class="p">(</span> <span class="n">hEther</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="mi">1518</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">myRcvTimestampFxn</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><strong>In General</strong></p>
+<ul class="simple">
+<li><p>Do not try to tune the Timer function frequency. Make sure it calls <code class="docutils literal notranslate"><span class="pre">llTimerTick()</span></code> every 100 ms.</p></li>
+<li><p>Watch for out of memory conditions. These can be detected by the return from some functions, but will also print out warning messages when the messages are enabled. These messages contain the acronym OOM for out of memory. (Out of memory conditions can be caused by many things, but the most common cause in the NDK is when TCP sockets are created and closed very quickly without using the <code class="docutils literal notranslate"><span class="pre">SO_LINGER</span></code> socket option. This puts many sockets in the TCP timewait state, exhausting scratchpad memory. The solution is to use the <code class="docutils literal notranslate"><span class="pre">SO_LINGER</span></code> socket option.)</p></li>
+</ul>
+</div>
+<div class="section" id="debug-messages">
+<h3>2.5.2 Debug Messages<a class="headerlink" href="#debug-messages" title="Permalink to this headline">¶</a></h3>
+<p>Debug messages for TI-RTOS Kernel are handled using the <code class="docutils literal notranslate"><span class="pre">System_printf()</span></code> API, which is provided by XDCtools for use by TI-RTOS.</p>
+<p>Debug output for FreeRTOS is not currently supported, so the subsections that follow do not apply to applications that use FreeRTOS. You may modify the OS Adaptation Layer source code to add other types of program output as desired.</p>
+</div>
+<div class="section" id="controlling-debug-messages">
+<h3>2.5.2.1 Controlling Debug Messages<a class="headerlink" href="#controlling-debug-messages" title="Permalink to this headline">¶</a></h3>
+<p>Debug messages for TI-RTOS Kernel also include an associated severity level. These levels are <code class="docutils literal notranslate"><span class="pre">DBG_INFO</span></code>, <code class="docutils literal notranslate"><span class="pre">DBG_WARN</span></code>, and <code class="docutils literal notranslate"><span class="pre">DBG_ERROR</span></code>. The severity level is used for two purposes. First, it determines whether or not the debug message will be printed, and second, it determines whether or not the debug message will cause the NDK to shut down.</p>
+<p>By default, all debug messages are printed, and messages with a level of <code class="docutils literal notranslate"><span class="pre">DBG_ERROR</span></code> causes a stack shutdown. This behavior can be modified through the system configuration as described in <a class="reference external" href="#controlling-ndk-and-os-options-via-the-configuration">“Controlling NDK and OS Options via the Configuration”</a> and <a class="reference external" href="#shutdown">“Shutdown”</a>. Also see the <a class="reference external" href="../../NDK_API_Reference.html">NDK API Reference Guide</a>.</p>
+</div>
+<div class="section" id="interpreting-debug-messages">
+<h3>2.5.2.2 Interpreting Debug Messages<a class="headerlink" href="#interpreting-debug-messages" title="Permalink to this headline">¶</a></h3>
+<p>The following is a list of some of the TI-RTOS Kernel debug messages that may occur during stack operation, along with the most commonly associated cause.</p>
+</div>
+<div class="section" id="tcp-retransmit-timeout-level-dbg-info">
+<h3>2.5.2.2.1 TCP: Retransmit Timeout: Level DBG_INFO<a class="headerlink" href="#tcp-retransmit-timeout-level-dbg-info" title="Permalink to this headline">¶</a></h3>
+<p>This message is generated by TCP when it has sent a packet of data to a network peer, and the peer has not replied in the expected amount of time. This can be just about anything; the peer has gone down, the network is busy, the network packet was dropped or corrupted, and so on.</p>
+</div>
+<div class="section" id="functionname-buffer-oom-level-dbg-warn">
+<h3>2.5.2.2.2 FunctionName: Buffer OOM: Level DBG_WARN<a class="headerlink" href="#functionname-buffer-oom-level-dbg-warn" title="Permalink to this headline">¶</a></h3>
+<p>This message is generated by some modules when unexpected out of memory conditions occur. The stack has an internal resource recovery routine to help deal with these situations; however, a significant number of these messages may also indicate that there is not enough large block memory available, or that there is a memory leak. See the notes on the memory manager reports in this section for more details.</p>
+</div>
+<div class="section" id="mmfree-double-free-level-dbg-warn">
+<h3>2.5.2.2.3 mmFree: Double Free: Level DBG_WARN<a class="headerlink" href="#mmfree-double-free-level-dbg-warn" title="Permalink to this headline">¶</a></h3>
+<p>A double free message occurs when the <code class="docutils literal notranslate"><span class="pre">mmFree()</span></code> function is called on a block of memory that was not marked as allocated. This can be caused by physically calling <code class="docutils literal notranslate"><span class="pre">mmFree()</span></code> twice for the same memory, but more commonly is caused by memory corruption. See <a class="reference external" href="#memory-corruption">“Memory Corruption”</a> for possible causes.</p>
+</div>
+<div class="section" id="functionname-htype-nnnn-level-dbg-error">
+<h3>2.5.2.2.4 FunctionName: HTYPE nnnn: Level DBG_ERROR<a class="headerlink" href="#functionname-htype-nnnn-level-dbg-error" title="Permalink to this headline">¶</a></h3>
+<p>This message is generated only by the strong checking version of the stack. It is caused when a handle is passed to a function that is not of the proper handle type. Since the object oriented nature of the stack is hidden from the network applications writer, this error should never occur. If it is not caused by the attempt to call internal stack functions, then it is most likely the result of memory corruption. See the notes on memory corruption in this section for possible causes.</p>
+</div>
+<div class="section" id="mmalloc-pit-sync-level-dbg-error">
+<h3>2.5.2.2.5 mmAlloc: PIT ???? Sync: Level DBG_ERROR<a class="headerlink" href="#mmalloc-pit-sync-level-dbg-error" title="Permalink to this headline">¶</a></h3>
+<p>This message is generated by the scratch memory allocation system. PIT is an acronym for page information table. Table synchronization errors can only be caused by memory corruption. See <a class="reference external" href="#memory-corruption">“Memory Corruption”</a> for possible causes.</p>
+</div>
+<div class="section" id="pbm-enq-invalid-packet-level-dbg-error">
+<h3>2.5.2.2.6 PBM_enq: Invalid Packet: Level DBG_ERROR<a class="headerlink" href="#pbm-enq-invalid-packet-level-dbg-error" title="Permalink to this headline">¶</a></h3>
+<p>This message is generated by the packet buffer manager (PBM) module driver in the OS adaptation layer. When the PBM module initially allocates its packet buffer pool, it marks each packet buffer with a magic number. During normal operation, packets are pushed and popped to and from various queues. On each push operation, the packet’s magic number is checked. When the magic number is invalid, this message results. It is possible for an invalid packet to be introduced into the system when using the non copy sockets API extensions, but the vastly more common cause is memory corruption. See the notes on memory corruption in this section for possible causes.</p>
+</div>
+<div class="section" id="additional-debug-messages">
+<h3>2.5.2.3 Additional Debug Messages<a class="headerlink" href="#additional-debug-messages" title="Permalink to this headline">¶</a></h3>
+<p>Some stack modules contain additional trace statements that are not compiled in by default. In order to display these debug messages, it is necessary to rebuild the appropriate libraries with the proper macro defined.</p>
+<p>Note: the macros described in the following section are not part of any API. As such, their names may change over time, or even be removed altogether.</p>
+</div>
+<div class="section" id="tcp-error-messages">
+<h3>2.5.2.3.1 TCP Error Messages<a class="headerlink" href="#tcp-error-messages" title="Permalink to this headline">¶</a></h3>
+<p>The TCP module contains debug trace messages which display additional information for errors and or behavior that can be useful when trying to analyze TCP issues. These messages are disabled by default, but can be enabled by rebuilding the NDK stack libraries with the following macros defined:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">NDK_DEBUG_TCP</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TCP_DEBUG</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="tcp-state-transition-messages">
+<h3>2.5.2.3.1 TCP State Transition Messages<a class="headerlink" href="#tcp-state-transition-messages" title="Permalink to this headline">¶</a></h3>
+<p>The TCP module contains trace messages which display TCP state transitions for TCP sockets/connections. These messages are disabled by default, but can be enabled by rebuilding the NDK stack libraries with the following macro defined:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">NDK_DEBUG_TCP_STATES</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="memory-corruption">
+<h3>2.5.3 Memory Corruption<a class="headerlink" href="#memory-corruption" title="Permalink to this headline">¶</a></h3>
+<p>Memory corruption errors may occur as NDK debug messages. This is because it is easy to corrupt memory on devices with cache. Often, applications are configured to use the full L2 cache. In this mode, any read or write access to the internal memory range of the CPU can cause cache corruption and hence cause memory corruption. Since the internal memory range starts at address 0x00000000, a NULL pointer can cause problems when using full cache.</p>
+<p>To check to see if corruption is being caused by a NULL pointer, change the cache mode to use less cache. When there is some internal memory available, reads or writes to address 0x0 do not cause cache corruption (the application still may not work, but the error messages should stop).</p>
+<p>Another way to track down any kind of cache corruption is to break on CPU reads or writes to the entire cache range. Code Composer Studio has the ability to trap reads or writes to a range of memory, but both cannot be checked simultaneously. Therefore, a couple of trials may be necessary.</p>
+<p>Of course, it is possible that the memory corruption has nothing to do with the stack. It could be a wild pointer. However, since corrupting the cache can corrupt memory throughout the system, the cache is the first place to start.</p>
+</div>
+<div class="section" id="program-lockups">
+<h3>2.5.4 Program Lockups<a class="headerlink" href="#program-lockups" title="Permalink to this headline">¶</a></h3>
+<p>Many lockup conditions are caused by insufficiently sized task stacks. Therefore, using large amounts of stack is not recommended. In general, do not use the following code:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">myTask</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">char</span> <span class="n">TempBuffer</span><span class="p">[</span><span class="mi">2000</span><span class="p">];</span>
+    <span class="n">myFun</span><span class="p">(</span><span class="n">TempBuffer</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>but instead, use the following:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">myTask</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">char</span> <span class="o">*</span><span class="n">pTempBuf</span><span class="p">;</span>
+
+    <span class="n">pTempBuf</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="mi">2000</span><span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">pTempBuf</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">myFun</span><span class="p">(</span><span class="n">pTempBuf</span><span class="p">);</span>
+        <span class="n">free</span><span class="p">(</span><span class="n">pTempBuf</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>If calling a memory allocation function is too much of a speed overhead, consider using an external buffer.</p>
+<p>This is just an example, with a little forethought you can eliminate all possible stack overflow conditions, and eliminate the possibility of program lockups from this condition.</p>
+</div>
+<div class="section" id="memory-management-reports">
+<h3>2.5.5 Memory Management Reports<a class="headerlink" href="#memory-management-reports" title="Permalink to this headline">¶</a></h3>
+<p>The memory manager that manages scratch memory in the NDK has a built in reporting system. It tracks the use of scratch memory closely (calls to <code class="docutils literal notranslate"><span class="pre">mmAlloc()</span></code> and <code class="docutils literal notranslate"><span class="pre">mmFree()</span></code>), and also tracks calls to the large block memory allocated (calls to <code class="docutils literal notranslate"><span class="pre">mmBulkAlloc()</span></code> and <code class="docutils literal notranslate"><span class="pre">mmBulkFree()</span></code>). Note that the bulk allocation functions simply call <code class="docutils literal notranslate"><span class="pre">malloc()</span></code> and <code class="docutils literal notranslate"><span class="pre">free()</span></code>. This behavior can be altered by adjusting the memory manager.</p>
+<p>The memory report is shown below. It lists the max number of blocks allocated per size bucket, the number of calls to <code class="docutils literal notranslate"><span class="pre">mmAlloc()</span></code> and <code class="docutils literal notranslate"><span class="pre">mmFree()</span></code>, and a list of allocated memory. An example report is shown below:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">48</span><span class="p">:</span><span class="mi">48</span>   <span class="p">(</span> <span class="mi">75</span><span class="o">%</span><span class="p">)</span>   <span class="mi">18</span><span class="p">:</span><span class="mi">96</span>   <span class="p">(</span> <span class="mi">56</span><span class="o">%</span><span class="p">)</span>   <span class="mi">8</span><span class="p">:</span><span class="mi">128</span>  <span class="p">(</span> <span class="mi">33</span><span class="o">%</span><span class="p">)</span>      <span class="mi">28</span><span class="p">:</span><span class="mi">256</span> <span class="p">(</span> <span class="mi">77</span><span class="o">%</span><span class="p">)</span>
+ <span class="mi">1</span><span class="p">:</span><span class="mi">512</span>  <span class="p">(</span> <span class="mi">16</span><span class="o">%</span><span class="p">)</span>    <span class="mi">0</span><span class="p">:</span><span class="mi">1536</span>          <span class="mi">0</span><span class="p">:</span><span class="mi">3072</span>
+<span class="p">(</span><span class="mi">21504</span><span class="o">/</span><span class="mi">46080</span> <span class="n">mmAlloc</span><span class="p">:</span> <span class="mi">61347036</span><span class="o">/</span><span class="mi">0</span><span class="o">/</span><span class="mi">61346947</span><span class="p">,</span> <span class="n">mmBulk</span><span class="p">:</span> <span class="mi">25</span><span class="o">/</span><span class="mi">0</span><span class="o">/</span><span class="mi">17</span><span class="p">)</span>
+
+<span class="mi">1</span> <span class="n">blocks</span> <span class="n">alloced</span> <span class="ow">in</span> <span class="mi">512</span> <span class="n">byte</span> <span class="n">page</span>
+<span class="mi">38</span> <span class="n">blocks</span> <span class="n">alloced</span> <span class="ow">in</span> <span class="mi">48</span> <span class="n">byte</span> <span class="n">page</span>
+<span class="mi">18</span> <span class="n">blocks</span> <span class="n">alloced</span> <span class="ow">in</span> <span class="mi">96</span> <span class="n">byte</span> <span class="n">page</span>
+<span class="mi">8</span> <span class="n">blocks</span> <span class="n">alloced</span> <span class="ow">in</span> <span class="mi">128</span> <span class="n">byte</span> <span class="n">page</span>
+<span class="mi">12</span> <span class="n">blocks</span> <span class="n">alloced</span> <span class="ow">in</span> <span class="mi">256</span> <span class="n">byte</span> <span class="n">page</span>
+<span class="mi">12</span> <span class="n">blocks</span> <span class="n">alloced</span> <span class="ow">in</span> <span class="mi">256</span> <span class="n">byte</span> <span class="n">page</span>
+</pre></div>
+</div>
+<p>Here, the entry 18:96 (56%) means that at most, 18 blocks were allocated in the 96 byte bucket. The page size on the memory manager is 3072, so 56% of a page was used. The entry 21504/46080 means that at most 21,504 bytes were allocated, with a total of 46,080 bytes available.</p>
+<p>The entry mmAlloc: 61347036/0/61346947 means that 61,347,036 calls were made to <code class="docutils literal notranslate"><span class="pre">mmAlloc()</span></code>, of which 0 failed, and 61,346,947 calls were made to <code class="docutils literal notranslate"><span class="pre">mmFree()</span></code>. Note that at any time, the call to <code class="docutils literal notranslate"><span class="pre">mmAlloc()</span></code> plus the failures must equal the calls to <code class="docutils literal notranslate"><span class="pre">mmFree()</span></code> plus any outstanding allocations. Therefore, on a final report where the report is mmAlloc: n1/n2/n3, n1+n2 should equal n3. If not, there is a memory leak.</p>
+</div>
+<div class="section" id="mmcheck-generate-memory-manager-report">
+<h3>2.5.5.1 mmCheck - Generate Memory Manager Report<a class="headerlink" href="#mmcheck-generate-memory-manager-report" title="Permalink to this headline">¶</a></h3>
+<p><strong>Syntax</strong></p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">_mmCheck</span><span class="p">(</span> <span class="kt">uint32_t</span> <span class="n">CallMode</span><span class="p">,</span> <span class="kt">int</span> <span class="p">(</span><span class="o">*</span><span class="n">pPrn</span><span class="p">)(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="p">,...)</span> <span class="p">);</span>
+</pre></div>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 75%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">CallMode</span></code></p></td>
+<td><p>Specifies the type of report to generate</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">pPrn</span></code></p></td>
+<td><p>Pointer to <code class="docutils literal notranslate"><span class="pre">printf()</span></code> compatible function</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description</strong></p>
+<p>Prints out a memory report to the <code class="docutils literal notranslate"><span class="pre">printf()</span></code> compatible function pointed to by <code class="docutils literal notranslate"><span class="pre">pPrn</span></code>. The type of report printed is determined by the value of <code class="docutils literal notranslate"><span class="pre">CallMode</span></code>. The reporting function has the option of printing out memory block IDs. This means that the first uint32_t sized field in the memory block of each allocated block is printed in the report. This is a useful option when the first field of allocated memory stores an object handle type, or some other unique identifier.</p>
+<p><strong>Call Mode</strong></p>
+<p>Can be set to one of the following:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">MMCHECK_MAP</span></code> – Map out allocated memory, but do not dump ID’s</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MMCHECK_DUMP</span></code> – Dump allocated block IDs</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MMCHECK_SHUTDOWN</span></code> – Dump allocated block IDs &amp; free scratchpad memory</p>
+<blockquote>
+<div><p><strong>NOTE:</strong> Do not attempt to use any <code class="docutils literal notranslate"><span class="pre">mmAlloc()</span></code> functions after requesting a <code class="docutils literal notranslate"><span class="pre">MMCHECK_SHUTDOWN</span></code> report!</p>
+</div></blockquote>
+</li>
+</ul>
+<p><strong>Returns</strong></p>
+<p>None</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="stack.html" class="btn btn-neutral float-right" title="3 Stack" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="02_overview.html" class="btn btn-neutral float-left" title="1 Overview" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">&copy; Copyright 1995-2020</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div>
+    
+    
+      Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

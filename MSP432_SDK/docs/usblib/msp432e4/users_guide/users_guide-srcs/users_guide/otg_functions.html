@@ -1,0 +1,378 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>OTG Functions &mdash; MSP432E4 USB Library 1.00.00.01 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="Introduction" href="introduction.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+   <!---- extra body elements for TI beyond RTD Sphinx Theme --->
+<div class="DocSite-globalNav tiNav">
+    <ul>
+    </ul>
+</div>
+
+<a class="DocSite-nav" href="https://www.ti.com" style="padding-bottom: 85px;">
+  <img class="DocSiteNav-logo"
+    src="../../_static/img/ti_logo.png"
+    alt="TI Logo">
+  <div class="DocSiteNav-title"></div>
+</a> 
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> MSP432E4 USB Library
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.00.00.01
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="device_functions.html">Device Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="host_functions.html">Host Functions</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">MSP432E4 USB Library</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="device_functions.html">Device Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="host_functions.html">Host Functions</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">OTG Functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#file-structure">File Structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#otg-controller-driver">OTG Controller Driver</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#initialization">Initialization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mode-detection">Mode Detection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#interrupt-handling">Interrupt Handling</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#otg-programming-examples">OTG Programming Examples</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#otg-host-mode-initialization">OTG Host Mode Initialization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#otg-device-mode-initialization">OTG Device Mode Initialization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#otg-mode-initialization">OTG Mode Initialization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#application-interface">Application Interface</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">OTG Functions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#file-structure">File Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#otg-controller-driver">OTG Controller Driver</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#initialization">Initialization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mode-detection">Mode Detection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#interrupt-handling">Interrupt Handling</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#otg-programming-examples">OTG Programming Examples</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#otg-host-mode-initialization">OTG Host Mode Initialization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#otg-device-mode-initialization">OTG Device Mode Initialization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#otg-mode-initialization">OTG Mode Initialization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#application-interface">Application Interface</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+          <!-- extra nav elements for TI beyond RTD Sphinx Theme --->
+<div id="sideBanner">
+    <br/>
+    <br/><br/><br/>
+</div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MSP432E4 USB Library</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">MSP432E4 USB Library</a> &raquo;</li>
+        
+      <li>OTG Functions</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="otg-functions">
+<h1>OTG Functions<a class="headerlink" href="#otg-functions" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>This chapter covers the support provided by the USB library for the USB OTG controller. The USB library provides a simplified interface that allows the application to configure how often OTG sessions are requested and a callback method to notify the application when any mode switch has occurred. Since the OTG portion of the USB library must handle both device and host mode operation it requires some setup for both device and host modes. This puts some requirements on the order of initialization of the stacks in order to insure proper operation.</p>
+<p>The USB library currently only supports OTG session request protocol(SRP) and does not support host negotiation protocol(HNP).</p>
+</div>
+<div class="section" id="file-structure">
+<h2>File Structure<a class="headerlink" href="#file-structure" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 87%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Filename</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">usblib.h</span></code></p></td>
+<td><p>The header file containing OTG mode and other function prototypes and data types offered by the USB library.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">usbmode.c</span></code></p></td>
+<td><p>The source code for the USB OTG functions are in this file.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="otg-controller-driver">
+<h2>OTG Controller Driver<a class="headerlink" href="#otg-controller-driver" title="Permalink to this headline">¶</a></h2>
+<p>The USB library OTG functions provide a higher level interface to the USB controller’s OTG hardware register interface. The hardware register interface is the lowest level of the interface and it interacts directly with the DriverLib USB APIs. The OTG functions provide the ability to detect which end of the USB cable was connected (A side or B side) as well as the presence of a device or host being connected. The OTG portion of the USB library requires initialization of the USB library in a certain order to safely bring up the the controller in OTG mode. This is because the stack requires both host and device mode operation. Once the USB library stack is initialized for OTG mode operation, the application will manage OTG notifications via a mode callback function that is called any time the USB mode changes.</p>
+<div class="section" id="initialization">
+<h3>Initialization<a class="headerlink" href="#initialization" title="Permalink to this headline">¶</a></h3>
+<p>The application using the USB library in OTG mode must perform not only the initialization for the OTG functionality but also configure the host and device mode library functions as well. For host mode this includes registering the supported host classes, configuring the power pins, and calling any application level initialization functions that are required. For device mode, only the application level initialization is required as the OTG initialization will complete all other initialization required by the USB device library.</p>
+<p>To properly configure host mode, the application must first configure and enable the host power pins for USBEPEN and USBPFLT. These are configured using in the library the <code class="docutils literal notranslate"><span class="pre">USBHCDPowerConfigInit()</span></code>. The actual physical pins must also be enabled and configured by the application using <code class="docutils literal notranslate"><span class="pre">SysCtlPeripheralEnable()</span></code> followed by <code class="docutils literal notranslate"><span class="pre">GPIOPinTypeUSBDigital()</span></code>. These pins are located on different physical pins on devices and thus must be configured by the application. The remaining USB pins are handled by the library and do not require any configuration.</p>
+<p>Once the pins are configured, the USB library must be put into OTG mode in order to properly handle incoming requests. The very first call after pin configuration should be to call <code class="docutils literal notranslate"><span class="pre">USBStackModeSet()</span></code> to register a callback function for OTG events as well as put the library into OTG mode. Next any calls needed to initialize the application level interface for device and host mode need to be called. For device this would be functions like <code class="docutils literal notranslate"><span class="pre">USBDHIDMouseInit()</span></code> for a HID mouse or it could be <code class="docutils literal notranslate"><span class="pre">USBDCDInit()</span></code> for a non-library provided device class. For host mode the the drivers must be registered with a call to <code class="docutils literal notranslate"><span class="pre">USBHCDRegisterDrivers()</span></code> and if a USB library provided class is used then it’s application initialization interface must be called as well. For example in the case of supporting a USB mouse, the <code class="docutils literal notranslate"><span class="pre">USBHMouseOpen()</span></code> should be called to initialize the USB libraries HID mouse functionality. The last function that should be called by the application to initialize the USB OTG
+library is to call <code class="docutils literal notranslate"><span class="pre">USBOTGModeInit()</span></code> in order to finalize the initialization and enable the controller to start functioning in OTG mode. The <code class="docutils literal notranslate"><span class="pre">USBOTGModeInit()</span></code> also sets the polling rate for determining the mode of the controller as well as provide the memory that is required by the USB library host stack. Once this call is complete the application should be ready to receive any callbacks from the function provided to the <code class="docutils literal notranslate"><span class="pre">USBStackModeSet()</span></code> and any other device or host specific calls.</p>
+</div>
+<div class="section" id="mode-detection">
+<h3>Mode Detection<a class="headerlink" href="#mode-detection" title="Permalink to this headline">¶</a></h3>
+<p>The detection of which end of the cable that the USB controller is on and the current mode is done automatically in the library. The callback function passed in to <code class="docutils literal notranslate"><span class="pre">USBStackModeSet()</span></code> provides information on mode changes to allow the application to respond. Initially the USB library will start in idle state and remain in that state until a new mode is detected. The rate at which the mode is checked is passed into the <code class="docutils literal notranslate"><span class="pre">USBOTGModeInit()</span></code> function or can be set by the <code class="docutils literal notranslate"><span class="pre">USBOTGPollRate()</span></code> function once the OTG library code has been initialized. If <code class="docutils literal notranslate"><span class="pre">USBOTGPollRate()</span></code> is called with a polling rate of zero then polling for mode will stop until the rate is changed to a non-zero value. In a full OTG system, the polling rate is not required, but it will set how often the USB library issues session request on B side of the USB cable and how often it will look for devices if on the A side of the cable. Regardless of the mode that is detected the application should periodically call the
+<code class="docutils literal notranslate"><span class="pre">USBOTGMain()</span></code> function to allow the polling to function as well as call the USB library’s main function once host mode is determined. The <code class="docutils literal notranslate"><span class="pre">USBOTGMain()</span></code> takes the number of elapsed milliseconds since the last call to <code class="docutils literal notranslate"><span class="pre">USBOTGMain()</span></code> in order to provide the USB OTG library functions with some basic timing information.</p>
+<p>When the USB library detects that it is on the B side of the cable and has been powered, then the library will call back with the mode set to <strong>eUSBModeDevice</strong>. If the USB controller is connected to a non-OTG host then the library will simply detect device mode and start operating as a USB device. All other device handling will work exactly as it does for normal device operation. When the USB cable is disconnected the USB library will return to the idle state and inform the application by calling the mode callback function with the mode set to <strong>eUSBModeNone</strong>.</p>
+<p>The USB library detects that is is on the A side of the cable via a session request from the B side or detecting that the A side is connected to a cable due to the polling check. The USB library will then power the USB bus, call the mode callback function with the mode set to <strong>eUSBModeHost</strong>, and then begin enumerating the device. If a non-OTG device was connected the USB library will simply enumerate the device and function exactly as if the USB controller was in normal host mode.</p>
+<p>Once the USB controller is unplugged from the host or detects that a device has been removed in host mode, the session will end and polling will resume. In both cases the USB library will call the callback function with the mode set to <strong>eUSBModeNone</strong> to inform the application that the USB library has returned to and idle state and is neither a host or device. Once the USB controller mode has been determined, no other USB library OTG API functions need to be called.</p>
+</div>
+<div class="section" id="interrupt-handling">
+<h3>Interrupt Handling<a class="headerlink" href="#interrupt-handling" title="Permalink to this headline">¶</a></h3>
+<p>All interrupt handling is done by the USB library <code class="docutils literal notranslate"><span class="pre">USB0OTGModeIntHandler()</span></code> function which is the interrupt handler for all USB interrupts in OTG mode. This function must be registered as the interrupt handler for the USB controller. To simplify handling both modes of operation, the OTG interrupt handler will take care of routing interrupts to the correct handler in USB library based on the current mode of operation. The application should be ready to receive any calls from other parts of the USB library based on the current mode of operation that was returned by the mode callback function. Since most callbacks are done in interrupt context they should be treated like interrupt handlers and should defer any real processing of events to occur outside the interrupt context. The callbacks are used to notify the applications of events that occur due to OTG negotiations or during normal operation.</p>
+</div>
+</div>
+<div class="section" id="otg-programming-examples">
+<h2>OTG Programming Examples<a class="headerlink" href="#otg-programming-examples" title="Permalink to this headline">¶</a></h2>
+<p>The USB library provides an example OTG application that can act as a mouse device or can support being a host to a mouse device. This application uses the USB HID mouse device support as well as the USB HID mouse host support that is provided with the USB library. To accomplish this the application must initialize the host stack to support a mouse device and initialize the device stack to operate as a mouse device. The application should always call <code class="docutils literal notranslate"><span class="pre">USBStackModeSet()</span></code> in order to set the mode of the stack to OTG and in order to receive callbacks for any mode changes.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">USBStackModeSet</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">eUSBModeOTG</span><span class="p">,</span> <span class="n">ModeCallback</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="section" id="otg-host-mode-initialization">
+<h3>OTG Host Mode Initialization<a class="headerlink" href="#otg-host-mode-initialization" title="Permalink to this headline">¶</a></h3>
+<p>The USB OTG library requires the application to initialize the host stack almost identically as is done for normal host mode. The only difference for the USB OTG configuration is that <code class="docutils literal notranslate"><span class="pre">USBHCDInit()</span></code> is not called by the application and is handled by the call to <code class="docutils literal notranslate"><span class="pre">USBOTGModeInit()</span></code>. As with normal host mode, the application first registers the supported device drivers with a call to <code class="docutils literal notranslate"><span class="pre">USBHCDRegisterDrivers()</span></code>. If the top level driver for a device requires any initialization it should be called as well. Then the application should configure the USB power pins EPEN and FAULT to allow the OTG stack to be able to power the device and detect fault conditions if required. At this point the host mode drivers and stack are ready for normal operation. Unlike normal host mode the application must periodically call <code class="docutils literal notranslate"><span class="pre">USBOTGMain()</span></code> instead of <code class="docutils literal notranslate"><span class="pre">USBHCDMain()</span></code> to allow non-interrupt based library code to run.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">//</span>
+<span class="c1">// Register the host class drivers.</span>
+<span class="c1">//</span>
+<span class="n">USBHCDRegisterDrivers</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">g_ppHostClassDrivers</span><span class="p">,</span> <span class="n">g_ulNumHostClassDrivers</span><span class="p">);</span>
+
+<span class="c1">//</span>
+<span class="c1">// Configure the power pins for host mode.</span>
+<span class="c1">//</span>
+<span class="n">SysCtlPeripheralEnable</span><span class="p">(</span><span class="n">SYSCTL_PERIPH_GPIOH</span><span class="p">);</span>
+<span class="n">GPIOPinTypeUSBDigital</span><span class="p">(</span><span class="n">GPIO_PORTH_BASE</span><span class="p">,</span> <span class="n">GPIO_PIN_3</span> <span class="o">|</span> <span class="n">GPIO_PIN_4</span><span class="p">);</span>
+
+<span class="c1">//</span>
+<span class="c1">// Initialize the power configuration. This sets the power enable signal</span>
+<span class="c1">// to be active high and does not enable the power fault.</span>
+<span class="c1">//</span>
+<span class="n">USBHCDPowerConfigInit</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">USBHCD_VBUS_AUTO_HIGH</span><span class="p">);</span>
+
+<span class="c1">//</span>
+<span class="c1">// This is the top level call to initialize a mouse driver.</span>
+<span class="c1">//</span>
+<span class="n">USBHMouseOpen</span><span class="p">(</span><span class="n">MouseCallback</span><span class="p">,</span> <span class="n">g_pucBuffer</span><span class="p">,</span> <span class="n">MOUSE_MEMORY_SIZE</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="otg-device-mode-initialization">
+<h3>OTG Device Mode Initialization<a class="headerlink" href="#otg-device-mode-initialization" title="Permalink to this headline">¶</a></h3>
+<p>The USB OTG library requires the application to initialize the device stack identically to how it is done for normal device mode. This includes calling <code class="docutils literal notranslate"><span class="pre">USBDCDInit()</span></code> for custom classes or a specific USB library provided device initialization function like <code class="docutils literal notranslate"><span class="pre">USBDHIDMouseInit()</span></code> in the example below. Once this is done the device mode stack is ready for normal operation in OTG mode.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">//</span>
+<span class="c1">// This is the call to initialize the mouse device stack.</span>
+<span class="c1">//</span>
+<span class="n">USBDHIDMouseInit</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="p">(</span><span class="n">tUSBDHIDMouseDevice</span> <span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">g_sMouseDevice</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="otg-mode-initialization">
+<h3>OTG Mode Initialization<a class="headerlink" href="#otg-mode-initialization" title="Permalink to this headline">¶</a></h3>
+<p>The only remaining initialization required after configuring the device and host stacks is to enable OTG mode with a call to <code class="docutils literal notranslate"><span class="pre">USBOTGModeInit()</span></code>. This function takes a parameter to specify the polling intervall for the OTG detection and also two other parameters that are the same as the ones passed to <code class="docutils literal notranslate"><span class="pre">USBHCDInit()</span></code> as it will pass the memory buffer provided in these two parameters directly to <code class="docutils literal notranslate"><span class="pre">USBHCDInit()</span></code>. Once this function returns the OTG stack will be operational and ready for new devices.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">//</span>
+<span class="c1">// Pass in the host stack buffer to the OTG stack.</span>
+<span class="c1">//</span>
+<span class="n">USBOTGModeInit</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">g_pHCDPool</span><span class="p">,</span> <span class="n">HCD_MEMORY_SIZE</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="application-interface">
+<h3>Application Interface<a class="headerlink" href="#application-interface" title="Permalink to this headline">¶</a></h3>
+<p>Once all the host, device and OTG initialization is complete, the USB library is ready to start normal operation. For device mode this simply means that the next time the device is connected to a host the application will receive a callback via the function provided with the <code class="docutils literal notranslate"><span class="pre">USBStackModeSet()</span></code> API. This will inform the application that a device has been detected. Because the USB bus is not be powered in idle mode, detection of host mode requires polling or actual session request signaling from a device in order to detect that host mode should be enabled. In the case where the USB controller is connected to the A side of the cable(default Host mode) this will check the cable and inform the application via the mode callback if a device is present. In the case where the USB controller is connected to the B side of the cable and an OTG device is on the A side, this call will request that the A side power the USB bus and enumerate the device. If nothing is present then the application
+will receive a callback indicating <strong>eUSBModeNone</strong> as the current mode was not able to be detected. The application will be informed of a device being disconnected or being disconnected as a device by receiving a callback that the USB library has returned to <strong>eUSBModeNone</strong> and possibly also from the USB library device or host library functions as well.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="introduction.html" class="btn btn-neutral float-left" title="Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">&copy; Copyright 1995-2020</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div>
+    
+    
+      Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

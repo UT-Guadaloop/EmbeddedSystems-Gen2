@@ -1,0 +1,14 @@
+[
+    {
+        "files": [
+            "+../gpt_16bit_edgecountmode_dmareq.c -> gpt_16bit_edgecountmode_dmareq.c",
+            "+../uartstdio.c -> uartstdio.c",
+            "+../uartstdio.h -> uartstdio.h",
+            "+../system_msp432e401y.c -> system_msp432e401y.c",
+            "+../README.md -> README.md",
+            "+../README.html -> README.html",
+            "+startup_msp432e401y_ccs.c -> ccs/startup_msp432e401y_ccs.c",
+            "+msp432e401y.cmd -> msp432e401y.cmd"
+        ]
+    }
+]

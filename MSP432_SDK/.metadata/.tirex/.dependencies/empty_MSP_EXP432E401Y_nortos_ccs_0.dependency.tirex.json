@@ -1,0 +1,10 @@
+[
+    {
+        "files": [
+            "+../main.c -> main.c",
+            "+../system_msp432e401y.c -> system_msp432e401y.c",
+            "+startup_msp432e401y_ccs.c -> ccs/startup_msp432e401y_ccs.c",
+            "+msp432e401y.cmd -> msp432e401y.cmd"
+        ]
+    }
+]

@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="struct_u_d_m_a_m_s_p432_e4___config" kind="struct" language="C++" prot="public">
+    <compoundname>UDMAMSP432E4_Config</compoundname>
+    <includes refid="_u_d_m_a_m_s_p432_e4_8h" local="no">UDMAMSP432E4.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_u_d_m_a_m_s_p432_e4___config_1addfb811a31e8bf44266747761e54baae" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* UDMAMSP432E4_Config::object</definition>
+        <argsstring></argsstring>
+        <name>object</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pointer to UDMAMSP432E4 object </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/dma/UDMAMSP432E4.h" line="144" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/dma/UDMAMSP432E4.h" bodystart="144" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_u_d_m_a_m_s_p432_e4___config_1ab489f4e737772028beb2e4faab6b7b27" prot="public" static="no" mutable="no">
+        <type>void const  *</type>
+        <definition>void const* UDMAMSP432E4_Config::hwAttrs</definition>
+        <argsstring></argsstring>
+        <name>hwAttrs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pointer to hardware attributes </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/dma/UDMAMSP432E4.h" line="145" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/dma/UDMAMSP432E4.h" bodystart="145" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>UDMAMSP432E4 Global configuration. </para>    </briefdescription>
+    <detaileddescription>
+<para>The <ref refid="struct_u_d_m_a_m_s_p432_e4___config" kindref="compound">UDMAMSP432E4_Config</ref> structure contains pointers used by the UDMAMSP432E4 driver.</para><para>This structure needs to be defined before calling <ref refid="_u_d_m_a_m_s_p432_e4_8h_1aa19be18eb81f20d8e4f63c564d3808c0" kindref="member">UDMAMSP432E4_init()</ref> and it must not be changed thereafter. </para>    </detaileddescription>
+    <location file="exports/tidrivers_msp432e4/source/ti/drivers/dma/UDMAMSP432E4.h" line="143" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/dma/UDMAMSP432E4.h" bodystart="143" bodyend="146"/>
+    <listofallmembers>
+      <member refid="struct_u_d_m_a_m_s_p432_e4___config_1ab489f4e737772028beb2e4faab6b7b27" prot="public" virt="non-virtual"><scope>UDMAMSP432E4_Config</scope><name>hwAttrs</name></member>
+      <member refid="struct_u_d_m_a_m_s_p432_e4___config_1addfb811a31e8bf44266747761e54baae" prot="public" virt="non-virtual"><scope>UDMAMSP432E4_Config</scope><name>object</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

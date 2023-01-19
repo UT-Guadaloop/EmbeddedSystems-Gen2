@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="dir_c7c3caac9c05bea82305b87d191db62d" kind="dir">
+    <compoundname>drivers</compoundname>
+    <innerdir refid="dir_6533c7fdf600c5713a4b96c13af1838a">adc</innerdir>
+    <innerdir refid="dir_f794cb916485e5fd48209cf10a9427a6">adcbuf</innerdir>
+    <innerdir refid="dir_2359c65d5ee0268f0df20ae093ae7271">aescbc</innerdir>
+    <innerdir refid="dir_4c9532b08432d820ed9d8dd8f0805c77">aesccm</innerdir>
+    <innerdir refid="dir_3d76fb50315a4fb9867d8e646bf48bc7">aesctr</innerdir>
+    <innerdir refid="dir_c7beff926320f79682b845f481facb08">aesctrdrbg</innerdir>
+    <innerdir refid="dir_41c6c2f4ddfa79a0c6059de86f9543f9">aesecb</innerdir>
+    <innerdir refid="dir_6da76aebe871689d7a89a1b33d611e67">aesgcm</innerdir>
+    <innerdir refid="dir_475d4a421559212430f903c250d08f93">apps</innerdir>
+    <innerdir refid="dir_a57f4217da5c969ac831096f5000a7d9">can</innerdir>
+    <innerdir refid="dir_f975c613417ecccb00bc80cf58cb4e9b">comparator</innerdir>
+    <innerdir refid="dir_ad568d733b044a95a2be317b6636e438">crc</innerdir>
+    <innerdir refid="dir_dc6be798f1bc1cab5f6dd5d00504601f">cryptoutils</innerdir>
+    <innerdir refid="dir_4fb3b4317356a28683dce702cd147917">dma</innerdir>
+    <innerdir refid="dir_540fb21ae12206f5d8ccd9ec3c597bdb">emac</innerdir>
+    <innerdir refid="dir_10fec31149ef3f01ba66e186b09eaab0">gpio</innerdir>
+    <innerdir refid="dir_09ef88491d9e587b9a00606305bc8cb0">i2c</innerdir>
+    <innerdir refid="dir_e87f3d3b6c5967c2a8ac2d39a62dc684">nvs</innerdir>
+    <innerdir refid="dir_876661bf79de6e2ba98894d68494b941">power</innerdir>
+    <innerdir refid="dir_c290c44b2d8b656441aeb00a4728cd87">pwm</innerdir>
+    <innerdir refid="dir_93c97220918a574d0670fb6ee18cb64d">sd</innerdir>
+    <innerdir refid="dir_104af52548509e64b1a70d4b1ec3c5ec">sha2</innerdir>
+    <innerdir refid="dir_d8b22eb2dbf757fd327a7736e77db69e">spi</innerdir>
+    <innerdir refid="dir_579a48e08e6122f8dc21c8afeecb0205">timer</innerdir>
+    <innerdir refid="dir_5cd91f724a6bf0d650445c63783f2af3">uart</innerdir>
+    <innerdir refid="dir_c52dd3eabe46aada7e342642d92eb920">uart2</innerdir>
+    <innerdir refid="dir_74a59a1fbb98f0828cc1a57d24a36798">utils</innerdir>
+    <innerdir refid="dir_8efc475f645017d5709d669590565b4f">watchdog</innerdir>
+    <innerfile refid="_a_d_c_8h">ADC.h</innerfile>
+    <innerfile refid="_a_d_c_buf_8h">ADCBuf.h</innerfile>
+    <innerfile refid="_a_e_s_c_b_c_8h">AESCBC.h</innerfile>
+    <innerfile refid="_a_e_s_c_c_m_8h">AESCCM.h</innerfile>
+    <innerfile refid="_a_e_s_c_t_r_8h">AESCTR.h</innerfile>
+    <innerfile refid="_a_e_s_c_t_r_d_r_b_g_8h">AESCTRDRBG.h</innerfile>
+    <innerfile refid="_a_e_s_e_c_b_8h">AESECB.h</innerfile>
+    <innerfile refid="_a_e_s_g_c_m_8h">AESGCM.h</innerfile>
+    <innerfile refid="_board_8h">Board.h</innerfile>
+    <innerfile refid="_c_a_n_8h">CAN.h</innerfile>
+    <innerfile refid="_comparator_8h">Comparator.h</innerfile>
+    <innerfile refid="_c_r_c_8h">CRC.h</innerfile>
+    <innerfile refid="_g_p_i_o_8h">GPIO.h</innerfile>
+    <innerfile refid="_i2_c_8h">I2C.h</innerfile>
+    <innerfile refid="_n_v_s_8h">NVS.h</innerfile>
+    <innerfile refid="_power_8h">Power.h</innerfile>
+    <innerfile refid="_p_w_m_8h">PWM.h</innerfile>
+    <innerfile refid="_s_d_8h">SD.h</innerfile>
+    <innerfile refid="_s_d_fat_f_s_8h">SDFatFS.h</innerfile>
+    <innerfile refid="_s_h_a2_8h">SHA2.h</innerfile>
+    <innerfile refid="_s_p_i_8h">SPI.h</innerfile>
+    <innerfile refid="_timer_8h">Timer.h</innerfile>
+    <innerfile refid="_u_a_r_t_8h">UART.h</innerfile>
+    <innerfile refid="_u_a_r_t2_8h">UART2.h</innerfile>
+    <innerfile refid="_watchdog_8h">Watchdog.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="exports/tidrivers_msp432e4/source/ti/drivers/"/>
+  </compounddef>
+</doxygen>

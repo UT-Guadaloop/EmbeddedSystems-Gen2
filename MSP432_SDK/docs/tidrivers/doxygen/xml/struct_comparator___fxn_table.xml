@@ -1,0 +1,151 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="struct_comparator___fxn_table" kind="struct" language="C++" prot="public">
+    <compoundname>Comparator_FxnTable</compoundname>
+    <includes refid="_comparator_8h" local="no">Comparator.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_comparator___fxn_table_1aa88cfa1de98061fa6b2a3b54bddb374f" prot="public" static="no" mutable="no">
+        <type><ref refid="_comparator_8h_1adc116d03196b3bf1be891115401e0aa2" kindref="member">Comparator_CloseFxn</ref></type>
+        <definition>Comparator_CloseFxn Comparator_FxnTable::closeFxn</definition>
+        <argsstring></argsstring>
+        <name>closeFxn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Function to close the specified peripheral. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/Comparator.h" line="457" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/Comparator.h" bodystart="457" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_comparator___fxn_table_1a77ae678b6d1914b75815012c01fabbc7" prot="public" static="no" mutable="no">
+        <type><ref refid="_comparator_8h_1aebb8a944da4f9d7b63f7c4ab71eeedb9" kindref="member">Comparator_GetLevelFxn</ref></type>
+        <definition>Comparator_GetLevelFxn Comparator_FxnTable::getLevelFxn</definition>
+        <argsstring></argsstring>
+        <name>getLevelFxn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Function to get comparator output level. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/Comparator.h" line="460" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/Comparator.h" bodystart="460" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_comparator___fxn_table_1a9b048c7b5b31bfe2140eecf21d28fb8f" prot="public" static="no" mutable="no">
+        <type><ref refid="_comparator_8h_1ab03d85bccb1914cc6eda1f336f679369" kindref="member">Comparator_InitFxn</ref></type>
+        <definition>Comparator_InitFxn Comparator_FxnTable::initFxn</definition>
+        <argsstring></argsstring>
+        <name>initFxn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Function to initialize the given data object. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/Comparator.h" line="463" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/Comparator.h" bodystart="463" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_comparator___fxn_table_1a693269e9d2906e2fe4adf242df4af273" prot="public" static="no" mutable="no">
+        <type><ref refid="_comparator_8h_1aa9b4e369b6c8fd4e71d7570fd270fa18" kindref="member">Comparator_OpenFxn</ref></type>
+        <definition>Comparator_OpenFxn Comparator_FxnTable::openFxn</definition>
+        <argsstring></argsstring>
+        <name>openFxn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Function to open the specified peripheral. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/Comparator.h" line="466" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/Comparator.h" bodystart="466" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_comparator___fxn_table_1ac95b0c4057a78416f2e4f3e939150e8a" prot="public" static="no" mutable="no">
+        <type><ref refid="_comparator_8h_1a3fddecb5728e399b68ae781e32c7b14a" kindref="member">Comparator_StartFxn</ref></type>
+        <definition>Comparator_StartFxn Comparator_FxnTable::startFxn</definition>
+        <argsstring></argsstring>
+        <name>startFxn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Function to start the specified peripheral. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/Comparator.h" line="469" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/Comparator.h" bodystart="469" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_comparator___fxn_table_1a172b93d7c1e04649caed7b8842787626" prot="public" static="no" mutable="no">
+        <type><ref refid="_comparator_8h_1a2d6c5d635cfa4720ba38ed7cb65c6a1a" kindref="member">Comparator_StopFxn</ref></type>
+        <definition>Comparator_StopFxn Comparator_FxnTable::stopFxn</definition>
+        <argsstring></argsstring>
+        <name>stopFxn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Function to stop the specified peripheral. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/Comparator.h" line="472" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/Comparator.h" bodystart="472" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_comparator___fxn_table_1a1df70078c1b47e755675a326f38edbc9" prot="public" static="no" mutable="no">
+        <type><ref refid="_comparator_8h_1a62512b8db52de47975fe8d41374017f5" kindref="member">Comparator_GetParamsFxn</ref></type>
+        <definition>Comparator_GetParamsFxn Comparator_FxnTable::getParamsFxn</definition>
+        <argsstring></argsstring>
+        <name>getParamsFxn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Function to get the parameters of the specified peripheral </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/Comparator.h" line="475" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/Comparator.h" bodystart="475" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_comparator___fxn_table_1a777f8ca1f0ce46c8773a747a9d9eecec" prot="public" static="no" mutable="no">
+        <type><ref refid="_comparator_8h_1a4193f0b3b62fa9f4dda4d126f9ef63ed" kindref="member">Comparator_SetParamsFxn</ref></type>
+        <definition>Comparator_SetParamsFxn Comparator_FxnTable::setParamsFxn</definition>
+        <argsstring></argsstring>
+        <name>setParamsFxn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Function to set the parameters of the specified peripheral </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/Comparator.h" line="478" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/Comparator.h" bodystart="478" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The definition of a comparator function table that contains the required set of functions to control a specific comparator driver implementation. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="155">
+        <label>Comparator_Config_</label>
+        <link refid="struct_comparator___config__"/>
+        <childnode refid="154" relation="usage">
+          <edgelabel>fxnTablePtr</edgelabel>
+        </childnode>
+      </node>
+      <node id="154">
+        <label>Comparator_FxnTable</label>
+        <link refid="struct_comparator___fxn_table"/>
+        <childnode refid="155" relation="usage">
+          <edgelabel>closeFxn</edgelabel>
+          <edgelabel>stopFxn</edgelabel>
+          <edgelabel>getLevelFxn</edgelabel>
+          <edgelabel>initFxn</edgelabel>
+          <edgelabel>startFxn</edgelabel>
+          <edgelabel>openFxn</edgelabel>
+          <edgelabel>setParamsFxn</edgelabel>
+          <edgelabel>getParamsFxn</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="exports/tidrivers_msp432e4/source/ti/drivers/Comparator.h" line="455" column="1" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/Comparator.h" bodystart="454" bodyend="479"/>
+    <listofallmembers>
+      <member refid="struct_comparator___fxn_table_1aa88cfa1de98061fa6b2a3b54bddb374f" prot="public" virt="non-virtual"><scope>Comparator_FxnTable</scope><name>closeFxn</name></member>
+      <member refid="struct_comparator___fxn_table_1a77ae678b6d1914b75815012c01fabbc7" prot="public" virt="non-virtual"><scope>Comparator_FxnTable</scope><name>getLevelFxn</name></member>
+      <member refid="struct_comparator___fxn_table_1a1df70078c1b47e755675a326f38edbc9" prot="public" virt="non-virtual"><scope>Comparator_FxnTable</scope><name>getParamsFxn</name></member>
+      <member refid="struct_comparator___fxn_table_1a9b048c7b5b31bfe2140eecf21d28fb8f" prot="public" virt="non-virtual"><scope>Comparator_FxnTable</scope><name>initFxn</name></member>
+      <member refid="struct_comparator___fxn_table_1a693269e9d2906e2fe4adf242df4af273" prot="public" virt="non-virtual"><scope>Comparator_FxnTable</scope><name>openFxn</name></member>
+      <member refid="struct_comparator___fxn_table_1a777f8ca1f0ce46c8773a747a9d9eecec" prot="public" virt="non-virtual"><scope>Comparator_FxnTable</scope><name>setParamsFxn</name></member>
+      <member refid="struct_comparator___fxn_table_1ac95b0c4057a78416f2e4f3e939150e8a" prot="public" virt="non-virtual"><scope>Comparator_FxnTable</scope><name>startFxn</name></member>
+      <member refid="struct_comparator___fxn_table_1a172b93d7c1e04649caed7b8842787626" prot="public" virt="non-virtual"><scope>Comparator_FxnTable</scope><name>stopFxn</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

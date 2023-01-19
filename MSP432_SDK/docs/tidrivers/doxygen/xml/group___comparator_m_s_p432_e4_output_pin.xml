@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="group___comparator_m_s_p432_e4_output_pin" kind="group">
+    <compoundname>ComparatorMSP432E4OutputPin</compoundname>
+    <title>values that can be given to the</title>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="group___comparator_m_s_p432_e4_output_pin_1ga9064623f6887841d73843184141487dc" prot="public" static="no">
+        <name>COMP0_OUTPUT_PIN_PD0</name>
+        <initializer><ref refid="_g_p_i_o_m_s_p432_e4_8h_1ae77f77ea12a04525c78d194dbf04edcf" kindref="member">GPIOMSP432E4_pinConfigMask</ref>(<ref refid="_g_p_i_o_m_s_p432_e4_8h_1ab130ec6d466c4b8e8ca6b8f428f434bc" kindref="member">GPIOMSP432E4_PORTD</ref>, 0, 0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/comparator/ComparatorMSP432E4.h" line="77" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/comparator/ComparatorMSP432E4.h" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___comparator_m_s_p432_e4_output_pin_1gae2ec50c6332625ca9e96a001c67a3da8" prot="public" static="no">
+        <name>COMP0_OUTPUT_PIN_PL2</name>
+        <initializer><ref refid="_g_p_i_o_m_s_p432_e4_8h_1ae77f77ea12a04525c78d194dbf04edcf" kindref="member">GPIOMSP432E4_pinConfigMask</ref>(<ref refid="_g_p_i_o_m_s_p432_e4_8h_1ac5b79ebd6c2e625fb43b360f70a8411e" kindref="member">GPIOMSP432E4_PORTL</ref>, 2, 0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/comparator/ComparatorMSP432E4.h" line="78" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/comparator/ComparatorMSP432E4.h" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___comparator_m_s_p432_e4_output_pin_1ga174ab0eddb4030b1e51c9c2b372b47ee" prot="public" static="no">
+        <name>COMP1_OUTPUT_PIN_PD1</name>
+        <initializer><ref refid="_g_p_i_o_m_s_p432_e4_8h_1ae77f77ea12a04525c78d194dbf04edcf" kindref="member">GPIOMSP432E4_pinConfigMask</ref>(<ref refid="_g_p_i_o_m_s_p432_e4_8h_1ab130ec6d466c4b8e8ca6b8f428f434bc" kindref="member">GPIOMSP432E4_PORTD</ref>, 1, 0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/comparator/ComparatorMSP432E4.h" line="79" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/comparator/ComparatorMSP432E4.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___comparator_m_s_p432_e4_output_pin_1ga52bba9844864be4f0f93420dbb40c4fd" prot="public" static="no">
+        <name>COMP1_OUTPUT_PIN_PL3</name>
+        <initializer><ref refid="_g_p_i_o_m_s_p432_e4_8h_1ae77f77ea12a04525c78d194dbf04edcf" kindref="member">GPIOMSP432E4_pinConfigMask</ref>(<ref refid="_g_p_i_o_m_s_p432_e4_8h_1ac5b79ebd6c2e625fb43b360f70a8411e" kindref="member">GPIOMSP432E4_PORTL</ref>, 3, 0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/comparator/ComparatorMSP432E4.h" line="80" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/comparator/ComparatorMSP432E4.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___comparator_m_s_p432_e4_output_pin_1gaef80cffa917e717b5f5db13a33acb694" prot="public" static="no">
+        <name>COMP2_OUTPUT_PIN_PD2</name>
+        <initializer><ref refid="_g_p_i_o_m_s_p432_e4_8h_1ae77f77ea12a04525c78d194dbf04edcf" kindref="member">GPIOMSP432E4_pinConfigMask</ref>(<ref refid="_g_p_i_o_m_s_p432_e4_8h_1ab130ec6d466c4b8e8ca6b8f428f434bc" kindref="member">GPIOMSP432E4_PORTD</ref>, 2, 0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/comparator/ComparatorMSP432E4.h" line="81" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/comparator/ComparatorMSP432E4.h" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___comparator_m_s_p432_e4_output_pin_1ga672f8b92287209507a5d8217e6074103" prot="public" static="no">
+        <name>COMP_NO_OUTPUT</name>
+        <initializer>(0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exports/tidrivers_msp432e4/source/ti/drivers/comparator/ComparatorMSP432E4.h" line="82" column="9" bodyfile="exports/tidrivers_msp432e4/source/ti/drivers/comparator/ComparatorMSP432E4.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>outputPin field of ComparatorMSP432E4 Hardware Attributes to select the output pin of a given comparator. Comparator 2 only has a single output option. </para>    </detaileddescription>
+  </compounddef>
+</doxygen>
