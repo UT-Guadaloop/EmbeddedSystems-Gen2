@@ -68,6 +68,7 @@ int main(void)
     Board_init();
 
     /* init gpio, interrupts, can, etc. here */
+    //TODO
 
     /* create tasks */
     create_tasks();

@@ -29,7 +29,7 @@
 	<variableList>
 		<variable>
 			<name>FREERTOS_INSTALL_DIR</name>
-			<value>file:/C:/Guadaloop_Gen2/FreeRTOS</value>
+			<value>file:/C:/EmbeddedSystems-Gen2/FreeRTOS</value>
 		</variable>
 	</variableList>
 </projectDescription>

@@ -1,61 +1,49 @@
-/*
- * Copyright (c) 2018-2019, Texas Instruments Incorporated
- * All rights reserved.
- *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions
- * are met:
- *
- * *  Redistributions of source code must retain the above copyright
- *    notice, this list of conditions and the following disclaimer.
- *
- * *  Redistributions in binary form must reproduce the above copyright
- *    notice, this list of conditions and the following disclaimer in the
- *    documentation and/or other materials provided with the distribution.
- *
- * *  Neither the name of Texas Instruments Incorporated nor the names of
- *    its contributors may be used to endorse or promote products derived
- *    from this software without specific prior written permission.
- *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
- * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
- * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
- * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
- * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
- * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
- * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
- * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
- * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
- * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
- * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
- */
-// @cliArgs --board /ti/boards/MSP_EXP432E401Y
-
-/*
- *  gpiointerrupt.syscfg
+/**
+ * These arguments were used when this file was generated. They will be automatically applied on subsequent loads
+ * via the GUI or CLI. Run CLI with '--help' for additional information on how to override these arguments.
+ * @cliArgs --board "/ti/boards/MSP_EXP432E401Y" --product "simplelink_msp432e4_sdk@4.20.00.12"
+ * @versions {"data":"2020050718","timestamp":"2020050718","tool":"1.5.0+1353","templates":"2020050718"}
  */
 
-/* ======== RTOS ======== */
-var RTOS = scripting.addModule("/ti/drivers/RTOS");
+/**
+ * Import the modules used in this configuration.
+ */
+const GPIO  = scripting.addModule("/ti/drivers/GPIO");
+const GPIO1 = GPIO.addInstance();
+const GPIO2 = GPIO.addInstance();
+const GPIO3 = GPIO.addInstance();
+const GPIO4 = GPIO.addInstance();
+const GPIO5 = GPIO.addInstance();
+const RTOS  = scripting.addModule("/ti/drivers/RTOS");
+
+/**
+ * Write custom configuration values to the imported modules.
+ */
+GPIO1.$hardware = system.deviceData.board.components.USR_SW1;
+GPIO1.mode      = "Dynamic";
+GPIO1.$name     = "CONFIG_GPIO_BUTTON_0";
+
+GPIO2.$hardware = system.deviceData.board.components.USR_SW2;
+GPIO2.mode      = "Dynamic";
+GPIO2.$name     = "CONFIG_GPIO_BUTTON_1";
+
+GPIO3.$hardware = system.deviceData.board.components.D1;
+GPIO3.$name     = "CONFIG_GPIO_LED_0";
+
+GPIO4.$hardware = system.deviceData.board.components.D2;
+GPIO4.$name     = "CONFIG_GPIO_LED_1";
+
+GPIO5.$name = "CONFIG_GPIO_0";
+
 RTOS.name = "FreeRTOS";
 
-/* ======== GPIO ======== */
-var GPIO = scripting.addModule("/ti/drivers/GPIO");
-
-var gpio0 = GPIO.addInstance();
-gpio0.$hardware = system.deviceData.board.components.BUTTON0;
-gpio0.mode = "Dynamic";
-gpio0.$name = "CONFIG_GPIO_BUTTON_0";
-
-var gpio1 = GPIO.addInstance();
-gpio1.$hardware = system.deviceData.board.components.BUTTON1;
-gpio1.mode = "Dynamic";
-gpio1.$name = "CONFIG_GPIO_BUTTON_1";
-
-var gpio2 = GPIO.addInstance();
-gpio2.$hardware = system.deviceData.board.components.LED0;
-gpio2.$name = "CONFIG_GPIO_LED_0";
-
-var gpio3 = GPIO.addInstance();
-gpio3.$hardware = system.deviceData.board.components.LED1;
-gpio3.$name = "CONFIG_GPIO_LED_1";
+/**
+ * Pinmux solution for unlocked pins/peripherals. This ensures that minor changes to the automatic solver in a future
+ * version of the tool will not impact the pinmux you originally saw.  These lines can be completely deleted in order to
+ * re-solve from scratch.
+ */
+GPIO1.gpioPin.$suggestSolution = "expansion.82";
+GPIO2.gpioPin.$suggestSolution = "expansion.84";
+GPIO3.gpioPin.$suggestSolution = "expansion.87";
+GPIO4.gpioPin.$suggestSolution = "expansion.85";
+GPIO5.gpioPin.$suggestSolution = "boosterpack.14";

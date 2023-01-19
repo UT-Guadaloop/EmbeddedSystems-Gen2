@@ -1,65 +1,27 @@
-## Example Summary
+# VCU
 
-Application that toggles an LED(s) using a GPIO pin interrupt.
+This project contains all the code necessary to run the VCU for Guadaloop Gen 2 pod.
 
-## Peripherals & Pin Assignments
+## What the VCU should do
 
-When this project is built, the SysConfig tool will generate the TI-Driver
-configurations into the __ti_drivers_config.c__ and __ti_drivers_config.h__
-files. Information on pins and resources used is present in both generated
-files. Additionally, the System Configuration file (\*.syscfg) present in the
-project may be opened with SysConfig's graphical user interface to determine
-pins and resources used.
+The VCU should successfully perform these tasks:
 
-* `CONFIG_GPIO_LED_0` - Indicates that the board was initialized within
-`mainThread()` also toggled by `CONFIG_GPIO_BUTTON_0`
-* `CONFIG_GPIO_LED_1` - Toggled by `CONFIG_GPIO_BUTTON_1`
-* `CONFIG_GPIO_BUTTON_0` - Toggles `CONFIG_GPIO_LED_0`
-* `CONFIG_GPIO_BUTTON_1` - Toggles `CONFIG_GPIO_LED_1`
+- receive and transmit messages to and from remote station via the communication unit.
 
-## BoosterPacks, Board Resources & Jumper Settings
+- receive and transmit message from hub units. Periodically send and check acknowledgements to and from hub units.
 
-For board specific jumper settings, resources and BoosterPack modifications,
-refer to the __Board.html__ file.
+- validate sensor data received from hub units.
 
-> If you're using an IDE such as Code Composer Studio (CCS) or IAR, please
-refer to Board.html in your project directory for resources used and
-board-specific jumper settings.
+- activate propulsion and braking.
 
-The Board.html can also be found in your SDK installation:
+- send sensor data to remote station
 
-        <SDK_INSTALL_DIR>/source/ti/boards/<BOARD>
+## files
 
-## Example Usage
+- **init.c:** contains initializations for VCU and microcontroller. This includes initializations for sensors, GPIO, interrupt, etc. main method is in this file.
 
-* Run the example. `CONFIG_GPIO_LED_0` turns ON to indicate driver
-initialization is complete.
+- **groundstation.c:** contains methods for communnicating with ground station.
 
-* `CONFIG_GPIO_LED_0` is toggled by pushing `CONFIG_GPIO_BUTTON_0`.
-* `CONFIG_GPIO_LED_1` is toggled by pushing `CONFIG_GPIO_BUTTON_1`.
+- **hubunits.c:** contains methods for communicating with hub units
 
-## Application Design Details
-
-* The `gpioButtonFxn0/1` functions are configured in the driver configuration
-file. These functions are called in the context of the GPIO interrupt.
-
-* Not all boards have more than one button, so `CONFIG_GPIO_LED_1` may not be
-toggled.
-
-* There is no button de-bounce logic in the example.
-
-TI-RTOS:
-
-* When building in Code Composer Studio, the configuration project will be
-imported along with the example. These projects can be found under
-\<SDK_INSTALL_DIR>\/kernel/tirtos/builds/\<BOARD\>/(release|debug)/(ccs|gcc).
-The configuration project is referenced by the example, so it
-will be built first. The "release" configuration has many debug features
-disabled. These features include assert checking, logging and runtime stack
-checks. For a detailed difference between the "release" and "debug"
-configurations, please refer to the TI-RTOS Kernel User's Guide.
-
-FreeRTOS:
-
-* Please view the `FreeRTOSConfig.h` header file for example configuration
-information.
+- **podhealth.c:** contains methods for validating sensor data.

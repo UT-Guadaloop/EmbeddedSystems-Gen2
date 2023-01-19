@@ -1,52 +1,29 @@
-## Example Summary
+# VCU
 
-This example is intended to be a starting point for new development where
-a fuller set of kernel features and debug capabilities are enabled.
+This project contains all the code necessary to run the Center Hub unit  for Guadaloop Gen 2 pod.
 
-## Peripherals & Pin Assignments
+## What the Center Hub Unit should do
 
-When this project is built, the SysConfig tool will generate the TI-Driver
-configurations into the __ti_drivers_config.c__ and __ti_drivers_config.h__
-files. Information on pins and resources used is present in both generated
-files. Additionally, the System Configuration file (\*.syscfg) present in the
-project may be opened with SysConfig's graphical user interface to determine
-pins and resources used.
+- receive and transmit messages to and from VCU. Periodically send and check acknowledgements to and from VCU
 
-* `CONFIG_GPIO_LED_0`
+- Sample sensor data of following sensors:
+  - accelerometer
+  - gap height
+  - magnetic field sensor
+  - temperature sensor
 
-## BoosterPacks, Board Resources & Jumper Settings
+- send sensor data to VCU
 
-For board specific jumper settings, resources and BoosterPack modifications,
-refer to the __Board.html__ file.
+## Files
 
-> If you're using an IDE such as Code Composer Studio (CCS) or IAR, please
-refer to Board.html in your project directory for resources used and
-board-specific jumper settings.
+- **init.c:** contains initializations for hub unit and microcontroller. This includes initializations for sensors, GPIO, interrupt, etc. main method is in this file.
 
-The Board.html can also be found in your SDK installation:
+- **vcu_communication.c:** contains methods for communnicating with the VCU.
 
-        <SDK_INSTALL_DIR>/source/ti/boards/<BOARD>
+- **accelerometer.c:** contains everything related to sampling accelerometer.
 
-## Example Usage
+- **gap_height.c:** contains everything related to sampling gap height sensors.
 
-* The example lights `CONFIG_GPIO_LED_0` as part of the initialization in the
-`mainThread()`. This thread then toggles the LED at a 1 second rate.
+- **magnetic_field.c:** contains everything related to sampling magnetic field sensors.
 
-## Application Design Details
-
-TI-RTOS:
-
-* When building in Code Composer Studio, the kernel configuration project will
-be imported along with the example. The kernel configuration project is
-referenced by the example, so it will be built first. The "release" kernel
-configuration is the default project used. It has many debug features disabled.
-These feature include assert checking, logging and runtime stack checks. For a
-detailed difference between the "release" and "debug" kernel configurations and
-how to switch between them, please refer to the SimpleLink MCU SDK User's
-Guide. The "release" and "debug" kernel configuration projects can be found
-under &lt;SDK_INSTALL_DIR&gt;/kernel/tirtos/builds/&lt;BOARD&gt;/(release|debug)/(ccs|gcc).
-
-FreeRTOS:
-
-* Please view the `FreeRTOSConfig.h` header file for example configuration
-information.
+- **temperature.c:** contains everything related to sampling temperature sensors.
