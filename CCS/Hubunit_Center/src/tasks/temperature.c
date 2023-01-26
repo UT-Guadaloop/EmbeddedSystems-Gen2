@@ -9,7 +9,7 @@
 /** includes **/
 
 /* guadaloop library includes */
-#include <guadaloop/lib/sensors/accelerometer.h>
+#include <guadaloop/lib/sensors/temperature_sensor.h>
 
 /** macros and constants **/
 #define NUM_TEMP_SENSORS 2 /* indicates how many temp sensor hub unit has. TODO: change to correct value */
@@ -31,9 +31,9 @@ static void temp_init(void) {
  * @brief sample data from temperature sensors and update temp sensor
  *        array
  *
- * @param accelerometer pointer where sampled data will be stored
+ * @param temperature sensor pointer where sampled data will be stored
  */
-static void temp_sample(accelerometer_t *accelerometer) {
+static void temp_sample(tempsensor_t *tempsensor) {
     //TODO
 }
 

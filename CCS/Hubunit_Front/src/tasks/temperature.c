@@ -34,7 +34,7 @@ static void temp_init(void) {
  *
  * @param temperature sensor pointer where sampled data will be stored
  */
-static void temp_sample(tempsensor_t *tempsenor) {
+static void temp_sample(tempsensor_t *tempsensor) {
     //TODO
 }
 
