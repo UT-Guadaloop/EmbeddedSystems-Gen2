@@ -16,7 +16,7 @@ typedef enum{
     I2CModule_7,
     I2CModule_8,
     I2CModule_9,
-    I2CModule_10,
+
 
 
 }I2C_Modules_t;
