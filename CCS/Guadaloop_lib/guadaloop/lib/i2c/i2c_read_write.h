@@ -1,33 +1,38 @@
 /*
  *
- * i2c_read_write.h
+ * @file: i2c_read_write.h
+ *
+ * @brief: functions and data structures to help with i2c communication
+ *
+ *
  * Written by Daniela Caballero
  *
  * */
 
+
 typedef enum{
-    I2CModule_0,
-    I2CModule_1,
-    I2CModule_2,
-    I2CModule_3,
-    I2CModule_4,
-    I2CModule_5,
-    I2CModule_6,
-    I2CModule_7,
-    I2CModule_8,
-    I2CModule_9,
-
-
+    I2CModule_0 = 0,
+    I2CModule_1 = 1,
+    I2CModule_2 = 2,
+    I2CModule_3 = 3,
+    I2CModule_4 = 4,
+    I2CModule_5 = 5,
+    I2CModule_6 = 6,
+    I2CModule_7 = 7,
+    I2CModule_8 = 8,
+    I2CModule_9 = 9,
 
 }I2C_Modules_t;
 
 typedef enum{
-
-
+    standardMode,
+    fastMode,
+    fastModePlus,
+    highSpeedMode,
 }I2C_Speed_t;
 
 typedef struct{
-   I2C_Modules_t GPIOport;
+   I2C_Modules_t i2cModule;
    I2C_Speed_t bitRate;
 
 }I2C_Settings_t;
