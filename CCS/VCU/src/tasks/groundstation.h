@@ -10,6 +10,9 @@
 #define TASKS_GROUNDSTATION_H_
 
 
+/* @brief initialize CAN bus ports, call from init.c */
+void groundstation_init();
+
 /*
  * @brief task that handles received messages from groundstation
  */

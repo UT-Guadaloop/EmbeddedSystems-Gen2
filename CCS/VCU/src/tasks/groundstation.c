@@ -8,6 +8,12 @@
 
 #include <src/tasks/groundstation.h>
 
+/** groundstation_init **/
+void groundstation_init() {
+    //TODO
+}
+
+
 /** groundstation_receive_task **/
 void groundstation_receive_task(void *args) {
     //TODO
