@@ -17,7 +17,7 @@ This repository currently contains the following:
 ## How to start
 
 1. Install Code Composer Studio (CCS).
-    * Follow section 4 (Quick Start for CCS IDE ) of this [guide](/Resources/CCS_1.pngMSP432SDK_Guide.pdf) for exact steps. 
+    * Follow section 4 (Quick Start for CCS IDE ) of this [guide](https://github.com/UT-Guadaloop/EmbeddedSystems-Gen2/blob/groundstation-changes/Resources/MSP432SDK_Guide.pdf) for exact steps. 
 
 2. clone repository to your local machine. Make sure to copy repository close to the root directory of your machine to avoid errors from long file names from FreeRTOS kernel. i.e clone close to your 'C:\' directory.
 
