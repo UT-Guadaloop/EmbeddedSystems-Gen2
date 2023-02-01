@@ -17,22 +17,22 @@ This repository currently contains the following:
 ## How to start
 
 1. Install Code Composer Studio (CCS).
-    * Follow section 4 (Quick Start for CCS IDE ) of this [guide](Resources\MSP432SDK_Guide.pdf) for exact steps. 
+    * Follow section 4 (Quick Start for CCS IDE ) of this [guide](/Resources/CCS_1.pngMSP432SDK_Guide.pdf) for exact steps. 
 
 2. clone repository to your local machine. Make sure to copy repository close to the root directory of your machine to avoid errors from long file names from FreeRTOS kernel. i.e clone close to your 'C:\' directory.
 
 
 3. Open Code Composer Studio workspace on CCS folder.
-    * Open Code composer studio. you should get a screen like this: ![CCS_1](Resources\CCS_1.png)
+    * Open Code composer studio. you should get a screen like this: ![CCS_1](/Resources/CCS_1.png)
     
     * Click browse, go to the location of where you cloned the repository and select the "CCS" folder.
 
     * Finally, click launch.
 
 4. Import the projects from the repository to your workspace.
-    * Go to "project->Import CCS Projects": ![CCS_import_projects](Resources\CCS_import_projects.png)
+    * Go to "project->Import CCS Projects": ![CCS_import_projects](/Resources/CCS_import_projects.png)
 
-    * Select the "Select search-directory" option, then click on Browse: ![CCS_search_dir](Resources\CCS_search_dir.png). Then go to the location where you clones this repository and select the "CCS" folder.
+    * Select the "Select search-directory" option, then click on Browse: ![CCS_search_dir](/Resources/CCS_search_dir.png). Then go to the location where you clones this repository and select the "CCS" folder.
 
     * You should be able to see the 6 projects as shown below. select all of them, check mark both the "Automatically import referenced projects found in same search-directory" and "Copy projects into workspace" options. then click finish.
 
