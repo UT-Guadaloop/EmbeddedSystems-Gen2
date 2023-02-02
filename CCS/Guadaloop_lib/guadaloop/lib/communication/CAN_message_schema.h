@@ -23,7 +23,7 @@ typedef unsigned char byte;
  * enum for all types of messages
  */
 typedef enum message_type {
-    ACK,
+    VCU_ACK,
     //TODO: add additional msg types
 }msg_type_t;
 
