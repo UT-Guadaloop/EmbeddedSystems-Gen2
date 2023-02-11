@@ -63,7 +63,7 @@ static void create_tasks(void) {
 /*
  *  ======== main ========
  */
-QueueHandle_t xQueue;
+extern QueueHandle_t xQueue;
 UBaseType_t length;
 UBaseType_t size;
 
