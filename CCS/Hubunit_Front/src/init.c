@@ -14,7 +14,8 @@
 /* RTOS header files */
 #include <FreeRTOS.h>
 #include <task.h>
-
+#include <queue.h>
+#include <guadaloop/lib/sensors/accelerometer.h>
 /* TI MSP432 SDK includes */
 #include <ti/drivers/Board.h>
 
@@ -63,8 +64,17 @@ static void create_tasks(void) {
 /*
  *  ======== main ========
  */
+extern QueueHandle_t xQueue;
+UBaseType_t length;
+UBaseType_t size;
+
 int main(void)
 {
+    length = 0; //Replace with real size
+    size = sizeof(accelerometer_t);
+    xQueue = xQueueCreate(length, size);
+
+
     /* init board for msp432 sdk */
     Board_init();
 

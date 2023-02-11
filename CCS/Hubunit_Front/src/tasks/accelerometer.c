@@ -12,12 +12,21 @@
 
 #include <guadaloop/lib/sensors/accelerometer.h>
 
+#include <guadaloop/drivers/sensors/acceleration/EVALADXL35X.h>
+#include <guadaloop/drivers/sensors/acceleration/MPU6050.h>
+#include <guadaloop/lib/high_level_I2C.h>
+
+//Create instance of I2C struct and pass to driver functions
+
+I2C_Settings_t accelSet = {I2CModule_1, standardMode};
+
 
 /*
  * @brief initialize accelerometer
  */
 static void acceleratometer_init() {
     //TODO
+    // Initialize eval and mpu using accelSet as param
 }
 
 /*
@@ -27,6 +36,9 @@ static void acceleratometer_init() {
  */
 static void acceleratometer_sample(accelerometer_t *sensor) {
     //TODO
+    //Get the value from the driver function
+    sensor->location = FRONT_HUB;
+    sensor->acceleration = 0;//Replace with acceleration sample from driver
 }
 
 /*
@@ -36,5 +48,9 @@ static void acceleratometer_sample(accelerometer_t *sensor) {
  */
 extern void *accelerometer_task(void *args) {
     //TODO
+    //Write to a queue: where the sensor is located, what the data is
+    for( ; ; ){
+
+    }
 }
 
