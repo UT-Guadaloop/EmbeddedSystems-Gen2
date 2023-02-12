@@ -39,11 +39,11 @@ typedef struct{
 }I2C_Settings_t;
 
 typedef struct{
-    void *writeBuffer;
+    uint8_t* writeBuffer;
     uint8_t writeCount;
-    void *readBuffer;
+    uint8_t* readBuffer;
     uint8_t readCount;
-    int status;
+    int status; // R/W bit
     uint8_t slaveAddress;
 
 }Transaction_t;
