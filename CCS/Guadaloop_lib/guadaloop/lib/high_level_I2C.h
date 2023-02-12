@@ -41,3 +41,5 @@ typedef struct{
 
 }I2C_Settings_t;
 
+#endif /* HIGH_LEVEL_I2C_H_ */
+

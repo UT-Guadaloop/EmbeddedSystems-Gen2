@@ -10,17 +10,15 @@
 /** INCLUDES **/
 #include <stdint.h>
 
-#include <Guadaloop_lib/guadaloop/lib/sensors/accelerometer.h>
+#include <guadaloop/lib/sensors/accelerometer.h>
 
-#include <Guadaloop_lib/guadaloop/drivers/sensors/acceleration/EVALADXL35X.h>
-#include <Guadaloop_lib/guadaloop/drivers/sensors/acceleration/MPU6050.h>
-#include <Guadaloop_lib/guadaloop/lib/high_level_I2C.h>
+#include <guadaloop/drivers/sensors/acceleration/EVALADXL35X.h>
+#include <guadaloop/drivers/sensors/acceleration/MPU6050.h>
+#include <guadaloop/lib/high_level_I2C.h>
 
 //Create instance of I2C struct and pass to driver functions
 
-I2C_Modules_t accelMod = I2CModule_1; //Change for preferred module
-I2C_Speed_t bitRate = standardMode; //Change for preferred speed
-I2C_Settings_t accelSet = {accelMod, bitRate};
+I2C_Settings_t accelSet = {I2CModule_1, standardMode};
 
 
 /*
@@ -51,5 +49,8 @@ static void acceleratometer_sample(accelerometer_t *sensor) {
 extern void *accelerometer_task(void *args) {
     //TODO
     //Write to a queue: where the sensor is located, what the data is
+    for( ; ; ){
+
+    }
 }
 

@@ -14,7 +14,8 @@
 /* RTOS header files */
 #include <FreeRTOS.h>
 #include <task.h>
-
+#include <queue.h>
+#include <guadaloop/lib/sensors/accelerometer.h>
 /* TI MSP432 SDK includes */
 #include <ti/drivers/Board.h>
 
