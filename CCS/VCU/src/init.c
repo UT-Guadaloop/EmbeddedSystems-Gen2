@@ -18,6 +18,9 @@
 /* TI MSP432 SDK includes */
 #include <ti/drivers/Board.h>
 
+/* VCU includes */
+#include "src/tasks/groundstation.h"
+
 /** constants and macros **/
 #define THREADSTACKSIZE   1024  /* Stack size in bytes */
 
@@ -28,6 +31,16 @@ typedef enum vcu_task {
     HUBUNIT_SEND,
     //TODO: add any other tasks here
 }vcu_task_t;
+
+/*
+ * @brief initialize all interrupts.
+ *
+ * @note look at the interrupt.h file from msp432 sdk.
+ *       also check this out: https://www.livediesel.de/?p=678
+ */
+static void interrupts_init() {
+    //TODO
+}
 
 /*
  * @brief creates any given task for the hub unit
@@ -68,7 +81,11 @@ int main(void)
     Board_init();
 
     /* init gpio, interrupts, can, etc. here */
-    //TODO
+    groundstation_init();
+    interrupts_init();
+    //TODO: Add more initialization here
+
+
 
     /* create tasks */
     create_tasks();
