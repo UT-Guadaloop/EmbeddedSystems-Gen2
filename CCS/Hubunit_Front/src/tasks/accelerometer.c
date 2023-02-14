@@ -11,7 +11,8 @@
 #include <stdint.h>
 
 #include <guadaloop/lib/sensors/accelerometer.h>
-
+#include <guadaloop/lib/sensors/Front_Hub_Variables.h>
+#include <guadaloop/lib/sensors/queueData.h>
 #include <guadaloop/drivers/sensors/acceleration/EVALADXL35X.h>
 #include <guadaloop/drivers/sensors/acceleration/MPU6050.h>
 #include <guadaloop/lib/high_level_I2C.h>
@@ -49,8 +50,11 @@ static void acceleratometer_sample(accelerometer_t *sensor) {
 extern void *accelerometer_task(void *args) {
     //TODO
     //Write to a queue: where the sensor is located, what the data is
-    for( ; ; ){
-
-    }
+    accelerometer_t accel;
+    accelerometer_sample(&accel);
+    sensor_t accelSensor;
+    accelSensor.accelerometer = accel;
+    queueData entry = {accelerometer, accelSensor};
+    xQueueSendToBack(xQueue, &entry, 0);
 }
 
