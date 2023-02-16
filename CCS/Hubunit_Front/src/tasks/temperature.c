@@ -9,7 +9,7 @@
 /** includes **/
 
 /* guadaloop library includes */
-#include <guadaloop/lib/sensors/accelerometer.h>
+#include <guadaloop/lib/sensors/temperature_sensor.h>
 
 /** macros and constants **/
 #define NUM_TEMP_SENSORS 2 /* indicates how many temp sensor hub unit has. TODO: change to correct value */
@@ -24,6 +24,7 @@
  */
 static void temp_init(void) {
     //TODO
+    //Call driver functions to init
 }
 
 
@@ -33,8 +34,10 @@ static void temp_init(void) {
  *
  * @param accelerometer pointer where sampled data will be stored
  */
-static void temp_sample(accelerometer_t *accelerometer) {
+static void temp_sample(tempsensor_t *temp_sensor) {
     //TODO
+    temp_sensor->temperature = 0; //call driver function
+    temp_sensor->location = FRONT_HUB;//Why not working?
 }
 
 /*
@@ -45,5 +48,11 @@ static void temp_sample(accelerometer_t *accelerometer) {
  */
 extern void *temperature_task(void *args) {
     //TODO
+    tempsensor_t temp;
+    temp_sample(&temp);
+    sensor_t tempSensor;
+    tempSensor.tempSensor = temp;
+    queueData entry = {temp, tempSensor};
+    xQueueSendToBack(xQueue, &entry, 0);
 }
 

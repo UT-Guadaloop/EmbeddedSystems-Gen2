@@ -19,6 +19,7 @@ static magneticsensor_t mag_sensors[NUM_MAG_SENSORS];
  */
 static void magnetism_init(void) {
     //TODO
+    //Call initializing functions using drivers
 }
 
 /*
@@ -28,6 +29,11 @@ static void magnetism_init(void) {
  */
 static void magnetism_sample(magneticsensor_t **mag_sensors) {
     //TODO
+    // Note: what are we doing with this array of mag sensors?
+    for(int i = 0; i<NUM_MAG_SENSORS; i++){
+        mag_sensors[i]->field_strength = 0; //Call driver functions
+        mag_sensors[i]->location = FRONT_HUB;
+    }
 }
 
 /*
@@ -36,5 +42,6 @@ static void magnetism_sample(magneticsensor_t **mag_sensors) {
  */
 extern void *magneticfield_task(void *arg) {
     //TODO
+    // How should data be sent from array?
 }
 
