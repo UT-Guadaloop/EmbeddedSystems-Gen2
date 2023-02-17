@@ -19,7 +19,7 @@
 
 //Create instance of I2C struct and pass to driver functions
 
-I2C_Settings_t accelSet = {I2CModule_1, standardMode};
+static I2C_Settings_t accelSet = {I2CModule_1, standardMode}; //Replace with real module and mode
 
 
 /*
@@ -50,11 +50,13 @@ static void acceleratometer_sample(accelerometer_t *sensor) {
 extern void *accelerometer_task(void *args) {
     //TODO
     //Write to a queue: where the sensor is located, what the data is
-    accelerometer_t accel;
-    accelerometer_sample(&accel);
-    sensor_t accelSensor;
-    accelSensor.accelerometer = accel;
-    queueData entry = {accelerometer, accelSensor};
-    xQueueSendToBack(xQueue, &entry, 0);
+    while(1){ //Infinite Loop
+        accelerometer_t accel;
+        accelerometer_sample(&accel);
+        sensor_t accelSensor;
+        accelSensor.accelerometer = accel;
+        queueData entry = {ACCELEROMETER, accelSensor};
+        xQueueSendToBack(xQueue, &entry, 0);
+    }
 }
 

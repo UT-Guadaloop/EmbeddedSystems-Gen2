@@ -65,13 +65,10 @@ static void create_tasks(void) {
  *  ======== main ========
  */
 
-UBaseType_t length;
-UBaseType_t size;
-
 
 int main(void)
 {
-    length = 0; //Replace with real size
+    queuelength = QUEUE_LENGTH;
     size = sizeof(queueData);
     xQueue = xQueueCreate(length, size);
 

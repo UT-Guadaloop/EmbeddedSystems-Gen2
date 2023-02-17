@@ -5,8 +5,8 @@
  *      Author: sidha
  */
 
-#ifndef GUADALOOP_LIB_QUEUEDATA_H_
-#define GUADALOOP_LIB_QUEUEDATA_H_
+#ifndef GUADALOOP_LIB_SENSORS_QUEUEDATA_H_
+#define GUADALOOP_LIB_SENSORS_QUEUEDATA_H_
 
 #include "accelerometer.h"
 #include "gap_height.h"
@@ -15,11 +15,11 @@
 #include "temperature_sensor.h"
 
 typedef enum{
-    accelerometer = 0,
-    hall_effect = 1,
-    reflection = 2,
-    temp = 3,
-    gap_height = 4,
+    ACCELEROMETER = 0,
+    HALL_EFFECT = 1,
+    REFLECTION = 2,
+    TEMP = 3,
+    GAP_HEIGHT = 4,
 }sensorID_t;
 
 typedef union{
@@ -35,4 +35,4 @@ typedef struct{
     sensor_t sensor;
 }queueData;
 
-#endif /* GUADALOOP_LIB_QUEUEDATA_H_ */
+#endif /* GUADALOOP_LIB_SENSORS_QUEUEDATA_H_ */

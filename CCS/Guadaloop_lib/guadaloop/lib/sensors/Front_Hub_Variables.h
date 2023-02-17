@@ -5,13 +5,16 @@
  *      Author: Sid Shyamkumar
  */
 
-#ifndef SRC_TASKS_FRONT_HUB_VARIABLES_H_
-#define SRC_TASKS_FRONT_HUB_VARIABLES_H_
+#ifndef GUADALOOP_LIB_SENSORS_FRONT_HUB_VARIABLES_H_
+#define GUADALOOP_LIB_SENSORS_FRONT_HUB_VARIABLES_H_
 
 #include <FreeRTOS.h>
 #include <queue.h>
+#define QUEUE_LENGTH 0 //Replace with real size
 
 QueueHandle_t xQueue;
+UBaseType_t queuelength;
+UBaseType_t size;
 
 
-#endif /* SRC_TASKS_FRONT_HUB_VARIABLES_H_ */
+#endif /* GUADALOOP_LIB_SENSORS_FRONT_HUB_VARIABLES_H_ */

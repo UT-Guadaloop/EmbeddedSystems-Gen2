@@ -10,6 +10,8 @@
 
 /* guadaloop library includes */
 #include <guadaloop/lib/sensors/temperature_sensor.h>
+#include <guadaloop/lib/sensors/Front_Hub_Variables.h>
+#include <guadaloop/lib/sensors/queueData.h>
 
 /** macros and constants **/
 #define NUM_TEMP_SENSORS 2 /* indicates how many temp sensor hub unit has. TODO: change to correct value */
@@ -48,11 +50,13 @@ static void temp_sample(tempsensor_t *temp_sensor) {
  */
 extern void *temperature_task(void *args) {
     //TODO
-    tempsensor_t temp;
-    temp_sample(&temp);
-    sensor_t tempSensor;
-    tempSensor.tempSensor = temp;
-    queueData entry = {temp, tempSensor};
-    xQueueSendToBack(xQueue, &entry, 0);
+    while(1){ //Infinite Loop
+        tempsensor_t temp;
+        temp_sample(&temp);
+        sensor_t tempSensor;
+        tempSensor.tempSensor = temp;
+        queueData entry = {TEMP, tempSensor};
+        xQueueSendToBack(xQueue, &entry, 0);
+    }
 }
 
