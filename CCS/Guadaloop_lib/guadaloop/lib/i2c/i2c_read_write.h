@@ -47,10 +47,10 @@ typedef enum{
  * enumeration of I2C clock rate
  */
 typedef enum{
-    standardMode,
-    fastMode,
-    fastModePlus,
-    highSpeedMode,
+    standardMode = 1, //kbps
+    fastMode = 4, //kbps
+    fastModePlus = 1000, //Mbps
+    highSpeedMode = 3300, //Mbps
 }I2C_Speed_t;
 
 /**
