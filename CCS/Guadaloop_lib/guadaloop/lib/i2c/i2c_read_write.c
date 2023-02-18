@@ -14,20 +14,6 @@
  */
 
 
-<<<<<<< HEAD
-#define I2C_MCS_STOP   0x00000004
-#define I2C_MCS_START  0x00000002
-#define I2C_MCS_RUN    0x00000001
-#define I2C_MCS_ADRACK 0x00000004
-#define I2C_MCS_ACK    0x00000008
-#define I2C_MCS_ERROR  0x00000002
-
- //TODO:
- // Write I2C_read_register and I2C_write_register for all I2C modules
- // Add option for receiving/sending multiple bytes
-
-=======
->>>>>>> 33efa10d4827d87e611b620a855b8862574cd662
 void I2C_init(I2C_Settings_t *i2cSettings){
     //turn on clock for I2C
     SYSCTL->RCGCI2C |= (1 << (i2cSettings->i2cModule)) ;
@@ -172,41 +158,6 @@ uint8_t I2C_read_register(Transaction_t *i2cTransaction, I2C_Settings_t *i2cSett
 
 }
 
-<<<<<<< HEAD
-
-/**
-  * @brief: enables all of the transaction's write data to be sent to slave device
-  *
-  * @param: pointer to transaction data structure
-  *
-  * @return: returns error bits (0 is returned if no error in transaction)
-  *
-  */
-uint8_t I2C_write_register(Transaction_t *i2cTransaction){
-
-    switch(i2cSettings->i2cModule){
-    case I2CModule_0:
-        I2C0->MSA |= i2cTransaction->slaveAddress << 1; // MSA[7:1] is slave address
-        I2C0->MSA &= ~0x01; // MSA[0] is set to low to write
-        //??? why doesent MSA stuff go into MDR
-        I2C0->MCS = I2C_MCS_START | I2C_MCS_RUN; //sending 1st byte by generating start bit and MCS Run I imagine says okay go to Master transmit state and continue clock pulsing until stop bit(master says Im done controlling line for now)
-        if(I2C0->MCS & (I2C_MCS_DATAACK | I2C_MCS_ADRACK | I2C_MCS_ERROR )){
-            I2C0->MCS = I2C0_MCS_STOP; //stop transaction
-            return (I2C0->MCS & (I2C_MCS_DATAACK | I2C_MCS_ADRACK | I2C_MCS_ERROR)); //return error bits
-        }
-        for(int i = 0; i< i2cTransaction->writeCount; i++){
-            I2C0->MDR =  (i2cTransaction->writeBuffer[i]) & 0xFF; //writing data into shift register
-            while(I2C0->MCS & 0x00000001){} //wait until transaction completed
-            if(I2C0->MCS & (I2C_MCS_DATAACK | I2C_MCS_ADRACK | I2C_MCS_ERROR )){ //check if slave acknowledged
-                I2C0->MCS = I2C0_MCS_STOP;
-                return (I2C0->MCS & (I2C_MCS_DATAACK | I2C_MCS_ADRACK | I2C_MCS_ERROR));
-            }
-            I2C0->MCS = I2C_MCS_RUN; // keep sending data because in master transmit state
-        }
-        I2C0->MCS = I2C_MCS_STOP; //stop bit generated, then returns SCL to idle state.
-        return (I2C0->MCS & (I2C_MCS_DATAACK | I2C_MCS_ADRACK | I2C_MCS_ERROR)); //shld be 0 if no acknowledgement errors
-
-=======
 uint8_t I2C_write_register(Transaction_t *i2cTransaction, I2C_Settings_t *i2cSettings, uint8_t *writeBuffer){
     /*
      * To write a register via I2C
@@ -248,7 +199,7 @@ uint8_t I2C_write_register(Transaction_t *i2cTransaction, I2C_Settings_t *i2cSet
      i2cSettings->i2cPort->MCS = I2C_MCS_STOP;
 
      return 1;
->>>>>>> 33efa10d4827d87e611b620a855b8862574cd662
+
 }
 
 

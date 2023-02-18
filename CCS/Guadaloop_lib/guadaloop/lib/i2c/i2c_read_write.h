@@ -43,16 +43,8 @@ typedef struct{
 }I2C_Settings_t;
 
 typedef struct{
-<<<<<<< HEAD
-    uint8_t* writeBuffer;
-    uint8_t writeCount;
-    uint8_t* readBuffer;
-    uint8_t readCount;
-    int status; // R/W bit
-=======
     uint8_t writeCount;
     uint8_t readCount;
->>>>>>> 33efa10d4827d87e611b620a855b8862574cd662
     uint8_t slaveAddress;
     uint8_t regAddress;
 
