@@ -1,5 +1,0 @@
-<map id="I2CMSP432E4_Object" name="I2CMSP432E4_Object">
-<area shape="rect" id="node2" href="$struct_i2_c___transaction.html" title="Defines a transaction to be used with I2C_transfer() or I2C_transferTimeout() " alt="" coords="5,5,124,32"/>
-<area shape="rect" id="node3" href="$struct_i2_c___config__.html" title="I2C driver&#39;s custom configuration structure. " alt="" coords="313,5,408,32"/>
-<area shape="rect" id="node4" href="$struct_i2_c___fxn_table.html" title="The definition of an I2C function table that contains the required set of functions to control a spec..." alt="" coords="357,168,461,195"/>
-</map>

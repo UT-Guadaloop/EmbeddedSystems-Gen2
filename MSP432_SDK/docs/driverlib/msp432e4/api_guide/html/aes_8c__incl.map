@@ -1,9 +1,0 @@
-<map id="aes.c" name="aes.c">
-<area shape="rect" id="node3" href="$types_8h.html" title="types.h" alt="" coords="171,88,236,115"/>
-<area shape="rect" id="node6" href="$hw__aes_8h.html" title="inc/hw_aes.h" alt="" coords="639,88,737,115"/>
-<area shape="rect" id="node7" href="$hw__ccm_8h.html" title="inc/hw_ccm.h" alt="" coords="762,88,864,115"/>
-<area shape="rect" id="node8" href="$hw__nvic_8h.html" title="inc/hw_nvic.h" alt="" coords="889,88,991,115"/>
-<area shape="rect" id="node9" href="$aes_8h.html" title="aes.h" alt="" coords="405,88,459,115"/>
-<area shape="rect" id="node10" href="$debug_8h.html" title="debug.h" alt="" coords="313,88,380,115"/>
-<area shape="rect" id="node11" href="$interrupt_8h.html" title="interrupt.h" alt="" coords="484,88,563,115"/>
-</map>

@@ -1,6 +1,0 @@
-<map id="cpu.h" name="cpu.h">
-<area shape="rect" id="node2" href="$cpu_8c.html" title="cpu.c" alt="" coords="5,80,59,107"/>
-<area shape="rect" id="node3" href="$driverlib_8h.html" title="driverlib.h" alt="" coords="83,80,161,107"/>
-<area shape="rect" id="node4" href="$interrupt_8c.html" title="interrupt.c" alt="" coords="187,80,265,107"/>
-<area shape="rect" id="node5" href="$sysctl_8c.html" title="sysctl.c" alt="" coords="291,80,359,107"/>
-</map>

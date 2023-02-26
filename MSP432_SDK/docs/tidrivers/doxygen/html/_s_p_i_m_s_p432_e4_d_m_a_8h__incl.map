@@ -1,6 +1,0 @@
-<map id="SPIMSP432E4DMA.h" name="SPIMSP432E4DMA.h">
-<area shape="rect" id="node6" href="$_u_d_m_a_m_s_p432_e4_8h.html" title="uDMA driver implementation for MSP432E4. " alt="" coords="89,87,312,114"/>
-<area shape="rect" id="node9" href="$_g_p_i_o_m_s_p432_e4_8h.html" title="MSP432E4 GPIO driver. " alt="" coords="571,87,785,114"/>
-<area shape="rect" id="node12" href="$_s_p_i_8h.html" title="Serial Peripheral Interface (SPI) Driver Interface. " alt="" coords="437,87,546,114"/>
-<area shape="rect" id="node11" href="$_g_p_i_o_8h.html" title="General Purpose I/O driver interface. " alt="" coords="631,177,751,203"/>
-</map>

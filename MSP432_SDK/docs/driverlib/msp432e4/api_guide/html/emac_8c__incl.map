@@ -1,9 +1,0 @@
-<map id="emac.c" name="emac.c">
-<area shape="rect" id="node3" href="$types_8h.html" title="types.h" alt="" coords="171,88,236,115"/>
-<area shape="rect" id="node6" href="$hw__emac_8h.html" title="inc/hw_emac.h" alt="" coords="842,88,952,115"/>
-<area shape="rect" id="node7" href="$debug_8h.html" title="debug.h" alt="" coords="650,88,717,115"/>
-<area shape="rect" id="node8" href="$emac_8h.html" title="emac.h" alt="" coords="313,88,377,115"/>
-<area shape="rect" id="node9" href="$sysctl_8h.html" title="sysctl.h" alt="" coords="402,88,469,115"/>
-<area shape="rect" id="node10" href="$interrupt_8h.html" title="interrupt.h" alt="" coords="495,88,573,115"/>
-<area shape="rect" id="node11" href="$sw__crc_8h.html" title="sw_crc.h" alt="" coords="743,88,816,115"/>
-</map>
