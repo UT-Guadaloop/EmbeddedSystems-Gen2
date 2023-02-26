@@ -40,7 +40,6 @@ This repository currently contains the following:
 
 
 6. Change Environment variables of projects to be able to build them.
-
     * You will have to do this for these projects:
         - FreeRTOS
         - HubUnit_Front
