@@ -1,8 +1,0 @@
-Related Documentation From Texas Instruments
-============================================
-
-Additional information about the NDK can be found in the `NDK API Reference Guide <../../NDK_API_Reference.html>`__. If you have questions, you can ask them on the forum for your target device in TI's E2E community.
-
-For information about the design of the Ethernet and Serial driver architecture in the NDK, see the `NDK Support Package Ethernet Driver Design Guide <../../NDK_Driver_Design_Guide.pdf>`__.
-
-If you have questions, you can ask them on the forum for the SDK that contains your NDK in `TI's E2E community <http://e2e.ti.com/>`__.

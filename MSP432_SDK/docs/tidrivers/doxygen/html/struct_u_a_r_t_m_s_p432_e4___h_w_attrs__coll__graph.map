@@ -1,4 +1,0 @@
-<map id="UARTMSP432E4_HWAttrs" name="UARTMSP432E4_HWAttrs">
-<area shape="rect" id="node2" href="$struct_u_a_r_t___config__.html" title="UART Global configuration. " alt="" coords="125,5,236,32"/>
-<area shape="rect" id="node3" href="$struct_u_a_r_t___fxn_table.html" title="The definition of a UART function table that contains the required set of functions to control a spec..." alt="" coords="227,241,347,268"/>
-</map>

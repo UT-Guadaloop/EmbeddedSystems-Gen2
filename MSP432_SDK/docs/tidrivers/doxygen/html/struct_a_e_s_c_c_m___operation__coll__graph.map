@@ -1,6 +1,0 @@
-<map id="AESCCM_Operation" name="AESCCM_Operation">
-<area shape="rect" id="node2" href="$struct_crypto_key.html" title="CryptoKey datastructure. " alt="" coords="203,95,287,121"/>
-<area shape="rect" id="node3" href="$struct_crypto_key___plaintext.html" title="Plaintext CryptoKey datastructure. " alt="" coords="5,5,148,32"/>
-<area shape="rect" id="node4" href="$struct_crypto_key___key_store.html" title="Key store CryptoKey datastructure. " alt="" coords="172,5,317,32"/>
-<area shape="rect" id="node5" href="$struct_crypto_key___key_blob.html" title="Keyblob CryptoKey datastructure. " alt="" coords="341,5,481,32"/>
-</map>
