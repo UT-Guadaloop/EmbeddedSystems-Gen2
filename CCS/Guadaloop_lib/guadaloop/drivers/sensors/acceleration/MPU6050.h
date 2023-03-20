@@ -7,8 +7,21 @@
 
 #ifndef MPU6050_H_
 #define MPU6050_H_
-
+#include "guadaloop/lib/i2c/i2c_read_write.h"
 #define fixed_point_value_multiplier 1000
+
+/*
+ * How to use:
+ * 1. call initialize accelerometer with the module you are connecting to and whether the logic
+ *  for AD0 is high or low.
+ * 2. call config_accelerometer with the acceleration ranges that you want
+ * 3. sample any of the dimensions of the accelerometer as you wish with sample_...
+ */
+
+
+// Call this function so that we can initialize which I2C module to use
+// if ADO is connected to ground, enter 0 otherwise 1
+void initialize_accelerometer(I2C_Modules_t module, int bool_AD0pin_logic);
 
 
 /*

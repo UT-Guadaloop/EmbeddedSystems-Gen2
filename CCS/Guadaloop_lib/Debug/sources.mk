@@ -114,4 +114,5 @@ guadaloop/drivers/sensors/reflection \
 guadaloop/drivers/sensors/rotation \
 guadaloop/drivers/sensors/temperature \
 guadaloop/lib/communication \
+guadaloop/lib/i2c \
 

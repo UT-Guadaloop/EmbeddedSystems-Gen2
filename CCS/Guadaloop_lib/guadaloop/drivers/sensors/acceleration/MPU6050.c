@@ -5,12 +5,14 @@
  *      Author: Sourish Wawdhane
  */
 #include <stdint.h>
-#include <guadaloop/drivers/sensors/acceleration/MPU6050.h>
+#include "guadaloop/drivers/sensors/acceleration/MPU6050.h"
 
 
 static int accel_divider = 0;
                                //+- 2g, 4g, 8g, 16g respectively
 static int accel_divider_values[4] = {16384, 8192, 4096, 2048};
+uint8_t SLAVE_ADDRESS = 0x68;
+I2C_Settings_t I2C_SETTING;
 
 typedef enum sensor_register_t {gyroconfig, acceleroconfig,accel_x_15_8,accel_x_7_0,accel_y_15_8,accel_y_7_0,accel_z_15_8,accel_z_7_0} sensor_register;
 
@@ -39,17 +41,46 @@ static uint8_t get_register_number(sensor_register r){
     return 0;
 }
 
+void initialize_accelerometer(I2C_Modules_t module, int bool_AD0pin_logic){
+    if (bool_AD0pin_logic != 0){
+        SLAVE_ADDRESS|=0x01;
+    }
+
+    // creating instance of I2C_Settings_t specifying I2C_Modules_t and I2C_Speed_t types
+    I2C_SETTING.i2cModule = I2CModule_0;
+    I2C_SETTING.bitRate = fastMode;
+
+    // call init_settings function
+    init_Settings(&I2C_SETTING);
+
+}
+
 void get_register(sensor_register r, uint8_t* data_to_retrieve){
     uint8_t real_register_number = get_register_number(r);
-    //*data_to_store =
-    // TODO interface with I2C
 
+    // create instance of Transaction_t specifying byteCount,
+    // slaveAddress, and regAddress
+    Transaction_t transaction;
+    transaction.slaveAddress = SLAVE_ADDRESS;
+    transaction.byteCount = 1;
+    transaction.regAddress = real_register_number;
+
+    // reading the actual register
+    I2C_read_register(&transaction, &I2C_SETTING, data_to_retrieve);
 }
 
 void set_register(sensor_register r, uint8_t* data_to_set){
     uint8_t real_register_number = get_register_number(r);
 
-    // TODO interface with I2C
+    // create instance of Transaction_t specifying byteCount,
+    // slaveAddress, and regAddress
+    Transaction_t transaction;
+    transaction.slaveAddress = SLAVE_ADDRESS;
+    transaction.byteCount = 1;
+    transaction.regAddress = real_register_number;
+
+    // writing the actual register
+    I2C_write_register(&transaction, &I2C_SETTING, data_to_set);
 
 }
 
