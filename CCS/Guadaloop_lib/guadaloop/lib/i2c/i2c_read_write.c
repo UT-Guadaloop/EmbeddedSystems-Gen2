@@ -7,7 +7,6 @@
  *
  * */
 #include <stdint.h>
-#include "msp432e401y.h"
 #include <guadaloop/lib/i2c/i2c_read_write.h>
 
 /** MACROS **/
