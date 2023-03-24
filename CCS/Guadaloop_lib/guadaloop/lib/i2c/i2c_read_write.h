@@ -26,6 +26,9 @@
 #ifndef I2C_READ_WRITE_H_
 #define I2C_READ_WRITE_H_
 
+#include "msp432e401y.h"
+#include <guadaloop/lib/i2c/i2c_read_write.h>
+
 /**
  * enumeration of I2C modules on MSP432
  */
