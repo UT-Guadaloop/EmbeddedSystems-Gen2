@@ -14,7 +14,8 @@
 /* RTOS header files */
 #include <FreeRTOS.h>
 #include <task.h>
-
+#include <guadaloop/lib/sensors/Front_Hub_Variables.h>
+#include <guadaloop/lib/sensors/queueData.h>
 /* TI MSP432 SDK includes */
 #include <ti/drivers/Board.h>
 
@@ -63,8 +64,15 @@ static void create_tasks(void) {
 /*
  *  ======== main ========
  */
+
+
 int main(void)
 {
+    queuelength = QUEUE_LENGTH;
+    size = sizeof(queueData);
+    xQueue = xQueueCreate(length, size);
+
+
     /* init board for msp432 sdk */
     Board_init();
 
