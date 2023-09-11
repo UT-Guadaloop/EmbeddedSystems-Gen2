@@ -1,6 +1,0 @@
-<map id="ADCBufMSP432E4_Object" name="ADCBufMSP432E4_Object">
-<area shape="rect" id="node2" href="$struct_u_d_m_a_m_s_p432_e4___config.html" title="UDMAMSP432E4 Global configuration. " alt="" coords="5,5,179,32"/>
-<area shape="rect" id="node3" href="$struct_a_d_c_buf___conversion.html" title="Defines a conversion to be used with ADCBuf_convert(). " alt="" coords="203,5,347,32"/>
-<area shape="rect" id="node4" href="$struct_a_d_c_buf___config__.html" title="ADC driver&#39;s custom configuration structure. " alt="" coords="427,5,549,32"/>
-<area shape="rect" id="node5" href="$struct_a_d_c_buf___fxn_table.html" title="The definition of an ADCBuf function table that contains the required set of functions to control a s..." alt="" coords="507,227,639,253"/>
-</map>

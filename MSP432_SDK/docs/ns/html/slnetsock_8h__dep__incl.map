@@ -1,7 +1,0 @@
-<map id="ti/net/slnetsock.h" name="ti/net/slnetsock.h">
-<area shape="rect" id="node2" href="$httpclient_8h.html" title="ti/net/http/httpclient.h" alt="" coords="5,80,151,107"/>
-<area shape="rect" id="node3" href="$httpserver_8h.html" title="HTTP Server services. " alt="" coords="175,80,325,107"/>
-<area shape="rect" id="node4" href="$slnetif_8h.html" title="ti/net/slnetif.h" alt="" coords="350,80,451,107"/>
-<area shape="rect" id="node5" href="$slnetutils_8h.html" title="ti/net/slnetutils.h" alt="" coords="476,80,595,107"/>
-<area shape="rect" id="node6" href="$sntp_8h.html" title="ti/net/sntp/sntp.h" alt="" coords="619,80,739,107"/>
-</map>

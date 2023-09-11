@@ -1,6 +1,0 @@
-<map id="UARTMSP432E4_Object" name="UARTMSP432E4_Object">
-<area shape="rect" id="node2" href="$struct_u_a_r_t___config__.html" title="UART Global configuration. " alt="" coords="107,5,217,32"/>
-<area shape="rect" id="node3" href="$struct_u_a_r_t___fxn_table.html" title="The definition of a UART function table that contains the required set of functions to control a spec..." alt="" coords="41,241,161,268"/>
-<area shape="rect" id="node4" href="$struct_ring_buf___object.html" title="RingBuf_Object" alt="" coords="319,5,434,32"/>
-<area shape="rect" id="node5" href="$struct_u_a_r_t_m_s_p432_e4___fxn_set.html" title="Complement set of read functions to be used by the UART ISR and UARTMSP432E4_read(). Internal use only. " alt="" coords="459,5,633,32"/>
-</map>

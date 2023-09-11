@@ -1,7 +1,0 @@
-<map id="usbdhid.h" name="usbdhid.h">
-<area shape="rect" id="node2" href="$usbdhid_8c.html" title="usbdhid.c" alt="" coords="5,80,89,107"/>
-<area shape="rect" id="node3" href="$usbdhidgamepad_8c.html" title="usbdhidgamepad.c" alt="" coords="113,80,259,107"/>
-<area shape="rect" id="node4" href="$usbdhidkeyb_8c.html" title="usbdhidkeyb.c" alt="" coords="283,80,399,107"/>
-<area shape="rect" id="node5" href="$usbdhidmouse_8c.html" title="usbdhidmouse.c" alt="" coords="423,80,551,107"/>
-<area shape="rect" id="node6" href="$usbdhidsensor_8c.html" title="usbdhidsensor.c" alt="" coords="576,80,703,107"/>
-</map>

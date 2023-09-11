@@ -1,8 +1,0 @@
-<map id="Hid_device_class_api" name="Hid_device_class_api">
-<area shape="rect" id="node1" href="$group__usbchap9__src.html" title="Usbchap9_src" alt="" coords="350,5,462,32"/>
-<area shape="rect" id="node2" href="$group__hid__gamepad__device__class__api.html" title="Hid_gamepad_device\l_class_api" alt="" coords="325,57,487,98"/>
-<area shape="rect" id="node3" href="$group__hid__sensor__device__class__api.html" title="Hid_sensor_device_class_api" alt="" coords="301,123,511,149"/>
-<area shape="rect" id="node5" href="$group__cdc__device__class__api.html" title="Cdc_device_class_api" alt="" coords="325,173,487,200"/>
-<area shape="rect" id="node6" href="$group__usblib__host__class.html" title="Usblib_host_class" alt="" coords="337,228,475,255"/>
-<area shape="rect" id="node7" href="$group__hid__mouse__device__class__api.html" title="Hid_mouse_device_class_api" alt="" coords="300,279,512,305"/>
-</map>

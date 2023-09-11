@@ -1,8 +1,0 @@
-<map id="uart.c" name="uart.c">
-<area shape="rect" id="node3" href="$types_8h.html" title="types.h" alt="" coords="171,88,236,115"/>
-<area shape="rect" id="node6" href="$hw__sysctl_8h.html" title="inc/hw_sysctl.h" alt="" coords="641,88,753,115"/>
-<area shape="rect" id="node7" href="$hw__uart_8h.html" title="inc/hw_uart.h" alt="" coords="778,88,877,115"/>
-<area shape="rect" id="node8" href="$debug_8h.html" title="debug.h" alt="" coords="497,88,564,115"/>
-<area shape="rect" id="node9" href="$interrupt_8h.html" title="interrupt.h" alt="" coords="392,88,471,115"/>
-<area shape="rect" id="node10" href="$uart_8h.html" title="uart.h" alt="" coords="313,88,367,115"/>
-</map>

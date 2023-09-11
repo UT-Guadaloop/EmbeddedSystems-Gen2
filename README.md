@@ -15,17 +15,37 @@ This repository currently contains the following:
 - **FreeRTOS:** FreeRTOS kernel and source code, no need to install FreeRTOS separately. 
 
 ## How to start
+1. Install the [MSP432 SDK](https://www.ti.com/tool/download/SIMPLELINK-MSP432E4-SDK) in your machine.
+2. Install Code Composer Studio (CCS).
+    * Follow section 4 (Quick Start for CCS IDE ) of this [guide](https://github.com/UT-Guadaloop/EmbeddedSystems-Gen2/blob/groundstation-changes/Resources/MSP432SDK_Guide.pdf) for exact steps. 
 
-1. clone repository to your local machine. Make sure to copy repository close to the root directory of your machine to avoid errors from long file names from FreeRTOS kernel. i.e clone close to your 'C:\' directory.
+3. clone repository to your local machine. Make sure to copy repository close to the root directory of your machine to avoid errors from long file names from FreeRTOS kernel. i.e clone close to your 'C:\' directory.
 
-2. Install Code Composer Studio and make sure you add the MSP432 drivers when installing it.
 
-3. You must change some environment variables on the following projects:
-    - FreeRTOS
-    - HubUnit_Front
-    - HubUnit_Center
-    - HubUnit_Rear
-    - VCU
+4. Open Code Composer Studio workspace on CCS folder.
+    * Open Code composer studio. you should get a screen like this: ![CCS_1](/Resources/CCS_1.png)
+    
+    * Click browse, go to the location of where you cloned the repository and select the "CCS" folder.
+
+    * Finally, click launch.
+
+5. Import the projects from the repository to your workspace.
+    * Go to "project->Import CCS Projects": ![CCS_import_projects](/Resources/CCS_import_projects.png)
+
+    * Select the "Select search-directory" option, then click on Browse: ![CCS_search_dir](/Resources/CCS_search_dir.png). Then go to the location where you clones this repository and select the "CCS" folder.
+
+    * You should be able to see the 6 projects as shown below. select all of them, check mark both the "Automatically import referenced projects found in same search-directory" and "Copy projects into workspace" options. then click finish.
+
+    * You should now have all the projects in your workspace.
+
+
+6. Change Environment variables of projects to be able to build them.
+    * You will have to do this for these projects:
+        - FreeRTOS
+        - HubUnit_Front
+        - HubUnit_Center
+        - HubUnit_Rear
+        - VCU
 
     #### <ins>Instructions:</ins>
  
@@ -36,8 +56,9 @@ This repository currently contains the following:
         ![linked resources page](/Resources/linked_resources.png "linked resources page")
         *image 1: Linked Resources Page*
 
-4. Try to build project, it should build successfully.
-5. Connect MSP432 to your laptop via a USB cable and then flash the code from Code Composer Studio.
+
+7. Try to build project, it should build successfully.
+8. Connect MSP432 to your laptop via a USB cable and then flash the code from Code Composer Studio.
 
 ## How to Contribute
 
