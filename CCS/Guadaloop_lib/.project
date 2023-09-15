@@ -24,4 +24,10 @@
 		<nature>org.eclipse.cdt.core.ccnature</nature>
 		<nature>org.eclipse.cdt.managedbuilder.core.ScannerConfigNature</nature>
 	</natures>
+	<variableList>
+		<variable>
+			<name>MSP422_SDK_INSTALL_DIR</name>
+			<value>file:/C:/ti/simplelink_msp432e4_sdk_4_20_00_12</value>
+		</variable>
+	</variableList>
 </projectDescription>

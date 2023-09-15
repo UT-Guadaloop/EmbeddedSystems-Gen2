@@ -8,8 +8,8 @@
 #define CAN_H_
 
 typedef enum {
-    CAN0,
-    CAN1
+    CAN_0,
+    CAN_1
 }CAN_MODULE_t;
 
 /*

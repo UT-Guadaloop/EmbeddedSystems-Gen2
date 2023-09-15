@@ -46,6 +46,7 @@ This repository currently contains the following:
         - HubUnit_Center
         - HubUnit_Rear
         - VCU
+        - Guadaloop_lib
 
     #### <ins>Instructions:</ins>
  
