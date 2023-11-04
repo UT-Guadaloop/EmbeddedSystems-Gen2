@@ -6,7 +6,6 @@
  */
 
 #include <guadaloop/drivers/sensors/distance/AdafruitVL53L0X.h>
-#include <stdint.h>
 #include <ti/devices/msp432e4/driverlib/driverlib.h>
 
 #define ONE_BYTE 1
@@ -75,10 +74,10 @@
 #define I2C_SLAVE__DEVICE_ADDRESS 0x212
 #define INTERLEAVED_MODE__ENABLE 0x243
 
-static void VL6180x_setRegister(uint16_t registerAddr, uint8_t sendData, uint8_t byteSize);
-static uint8_t VL6180x_getRegister(uint16_t registerAddr, uint8_t byteSize);
+ static void VL6180x_setRegister(uint16_t registerAddr, uint8_t sendData, uint8_t byteSize);
+ static uint8_t VL6180x_getRegister(uint16_t registerAddr, uint8_t byteSize);
 
-//TODO
+
 
 uint8_t VL6180x_init(){
    uint8_t data = VL6180x_getRegister(SYSTEM__FRESH_OUT_OF_RESET, ONE_BYTE);
@@ -108,7 +107,7 @@ uint8_t VL6180x_init(){
    VL6180x_setRegister(0x00bb, 0x3c, ONE_BYTE);
    VL6180x_setRegister(0x00b2, 0x09, ONE_BYTE);
    VL6180x_setRegister(0x00ca, 0x09, ONE_BYTE);
-   VL6180x_setRegister(0x0198, 0x01, ONE_BYTE)
+   VL6180x_setRegister(0x0198, 0x01, ONE_BYTE);
    VL6180x_setRegister(0x01b0, 0x17, ONE_BYTE);
    VL6180x_setRegister(0x01ad, 0x00, ONE_BYTE);
    VL6180x_setRegister(0x00ff, 0x05, ONE_BYTE);
@@ -145,7 +144,7 @@ uint8_t VL6180x_getDistance(){
 
 /*private functions*/
 
-static void VL6180x_setRegister(uint16_t registerAddr, uint16_t sendData, uint8_t byteSize){
+static void VL6180x_setRegister(uint16_t registerAddr, uint8_t sendData, uint8_t byteSize){
     //send 2 byte address
     MAP_I2CMasterSlaveAddrSet(I2C1_BASE, VL6180X_ADDRESS, false);
     MAP_I2CMasterDataPut(I2C1_BASE, registerAddr & 0xFF);
