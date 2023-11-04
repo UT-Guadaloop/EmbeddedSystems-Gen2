@@ -5,7 +5,6 @@
  *
  */
 
-
 #include <guadaloop/drivers/sensors/distance/AdafruitVL53L0X.h>
 #include <stdint.h>
 #include <ti/devices/msp432e4/driverlib/driverlib.h>
@@ -76,12 +75,12 @@
 #define I2C_SLAVE__DEVICE_ADDRESS 0x212
 #define INTERLEAVED_MODE__ENABLE 0x243
 
-void VL6180x_setRegister(uint16_t registerAddr, uint8_t sendData, uint8_t byteSize);
-uint8_t VL6180x_getRegister(uint16_t registerAddr, uint8_t byteSize);
+static void VL6180x_setRegister(uint16_t registerAddr, uint8_t sendData, uint8_t byteSize);
+static uint8_t VL6180x_getRegister(uint16_t registerAddr, uint8_t byteSize);
 
 //TODO
 
-uint8_t VL6180x_init(){x
+uint8_t VL6180x_init(){
    uint8_t data = VL6180x_getRegister(SYSTEM__FRESH_OUT_OF_RESET, ONE_BYTE);
 
    if(data != 1){
