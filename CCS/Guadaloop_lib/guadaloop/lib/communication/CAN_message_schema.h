@@ -11,8 +11,13 @@
 #ifndef GUADALOOP_LIB_CAN_MESSAGE_SCHEMA_H_
 #define GUADALOOP_LIB_CAN_MESSAGE_SCHEMA_H_
 
-/** macros and constants **/
-#define MAX_NUM_BYTES 8     /* max number of bytes that can be sent through can bus at one time */
+//*Examples**/
+
+//Message from Left LIM temperature sensor number 8 (10001 0010 1000 1000)
+//concat(LEFT_LIM, TEMP_SENSE, Sensor8, SensorID)
+
+//Message from Top Right Yoke temperature sensor number 2 (11010 0010 0010 1000)
+//concat(TRIGHT_YOKE, TEMP_SENSE, Sensor2, SensorID)
 
 /**Location Macros**/
 #define VCU             (1)<<(12)
@@ -57,6 +62,14 @@
 #define Sensor14        (14)<<(4)
 #define Sensor15        (15)<<(4)
 
+//Sensor Numbers when message does not involve sensors
+#define FHubUnit_SensType           (1)<<(4)
+#define CHubUnit_SensType           (2)<<(4)
+#define RHubUnit_SensType           (3)<<(4)
+#define CommsUnit_SensType          (4)<<(4)
+#define VCU_SensType                (8)<<(4)
+
+
 
 //*Message ID Macros**/
 #define StartID         0
@@ -66,25 +79,6 @@
 #define SensorID        8
 
 #define concat(loc, type, num, id) (loc|type|num|id)
-
-
-/*
- * typedef for a byte
- */
-
-
-/*
- * enum for all types of messages
- */
-
-
-/*
- * @brief converts a message type and data into an array of bytes that can be sent through
- *        CAN bus.
- *
- * @return array of bytes
- */
-uint32_t canMsgSchema_message(uint32_t location, uint32_t sens_type, uint32_t sens_num, uint32_t message_num);
 
 
 #endif /* GUADALOOP_LIB_CAN_MESSAGE_SCHEMA_H_ */
