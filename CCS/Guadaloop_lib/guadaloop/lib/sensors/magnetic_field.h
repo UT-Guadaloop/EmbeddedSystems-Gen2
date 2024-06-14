@@ -23,7 +23,9 @@ typedef int tesla_t;
 
 typedef enum magsensor_loc {
     //TODO: add locations here
-    SOME_LOC,
+    FRONT_HUB,
+    CENTER_HUB,
+    REAR_HUB
 }magsensor_loc_t;
 /*
  * struct for to model magnetic sensor data

@@ -25,6 +25,9 @@ typedef int16_t temp_t;
  */
 typedef enum temperature_sensor_location {
     //TODO: add locations here
+    FRONT_HUB,
+    CENTER_HUB,
+    REAR_HUB
 }tempsensor_loc_t;
 
 /*
